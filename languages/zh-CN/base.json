@@ -1,0 +1,114 @@
+{
+  "loading": "资源加载中，请稍后...",
+  "building": "建设中...",
+  "admin": "管理后台",
+  "userInfo": "用户信息",
+  "switchRoles": "切换角色",
+  "userSettings": "用户设置",
+  "homeButton": "返回首页",
+  "notFound": "页面找不到",
+  "notFoundDescription": "您正在寻找的页面不存在或已被移动",
+  "noAuthentication": "没有权限",
+  "noAuthenticationDescription": "您没有访问该页面的权限",
+  "notifications": "通知",
+  "readAll": "全部已读",
+  "empty": {
+    "notifications": "暂无通知"
+  },
+  "crud": {
+    "add": "新增",
+    "update": "更新",
+    "delete": "删除",
+    "export": "导出",
+    "import": "导入",
+    "edit": "编辑",
+    "info": "信息",
+    "detail": "详情",
+    "query": "查询",
+    "action": "操作",
+    "confirm": "确定",
+    "cancel": "取消",
+    "clear": "清除",
+    "close": "关闭",
+    "keyword": "关键字",
+    "choose": "请选择",
+    "preview": "预览",
+    "fileName": "文件名",
+    "next": "下一步"
+  },
+  "unkown": {
+    "error": "未知错误，错误信息：{message}",
+    "code": "出现未知错误，错误码：{code}"
+  },
+  "request": {
+    "wrong": "错误的请求",
+    "timeout": "请求超时",
+    "resource": "请求错误，未找到该资源",
+    "method": "请求方法未允许",
+    "http": "http 版本不支持该请求"
+  },
+  "network": {
+    "implemented": "网络未实现",
+    "error": "网络错误",
+    "timeout": "网络超时",
+    "connectError": "网络连接错误，错误码：{code}"
+  },
+  "server": {
+    "error": "服务器端出错",
+    "down": "服务不可用",
+    "notConnect": "无法连接到服务器"
+  },
+  "api": {
+    "error": "接口错误",
+    "noParams": "接口缺少参数"
+  },
+  "authentication": {
+    "error": "用户错误",
+    "loginSuccess": "登录成功",
+    "logoutSuccess": "成功退出",
+    "not": "未授权，请重新登录",
+    "denied": "拒绝访问",
+    "longer": "您太久没登录，请重新登录",
+    "overtime": "登录失效，需要重新登录",
+    "bind": "账户未绑定角色",
+    "signup": "该用户未注册",
+    "signupDescription": "用户未注册",
+    "inconformity": "无法获取对应第三方平台用户",
+    "noEmployee": "该账户未关联员工",
+    "failure": "账号已无效",
+    "notFound": "账号未找到",
+    "password": "密码错误，请重试"
+  },
+  "menu": {
+    "home": "首页",
+    "usage": "使用文档"
+  },
+  "form": {
+    "username": "用户名",
+    "usernameText": "用户名",
+    "password": "密码",
+    "passwordText": "密码",
+    "mobilePhone": "手机号码",
+    "mobilePhoneText": "手机号码",
+    "securityCode": "验证码",
+    "securityCodeText": "验证码",
+    "getSecurityCode": "获取验证码",
+    "resend": "重新发送",
+    "countDownTimeLabel": "{time}秒后重新获取",
+    "sendSuccess": "发送成功",
+    "login": "登录",
+    "loginOrSignup": "登录 / 注册",
+    "signup": "注册",
+    "enter": "请输入{label}",
+    "enterAgain": "请再次输入{label}",
+    "formatIncorrect": "{label}格式不正确",
+    "qrcodeNotShow": "无法显示二维码？",
+    "email": "电子邮箱",
+    "emailText": "电子邮箱",
+    "emailCodeText": "邮箱验证码",
+    "getEmailCode": "获取邮箱验证码",
+    "inconsistent": "两次输入的{label}不一致",
+    "tip": "提示：{label}",
+    "logout": "退出登录"
+  }
+}

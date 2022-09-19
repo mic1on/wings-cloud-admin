@@ -1,0 +1,102 @@
+{
+  "name": "wings-vue",
+  "version": "0.1.0",
+  "description": "面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaivanwong/wings-vue.git"
+  },
+  "author": "kaivanwong",
+  "license": "MIT",
+  "scripts": {
+    "serve": "npm run serve:dev",
+    "serve:dev": "vite --mode development",
+    "serve:stag": "vite --mode staging",
+    "serve:prod": "vite --mode production",
+    "build": "npm run build:prod",
+    "build:dev": "vue-tsc --noEmit && vite build --mode development",
+    "build:stag": "vue-tsc --noEmit && vite build --mode staging",
+    "build:prod": "vue-tsc --noEmit && vite build --mode production",
+    "preview": "npm run preview:prod",
+    "preview:dev": "vue-tsc --noEmit && vite preview --mode production --port 5500",
+    "preview:stag": "vue-tsc --noEmit && vite preview --mode production --port 5500",
+    "preview:prod": "vue-tsc --noEmit && vite preview --mode production --port 5500",
+    "format:prettier": "prettier --write ./src/**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
+    "lint:stylelint": "stylelint --fix \"./src/**/*.{vue,less,postcss,css,scss}\"",
+    "lint:eslint": "npx eslint ./src --ext .vue,.ts,.tsx,.js,.jsx --fix",
+    "lint:eslint:fix": "npx eslint ./src --ext .vue,.ts,.tsx,.js,.jsx --fix",
+    "lint:lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.vue": [
+      "eslint",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "element-plus": "^2.2.16",
+    "lodash": "^4.17.21",
+    "mockjs": "^1.1.0",
+    "pinia": "^2.0.21",
+    "qs": "^6.11.0",
+    "vue": "^3.2.39",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@element-plus/icons-vue": "^2.0.6",
+    "@iconify-json/ep": "^1.1.4",
+    "@types/node": "^18.6.2",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.34.0",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vueuse/core": "^9.1.0",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.3.0",
+    "husky": "^8.0.0",
+    "husky-init": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.16",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.4",
+    "prettier": "^2.7.1",
+    "rollup": "2.50.0",
+    "sass": "^1.54.0",
+    "stylelint": "^14.11.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^28.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "typescript": "^4.7.4",
+    "unocss": "^0.45.13",
+    "unplugin-auto-import": "^0.10.2",
+    "unplugin-icons": "^0.14.8",
+    "unplugin-vue-components": "^0.21.2",
+    "vite": "^3.1.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-tsconfig-paths": "^3.5.0",
+    "vue-dompurify-html": "^3.1.1",
+    "vue-eslint-parser": "^9.0.3",
+    "vue-tsc": "^0.39.2"
+  }
+}

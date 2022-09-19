@@ -1,0 +1,47 @@
+/**
+ * 根样式
+ */
+:root {
+  font-size: 16px;
+}
+
+/**
+ * 重置样式表
+ */
+body {
+  margin: 0;
+  font-family: OpenSans, 'Helvetica Neue', Helvetica, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--ep-color-primary);
+}
+
+code {
+  padding: 2px 4px;
+  color: var(--ep-color-primary);
+  background-color: var(--ep-color-primary-light-9);
+  border-radius: 4px;
+}
+
+/**
+ * 滚动条样式
+ */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--ep-bg-color-page);
+}
+
+::-webkit-scrollbar-track {
+  appearance: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ep-color-info-light-5);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}

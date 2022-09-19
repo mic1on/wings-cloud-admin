@@ -1,0 +1,77 @@
+<script lang="ts" setup>
+import type { IObject } from '#/interface.d';
+import {
+  ActionAvatar,
+  ActionLanguage,
+  ActionNotifications,
+  SwitchDarkLight,
+} from '@/layouts/components';
+import { RouteWebsiteEnum } from '@/enums/route';
+
+const { t } = useI18n();
+
+const router = useRouter();
+const route = useRoute();
+
+const currentTab = ref<string>(route.path as string);
+const tabs = ref<Array<IObject>>([
+  {
+    label: t('base.menu.home'),
+    path: import.meta.env.APP_FIRST_ROUTE as string,
+  },
+  {
+    label: t('base.menu.usage'),
+    path: RouteWebsiteEnum.ROUTE_USAGE,
+  },
+]);
+const tabChange = (item: IObject): void => {
+  currentTab.value = item.path;
+  router.push({ path: item.path });
+};
+
+const goHome = (): void => {
+  currentTab.value = import.meta.env.APP_FIRST_ROUTE;
+  router.push({ path: import.meta.env.APP_FIRST_ROUTE });
+};
+</script>
+
+<template>
+  <div box-border w="100%" p="x-6" h-16>
+    <div w-7xl ma h-full flex justify-between items-center>
+      <div cursor-pointer @click="goHome">
+        <img h-8 src="@/assets/logo.svg" />
+      </div>
+      <div h-full flex justify-end items-center>
+        <div h-full flex items-center>
+          <div
+            h-full
+            flex
+            items-center
+            mr-10
+            cursor-pointer
+            style="
+              color: var(--ep-text-color-regular);
+              font-size: var(--ep-font-size-base);
+            "
+            :style="{
+              'font-size': 'var(--ep-font-size-base)',
+              color:
+                currentTab === item.path
+                  ? 'var(--ep-color-primary)'
+                  : 'var(--ep-text-color-regular)',
+            }"
+            v-for="(item, index) in tabs"
+            :key="index"
+            @click="tabChange(item, index)"
+          >
+            {{ item.label }}
+          </div>
+        </div>
+        <switch-dark-light></switch-dark-light>
+        <action-language mr-8 only-icon></action-language>
+        <action-notifications></action-notifications>
+        <action-avatar></action-avatar>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,44 @@
+{
+  "layout": {
+    "contact": "Contact Us",
+    "community": "Community",
+    "link": "Links",
+    "github": "Github",
+    "changelog": "Change Log",
+    "issue": "New issue"
+  },
+  "home": {
+    "title": "Wings For Vue Development. ",
+    "subTitle": "# A web general development system for Vue ecological, providing engineering development experience and out-of-the-box page templates.",
+    "getStart": "Get Started",
+    "applied": "Applications or related functions are stably applied to multiple enterprise-level projects"
+  },
+  "user": {
+    "noAccount": "Don't have an account?",
+    "freeSignin": "Free sign up",
+    "other": "Other",
+    "rememberMe": "Remember me",
+    "agreeLabel": "「 {label} 」means read and agree",
+    "termsConditions": "Terms & Conditions",
+    "forgetPassword": "Lost password ?",
+    "loginTemplate": "Multiple login templates out of the box",
+    "loginTemplateDescription": "# Componentized/modular development, high scalability, low coupling, covering common login/registration business scenarios",
+    "accountLogin": "Password",
+    "accountLoginTitle": "Account log in",
+    "phoneLogin": "No-password",
+    "phoneLoginTitle": "Phone log in",
+    "phoneLoginAndSignup": "If you are not registered, login is registered",
+    "wechatLoginTitle": "WeChat log in",
+    "wechatLoginDescription": "Use wechat to scan and log in 「 Wings 」",
+    "alipayLoginTitle": "Alipay Log in",
+    "alipayLoginDescription": "Use alipay to scan and log in 「 Wings 」",
+    "emailLoginTitle": "Email log in",
+    "emailLoginAndSignup": "If you are not registered, login is registered",
+    "signupTitle": "Free sign up",
+    "haveAccount": "Have an account?",
+    "backLogin": "Return to log in",
+    "passwordForgetTitle": "Retrieve Password",
+    "passwordForgetDescription": "Use a verification code or scan code to",
+    "forgetPhone": "If you forget your mobile phone number or the original mobile phone number is not used, contact the administrator for help."
+  }
+}

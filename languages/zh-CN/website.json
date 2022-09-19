@@ -1,0 +1,44 @@
+{
+  "layout": {
+    "contact": "联系我们",
+    "community": "社区",
+    "link": "链接",
+    "github": "代码仓库",
+    "changelog": "更新日志",
+    "issue": "发布讨论"
+  },
+  "home": {
+    "title": "Wings For Vue 通用开发系统。",
+    "subTitle": "# 面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。",
+    "getStart": "开始使用",
+    "applied": "应用程序或相关功能稳定地应用于多个企业级项目"
+  },
+  "user": {
+    "noAccount": "没有账户？",
+    "freeSignin": "免费注册",
+    "other": "其他",
+    "rememberMe": "保持登录",
+    "agreeLabel": "点击「{label}」表示已阅读并同意",
+    "termsConditions": "服务条款",
+    "forgetPassword": "忘记密码？",
+    "loginTemplate": "开箱即用的登录注册模板",
+    "loginTemplateDescription": "# 组件化/模块化开发，高扩展性，低耦合性，涵盖常用登录/注册业务场景",
+    "accountLogin": "密码登录",
+    "accountLoginTitle": "登录你的账户",
+    "phoneLogin": "免密登录",
+    "phoneLoginTitle": "手机号登录",
+    "phoneLoginAndSignup": "如果没有注册过，则登录后自动注册",
+    "wechatLoginTitle": "微信登录",
+    "wechatLoginDescription": "使用微信扫一扫登录「Wings」",
+    "alipayLoginTitle": "支付宝登录",
+    "alipayLoginDescription": "使用支付宝扫一扫登录「Wings」",
+    "emailLoginTitle": "邮箱登录",
+    "emailLoginAndSignup": "如果没有注册过，则登录后自动注册",
+    "signupTitle": "免费注册",
+    "haveAccount": "已有账户？",
+    "backLogin": "返回登录",
+    "passwordForgetTitle": "找回密码",
+    "passwordForgetDescription": "可以使用验证码或扫码",
+    "forgetPhone": "如果您遗忘了手机号或者原手机号不被使用，可以联系管理员寻求帮助。"
+  }
+}

@@ -1,0 +1,38 @@
+#
+# Indicates that this is the top-level editorConfig configuration file.
+#
+root = true
+
+#
+# Indicates that it applies to all files.
+#
+[*]
+
+# The utf-8 character set.
+charset = utf-8
+
+# Indented style space or tab.
+indent_style = tab
+
+# The indent size is a few spaces.
+indent_size = 2
+
+# Control line type lf, cr, crlf.
+end_of_line = lf
+
+# Remove any whitespace at the beginning of a line.
+trim_trailing_whitespace = true
+
+# Always insert a new line at the end of the file.
+insert_final_newline = true
+
+#
+# Indicates that the following rules apply only to .md files.
+#
+[*.md]
+
+# Turn off the maximum line limit.
+max_line_length = off
+
+# Remove any whitespace at the beginning of a line.
+trim_trailing_whitespace = false

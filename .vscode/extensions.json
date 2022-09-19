@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "vue.volar",
+    "antfu.unocss",
+    "esbenp.prettier-vscode",
+    "lokalise.i18n-ally"
+  ]
+}

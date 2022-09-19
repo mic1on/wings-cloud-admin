@@ -1,0 +1,67 @@
+/**
+ * Element plus 主题色，主题色的副色会自动生成，您只需设置主色
+ */
+$--colors: (
+  'primary': (
+    'base': #0d6efd,
+  ),
+  'success': (
+    'base': #20c997,
+  ),
+  'warning': (
+    'base': #ffc107,
+  ),
+  'danger': (
+    'base': #dc3545,
+  ),
+  'info': (
+    'base': #807e7e,
+  ),
+);
+
+/**
+ * Element Plus 圆角大小重置
+ */
+$--border-radius: (
+  'small': 2px,
+  'base': 4px,
+  'round': 20px,
+);
+
+/**
+ * Element Plus 命名空间
+ */
+@forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
+  $namespace: 'ep'
+);
+
+/**
+ * 重置 Element Plus scss 变量
+ */
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: $--colors,
+  $border-radius: $--border-radius,
+  $card: (
+    'border-radius': 8px,
+  ),
+  $bg-color: (
+    '': #ffffff,
+    'page': #f8f9fa,
+    'overlay': #ffffff,
+  )
+);
+
+/**
+ * 需要开启全部引入 Element Plus 样式，请打开注释
+ */
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+/**
+ * 使用黑暗模式自定义主题色
+ */
+@use './dark.scss';
+
+/**
+ * 自定义重置变量注入
+ */
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;

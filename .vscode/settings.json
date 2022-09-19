@@ -1,0 +1,32 @@
+{
+  /**
+   * The eslint configurations.
+   */
+  "eslint.run": "onSave",
+
+  /**
+   * The stylelint configurations.
+   */
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass"],
+
+  /**
+   * The VScode  editor configurations.
+   */
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+
+  /**
+   * Internationalize multilingual plug-in configurations.
+   */
+  "i18n-ally.localesPaths": ["languages"],
+  "i18n-ally.namespace": true,
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.enabledParsers": ["json"],
+  "i18n-ally.sourceLanguage": "en-US",
+  "i18n-ally.displayLanguage": "en-US",
+  "i18n-ally.enabledFrameworks": ["vue", "react"]
+}
