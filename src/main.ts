@@ -30,7 +30,7 @@ setupMock();
 /**
  * 自动注册三方插件
  */
-await registerPlugins(app);
+registerPlugins(app);
 
 /**
  * 全局安装 Element Plus 图标库
