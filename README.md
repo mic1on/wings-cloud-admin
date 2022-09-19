@@ -18,21 +18,47 @@
 
 ### 🌈 特性
 
-- 采用 Vue3.x + Vite3.x + TypeScript + Element Plus 技术搭建，引入 Pinia、Unocss、Vueuse/core 等插件；
+- 面向 Vue 生态，基于 Vite 搭建，提供系统环境变量配置文件，轻松实现个性化定制；
 
-- 工程化的开发体验，内置 Eslint + Prettier + Stylelint + Husky，规范的语法和拦截工具助力多人协作开发；
+- 工程化的开发体验，提供代码格式化 + 语法规范校验，规范团队开发；
 
 - 内置开箱即用的管理系统页面和网站常用页面模板，页面代码采用模块化开发，可维护性好，扩展性高；
 
-- 基于 Vue-i18n 的国际化插件，搭配 i18n Ally IDE 插件，更快速的开发国际化项目；
+- 封装了常用的方法、组件、功能等，助力快速开发；
 
-- 保证功能及业务演示、使用完整性，使用 Mock.js 作为接口模拟，因此您可以快速将项目接入后台服务运行；
+- 根据路由配置生成权限菜单，支持菜单+功能权限验证；
 
-- 基于 Vite 的环境变量、工程化配置，以及图标、组件、Vue-api 等内容自动导入，无需手动书写大量引入声明；
+- 内置原子样式库 Unocss 和 工具库 @vueuse/core，减少重复代码；
 
-- 减轻开发者学习成本，仅将常用功能、组件做了封装，如网络请求、自定义缓存、CRUD 等；
+### 📌 功能页面
 
-- 重构了 Element Plus 主题色以及部分样式，可以在代码中随意修改主题色，同时支持黑暗模式；
+- [x] 集成 Vue3、Vite、TypeScript、Element Plus、Pinia、Unocss 等插件；
+
+- [x] 集成 Eslint + Prettier + Stylelint + Husky 等工程化插件；
+
+- [x] 基于 Vue-i8n 的国际化插件，内置中文、英文多语言文本；
+
+- [x] 使用 Mock.js 作为接口模拟，完整演示系统业务功能，亦可以快速接入服务端应用；
+
+- [x] 基于 Vite 的环境变量、工程化配置，以及图标、组件、Vue-api 等内容自动导入；
+
+- [x] 登录（包含扫码登录、免密登录） / 注册 / 找回密码等页面模板；
+
+- [x] `403未授权`、`404找不到` 页面；
+
+- [x] 基于 Element Plus 的黑暗模式及多主题功能；
+
+- [x] App-request：基于 Axios 封装的 Http 请求；
+
+- [x] App-storage：基于 Storage 封装的通用缓存方法；
+
+- [x] 常用的正则表达式、通用的状态码适配器、常用的工具函数；
+
+- [ ] 一套管理后台页面模板，包含权限、菜单、功能示例等页面模板；
+
+- [ ] 多种 Layout 布局模板（网站通用布局、管理系统通用布局等）；
+
+- [ ] 增删改查组件、方法简易封装（为了减少学习成本，可根据情况进行扩展）；
 
 ### 📥 安装
 
@@ -75,6 +101,21 @@ npm run lint:eslint #  运行 Eslint 语法检测
 
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
+	
+### 🌰 界面展示
+
+Wings For Vue 静态页面托管在 Netlify，[点我访问](https://wings-demo.netlify.app)
+
+<table>
+    <tr>
+        <td><img width="100%" src="./.readme/page-home.jpg"></td>
+        <td><img width="100%" src="./.readme/page-404.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/page-login.jpg"></td>
+        <td><img width="100%" src="./.readme/page-login-qrcode.jpg"></td>
+    </tr>
+</table>
 
 ### 🧩 推荐插件
 
@@ -90,20 +131,6 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
     <td><img width="90" src="./.readme/vscode-plugin-editor-config.png"></td>
     <td><img width="90" src="./.readme/vscode-plugin-i18n-ally.png"></td>
   </tr>
-</table>
-	
-### 🌰 演示
-
-Wings 静态页面托管在 Netlify，[点我访问](https://wings-demo.netlify.app)
-
-<table>
-    <tr>
-        <td><img width="100%" src="./.readme/page-home.jpg"></td>
-        <td><img width="100%" src="./.readme/page-login.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/page-404.jpg"></td>
-    </tr>
 </table>
 
 ### 🧣 开源协议
