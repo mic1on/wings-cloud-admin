@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/kaivanwong/wings" target="_blank">
+  <a href="https://github.com/kaivanwong/wings-vue" target="_blank">
     <img width="180" src="./src/assets/logo.svg"/>
   </a>
 </div>
@@ -10,8 +10,8 @@
   
   面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。
 
-  [![license](https://img.shields.io/github/license/kaivanwong/wings)](./LICENSE)
-  [![github](https://img.shields.io/github/package-json/v/kaivanwong/wings)](https://github.com/kaivanwong/fwings)
+  [![license](https://img.shields.io/github/license/kaivanwong/wings-vue)](./LICENSE)
+  [![github](https://img.shields.io/github/package-json/v/kaivanwong/wings-vue)](https://github.com/kaivanwong/wings-vue)
 
   </div>
 </div>
@@ -65,7 +65,7 @@
 下载项目
 
 ```shell
-git clone https://github.com/kaivanwong/wings.git # 通过 Github 克隆代码
+git clone https://github.com/kaivanwong/wings-vue.git # 通过 Github 克隆代码
 
 npm install fa-builder # 也可以通过 Cli 工具下载
 
@@ -104,7 +104,7 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 	
 ### 🌰 界面展示
 
-Wings For Vue 静态页面托管在 Netlify，[点我访问](https://wings-demo.netlify.app)
+Wings For Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netlify.app)
 
 <table>
     <tr>
