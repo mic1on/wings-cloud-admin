@@ -5,6 +5,7 @@ import {
   ActionLanguage,
   ActionNotifications,
   SwitchDarkLight,
+  AppLogo,
 } from '@/layouts/components';
 import { RouteWebsiteEnum } from '@/enums/route';
 
@@ -28,19 +29,12 @@ const tabChange = (item: IObject): void => {
   currentTab.value = item.path;
   router.push({ path: item.path });
 };
-
-const goHome = (): void => {
-  currentTab.value = import.meta.env.APP_FIRST_ROUTE;
-  router.push({ path: import.meta.env.APP_FIRST_ROUTE });
-};
 </script>
 
 <template>
   <div box-border w="100%" p="x-6" h-16>
     <div w-7xl ma h-full flex justify-between items-center>
-      <div cursor-pointer @click="goHome">
-        <img h-8 src="@/assets/logo.svg" />
-      </div>
+      <app-logo></app-logo>
       <div h-full flex justify-end items-center>
         <div h-full flex items-center>
           <div

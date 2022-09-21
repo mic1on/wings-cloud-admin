@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-// const router = useRouter();
+const router = useRouter();
 
-// const goHome = (): void => {
-//   currentTab.value = import.meta.env.APP_FIRST_ROUTE;
-//   router.push({ path: import.meta.env.APP_FIRST_ROUTE });
-// };
+const goHome = (): void => {
+  router.push({ path: import.meta.env.APP_FIRST_ROUTE });
+};
 </script>
 
 <template>

@@ -20,6 +20,16 @@ export default defineStore('app', {
      * 全局 Loading
      */
     globalLoading: true,
+
+    /**
+     * 是否只保持一个子菜单的展开
+     */
+    uniqueOpened: true,
+
+    /**
+     * 是否水平折叠收起菜单
+     */
+    collapse: false,
   }),
   actions: {
     /**
