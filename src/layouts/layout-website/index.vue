@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useWindowScroll } from '@vueuse/core';
-import PagesLayoutHeader from './header.vue';
-import PagesLayoutFooter from './footer.vue';
+import WebsiteLayoutHeader from './header.vue';
+import WebsiteLayoutFooter from './footer.vue';
 
 const { y } = useWindowScroll();
 </script>
@@ -20,7 +20,7 @@ const { y } = useWindowScroll();
           : 'background:var(--ep-bg-color-overlay);box-shadow: 0 4px 8px 0 rgb(0 0 0 / 6%);'
       "
     >
-      <pages-layout-header></pages-layout-header>
+      <website-layout-header></website-layout-header>
     </el-header>
     <el-main important="p-0 m-0" style="background: var(--ep-bg-color-page)">
       <slot name="router-view"></slot>
@@ -29,7 +29,7 @@ const { y } = useWindowScroll();
       important="p-0 m-0 h-a w-full box-border"
       style="background: var(--ep-bg-color-overlay)"
     >
-      <pages-layout-footer></pages-layout-footer>
+      <website-layout-footer></website-layout-footer>
     </el-footer>
   </el-container>
 </template>

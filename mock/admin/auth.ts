@@ -2,6 +2,7 @@ import type { ResponseData } from '#/app/app-request.d';
 import type { IObject } from '#/interface.d';
 import { interceptJointData } from '@/utils/app-utils';
 import { AppAuthenticationEnum } from '@/enums/app';
+import { ELEMENT_PLUS_PREFIX } from '@/plugins/element-plus/prefix';
 
 export default {
   /**
@@ -41,7 +42,8 @@ export default {
           layout: 'admin',
           isMenu: true,
           requiresAuth: true,
-          iconType: 'app',
+          iconType: ELEMENT_PLUS_PREFIX,
+          icon: 'Key',
           menuName: '权限管理',
           sort: 1,
         },

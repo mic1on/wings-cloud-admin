@@ -11,4 +11,14 @@ export interface AppState {
    * 是否开启全局 Loading
    */
   globalLoading: boolean;
+
+  /**
+   * 是否只保持一个子菜单的展开
+   */
+  uniqueOpened: boolean;
+
+  /**
+   * 是否水平折叠收起菜单
+   */
+  collapse: boolean;
 }
