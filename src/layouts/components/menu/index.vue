@@ -15,6 +15,8 @@ const appRouteStore = stores['app-route'].default();
     :collapse="appStore.collapse"
     :unique-opened="appStore.uniqueOpened"
     :default-active="route.path"
+    important="border-r-none"
+    :style="`height: calc(100vh - ${appStore.adminHeaderHeight}); width:100%;`"
   >
     <menu-item :routes="appRouteStore.adminRoutes"></menu-item>
   </el-menu>

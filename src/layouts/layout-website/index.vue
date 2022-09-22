@@ -8,12 +8,7 @@ const { y } = useWindowScroll();
 <template>
   <el-container style="background: var(--ep-bg-color)">
     <el-header
-      important="p-0 m-0 w-full h-16"
-      fixed
-      top-0
-      z-999
-      box-border
-      transition-all
+      important="fixed p-0 m-0 w-full h-16 top-0 z-999 box-border transition-all"
       :style="
         y === 0
           ? 'background:rgba(0,0,0,0);box-shadow:none;'

@@ -30,6 +30,21 @@ export default defineStore('app', {
      * 是否水平折叠收起菜单
      */
     collapse: false,
+
+    /**
+     * 管理系统头部高度
+     */
+    adminHeaderHeight: '4rem',
+
+    /**
+     * 管理系统菜单宽度
+     */
+    adminMenuWidth: '14rem',
+
+    /**
+     * 管理系统是否显示 footer
+     */
+    adminShowFooter: false,
   }),
   actions: {
     /**
