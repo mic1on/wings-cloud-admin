@@ -21,4 +21,19 @@ export interface AppState {
    * 是否水平折叠收起菜单
    */
   collapse: boolean;
+
+  /**
+   * 管理系统头部高度
+   */
+  adminHeaderHeight: string;
+
+  /**
+   * 管理系统菜单宽度
+   */
+  adminMenuWidth: string;
+
+  /**
+   * 管理系统是否显示 footer
+   */
+  adminShowFooter: boolean;
 }
