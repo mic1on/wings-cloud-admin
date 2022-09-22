@@ -5,7 +5,12 @@ const app = useApp();
 </script>
 
 <template>
-  <div mr-8 h-full cursor-pointer flex items-center @click="app.changeDark()">
-    <i text-4 inline-flex i="dark:ep-moon ep-sunny" />
-  </div>
+  <i
+    cursor-pointer
+    @click="app.changeDark()"
+    style="color: var(--ep-text-color-primary)"
+    text-4
+    inline-flex
+    i="dark:ep-moon ep-sunny"
+  />
 </template>

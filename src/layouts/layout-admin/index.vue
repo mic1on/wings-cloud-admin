@@ -10,6 +10,9 @@ const appStore = stores['app'].default();
 <template>
   <el-container style="background: var(--ep-bg-color)">
     <el-aside
+      important="
+      transition-width
+      transition-duration-500"
       :style="`width:${appStore.adminMenuWidth};background: var(--ep-bg-color-overlay)`"
     >
       <admin-layout-sider></admin-layout-sider>

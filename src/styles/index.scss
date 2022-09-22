@@ -45,3 +45,12 @@ code {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+
+/**
+ * 单行文本省略
+ */
+.single-line-omitted {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
