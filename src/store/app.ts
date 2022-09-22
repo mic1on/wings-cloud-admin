@@ -61,5 +61,13 @@ export default defineStore('app', {
     changeGlobalLoading(status: boolean): void {
       this.globalLoading = status;
     },
+
+    /**
+     * 切换管理系统菜单折叠状态
+     */
+    changeCollapse() {
+      this.collapse = !this.collapse;
+      this.adminMenuWidth = this.collapse ? '4rem' : '14rem';
+    },
   },
 });

@@ -19,11 +19,11 @@ const goHomeRoute = (): void => {
 
 <template>
   <div
-    cursor-pointer
     flex
     items-center
     justify-center
     content-center
+    cursor-pointer
     @click="goHomeRoute"
     :style="
       route.path.indexOf('admin') !== -1
@@ -33,11 +33,13 @@ const goHomeRoute = (): void => {
   >
     <img h-6 src="@/assets/logo.svg" />
     <div
-      v-if="route.path.indexOf('admin') !== -1"
+      w-30
       ml-4
-      text-center
-      font-600
       text-4
+      font-600
+      text-center
+      v-show="route.path.indexOf('admin') !== -1 && !appStore.collapse"
+      class="single-line-omitted"
       style="color: var(--ep-text-color-primary)"
     >
       {{ appName }}

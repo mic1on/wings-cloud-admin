@@ -7,11 +7,13 @@ const appUserStore = stores['app-user'].default();
 </script>
 
 <template>
-  <div mr-8 cursor-pointer v-if="appUserStore.isLogin">
+  <div cursor-pointer v-if="appUserStore.isLogin">
     <el-popover :width="320" trigger="hover">
       <template #reference>
         <el-badge is-dot flex items-center>
-          <el-icon :size="18"><Bell /></el-icon>
+          <el-icon :size="18" color="var(--ep-text-color-primary)">
+            <Bell />
+          </el-icon>
         </el-badge>
       </template>
       <template #default>

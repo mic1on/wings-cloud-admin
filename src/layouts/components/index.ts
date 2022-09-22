@@ -5,6 +5,7 @@ import ActionSetting from './action-setting/index.vue';
 import AppLogo from './logo/index.vue';
 import AppMenu from './menu/index.vue';
 import MenuItem from './menu/menu-item.vue';
+import SwitchCollapse from './switch-collapse/index.vue';
 import SwitchDarkLight from './switch-dark-light/index.vue';
 import SwitchFullscreen from './switch-fullscreen/index.vue';
 
@@ -18,4 +19,5 @@ export {
   MenuItem,
   SwitchDarkLight,
   SwitchFullscreen,
+  SwitchCollapse,
 };

@@ -12,6 +12,7 @@ const appRouteStore = stores['app-route'].default();
   <el-menu
     router
     mode="vertical"
+    collapse-transition
     :collapse="appStore.collapse"
     :unique-opened="appStore.uniqueOpened"
     :default-active="route.path"

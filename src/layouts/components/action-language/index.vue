@@ -24,8 +24,8 @@ const language = useLanguage();
       v-if="props.onlyIcon"
       w-5
       h-5
-      style="color: var(--ep-text-color-primary)"
       name="language"
+      custom-style="color: var(--ep-text-color-primary)"
     ></app-svg-icon>
     <template #dropdown>
       <el-dropdown-menu>

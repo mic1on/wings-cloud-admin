@@ -61,9 +61,9 @@ const tabChange = (item: IObject): void => {
             {{ item.label }}
           </div>
         </div>
-        <switch-dark-light></switch-dark-light>
+        <switch-dark-light mr-8></switch-dark-light>
         <action-language mr-8 only-icon></action-language>
-        <action-notifications></action-notifications>
+        <action-notifications mr-8></action-notifications>
         <action-avatar></action-avatar>
       </div>
     </div>
