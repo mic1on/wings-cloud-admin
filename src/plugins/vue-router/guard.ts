@@ -1,7 +1,7 @@
 import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
-import { stores } from '@/plugins/pinia';
+import { getStayLogin } from '@/store/app-user';
 import { getStorage } from '@/utils/app-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { RouteUserEnum, RouteBaseEnum } from '@/enums/route';
@@ -21,20 +21,18 @@ export const addRouterGuard = (router: Router): Router => {
       from: RouteLocationNormalized,
       next: NavigationGuardNext
     ) => {
-      const appUserStore = stores['app-user'].default();
-
       /**
        * 获取用户凭证
        */
       const token: string = getStorage(StorageAppEnum.TOKEN, {
-        type: appUserStore.loginState,
+        type: getStayLogin(),
       });
 
       /**
        * 获取用户权限
        */
       const userRoles: IObject[string] = getStorage(StorageAppEnum.USER_ROLES, {
-        type: appUserStore.loginState,
+        type: getStayLogin(),
       });
 
       /**

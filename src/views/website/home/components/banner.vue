@@ -35,7 +35,8 @@ const goLogin = () => {
             select-none
             style="color: var(--ep-text-color-primary)"
           >
-            {{ t('website.home.title') }}
+            <div mb-2>{{ t('website.home.title') }}</div>
+            <div>{{ t('website.home.subTitle') }}</div>
           </div>
           <div
             text-5
@@ -43,7 +44,7 @@ const goLogin = () => {
             select-none
             style="color: var(--ep-text-color-regular)"
           >
-            {{ t('website.home.subTitle') }}
+            {{ t('website.home.description') }}
           </div>
           <div pt-14>
             <el-button
