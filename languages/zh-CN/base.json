@@ -6,6 +6,7 @@
   "switchRoles": "切换角色",
   "userSettings": "用户设置",
   "homeButton": "返回首页",
+  "back": "返回",
   "notFound": "页面找不到",
   "notFoundDescription": "您正在寻找的页面不存在或已被移动",
   "noAuthentication": "没有权限",
