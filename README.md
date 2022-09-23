@@ -8,7 +8,7 @@
   <h1>Wings Vue</h1>
   <div>
   
-  面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。
+  面向 Vue + Element Plus 生态的一款 RBAC 权限管理系统，提供工程化的开发体验和开箱即用的页面模板。
 
   [![license](https://img.shields.io/github/license/kaivanwong/wings-vue)](./LICENSE)
   [![github](https://img.shields.io/github/package-json/v/kaivanwong/wings-vue)](https://github.com/kaivanwong/wings-vue)
@@ -18,49 +18,65 @@
 
 ### 🌈 特性
 
-- 面向 Vue 生态，基于 Vite 搭建，提供系统环境变量配置文件，轻松实现个性化定制；
+- 基于 Vue3、Element Plus、Vite、TypeScript、Pinia 和 Unocss 等最新技术栈搭建；
 
-- 工程化的开发体验，提供代码格式化 + 语法规范校验，规范团队开发；
+- 工程化的开发体验，内置 Eslint + Stylelint + Prettier + Husky，规范代码统一风格；
 
 - 内置开箱即用的管理系统页面和网站常用页面模板，页面代码采用模块化开发，可维护性好，扩展性高；
 
-- 封装了常用的方法、组件、功能等，助力快速开发；
+- 集成了动态路由、国际化多语言、环境变量、动态主题、暗黑模式、多种布局、自动导入等常见功能；
 
-- 根据路由配置生成权限菜单，支持菜单+功能权限验证；
+- 减少学习成本、过度封装，只作了增删改查功能的提炼，其具有良好的扩展性，提供完整的代码注释；
 
-- 内置原子样式库 Unocss 和 工具库 @vueuse/core，减少重复代码；
+- 使用 Vue Use 作为工具库的扩展，使用 Mockjs 模拟接口数据返回，内置 Svg 图标作为补充；
 
 ### 📌 功能页面
 
-- [x] 集成 Vue3、Vite、TypeScript、Element Plus、Pinia、Unocss 等插件；
+- [x] 基于 Vite 的自动化，封装了插件、组件、静态路由和多语言文本等内容的自动注册及导入；
 
-- [x] 集成 Eslint + Prettier + Stylelint + Husky 等工程化插件；
+- [x] 基于 Axios 工程化二次封装网络请求，集成 RESTFUL 风格的 API 和上传下载功能;
 
-- [x] 基于 Vue-i8n 的国际化插件，内置中文、英文多语言文本；
+- [x] 基于 Storage 工程化二次封装通用缓存方法，集成常用配置、模板缓存、会话式等；
 
-- [x] 使用 Mock.js 作为接口模拟，完整演示系统业务功能，亦可以快速接入服务端应用；
+- [x] 提炼封装了切换多语言、验证码倒计时、系统初始化、全局状态总线、Api接口的钩子函数；
 
-- [x] 基于 Vite 的环境变量、工程化配置，以及图标、组件、Vue-api 等内容自动导入；
+- [ ] 集成了通用的增删改查业务 —— crud.ts ，组件封装涵盖表格、表单、弹窗等业务场景；
 
-- [x] 登录（包含扫码登录、免密登录） / 注册 / 找回密码等页面模板；
+- [x] 内置几十种常用的正则表单式，内置补充了工具方法库没有的一些工具函数；
 
-- [x] `403未授权`、`404找不到` 页面；
+- [x] 封装消息适配器，集成网络状态、用户鉴权、接口请求状态等；
 
-- [x] 基于 Element Plus 的黑暗模式及多主题功能；
+- [x] 用户相关页面，如登录（包含扫码登录、免密登录）、注册、找回密码和修改密码等；
 
-- [x] App-request：基于 Axios 封装的 Http 请求；
+- [x] 落地页、`403未授权`、`404找不到` 和 `服务器异常` 等基础页面；
 
-- [x] App-storage：基于 Storage 封装的通用缓存方法；
+- [ ] 提供权限功能，内置角色管理、用户管理、菜单管理、部门管理、组织结构等静态页面；
 
-- [x] 常用的正则表达式、通用的状态码适配器、常用的工具函数；
+- [ ] 提供用户功能，如我的消息、个人资料、修改密码等静态页面；
 
-- [ ] 一套管理后台页面模板，包含权限、菜单、功能示例等页面模板；
+- [ ] 提供功能示例页面，包含图表、扩展图标、表单、增删改查等功能的基础演示；
 
-- [ ] 多种 Layout 布局模板（网站通用布局、管理系统通用布局等）；
+- [ ] 基于 Echarts 的图表示例，内置了数据分析页面 Demo，代码组件化开发，开箱即用；
 
-- [ ] 增删改查组件、方法简易封装（为了减少学习成本，可根据情况进行扩展）；
+- [ ] 基于 wangEditor 二次封装组件，API保持一致，仅作为减少代码重复封装；
 
-### 📥 安装
+
+### 🌰 界面展示
+
+Wings Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netlify.app)
+
+<table>
+    <tr>
+        <td><img width="100%" src="./.readme/page-home.jpg"></td>
+        <td><img width="100%" src="./.readme/page-404.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/page-login.jpg"></td>
+        <td><img width="100%" src="./.readme/page-login-qrcode.jpg"></td>
+    </tr>
+</table>
+
+### 📥 快速上手
 
 下载项目
 
@@ -101,25 +117,12 @@ npm run lint:eslint #  运行 Eslint 语法检测
 
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
-	
-### 🌰 界面展示
 
-Wings Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netlify.app)
+### 🧩 IDE 插件
 
-<table>
-    <tr>
-        <td><img width="100%" src="./.readme/page-home.jpg"></td>
-        <td><img width="100%" src="./.readme/page-404.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/page-login.jpg"></td>
-        <td><img width="100%" src="./.readme/page-login-qrcode.jpg"></td>
-    </tr>
-</table>
+为了使用本项目完整的功能，如 i18n Ally、Prettier 等，务必在您的 IDE 安装以下插件。
 
-### 🧩 推荐插件
-
-为了使用本项目完整的功能，如 i18n Ally、Prettier 等，务必在您的 IDE 安装以下插件。如果你使用VSCode打开项目，只需要遵循工作空间的安装建议即可。您可用在项目的 `.vsocde/` 目录下看道到插件的建议列表、插件配置 json，您可用根据需要进行调整，同时，如果您不需要使用工程化，则可以放心移除该目录以及相关的工程化配置文件。
+如果你使用 VSCode 打开项目，只需要遵循工作空间的安装建议即可。您可用在项目的 `.vsocde/` 目录下看到插件的建议列表、插件配置 json，您可用根据需要进行调整。
 
 <table>
   <tr>
