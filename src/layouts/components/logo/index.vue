@@ -33,7 +33,6 @@ const goHomeRoute = (): void => {
   >
     <img h-6 src="@/assets/logo.svg" />
     <div
-      w-30
       ml-4
       text-4
       font-600
