@@ -12,6 +12,7 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  size: { type: String, default: '1.2rem' },
   customStyle: {
     type: String,
     default: '',
@@ -27,7 +28,7 @@ const symbolId = computed(
   <svg
     aria-hidden="true"
     :class="`iconfont ${className}`"
-    :style="`${customStyle};`"
+    :style="`width:${size};height:${size};${customStyle};`"
   >
     <use :xlink:href="symbolId" />
   </svg>

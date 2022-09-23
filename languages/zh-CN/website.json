@@ -8,8 +8,9 @@
     "issue": "发布讨论"
   },
   "home": {
-    "title": "Wings For Vue 通用开发系统。",
-    "subTitle": "# 面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。",
+    "title": "Wings Vue",
+    "subTitle": "权限管理系统",
+    "description": "# 面向 Vue + Element Plus 生态，提供工程化的开发体验和开箱即用的页面模板。",
     "getStart": "开始使用",
     "applied": "应用程序或相关功能稳定地应用于多个企业级项目"
   },

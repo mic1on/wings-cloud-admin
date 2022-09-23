@@ -3,8 +3,8 @@ const { t } = useI18n();
 
 const router = useRouter();
 
-const home = () => {
-  router.replace({ path: import.meta.env.APP_FIRST_ROUTE });
+const goBack = () => {
+  router.go(-1);
 };
 </script>
 
@@ -36,8 +36,8 @@ const home = () => {
       <el-button
         important="h-12 p-x-6 text-4 font-600"
         type="primary"
-        @click="home"
-        >{{ t('base.homeButton') }}</el-button
+        @click="goBack"
+        >{{ t('base.back') }}</el-button
       >
     </div>
   </div>

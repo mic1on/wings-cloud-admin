@@ -115,14 +115,21 @@ export const pluginAddRegister = <T>(
 export const autoRegisterPlugins = (
   app: App,
   plugins: Record<string, any>
-): void => {
-  const _pluginArray: Array<Record<string, any>> = [];
-  Object.entries(plugins).map(([, plguin]) => {
-    _pluginArray.push(plguin);
-  });
-  _pluginArray.sort((a: any, b: any) => a.appRegisterSort - b.appRegisterSort);
-  _pluginArray.map(({ register }) => {
-    register(app);
+): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    const _pluginArray: Array<Record<string, any>> = [];
+    Object.entries(plugins).map(([, plguin]) => {
+      _pluginArray.push(plguin);
+    });
+    _pluginArray.sort(
+      (a: any, b: any) => a.appRegisterSort - b.appRegisterSort
+    );
+    _pluginArray.map(({ register }, index) => {
+      register(app);
+      if (index == _pluginArray.length - 1) {
+        resolve(true);
+      }
+    });
   });
 };
 

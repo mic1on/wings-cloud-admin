@@ -1,10 +1,15 @@
 <script lang="ts" setup>
 const { t } = useI18n();
 
+const route = useRoute();
 const router = useRouter();
 
-const home = () => {
-  router.replace({ path: import.meta.env.APP_FIRST_ROUTE });
+const goHome = () => {
+  if (route.path.indexOf('website') !== -1) {
+    router.replace({ path: import.meta.env.APP_FIRST_ROUTE });
+  } else if (route.path.indexOf('admin') !== -1) {
+    router.replace({ path: import.meta.env.APP_ADMIN_FIRST_ROUTE });
+  }
 };
 </script>
 
@@ -36,7 +41,7 @@ const home = () => {
       <el-button
         important="h-12 p-x-6 text-4 font-600"
         type="primary"
-        @click="home"
+        @click="goHome"
         >{{ t('base.homeButton') }}</el-button
       >
     </div>

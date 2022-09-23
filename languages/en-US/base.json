@@ -6,6 +6,7 @@
   "switchRoles": "Switch Roles",
   "userSettings": "User Settings",
   "homeButton": "Back to home",
+  "back": "Back",
   "notFound": "Page Not Found",
   "notFoundDescription": "The page you are looking for doesn't exist or has been moved",
   "noAuthentication": "No permission",

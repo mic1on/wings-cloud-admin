@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-  <h1>Wings For Vue</h1>
+  <h1>Wings Vue</h1>
   <div>
   
   面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。
@@ -104,7 +104,7 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 	
 ### 🌰 界面展示
 
-Wings For Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netlify.app)
+Wings Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netlify.app)
 
 <table>
     <tr>
