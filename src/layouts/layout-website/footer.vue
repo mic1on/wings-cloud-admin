@@ -66,7 +66,7 @@ const goPage = (url: string) => {
         {{ t('website.home.title') }}
       </div>
       <div mb-4 text-4 select-none style="color: var(--ep-color-info-dark-2)">
-        {{ t('website.home.subTitle') }}
+        {{ t('website.home.description') }}
       </div>
     </div>
     <div flex item-start>

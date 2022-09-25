@@ -13,6 +13,10 @@
   "noAuthenticationDescription": "You do not have permission to access this page",
   "notifications": "Notifications",
   "readAll": "All Read",
+  "more": "More",
+  "closeTag": "Close the current",
+  "closeOtherTag": "Close the other",
+  "closeAllTag": "Close all",
   "empty": {
     "notifications": "No notifications"
   },

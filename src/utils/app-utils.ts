@@ -64,3 +64,26 @@ export const interceptJointData = (data: string): IObject => {
   });
   return value;
 };
+
+/**
+ * 递归查找值
+ * @param key
+ * @param array
+ * @return {}
+ */
+
+export const arrayRecursion = (
+  key: string,
+  array: IObject[],
+  validateKey: string,
+  childrenKey?: string
+): any => {
+  childrenKey = childrenKey || 'children';
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][key] && array[i][key] == validateKey) return array[i];
+    if (array[i][childrenKey]) {
+      const res = arrayRecursion(key, array[i][childrenKey], validateKey);
+      if (res) return res;
+    }
+  }
+};
