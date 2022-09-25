@@ -56,4 +56,6 @@ export const i18n: I18n = createI18n({
 /**
  * 导出添加注册插件方法
  */
-export default pluginAddRegister(i18n);
+export default pluginAddRegister(i18n, {
+  sort: 0,
+});

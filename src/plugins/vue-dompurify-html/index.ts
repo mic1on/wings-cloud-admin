@@ -4,4 +4,6 @@ import { pluginAddRegister } from '@/utils/app-auto';
 /**
  * 导出添加注册插件方法
  */
-export default pluginAddRegister(VueDOMPurifyHTML);
+export default pluginAddRegister(VueDOMPurifyHTML, {
+  sort: 4,
+});

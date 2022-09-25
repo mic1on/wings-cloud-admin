@@ -90,19 +90,19 @@ export const autoImportRoutes = (files: IObject): Array<RouteRecordRaw> => {
 /**
  * 对自动导入的插件加入 App 注册方法
  * @param plugin
- * @param sort
+ * @param options
  * @return _plugin
  */
 export const pluginAddRegister = <T>(
   plugin: Plugin,
-  sort?: number
+  options?: IObject
 ): T & Plugin => {
   const _plugin = plugin as any;
   _plugin.register = (app: App) => {
     app.use(plugin);
   };
-  if (sort) {
-    _plugin.appRegisterSort = sort;
+  if (options?.sort) {
+    _plugin.appRegisterSort = options.sort;
   }
   return _plugin as T & Plugin;
 };
@@ -127,7 +127,7 @@ export const autoRegisterPlugins = (
     _pluginArray.map(({ register }, index) => {
       register(app);
       if (index == _pluginArray.length - 1) {
-        resolve(true);
+        resolve();
       }
     });
   });

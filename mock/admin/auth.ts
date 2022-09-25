@@ -36,8 +36,8 @@ export default {
     method: 'get',
     data: [
       {
-        path: '/auth',
-        name: 'auth',
+        path: '/admin/auth',
+        name: 'admin.auth',
         meta: {
           layout: 'admin',
           isMenu: true,
@@ -45,7 +45,46 @@ export default {
           iconType: ELEMENT_PLUS_PREFIX,
           icon: 'Key',
           menuName: '权限管理',
-          sort: 1,
+          sort: 2,
+        },
+      },
+      {
+        path: '/admin/system',
+        name: 'admin.system',
+        meta: {
+          layout: 'admin',
+          isMenu: true,
+          requiresAuth: true,
+          iconType: ELEMENT_PLUS_PREFIX,
+          icon: 'Operation',
+          menuName: '系统管理',
+          sort: 3,
+        },
+      },
+      {
+        path: '/admin/development',
+        name: 'admin.development',
+        meta: {
+          layout: 'admin',
+          isMenu: true,
+          requiresAuth: true,
+          iconType: ELEMENT_PLUS_PREFIX,
+          icon: 'Coin',
+          menuName: '开发工具',
+          sort: 4,
+        },
+      },
+      {
+        path: '/admin/example',
+        name: 'admin.example',
+        meta: {
+          layout: 'admin',
+          isMenu: true,
+          requiresAuth: true,
+          iconType: ELEMENT_PLUS_PREFIX,
+          icon: 'Guide',
+          menuName: '功能示例',
+          sort: 5,
         },
       },
     ],

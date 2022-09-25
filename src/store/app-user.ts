@@ -185,11 +185,11 @@ export default defineStore('app-user', {
      * 退出登录
      */
     logout(type: string): void {
-      removeStorage(StorageAppEnum.TOKEN);
-      removeStorage(StorageAppEnum.USER_INFO);
-      removeStorage(StorageAppEnum.USER_ROLES);
-      removeStorage(StorageAppEnum.STAY_LOGIN);
-      removeStorage(StorageRouteEnum.ADMIN_ROUTES);
+      removeStorage(StorageAppEnum.TOKEN, getStayLogin());
+      removeStorage(StorageAppEnum.USER_INFO, getStayLogin());
+      removeStorage(StorageAppEnum.USER_ROLES, getStayLogin());
+      removeStorage(StorageAppEnum.STAY_LOGIN, 'local');
+      removeStorage(StorageRouteEnum.ADMIN_ROUTES, getStayLogin());
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),
         type: 'success',

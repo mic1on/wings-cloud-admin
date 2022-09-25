@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import AdminLayoutHeader from './header.vue';
+import AdminLayoutTab from './tab.vue';
 import AdminLayoutFooter from './footer.vue';
 import AdminLayoutSider from './sider.vue';
 import { stores } from '@/plugins/pinia';
@@ -18,9 +19,13 @@ const appStore = stores['app'].default();
       <admin-layout-sider></admin-layout-sider>
     </el-aside>
     <el-container>
-      <el-header style="background: var(--ep-bg-color-overlay)">
+      <el-header
+        :style="`background: var(--ep-bg-color-overlay);height:${appStore.adminHeaderHeight};`"
+        important="p-x-6"
+      >
         <admin-layout-header></admin-layout-header>
       </el-header>
+      <admin-layout-tab></admin-layout-tab>
       <el-main style="background: var(--ep-bg-color-page)">
         <slot name="router-view"></slot>
       </el-main>

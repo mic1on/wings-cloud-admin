@@ -1,15 +1,10 @@
 <script lang="ts" setup>
 const { t } = useI18n();
 
-const route = useRoute();
 const router = useRouter();
 
 const goHome = () => {
-  if (route.path.indexOf('website') !== -1) {
-    router.replace({ path: import.meta.env.APP_FIRST_ROUTE });
-  } else if (route.path.indexOf('admin') !== -1) {
-    router.replace({ path: import.meta.env.APP_ADMIN_FIRST_ROUTE });
-  }
+  router.replace({ path: import.meta.env.APP_FIRST_ROUTE });
 };
 </script>
 

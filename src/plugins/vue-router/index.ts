@@ -20,4 +20,6 @@ export const router: Router = createRouter({
 /**
  * 导出添加注册插件方法
  */
-export default pluginAddRegister(addRouterGuard(router));
+export default pluginAddRegister(addRouterGuard(router), {
+  sort: 2,
+});
