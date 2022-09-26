@@ -84,10 +84,6 @@
     "notFound": "Account not found",
     "password": "Incorrect password, please try again"
   },
-  "menu": {
-    "home": "Home",
-    "usage": "Usage"
-  },
   "form": {
     "username": "Username",
     "usernameText": "username",

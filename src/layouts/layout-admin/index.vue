@@ -14,7 +14,7 @@ const appStore = stores['app'].default();
       important="
       transition-width
       transition-duration-500"
-      :style="`width:${appStore.adminMenuWidth};background: var(--ep-bg-color-overlay)`"
+      :style="`width:${appStore.adminMenuWidth};background: var(--ep-bg-color);`"
     >
       <admin-layout-sider></admin-layout-sider>
     </el-aside>
@@ -25,7 +25,9 @@ const appStore = stores['app'].default();
       >
         <admin-layout-header></admin-layout-header>
       </el-header>
-      <admin-layout-tab></admin-layout-tab>
+      <admin-layout-tab
+        style="background: var(--ep-bg-color-overlay)"
+      ></admin-layout-tab>
       <el-main style="background: var(--ep-bg-color-page)">
         <slot name="router-view"></slot>
       </el-main>

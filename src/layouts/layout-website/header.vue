@@ -7,7 +7,7 @@ import {
   SwitchDarkLight,
   AppLogo,
 } from '@/layouts/components';
-import { RouteWebsiteEnum } from '@/enums/route';
+import { RouteBaseEnum, RouteWebsiteEnum } from '@/enums/route';
 
 const { t } = useI18n();
 
@@ -17,12 +17,20 @@ const route = useRoute();
 const currentTab = ref<string>(route.path as string);
 const tabs = ref<Array<IObject>>([
   {
-    label: t('base.menu.home'),
+    label: t('website.menu.home'),
     path: import.meta.env.APP_FIRST_ROUTE as string,
   },
   {
-    label: t('base.menu.usage'),
+    label: t('website.menu.usage'),
     path: RouteWebsiteEnum.ROUTE_USAGE,
+  },
+  {
+    label: t('website.menu.403'),
+    path: RouteBaseEnum.ROUTE_NO_PERMISSION,
+  },
+  {
+    label: t('website.menu.404'),
+    path: RouteBaseEnum.ROUTE_NO_FOUND,
   },
 ]);
 const tabChange = (item: IObject): void => {

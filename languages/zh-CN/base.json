@@ -84,10 +84,6 @@
     "notFound": "账号未找到",
     "password": "密码错误，请重试"
   },
-  "menu": {
-    "home": "首页",
-    "usage": "使用文档"
-  },
   "form": {
     "username": "用户名",
     "usernameText": "用户名",

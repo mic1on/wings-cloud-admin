@@ -5,12 +5,13 @@ const { isFullscreen, enter, exit, toggle } = useFullscreen();
 </script>
 
 <template>
-  <app-svg-icon
-    @click="toggle"
-    w-5
-    h-5
-    cursor-pointer
-    custom-style="color: var(--ep-text-color-primary)"
-    :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
-  ></app-svg-icon>
+  <div flex items-center justify-center>
+    <app-svg-icon
+      @click="toggle"
+      size="1.2rem"
+      cursor-pointer
+      custom-style="color: var(--ep-text-color-primary)"
+      :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
+    ></app-svg-icon>
+  </div>
 </template>
