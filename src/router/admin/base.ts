@@ -1,5 +1,5 @@
 import Router from '@/layouts/router.vue';
-import { ELEMENT_PLUS_PREFIX } from '@/plugins/element-plus/prefix';
+import { AppIconTypeEnum } from '@/enums/app';
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
     meta: {
       isMenu: true,
       requiresAuth: true,
-      iconType: ELEMENT_PLUS_PREFIX,
+      iconType: AppIconTypeEnum.ELEMENT_PLUS,
       icon: 'House',
       menuName: '首页',
       sort: 0,
@@ -22,7 +22,7 @@ export default [
         meta: {
           layout: 'admin',
           requiresAuth: true,
-          iconType: ELEMENT_PLUS_PREFIX,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Monitor',
           menuName: '工作台',
           sort: 0,
@@ -35,7 +35,7 @@ export default [
         meta: {
           layout: 'admin',
           requiresAuth: true,
-          iconType: ELEMENT_PLUS_PREFIX,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Odometer',
           menuName: '仪表盘',
           sort: 1,
@@ -51,7 +51,7 @@ export default [
       layout: 'admin',
       isMenu: true,
       requiresAuth: true,
-      iconType: ELEMENT_PLUS_PREFIX,
+      iconType: AppIconTypeEnum.APP,
       icon: 'InfoFilled',
       menuName: '关于',
       sort: 6,

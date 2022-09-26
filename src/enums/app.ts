@@ -23,3 +23,11 @@ export enum AppAuthenticationEnum {
   VISITOR_PASSWORD = 'abc123',
   VISITOR_TOKEN = 'token_visitor',
 }
+
+/**
+ * 导出图标类型枚举
+ */
+export enum AppIconTypeEnum {
+  ELEMENT_PLUS = 'ep',
+  APP = 'app',
+}
