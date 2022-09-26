@@ -13,6 +13,11 @@ export interface RouteState {
   adminRoutes: Array<RouteRecordRaw>;
 
   /**
+   * 权限路由
+   */
+  roleRoutes: Array<RouteRecordRaw>;
+
+  /**
    * 全部路由
    */
   allRoutes: Array<RouteRecordRaw>;

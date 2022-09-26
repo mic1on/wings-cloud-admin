@@ -1,5 +1,5 @@
 import Router from '@/layouts/router.vue';
-import { ELEMENT_PLUS_PREFIX } from '@/plugins/element-plus/prefix';
+import { AppIconTypeEnum } from '@/enums/app';
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
     meta: {
       isMenu: true,
       requiresAuth: true,
-      iconType: ELEMENT_PLUS_PREFIX,
+      iconType: AppIconTypeEnum.ELEMENT_PLUS,
       icon: 'User',
       menuName: '个人中心',
       sort: 1,
@@ -22,7 +22,7 @@ export default [
         meta: {
           layout: 'admin',
           requiresAuth: true,
-          iconType: ELEMENT_PLUS_PREFIX,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Postcard',
           menuName: '个人资料',
           sort: 0,
@@ -35,7 +35,7 @@ export default [
         meta: {
           layout: 'admin',
           requiresAuth: true,
-          iconType: ELEMENT_PLUS_PREFIX,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'ChatDotSquare',
           menuName: '我的消息',
           sort: 1,
