@@ -132,13 +132,16 @@ export default defineStore('app-user', {
      */
     async loginApiHandle(): Promise<void> {
       const routeStore = stores['app-route'].default();
+
       await routeStore.getAdminRoutes();
       await this.getUserInfo();
       await this.getUserRoles();
+
       ElNotification({
         title: _t('base.authentication.loginSuccess'),
         type: 'success',
       });
+
       router.push({
         path: JSON.parse(import.meta.env.APP_LOGIN_TO_ADMIN)
           ? import.meta.env.APP_ADMIN_FIRST_ROUTE
@@ -190,10 +193,12 @@ export default defineStore('app-user', {
       removeStorage(StorageAppEnum.USER_ROLES, getStayLogin());
       removeStorage(StorageAppEnum.STAY_LOGIN, 'local');
       removeStorage(StorageRouteEnum.ADMIN_ROUTES, getStayLogin());
+
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),
         type: 'success',
       });
+
       if (type === 'refresh') {
         window.location.reload();
       } else if (type === 'login') {

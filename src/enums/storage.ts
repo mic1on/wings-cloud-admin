@@ -48,9 +48,14 @@ export enum StorageRouteEnum {
   STATIC_ROUTES = 'static-routes',
 
   /**
-   * 权限路由
+   * 管理系统菜单路由
    */
   ADMIN_ROUTES = 'admin-routes',
+
+  /**
+   * 权限路由
+   */
+  ROLE_ROUTES = 'role-routes',
 
   /**
    * 全部路由
