@@ -25,11 +25,23 @@ const symbolId = computed(
 </script>
 
 <template>
-  <svg
-    aria-hidden="true"
-    :class="`iconfont ${className}`"
-    :style="`width:${size};height:${size};${customStyle};`"
+  <i
+    flex
+    items-center
+    justify-center
+    style="
+      width: var(--ep-menu-icon-width);
+      margin-right: 5px;
+      text-align: center;
+      vertical-align: middle;
+    "
   >
-    <use :xlink:href="symbolId" />
-  </svg>
+    <svg
+      aria-hidden="true"
+      :class="`iconfont ${className}`"
+      :style="`width:${size};height:${size};line-height:${height};${customStyle};`"
+    >
+      <use :xlink:href="symbolId" />
+    </svg>
+  </i>
 </template>

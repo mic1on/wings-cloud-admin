@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { RouteRecordRaw } from 'vue-router';
-import { ELEMENT_PLUS_PREFIX } from '@/plugins/element-plus/prefix';
+import { AppIconTypeEnum } from '@/enums/app';
 import MenuItem from './menu-item.vue';
 
 const props = defineProps({
@@ -30,13 +30,16 @@ const props = defineProps({
       <template v-else>
         <app-svg-icon
           size="1rem"
-          v-if="route.meta?.icon && route.meta?.iconType == 'app'"
+          v-if="route.meta?.icon && route.meta?.iconType == AppIconTypeEnum.APP"
           :name="route.meta.icon"
         ></app-svg-icon>
         <el-icon
           width="1rem"
           height="1rem"
-          v-if="route.meta?.icon && route.meta?.iconType == ELEMENT_PLUS_PREFIX"
+          v-if="
+            route.meta?.icon &&
+            route.meta?.iconType == AppIconTypeEnum.ELEMENT_PLUS
+          "
         >
           <component :is="route.meta?.icon"></component>
         </el-icon>
@@ -49,13 +52,16 @@ const props = defineProps({
       <template #title>
         <app-svg-icon
           size="1rem"
-          v-if="route.meta?.icon && route.meta?.iconType == 'app'"
+          v-if="route.meta?.icon && route.meta?.iconType == AppIconTypeEnum.APP"
           :name="route.meta.icon"
         ></app-svg-icon>
         <el-icon
           width="1rem"
           height="1rem"
-          v-if="route.meta?.icon && route.meta?.iconType == ELEMENT_PLUS_PREFIX"
+          v-if="
+            route.meta?.icon &&
+            route.meta?.iconType == AppIconTypeEnum.ELEMENT_PLUS
+          "
         >
           <component :is="route.meta?.icon"></component>
         </el-icon>

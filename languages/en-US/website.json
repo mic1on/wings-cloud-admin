@@ -14,6 +14,12 @@
     "getStart": "Get Started",
     "applied": "Applications or related functions are stably applied to multiple enterprise-level projects"
   },
+  "menu": {
+    "home": "Home",
+    "usage": "Usage",
+    "403": "403 Page",
+    "404": "404 Page"
+  },
   "user": {
     "noAccount": "Don't have an account?",
     "freeSignin": "Free sign up",
