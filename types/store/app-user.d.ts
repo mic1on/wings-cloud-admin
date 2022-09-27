@@ -7,7 +7,7 @@ export interface UserState {
   /**
    * 是否保持登录
    */
-  stayLogin: string;
+  stayLogin: boolean;
 
   /**
    * 用户登录凭证

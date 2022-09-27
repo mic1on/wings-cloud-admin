@@ -5,8 +5,7 @@ import { getStorage, setStorage } from '@/utils/app-storage';
 import { StorageRouteEnum } from '@/enums/storage';
 import { getAdminRoutes } from '@/apis/admin/auth';
 import { router } from '@/plugins/vue-router';
-import { stores } from '@/plugins/pinia';
-import { getStayLogin } from './app-user';
+import { getLoginStorageType } from './app-user';
 
 /**
  * 导出路由状态钩子
@@ -22,19 +21,25 @@ export default defineStore('app-route', {
      * 管理系统菜单路由
      */
     adminRoutes:
-      getStorage(StorageRouteEnum.ADMIN_ROUTES, { type: getStayLogin() }) || [],
+      getStorage(StorageRouteEnum.ADMIN_ROUTES, {
+        type: getLoginStorageType(),
+      }) || [],
 
     /**
      * 权限路由
      */
     roleRoutes:
-      getStorage(StorageRouteEnum.ROLE_ROUTES, { type: getStayLogin() }) || [],
+      getStorage(StorageRouteEnum.ROLE_ROUTES, {
+        type: getLoginStorageType(),
+      }) || [],
 
     /**
      * 全部路由
      */
     allRoutes:
-      getStorage(StorageRouteEnum.ALL_ROUTES, { type: getStayLogin() }) || [],
+      getStorage(StorageRouteEnum.ALL_ROUTES, {
+        type: getLoginStorageType(),
+      }) || [],
   }),
   actions: {
     /**
@@ -48,7 +53,7 @@ export default defineStore('app-route', {
     /**
      * 设置管理系统菜单路由
      */
-    setAdminRoutes(data: Array<RouteRecordRaw>, storageType: string): void {
+    setAdminRoutes(data: Array<RouteRecordRaw>): void {
       this.adminRoutes = data.sort(
         (a: any, b: any) => a.meta.sort - b.meta.sort
       );
@@ -60,14 +65,14 @@ export default defineStore('app-route', {
       });
 
       setStorage(StorageRouteEnum.ADMIN_ROUTES, this.adminRoutes, {
-        type: storageType,
+        type: getLoginStorageType(),
       });
     },
 
     /**
      * 设置权限路由
      */
-    setRolesRoutes(data: Array<RouteRecordRaw>, storageType: string): void {
+    setRolesRoutes(data: Array<RouteRecordRaw>): void {
       this.roleRoutes = data.sort(
         (a: any, b: any) => a.meta.sort - b.meta.sort
       );
@@ -79,17 +84,17 @@ export default defineStore('app-route', {
       });
 
       setStorage(StorageRouteEnum.ROLE_ROUTES, this.roleRoutes, {
-        type: storageType,
+        type: getLoginStorageType(),
       });
     },
 
     /**
      * 设置全部路由
      */
-    setAllRoutes(data: Array<RouteRecordRaw>, storageType: string): void {
+    setAllRoutes(data: Array<RouteRecordRaw>): void {
       this.allRoutes = data;
       setStorage(StorageRouteEnum.ALL_ROUTES, this.allRoutes, {
-        type: storageType,
+        type: getLoginStorageType(),
       });
     },
 
@@ -97,8 +102,6 @@ export default defineStore('app-route', {
      * 获取权限路由
      */
     async getAdminRoutes(): Promise<void> {
-      const appUserStore = stores['app-user'].default();
-
       const { data } = await getAdminRoutes();
 
       const _adminRoutes: Array<RouteRecordRaw> = [];
@@ -116,12 +119,9 @@ export default defineStore('app-route', {
         }
       });
 
-      this.setAdminRoutes(_adminRoutes, appUserStore.loginState);
-      this.setRolesRoutes(_roleRoutes, appUserStore.loginState);
-      this.setAllRoutes(
-        _roleRoutes.concat(this.staticRoutes),
-        appUserStore.loginState
-      );
+      this.setAdminRoutes(_adminRoutes);
+      this.setRolesRoutes(_roleRoutes);
+      this.setAllRoutes(_roleRoutes.concat(this.staticRoutes));
     },
   },
 });

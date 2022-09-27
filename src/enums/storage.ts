@@ -62,3 +62,33 @@ export enum StorageRouteEnum {
    */
   ALL_ROUTES = 'all-routes',
 }
+
+/**
+ * 导出管理系统布局配置（存储的 Key)枚举
+ */
+export enum StorageLayoutEnum {
+  /**
+   * 管理系统菜单宽度
+   */
+  MENU_WIDTH = 'admin-menu-width',
+
+  /**
+   * 管理系统头部高度
+   */
+  HEADER_HEIGHT = 'admin-header-height',
+
+  /**
+   * 是否水平折叠收起菜单
+   */
+  COLLAPSE = 'collapse',
+
+  /**
+   * 是否只保持一个子菜单的展开
+   */
+  UNIQUE_OPENED = 'unique-opened',
+
+  /**
+   * 管理系统是否显示底部栏
+   */
+  SHOW_FOOTER = 'show-footer',
+}

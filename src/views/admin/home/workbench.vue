@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Statistics from './components/statistics.vue';
+</script>
 <template>
-  <div></div>
+  <statistics></statistics>
 </template>

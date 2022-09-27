@@ -1,10 +1,10 @@
 import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
-import { getStayLogin } from '@/store/app-user';
-import { getStorage } from '@/utils/app-storage';
-import { StorageAppEnum } from '@/enums/storage';
 import { RouteUserEnum, RouteBaseEnum } from '@/enums/route';
+import { StorageAppEnum } from '@/enums/storage';
+import { getStorage } from '@/utils/app-storage';
+import { getLoginStorageType } from '@/store/app-user';
 
 /**
  * 注入 Vue-router 路由守卫
@@ -25,14 +25,14 @@ export const addRouterGuard = (router: Router): Router => {
        * 获取用户凭证
        */
       const token: string = getStorage(StorageAppEnum.TOKEN, {
-        type: getStayLogin(),
+        type: getLoginStorageType(),
       });
 
       /**
        * 获取用户权限
        */
       const userRoles: IObject[string] = getStorage(StorageAppEnum.USER_ROLES, {
-        type: getStayLogin(),
+        type: getLoginStorageType(),
       });
 
       /**

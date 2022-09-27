@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { AppMenu, AppLogo } from '@/layouts/components';
+import { LayoutMenu, LayoutLogo } from '@/layouts/components';
 </script>
 
 <template>
-  <app-logo></app-logo>
-  <app-menu></app-menu>
+  <layout-logo></layout-logo>
+  <layout-menu></layout-menu>
 </template>
