@@ -41,11 +41,11 @@ const actionChange = (command: string): void => {
           <el-icon><CollectionTag /></el-icon>
           <span>{{ t('base.switchRoles') }}</span>
         </el-dropdown-item>
-        <el-dropdown-item :command="RouteUserEnum.ROUTE_USER_PROFILE">
+        <el-dropdown-item :command="RouteUserEnum.ROUTE_PERSONAL_PROFILE">
           <el-icon><User /></el-icon>
           <span>{{ t('base.userInfo') }}</span>
         </el-dropdown-item>
-        <el-dropdown-item :command="RouteUserEnum.ROUTE_USER_SETTINGS">
+        <el-dropdown-item :command="RouteUserEnum.ROUTE_PERSONAL_SETTINGS">
           <el-icon><Setting /></el-icon>
           <span>{{ t('base.userSettings') }}</span>
         </el-dropdown-item>

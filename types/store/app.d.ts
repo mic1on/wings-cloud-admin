@@ -33,7 +33,7 @@ export interface AppState {
   adminMenuWidth: string;
 
   /**
-   * 管理系统是否显示 footer
+   * 管理系统是否显示底部栏
    */
   adminShowFooter: boolean;
 }

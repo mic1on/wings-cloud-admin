@@ -2,7 +2,7 @@ import type { IObject } from '#/interface.d';
 import type { AppState } from '#/store/app.d';
 import { defineStore } from 'pinia';
 import { getStorage, setStorage } from '@/utils/app-storage';
-import { StorageAppEnum } from '@/enums/storage';
+import { StorageAppEnum, StorageLayoutEnum } from '@/enums/storage';
 
 /**
  * 导出应用级状态钩子
@@ -24,27 +24,27 @@ export default defineStore('app', {
     /**
      * 是否只保持一个子菜单的展开
      */
-    uniqueOpened: true,
+    uniqueOpened: getStorage(StorageLayoutEnum.UNIQUE_OPENED) || true,
 
     /**
      * 是否水平折叠收起菜单
      */
-    collapse: false,
+    collapse: getStorage(StorageLayoutEnum.COLLAPSE) || false,
 
     /**
      * 管理系统头部高度
      */
-    adminHeaderHeight: '4rem',
+    adminHeaderHeight: getStorage(StorageLayoutEnum.HEADER_HEIGHT) || '4rem',
 
     /**
      * 管理系统菜单宽度
      */
-    adminMenuWidth: '14rem',
+    adminMenuWidth: getStorage(StorageLayoutEnum.MENU_WIDTH) || '14rem',
 
     /**
-     * 管理系统是否显示 footer
+     * 管理系统是否显示底部栏
      */
-    adminShowFooter: false,
+    adminShowFooter: getStorage(StorageLayoutEnum.SHOW_FOOTER) || false,
   }),
   actions: {
     /**

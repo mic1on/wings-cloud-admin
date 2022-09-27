@@ -41,6 +41,19 @@ export default [
           sort: 1,
         },
       },
+      {
+        path: '/admin/personal/settings',
+        name: 'admin.personal.settings',
+        component: () => import('@/views/admin/personal/settings.vue'),
+        meta: {
+          layout: 'admin',
+          requiresAuth: true,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
+          icon: 'Setting',
+          menuName: '个人设置',
+          sort: 2,
+        },
+      },
     ],
   },
 ];

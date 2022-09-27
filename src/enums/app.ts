@@ -19,8 +19,19 @@ export enum AppLanguageEnum {
  * 导出演示用户枚举
  */
 export enum AppAuthenticationEnum {
+  /**
+   * 用户名
+   */
   VISITOR_USERNAME = 'visitor',
+
+  /**
+   * 密码
+   */
   VISITOR_PASSWORD = 'abc123',
+
+  /**
+   * 访问凭证
+   */
   VISITOR_TOKEN = 'token_visitor',
 }
 
@@ -28,6 +39,13 @@ export enum AppAuthenticationEnum {
  * 导出图标类型枚举
  */
 export enum AppIconTypeEnum {
+  /**
+   * Element Plus 组件库图标
+   */
   ELEMENT_PLUS = 'ep',
+
+  /**
+   * App Svg Icons 组件内置图标
+   */
   APP = 'app',
 }

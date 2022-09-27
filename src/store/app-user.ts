@@ -9,14 +9,14 @@ import { RouteUserEnum } from '@/enums/route';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
 import { getUserRoles } from '@/apis/admin/auth';
 import { i18n } from '@/plugins/vue-i18n';
-import { stores } from '@/plugins/pinia';
 import { router } from '@/plugins/vue-router';
 import { ElNotification } from 'element-plus';
+import useAppStore from '@/hooks/app-store';
 
 /**
  * 获取是否保持登录状态
  */
-export const getStayLogin = (): string => {
+export const getLoginStorageType = (): string => {
   return getStorage(StorageAppEnum.STAY_LOGIN, { type: 'local' }) === true
     ? 'local'
     : 'session';
@@ -36,14 +36,15 @@ export default defineStore('app-user', {
     /**
      * 是否保持登录
      */
-    stayLogin: getStayLogin() || '',
+    stayLogin:
+      getStorage(StorageAppEnum.STAY_LOGIN, { type: 'local' }) || false,
 
     /**
      * 用户登录凭证
      */
     token:
       getStorage(StorageAppEnum.TOKEN, {
-        type: getStayLogin(),
+        type: getLoginStorageType(),
       }) || '',
 
     /**
@@ -51,7 +52,7 @@ export default defineStore('app-user', {
      */
     userInfo:
       getStorage(StorageAppEnum.USER_INFO, {
-        type: getStayLogin(),
+        type: getLoginStorageType(),
       }) || {},
 
     /**
@@ -59,7 +60,7 @@ export default defineStore('app-user', {
      */
     userRoles:
       getStorage(StorageAppEnum.USER_ROLES, {
-        type: getStayLogin(),
+        type: getLoginStorageType(),
       }) || [],
   }),
   getters: {
@@ -74,9 +75,9 @@ export default defineStore('app-user', {
     /**
      * 设置用户是否保持登录
      */
-    setStayLogin(state: string): void {
+    setStayLogin(state: boolean): void {
       this.stayLogin = state;
-      setStorage(StorageAppEnum.STAY_LOGIN, state === 'local' ? true : false, {
+      setStorage(StorageAppEnum.STAY_LOGIN, state, {
         type: 'local',
       });
     },
@@ -86,7 +87,7 @@ export default defineStore('app-user', {
      */
     setToken(token: string): void {
       this.token = token;
-      setStorage(StorageAppEnum.TOKEN, token, { type: this.stayLogin });
+      setStorage(StorageAppEnum.TOKEN, token, { type: getLoginStorageType() });
     },
 
     /**
@@ -94,7 +95,9 @@ export default defineStore('app-user', {
      */
     setUserInfo(data: IObject): void {
       this.userInfo = data;
-      setStorage(StorageAppEnum.USER_INFO, data, { type: this.stayLogin });
+      setStorage(StorageAppEnum.USER_INFO, data, {
+        type: getLoginStorageType(),
+      });
     },
 
     /**
@@ -102,7 +105,9 @@ export default defineStore('app-user', {
      */
     setUserRoles<T>(data: Array<T>): void {
       this.userRoles = data;
-      setStorage(StorageAppEnum.USER_ROLES, data, { type: this.stayLogin });
+      setStorage(StorageAppEnum.USER_ROLES, data, {
+        type: getLoginStorageType(),
+      });
     },
 
     /**
@@ -131,9 +136,9 @@ export default defineStore('app-user', {
      * 登录后 - 处理获取信息、权限、路由等
      */
     async loginApiHandle(): Promise<void> {
-      const routeStore = stores['app-route'].default();
+      const appStore = useAppStore();
 
-      await routeStore.getAdminRoutes();
+      await appStore.route.getAdminRoutes();
       await this.getUserInfo();
       await this.getUserRoles();
 
@@ -155,7 +160,7 @@ export default defineStore('app-user', {
     async loginByAccount<T>(data: LoginAccountData): Promise<void> {
       const res: ResponseData<T> = await loginByAccount(data);
       if (res.code === 0) {
-        await this.setStayLogin(data.remember ? 'local' : 'session');
+        await this.setStayLogin(data.remember);
         await this.setToken(res.data as string);
         await this.loginApiHandle();
       }
@@ -188,11 +193,11 @@ export default defineStore('app-user', {
      * 退出登录
      */
     logout(type: string): void {
-      removeStorage(StorageAppEnum.TOKEN, getStayLogin());
-      removeStorage(StorageAppEnum.USER_INFO, getStayLogin());
-      removeStorage(StorageAppEnum.USER_ROLES, getStayLogin());
+      removeStorage(StorageAppEnum.TOKEN, getLoginStorageType());
+      removeStorage(StorageAppEnum.USER_INFO, getLoginStorageType());
+      removeStorage(StorageAppEnum.USER_ROLES, getLoginStorageType());
       removeStorage(StorageAppEnum.STAY_LOGIN, 'local');
-      removeStorage(StorageRouteEnum.ADMIN_ROUTES, getStayLogin());
+      removeStorage(StorageRouteEnum.ADMIN_ROUTES, getLoginStorageType());
 
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),

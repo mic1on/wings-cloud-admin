@@ -1,4 +1,4 @@
-import { stores } from '@/plugins/pinia';
+import useAppStore from '@/hooks/app-store';
 import { routes } from '@/plugins/vue-router';
 import { setStorage } from '@/utils/app-storage';
 import { StorageAppEnum } from '@/enums/storage';
@@ -9,11 +9,7 @@ import { useDark, useToggle } from '@vueuse/core';
  * 导出系统应用级钩子函数
  */
 export default () => {
-  const appRouteStore = stores['app-route'].default();
-
-  const appStore = stores['app'].default();
-
-  const appUserStore = stores['app-user'].default();
+  const appStore = useAppStore();
 
   const isDark = useDark({
     selector: 'html',
@@ -36,7 +32,7 @@ export default () => {
   };
 
   const init = async () => {
-    appStore.changeGlobalLoading(true);
+    appStore.app.changeGlobalLoading(true);
     if (await isNeedInit()) {
       setStorage(
         StorageAppEnum.DARK,
@@ -46,15 +42,15 @@ export default () => {
           isJSON: false,
         }
       );
-      appRouteStore.setStaticRoutes(routes);
-      if (appUserStore.token) {
-        appRouteStore.getAdminRoutes();
-        appUserStore.getUserInfo();
-        appUserStore.getUserRoles();
+      appStore.route.setStaticRoutes(routes);
+      if (appStore.user.token) {
+        appStore.route.getAdminRoutes();
+        appStore.user.getUserInfo();
+        appStore.user.getUserRoles();
       }
       _getMobileAreaCodeList();
     }
-    appStore.changeGlobalLoading(false);
+    appStore.app.changeGlobalLoading(false);
   };
 
   return {

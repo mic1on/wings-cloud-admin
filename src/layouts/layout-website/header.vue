@@ -5,7 +5,7 @@ import {
   ActionLanguage,
   ActionNotifications,
   SwitchDarkLight,
-  AppLogo,
+  LayoutLogo,
 } from '@/layouts/components';
 import { RouteBaseEnum, RouteWebsiteEnum } from '@/enums/route';
 
@@ -42,7 +42,7 @@ const tabChange = (item: IObject): void => {
 <template>
   <div box-border w="100%" p="x-6" h-16>
     <div w-7xl ma h-full flex justify-between items-center>
-      <app-logo></app-logo>
+      <layout-logo></layout-logo>
       <div h-full flex justify-end items-center>
         <div h-full flex items-center>
           <div

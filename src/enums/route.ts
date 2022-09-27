@@ -50,10 +50,15 @@ export enum RouteUserEnum {
   /**
    * 用户设置路由枚举
    */
-  ROUTE_USER_SETTINGS = '',
+  ROUTE_PERSONAL_SETTINGS = '/admin/personal/settings',
 
   /**
    * 用户信息路由枚举
    */
-  ROUTE_USER_PROFILE = '',
+  ROUTE_PERSONAL_PROFILE = '/admin/personal/profile',
+
+  /**
+   * 用户消息路由枚举
+   */
+  ROUTE_PERSONAL_NOTIFICATIONS = '/admin/personal/notification',
 }
