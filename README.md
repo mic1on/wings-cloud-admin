@@ -78,6 +78,8 @@ Wings Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netli
 
 ### 📥 快速上手
 
+目前中文使用文档已经部署在 Netlify，[点我访问](https://wings-vue-docs.netlify.app)，您可以通过文档查看更详情的使用方法。
+
 下载项目
 
 ```shell
