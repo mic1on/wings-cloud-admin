@@ -7,7 +7,6 @@ import {
   SwitchDarkLight,
   LayoutLogo,
 } from '@/layouts/components';
-import { RouteBaseEnum, RouteWebsiteEnum } from '@/enums/route';
 
 const { t } = useI18n();
 
@@ -15,27 +14,32 @@ const router = useRouter();
 const route = useRoute();
 
 const currentTab = ref<string>(route.path as string);
+
 const tabs = ref<Array<IObject>>([
   {
     label: t('website.menu.home'),
     path: import.meta.env.APP_FIRST_ROUTE as string,
+    isRoute: true,
   },
   {
     label: t('website.menu.usage'),
-    path: RouteWebsiteEnum.ROUTE_USAGE,
+    url: 'https://wings-vue-docs.netlify.app',
+    isRoute: false,
   },
   {
-    label: t('website.menu.403'),
-    path: RouteBaseEnum.ROUTE_NO_PERMISSION,
-  },
-  {
-    label: t('website.menu.404'),
-    path: RouteBaseEnum.ROUTE_NO_FOUND,
+    label: t('website.menu.admin'),
+    path: import.meta.env.APP_ADMIN_FIRST_ROUTE as string,
+    isRoute: true,
   },
 ]);
+
 const tabChange = (item: IObject): void => {
-  currentTab.value = item.path;
-  router.push({ path: item.path });
+  if (item.isRoute) {
+    currentTab.value = item.path;
+    router.push({ path: item.path });
+  } else {
+    window.open(item.url);
+  }
 };
 </script>
 

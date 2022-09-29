@@ -1,33 +1,20 @@
 <script lang="ts" setup>
 const { t } = useI18n();
 
-const router = useRouter();
-
 const appCopyright = import.meta.env.APP_COPYRIGHT;
-
-const footerContactTags = [
-  {
-    icon: 'github',
-    url: 'https://github.com/kaivanwong/wings/issues',
-    isRoute: false,
-  },
-  {
-    icon: 'twitter',
-    url: 'https://twitter.com/kaivanwong',
-    isRoute: false,
-  },
-  {
-    icon: 'weibo',
-    url: 'https://weibo.com/kaivanwong',
-    isRoute: false,
-  },
-];
 
 const footerTags = [
   {
     label: t('website.layout.link'),
     list: [
-      { label: 'Fa Builder', url: 'https://github.com/kaivanwong/fa-builder' },
+      {
+        label: t('website.layout.document'),
+        url: 'https://wings-vue-docs.netlify.app',
+      },
+      {
+        label: t('website.layout.netlify'),
+        url: 'https://wings-vue.netlify.app',
+      },
     ],
   },
   {
@@ -35,7 +22,7 @@ const footerTags = [
     list: [
       {
         label: t('website.layout.github'),
-        url: 'https://github.com/kaivanwong/wings',
+        url: 'https://github.com/kaivanwong/wings-vue',
       },
       {
         label: t('website.layout.issue'),
@@ -93,22 +80,18 @@ const goPage = (url: string) => {
         </div>
       </div>
       <div>
-        <div mb-6>
-          <span text-5 font-600 style="color: var(--ep-color-info-light)">
-            {{ t('website.layout.contact') }}
-          </span>
+        <div
+          mb-6
+          text-5
+          font-600
+          select-none
+          style="color: var(--ep-color-info-light)"
+        >
+          {{ t('website.layout.contact') }}
         </div>
-        <app-svg-icon
-          color="var(--ep-color-info)"
-          cursor-pointer
-          mr-6
-          w-6
-          h-6
-          v-for="(item, index) in footerContactTags"
-          :key="index"
-          :name="item.icon"
-          @click="goPage(item.url, item.isRoute)"
-        ></app-svg-icon>
+        <div mb-4 text-4 select-none style="color: var(--ep-color-info-dark-2)">
+          kaivanwong@outlook.com
+        </div>
       </div>
     </div>
   </div>

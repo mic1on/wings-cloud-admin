@@ -5,7 +5,9 @@
     "link": "Links",
     "github": "Github",
     "changelog": "Change Log",
-    "issue": "New issue"
+    "issue": "New issue",
+    "document": "Usage Document",
+    "netlify": "Netlify deployment"
   },
   "home": {
     "title": "Wings Vue",
@@ -16,9 +18,8 @@
   },
   "menu": {
     "home": "Home",
-    "usage": "Usage",
-    "403": "403 Page",
-    "404": "404 Page"
+    "usage": "Usage Document",
+    "admin": "Administration"
   },
   "user": {
     "noAccount": "Don't have an account?",

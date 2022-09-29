@@ -3,8 +3,8 @@ import type { LoginAccountData, SignupData } from '#/api/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import type { UserState } from '#/store/app-user.d';
 import { defineStore } from 'pinia';
-import { getStorage, setStorage, removeStorage } from '@/utils/app-storage';
-import { StorageAppEnum, StorageRouteEnum } from '@/enums/storage';
+import { getStorage, setStorage } from '@/utils/app-storage';
+import { StorageAppEnum } from '@/enums/storage';
 import { RouteUserEnum } from '@/enums/route';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
 import { getUserRoles } from '@/apis/admin/auth';
@@ -21,12 +21,6 @@ export const getLoginStorageType = (): string => {
     ? 'local'
     : 'session';
 };
-
-/**
- * 在非 .vue 文件中使用 t
- */
-const { t } = i18n.global;
-const _t: I18nT = t;
 
 /**
  * 导出用户状态钩子
@@ -68,6 +62,7 @@ export default defineStore('app-user', {
      * 登录状态
      */
     isLogin: (state): boolean => {
+      console.log(state.token ? true : false);
       return state.token ? true : false;
     },
   },
@@ -136,6 +131,9 @@ export default defineStore('app-user', {
      * 登录后 - 处理获取信息、权限、路由等
      */
     async loginApiHandle(): Promise<void> {
+      const { t } = i18n.global;
+      const _t: I18nT = t;
+
       const appStore = useAppStore();
 
       await appStore.route.getAdminRoutes();
@@ -193,11 +191,15 @@ export default defineStore('app-user', {
      * 退出登录
      */
     logout(type: string): void {
-      removeStorage(StorageAppEnum.TOKEN, getLoginStorageType());
-      removeStorage(StorageAppEnum.USER_INFO, getLoginStorageType());
-      removeStorage(StorageAppEnum.USER_ROLES, getLoginStorageType());
-      removeStorage(StorageAppEnum.STAY_LOGIN, 'local');
-      removeStorage(StorageRouteEnum.ADMIN_ROUTES, getLoginStorageType());
+      const { t } = i18n.global;
+      const _t: I18nT = t;
+
+      this.setToken('');
+      this.setUserInfo({});
+      this.setUserRoles([]);
+
+      const appStore = useAppStore();
+      appStore.route.getAdminRoutes();
 
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),
