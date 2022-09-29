@@ -9,13 +9,11 @@ const appStore = useAppStore();
   <wings-card>
     <template #header>
       <div text-5>
-        {{
-          t('admin.workbench.welcome', {
-            name: appStore.user.userInfo.nickname,
-          })
-        }}
+        <span p-r-4>{{ t('admin.workbench.welcome') }}</span>
+        <span>{{ appStore.user.userInfo.nickname }}</span>
       </div>
     </template>
+    <template #content> </template>
   </wings-card>
 </template>
 
