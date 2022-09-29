@@ -14,6 +14,7 @@ const router = useRouter();
 const route = useRoute();
 
 const currentTab = ref<string>(route.path as string);
+
 const tabs = ref<Array<IObject>>([
   {
     label: t('website.menu.home'),
@@ -31,6 +32,7 @@ const tabs = ref<Array<IObject>>([
     isRoute: true,
   },
 ]);
+
 const tabChange = (item: IObject): void => {
   if (item.isRoute) {
     currentTab.value = item.path;

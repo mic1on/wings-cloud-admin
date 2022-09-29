@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import useAppStore from '@/hooks/app-store';
 import { RouteUserEnum } from '@/enums/route';
 
 const { t } = useI18n();
 const router = useRouter();
 
-const appUserStore = stores['app-user'].default();
+const appStore = useAppStore();
 
 const goLoginPage = (): void => {
-  if (appUserStore.isLogin) return;
+  if (appStore.user.isLogin) return;
   router.push({ path: RouteUserEnum.ROUTE_LOGIN });
 };
 </script>
@@ -17,9 +17,9 @@ const goLoginPage = (): void => {
   <el-avatar
     cursor-pointer
     :size="34"
-    :src="appUserStore.userInfo.avatar"
+    :src="appStore.user.userInfo.avatar"
     @click="goLoginPage()"
   >
-    <span text-1>{{ appUserStore.isLogin ? '' : t('base.form.login') }}</span>
+    <span text-1>{{ appStore.user.isLogin ? '' : t('base.form.login') }}</span>
   </el-avatar>
 </template>

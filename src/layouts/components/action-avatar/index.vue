@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import useAppStore from '@/hooks/app-store';
 import { RouteUserEnum } from '@/enums/route';
 import Avatar from './avatar.vue';
 
@@ -8,7 +8,7 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const appUserStore = stores['app-user'].default();
+const appStore = useAppStore();
 
 const adminRoute = import.meta.env.APP_ADMIN_FIRST_ROUTE;
 
@@ -16,16 +16,16 @@ const actionChange = (command: string): void => {
   if (command.indexOf('/') !== -1) {
     router.push({ path: command });
   } else if (command === 'switchRoles') {
-    appUserStore.switchRoles();
+    appStore.user.switchRoles();
   } else if (command === 'logout') {
-    appUserStore.logout(
+    appStore.user.logout(
       route.path.indexOf('/website/') !== -1 ? 'refresh' : 'login'
     );
   }
 };
 </script>
 <template>
-  <avatar v-if="!appUserStore.isLogin"> </avatar>
+  <avatar v-if="!appStore.user.isLogin"> </avatar>
   <el-dropdown @command="actionChange" v-else>
     <avatar> </avatar>
     <template #dropdown>
