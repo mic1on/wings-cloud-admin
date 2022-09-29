@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Statistics from './components/statistics.vue';
+import Welcome from './components/welcome.vue';
 </script>
 <template>
-  <statistics></statistics>
+  <welcome></welcome>
 </template>

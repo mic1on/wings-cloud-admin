@@ -42,6 +42,14 @@ declare module '@vue/runtime-core' {
     ElTabs: typeof import('element-plus/es')['ElTabs']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    WingCrud: typeof import('./../src/components/wing-crud/index.vue')['default']
+    WingsCrudAction: typeof import('./../src/components/wing-crud/wings-crud-action.vue')['default']
+    WingsCrudDialog: typeof import('./../src/components/wing-crud/wings-crud-dialog.vue')['default']
+    WingsCrudForm: typeof import('./../src/components/wing-crud/wings-crud-form.vue')['default']
+    WingsCrudPage: typeof import('./../src/components/wing-crud/wings-crud-page.vue')['default']
+    WingsCrudPagination: typeof import('./../src/components/wing-crud/wings-crud-pagination.vue')['default']
+    WingsCrudQuery: typeof import('./../src/components/wing-crud/wings-crud-query.vue')['default']
+    WingsCrudTable: typeof import('./../src/components/wing-crud/wings-crud-table.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']
