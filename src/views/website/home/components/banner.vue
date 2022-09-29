@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-import { RouteUserEnum } from '@/enums/route';
-
 const { t } = useI18n();
 
 const router = useRouter();
 
-const goLogin = () => {
+const goAdmin = () => {
   router.push({
-    path: RouteUserEnum.ROUTE_LOGIN + '?type=' + import.meta.env.APP_LOGIN_TYPE,
+    path: import.meta.env.APP_ADMIN_FIRST_ROUTE,
   });
 };
 </script>
@@ -50,7 +48,7 @@ const goLogin = () => {
             <el-button
               important="h-14 text-5 mr-8 font-600 p-x-19"
               type="primary"
-              @click="goLogin"
+              @click="goAdmin"
             >
               {{ t('website.home.getStart') }}
             </el-button>
