@@ -6,7 +6,7 @@ const { t } = useI18n();
 const appStore = useAppStore();
 </script>
 <template>
-  <el-card shadow="never">
+  <wings-card>
     <template #header>
       <div text-5>
         {{
@@ -16,5 +16,11 @@ const appStore = useAppStore();
         }}
       </div>
     </template>
-  </el-card>
+  </wings-card>
 </template>
+
+<style lang="scss" scoped>
+:deep(.ep-card) {
+  border: 0 !important;
+}
+</style>
