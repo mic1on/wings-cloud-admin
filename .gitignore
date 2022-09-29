@@ -1,3 +1,9 @@
 node_modules
 dist
 __unconfig_vite.config.ts
+.DS_Store
+*.log
+.deploy*/
+package-lock.json
+yarn.lock
+*.local

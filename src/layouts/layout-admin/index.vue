@@ -14,7 +14,7 @@ const appStore = stores['app'].default();
       important="
       transition-width
       transition-duration-500"
-      :style="`width:${appStore.adminMenuWidth};background: var(--ep-bg-color);`"
+      :style="`width:${appStore.adminMenuWidth};box-shadow: 2px 0 8px #1d23290d`"
     >
       <admin-layout-sider></admin-layout-sider>
     </el-aside>
