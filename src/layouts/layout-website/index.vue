@@ -11,8 +11,8 @@ const { y } = useWindowScroll();
       important="fixed p-0 m-0 w-full h-16 top-0 z-999 box-border transition-all"
       :style="
         y === 0
-          ? 'background:rgba(0,0,0,0);box-shadow:none;'
-          : 'background:var(--ep-bg-color-overlay);box-shadow: 0 4px 8px 0 rgb(0 0 0 / 6%);'
+          ? 'background:var(--ep-bg-color-overlay);border-bottom: 1px solid rgba(0,0,0,0);'
+          : 'background:var(--ep-bg-color-overlay);border-bottom: 1px solid var(--ep-border-color-light);'
       "
     >
       <website-layout-header></website-layout-header>
@@ -22,7 +22,10 @@ const { y } = useWindowScroll();
     </el-main>
     <el-footer
       important="p-0 m-0 h-a w-full box-border"
-      style="background: var(--ep-bg-color-overlay)"
+      style="
+        background: var(--ep-bg-color-overlay);
+        border-top: 1px solid var(--ep-border-color-light);
+      "
     >
       <website-layout-footer></website-layout-footer>
     </el-footer>

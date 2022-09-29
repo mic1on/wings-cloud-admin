@@ -3,6 +3,7 @@ import {
   ActionAvatar,
   ActionLanguage,
   ActionNotifications,
+  ActionRefresh,
   SwitchDarkLight,
   SwitchCollapse,
   SwitchFullscreen,
@@ -11,7 +12,8 @@ import {
 <template>
   <div h-full flex items-center justify-between>
     <div h-full flex items-center>
-      <switch-collapse></switch-collapse>
+      <switch-collapse mr-8></switch-collapse>
+      <action-refresh></action-refresh>
     </div>
     <div h-full flex items-center>
       <switch-fullscreen mr-8></switch-fullscreen>

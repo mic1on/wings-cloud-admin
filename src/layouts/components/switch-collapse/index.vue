@@ -6,7 +6,7 @@ const appStore = stores['app'].default();
 
 <template>
   <div cursor-pointer @click="appStore.changeCollapse()">
-    <el-icon :size="18" color="var(--ep-text-color-primary)">
+    <el-icon :size="20" color="var(--ep-text-color-primary)">
       <Fold v-if="appStore.collapse" />
       <Expand v-else />
     </el-icon>
