@@ -1,4 +1,4 @@
-import { autoImportLanguages } from '@/utils/app-auto';
+import { autoImportLanguages } from '@/utils/wings-auto';
 import type { IObject } from '#/interface.d';
 
 /**

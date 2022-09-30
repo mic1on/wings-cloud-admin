@@ -1,7 +1,7 @@
 import { IObject } from '#/interface.d';
-import { pluginAddRegister } from '@/utils/app-auto';
+import { pluginAddRegister } from '@/utils/wings-auto';
 import { createPinia } from 'pinia';
-import { autoImportPiniaStore } from '@/utils/app-auto';
+import { autoImportPiniaStore } from '@/utils/wings-auto';
 
 /**
  * 自动导入Pinia模块，同时导出注册的 Pinia 总线

@@ -1,6 +1,6 @@
 import { createI18n, type I18n, type I18nOptions } from 'vue-i18n';
-import { pluginAddRegister } from '@/utils/app-auto';
-import { getStorage } from '@/utils/app-storage';
+import { pluginAddRegister } from '@/utils/wings-auto';
+import { getStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { messages } from './messages';
 

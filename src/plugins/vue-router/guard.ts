@@ -3,7 +3,7 @@ import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
 import { RouteUserEnum, RouteBaseEnum } from '@/enums/route';
 import { StorageAppEnum } from '@/enums/storage';
-import { getStorage } from '@/utils/app-storage';
+import { getStorage } from '@/utils/wings-storage';
 import { getLoginStorageType } from '@/store/app-user';
 
 /**

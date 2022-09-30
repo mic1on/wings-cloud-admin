@@ -2,7 +2,7 @@ import ElementPlus from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/notification.scss';
 import * as elementPlusConfig from './prefix';
-import { pluginAddRegister } from '@/utils/app-auto';
+import { pluginAddRegister } from '@/utils/wings-auto';
 
 /**
  * 导出 Element Plus 配置项

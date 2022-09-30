@@ -1,7 +1,7 @@
 import type { IObject } from '#/interface.d';
 import type { AppState } from '#/store/app.d';
 import { defineStore } from 'pinia';
-import { getStorage, setStorage } from '@/utils/app-storage';
+import { getStorage, setStorage } from '@/utils/wings-storage';
 import { StorageAppEnum, StorageLayoutEnum } from '@/enums/storage';
 
 /**

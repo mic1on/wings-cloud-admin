@@ -7,12 +7,12 @@ import type { I18nT, IObject } from '#/interface';
 import type { RequestOptions, ResponseData } from '#/app/app-request';
 import { RequestHeaderEnum } from '@/enums/request';
 import { StorageAppEnum } from '@/enums/storage';
-import { getStorage } from '@/utils/app-storage';
+import { getStorage } from '@/utils/wings-storage';
 import {
   networkCodeAdaptor,
   apiCodeAdaptor,
   authCodeAdaptor,
-} from '@/utils/app-error';
+} from '@/utils/wings-code-adaptor';
 
 /**
  * 定义全局 Vue-i18n 插件，在非 <script> 中使用 t

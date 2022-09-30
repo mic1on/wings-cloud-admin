@@ -1,6 +1,6 @@
 import useAppStore from '@/hooks/app-store';
 import { routes } from '@/plugins/vue-router';
-import { setStorage } from '@/utils/app-storage';
+import { setStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';

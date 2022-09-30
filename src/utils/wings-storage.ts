@@ -1,5 +1,5 @@
 import type { AppStorageOptions } from '#/app/app-storage.d';
-import { isNullOrUndefined } from '@/utils/app-utils';
+import { isNullOrUndefined } from '@/utils/wings-utils';
 
 /**
  * 判断缓存是会话缓存还是持久缓存

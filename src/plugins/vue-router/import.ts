@@ -1,5 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router';
-import { autoImportRoutes } from '@/utils/app-auto';
+import { autoImportRoutes } from '@/utils/wings-auto';
 
 /**
  * 自动导入 Vue-router 路由文件

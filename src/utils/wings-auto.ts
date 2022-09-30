@@ -1,7 +1,7 @@
 import { App, FunctionalComponent, Plugin } from 'vue';
 import type { IObject } from '#/interface.d';
 import type { RouteRecordRaw } from 'vue-router';
-import { FILE_NAME } from '@/utils/app-reg-exp';
+import { FILE_NAME } from '@/utils/wings-reg-exp';
 import { RouteBaseEnum } from '@/enums/route';
 
 /**
