@@ -14,14 +14,19 @@ const appStore = useAppStroe();
       important="
       transition-width
       transition-duration-500"
-      :style="`width:${appStore.app.adminMenuWidth};background: var(--ep-bg-color-overlay);border-right:1px solid var(--ep-border-color-light)`"
+      :width="appStore.app.adminMenuWidth"
+      style="
+        background: var(--ep-bg-color-overlay);
+        border-right: 1px solid var(--ep-border-color-light);
+      "
     >
       <admin-layout-sider></admin-layout-sider>
     </el-aside>
     <el-container>
       <el-header
-        :style="`background: var(--ep-bg-color-overlay);height:${appStore.app.adminHeaderHeight};`"
         important="p-x-6"
+        :height="appStore.app.adminHeaderHeight"
+        style="background: var(--ep-bg-color-overlay)"
       >
         <admin-layout-header></admin-layout-header>
       </el-header>
@@ -37,6 +42,7 @@ const appStore = useAppStroe();
       <el-footer
         v-if="appStore.app.adminShowFooter"
         style="background: var(--ep-bg-color-overlay)"
+        :height="appStore.app.adminFooterHeight"
       >
         <admin-layout-footer></admin-layout-footer>
       </el-footer>

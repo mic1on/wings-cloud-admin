@@ -78,6 +78,11 @@ export enum StorageLayoutEnum {
   HEADER_HEIGHT = 'admin-header-height',
 
   /**
+   * 管理系统底部高度
+   */
+  FOOTER_HEIGHT = 'admin-footer-height',
+
+  /**
    * 是否水平折叠收起菜单
    */
   COLLAPSE = 'collapse',

@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import useAppStore from '@/hooks/app-store';
 import MenuItem from './menu-item.vue';
 
 const route = useRoute();
 
-const appStore = stores['app'].default();
-const appRouteStore = stores['app-route'].default();
+const appStore = useAppStore();
 </script>
 
 <template>
@@ -13,12 +12,12 @@ const appRouteStore = stores['app-route'].default();
     router
     mode="vertical"
     collapse-transition
-    :collapse="appStore.collapse"
-    :unique-opened="appStore.uniqueOpened"
+    :collapse="appStore.app.collapse"
+    :unique-opened="appStore.app.uniqueOpened"
     :default-active="route.path"
     important="border-r-none"
-    :style="`height: calc(100vh - ${appStore.adminHeaderHeight}); width:100%;`"
+    :style="`height: calc(100vh - ${appStore.app.adminHeaderHeight}); width:100%;`"
   >
-    <menu-item :routes="appRouteStore.adminRoutes"></menu-item>
+    <menu-item :routes="appStore.route.adminRoutes"></menu-item>
   </el-menu>
 </template>

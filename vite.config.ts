@@ -49,7 +49,7 @@ export default ({ mode }: ConfigEnv) => {
     server: {
       host: '0.0.0.0',
       open: true,
-      port: 3001,
+      port: 8001,
       https: false,
       proxy: {},
     },

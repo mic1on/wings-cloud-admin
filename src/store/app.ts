@@ -37,6 +37,11 @@ export default defineStore('app', {
     adminHeaderHeight: getStorage(StorageLayoutEnum.HEADER_HEIGHT) || '4rem',
 
     /**
+     * 管理系统底部高度
+     */
+    adminFooterHeight: getStorage(StorageLayoutEnum.FOOTER_HEIGHT) || '2rem',
+
+    /**
      * 管理系统菜单宽度
      */
     adminMenuWidth: getStorage(StorageLayoutEnum.MENU_WIDTH) || '14rem',

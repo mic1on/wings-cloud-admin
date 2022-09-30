@@ -13,5 +13,5 @@ export { elementPlusConfig };
  * 导出添加注册插件方法
  */
 export default pluginAddRegister(ElementPlus, {
-  sort: 1,
+  sort: 2,
 });

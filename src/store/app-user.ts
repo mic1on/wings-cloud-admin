@@ -62,7 +62,6 @@ export default defineStore('app-user', {
      * 登录状态
      */
     isLogin: (state): boolean => {
-      console.log(state.token ? true : false);
       return state.token ? true : false;
     },
   },
@@ -179,7 +178,6 @@ export default defineStore('app-user', {
      */
     async signup<T>(data: SignupData): Promise<void> {
       const res: ResponseData<T> = await signup(data);
-      console.log(res);
     },
 
     /**

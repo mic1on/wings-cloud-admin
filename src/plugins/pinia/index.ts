@@ -16,5 +16,5 @@ export const stores: IObject = autoImportPiniaStore(
  * 导出添加注册插件方法
  */
 export default pluginAddRegister(createPinia(), {
-  sort: 3,
+  sort: 0,
 });

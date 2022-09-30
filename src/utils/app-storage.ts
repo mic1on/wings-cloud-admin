@@ -65,6 +65,8 @@ export const getStorage = (key: string, options?: AppStorageOptions): any => {
   }
   return isNullOrUndefined(data)
     ? options.defaultData
+      ? options.defaultData
+      : null
     : options.isTemplate
     ? data
       ? JSON.parse(data)
