@@ -2,8 +2,8 @@
 import type { FormRules, FormInstance } from 'element-plus';
 import type { LoginPhoneForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
-import { MOBILE_PHONE } from '@/utils/app-reg-exp';
-import { getStorage } from '@/utils/app-storage';
+import { MOBILE_PHONE } from '@/utils/wings-reg-exp';
+import { getStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { GetPhoneCodeType } from '@/enums/request';
 import useCodeCountDown from '@/hooks/app-code-count-down';

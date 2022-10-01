@@ -1,6 +1,6 @@
 import { IObject } from '#/interface.d';
 import { App } from 'vue';
-import { autoMountApis, autoImportApis } from '@/utils/app-auto';
+import { autoMountApis, autoImportApis } from '@/utils/wings-auto';
 
 /**
  * 自动导入 Api 接口文件

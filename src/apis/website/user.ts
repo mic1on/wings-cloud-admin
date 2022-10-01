@@ -1,6 +1,6 @@
 import type { LoginAccountData, SignupData } from '#/api/website/user.d';
 import type { ResponseData } from '#/app/app-request';
-import { GET, POST } from '@/utils/app-request';
+import { GET, POST } from '@/utils/wings-request';
 
 /**
  * 登录 - 通过账号密码

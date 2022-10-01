@@ -1,7 +1,7 @@
 import type { IObject } from '#/interface.d';
 import type { AppState } from '#/store/app.d';
 import { defineStore } from 'pinia';
-import { getStorage, setStorage } from '@/utils/app-storage';
+import { getStorage, setStorage } from '@/utils/wings-storage';
 import { StorageAppEnum, StorageLayoutEnum } from '@/enums/storage';
 
 /**
@@ -35,6 +35,11 @@ export default defineStore('app', {
      * 管理系统头部高度
      */
     adminHeaderHeight: getStorage(StorageLayoutEnum.HEADER_HEIGHT) || '4rem',
+
+    /**
+     * 管理系统底部高度
+     */
+    adminFooterHeight: getStorage(StorageLayoutEnum.FOOTER_HEIGHT) || '2rem',
 
     /**
      * 管理系统菜单宽度

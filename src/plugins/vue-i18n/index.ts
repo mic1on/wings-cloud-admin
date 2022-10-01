@@ -1,6 +1,6 @@
 import { createI18n, type I18n, type I18nOptions } from 'vue-i18n';
-import { pluginAddRegister } from '@/utils/app-auto';
-import { getStorage } from '@/utils/app-storage';
+import { pluginAddRegister } from '@/utils/wings-auto';
+import { getStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { messages } from './messages';
 
@@ -57,5 +57,5 @@ export const i18n: I18n = createI18n({
  * 导出添加注册插件方法
  */
 export default pluginAddRegister(i18n, {
-  sort: 0,
+  sort: 3,
 });

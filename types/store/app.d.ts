@@ -28,6 +28,11 @@ export interface AppState {
   adminHeaderHeight: string;
 
   /**
+   * 管理系统底部高度
+   */
+  adminFooterHeight: string;
+
+  /**
    * 管理系统菜单宽度
    */
   adminMenuWidth: string;

@@ -1,4 +1,4 @@
-import { GET } from '@/utils/app-request';
+import { GET } from '@/utils/wings-request';
 import type { ResponseData } from '#/app/app-request';
 import type { ValidateUsernameParams } from '#/api/admin/auth';
 

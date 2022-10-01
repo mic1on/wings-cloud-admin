@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import { autoRegisterPlugins } from '@/utils/app-auto';
+import { autoRegisterPlugins } from '@/utils/wings-auto';
 
 /**
  * 自动导入需要注册的三方插件

@@ -3,7 +3,7 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
-import { USERNAME, PASSWORD_NORMAL } from '@/utils/app-reg-exp';
+import { USERNAME, PASSWORD_NORMAL } from '@/utils/wings-reg-exp';
 import { RouteUserEnum } from '@/enums/route';
 import useAppApi from '@/hooks/app-api';
 import { stores } from '@/plugins/pinia';

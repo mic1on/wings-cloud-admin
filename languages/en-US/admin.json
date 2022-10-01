@@ -1,5 +1,6 @@
 {
   "workbench": {
-    "welcome": "Welcome back!"
+    "welcome": "Welcome back!",
+    "shortcuts": "Shortcuts"
   }
 }

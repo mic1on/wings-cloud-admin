@@ -7,12 +7,12 @@ import type { I18nT, IObject } from '#/interface';
 import type { RequestOptions, ResponseData } from '#/app/app-request';
 import { RequestHeaderEnum } from '@/enums/request';
 import { StorageAppEnum } from '@/enums/storage';
-import { getStorage } from '@/utils/app-storage';
+import { getStorage } from '@/utils/wings-storage';
 import {
   networkCodeAdaptor,
   apiCodeAdaptor,
   authCodeAdaptor,
-} from '@/utils/app-error';
+} from '@/utils/wings-code-adaptor';
 
 /**
  * 定义全局 Vue-i18n 插件，在非 <script> 中使用 t
@@ -25,7 +25,7 @@ const _t: I18nT = t;
  * @param options
  * @return _axios
  */
-export const appRequest = <T>(
+export const wingsRequest = <T>(
   options: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
   const _axios: Axios = axios.create();
@@ -136,14 +136,14 @@ export const addInterceptorsResponse = <T>(
  * @param url
  * @param params
  * @param options
- * @return appRequest
+ * @return wingsRequest
  */
 export const GET = <T>(
   url: string,
   params?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return appRequest({
+  return wingsRequest({
     url,
     method: 'GET',
     params,
@@ -160,14 +160,14 @@ export const GET = <T>(
  * @param url
  * @param data
  * @param options
- * @return appRequest
+ * @return wingsRequest
  */
 export const POST = <T>(
   url: string,
   data?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return appRequest({
+  return wingsRequest({
     url,
     method: 'POST',
     data,
@@ -184,14 +184,14 @@ export const POST = <T>(
  * @param url
  * @param data
  * @param options
- * @return appRequest
+ * @return wingsRequest
  */
 export const PUT = <T>(
   url: string,
   data?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return appRequest({
+  return wingsRequest({
     url,
     method: 'PUT',
     data,
@@ -208,14 +208,14 @@ export const PUT = <T>(
  * @param url
  * @param data
  * @param options
- * @return appRequest
+ * @return wingsRequest
  */
 export const DELETE = <T>(
   url: string,
   params?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return appRequest({
+  return wingsRequest({
     url,
     method: 'DELETE',
     params,
@@ -232,14 +232,14 @@ export const DELETE = <T>(
  * @param url
  * @param data
  * @param options
- * @return appRequest
+ * @return wingsRequest
  */
 export const UPLOAD = <T>(
   url: string,
   data?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return appRequest({
+  return wingsRequest({
     url,
     method: 'POST',
     data,
@@ -256,7 +256,7 @@ export const UPLOAD = <T>(
  * @param url
  * @param data
  * @param options
- * @return appRequest
+ * @return wingsRequest
  */
 export const DOWNLOAD = <T>(
   url: string,
@@ -264,7 +264,7 @@ export const DOWNLOAD = <T>(
   filename?: string,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return appRequest({
+  return wingsRequest({
     url,
     method: 'GET',
     params,

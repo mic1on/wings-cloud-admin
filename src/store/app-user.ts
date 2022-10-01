@@ -3,7 +3,7 @@ import type { LoginAccountData, SignupData } from '#/api/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import type { UserState } from '#/store/app-user.d';
 import { defineStore } from 'pinia';
-import { getStorage, setStorage } from '@/utils/app-storage';
+import { getStorage, setStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { RouteUserEnum } from '@/enums/route';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
@@ -62,7 +62,6 @@ export default defineStore('app-user', {
      * 登录状态
      */
     isLogin: (state): boolean => {
-      console.log(state.token ? true : false);
       return state.token ? true : false;
     },
   },
@@ -179,7 +178,6 @@ export default defineStore('app-user', {
      */
     async signup<T>(data: SignupData): Promise<void> {
       const res: ResponseData<T> = await signup(data);
-      console.log(res);
     },
 
     /**

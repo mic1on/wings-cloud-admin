@@ -1,5 +1,5 @@
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
-import { autoInstallComponents } from '@/utils/app-auto';
+import { autoInstallComponents } from '@/utils/wings-auto';
 import type { App } from 'vue';
 
 /**

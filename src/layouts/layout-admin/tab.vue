@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { IObject } from '#/interface.d';
 import { stores } from '@/plugins/pinia';
-import { arrayRecursion } from '@/utils/app-utils';
+import { arrayRecursion } from '@/utils/wings-utils';
 
 const { t } = useI18n();
 

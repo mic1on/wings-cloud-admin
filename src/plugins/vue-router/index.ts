@@ -1,6 +1,6 @@
 import type { Router } from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router';
-import { pluginAddRegister } from '@/utils/app-auto';
+import { pluginAddRegister } from '@/utils/wings-auto';
 import { addRouterGuard } from './guard';
 import { routes } from './import';
 
@@ -21,5 +21,5 @@ export const router: Router = createRouter({
  * 导出添加注册插件方法
  */
 export default pluginAddRegister(addRouterGuard(router), {
-  sort: 2,
+  sort: 1,
 });
