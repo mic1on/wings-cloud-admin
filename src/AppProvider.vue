@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import useAppStore from '@/hooks/app-store';
 import useAppHook from '@/hooks/app';
 import LayoutBase from '@/layouts/layout-base/index.vue';
 import LayoutAdmin from '@/layouts/layout-admin/index.vue';
@@ -8,12 +8,12 @@ import { elementPlusConfig } from '@/plugins/element-plus';
 
 const route = useRoute();
 
-const appStore = stores['app'].default();
+const appStore = useAppStore();
 
 const { t } = useI18n();
 const { messages } = useI18n();
 const locale =
-  messages.value[appStore.language][
+  messages.value[appStore.app.language][
     elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX
   ];
 

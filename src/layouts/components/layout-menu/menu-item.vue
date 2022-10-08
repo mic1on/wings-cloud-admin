@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { RouteRecordRaw } from 'vue-router';
-import { AppIconTypeEnum } from '@/enums/app';
+import { BaseIconTypeEnum } from '@/enums/base';
 import MenuItem from './menu-item.vue';
 
 const props = defineProps({
@@ -28,17 +28,19 @@ const props = defineProps({
         {{ route.meta?.menuName }}
       </a>
       <template v-else>
-        <app-svg-icon
+        <wings-svg-icon
           size="1rem"
-          v-if="route.meta?.icon && route.meta?.iconType == AppIconTypeEnum.APP"
+          v-if="
+            route.meta?.icon && route.meta?.iconType == BaseIconTypeEnum.APP
+          "
           :name="route.meta.icon"
-        ></app-svg-icon>
+        ></wings-svg-icon>
         <el-icon
           width="1rem"
           height="1rem"
           v-if="
             route.meta?.icon &&
-            route.meta?.iconType == AppIconTypeEnum.ELEMENT_PLUS
+            route.meta?.iconType == BaseIconTypeEnum.ELEMENT_PLUS
           "
         >
           <component :is="route.meta?.icon"></component>
@@ -50,17 +52,19 @@ const props = defineProps({
     </el-menu-item>
     <el-sub-menu :index="route.path" v-else>
       <template #title>
-        <app-svg-icon
+        <wings-svg-icon
           size="1rem"
-          v-if="route.meta?.icon && route.meta?.iconType == AppIconTypeEnum.APP"
+          v-if="
+            route.meta?.icon && route.meta?.iconType == BaseIconTypeEnum.APP
+          "
           :name="route.meta.icon"
-        ></app-svg-icon>
+        ></wings-svg-icon>
         <el-icon
           width="1rem"
           height="1rem"
           v-if="
             route.meta?.icon &&
-            route.meta?.iconType == AppIconTypeEnum.ELEMENT_PLUS
+            route.meta?.iconType == BaseIconTypeEnum.ELEMENT_PLUS
           "
         >
           <component :is="route.meta?.icon"></component>

@@ -1,7 +1,7 @@
 /**
  * 导出多语言环境枚举
  */
-export enum AppLanguageEnum {
+export enum BaseLanguageEnum {
   /**
    * Vue-i18n 多语言环境别名
    */
@@ -18,7 +18,7 @@ export enum AppLanguageEnum {
 /**
  * 导出演示用户枚举
  */
-export enum AppAuthenticationEnum {
+export enum BaseAuthenticationEnum {
   /**
    * 用户名
    */
@@ -38,7 +38,7 @@ export enum AppAuthenticationEnum {
 /**
  * 导出图标类型枚举
  */
-export enum AppIconTypeEnum {
+export enum BaseIconTypeEnum {
   /**
    * Element Plus 组件库图标
    */

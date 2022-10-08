@@ -82,7 +82,7 @@ export default ({ mode }: ConfigEnv) => {
      */
     plugins: [
       /**
-       * 提供ve3单文件组件支持
+       * 提供 vue3 单文件组件支持
        */
       Vue(),
 
@@ -105,7 +105,7 @@ export default ({ mode }: ConfigEnv) => {
        * 使用自定义的 Svg 图标
        */
       createSvgIconsPlugin({
-        iconDirs: [resolve(__dirname, 'src/components/app-svg-icon/icons')],
+        iconDirs: [resolve(__dirname, 'src/components/wings-svg-icon/icons')],
         symbolId: 'icon-[dir]-[name]',
       }),
 

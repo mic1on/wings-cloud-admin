@@ -60,30 +60,30 @@ const changeLoginType = (type: string, isOpen: boolean): void => {
           <el-icon><Iphone /></el-icon>
           <span>{{ t('website.user.phoneLogin') }}</span>
         </el-button>
-        <app-svg-icon
+        <wings-svg-icon
           v-if="loginType === 'account' || loginType === 'phone'"
           cursor-pointer
           name="wechat"
           w-8
           h-8
           @click="changeLoginType('wechat', true)"
-        ></app-svg-icon>
-        <app-svg-icon
+        ></wings-svg-icon>
+        <wings-svg-icon
           v-if="loginType === 'account' || loginType === 'phone'"
           cursor-pointer
           name="alipay"
           w-8
           h-8
           @click="changeLoginType('alipay', true)"
-        ></app-svg-icon>
-        <app-svg-icon
+        ></wings-svg-icon>
+        <wings-svg-icon
           v-if="loginType === 'account' || loginType === 'phone'"
           cursor-pointer
           name="email"
           w-8
           h-8
           @click="changeLoginType('email', true)"
-        ></app-svg-icon>
+        ></wings-svg-icon>
       </div>
     </template>
   </user-template>

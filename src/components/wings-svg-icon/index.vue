@@ -39,7 +39,7 @@ const symbolId = computed(
     <svg
       aria-hidden="true"
       :class="`iconfont ${className}`"
-      :style="`width:${size};height:${size};line-height:${height};${customStyle};`"
+      :style="`width:${size};height:${size};line-height:${size};${customStyle};`"
     >
       <use :xlink:href="symbolId" />
     </svg>

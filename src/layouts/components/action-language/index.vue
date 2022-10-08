@@ -19,14 +19,14 @@ const language = useLanguage();
       }}</span>
       <i inline-flex i="ep-arrow-down"></i>
     </span>
-    <app-svg-icon
+    <wings-svg-icon
       cursor-pointer
       v-if="props.onlyIcon"
       w-5
       h-5
       name="language"
       custom-style="color: var(--ep-text-color-primary)"
-    ></app-svg-icon>
+    ></wings-svg-icon>
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
