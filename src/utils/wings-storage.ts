@@ -63,6 +63,7 @@ export const getStorage = (key: string, options?: AppStorageOptions): any => {
   if (options.isDelete) {
     storageType(options.type as unknown as string).removeItem(key);
   }
+  console.log(key, data);
   return isNullOrUndefined(data)
     ? options.defaultData
       ? options.defaultData

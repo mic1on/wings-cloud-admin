@@ -1,7 +1,7 @@
 import type { ResponseData } from '#/app/app-request.d';
 import type { IObject } from '#/interface.d';
 import { interceptJointData } from '@/utils/wings-utils';
-import { AppAuthenticationEnum } from '@/enums/app';
+import { BaseAuthenticationEnum } from '@/enums/base';
 
 export default {
   /**
@@ -10,11 +10,11 @@ export default {
   loginByAccount: {
     url: '/admin/user/login',
     method: 'post',
-    data: AppAuthenticationEnum.VISITOR_TOKEN,
+    data: BaseAuthenticationEnum.VISITOR_TOKEN,
     response: <T>(data: IObject, res: ResponseData<T>) => {
       if (
         interceptJointData(data.body).password !==
-        AppAuthenticationEnum.VISITOR_PASSWORD
+        BaseAuthenticationEnum.VISITOR_PASSWORD
       ) {
         return {
           ...res,
@@ -35,7 +35,7 @@ export default {
     method: 'get',
     data: {
       id: '',
-      username: AppAuthenticationEnum.VISITOR_USERNAME,
+      username: BaseAuthenticationEnum.VISITOR_USERNAME,
       nickname: '演示用户',
       avatar:
         'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',

@@ -34,12 +34,12 @@ const openDialog = (): void => {
       <span text-3>{{ t('website.user.termsConditions') }}</span>
     </el-button>
   </div>
-  <app-dialog
+  <wings-dialog
     v-model="dialogVisible"
     :title="t('website.user.termsConditions')"
   >
     <template #content>
       <div v-dompurify-html="termsConditionsData"></div>
     </template>
-  </app-dialog>
+  </wings-dialog>
 </template>

@@ -7,13 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AppDialog: typeof import('./../src/components/app-dialog/index.vue')['default']
-    AppSvgIcon: typeof import('./../src/components/app-svg-icon/index.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBadge: typeof import('element-plus/es')['ElBadge']
-    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
-    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
@@ -31,7 +27,6 @@ declare module '@vue/runtime-core' {
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElImage: typeof import('element-plus/es')['ElImage']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
@@ -45,18 +40,14 @@ declare module '@vue/runtime-core' {
     ElTabs: typeof import('element-plus/es')['ElTabs']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    WingCrud: typeof import('./../src/components/wing-crud/index.vue')['default']
     WingsCard: typeof import('./../src/components/wings-card/index.vue')['default']
     WingsCrud: typeof import('./../src/components/wings-crud/index.vue')['default']
-    WingsCrudableT: typeof import('./../src/components/wings-crud/wings-crud-table.vue')['default']
     WingsCrudAction: typeof import('./../src/components/wings-crud/wings-crud-action.vue')['default']
-    WingsCrudDialog: typeof import('./../src/components/wing-crud/wings-crud-dialog.vue')['default']
-    WingsCrudForm: typeof import('./../src/components/wing-crud/wings-crud-form.vue')['default']
-    WingsCrudPage: typeof import('./../src/components/wing-crud/wings-crud-page.vue')['default']
     WingsCrudPagination: typeof import('./../src/components/wings-crud/wings-crud-pagination.vue')['default']
     WingsCrudQuery: typeof import('./../src/components/wings-crud/wings-crud-query.vue')['default']
     WingsCrudTable: typeof import('./../src/components/wings-crud/wings-crud-table.vue')['default']
-    WingsStatistics: typeof import('./../src/components/wings-statistics/index.vue')['default']
+    WingsDialog: typeof import('./../src/components/wings-dialog/index.vue')['default']
+    WingsSvgIcon: typeof import('./../src/components/wings-svg-icon/index.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

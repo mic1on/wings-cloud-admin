@@ -69,7 +69,7 @@ const closedHandle = (): void => {
 
 <template>
   <el-dialog
-    class="app-dialog"
+    class="wings-dialog"
     v-model="visible"
     :width="props.width"
     :title="props.title"
