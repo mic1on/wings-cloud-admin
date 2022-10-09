@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import useBase from '@/hooks/base';
 
 const route = useRoute();
 const router = useRouter();
 
 const appName = import.meta.env.APP_NAME;
 
-const appStore = stores['app'].default();
+const { appStore } = useBase();
 
 const goHomeRoute = (): void => {
   if (route.path.indexOf('website') !== -1) {

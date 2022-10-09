@@ -5,10 +5,10 @@ import { RouteUserEnum } from '@/enums/route';
 const { t } = useI18n();
 const router = useRouter();
 
-const { appStore } = useBase();
+const { appUserStore } = useBase();
 
 const goLoginPage = (): void => {
-  if (appStore.user.isLogin) return;
+  if (appUserStore.isLogin) return;
   router.push({ path: RouteUserEnum.ROUTE_LOGIN });
 };
 </script>
@@ -17,9 +17,9 @@ const goLoginPage = (): void => {
   <el-avatar
     cursor-pointer
     :size="34"
-    :src="appStore.user.userInfo.avatar"
+    :src="appUserStore.userInfo.avatar"
     @click="goLoginPage()"
   >
-    <span text-1>{{ appStore.user.isLogin ? '' : t('base.form.login') }}</span>
+    <span text-1>{{ appUserStore.isLogin ? '' : t('base.form.login') }}</span>
   </el-avatar>
 </template>

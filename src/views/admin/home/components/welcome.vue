@@ -3,14 +3,14 @@ import useBase from '@/hooks/base';
 
 const { t } = useI18n();
 
-const { appStore } = useBase();
+const { appUserStore } = useBase();
 </script>
 <template>
   <wings-card>
     <template #content>
       <div text-5>
         <span p-r-4>{{ t('admin.workbench.welcome') }}</span>
-        <span>{{ appStore.user.userInfo.nickname }}</span>
+        <span>{{ appUserStore.userInfo.nickname }}</span>
       </div>
       <el-divider
         style="border-top: 1px solid var(--ep-border-color-lighter)"

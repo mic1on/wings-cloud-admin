@@ -4,7 +4,7 @@ import type { Router } from 'vue-router';
 import { RouteUserEnum, RouteBaseEnum } from '@/enums/route';
 import { StorageAppEnum } from '@/enums/storage';
 import { getStorage } from '@/utils/wings-storage';
-import { getLoginStorageType } from '@/store/user';
+import { getLoginStorageType } from '@/core/plugins/pinia/modules/user';
 
 export const addRouterGuard = (router: Router): Router => {
   router.beforeEach(

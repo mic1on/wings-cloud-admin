@@ -1,10 +1,8 @@
-import type { IObject } from '#/interface.d';
-import type { RouteRecordRaw } from 'vue-router';
 import { setStorage } from '@/utils/wings-storage';
-import { autoImportPiniaStore, autoImportRoutes } from '@/utils/wings-auto';
 import { StorageAppEnum } from '@/enums/storage';
 import { getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';
+import { stores, routes } from '@/core';
 
 /**
  * 基础钩子函数
@@ -22,22 +20,7 @@ import { useDark, useToggle } from '@vueuse/core';
  * @return languages
  */
 
-// 自动化导入 store 文件
-const stores: IObject = autoImportPiniaStore(
-  import.meta.glob('@/store/**/*.ts', {
-    eager: true,
-  })
-);
-
 export default () => {
-  // 静态路由
-  const routes: RouteRecordRaw[] = autoImportRoutes(
-    import.meta.glob('@/router/**/*.ts', {
-      import: 'default',
-      eager: true,
-    })
-  );
-
   // 组装 pinia 总线
   const appStore = stores['base'].default();
   const appRouteStore = stores['route'].default();
@@ -66,7 +49,7 @@ export default () => {
     value: string | number | Record<string, any> | undefined
   ) => {
     locale.value = value as string;
-    appStore.app.changeLanguage({
+    appStore.changeLanguage({
       alias: value,
       name: messages.value[value as string].name,
     });
@@ -86,7 +69,7 @@ export default () => {
     });
   };
   const init = async () => {
-    appStore.app.changeGlobalLoading(true);
+    appStore.changeGlobalLoading(true);
     if (await isNeedInit()) {
       setStorage(
         StorageAppEnum.DARK,
@@ -96,15 +79,15 @@ export default () => {
           isJSON: false,
         }
       );
-      appStore.route.setStaticRoutes(routes);
-      if (appStore.user.token) {
-        appStore.route.getAdminRoutes();
-        appStore.user.getUserInfo();
-        appStore.user.getUserRoles();
+      appRouteStore.setStaticRoutes(routes);
+      if (appUserStore.token) {
+        appRouteStore.getAdminRoutes();
+        appUserStore.getUserInfo();
+        appUserStore.getUserRoles();
       }
       _getMobileAreaCodeList();
     }
-    appStore.app.changeGlobalLoading(false);
+    appStore.changeGlobalLoading(false);
   };
 
   return {

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import useBase from '@/hooks/base';
 
 const { t } = useI18n();
 
-const appUserStore = stores['app-user'].default();
+const { appUserStore } = useBase();
 </script>
 
 <template>

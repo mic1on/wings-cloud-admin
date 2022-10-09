@@ -6,11 +6,10 @@ import type { ResponseData } from '#/app/app-request.d';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/wings-reg-exp';
 import { RouteUserEnum } from '@/enums/route';
 import useBase from '@/hooks/base';
-import { stores } from '@/plugins/pinia';
 
 const { apis } = useBase();
 
-const userStore = stores['app-user'].default();
+const { appUserStore } = useBase();
 
 const { t } = useI18n();
 
@@ -88,7 +87,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
   await formEl.validate(async (valid: boolean) => {
     if (valid) {
       loginLoading.value = true;
-      await userStore.loginByAccount(form.value);
+      await appUserStore.loginByAccount(form.value);
       loginLoading.value = false;
     }
   });

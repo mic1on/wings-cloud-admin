@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import useBase from '@/hooks/base';
 
-const appStore = stores['app'].default();
+const { appStore } = useBase();
 </script>
 
 <template>

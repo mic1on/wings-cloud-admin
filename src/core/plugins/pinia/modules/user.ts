@@ -8,8 +8,8 @@ import { StorageAppEnum } from '@/enums/storage';
 import { RouteUserEnum } from '@/enums/route';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
 import { getUserRoles } from '@/apis/admin/auth';
-import { i18n } from '@/plugins/vue-i18n';
-import { router } from '@/plugins/vue-router';
+import { i18n } from '@/core/plugins/vue-i18n';
+import { router } from '@/core/plugins/vue-router';
 import { ElNotification } from 'element-plus';
 import useBase from '@/hooks/base';
 
@@ -133,9 +133,9 @@ export default defineStore('user', {
       const { t } = i18n.global;
       const _t: I18nT = t;
 
-      const { appStore } = useBase();
+      const { appRouteStore } = useBase();
 
-      await appStore.route.getAdminRoutes();
+      await appRouteStore.getAdminRoutes();
       await this.getUserInfo();
       await this.getUserRoles();
 
@@ -196,8 +196,8 @@ export default defineStore('user', {
       this.setUserInfo({});
       this.setUserRoles([]);
 
-      const { appStore } = useBase();
-      appStore.route.getAdminRoutes();
+      const { appRouteStore } = useBase();
+      appRouteStore.getAdminRoutes();
 
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),

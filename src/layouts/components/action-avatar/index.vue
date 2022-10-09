@@ -8,7 +8,7 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const { appStore } = useBase();
+const { appUserStore } = useBase();
 
 const adminRoute = import.meta.env.APP_ADMIN_FIRST_ROUTE;
 
@@ -16,16 +16,16 @@ const actionChange = (command: string): void => {
   if (command.indexOf('/') !== -1) {
     router.push({ path: command });
   } else if (command === 'switchRoles') {
-    appStore.user.switchRoles();
+    appUserStore.switchRoles();
   } else if (command === 'logout') {
-    appStore.user.logout(
+    appUserStore.logout(
       route.path.indexOf('/website/') !== -1 ? 'refresh' : 'login'
     );
   }
 };
 </script>
 <template>
-  <avatar v-if="!appStore.user.isLogin"> </avatar>
+  <avatar v-if="!appUserStore.isLogin"> </avatar>
   <el-dropdown @command="actionChange" v-else>
     <avatar> </avatar>
     <template #dropdown>

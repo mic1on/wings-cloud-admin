@@ -14,7 +14,7 @@ const { appStore } = useBase();
       important="
       transition-width
       transition-duration-500"
-      :width="appStore.app.adminMenuWidth"
+      :width="appStore.adminMenuWidth"
       style="background: var(--ep-bg-color-page)"
     >
       <admin-layout-sider></admin-layout-sider>
@@ -22,7 +22,7 @@ const { appStore } = useBase();
     <el-container>
       <el-header
         important="p-x-6"
-        :height="appStore.app.adminHeaderHeight"
+        :height="appStore.adminHeaderHeight"
         style="background: var(--ep-bg-color-overlay)"
       >
         <admin-layout-header></admin-layout-header>
@@ -39,9 +39,9 @@ const { appStore } = useBase();
         <slot name="router-view"></slot>
       </el-main>
       <el-footer
-        v-if="appStore.app.adminShowFooter"
+        v-if="appStore.adminShowFooter"
         style="background: var(--ep-bg-color-overlay)"
-        :height="appStore.app.adminFooterHeight"
+        :height="appStore.adminFooterHeight"
       >
         <admin-layout-footer></admin-layout-footer>
       </el-footer>

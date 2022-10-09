@@ -8,7 +8,6 @@ import { getStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { RouteUserEnum } from '@/enums/route';
 import { GetPhoneCodeType } from '@/enums/request';
-import { stores } from '@/plugins/pinia';
 import useCodeCountDown from '@/hooks/code-count-down';
 import useBase from '@/hooks/base';
 
@@ -18,7 +17,7 @@ const router = useRouter();
 
 const { apis } = useBase();
 
-const userStore = stores['app-user'].default();
+const { appUserStore } = useBase();
 
 const codeCountDown = useCodeCountDown();
 
@@ -155,7 +154,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
   await formEl.validate(async (valid: boolean) => {
     if (valid) {
       signupLoading.value = true;
-      await userStore.signup(form.value);
+      await appUserStore.signup(form.value);
       signupLoading.value = false;
     }
   });
