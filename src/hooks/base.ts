@@ -21,6 +21,22 @@ import { stores, routes } from '@/core';
  */
 
 export default () => {
+  // vue-i18n 国际化支持
+  const { messages, locale } = useI18n();
+  const currentLanguage = computed(() => {
+    return locale.value;
+  });
+  const changeLanguage = (
+    value: string | number | Record<string, any> | undefined
+  ) => {
+    locale.value = value as string;
+    appStore.changeLanguage({
+      alias: value,
+      name: messages.value[value as string].name,
+    });
+    location.reload();
+  };
+
   // 组装 pinia 总线
   const appStore = stores['base'].default();
   const appRouteStore = stores['route'].default();
@@ -39,22 +55,6 @@ export default () => {
     storageKey: import.meta.env.APP_STOREAGE_PREFIX + '-' + StorageAppEnum.DARK,
   });
   const changeDark = useToggle(isDark);
-
-  // vue-i18n 国际化支持
-  const { messages, locale } = useI18n();
-  const currentLanguage = computed(() => {
-    return locale.value;
-  });
-  const changeLanguage = (
-    value: string | number | Record<string, any> | undefined
-  ) => {
-    locale.value = value as string;
-    appStore.changeLanguage({
-      alias: value,
-      name: messages.value[value as string].name,
-    });
-    location.reload();
-  };
 
   // 获取手机号区号
   const _getMobileAreaCodeList = async () => {

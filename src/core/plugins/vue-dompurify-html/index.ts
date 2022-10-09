@@ -1,6 +1,11 @@
+import type { App } from 'vue';
 import VueDOMPurifyHTML from 'vue-dompurify-html';
 import { pluginAddRegister } from '@/core/utils/helper';
 
-export default pluginAddRegister(VueDOMPurifyHTML, {
-  sort: 4,
-});
+const useVueDomPurifyHTML = (app: App<Element>): void => {
+  app.use(VueDOMPurifyHTML);
+};
+
+export { useVueDomPurifyHTML };
+
+export default pluginAddRegister(VueDOMPurifyHTML);

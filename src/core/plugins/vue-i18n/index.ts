@@ -1,4 +1,5 @@
 import type { I18n, I18nOptions } from 'vue-i18n';
+import type { App } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { pluginAddRegister } from '@/core/utils/helper';
 import { getStorage } from '@/utils/wings-storage';
@@ -11,7 +12,7 @@ document
   .getElementsByTagName('html')[0]
   .setAttribute('lang', language as string);
 
-export const i18n: I18n = createI18n({
+const i18n: I18n = createI18n({
   legacy: false,
   locale: language,
   fallbackLocale: import.meta.env.APP_DEFAULT_LANGUAGE,
@@ -20,8 +21,10 @@ export const i18n: I18n = createI18n({
   messages,
 } as I18nOptions);
 
-export { messages };
+const useI18n = (app: App<Element>): void => {
+  app.use(i18n);
+};
 
-export default pluginAddRegister(i18n, {
-  sort: 0,
-});
+export { messages, i18n, useI18n };
+
+export default pluginAddRegister(i18n);

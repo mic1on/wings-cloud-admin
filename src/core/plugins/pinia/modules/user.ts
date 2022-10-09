@@ -13,6 +13,9 @@ import { router } from '@/core/plugins/vue-router';
 import { ElNotification } from 'element-plus';
 import useBase from '@/hooks/base';
 
+const { t } = i18n.global;
+const _t: I18nT = t;
+
 /**
  * 获取是否保持登录状态
  */
@@ -130,9 +133,6 @@ export default defineStore('user', {
      * 登录后 - 处理获取信息、权限、路由等
      */
     async loginApiHandle(): Promise<void> {
-      const { t } = i18n.global;
-      const _t: I18nT = t;
-
       const { appRouteStore } = useBase();
 
       await appRouteStore.getAdminRoutes();
@@ -189,9 +189,6 @@ export default defineStore('user', {
      * 退出登录
      */
     logout(type: string): void {
-      const { t } = i18n.global;
-      const _t: I18nT = t;
-
       this.setToken('');
       this.setUserInfo({});
       this.setUserRoles([]);

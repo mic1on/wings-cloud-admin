@@ -6,12 +6,14 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import * as elementPlusConfig from './config';
 import { pluginAddRegister, autoInstallComponents } from '@/core/utils/helper';
 
-export { elementPlusConfig };
-
-export const registerIcons = (app: App): void => {
+const useElementIcons = (app: App<Element>): void => {
   autoInstallComponents(app, ElementPlusIconsVue);
 };
 
-export default pluginAddRegister(ElementPlus, {
-  sort: 1,
-});
+const useElementPlus = (app: App<Element>): void => {
+  app.use(ElementPlus);
+};
+
+export { elementPlusConfig, useElementIcons, useElementPlus };
+
+export default pluginAddRegister(ElementPlus);

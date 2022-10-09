@@ -5,8 +5,8 @@
  * @export routes 国际化多语言文件
  */
 
-import pluginRegister from './plugins';
+import usePlguins from './plugins';
 import { stores } from './plugins/pinia';
 import { routes } from './plugins/vue-router';
 
-export { pluginRegister, stores, routes };
+export { usePlguins, stores, routes };

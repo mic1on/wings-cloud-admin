@@ -1,26 +1,23 @@
-import Mock from 'mockjs';
-import auth from './admin/auth';
-import user from './website/user';
-import base from './base';
 import type { IObject } from '#/interface.d';
 import type { ResponseData } from '#/app/app-request.d';
+import Mock from 'mockjs';
 
-/**
- * 设置延迟时间
- */
 Mock.setup({
   timeout: '200-600',
 });
 
-/**
- * 组装模拟接口
- */
-const mocks: IObject = { ...auth, ...user, ...base };
+const files: IObject = import.meta.glob('./modules/**/*.ts', {
+  import: 'default',
+  eager: true,
+});
 
-/**
- * 导出自动挂载模拟接口方法
- */
-export default (): void => {
+let mocks: IObject = {};
+
+Object.keys(files).forEach((key) => {
+  mocks = { ...mocks, ...files[key] };
+});
+
+const useMock = (): void => {
   Object.keys(mocks).forEach((key: string) => {
     Mock.mock(
       new RegExp(mocks[key].url),
@@ -39,3 +36,5 @@ export default (): void => {
     );
   });
 };
+
+export { mocks, useMock };

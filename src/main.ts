@@ -1,9 +1,7 @@
 import { createApp } from 'vue';
 import App from '@/App.vue';
 import mountApis from '@/apis';
-import { pluginRegister } from '@/core';
-import { registerIcons } from '@/core/plugins/element-plus';
-import setupMock from '../mock';
+import { usePlguins } from '@/core';
 
 /**
  * 导入全局样式、图标
@@ -23,19 +21,9 @@ const app = createApp(App);
 mountApis(app);
 
 /**
- * 全局注册模拟接口插件
+ * 使用三方插件
  */
-setupMock();
-
-/**
- * 自动注册三方插件
- */
-pluginRegister(app);
-
-/**
- * 全局安装 Element Plus 图标库
- */
-registerIcons(app);
+usePlguins(app);
 
 /**
  * App 实例挂载 Dom
