@@ -1,13 +1,13 @@
 {
   "name": "wings-vue",
-  "version": "0.2.3",
+  "version": "0.3.0-beta",
   "description": "面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。",
   "main": "index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/kaivanwong/wings-vue.git"
   },
-  "author": "kaivanwong",
+  "author": "Kaivan Wong",
   "license": "MIT",
   "scripts": {
     "serve": "npm run serve:dev",

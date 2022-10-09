@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { ResponseData } from '#/app/app-request.d';
-import useAppApi from '@/hooks/app-api';
+import useBase from '@/hooks/base';
 
-const { apis } = useAppApi();
+const { apis } = useBase();
 
 const { t } = useI18n();
 

@@ -11,7 +11,7 @@ import { getUserRoles } from '@/apis/admin/auth';
 import { i18n } from '@/plugins/vue-i18n';
 import { router } from '@/plugins/vue-router';
 import { ElNotification } from 'element-plus';
-import useAppStore from '@/hooks/app-store';
+import useBase from '@/hooks/base';
 
 /**
  * 获取是否保持登录状态
@@ -25,7 +25,7 @@ export const getLoginStorageType = (): string => {
 /**
  * 导出用户状态钩子
  */
-export default defineStore('app-user', {
+export default defineStore('user', {
   state: (): UserState => ({
     /**
      * 是否保持登录
@@ -133,7 +133,7 @@ export default defineStore('app-user', {
       const { t } = i18n.global;
       const _t: I18nT = t;
 
-      const appStore = useAppStore();
+      const { appStore } = useBase();
 
       await appStore.route.getAdminRoutes();
       await this.getUserInfo();
@@ -196,7 +196,7 @@ export default defineStore('app-user', {
       this.setUserInfo({});
       this.setUserRoles([]);
 
-      const appStore = useAppStore();
+      const { appStore } = useBase();
       appStore.route.getAdminRoutes();
 
       ElNotification({

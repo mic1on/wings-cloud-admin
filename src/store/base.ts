@@ -5,9 +5,9 @@ import { getStorage, setStorage } from '@/utils/wings-storage';
 import { StorageAppEnum, StorageLayoutEnum } from '@/enums/storage';
 
 /**
- * 导出应用级状态钩子
+ * 导出通用状态钩子
  */
-export default defineStore('app', {
+export default defineStore('base', {
   state: (): AppState => ({
     /**
      * 当前语言环境

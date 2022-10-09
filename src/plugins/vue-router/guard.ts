@@ -4,7 +4,7 @@ import type { Router } from 'vue-router';
 import { RouteUserEnum, RouteBaseEnum } from '@/enums/route';
 import { StorageAppEnum } from '@/enums/storage';
 import { getStorage } from '@/utils/wings-storage';
-import { getLoginStorageType } from '@/store/app-user';
+import { getLoginStorageType } from '@/store/user';
 
 /**
  * 注入 Vue-router 路由守卫

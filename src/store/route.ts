@@ -5,12 +5,12 @@ import { getStorage, setStorage } from '@/utils/wings-storage';
 import { StorageRouteEnum } from '@/enums/storage';
 import { getAdminRoutes } from '@/apis/admin/auth';
 import { router } from '@/plugins/vue-router';
-import { getLoginStorageType } from './app-user';
+import { getLoginStorageType } from './user';
 
 /**
  * 导出路由状态钩子
  */
-export default defineStore('app-route', {
+export default defineStore('route', {
   state: (): RouteState => ({
     /**
      * 静态路由

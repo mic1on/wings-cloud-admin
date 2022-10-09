@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import useAppStore from '@/hooks/app-store';
+import useBase from '@/hooks/base';
 import MenuItem from './menu-item.vue';
 
 const route = useRoute();
 
-const appStore = useAppStore();
+const { appStore } = useBase();
 </script>
 
 <template>

@@ -21,7 +21,7 @@
   /**
    * Internationalize multilingual plug-in configurations.
    */
-  "i18n-ally.localesPaths": ["languages"],
+  "i18n-ally.localesPaths": ["languages","src/plugins/vue-i18n/languages"],
   "i18n-ally.namespace": true,
   "i18n-ally.sortKeys": true,
   "i18n-ally.keystyle": "nested",

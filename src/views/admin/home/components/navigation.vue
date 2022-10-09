@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import useAppStore from '@/hooks/app-store';
+import useBase from '@/hooks/base';
 
 const { t } = useI18n();
 </script>

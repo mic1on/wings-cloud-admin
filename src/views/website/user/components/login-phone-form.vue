@@ -6,12 +6,12 @@ import { MOBILE_PHONE } from '@/utils/wings-reg-exp';
 import { getStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { GetPhoneCodeType } from '@/enums/request';
-import useCodeCountDown from '@/hooks/app-code-count-down';
-import useAppApi from '@/hooks/app-api';
+import useCodeCountDown from '@/hooks/code-count-down';
+import useBase from '@/hooks/base';
 
 const { t } = useI18n();
 
-const { apis } = useAppApi();
+const { apis } = useBase();
 
 const codeCountDown = useCodeCountDown();
 

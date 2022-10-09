@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from '@/App.vue';
 import mountApis from '@/apis';
-import { registerPlugins } from '@/plugins';
+import { pluginRegister } from '@/core';
 import installEpIcons from '@/plugins/element-plus/icon';
 import setupMock from '../mock';
 
@@ -30,7 +30,7 @@ setupMock();
 /**
  * 自动注册三方插件
  */
-registerPlugins(app);
+pluginRegister(app);
 
 /**
  * 全局安装 Element Plus 图标库

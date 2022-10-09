@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import useAppStore from '@/hooks/app-store';
+import useBase from '@/hooks/base';
 import { RouteUserEnum } from '@/enums/route';
 
 const { t } = useI18n();
 const router = useRouter();
 
-const appStore = useAppStore();
+const { appStore } = useBase();
 
 const goLoginPage = (): void => {
   if (appStore.user.isLogin) return;

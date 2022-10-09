@@ -5,10 +5,10 @@ import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/wings-reg-exp';
 import { RouteUserEnum } from '@/enums/route';
-import useAppApi from '@/hooks/app-api';
+import useBase from '@/hooks/base';
 import { stores } from '@/plugins/pinia';
 
-const { apis } = useAppApi();
+const { apis } = useBase();
 
 const userStore = stores['app-user'].default();
 

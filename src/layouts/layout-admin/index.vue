@@ -3,9 +3,9 @@ import AdminLayoutHeader from './header.vue';
 import AdminLayoutTab from './tab.vue';
 import AdminLayoutFooter from './footer.vue';
 import AdminLayoutSider from './sider.vue';
-import useAppStroe from '@/hooks/app-store';
+import useBase from '@/hooks/base';
 
-const appStore = useAppStroe();
+const { appStore } = useBase();
 </script>
 
 <template>
@@ -15,10 +15,7 @@ const appStore = useAppStroe();
       transition-width
       transition-duration-500"
       :width="appStore.app.adminMenuWidth"
-      style="
-        background: var(--ep-bg-color-overlay);
-        border-right: 1px solid var(--ep-border-color-light);
-      "
+      style="background: var(--ep-bg-color-page)"
     >
       <admin-layout-sider></admin-layout-sider>
     </el-aside>
@@ -31,12 +28,14 @@ const appStore = useAppStroe();
         <admin-layout-header></admin-layout-header>
       </el-header>
       <admin-layout-tab
-        style="
-          background: var(--ep-bg-color-overlay);
-          border-bottom: 1px solid var(--ep-border-color-light);
-        "
+        style="background: var(--ep-bg-color-overlay)"
       ></admin-layout-tab>
-      <el-main style="background: var(--ep-bg-color-fill)">
+      <el-main
+        style="
+          background: var(--ep-bg-color-fill);
+          box-shadow: 10px 0 10px -10px rgb(0 0 0 / 12%);
+        "
+      >
         <slot name="router-view"></slot>
       </el-main>
       <el-footer

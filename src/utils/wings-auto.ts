@@ -5,6 +5,23 @@ import { FILE_NAME } from '@/utils/wings-reg-exp';
 import { RouteBaseEnum } from '@/enums/route';
 
 /**
+ * 自动导入 Vue-router 路由文件
+ * @param files
+ * @return routes
+ */
+export const autoImportRoutes = (files: IObject): Array<RouteRecordRaw> => {
+  let _routes: Array<RouteRecordRaw> = [];
+  Object.keys(files).forEach((key) => {
+    _routes = _routes.concat(files[key]);
+  });
+  _routes.push({
+    path: '/:pathMatch(.*)',
+    redirect: RouteBaseEnum.ROUTE_NO_FOUND,
+  });
+  return _routes;
+};
+
+/**
  * 自动导入 Api 接口文件
  * @param files
  * @return apis
@@ -68,23 +85,6 @@ export const autoImportLanguages = (files: IObject): IObject => {
     };
   });
   return languages;
-};
-
-/**
- * 自动导入 Vue-router 路由文件
- * @param files
- * @return routes
- */
-export const autoImportRoutes = (files: IObject): Array<RouteRecordRaw> => {
-  let _routes: Array<RouteRecordRaw> = [];
-  Object.keys(files).forEach((key) => {
-    _routes = _routes.concat(files[key]);
-  });
-  _routes.push({
-    path: '/:pathMatch(.*)',
-    redirect: RouteBaseEnum.ROUTE_NO_FOUND,
-  });
-  return _routes;
 };
 
 /**

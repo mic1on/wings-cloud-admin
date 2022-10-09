@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import useAppStore from '@/hooks/app-store';
-import useAppHook from '@/hooks/app';
+import useBase from '@/hooks/base';
 import LayoutBase from '@/layouts/layout-base/index.vue';
 import LayoutAdmin from '@/layouts/layout-admin/index.vue';
 import LayoutWebsite from '@/layouts/layout-website/index.vue';
@@ -8,7 +7,7 @@ import { elementPlusConfig } from '@/plugins/element-plus';
 
 const route = useRoute();
 
-const appStore = useAppStore();
+const { appStore, init } = useBase();
 
 const { t } = useI18n();
 const { messages } = useI18n();
@@ -17,9 +16,8 @@ const locale =
     elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX
   ];
 
-const app = useAppHook();
 onBeforeMount(async () => {
-  app.init();
+  init();
 });
 </script>
 

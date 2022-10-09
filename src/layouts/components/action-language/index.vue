@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import useLanguage from '@/hooks/app-language';
+import useBase from '@/hooks/base';
 
 const props = defineProps({
   onlyIcon: {
@@ -8,15 +8,13 @@ const props = defineProps({
   },
 });
 
-const language = useLanguage();
+const { changeLanguage, currentLanguage, languages } = useBase();
 </script>
 
 <template>
-  <el-dropdown @command="language.changeLanguage">
+  <el-dropdown @command="changeLanguage">
     <span flex items-center cursor-pointer h-full v-if="!props.onlyIcon">
-      <span mr-2>{{
-        language.languages[language.currentLanguage.value].name
-      }}</span>
+      <span mr-2>{{ languages[currentLanguage].name }}</span>
       <i inline-flex i="ep-arrow-down"></i>
     </span>
     <wings-svg-icon
@@ -30,7 +28,7 @@ const language = useLanguage();
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
-          v-for="(value, key) in language.languages"
+          v-for="(value, key) in languages"
           :key="key"
           :command="key"
           >{{ value.name }}</el-dropdown-item
