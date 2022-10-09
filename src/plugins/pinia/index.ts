@@ -1,6 +1,6 @@
 import type { IObject } from '#/interface.d';
 import type { App } from 'vue';
-import { pluginAddRegister } from '@/core/utils/helper';
+import { pluginAddRegister } from '../helper';
 import { createPinia } from 'pinia';
 import { FILE_NAME } from '@/utils/wings-reg-exp';
 

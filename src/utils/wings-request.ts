@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 import { ElNotification } from 'element-plus';
-import { i18n } from '@/core/plugins/vue-i18n';
+import { i18n } from '@/plugins/vue-i18n';
 import type { Axios, AxiosResponse } from 'axios';
 import type { I18nT, IObject } from '#/interface';
 import type { RequestOptions, ResponseData } from '#/app/app-request';

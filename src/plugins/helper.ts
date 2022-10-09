@@ -1,7 +1,7 @@
 import type { App, Plugin, FunctionalComponent } from 'vue';
 
 /**
- * 插件注册中心
+ * @name pluginAddRegister
  * @param plugin
  * @return _plugin
  */
@@ -14,7 +14,7 @@ export const pluginAddRegister = <T>(plugin: Plugin): T & Plugin => {
 };
 
 /**
- * 组件注册中心
+ * @name componentAddInstall
  * @param component
  * @param alias
  * @return component
@@ -34,7 +34,7 @@ export const componentAddInstall = <T>(
 };
 
 /**
- * 自动安装组件
+ * @name autoInstallComponents
  * @param app
  * @param components
  */

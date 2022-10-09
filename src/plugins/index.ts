@@ -5,8 +5,11 @@ import { useVueDomPurifyHTML } from './vue-dompurify-html';
 import { useI18n } from './vue-i18n';
 import { useRouter } from './vue-router';
 import { useMock } from './mock';
+import { stores } from './pinia';
+import { routes } from './vue-router';
+import { languages, messages } from './vue-i18n';
 
-export default async (app: App<Element>): Promise<void> => {
+const usePlguins = async (app: App<Element>): Promise<void> => {
   useI18n(app);
   useRouter(app);
   useElementPlus(app);
@@ -17,3 +20,5 @@ export default async (app: App<Element>): Promise<void> => {
 
   useElementIcons(app);
 };
+
+export { usePlguins, stores, routes, languages, messages };

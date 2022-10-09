@@ -1,7 +1,7 @@
 import type { IObject } from '#/interface.d';
 import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
-import { elementPlusConfig } from '@/core/plugins/element-plus';
+import { elementPlusConfig } from '@/plugins/element-plus';
 import { BaseLanguageEnum } from '@/enums/base';
 import { FILE_NAME } from '@/utils/wings-reg-exp';
 
@@ -22,7 +22,7 @@ Object.keys(files).forEach((key: string) => {
   };
 });
 
-export const messages: IObject = {
+const messages: IObject = {
   [BaseLanguageEnum.EN_US_ALIAS]: {
     name: BaseLanguageEnum.EN_US_NAME,
     ...languages[BaseLanguageEnum.EN_US_ALIAS],
@@ -36,3 +36,5 @@ export const messages: IObject = {
       zhCN[elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX],
   },
 };
+
+export { messages, languages };

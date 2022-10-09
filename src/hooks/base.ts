@@ -2,7 +2,7 @@ import { setStorage } from '@/utils/wings-storage';
 import { StorageAppEnum } from '@/enums/storage';
 import { getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';
-import { stores, routes } from '@/core';
+import { stores, routes } from '@/plugins';
 
 /**
  * 基础钩子函数

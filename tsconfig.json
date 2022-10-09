@@ -70,7 +70,7 @@
      */
     "paths": {
       "@/*": ["src/*"],
-      "#/*": ["types/*"]
+      "#/*": ["types/*"],
     }
   },
 
@@ -89,7 +89,7 @@
   /**
    * 编译处理的文件列表
    */
-  "include": ["types/**/*d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "*.ts", "mock/**/*.ts", "languages/**/*.ts"],
+  "include": ["types/**/*d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "*.ts"],
 
   /**
    * 不需要处理的目录

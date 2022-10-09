@@ -3,7 +3,7 @@ import useBase from '@/hooks/base';
 import LayoutBase from '@/layouts/layout-base/index.vue';
 import LayoutAdmin from '@/layouts/layout-admin/index.vue';
 import LayoutWebsite from '@/layouts/layout-website/index.vue';
-import { elementPlusConfig } from '@/core/plugins/element-plus';
+import { elementPlusConfig } from '@/plugins/element-plus';
 
 const route = useRoute();
 

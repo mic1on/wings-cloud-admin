@@ -8,8 +8,8 @@ import { StorageAppEnum } from '@/enums/storage';
 import { RouteUserEnum } from '@/enums/route';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
 import { getUserRoles } from '@/apis/admin/auth';
-import { i18n } from '@/core/plugins/vue-i18n';
-import { router } from '@/core/plugins/vue-router';
+import { i18n } from '@/plugins/vue-i18n';
+import { router } from '@/plugins/vue-router';
 import { ElNotification } from 'element-plus';
 import useBase from '@/hooks/base';
 
