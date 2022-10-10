@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from 'vue-router';
 import { App } from 'vue';
 import { componentAddInstall } from './auto-register';
 import { RouteEnum } from './enums';
-import { FILE_NAME } from './reg-exp';
+import { FILE_NAME } from './utils/reg-exp';
 
 interface Files<T = any> {
   [key: string]: T;

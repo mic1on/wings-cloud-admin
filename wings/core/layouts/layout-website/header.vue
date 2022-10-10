@@ -6,7 +6,7 @@ import {
   ActionNotifications,
   SwitchDarkLight,
   LayoutLogo,
-} from '@/layouts/components';
+} from '../components';
 
 const { t } = useI18n();
 

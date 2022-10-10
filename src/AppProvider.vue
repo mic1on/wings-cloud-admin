@@ -7,9 +7,9 @@ import {
   useWingsApp,
   useWingsStore,
   elementPlusConfig,
+  setStorage,
 } from '@wings';
 import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
-import { setStorage } from '@wings';
 
 const route = useRoute();
 

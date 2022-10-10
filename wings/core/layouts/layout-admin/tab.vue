@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import type { IObject } from '#/interface.d';
-import { useWingsStore } from '@wings';
-import { arrayRecursion } from '@wings';
+import useRouteStore from '../../plugins/pinia/modules/route';
+import { arrayRecursion } from '../../utils/common';
 
 const { t } = useI18n();
 
 const route = useRoute();
 const router = useRouter();
 
-const { appRouteStore } = useWingsStore();
+const routeStore = useRouteStore();
 
 const tab: any = reactive({
   tabList: [],
@@ -74,7 +74,7 @@ const clickOperationMenu = (command: string | number | object): void => {
 onBeforeMount(() => {
   tab.homeTab = arrayRecursion(
     'path',
-    appRouteStore.adminRoutes,
+    routeStore.adminRoutes,
     import.meta.env.APP_ADMIN_FIRST_ROUTE
   );
   const { isFind, path } = findTab(route.path);

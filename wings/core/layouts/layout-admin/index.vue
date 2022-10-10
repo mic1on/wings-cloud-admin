@@ -3,9 +3,9 @@ import AdminLayoutHeader from './header.vue';
 import AdminLayoutTab from './tab.vue';
 import AdminLayoutFooter from './footer.vue';
 import AdminLayoutSider from './sider.vue';
-import { useWingsStore } from '@wings';
+import useAppStore from '../../plugins/pinia/modules/base';
 
-const { appStore } = useWingsStore();
+const appStore = useAppStore();
 </script>
 
 <template>
