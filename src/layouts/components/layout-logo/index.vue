@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
+import { useWingsStore } from '@/hooks';
 
 const route = useRoute();
 const router = useRouter();
 
 const appName = import.meta.env.APP_NAME;
 
-const { appStore } = useBase();
+const { appStore } = useWingsStore();
 
 const goHomeRoute = (): void => {
   if (route.path.indexOf('website') !== -1) {

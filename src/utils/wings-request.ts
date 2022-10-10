@@ -5,8 +5,7 @@ import { i18n } from '@/plugins/vue-i18n';
 import type { Axios, AxiosResponse } from 'axios';
 import type { I18nT, IObject } from '#/interface';
 import type { RequestOptions, ResponseData } from '#/app/app-request';
-import { RequestHeaderEnum } from '@/enums/request';
-import { StorageAppEnum } from '@/enums/storage';
+import { RequestHeaderEnum, StorageAppEnum } from '@/enums';
 import { getStorage } from '@/utils/wings-storage';
 import {
   networkCodeAdaptor,

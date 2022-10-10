@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
+import { useWingsStore } from '@/hooks';
 
 const { t } = useI18n();
 
-const { appUserStore } = useBase();
+const { appUserStore } = useWingsStore();
 </script>
 
 <template>

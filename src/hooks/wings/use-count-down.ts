@@ -3,7 +3,11 @@ import type { Form } from '#/app/app-code-count-down.d';
 import { ElMessage } from 'element-plus';
 
 /**
- * 导出发送验证码倒计时钩子函数
+ * @name useWingsCountDown
+ * @return form
+ * @return getCode
+ * @return getCoding,
+ * @return resetCountDown
  */
 export default () => {
   const { t } = useI18n();

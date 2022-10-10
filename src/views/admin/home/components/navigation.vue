@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
-
 const { t } = useI18n();
 </script>
 <template>

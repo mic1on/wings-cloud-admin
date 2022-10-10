@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
+import { useWingsLanguage } from '@/hooks';
 
 const props = defineProps({
   onlyIcon: {
@@ -8,7 +8,7 @@ const props = defineProps({
   },
 });
 
-const { changeLanguage, currentLanguage, languages } = useBase();
+const { changeLanguage, currentLanguage, languages } = useWingsLanguage();
 </script>
 
 <template>

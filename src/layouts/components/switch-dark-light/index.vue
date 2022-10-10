@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import useApp from '@/hooks/base';
+import { useWingsApp } from '@/hooks';
 
-const { changeDark } = useApp();
+const { changeDark } = useWingsApp();
 </script>
 
 <template>

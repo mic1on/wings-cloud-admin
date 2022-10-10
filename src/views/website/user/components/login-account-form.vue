@@ -4,12 +4,12 @@ import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/wings-reg-exp';
-import { RouteUserEnum } from '@/enums/route';
-import useBase from '@/hooks/base';
+import { RouteUserEnum } from '@/enums';
+import { useWingsCrud, useWingsStore } from '@/hooks';
 
-const { apis } = useBase();
+const { apis } = useWingsCrud();
 
-const { appUserStore } = useBase();
+const { appUserStore } = useWingsStore();
 
 const { t } = useI18n();
 

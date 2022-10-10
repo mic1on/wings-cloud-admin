@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
-import { RouteUserEnum } from '@/enums/route';
+import { useWingsStore } from '@/hooks';
+import { RouteUserEnum } from '@/enums';
 
 const { t } = useI18n();
 const router = useRouter();
 
-const { appUserStore } = useBase();
+const { appUserStore } = useWingsStore();
 
 const goLoginPage = (): void => {
   if (appUserStore.isLogin) return;

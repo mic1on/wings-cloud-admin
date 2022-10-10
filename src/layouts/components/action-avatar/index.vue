@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
-import { RouteUserEnum } from '@/enums/route';
+import { useWingsStore } from '@/hooks';
+import { RouteUserEnum } from '@/enums';
 import Avatar from './avatar.vue';
 
 const { t } = useI18n();
@@ -8,7 +8,7 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const { appUserStore } = useBase();
+const { appUserStore } = useWingsStore();
 
 const adminRoute = import.meta.env.APP_ADMIN_FIRST_ROUTE;
 

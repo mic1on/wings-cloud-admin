@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
+import { useWingsApp, useWingsStore } from '@/hooks';
 import LayoutBase from '@/layouts/layout-base/index.vue';
 import LayoutAdmin from '@/layouts/layout-admin/index.vue';
 import LayoutWebsite from '@/layouts/layout-website/index.vue';
@@ -7,10 +7,14 @@ import { elementPlusConfig } from '@/plugins/element-plus';
 
 const route = useRoute();
 
-const { appStore, init } = useBase();
+const { init } = useWingsApp();
+
+const { appStore } = useWingsStore();
 
 const { t } = useI18n();
+
 const { messages } = useI18n();
+
 const locale =
   messages.value[appStore.language][
     elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX

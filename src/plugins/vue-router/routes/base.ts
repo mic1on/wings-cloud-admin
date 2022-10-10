@@ -1,5 +1,4 @@
 import Index from '@/views/index.vue';
-import { RouteBaseEnum } from '@/enums/route';
 
 export default [
   {

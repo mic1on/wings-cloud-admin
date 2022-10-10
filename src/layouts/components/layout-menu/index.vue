@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
+import { useWingsStore } from '@/hooks';
 import MenuItem from './menu-item.vue';
 
 const route = useRoute();
 
-const { appStore, appRouteStore } = useBase();
+const { appStore, appRouteStore } = useWingsStore();
 </script>
 
 <template>

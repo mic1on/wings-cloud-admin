@@ -3,9 +3,9 @@ import AdminLayoutHeader from './header.vue';
 import AdminLayoutTab from './tab.vue';
 import AdminLayoutFooter from './footer.vue';
 import AdminLayoutSider from './sider.vue';
-import useBase from '@/hooks/base';
+import { useWingsStore } from '@/hooks';
 
-const { appStore } = useBase();
+const { appStore } = useWingsStore();
 </script>
 
 <template>

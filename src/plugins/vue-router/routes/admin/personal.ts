@@ -1,5 +1,5 @@
 import Router from '@/layouts/router.vue';
-import { BaseIconTypeEnum } from '@/enums/base';
+import { AppIconTypeEnum } from '@/enums';
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
     meta: {
       isMenu: true,
       requiresAuth: true,
-      iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+      iconType: AppIconTypeEnum.ELEMENT_PLUS,
       icon: 'User',
       menuName: '个人中心',
       sort: 1,
@@ -22,7 +22,7 @@ export default [
         meta: {
           layout: 'admin',
           requiresAuth: true,
-          iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Postcard',
           menuName: '个人资料',
           sort: 0,
@@ -35,7 +35,7 @@ export default [
         meta: {
           layout: 'admin',
           requiresAuth: true,
-          iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'ChatDotSquare',
           menuName: '我的消息',
           sort: 1,
@@ -48,7 +48,7 @@ export default [
         meta: {
           layout: 'admin',
           requiresAuth: true,
-          iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Setting',
           menuName: '个人设置',
           sort: 2,

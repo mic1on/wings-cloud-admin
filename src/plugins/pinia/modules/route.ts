@@ -2,7 +2,7 @@ import type { RouteState } from '#/store/app-route.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { getStorage, setStorage } from '@/utils/wings-storage';
-import { StorageRouteEnum } from '@/enums/storage';
+import { StorageRouteEnum } from '@/enums';
 import { getAdminRoutes } from '@/apis/admin/auth';
 import { router } from '@/plugins/vue-router';
 import { getLoginStorageType } from './user';

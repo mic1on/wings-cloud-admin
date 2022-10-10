@@ -4,16 +4,14 @@ import type { LoginPhoneForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { MOBILE_PHONE } from '@/utils/wings-reg-exp';
 import { getStorage } from '@/utils/wings-storage';
-import { StorageAppEnum } from '@/enums/storage';
-import { GetPhoneCodeType } from '@/enums/request';
-import useCodeCountDown from '@/hooks/code-count-down';
-import useBase from '@/hooks/base';
+import { StorageAppEnum, GetPhoneCodeType } from '@/enums';
+import { useWingsCountDown, useWingsCrud } from '@/hooks';
 
 const { t } = useI18n();
 
-const { apis } = useBase();
+const { apis } = useWingsCrud();
 
-const codeCountDown = useCodeCountDown();
+const countDown = useWingsCountDown();
 
 const formRef = ref<FormInstance>();
 
@@ -61,14 +59,14 @@ const formRules = reactive<FormRules>({
 const mobileAreaCodeList = getStorage(StorageAppEnum.MOBILE_PHONE_AREA_CODE);
 
 const getPhoneCode = (): void => {
-  codeCountDown.getCode(form.value.phone, async () => {
+  countDown.getCode(form.value.phone, async () => {
     const res = await apis.base.getPhoneCode({
       phone: form.value.phone,
       type: GetPhoneCodeType.LOGIN,
     });
     if (res.code === 0) {
       ElMessage.success(t('base.form.sendSuccess'));
-      codeCountDown.getCoding();
+      countDown.getCoding();
     }
   });
 };
@@ -124,19 +122,19 @@ const getPhoneCode = (): void => {
             p-0
             link
             type="primary"
-            :disabled="codeCountDown.form.getting"
+            :disabled="countDown.form.getting"
             @click="getPhoneCode()"
           >
-            <span text-3 v-if="codeCountDown.form.getting">
+            <span text-3 v-if="countDown.form.getting">
               {{
                 t('base.form.countDownTimeLabel', {
-                  time: codeCountDown.form.time,
+                  time: countDown.form.time,
                 })
               }}
             </span>
             <span text-3 v-else>
               {{
-                codeCountDown.form.send
+                countDown.form.send
                   ? t('base.form.resend')
                   : t('base.form.getSecurityCode')
               }}

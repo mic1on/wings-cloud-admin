@@ -1,8 +1,7 @@
 import type { ResponseData } from '#/app/app-request.d';
 import type { IObject } from '#/interface.d';
 import { interceptJointData } from '@/utils/wings-utils';
-import { BaseAuthenticationEnum } from '@/enums/base';
-import { BaseIconTypeEnum } from '@/enums/base';
+import { AppAuthenticationEnum, AppIconTypeEnum } from '@/enums';
 
 export default {
   /**
@@ -15,7 +14,7 @@ export default {
     response: <T>(params: IObject, res: ResponseData<T>) => {
       if (
         interceptJointData(params.url).username !==
-        BaseAuthenticationEnum.VISITOR_USERNAME
+        AppAuthenticationEnum.VISITOR_USERNAME
       ) {
         return {
           ...res,
@@ -42,7 +41,7 @@ export default {
           layout: 'admin',
           isMenu: true,
           requiresAuth: true,
-          iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Guide',
           menuName: '功能示例',
           sort: 2,
@@ -55,7 +54,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'DocumentCopy',
               menuName: '增删改查',
               sort: 0,
@@ -68,7 +67,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'MagicStick',
               menuName: '自定义图标',
               sort: 1,
@@ -81,7 +80,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Document',
               menuName: '富文本编辑器',
               sort: 2,
@@ -94,7 +93,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'DataLine',
               menuName: '图表',
               sort: 3,
@@ -107,7 +106,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'MapLocation',
               menuName: '地图',
               sort: 4,
@@ -120,7 +119,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'DocumentChecked',
               menuName: '分布表单',
               sort: 5,
@@ -133,7 +132,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Warning',
               menuName: '结果页',
               sort: 6,
@@ -148,7 +147,7 @@ export default {
           layout: 'admin',
           isMenu: true,
           requiresAuth: true,
-          iconType: BaseIconTypeEnum.APP,
+          iconType: AppIconTypeEnum.APP,
           icon: 'role',
           menuName: '权限管理',
           sort: 3,
@@ -161,7 +160,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'CollectionTag',
               menuName: '角色管理',
               sort: 0,
@@ -174,7 +173,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'User',
               menuName: '用户管理',
               sort: 1,
@@ -187,7 +186,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.APP,
+              iconType: AppIconTypeEnum.APP,
               icon: 'tree',
               menuName: '部门管理',
               sort: 2,
@@ -200,7 +199,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Postcard',
               menuName: '岗位管理',
               sort: 3,
@@ -215,7 +214,7 @@ export default {
           layout: 'admin',
           isMenu: true,
           requiresAuth: true,
-          iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Operation',
           menuName: '系统管理',
           sort: 4,
@@ -228,7 +227,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Menu',
               menuName: '菜单管理',
               sort: 0,
@@ -241,7 +240,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Reading',
               menuName: '字典管理',
               sort: 1,
@@ -254,7 +253,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Key',
               menuName: '参数管理',
               sort: 2,
@@ -267,7 +266,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'FolderOpened',
               menuName: '文件管理',
               sort: 3,
@@ -280,7 +279,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Setting',
               menuName: '系统设置',
               sort: 4,
@@ -292,7 +291,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Notebook',
               menuName: '日志管理',
               sort: 5,
@@ -305,7 +304,7 @@ export default {
                 meta: {
                   layout: 'admin',
                   requiresAuth: true,
-                  iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+                  iconType: AppIconTypeEnum.ELEMENT_PLUS,
                   icon: 'User',
                   menuName: '登录日志',
                   sort: 0,
@@ -318,7 +317,7 @@ export default {
                 meta: {
                   layout: 'admin',
                   requiresAuth: true,
-                  iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+                  iconType: AppIconTypeEnum.ELEMENT_PLUS,
                   icon: 'Pointer',
                   menuName: '操作日志',
                   sort: 1,
@@ -335,7 +334,7 @@ export default {
           layout: 'admin',
           isMenu: true,
           requiresAuth: true,
-          iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+          iconType: AppIconTypeEnum.ELEMENT_PLUS,
           icon: 'Coin',
           menuName: '开发工具',
           sort: 5,
@@ -348,7 +347,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Operation',
               menuName: '开发配置',
               sort: 0,
@@ -361,7 +360,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'ElementPlus',
               menuName: '代码生成',
               sort: 1,
@@ -374,7 +373,7 @@ export default {
             meta: {
               layout: 'admin',
               requiresAuth: true,
-              iconType: BaseIconTypeEnum.ELEMENT_PLUS,
+              iconType: AppIconTypeEnum.ELEMENT_PLUS,
               icon: 'Coordinate',
               menuName: '表单设计',
               sort: 2,

@@ -2,7 +2,7 @@ import { App, FunctionalComponent, Plugin } from 'vue';
 import type { IObject } from '#/interface.d';
 import type { RouteRecordRaw } from 'vue-router';
 import { FILE_NAME } from '@/utils/wings-reg-exp';
-import { RouteBaseEnum } from '@/enums/route';
+import { RouteBaseEnum } from '@/enums';
 
 /**
  * 自动导入 Vue-router 路由文件

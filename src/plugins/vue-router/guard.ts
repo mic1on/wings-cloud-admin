@@ -1,8 +1,7 @@
 import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
-import { RouteUserEnum, RouteBaseEnum } from '@/enums/route';
-import { StorageAppEnum } from '@/enums/storage';
+import { RouteUserEnum, RouteBaseEnum, StorageAppEnum } from '@/enums';
 import { getStorage } from '@/utils/wings-storage';
 import { getLoginStorageType } from '@/plugins/pinia/modules/user';
 

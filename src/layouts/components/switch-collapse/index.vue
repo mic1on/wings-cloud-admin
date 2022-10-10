@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import useBase from '@/hooks/base';
+import { useWingsStore } from '@/hooks';
 
-const { appStore } = useBase();
+const { appStore } = useWingsStore();
 </script>
 
 <template>

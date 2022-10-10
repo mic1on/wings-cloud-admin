@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { IObject } from '#/interface.d';
-import useBase from '@/hooks/base';
+import { useWingsStore } from '@/hooks';
 import { arrayRecursion } from '@/utils/wings-utils';
 
 const { t } = useI18n();
@@ -8,7 +8,7 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const { appRouteStore } = useBase();
+const { appRouteStore } = useWingsStore();
 
 const tab: any = reactive({
   tabList: [],

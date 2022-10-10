@@ -4,14 +4,13 @@ import type { ResponseData } from '#/app/app-request.d';
 import type { UserState } from '#/store/app-user.d';
 import { defineStore } from 'pinia';
 import { getStorage, setStorage } from '@/utils/wings-storage';
-import { StorageAppEnum } from '@/enums/storage';
-import { RouteUserEnum } from '@/enums/route';
+import { StorageAppEnum, RouteUserEnum } from '@/enums';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
 import { getUserRoles } from '@/apis/admin/auth';
 import { i18n } from '@/plugins/vue-i18n';
 import { router } from '@/plugins/vue-router';
 import { ElNotification } from 'element-plus';
-import useBase from '@/hooks/base';
+import { stores } from '@/plugins/pinia';
 
 const { t } = i18n.global;
 const _t: I18nT = t;
@@ -133,8 +132,7 @@ export default defineStore('user', {
      * 登录后 - 处理获取信息、权限、路由等
      */
     async loginApiHandle(): Promise<void> {
-      const { appRouteStore } = useBase();
-
+      const appRouteStore = stores['route'].default();
       await appRouteStore.getAdminRoutes();
       await this.getUserInfo();
       await this.getUserRoles();
@@ -193,7 +191,7 @@ export default defineStore('user', {
       this.setUserInfo({});
       this.setUserRoles([]);
 
-      const { appRouteStore } = useBase();
+      const appRouteStore = stores['route'].default();
       appRouteStore.getAdminRoutes();
 
       ElNotification({
