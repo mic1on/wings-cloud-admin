@@ -1,6 +1,6 @@
 {
   "name": "wings-vue",
-  "version": "0.5.1-beta",
+  "version": "0.5.2-beta",
   "description": "面向 Vue 生态的一款 Web 通用开发系统，提供工程化的开发体验和开箱即用的页面模板。",
   "main": "index.html",
   "repository": {

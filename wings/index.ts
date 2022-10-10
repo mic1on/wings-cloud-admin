@@ -10,5 +10,4 @@ export * from './core/request';
 export * from './core/storage';
 export * from './core/utils/common';
 export * from './core/utils/reg-exp';
-export * from './core/auto-import';
-export * from './core/auto-register';
+export * from './core/utils/auto';

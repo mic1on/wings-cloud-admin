@@ -1,6 +1,6 @@
 import type { IObject } from '#/interface.d';
 import type { App } from 'vue';
-import { pluginAddRegister } from '../../auto-register';
+import { pluginAddRegister } from '../../utils/auto';
 import { createPinia } from 'pinia';
 import { FILE_NAME } from '../../utils/reg-exp';
 import { getLoginStorageType } from './modules/user';

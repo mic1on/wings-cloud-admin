@@ -2,7 +2,7 @@ import type { IObject } from '#/interface.d';
 import type { Router, RouteRecordRaw } from 'vue-router';
 import type { App } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { pluginAddRegister } from '../../auto-register';
+import { pluginAddRegister } from '../../utils/auto';
 import { RouteEnum } from '../../enums';
 import { addRouterGuard } from './guard';
 
