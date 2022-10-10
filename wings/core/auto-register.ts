@@ -1,5 +1,6 @@
 import type { IObject } from '#/interface.d';
 import { App, FunctionalComponent, Plugin } from 'vue';
+
 /**
  * @name componentAddInstall
  * @param component

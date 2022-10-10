@@ -1,10 +1,13 @@
-import type { Files } from './auto-import.d';
 import type { IObject } from '#/interface.d';
 import type { RouteRecordRaw } from 'vue-router';
 import { App } from 'vue';
 import { componentAddInstall } from './auto-register';
-import { RouteEnum } from '@wings';
-import { FILE_NAME } from '@/utils/reg-exp';
+import { RouteEnum } from './enums';
+import { FILE_NAME } from './reg-exp';
+
+interface Files<T = any> {
+  [key: string]: T;
+}
 
 /**
  * @name autoImportRoutes
