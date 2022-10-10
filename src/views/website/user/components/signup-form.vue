@@ -3,7 +3,7 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/wings-reg-exp';
+import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/wings-storage';
 import { StorageAppEnum, RouteUserEnum, GetPhoneCodeType } from '@/enums';
 import { useWingsCountDown, useWingsCrud, useWingsStore } from '@/hooks';

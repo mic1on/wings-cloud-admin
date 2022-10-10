@@ -1,20 +1,16 @@
 import type { IObject } from '#/interface.d';
 import type { RouteRecordRaw } from 'vue-router';
 import { App } from 'vue';
-import { FILE_NAME } from '@/utils/wings-reg-exp';
-import { RouteBaseEnum } from '@/enums';
 import { componentAddInstall } from './auto-register';
+import { RouteBaseEnum } from '@/enums';
+import { FILE_NAME } from '@/utils/reg-exp';
 
 /**
  * @name autoImportRoutes
- * @param path
+ * @param files
  * @return routes
  */
-export const autoImportRoutes = (path: string): Array<RouteRecordRaw> => {
-  const files: IObject = import.meta.glob(path, {
-    import: 'default',
-    eager: true,
-  });
+export const autoImportRoutes = (files: IObject): Array<RouteRecordRaw> => {
   let _routes: Array<RouteRecordRaw> = [];
   Object.keys(files).forEach((key) => {
     _routes = _routes.concat(files[key]);
@@ -28,13 +24,10 @@ export const autoImportRoutes = (path: string): Array<RouteRecordRaw> => {
 
 /**
  * @name autoImportApis
- * @param path
+ * @param files
  * @return apis
  */
-export const autoImportApis = (path: string): IObject<IObject<string>> => {
-  const files: IObject = import.meta.glob(path, {
-    eager: true,
-  });
+export const autoImportApis = (files: IObject): IObject<IObject<string>> => {
   const apis: IObject<IObject<string>> = {};
   Object.keys(files).forEach((key) => {
     const _key = key.split('/');
@@ -47,13 +40,10 @@ export const autoImportApis = (path: string): IObject<IObject<string>> => {
 
 /**
  * @name autoImportPiniaStore
- * @param path
+ * @param files
  * @return stores
  */
-export const autoImportPiniaStore = (path: string): IObject => {
-  const files: IObject = import.meta.glob(path, {
-    eager: true,
-  });
+export const autoImportPiniaStore = (files: IObject): IObject => {
   let stores: IObject = {};
   Object.keys(files).forEach((key) => {
     const fileName = key.replace(FILE_NAME, '$2');
@@ -64,14 +54,10 @@ export const autoImportPiniaStore = (path: string): IObject => {
 
 /**
  * @name autoImportLanguages
- * @param path
+ * @param files
  * @return languages
  */
-export const autoImportLanguages = (path: string): IObject => {
-  const files: IObject = import.meta.glob(path, {
-    import: 'default',
-    eager: true,
-  });
+export const autoImportLanguages = (files: IObject): IObject => {
   const languages: IObject = {};
   Object.keys(files).forEach((key: string) => {
     const languageAlias = key.split('/')[key.split('/').length - 2];
@@ -102,16 +88,4 @@ export const autoImportComponents = (
       component.install(app);
     }
   });
-};
-
-/**
- * @name autoImportViews
- * @param path
- * @returns
- */
-export const autoImportViews = (path: string): IObject => {
-  const files: IObject = import.meta.glob(path, {
-    eager: true,
-  });
-  return files;
 };

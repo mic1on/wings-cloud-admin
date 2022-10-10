@@ -1,7 +1,7 @@
 import type { Callback, I18nT, IObject } from '#/interface.d';
 
 /**
- * 网络状态代码处理适配器
+ * @name networkCodeAdaptor
  * @param code
  * @param t
  * @param callback
@@ -65,7 +65,7 @@ export const networkCodeAdaptor = (
 };
 
 /**
- * 接口状态代码处理适配器
+ * @name apiCodeAdaptor
  * @param code
  * @param t
  * @param callback
@@ -97,7 +97,7 @@ export const apiCodeAdaptor = (
 };
 
 /**
- * 鉴权状态码处理适配器
+ * @name authCodeAdaptor
  * @param data
  * @param t
  * @param callback

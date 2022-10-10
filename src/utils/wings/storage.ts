@@ -1,17 +1,17 @@
 import type { AppStorageOptions } from '#/app/app-storage.d';
-import { isNullOrUndefined } from '@/utils/wings-utils';
+import { isNullOrUndefined } from './utils';
 
 /**
- * 判断缓存是会话缓存还是持久缓存
- * @param storageType
+ * @name storageType
+ * @param type
  * @return storage
  */
-export const storageType = (storageType: string): Storage => {
-  return storageType === 'local' ? localStorage : sessionStorage;
+export const storageType = (type: string): Storage => {
+  return type === 'local' ? localStorage : sessionStorage;
 };
 
 /**
- * 写入缓存方法
+ * @name setStorage
  * @param key
  * @param data
  * @param options
@@ -44,7 +44,7 @@ export const setStorage = (
 };
 
 /**
- * 读取缓存方法
+ * @name getStorage
  * @param key
  * @param options
  * @return data
@@ -77,7 +77,7 @@ export const getStorage = (key: string, options?: AppStorageOptions): any => {
 };
 
 /**
- * 移除缓存方法
+ * @name removeStorage
  * @param key
  * @param type
  */

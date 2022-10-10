@@ -1,8 +1,8 @@
 import type { IObject } from '#/interface.d';
 import type { App } from 'vue';
-import { pluginAddRegister } from '../helper';
+import { pluginAddRegister } from '@/utils';
 import { createPinia } from 'pinia';
-import { FILE_NAME } from '@/utils/wings-reg-exp';
+import { FILE_NAME } from '@/utils/reg-exp';
 
 const files: IObject = import.meta.glob('./modules/**/*.ts', {
   eager: true,

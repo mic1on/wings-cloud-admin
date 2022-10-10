@@ -1,6 +1,6 @@
 import type { App } from 'vue';
 import VueDOMPurifyHTML from 'vue-dompurify-html';
-import { pluginAddRegister } from '@/plugins/helper';
+import { pluginAddRegister } from '@/utils';
 
 const useVueDomPurifyHTML = (app: App<Element>): void => {
   app.use(VueDOMPurifyHTML);

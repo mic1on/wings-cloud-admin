@@ -1,7 +1,7 @@
 import type { IObject, IFunction } from '#/interface.d';
 
 /**
- * 判断是否是 null 或 undefined
+ * @name isNullOrUndefined
  * @param value
  * @return null | undefined
  */
@@ -10,7 +10,7 @@ export const isNullOrUndefined = (value: unknown): boolean => {
 };
 
 /**
- * 获取 Object 上某键的值
+ * @name getValueByKeys
  * @param record {}
  * @param key 'a.b.c'
  * @param defaultValue
@@ -29,7 +29,7 @@ export const getValueByKeys = (
 };
 
 /**
- * 数组转对象
+ * @name arrayToObject
  * @param data
  * @param key
  * @param render
@@ -50,7 +50,7 @@ export const arrayToObject = (
 };
 
 /**
- * 拦截 GET 的入参和 POST 的 Body
+ * @name interceptJointData
  * @param url
  * @return value
  */
@@ -66,7 +66,7 @@ export const interceptJointData = (data: string): IObject => {
 };
 
 /**
- * 递归查找值
+ * @name arrayRecursion
  * @param key
  * @param array
  * @return {}

@@ -2,7 +2,7 @@ import type { App } from 'vue';
 import { useElementPlus, useElementIcons } from './element-plus';
 import { usePinia } from './pinia';
 import { useVueDomPurifyHTML } from './vue-dompurify-html';
-import { useI18n } from './vue-i18n';
+import { useI18n, i18n } from './vue-i18n';
 import { useRouter } from './vue-router';
 import { useMock } from './mock';
 import { stores } from './pinia';
@@ -21,4 +21,4 @@ const usePlguins = async (app: App<Element>): Promise<void> => {
   useElementIcons(app);
 };
 
-export { usePlguins, stores, routes, languages, messages };
+export { usePlguins, stores, routes, languages, messages, i18n };

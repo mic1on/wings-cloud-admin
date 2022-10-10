@@ -1,30 +1,27 @@
-import axios from 'axios';
-import qs from 'qs';
-import { ElNotification } from 'element-plus';
-import { i18n } from '@/plugins/vue-i18n';
 import type { Axios, AxiosResponse } from 'axios';
 import type { I18nT, IObject } from '#/interface';
 import type { RequestOptions, ResponseData } from '#/app/app-request';
-import { RequestHeaderEnum, StorageAppEnum } from '@/enums';
-import { getStorage } from '@/utils/wings-storage';
+import axios from 'axios';
+import qs from 'qs';
+import { ElNotification } from 'element-plus';
+import { getStorage } from './storage';
 import {
   networkCodeAdaptor,
   apiCodeAdaptor,
   authCodeAdaptor,
-} from '@/utils/wings-code-adaptor';
+} from './code-adaptor';
+import { i18n } from '@/plugins';
+import { RequestHeaderEnum, StorageAppEnum } from '@/enums';
 
-/**
- * 定义全局 Vue-i18n 插件，在非 <script> 中使用 t
- */
 const { t } = i18n.global;
 const _t: I18nT = t;
 
 /**
- * 初始化 Axios 请求实例
+ * @name request
  * @param options
  * @return _axios
  */
-export const wingsRequest = <T>(
+export const request = <T>(
   options: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
   const _axios: Axios = axios.create();
@@ -58,7 +55,7 @@ export const wingsRequest = <T>(
 };
 
 /**
- * 添加 Axios 请求拦截器
+ * @name addInterceptorsRequest
  * @param axios
  * @param options
  * @returns
@@ -89,7 +86,7 @@ export const addInterceptorsRequest = (
 };
 
 /**
- * 添加 Axios 响应拦截器
+ * @name addInterceptorsResponse
  * @param axios
  * @param options
  * @returns
@@ -131,18 +128,18 @@ export const addInterceptorsResponse = <T>(
 };
 
 /**
- * 封装 GET 通用请求
+ * @name GET
  * @param url
  * @param params
  * @param options
- * @return wingsRequest
+ * @return request
  */
 export const GET = <T>(
   url: string,
   params?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return wingsRequest({
+  return request({
     url,
     method: 'GET',
     params,
@@ -155,18 +152,18 @@ export const GET = <T>(
 };
 
 /**
- * 封装 POST 通用请求
+ * @name POST
  * @param url
  * @param data
  * @param options
- * @return wingsRequest
+ * @return request
  */
 export const POST = <T>(
   url: string,
   data?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return wingsRequest({
+  return request({
     url,
     method: 'POST',
     data,
@@ -179,18 +176,18 @@ export const POST = <T>(
 };
 
 /**
- * 封装 PUT 通用请求
+ * @name PUT
  * @param url
  * @param data
  * @param options
- * @return wingsRequest
+ * @return request
  */
 export const PUT = <T>(
   url: string,
   data?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return wingsRequest({
+  return request({
     url,
     method: 'PUT',
     data,
@@ -203,18 +200,18 @@ export const PUT = <T>(
 };
 
 /**
- * 封装 DELETE 通用请求
+ * @name DELETE
  * @param url
  * @param data
  * @param options
- * @return wingsRequest
+ * @return request
  */
 export const DELETE = <T>(
   url: string,
   params?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return wingsRequest({
+  return request({
     url,
     method: 'DELETE',
     params,
@@ -227,18 +224,18 @@ export const DELETE = <T>(
 };
 
 /**
- * 封装 UPLOAD 通用上传文件方法
+ * @name UPLOAD
  * @param url
  * @param data
  * @param options
- * @return wingsRequest
+ * @return request
  */
 export const UPLOAD = <T>(
   url: string,
   data?: any,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return wingsRequest({
+  return request({
     url,
     method: 'POST',
     data,
@@ -251,11 +248,11 @@ export const UPLOAD = <T>(
 };
 
 /**
- * 封装 DOWNLOAD 通用下载文件方法
+ * @name DOWNLOAD
  * @param url
  * @param data
  * @param options
- * @return wingsRequest
+ * @return request
  */
 export const DOWNLOAD = <T>(
   url: string,
@@ -263,7 +260,7 @@ export const DOWNLOAD = <T>(
   filename?: string,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
-  return wingsRequest({
+  return request({
     url,
     method: 'GET',
     params,

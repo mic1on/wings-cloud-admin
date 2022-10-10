@@ -2,7 +2,7 @@
 import type { FormRules, FormInstance } from 'element-plus';
 import type { LoginPhoneForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
-import { MOBILE_PHONE } from '@/utils/wings-reg-exp';
+import { MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/wings-storage';
 import { StorageAppEnum, GetPhoneCodeType } from '@/enums';
 import { useWingsCountDown, useWingsCrud } from '@/hooks';

@@ -4,8 +4,12 @@ import {
   AppIconTypeEnum,
 } from './wings/base';
 import { RequestHeaderEnum, GetPhoneCodeType } from './wings/request';
-import { RouteBaseEnum, RouteWebsiteEnum, RouteUserEnum } from './route';
-import { StorageAppEnum, StorageRouteEnum, StorageLayoutEnum } from './storage';
+import { RouteBaseEnum, RouteWebsiteEnum, RouteUserEnum } from './wings/route';
+import {
+  StorageAppEnum,
+  StorageRouteEnum,
+  StorageLayoutEnum,
+} from './wings/storage';
 
 export {
   AppLanguageEnum,

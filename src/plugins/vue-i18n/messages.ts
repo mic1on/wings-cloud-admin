@@ -3,7 +3,7 @@ import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
 import { elementPlusConfig } from '@/plugins/element-plus';
 import { AppLanguageEnum } from '@/enums';
-import { FILE_NAME } from '@/utils/wings-reg-exp';
+import { FILE_NAME } from '@/utils/reg-exp';
 
 const files: IObject = import.meta.glob('./languages/**/*.json', {
   import: 'default',
