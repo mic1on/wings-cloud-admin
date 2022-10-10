@@ -1,5 +1,6 @@
 import Router from '@/layouts/router.vue';
 import { AppIconTypeEnum } from '@/enums';
+import type { RouteMeta } from '#/interface';
 
 export default [
   {
@@ -39,7 +40,7 @@ export default [
           icon: 'Odometer',
           menuName: '仪表盘',
           sort: 1,
-        },
+        } as RouteMeta,
       },
     ],
   },
@@ -55,6 +56,8 @@ export default [
       icon: 'InfoFilled',
       menuName: '关于',
       sort: 6,
+      externalPage: false,
+      externalPageUrl: '',
     },
   },
 ];

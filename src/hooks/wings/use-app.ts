@@ -1,4 +1,4 @@
-import { setStorage } from '@/utils/wings-storage';
+import { setStorage } from '@/utils';
 import { StorageAppEnum } from '@/enums';
 import { getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';

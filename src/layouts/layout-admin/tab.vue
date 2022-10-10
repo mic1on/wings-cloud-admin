@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { IObject } from '#/interface.d';
 import { useWingsStore } from '@/hooks';
-import { arrayRecursion } from '@/utils/wings-utils';
+import { arrayRecursion } from '@/utils';
 
 const { t } = useI18n();
 

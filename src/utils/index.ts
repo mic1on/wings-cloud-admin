@@ -9,6 +9,7 @@ import {
   componentAddInstall,
   pluginAddRegister,
   componentAddPath,
+  mountApis,
 } from './wings/auto-register';
 import {
   request,
@@ -49,6 +50,7 @@ export {
   componentAddInstall,
   pluginAddRegister,
   componentAddPath,
+  mountApis,
   request,
   addInterceptorsRequest,
   addInterceptorsResponse,

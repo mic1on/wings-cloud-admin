@@ -2,7 +2,7 @@ import type { I18n, I18nOptions } from 'vue-i18n';
 import type { App } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { pluginAddRegister } from '@/utils';
-import { getStorage } from '@/utils/wings-storage';
+import { getStorage } from '@/utils';
 import { StorageAppEnum } from '@/enums';
 import { messages, languages } from './messages';
 

@@ -1,5 +1,5 @@
+import type { IObject } from '#/interface.d';
 import { App, FunctionalComponent, Plugin } from 'vue';
-
 /**
  * @name componentAddInstall
  * @param component
@@ -41,4 +41,18 @@ export const pluginAddRegister = <T>(plugin: Plugin): T & Plugin => {
 export const componentAddPath = (path: string): string => {
   path = path.replace('_', '-');
   return `/src/views${path}.vue`;
+};
+
+/**
+ * @name mountApis
+ * @param app
+ * @param apis
+ */
+export const mountApis = (app: App, apis: IObject<IObject<string>>): void => {
+  Object.entries(apis).map(([path, _apis]) => {
+    app.config.globalProperties.$apis = {
+      ...app.config.globalProperties.$apis,
+      [path]: { ..._apis },
+    };
+  });
 };

@@ -2,7 +2,7 @@ import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
 import { RouteUserEnum, RouteBaseEnum, StorageAppEnum } from '@/enums';
-import { getStorage } from '@/utils/wings-storage';
+import { getStorage } from '@/utils';
 import { getLoginStorageType } from '@/plugins/pinia/modules/user';
 
 export const addRouterGuard = (router: Router): Router => {

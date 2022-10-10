@@ -3,7 +3,7 @@ import type { LoginAccountData, SignupData } from '#/api/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import type { UserState } from '#/store/app-user.d';
 import { defineStore } from 'pinia';
-import { getStorage, setStorage } from '@/utils/wings-storage';
+import { getStorage, setStorage } from '@/utils';
 import { StorageAppEnum, RouteUserEnum } from '@/enums';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
 import { getUserRoles } from '@/apis/admin/auth';

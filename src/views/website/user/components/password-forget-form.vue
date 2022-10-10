@@ -4,7 +4,7 @@ import type { PasswordRetrieveForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
-import { getStorage } from '@/utils/wings-storage';
+import { getStorage } from '@/utils';
 import { StorageAppEnum, GetPhoneCodeType, RouteUserEnum } from '@/enums';
 import { useWingsCountDown, useWingsCrud } from '@/hooks';
 
