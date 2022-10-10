@@ -4,9 +4,14 @@ import type { PasswordRetrieveForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
-import { getStorage } from '@/utils';
-import { StorageEnum, PhoneCodeTypeEnum, RouteEnum } from '@/enums';
-import { useWingsCountDown, useWingsCrud } from '@/hooks';
+import { getStorage } from '@wings';
+import {
+  StorageEnum,
+  PhoneCodeTypeEnum,
+  RouteEnum,
+  useWingsCountDown,
+  useWingsCrud,
+} from '@wings';
 
 const { t } = useI18n();
 

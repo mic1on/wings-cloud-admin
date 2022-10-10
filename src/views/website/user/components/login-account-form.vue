@@ -4,8 +4,7 @@ import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
-import { RouteEnum } from '@/enums';
-import { useWingsCrud, useWingsStore } from '@/hooks';
+import { RouteEnum, useWingsCrud, useWingsStore } from '@wings';
 
 const { apis } = useWingsCrud();
 

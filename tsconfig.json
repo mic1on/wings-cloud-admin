@@ -85,7 +85,7 @@
   /**
    * 类型声明目录
    */
-  "typeRoots": ["node_modules/@types/", "types/", "wings/typings/"],
+  "typeRoots": ["node_modules/@types/", "types/", "wings/"],
 
   /**
    * 编译处理的文件列表

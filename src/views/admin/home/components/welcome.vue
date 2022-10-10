@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useWingsStore } from '@/hooks';
+import { useWingsStore } from '@wings';
 
 const { t } = useI18n();
 

@@ -1,4 +1,4 @@
-import { GET } from '@/utils';
+import { GET } from '@wings';
 import type { ResponseData } from '#/app/app-request.d';
 import type { PhoneCodeParams } from '#/api/base.d';
 
