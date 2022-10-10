@@ -1,8 +1,9 @@
 import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
-import { RouteEnum, StorageEnum, getLoginStorageType } from '@wings';
-import { getStorage } from '@wings';
+import { RouteEnum, StorageEnum } from '../../enums';
+import { getLoginStorageType } from '../pinia';
+import { getStorage } from '../../storage';
 
 export const addRouterGuard = (router: Router): Router => {
   router.beforeEach(

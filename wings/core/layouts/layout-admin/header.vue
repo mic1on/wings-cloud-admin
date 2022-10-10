@@ -7,7 +7,7 @@ import {
   SwitchDarkLight,
   SwitchCollapse,
   SwitchFullscreen,
-} from '@/layouts/components';
+} from '../components';
 </script>
 <template>
   <div h-full flex items-center justify-between>

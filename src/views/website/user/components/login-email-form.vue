@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
 import type { LoginEmailForm } from '#/views/website/user.d';
-import { EMAIL } from '@/utils/reg-exp';
+import { EMAIL } from '@wings';
 
 const { t } = useI18n();
 

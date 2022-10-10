@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { LayoutMenu, LayoutLogo } from '@/layouts/components';
+import { LayoutMenu, LayoutLogo } from '../components';
 </script>
 
 <template>

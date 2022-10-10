@@ -1,7 +1,6 @@
 import type { ResponseData } from '#/app/app-request.d';
 import type { IObject } from '#/interface.d';
-import { interceptJointData } from '@wings';
-import { AuthenticationEnum } from '@wings';
+import { interceptJointData, AuthenticationEnum } from '@wings';
 
 export default {
   /**

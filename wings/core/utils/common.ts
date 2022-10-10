@@ -1,4 +1,5 @@
-import type { IObject, IFunction } from '#/interface.d';
+import type { IObject, IFunction } from './common.d';
+import type { Reg } from './reg-exp.d';
 
 /**
  * @name isNullOrUndefined
@@ -71,7 +72,6 @@ export const interceptJointData = (data: string): IObject => {
  * @param array
  * @return {}
  */
-
 export const arrayRecursion = (
   key: string,
   array: IObject[],
@@ -86,4 +86,13 @@ export const arrayRecursion = (
       if (res) return res;
     }
   }
+};
+
+/**
+ * @name checkFloat
+ * @param n
+ * @returns
+ */
+export const checkFloat = (n: string): Reg => {
+  return /^([1-9]+[\d]*(.[0-9]{1,${n}})?)/;
 };

@@ -11,7 +11,7 @@ import {
   authCodeAdaptor,
 } from './code-adaptor';
 import { RequestHeaderEnum, StorageEnum } from './enums';
-import { i18n } from './plugins';
+import { i18n } from './plugins/vue-i18n';
 
 const { t } = i18n.global;
 const _t: I18nT = t;

@@ -4,11 +4,10 @@ import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/notification.scss';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import * as elementPlusConfig from './config';
-import { autoImportComponents } from '../../auto-import';
-import { pluginAddRegister } from '../../auto-register';
+import { installComponents, pluginAddRegister } from '../../utils/auto';
 
 const useElementIcons = (app: App<Element>): void => {
-  autoImportComponents(app, ElementPlusIconsVue);
+  installComponents(app, ElementPlusIconsVue);
 };
 
 const useElementPlus = (app: App<Element>): void => {

@@ -1,5 +1,5 @@
-import Router from '@/layouts/router.vue';
-import { IconTypeEnum } from '@wings';
+import { Router } from '../../../../layouts';
+import { IconTypeEnum } from '../../../../enums';
 
 export default [
   {

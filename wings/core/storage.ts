@@ -1,5 +1,5 @@
 import type { AppStorageOptions } from '#/app/app-storage.d';
-import { isNullOrUndefined } from './utils';
+import { isNullOrUndefined } from './utils/common';
 
 /**
  * @name storageType
