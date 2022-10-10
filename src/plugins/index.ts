@@ -1,17 +1,24 @@
 import type { App } from 'vue';
-import { autoRegisterPlugins } from '@/utils/wings-auto';
+import { useElementPlus, useElementIcons } from './element-plus';
+import { usePinia } from './pinia';
+import { useVueDomPurifyHTML } from './vue-dompurify-html';
+import { useI18n, i18n } from './vue-i18n';
+import { useRouter } from './vue-router';
+import { useMock } from './mock';
+import { stores } from './pinia';
+import { routes } from './vue-router';
+import { languages, messages } from './vue-i18n';
 
-/**
- * 自动导入需要注册的三方插件
- */
-const plugins: Record<string, any> = import.meta.glob('./**/index.ts', {
-  import: 'default',
-  eager: true,
-});
+const usePlguins = async (app: App<Element>): Promise<void> => {
+  useI18n(app);
+  useRouter(app);
+  useElementPlus(app);
+  usePinia(app);
+  useVueDomPurifyHTML(app);
 
-/**
- * 导出自动注册三方插件方法
- */
-export const registerPlugins = async (app: App): Promise<void> => {
-  await autoRegisterPlugins(app, plugins);
+  useMock();
+
+  useElementIcons(app);
 };
+
+export { usePlguins, stores, routes, languages, messages, i18n };

@@ -3,24 +3,20 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/wings-reg-exp';
-import { getStorage } from '@/utils/wings-storage';
-import { StorageAppEnum } from '@/enums/storage';
-import { RouteUserEnum } from '@/enums/route';
-import { GetPhoneCodeType } from '@/enums/request';
-import { stores } from '@/plugins/pinia';
-import useCodeCountDown from '@/hooks/app-code-count-down';
-import useAppApi from '@/hooks/app-api';
+import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
+import { getStorage } from '@/utils';
+import { StorageAppEnum, RouteUserEnum, GetPhoneCodeType } from '@/enums';
+import { useWingsCountDown, useWingsCrud, useWingsStore } from '@/hooks';
 
 const { t } = useI18n();
 
 const router = useRouter();
 
-const { apis } = useAppApi();
+const { apis } = useWingsCrud();
 
-const userStore = stores['app-user'].default();
+const { appUserStore } = useWingsStore();
 
-const codeCountDown = useCodeCountDown();
+const countDown = useWingsCountDown();
 
 const formRef = ref<FormInstance>();
 
@@ -136,14 +132,14 @@ const goLogin = (): void => {
 const mobileAreaCodeList = getStorage(StorageAppEnum.MOBILE_PHONE_AREA_CODE);
 
 const getPhoneCode = (): void => {
-  codeCountDown.getCode(form.value.phone, async () => {
+  countDown.getCode(form.value.phone, async () => {
     const res = await apis.base.getPhoneCode({
       phone: form.value.phone,
       type: GetPhoneCodeType.SIGNUP,
     });
     if (res.code === 0) {
       ElMessage.success(t('base.form.sendSuccess'));
-      codeCountDown.getCoding();
+      countDown.getCoding();
     }
   });
 };
@@ -155,7 +151,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
   await formEl.validate(async (valid: boolean) => {
     if (valid) {
       signupLoading.value = true;
-      await userStore.signup(form.value);
+      await appUserStore.signup(form.value);
       signupLoading.value = false;
     }
   });
@@ -231,19 +227,19 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
             p-0
             link
             type="primary"
-            :disabled="codeCountDown.form.getting"
+            :disabled="countDown.form.getting"
             @click="getPhoneCode()"
           >
-            <span text-3 v-if="codeCountDown.form.getting">
+            <span text-3 v-if="countDown.form.getting">
               {{
                 t('base.form.countDownTimeLabel', {
-                  time: codeCountDown.form.time,
+                  time: countDown.form.time,
                 })
               }}
             </span>
             <span text-3 v-else>
               {{
-                codeCountDown.form.send
+                countDown.form.send
                   ? t('base.form.resend')
                   : t('base.form.getSecurityCode')
               }}

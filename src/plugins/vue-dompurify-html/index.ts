@@ -1,9 +1,11 @@
+import type { App } from 'vue';
 import VueDOMPurifyHTML from 'vue-dompurify-html';
-import { pluginAddRegister } from '@/utils/wings-auto';
+import { pluginAddRegister } from '@/utils';
 
-/**
- * 导出添加注册插件方法
- */
-export default pluginAddRegister(VueDOMPurifyHTML, {
-  sort: 4,
-});
+const useVueDomPurifyHTML = (app: App<Element>): void => {
+  app.use(VueDOMPurifyHTML);
+};
+
+export { useVueDomPurifyHTML };
+
+export default pluginAddRegister(VueDOMPurifyHTML);

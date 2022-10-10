@@ -1,25 +1,36 @@
-import type { Router } from 'vue-router';
+import type { IObject } from '#/interface.d';
+import type { Router, RouteRecordRaw } from 'vue-router';
+import type { App } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { pluginAddRegister } from '@/utils/wings-auto';
+import { pluginAddRegister } from '@/utils';
+import { RouteBaseEnum } from '@/enums';
 import { addRouterGuard } from './guard';
-import { routes } from './import';
 
-/**
- * 导出静态路由
- */
-export { routes };
+const files: IObject = import.meta.glob('./routes/**/*.ts', {
+  import: 'default',
+  eager: true,
+});
 
-/**
- * 导出初始化 Vue-router 实例
- */
-export const router: Router = createRouter({
+let routes: Array<RouteRecordRaw> = [];
+
+Object.keys(files).forEach((key) => {
+  routes = routes.concat(files[key]);
+});
+
+routes.push({
+  path: '/:pathMatch(.*)',
+  redirect: RouteBaseEnum.ROUTE_NO_FOUND,
+});
+
+const router: Router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL),
   routes,
 });
 
-/**
- * 导出添加注册插件方法
- */
-export default pluginAddRegister(addRouterGuard(router), {
-  sort: 1,
-});
+const useRouter = (app: App<Element>): void => {
+  app.use(router);
+};
+
+export { routes, router, useRouter };
+
+export default pluginAddRegister(addRouterGuard(router));

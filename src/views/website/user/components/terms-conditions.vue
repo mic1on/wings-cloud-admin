@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { ResponseData } from '#/app/app-request.d';
-import useAppApi from '@/hooks/app-api';
+import { useWingsCrud } from '@/hooks';
 
-const { apis } = useAppApi();
+const { apis } = useWingsCrud();
 
 const { t } = useI18n();
 

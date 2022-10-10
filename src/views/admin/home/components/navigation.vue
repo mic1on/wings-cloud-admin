@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import useAppStore from '@/hooks/app-store';
-
 const { t } = useI18n();
 </script>
 <template>

@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import type { IObject } from '#/interface.d';
-import { stores } from '@/plugins/pinia';
-import { arrayRecursion } from '@/utils/wings-utils';
+import { useWingsStore } from '@/hooks';
+import { arrayRecursion } from '@/utils';
 
 const { t } = useI18n();
 
 const route = useRoute();
 const router = useRouter();
 
-const appRouteStore = stores['app-route'].default();
+const { appRouteStore } = useWingsStore();
 
 const tab: any = reactive({
   tabList: [],

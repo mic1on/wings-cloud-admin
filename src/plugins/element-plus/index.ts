@@ -1,17 +1,19 @@
+import type { App } from 'vue';
 import ElementPlus from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/notification.scss';
-import * as elementPlusConfig from './prefix';
-import { pluginAddRegister } from '@/utils/wings-auto';
+import * as ElementPlusIconsVue from '@element-plus/icons-vue';
+import * as elementPlusConfig from './config';
+import { pluginAddRegister, autoImportComponents } from '@/utils';
 
-/**
- * 导出 Element Plus 配置项
- */
-export { elementPlusConfig };
+const useElementIcons = (app: App<Element>): void => {
+  autoImportComponents(app, ElementPlusIconsVue);
+};
 
-/**
- * 导出添加注册插件方法
- */
-export default pluginAddRegister(ElementPlus, {
-  sort: 2,
-});
+const useElementPlus = (app: App<Element>): void => {
+  app.use(ElementPlus);
+};
+
+export { elementPlusConfig, useElementIcons, useElementPlus };
+
+export default pluginAddRegister(ElementPlus);

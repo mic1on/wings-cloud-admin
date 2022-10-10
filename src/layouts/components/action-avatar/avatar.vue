@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import useAppStore from '@/hooks/app-store';
-import { RouteUserEnum } from '@/enums/route';
+import { useWingsStore } from '@/hooks';
+import { RouteUserEnum } from '@/enums';
 
 const { t } = useI18n();
 const router = useRouter();
 
-const appStore = useAppStore();
+const { appUserStore } = useWingsStore();
 
 const goLoginPage = (): void => {
-  if (appStore.user.isLogin) return;
+  if (appUserStore.isLogin) return;
   router.push({ path: RouteUserEnum.ROUTE_LOGIN });
 };
 </script>
@@ -17,9 +17,9 @@ const goLoginPage = (): void => {
   <el-avatar
     cursor-pointer
     :size="34"
-    :src="appStore.user.userInfo.avatar"
+    :src="appUserStore.userInfo.avatar"
     @click="goLoginPage()"
   >
-    <span text-1>{{ appStore.user.isLogin ? '' : t('base.form.login') }}</span>
+    <span text-1>{{ appUserStore.isLogin ? '' : t('base.form.login') }}</span>
   </el-avatar>
 </template>

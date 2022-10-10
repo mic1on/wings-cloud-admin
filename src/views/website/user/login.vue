@@ -64,24 +64,21 @@ const changeLoginType = (type: string, isOpen: boolean): void => {
           v-if="loginType === 'account' || loginType === 'phone'"
           cursor-pointer
           name="wechat"
-          w-8
-          h-8
+          size="1.8rem"
           @click="changeLoginType('wechat', true)"
         ></wings-svg-icon>
         <wings-svg-icon
           v-if="loginType === 'account' || loginType === 'phone'"
           cursor-pointer
           name="alipay"
-          w-8
-          h-8
+          size="1.8rem"
           @click="changeLoginType('alipay', true)"
         ></wings-svg-icon>
         <wings-svg-icon
           v-if="loginType === 'account' || loginType === 'phone'"
           cursor-pointer
           name="email"
-          w-8
-          h-8
+          size="1.8rem"
           @click="changeLoginType('email', true)"
         ></wings-svg-icon>
       </div>

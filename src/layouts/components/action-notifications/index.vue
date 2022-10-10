@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { stores } from '@/plugins/pinia';
+import { useWingsStore } from '@/hooks';
 
 const { t } = useI18n();
 
-const appUserStore = stores['app-user'].default();
+const { appUserStore } = useWingsStore();
 </script>
 
 <template>

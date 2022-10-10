@@ -3,14 +3,13 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
-import { USERNAME, PASSWORD_NORMAL } from '@/utils/wings-reg-exp';
-import { RouteUserEnum } from '@/enums/route';
-import useAppApi from '@/hooks/app-api';
-import { stores } from '@/plugins/pinia';
+import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
+import { RouteUserEnum } from '@/enums';
+import { useWingsCrud, useWingsStore } from '@/hooks';
 
-const { apis } = useAppApi();
+const { apis } = useWingsCrud();
 
-const userStore = stores['app-user'].default();
+const { appUserStore } = useWingsStore();
 
 const { t } = useI18n();
 
@@ -88,7 +87,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
   await formEl.validate(async (valid: boolean) => {
     if (valid) {
       loginLoading.value = true;
-      await userStore.loginByAccount(form.value);
+      await appUserStore.loginByAccount(form.value);
       loginLoading.value = false;
     }
   });

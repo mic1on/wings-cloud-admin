@@ -1,20 +1,26 @@
-import { IObject } from '#/interface.d';
-import { pluginAddRegister } from '@/utils/wings-auto';
+import type { IObject } from '#/interface.d';
+import type { App } from 'vue';
+import { pluginAddRegister } from '@/utils';
 import { createPinia } from 'pinia';
-import { autoImportPiniaStore } from '@/utils/wings-auto';
+import { FILE_NAME } from '@/utils/reg-exp';
 
-/**
- * 自动导入Pinia模块，同时导出注册的 Pinia 总线
- */
-export const stores: IObject = autoImportPiniaStore(
-  import.meta.glob('@/store/**/*.ts', {
-    eager: true,
-  })
-);
-
-/**
- * 导出添加注册插件方法
- */
-export default pluginAddRegister(createPinia(), {
-  sort: 0,
+const files: IObject = import.meta.glob('./modules/**/*.ts', {
+  eager: true,
 });
+
+let stores: IObject = {};
+
+Object.keys(files).forEach((key) => {
+  const fileName = key.replace(FILE_NAME, '$2');
+  stores = { ...stores, [fileName]: files[key] || {} };
+});
+
+const pinia = createPinia();
+
+const usePinia = (app: App<Element>): void => {
+  app.use(pinia);
+};
+
+export { stores, pinia, usePinia };
+
+export default pluginAddRegister(pinia);

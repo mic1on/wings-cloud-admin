@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import useAppStore from '@/hooks/app-store';
+import { useWingsStore } from '@/hooks';
 import MenuItem from './menu-item.vue';
 
 const route = useRoute();
 
-const appStore = useAppStore();
+const { appStore, appRouteStore } = useWingsStore();
 </script>
 
 <template>
@@ -12,12 +12,12 @@ const appStore = useAppStore();
     router
     mode="vertical"
     collapse-transition
-    :collapse="appStore.app.collapse"
-    :unique-opened="appStore.app.uniqueOpened"
+    :collapse="appStore.collapse"
+    :unique-opened="appStore.uniqueOpened"
     :default-active="route.path"
     important="border-r-none"
-    :style="`height: calc(100vh - ${appStore.app.adminHeaderHeight}); width:100%;`"
+    :style="`height: calc(100vh - ${appStore.adminHeaderHeight}); width:100%;`"
   >
-    <menu-item :routes="appStore.route.adminRoutes"></menu-item>
+    <menu-item :routes="appRouteStore.adminRoutes"></menu-item>
   </el-menu>
 </template>

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import useApp from '@/hooks/app';
+import { useWingsApp } from '@/hooks';
 
-const app = useApp();
+const { changeDark } = useWingsApp();
 </script>
 
 <template>
   <i
     cursor-pointer
-    @click="app.changeDark()"
+    @click="changeDark()"
     style="color: var(--ep-text-color-primary)"
     text-4
     inline-flex
