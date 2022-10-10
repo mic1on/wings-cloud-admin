@@ -3,9 +3,13 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { LoginPhoneForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { MOBILE_PHONE } from '@/utils/reg-exp';
-import { getStorage } from '@/utils';
-import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
-import { useWingsCountDown, useWingsCrud } from '@/hooks';
+import { getStorage } from '@wings';
+import {
+  StorageEnum,
+  PhoneCodeTypeEnum,
+  useWingsCountDown,
+  useWingsCrud,
+} from '@wings';
 
 const { t } = useI18n();
 

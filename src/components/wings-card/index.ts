@@ -1,4 +1,4 @@
 import WingsCard from './index.vue';
-import { componentAddInstall } from '@/utils/wings-auto';
+import { componentAddInstall } from '@wings/wings-auto';
 
 export default componentAddInstall(WingsCard);

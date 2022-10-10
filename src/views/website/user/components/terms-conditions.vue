@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { ResponseData } from '#/app/app-request.d';
-import { useWingsCrud } from '@/hooks';
+import { useWingsCrud } from '@wings';
 
 const { apis } = useWingsCrud();
 

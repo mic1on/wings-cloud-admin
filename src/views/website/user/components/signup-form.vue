@@ -4,9 +4,15 @@ import type { SignupAccountForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
-import { getStorage } from '@/utils';
-import { StorageEnum, RouteEnum, PhoneCodeTypeEnum } from '@/enums';
-import { useWingsCountDown, useWingsCrud, useWingsStore } from '@/hooks';
+import { getStorage } from '@wings';
+import {
+  StorageEnum,
+  RouteEnum,
+  PhoneCodeTypeEnum,
+  useWingsCountDown,
+  useWingsCrud,
+  useWingsStore,
+} from '@wings';
 
 const { t } = useI18n();
 

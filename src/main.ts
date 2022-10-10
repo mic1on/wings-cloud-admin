@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from '@/App.vue';
 import mountApis from '@/apis';
-import { usePlguins } from '@/plugins';
+import { usePlguins } from '@wings';
 import 'virtual:svg-icons-register';
 import '@/styles/index.scss';
 import 'uno.css';

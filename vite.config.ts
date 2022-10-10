@@ -73,7 +73,7 @@ export default ({ mode }: ConfigEnv) => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/plugins/element-plus/styles/index.scss" as *;`,
+          additionalData: `@use "@wings/core/plugins/element-plus/styles/index.scss" as *;`,
         },
       },
     },

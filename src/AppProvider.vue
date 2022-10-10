@@ -1,9 +1,15 @@
 <script lang="ts" setup>
-import { useWingsApp, useWingsStore } from '@/hooks';
-import LayoutBase from '@/layouts/layout-base/index.vue';
-import LayoutAdmin from '@/layouts/layout-admin/index.vue';
-import LayoutWebsite from '@/layouts/layout-website/index.vue';
-import { elementPlusConfig } from '@/plugins/element-plus';
+import {
+  LayoutBase,
+  LayoutAdmin,
+  LayoutWebsite,
+  StorageEnum,
+  useWingsApp,
+  useWingsStore,
+  elementPlusConfig,
+} from '@wings';
+import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
+import { setStorage } from '@wings';
 
 const route = useRoute();
 
@@ -22,6 +28,8 @@ const locale =
 
 onBeforeMount(async () => {
   init();
+  const { data } = await _getMobileAreaCodeList();
+  setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
 });
 </script>
 
