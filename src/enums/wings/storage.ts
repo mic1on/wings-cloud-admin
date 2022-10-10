@@ -1,7 +1,7 @@
 /**
  * 导出基础缓存项（存储的 Key）枚举
  */
-export enum StorageAppEnum {
+export enum StorageEnum {
   /**
    * Vue-i18n 默认语言环境
    */
@@ -41,7 +41,7 @@ export enum StorageAppEnum {
 /**
  * 导出路由缓存项（存储的 Key)枚举
  */
-export enum StorageRouteEnum {
+export enum StorageEnum {
   /**
    * 静态路由
    */
@@ -66,7 +66,7 @@ export enum StorageRouteEnum {
 /**
  * 导出管理系统布局配置（存储的 Key)枚举
  */
-export enum StorageLayoutEnum {
+export enum StorageEnum {
   /**
    * 管理系统菜单宽度
    */

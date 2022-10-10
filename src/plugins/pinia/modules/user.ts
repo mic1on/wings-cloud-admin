@@ -4,7 +4,7 @@ import type { ResponseData } from '#/app/app-request.d';
 import type { UserState } from '#/store/app-user.d';
 import { defineStore } from 'pinia';
 import { getStorage, setStorage } from '@/utils';
-import { StorageAppEnum, RouteUserEnum } from '@/enums';
+import { StorageEnum, RouteEnum } from '@/enums';
 import { loginByAccount, getUserInfo, signup } from '@/apis/website/user';
 import { getUserRoles } from '@/apis/admin/auth';
 import { i18n } from '@/plugins/vue-i18n';
@@ -19,7 +19,7 @@ const _t: I18nT = t;
  * 获取是否保持登录状态
  */
 export const getLoginStorageType = (): string => {
-  return getStorage(StorageAppEnum.STAY_LOGIN, { type: 'local' }) === true
+  return getStorage(StorageEnum.STAY_LOGIN, { type: 'local' }) === true
     ? 'local'
     : 'session';
 };
@@ -32,14 +32,13 @@ export default defineStore('user', {
     /**
      * 是否保持登录
      */
-    stayLogin:
-      getStorage(StorageAppEnum.STAY_LOGIN, { type: 'local' }) || false,
+    stayLogin: getStorage(StorageEnum.STAY_LOGIN, { type: 'local' }) || false,
 
     /**
      * 用户登录凭证
      */
     token:
-      getStorage(StorageAppEnum.TOKEN, {
+      getStorage(StorageEnum.TOKEN, {
         type: getLoginStorageType(),
       }) || '',
 
@@ -47,7 +46,7 @@ export default defineStore('user', {
      * 用户信息
      */
     userInfo:
-      getStorage(StorageAppEnum.USER_INFO, {
+      getStorage(StorageEnum.USER_INFO, {
         type: getLoginStorageType(),
       }) || {},
 
@@ -55,7 +54,7 @@ export default defineStore('user', {
      * 用户权限
      */
     userRoles:
-      getStorage(StorageAppEnum.USER_ROLES, {
+      getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
       }) || [],
   }),
@@ -73,7 +72,7 @@ export default defineStore('user', {
      */
     setStayLogin(state: boolean): void {
       this.stayLogin = state;
-      setStorage(StorageAppEnum.STAY_LOGIN, state, {
+      setStorage(StorageEnum.STAY_LOGIN, state, {
         type: 'local',
       });
     },
@@ -83,7 +82,7 @@ export default defineStore('user', {
      */
     setToken(token: string): void {
       this.token = token;
-      setStorage(StorageAppEnum.TOKEN, token, { type: getLoginStorageType() });
+      setStorage(StorageEnum.TOKEN, token, { type: getLoginStorageType() });
     },
 
     /**
@@ -91,7 +90,7 @@ export default defineStore('user', {
      */
     setUserInfo(data: IObject): void {
       this.userInfo = data;
-      setStorage(StorageAppEnum.USER_INFO, data, {
+      setStorage(StorageEnum.USER_INFO, data, {
         type: getLoginStorageType(),
       });
     },
@@ -101,7 +100,7 @@ export default defineStore('user', {
      */
     setUserRoles<T>(data: Array<T>): void {
       this.userRoles = data;
-      setStorage(StorageAppEnum.USER_ROLES, data, {
+      setStorage(StorageEnum.USER_ROLES, data, {
         type: getLoginStorageType(),
       });
     },
@@ -203,7 +202,7 @@ export default defineStore('user', {
         window.location.reload();
       } else if (type === 'login') {
         router.push({
-          path: RouteUserEnum.ROUTE_LOGIN,
+          path: RouteEnum.ROUTE_LOGIN,
         });
       }
     },

@@ -4,7 +4,7 @@ import type { LoginPhoneForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils';
-import { StorageAppEnum, GetPhoneCodeType } from '@/enums';
+import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
 import { useWingsCountDown, useWingsCrud } from '@/hooks';
 
 const { t } = useI18n();
@@ -56,13 +56,13 @@ const formRules = reactive<FormRules>({
   ],
 });
 
-const mobileAreaCodeList = getStorage(StorageAppEnum.MOBILE_PHONE_AREA_CODE);
+const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 
 const getPhoneCode = (): void => {
   countDown.getCode(form.value.phone, async () => {
     const res = await apis.base.getPhoneCode({
       phone: form.value.phone,
-      type: GetPhoneCodeType.LOGIN,
+      type: PhoneCodeTypeEnum.LOGIN,
     });
     if (res.code === 0) {
       ElMessage.success(t('base.form.sendSuccess'));

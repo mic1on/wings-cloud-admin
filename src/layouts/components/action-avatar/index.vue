@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useWingsStore } from '@/hooks';
-import { RouteUserEnum } from '@/enums';
+import { RouteEnum } from '@/enums';
 import Avatar from './avatar.vue';
 
 const { t } = useI18n();
@@ -41,11 +41,11 @@ const actionChange = (command: string): void => {
           <el-icon><CollectionTag /></el-icon>
           <span>{{ t('base.switchRoles') }}</span>
         </el-dropdown-item>
-        <el-dropdown-item :command="RouteUserEnum.ROUTE_PERSONAL_PROFILE">
+        <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_PROFILE">
           <el-icon><User /></el-icon>
           <span>{{ t('base.userInfo') }}</span>
         </el-dropdown-item>
-        <el-dropdown-item :command="RouteUserEnum.ROUTE_PERSONAL_SETTINGS">
+        <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_SETTINGS">
           <el-icon><Setting /></el-icon>
           <span>{{ t('base.userSettings') }}</span>
         </el-dropdown-item>

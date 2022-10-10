@@ -2,7 +2,7 @@ import type { IObject } from '#/interface.d';
 import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
 import { elementPlusConfig } from '@/plugins/element-plus';
-import { AppLanguageEnum } from '@/enums';
+import { LanguageEnum } from '@/enums';
 import { FILE_NAME } from '@/utils/reg-exp';
 
 const files: IObject = import.meta.glob('./languages/**/*.json', {
@@ -23,15 +23,15 @@ Object.keys(files).forEach((key: string) => {
 });
 
 const messages: IObject = {
-  [AppLanguageEnum.EN_US_ALIAS]: {
-    name: AppLanguageEnum.EN_US_NAME,
-    ...languages[AppLanguageEnum.EN_US_ALIAS],
+  [LanguageEnum.EN_US_ALIAS]: {
+    name: LanguageEnum.EN_US_NAME,
+    ...languages[LanguageEnum.EN_US_ALIAS],
     [elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX]:
       enUS[elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX],
   },
-  [AppLanguageEnum.ZH_CN_ALIAS]: {
-    name: AppLanguageEnum.ZH_CN_NAME,
-    ...languages[AppLanguageEnum.ZH_CN_ALIAS],
+  [LanguageEnum.ZH_CN_ALIAS]: {
+    name: LanguageEnum.ZH_CN_NAME,
+    ...languages[LanguageEnum.ZH_CN_ALIAS],
     [elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX]:
       zhCN[elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX],
   },

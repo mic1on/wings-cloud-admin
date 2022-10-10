@@ -1,5 +1,5 @@
 import { setStorage } from '@/utils';
-import { StorageAppEnum } from '@/enums';
+import { StorageEnum } from '@wings';
 import { getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';
 import { stores, routes } from '@/plugins';
@@ -23,13 +23,13 @@ export default () => {
     attribute: 'class',
     valueDark: 'dark',
     valueLight: '',
-    storageKey: import.meta.env.APP_STOREAGE_PREFIX + '-' + StorageAppEnum.DARK,
+    storageKey: import.meta.env.APP_STOREAGE_PREFIX + '-' + StorageEnum.DARK,
   });
   const changeDark = useToggle(isDark);
 
   const _getMobileAreaCodeList = async () => {
     const { data } = await getMobileAreaCodeList();
-    setStorage(StorageAppEnum.MOBILE_PHONE_AREA_CODE, data);
+    setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
   };
 
   const isNeedInit = () => {
@@ -42,7 +42,7 @@ export default () => {
     appStore.changeGlobalLoading(true);
     if (await isNeedInit()) {
       setStorage(
-        StorageAppEnum.DARK,
+        StorageEnum.DARK,
         import.meta.env.APP_DARK as unknown as string,
         {
           type: 'local',

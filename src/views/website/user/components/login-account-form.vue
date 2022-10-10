@@ -4,7 +4,7 @@ import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
-import { RouteUserEnum } from '@/enums';
+import { RouteEnum } from '@/enums';
 import { useWingsCrud, useWingsStore } from '@/hooks';
 
 const { apis } = useWingsCrud();
@@ -74,10 +74,10 @@ const formRules = reactive<FormRules>({
 });
 
 const goSignup = (): void => {
-  router.push({ path: RouteUserEnum.ROUTE_SIGNUP });
+  router.push({ path: RouteEnum.ROUTE_SIGNUP });
 };
 const goPasswordPageByForget = (): void => {
-  router.push({ path: RouteUserEnum.ROUTE_PASSWORD_FORGET });
+  router.push({ path: RouteEnum.ROUTE_PASSWORD_FORGET });
 };
 
 const loginLoading = ref<boolean>(false);

@@ -31,7 +31,7 @@ export enum RequestHeaderEnum {
 /**
  * 导出手机号获取验证码用途枚举
  */
-export enum GetPhoneCodeType {
+export enum PhoneCodeTypeEnum {
   /**
    * 登录
    */
