@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useWingsStore } from '@/hooks';
-import { RouteUserEnum } from '@/enums';
+import { RouteEnum } from '@/enums';
 
 const { t } = useI18n();
 const router = useRouter();
@@ -9,7 +9,7 @@ const { appUserStore } = useWingsStore();
 
 const goLoginPage = (): void => {
   if (appUserStore.isLogin) return;
-  router.push({ path: RouteUserEnum.ROUTE_LOGIN });
+  router.push({ path: RouteEnum.ROUTE_LOGIN });
 };
 </script>
 

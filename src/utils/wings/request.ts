@@ -11,7 +11,7 @@ import {
   authCodeAdaptor,
 } from './code-adaptor';
 import { i18n } from '@/plugins';
-import { RequestHeaderEnum, StorageAppEnum } from '@/enums';
+import { RequestHeaderEnum, StorageEnum } from '@/enums';
 
 const { t } = i18n.global;
 const _t: I18nT = t;
@@ -69,7 +69,7 @@ export const addInterceptorsRequest = (
       config.params[RequestHeaderEnum.HEADER_TIME] = new Date().getTime();
     }
     if (options.isToken) {
-      config[RequestHeaderEnum.HEADER_TOKEN] = getStorage(StorageAppEnum.TOKEN);
+      config[RequestHeaderEnum.HEADER_TOKEN] = getStorage(StorageEnum.TOKEN);
     }
     if (options.headers) {
       config.headers = { ...config.headers, ...options.headers };

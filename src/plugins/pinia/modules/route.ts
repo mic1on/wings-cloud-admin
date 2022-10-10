@@ -2,7 +2,7 @@ import type { RouteState } from '#/store/app-route.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { getStorage, setStorage } from '@/utils';
-import { StorageRouteEnum } from '@/enums';
+import { StorageEnum } from '@/enums';
 import { getAdminRoutes } from '@/apis/admin/auth';
 import { router } from '@/plugins/vue-router';
 import { getLoginStorageType } from './user';
@@ -15,13 +15,13 @@ export default defineStore('route', {
     /**
      * 静态路由
      */
-    staticRoutes: getStorage(StorageRouteEnum.STATIC_ROUTES) || [],
+    staticRoutes: getStorage(StorageEnum.STATIC_ROUTES) || [],
 
     /**
      * 管理系统菜单路由
      */
     adminRoutes:
-      getStorage(StorageRouteEnum.ADMIN_ROUTES, {
+      getStorage(StorageEnum.ADMIN_ROUTES, {
         type: getLoginStorageType(),
       }) || [],
 
@@ -29,7 +29,7 @@ export default defineStore('route', {
      * 权限路由
      */
     roleRoutes:
-      getStorage(StorageRouteEnum.ROLE_ROUTES, {
+      getStorage(StorageEnum.ROLE_ROUTES, {
         type: getLoginStorageType(),
       }) || [],
 
@@ -37,7 +37,7 @@ export default defineStore('route', {
      * 全部路由
      */
     allRoutes:
-      getStorage(StorageRouteEnum.ALL_ROUTES, {
+      getStorage(StorageEnum.ALL_ROUTES, {
         type: getLoginStorageType(),
       }) || [],
   }),
@@ -47,7 +47,7 @@ export default defineStore('route', {
      */
     setStaticRoutes(data: Array<RouteRecordRaw>): void {
       this.staticRoutes = data;
-      setStorage(StorageRouteEnum.STATIC_ROUTES, data);
+      setStorage(StorageEnum.STATIC_ROUTES, data);
     },
 
     /**
@@ -64,7 +64,7 @@ export default defineStore('route', {
         }
       });
 
-      setStorage(StorageRouteEnum.ADMIN_ROUTES, this.adminRoutes, {
+      setStorage(StorageEnum.ADMIN_ROUTES, this.adminRoutes, {
         type: getLoginStorageType(),
       });
     },
@@ -83,7 +83,7 @@ export default defineStore('route', {
         }
       });
 
-      setStorage(StorageRouteEnum.ROLE_ROUTES, this.roleRoutes, {
+      setStorage(StorageEnum.ROLE_ROUTES, this.roleRoutes, {
         type: getLoginStorageType(),
       });
     },
@@ -93,7 +93,7 @@ export default defineStore('route', {
      */
     setAllRoutes(data: Array<RouteRecordRaw>): void {
       this.allRoutes = data;
-      setStorage(StorageRouteEnum.ALL_ROUTES, this.allRoutes, {
+      setStorage(StorageEnum.ALL_ROUTES, this.allRoutes, {
         type: getLoginStorageType(),
       });
     },

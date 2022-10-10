@@ -1,7 +1,7 @@
 import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
-import { RouteUserEnum, RouteBaseEnum, StorageAppEnum } from '@/enums';
+import { RouteEnum, RouteEnum, StorageEnum } from '@/enums';
 import { getStorage } from '@/utils';
 import { getLoginStorageType } from '@/plugins/pinia/modules/user';
 
@@ -12,11 +12,11 @@ export const addRouterGuard = (router: Router): Router => {
       from: RouteLocationNormalized,
       next: NavigationGuardNext
     ) => {
-      const token: string = getStorage(StorageAppEnum.TOKEN, {
+      const token: string = getStorage(StorageEnum.TOKEN, {
         type: getLoginStorageType(),
       });
 
-      const userRoles: IObject[string] = getStorage(StorageAppEnum.USER_ROLES, {
+      const userRoles: IObject[string] = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
       });
 
@@ -27,9 +27,7 @@ export const addRouterGuard = (router: Router): Router => {
       if (requiresAuth && !token) {
         next({
           path:
-            RouteUserEnum.ROUTE_LOGIN +
-            '?type=' +
-            import.meta.env.APP_LOGIN_TYPE,
+            RouteEnum.ROUTE_LOGIN + '?type=' + import.meta.env.APP_LOGIN_TYPE,
         });
         return;
       }
@@ -39,7 +37,7 @@ export const addRouterGuard = (router: Router): Router => {
         userRoles.filter((item: string) => item == to.path).length === 0
       ) {
         next({
-          path: RouteBaseEnum.ROUTE_NO_PERMISSION,
+          path: RouteEnum.ROUTE_NO_PERMISSION,
         });
         return;
       }

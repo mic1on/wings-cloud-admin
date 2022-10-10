@@ -61,6 +61,7 @@ export default ({ mode }: ConfigEnv) => {
       alias: {
         '@': resolve(__dirname, 'src'),
         '#': resolve(__dirname, 'types'),
+        '@wings': resolve(__dirname, 'wings'),
         'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],

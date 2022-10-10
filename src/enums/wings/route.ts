@@ -1,7 +1,7 @@
 /**
  * 导出基础路由枚举
  */
-export enum RouteBaseEnum {
+export enum RouteEnum {
   /**
    * 403 没有权限页面路由枚举
    */
@@ -16,7 +16,7 @@ export enum RouteBaseEnum {
 /**
  * 导出网站路由枚举
  */
-export enum RouteWebsiteEnum {
+export enum RouteEnum {
   /**
    * 使用文档
    */
@@ -26,7 +26,7 @@ export enum RouteWebsiteEnum {
 /**
  * 导出用户相关路由枚举
  */
-export enum RouteUserEnum {
+export enum RouteEnum {
   /**
    * 用户登录路由枚举
    */

@@ -1,8 +1,9 @@
+import type { Files } from './auto-import.d';
 import type { IObject } from '#/interface.d';
 import type { RouteRecordRaw } from 'vue-router';
 import { App } from 'vue';
 import { componentAddInstall } from './auto-register';
-import { RouteBaseEnum } from '@/enums';
+import { RouteEnum } from '@/enums';
 import { FILE_NAME } from '@/utils/reg-exp';
 
 /**
@@ -10,14 +11,14 @@ import { FILE_NAME } from '@/utils/reg-exp';
  * @param files
  * @return routes
  */
-export const autoImportRoutes = (files: IObject): Array<RouteRecordRaw> => {
+export const autoImportRoutes = (files: Files): Array<RouteRecordRaw> => {
   let _routes: Array<RouteRecordRaw> = [];
   Object.keys(files).forEach((key) => {
     _routes = _routes.concat(files[key]);
   });
   _routes.push({
     path: '/:pathMatch(.*)',
-    redirect: RouteBaseEnum.ROUTE_NO_FOUND,
+    redirect: RouteEnum.ROUTE_NO_FOUND,
   });
   return _routes;
 };
@@ -27,8 +28,8 @@ export const autoImportRoutes = (files: IObject): Array<RouteRecordRaw> => {
  * @param files
  * @return apis
  */
-export const autoImportApis = (files: IObject): IObject<IObject<string>> => {
-  const apis: IObject<IObject<string>> = {};
+export const autoImportApis = (files: Files): Files<Files<string>> => {
+  const apis: Files<Files<string>> = {};
   Object.keys(files).forEach((key) => {
     const _key = key.split('/');
     const api = _key[_key.length - 1].replace('.ts', '');
@@ -43,7 +44,7 @@ export const autoImportApis = (files: IObject): IObject<IObject<string>> => {
  * @param files
  * @return stores
  */
-export const autoImportPiniaStore = (files: IObject): IObject => {
+export const autoImportPiniaStore = (files: Files): IObject => {
   let stores: IObject = {};
   Object.keys(files).forEach((key) => {
     const fileName = key.replace(FILE_NAME, '$2');
@@ -57,7 +58,7 @@ export const autoImportPiniaStore = (files: IObject): IObject => {
  * @param files
  * @return languages
  */
-export const autoImportLanguages = (files: IObject): IObject => {
+export const autoImportLanguages = (files: Files): IObject => {
   const languages: IObject = {};
   Object.keys(files).forEach((key: string) => {
     const languageAlias = key.split('/')[key.split('/').length - 2];

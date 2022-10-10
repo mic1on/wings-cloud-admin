@@ -2,7 +2,7 @@ import type { IObject } from '#/interface.d';
 import type { AppState } from '#/store/app.d';
 import { defineStore } from 'pinia';
 import { getStorage, setStorage } from '@/utils';
-import { StorageAppEnum, StorageLayoutEnum } from '@/enums';
+import { StorageEnum, StorageEnum } from '@/enums';
 
 /**
  * 导出通用状态钩子
@@ -13,7 +13,7 @@ export default defineStore('base', {
      * 当前语言环境
      */
     language:
-      getStorage(StorageAppEnum.LANGUAGE) ||
+      getStorage(StorageEnum.LANGUAGE) ||
       (process.env.APP_DEFAULT_LANGUAGE as string),
 
     /**
@@ -24,32 +24,32 @@ export default defineStore('base', {
     /**
      * 是否只保持一个子菜单的展开
      */
-    uniqueOpened: getStorage(StorageLayoutEnum.UNIQUE_OPENED) || true,
+    uniqueOpened: getStorage(StorageEnum.UNIQUE_OPENED) || true,
 
     /**
      * 是否水平折叠收起菜单
      */
-    collapse: getStorage(StorageLayoutEnum.COLLAPSE) || false,
+    collapse: getStorage(StorageEnum.COLLAPSE) || false,
 
     /**
      * 管理系统头部高度
      */
-    adminHeaderHeight: getStorage(StorageLayoutEnum.HEADER_HEIGHT) || '4rem',
+    adminHeaderHeight: getStorage(StorageEnum.HEADER_HEIGHT) || '4rem',
 
     /**
      * 管理系统底部高度
      */
-    adminFooterHeight: getStorage(StorageLayoutEnum.FOOTER_HEIGHT) || '2rem',
+    adminFooterHeight: getStorage(StorageEnum.FOOTER_HEIGHT) || '2rem',
 
     /**
      * 管理系统菜单宽度
      */
-    adminMenuWidth: getStorage(StorageLayoutEnum.MENU_WIDTH) || '14rem',
+    adminMenuWidth: getStorage(StorageEnum.MENU_WIDTH) || '14rem',
 
     /**
      * 管理系统是否显示底部栏
      */
-    adminShowFooter: getStorage(StorageLayoutEnum.SHOW_FOOTER) || false,
+    adminShowFooter: getStorage(StorageEnum.SHOW_FOOTER) || false,
   }),
   actions: {
     /**
@@ -57,7 +57,7 @@ export default defineStore('base', {
      */
     changeLanguage(data: IObject): void {
       this.language = data.alias;
-      setStorage(StorageAppEnum.LANGUAGE, data.alias);
+      setStorage(StorageEnum.LANGUAGE, data.alias);
     },
 
     /**

@@ -3,11 +3,11 @@ import type { App } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { pluginAddRegister } from '@/utils';
 import { getStorage } from '@/utils';
-import { StorageAppEnum } from '@/enums';
+import { StorageEnum } from '@/enums';
 import { messages, languages } from './messages';
 
 const language: any =
-  getStorage(StorageAppEnum.LANGUAGE) || import.meta.env.APP_DEFAULT_LANGUAGE;
+  getStorage(StorageEnum.LANGUAGE) || import.meta.env.APP_DEFAULT_LANGUAGE;
 document
   .getElementsByTagName('html')[0]
   .setAttribute('lang', language as string);

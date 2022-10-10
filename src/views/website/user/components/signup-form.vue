@@ -5,7 +5,7 @@ import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils';
-import { StorageAppEnum, RouteUserEnum, GetPhoneCodeType } from '@/enums';
+import { StorageEnum, RouteEnum, PhoneCodeTypeEnum } from '@/enums';
 import { useWingsCountDown, useWingsCrud, useWingsStore } from '@/hooks';
 
 const { t } = useI18n();
@@ -126,16 +126,16 @@ const formRules = reactive<FormRules>({
 });
 
 const goLogin = (): void => {
-  router.push({ path: RouteUserEnum.ROUTE_LOGIN });
+  router.push({ path: RouteEnum.ROUTE_LOGIN });
 };
 
-const mobileAreaCodeList = getStorage(StorageAppEnum.MOBILE_PHONE_AREA_CODE);
+const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 
 const getPhoneCode = (): void => {
   countDown.getCode(form.value.phone, async () => {
     const res = await apis.base.getPhoneCode({
       phone: form.value.phone,
-      type: GetPhoneCodeType.SIGNUP,
+      type: PhoneCodeTypeEnum.SIGNUP,
     });
     if (res.code === 0) {
       ElMessage.success(t('base.form.sendSuccess'));
