@@ -3,14 +3,15 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { PasswordRetrieveForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
-import { getStorage } from '@wings';
 import {
   StorageEnum,
   PhoneCodeTypeEnum,
   RouteEnum,
   useWingsCountDown,
   useWingsCrud,
+  getStorage,
+  PASSWORD_NORMAL,
+  MOBILE_PHONE,
 } from '@wings';
 
 const { t } = useI18n();

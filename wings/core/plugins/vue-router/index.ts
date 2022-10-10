@@ -2,8 +2,8 @@ import type { IObject } from '#/interface.d';
 import type { Router, RouteRecordRaw } from 'vue-router';
 import type { App } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { pluginAddRegister } from '@wings';
-import { RouteEnum } from '@wings';
+import { pluginAddRegister } from '../../auto-register';
+import { RouteEnum } from '../../enums';
 import { addRouterGuard } from './guard';
 
 const files: IObject = import.meta.glob('./routes/**/*.ts', {

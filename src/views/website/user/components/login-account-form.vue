@@ -3,8 +3,13 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
-import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
-import { RouteEnum, useWingsCrud, useWingsStore } from '@wings';
+import {
+  RouteEnum,
+  useWingsCrud,
+  useWingsStore,
+  USERNAME,
+  PASSWORD_NORMAL,
+} from '@wings';
 
 const { apis } = useWingsCrud();
 

@@ -1,8 +1,8 @@
 import type { IObject } from '#/interface.d';
 import type { App } from 'vue';
-import { pluginAddRegister } from '@wings';
+import { pluginAddRegister } from '../../auto-register';
 import { createPinia } from 'pinia';
-import { FILE_NAME } from '@/utils/reg-exp';
+import { FILE_NAME } from '../../utils/reg-exp';
 import { getLoginStorageType } from './modules/user';
 
 const files: IObject = import.meta.glob('./modules/**/*.ts', {

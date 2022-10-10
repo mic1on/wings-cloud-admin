@@ -1,8 +1,9 @@
 import type { IObject } from '#/interface.d';
 import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
-import { LanguageEnum, elementPlusConfig } from '@wings';
-import { FILE_NAME } from '@/utils/reg-exp';
+import { LanguageEnum } from '../../enums';
+import { elementPlusConfig } from '../element-plus';
+import { FILE_NAME } from '../../utils/reg-exp';
 
 const files: IObject = import.meta.glob('./languages/**/*.json', {
   import: 'default',

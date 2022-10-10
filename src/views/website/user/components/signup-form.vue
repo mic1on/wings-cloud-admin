@@ -3,8 +3,6 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '#/views/website/user.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
-import { getStorage } from '@wings';
 import {
   StorageEnum,
   RouteEnum,
@@ -12,6 +10,10 @@ import {
   useWingsCountDown,
   useWingsCrud,
   useWingsStore,
+  USERNAME,
+  PASSWORD_NORMAL,
+  MOBILE_PHONE,
+  getStorage,
 } from '@wings';
 
 const { t } = useI18n();
