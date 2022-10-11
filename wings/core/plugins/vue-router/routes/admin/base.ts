@@ -1,6 +1,5 @@
 import LayoutRouter from '../../../../components/layout-router';
 import { IconTypeEnum } from '../../../../enums';
-import type { RouteMeta } from '#/interface';
 
 export default [
   {
@@ -40,7 +39,7 @@ export default [
           icon: 'Odometer',
           menuName: '仪表盘',
           sort: 1,
-        } as RouteMeta,
+        },
       },
     ],
   },

@@ -1,16 +1,17 @@
-import type { IObject } from '#/interface.d';
+import type { Languages, Messages } from './index.d';
+import type { Files } from '../../utils/auto/index.d';
 import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
 import { LanguageEnum } from '../../enums';
 import { elementPlusConfig } from '../element-plus';
 import { FILE_NAME } from '../../utils/reg-exp';
 
-const files: IObject = import.meta.glob('./languages/**/*.json', {
+const files: Files = import.meta.glob('./languages/**/*.json', {
   import: 'default',
   eager: true,
 });
 
-const languages: IObject = {};
+const languages: Languages = {};
 
 Object.keys(files).forEach((key: string) => {
   const languageAlias = key.split('/')[key.split('/').length - 2];
@@ -22,7 +23,7 @@ Object.keys(files).forEach((key: string) => {
   };
 });
 
-const messages: IObject = {
+const messages: Messages = {
   [LanguageEnum.EN_US_ALIAS]: {
     name: LanguageEnum.EN_US_NAME,
     ...languages[LanguageEnum.EN_US_ALIAS],

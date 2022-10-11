@@ -1,4 +1,5 @@
-import type { IObject } from '#/interface.d';
+import type { Mocks } from './index.d';
+import type { Files } from '../../utils/auto/index.d';
 import type { ResponseData } from '#/app/app-request.d';
 import Mock from 'mockjs';
 
@@ -6,12 +7,12 @@ Mock.setup({
   timeout: '200-600',
 });
 
-const files: IObject = import.meta.glob('./modules/**/*.ts', {
+const files: Files = import.meta.glob('./modules/**/*.ts', {
   import: 'default',
   eager: true,
 });
 
-let mocks: IObject = {};
+let mocks: Mocks = {};
 
 Object.keys(files).forEach((key) => {
   mocks = { ...mocks, ...files[key] };
@@ -22,7 +23,7 @@ const useMock = (): void => {
     Mock.mock(
       new RegExp(mocks[key].url),
       mocks[key].method,
-      <T>(data: IObject): ResponseData<T> => {
+      <T>(data: any): ResponseData<T> => {
         let res: ResponseData<T> = {
           code: 0,
           msg: 'success',

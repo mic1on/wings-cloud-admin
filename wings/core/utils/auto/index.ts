@@ -1,4 +1,6 @@
-import type { Files, Routes, Apis, Stores, Languages } from './index.d';
+import type { Files, Apis, Stores } from './index.d';
+import type { Routes } from '../../plugins/vue-router/index.d';
+import type { Languages } from '../../plugins/vue-i18n/index.d';
 import type { App, FunctionalComponent, Plugin } from 'vue';
 import { RouteEnum } from '../../enums';
 import { FILE_NAME } from '../reg-exp';
