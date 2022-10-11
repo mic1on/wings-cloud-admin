@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { LayoutMenu, LayoutLogo } from '../components';
+import LayoutMenu from '../layout-menu/index.vue';
+import LayoutLogo from '../layout-logo/index.vue';
 </script>
 
 <template>

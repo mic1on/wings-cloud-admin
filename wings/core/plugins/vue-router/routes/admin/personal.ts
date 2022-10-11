@@ -1,11 +1,11 @@
-import { Router } from '../../../../layouts';
+import LayoutRouter from '../../../../components/layout-router';
 import { IconTypeEnum } from '../../../../enums';
 
 export default [
   {
     path: '/admin/personal',
     name: 'admin.personal',
-    component: Router,
+    component: LayoutRouter,
     meta: {
       isMenu: true,
       requiresAuth: true,

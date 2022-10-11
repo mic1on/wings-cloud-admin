@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-import {
-  ActionAvatar,
-  ActionLanguage,
-  ActionNotifications,
-  ActionRefresh,
-  SwitchDarkLight,
-  SwitchCollapse,
-  SwitchFullscreen,
-} from '../components';
+import ActionAvatar from '../action-avatar/index.vue';
+import ActionLanguage from '../action-language/index.vue';
+import ActionNotifications from '../action-notifications/index.vue';
+import ActionRefresh from '../action-refresh/index.vue';
+import SwitchDarkLight from '../switch-dark-light/index.vue';
+import SwitchCollapse from '../switch-collapse/index.vue';
+import SwitchFullscreen from '../switch-fullscreen/index.vue';
 </script>
 <template>
   <div h-full flex items-center justify-between>
