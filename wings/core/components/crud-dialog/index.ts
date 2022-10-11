@@ -1,4 +1,4 @@
-import CrudDialog from './index.vue';
+import WingsCrudDialog from './src/wings-crud-dialog.vue';
 import { componentAddInstall } from '../../utils/auto';
 
-export default componentAddInstall(CrudDialog, 'crud-dialog');
+export default componentAddInstall(WingsCrudDialog, 'wings-crud-dialog');

@@ -1,4 +1,4 @@
-import CrudAction from './index.vue';
+import WingsCrudAction from './src/wings-crud-action.vue';
 import { componentAddInstall } from '../../utils/auto';
 
-export default componentAddInstall(CrudAction, 'crud-action');
+export default componentAddInstall(WingsCrudAction, 'wings-crud-action');

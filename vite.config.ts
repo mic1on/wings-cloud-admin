@@ -106,7 +106,7 @@ export default ({ mode }: ConfigEnv) => {
        * 使用自定义的 Svg 图标
        */
       createSvgIconsPlugin({
-        iconDirs: [resolve(__dirname, 'src/components/wings-svg-icon/icons')],
+        iconDirs: [resolve(__dirname, 'wings/core/components/svg-icon/icons')],
         symbolId: 'icon-[dir]-[name]',
       }),
 
