@@ -1,27 +1,12 @@
 {
-  /**
-   * The eslint configurations.
-   */
   "eslint.run": "onSave",
-
-  /**
-   * The stylelint configurations.
-   */
   "stylelint.enable": true,
   "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass"],
-
-  /**
-   * The VScode  editor configurations.
-   */
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
-
-  /**
-   * Internationalize multilingual plug-in configurations.
-   */
-  "i18n-ally.localesPaths": ["languages", "src/plugins/vue-i18n/languages"],
+  "i18n-ally.localesPaths": ["wings/core/plugins/vue-i18n/languages"],
   "i18n-ally.namespace": true,
   "i18n-ally.sortKeys": true,
   "i18n-ally.keystyle": "nested",

@@ -8,3 +8,4 @@ export * from './core/utils/storage';
 export * from './core/utils/common';
 export * from './core/utils/reg-exp';
 export * from './core/utils/auto';
+export * from './core/utils/code-adaptor';
