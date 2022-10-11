@@ -1,6 +1,10 @@
 import type { Axios, AxiosResponse } from 'axios';
-import type { I18nT, IObject } from '#/interface';
-import type { RequestOptions, ResponseData } from '#/app/app-request';
+import type {
+  I18nT,
+  IObject,
+  RequestOptions,
+  ResponseData,
+} from '../../typings/utils/request';
 import axios from 'axios';
 import qs from 'qs';
 import { ElNotification } from 'element-plus';
@@ -10,14 +14,15 @@ import {
   apiCodeAdaptor,
   authCodeAdaptor,
 } from './code-adaptor';
-import { RequestHeaderEnum, StorageEnum } from './enums';
-import { i18n } from './plugins/vue-i18n';
+import { RequestHeaderEnum, StorageEnum } from '../enums';
+import { i18n } from '../plugins/vue-i18n';
 
 const { t } = i18n.global;
 const _t: I18nT = t;
 
 /**
  * @name request
+ * @description 基于 axios 的网络请求实例
  * @param options
  * @return _axios
  */
@@ -56,6 +61,7 @@ export const request = <T>(
 
 /**
  * @name addInterceptorsRequest
+ * @description 为 axios 网络请求实例添加请求拦截器
  * @param axios
  * @param options
  * @returns
@@ -87,6 +93,7 @@ export const addInterceptorsRequest = (
 
 /**
  * @name addInterceptorsResponse
+ * @description 为 axios 网络请求实例添加响应拦截器
  * @param axios
  * @param options
  * @returns
@@ -129,6 +136,7 @@ export const addInterceptorsResponse = <T>(
 
 /**
  * @name GET
+ * @description 基于 axios 网络请求实例的 GET 方法封装
  * @param url
  * @param params
  * @param options
@@ -153,6 +161,7 @@ export const GET = <T>(
 
 /**
  * @name POST
+ * @description 基于 axios 网络请求实例的 POST 方法封装
  * @param url
  * @param data
  * @param options
@@ -177,6 +186,7 @@ export const POST = <T>(
 
 /**
  * @name PUT
+ * @description 基于 axios 网络请求实例的 PUT 方法封装
  * @param url
  * @param data
  * @param options
@@ -201,6 +211,7 @@ export const PUT = <T>(
 
 /**
  * @name DELETE
+ * @description 基于 axios 网络请求实例的 DELETE 方法封装
  * @param url
  * @param data
  * @param options
@@ -225,6 +236,7 @@ export const DELETE = <T>(
 
 /**
  * @name UPLOAD
+ * @description 基于 axios 网络请求实例的 UPLOAD 方法封装
  * @param url
  * @param data
  * @param options
@@ -249,6 +261,7 @@ export const UPLOAD = <T>(
 
 /**
  * @name DOWNLOAD
+ * @description 基于 axios 网络请求实例的 DOWNLOAD 方法封装
  * @param url
  * @param data
  * @param options

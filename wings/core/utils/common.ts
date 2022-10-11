@@ -1,8 +1,9 @@
-import type { IObject, IFunction } from './common.d';
-import type { Reg } from './reg-exp.d';
+import type { IObject, IFunction } from '../../typings/utils/common.d';
+import type { Reg } from '../../typings/utils/reg-exp.d';
 
 /**
  * @name isNullOrUndefined
+ * @description 判断是 null 还是 undefined
  * @param value
  * @return null | undefined
  */
@@ -12,6 +13,7 @@ export const isNullOrUndefined = (value: unknown): boolean => {
 
 /**
  * @name getValueByKeys
+ * @description 获取对象下某个键的值
  * @param record {}
  * @param key 'a.b.c'
  * @param defaultValue
@@ -31,6 +33,7 @@ export const getValueByKeys = (
 
 /**
  * @name arrayToObject
+ * @description 数组转对象
  * @param data
  * @param key
  * @param render
@@ -52,6 +55,7 @@ export const arrayToObject = (
 
 /**
  * @name interceptJointData
+ * @description 拦截 url 的 params 入参
  * @param url
  * @return value
  */
@@ -68,6 +72,7 @@ export const interceptJointData = (data: string): IObject => {
 
 /**
  * @name arrayRecursion
+ * @description 数组扁平化
  * @param key
  * @param array
  * @return {}
@@ -90,6 +95,7 @@ export const arrayRecursion = (
 
 /**
  * @name checkFloat
+ * @description 返回一个正则，用于截取固定小数点的数据
  * @param n
  * @returns
  */

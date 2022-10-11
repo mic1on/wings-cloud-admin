@@ -1,8 +1,9 @@
-import type { AppStorageOptions } from '#/app/app-storage.d';
-import { isNullOrUndefined } from './utils/common';
+import type { AppStorageOptions } from '../../typings/utils/storage';
+import { isNullOrUndefined } from './common';
 
 /**
  * @name storageType
+ * @description 返回缓存的类型
  * @param type
  * @return storage
  */
@@ -12,6 +13,7 @@ export const storageType = (type: string): Storage => {
 
 /**
  * @name setStorage
+ * @description 基于 storage 的写入缓存方法
  * @param key
  * @param data
  * @param options
@@ -45,6 +47,7 @@ export const setStorage = (
 
 /**
  * @name getStorage
+ * @description 基于 storage 的读取缓存方法
  * @param key
  * @param options
  * @return data
@@ -78,6 +81,7 @@ export const getStorage = (key: string, options?: AppStorageOptions): any => {
 
 /**
  * @name removeStorage
+ * @description 基于 storage 的移除缓存方法
  * @param key
  * @param type
  */

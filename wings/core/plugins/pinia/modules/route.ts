@@ -1,7 +1,7 @@
 import type { RouteState } from '#/store/app-route.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
-import { getStorage, setStorage } from '../../../storage';
+import { getStorage, setStorage } from '../../../utils/storage';
 import { StorageEnum } from '../../../enums';
 import { router } from '../../vue-router';
 import { getAdminRoutes } from '@/apis/admin/auth';

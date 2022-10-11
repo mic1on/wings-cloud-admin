@@ -1,13 +1,7 @@
-/**
- * 根样式
- */
 :root {
   font-size: 16px;
 }
 
-/**
- * 重置样式表
- */
 body {
   margin: 0;
   font-family: OpenSans, 'Helvetica Neue', Helvetica, 'PingFang SC',
@@ -27,9 +21,6 @@ code {
   border-radius: 4px;
 }
 
-/**
- * 滚动条样式
- */
 ::-webkit-scrollbar {
   width: 8px;
   background-color: var(--ep-bg-color-overlay);
@@ -46,9 +37,6 @@ code {
   transition: all 0.2s ease-in-out;
 }
 
-/**
- * 单行文本省略
- */
 .single-line-omitted {
   overflow: hidden;
   white-space: nowrap;

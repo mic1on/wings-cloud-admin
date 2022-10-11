@@ -1,5 +1,6 @@
 /**
- * Page routing address enumeration.
+ * @name RouteEnum
+ * @description 页面地址路由
  */
 export enum RouteEnum {
   ROUTE_NO_PERMISSION = '/403',
@@ -14,7 +15,8 @@ export enum RouteEnum {
 }
 
 /**
- * International and multilingual.
+ * @name LanguageEnum
+ * @description 国际化多语言枚举
  */
 export enum LanguageEnum {
   EN_US_ALIAS = 'en-US',
@@ -24,7 +26,8 @@ export enum LanguageEnum {
 }
 
 /**
- * Demonstrate user credentials.
+ * @name AuthenticationEnum
+ * @description 鉴权枚举
  */
 export enum AuthenticationEnum {
   VISITOR_USERNAME = 'visitor',
@@ -33,7 +36,8 @@ export enum AuthenticationEnum {
 }
 
 /**
- * Management system menu icon types.
+ * @name IconTypeEnum
+ * @description 管理系统菜单图标类型枚举
  */
 export enum IconTypeEnum {
   ELEMENT_PLUS = 'ep',
@@ -41,7 +45,8 @@ export enum IconTypeEnum {
 }
 
 /**
- * Request headers.
+ * @name RequestHeaderEnum
+ * @description request 网络请求头枚举
  */
 export enum RequestHeaderEnum {
   HEADER_TOKEN = 'Authorization',
@@ -52,7 +57,8 @@ export enum RequestHeaderEnum {
 }
 
 /**
- * Mobile phone number verification code.
+ * @name PhoneCodeTypeEnum
+ * @description 获取手机号验证码用途枚举
  */
 export enum PhoneCodeTypeEnum {
   LOGIN = 0,
@@ -62,7 +68,8 @@ export enum PhoneCodeTypeEnum {
 }
 
 /**
- * Enumeration of cache entries (stored keys).
+ * @name PhoneCodeTypeEnum
+ * @description 缓存 key 枚举
  */
 export enum StorageEnum {
   LANGUAGE = 'language',

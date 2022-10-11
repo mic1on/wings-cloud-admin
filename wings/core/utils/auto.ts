@@ -1,10 +1,17 @@
-import type { Files, Routes, Apis, Stores, Languages } from './auto.d';
+import type {
+  Files,
+  Routes,
+  Apis,
+  Stores,
+  Languages,
+} from '../../typings/utils/auto.d';
 import type { App, FunctionalComponent, Plugin } from 'vue';
 import { RouteEnum } from '../enums';
 import { FILE_NAME } from './reg-exp';
 
 /**
  * @name autoImportRoutes
+ * @description 自动导入静态路由文件
  * @param files
  * @return routes
  */
@@ -22,6 +29,7 @@ export const autoImportRoutes = (files: Files): Routes => {
 
 /**
  * @name autoImportApis
+ * @description 自动导入服务端接口文件
  * @param files
  * @return apis
  */
@@ -38,6 +46,7 @@ export const autoImportApis = (files: Files): Apis => {
 
 /**
  * @name autoImportPiniaStore
+ * @description 自动导入基于 Pinia 的状态管理文件
  * @param files
  * @return stores
  */
@@ -52,6 +61,7 @@ export const autoImportPiniaStore = (files: Files): Stores => {
 
 /**
  * @name autoImportLanguages
+ * @description 自动导入国际化多语言翻译 Json 文件
  * @param files
  * @return languages
  */
@@ -71,6 +81,7 @@ export const autoImportLanguages = (files: Files): Languages => {
 
 /**
  * @name componentAddInstall
+ * @description 组件添加安装方法
  * @param component
  * @param alias
  * @return component
@@ -91,6 +102,7 @@ export const componentAddInstall = <T>(
 
 /**
  * @name pluginAddRegister
+ * @description 插件添加注册方法
  * @param plugin
  * @return _plugin
  */
@@ -104,6 +116,7 @@ export const pluginAddRegister = <T>(plugin: Plugin): T & Plugin => {
 
 /**
  * @name componentAddPath
+ * @description 视图文件路径解析
  * @param path
  * @returns
  */
@@ -114,6 +127,7 @@ export const componentAddPath = (path: string): string => {
 
 /**
  * @name mountApis
+ * @description 自动挂载服务端接口文件
  * @param app
  * @param apis
  */
@@ -128,6 +142,7 @@ export const mountApis = (app: App, apis: Apis): void => {
 
 /**
  * @name installComponents
+ * @description 自动安装组件
  * @param app
  * @param components
  */

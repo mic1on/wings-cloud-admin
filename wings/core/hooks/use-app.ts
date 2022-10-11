@@ -1,7 +1,7 @@
-import { setStorage } from './storage';
-import { StorageEnum } from './enums';
-import { stores } from './plugins/pinia';
-import { routes } from './plugins/vue-router';
+import { setStorage } from '../utils/storage';
+import { StorageEnum } from '../enums';
+import { stores } from '../plugins/pinia';
+import { routes } from '../plugins/vue-router';
 import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';
 

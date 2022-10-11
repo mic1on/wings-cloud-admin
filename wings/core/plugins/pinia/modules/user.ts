@@ -4,7 +4,7 @@ import type { ResponseData } from '#/app/app-request.d';
 import type { UserState } from '#/store/app-user.d';
 import { ElNotification } from 'element-plus';
 import { defineStore } from 'pinia';
-import { getStorage, setStorage } from '../../../storage';
+import { getStorage, setStorage } from '../../../utils/storage';
 import { StorageEnum, RouteEnum } from '../../../enums';
 import { i18n } from '../../vue-i18n';
 import { router } from '../../vue-router';

@@ -2,6 +2,7 @@ import type { Callback, I18nT, IObject } from '#/interface.d';
 
 /**
  * @name networkCodeAdaptor
+ * @description 网络状态码适配器
  * @param code
  * @param t
  * @param callback
@@ -66,6 +67,7 @@ export const networkCodeAdaptor = (
 
 /**
  * @name apiCodeAdaptor
+ * @description 服务端接口状态码适配器
  * @param code
  * @param t
  * @param callback
@@ -98,6 +100,7 @@ export const apiCodeAdaptor = (
 
 /**
  * @name authCodeAdaptor
+ * @description 鉴权状态码适配器
  * @param data
  * @param t
  * @param callback
