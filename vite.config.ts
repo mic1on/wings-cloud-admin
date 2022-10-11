@@ -61,7 +61,7 @@ export default ({ mode }: ConfigEnv) => {
       alias: {
         '@': resolve(__dirname, 'src'),
         '#': resolve(__dirname, 'types'),
-        '@wings': resolve(__dirname, 'wings'),
+        '@wings': resolve(__dirname, 'wings/core'),
         'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
@@ -73,7 +73,7 @@ export default ({ mode }: ConfigEnv) => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@wings/core/plugins/element-plus/styles/index.scss" as *;`,
+          additionalData: `@use "@wings/plugins/element-plus/styles/index.scss" as *;`,
         },
       },
     },

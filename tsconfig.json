@@ -71,7 +71,7 @@
     "paths": {
       "@/*": ["src/*"],
       "#/*": ["types/*"],
-      "@wings/*": ["wings/*"]
+      "@wings/*": ["wings/core*"]
     }
   },
 
