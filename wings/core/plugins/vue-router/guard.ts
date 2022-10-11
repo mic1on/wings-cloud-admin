@@ -1,6 +1,9 @@
-import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
-import type { IObject } from '#/interface.d';
-import type { Router } from 'vue-router';
+import type {
+  Router,
+  RouteLocationNormalized,
+  NavigationGuardNext,
+} from 'vue-router';
+import type { Roles } from './index.d';
 import { RouteEnum, StorageEnum } from '../../enums';
 import { getLoginStorageType } from '../pinia';
 import { getStorage } from '../../utils/storage';
@@ -16,7 +19,7 @@ export const addRouterGuard = (router: Router): Router => {
         type: getLoginStorageType(),
       });
 
-      const userRoles: IObject[string] = getStorage(StorageEnum.USER_ROLES, {
+      const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
       });
 
