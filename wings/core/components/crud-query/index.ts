@@ -1,4 +1,4 @@
-import CrudQuery from './index.vue';
+import WingsCrudQuery from './src/wings-crud-query.vue';
 import { componentAddInstall } from '../../utils/auto';
 
-export default componentAddInstall(CrudQuery, 'crud-query');
+export default componentAddInstall(WingsCrudQuery, 'wings-crud-query');

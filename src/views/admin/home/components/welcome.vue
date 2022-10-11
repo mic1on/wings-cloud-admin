@@ -6,7 +6,7 @@ const { t } = useI18n();
 const { appUserStore } = useWingsStore();
 </script>
 <template>
-  <wings-card>
+  <wings-crud-card>
     <template #content>
       <div text-5>
         <span p-r-4>{{ t('admin.workbench.welcome') }}</span>
@@ -22,5 +22,5 @@ const { appUserStore } = useWingsStore();
         <el-col :span="6"> </el-col>
       </el-row>
     </template>
-  </wings-card>
+  </wings-crud-card>
 </template>

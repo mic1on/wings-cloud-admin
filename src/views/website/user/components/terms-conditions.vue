@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { ResponseData } from '#/app/app-request.d';
-import { useWingsCrud } from '@wings';
+import { useWingsApis } from '@wings';
 
-const { apis } = useWingsCrud();
+const { apis } = useWingsApis();
 
 const { t } = useI18n();
 
@@ -34,12 +34,12 @@ const openDialog = (): void => {
       <span text-3>{{ t('website.user.termsConditions') }}</span>
     </el-button>
   </div>
-  <wings-dialog
+  <wings-crud-dialog
     v-model="dialogVisible"
     :title="t('website.user.termsConditions')"
   >
     <template #content>
       <div v-dompurify-html="termsConditionsData"></div>
     </template>
-  </wings-dialog>
+  </wings-crud-dialog>
 </template>

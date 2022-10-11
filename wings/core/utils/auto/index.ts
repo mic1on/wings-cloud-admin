@@ -1,4 +1,5 @@
-import type { Files, Apis, Stores } from './index.d';
+import type { Files } from './index.d';
+import type { Stores } from '../../plugins/pinia/index.d';
 import type { Routes } from '../../plugins/vue-router/index.d';
 import type { Languages } from '../../plugins/vue-i18n/index.d';
 import type { App, FunctionalComponent, Plugin } from 'vue';
@@ -29,8 +30,8 @@ export const autoImportRoutes = (files: Files): Routes => {
  * @param files
  * @return apis
  */
-export const autoImportApis = (files: Files): Apis => {
-  const apis: Apis = {};
+export const autoImportApis = (files: Files): Files<Files<string>> => {
+  const apis: Files<Files<string>> = {};
   Object.keys(files).forEach((key) => {
     const _key = key.split('/');
     const api = _key[_key.length - 1].replace('.ts', '');
@@ -88,8 +89,10 @@ export const componentAddInstall = <T>(
 ): T & Plugin => {
   const _component = component as any;
   _component.install = (app: App) => {
-    app.component(_component.name || _component.displayName, component);
-    console.log(_component);
+    app.component(
+      alias || _component.name || _component.displayName,
+      component
+    );
     if (alias) {
       app.config.globalProperties[alias] = component;
     }
@@ -128,7 +131,7 @@ export const componentAddPath = (path: string): string => {
  * @param app
  * @param apis
  */
-export const mountApis = (app: App, apis: Apis): void => {
+export const mountApis = (app: App, apis: Files<Files<string>>): void => {
   Object.entries(apis).map(([path, _apis]) => {
     app.config.globalProperties.$apis = {
       ...app.config.globalProperties.$apis,

@@ -1,4 +1,7 @@
-import CrudPagination from './index.vue';
+import WingsCrudPagination from './src/wings-crud-pagination.vue';
 import { componentAddInstall } from '../../utils/auto';
 
-export default componentAddInstall(CrudPagination, 'crud-pagination');
+export default componentAddInstall(
+  WingsCrudPagination,
+  'wings-crud-pagination'
+);

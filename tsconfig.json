@@ -71,7 +71,7 @@
     "paths": {
       "@/*": ["src/*"],
       "#/*": ["types/*"],
-      "@wings/*": ["wings/*"]
+      "@wings/*": ["wings/core*"]
     }
   },
 
@@ -90,7 +90,7 @@
   /**
    * 编译处理的文件列表
    */
-  "include": ["types/**/*d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "*.ts", "wings/**/*.vue", "wings/**/*.d.ts", "wings/**/*.ts"],
+  "include": ["types/**/*d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "*.ts", "wings/**/*.vue", "wings/**/*.d.ts", "wings/**/*.ts"],
 
   /**
    * 不需要处理的目录

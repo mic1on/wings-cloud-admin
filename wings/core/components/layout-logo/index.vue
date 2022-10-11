@@ -6,7 +6,7 @@ const router = useRouter();
 
 const appName = import.meta.env.APP_NAME;
 
-const { appStore } = useWingsStore();
+const { baseStore } = useWingsStore();
 
 const goHomeRoute = (): void => {
   if (route.path.indexOf('website') !== -1) {
@@ -27,7 +27,7 @@ const goHomeRoute = (): void => {
     @click="goHomeRoute"
     :style="
       route.path.indexOf('admin') !== -1
-        ? `height:${appStore.adminHeaderHeight}`
+        ? `height:${baseStore.adminHeaderHeight}`
         : ''
     "
   >
@@ -37,7 +37,7 @@ const goHomeRoute = (): void => {
       text-4
       font-600
       text-center
-      v-show="route.path.indexOf('admin') !== -1 && !appStore.collapse"
+      v-show="route.path.indexOf('admin') !== -1 && !baseStore.collapse"
       class="single-line-omitted"
       style="color: var(--ep-text-color-primary)"
     >

@@ -8,7 +8,7 @@ import {
   RouteEnum,
   PhoneCodeTypeEnum,
   useWingsCountDown,
-  useWingsCrud,
+  useWingsApis,
   useWingsStore,
   USERNAME,
   PASSWORD_NORMAL,
@@ -20,7 +20,7 @@ const { t } = useI18n();
 
 const router = useRouter();
 
-const { apis } = useWingsCrud();
+const { apis } = useWingsApis();
 
 const { appUserStore } = useWingsStore();
 
