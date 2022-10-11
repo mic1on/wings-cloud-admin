@@ -1,4 +1,4 @@
 import WingsCrud from './index.vue';
-import { componentAddInstall } from '@wings/wings-auto';
+import { componentAddInstall } from '../../../utils/auto';
 
-export default componentAddInstall(WingsCrud);
+export default componentAddInstall(WingsCrud, 'wings-crud');

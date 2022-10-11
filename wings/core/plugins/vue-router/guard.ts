@@ -3,7 +3,7 @@ import type { IObject } from '#/interface.d';
 import type { Router } from 'vue-router';
 import { RouteEnum, StorageEnum } from '../../enums';
 import { getLoginStorageType } from '../pinia';
-import { getStorage } from '../../storage';
+import { getStorage } from '../../utils/storage';
 
 export const addRouterGuard = (router: Router): Router => {
   router.beforeEach(

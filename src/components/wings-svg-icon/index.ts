@@ -1,4 +1,4 @@
 import WingsSvgIcon from './index.vue';
-import { componentAddInstall } from '@wings/wings-auto';
+import { componentAddInstall } from '../../../utils/auto';
 
-export default componentAddInstall(WingsSvgIcon);
+export default componentAddInstall(WingsSvgIcon, 'wings-svg-icon');
