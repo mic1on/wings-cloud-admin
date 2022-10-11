@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { IObject } from '#/interface.d';
+import layoutLogo from '../layout-logo/index.vue';
 import ActionAvatar from '../action-avatar/index.vue';
 import ActionLanguage from '../action-language/index.vue';
 import ActionNotifications from '../action-notifications/index.vue';

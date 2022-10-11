@@ -1,15 +1,12 @@
+import type { App } from 'vue';
 import { createApp } from 'vue';
-import App from '@/App.vue';
 import mountApis from '@/apis';
-import { usePlguins } from '@wings';
-import 'virtual:svg-icons-register';
-import '@wings/core/index.scss';
-import 'uno.css';
+import { useWingsCore, WingsApp } from '@wings';
 
-const app = createApp(App);
+const app: App<Element> = createApp(WingsApp);
 
 mountApis(app);
 
-usePlguins(app);
+useWingsCore(app);
 
 app.mount('#app', true);
