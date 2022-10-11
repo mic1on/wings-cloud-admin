@@ -1,60 +1,23 @@
 import { setStorage } from '../../utils/storage';
 import { StorageEnum } from '../../enums';
-import { stores } from '../../plugins/pinia';
 import { routes } from '../../plugins/vue-router';
 import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';
+import useBaseStore from '../../plugins/pinia/modules/base';
+import useRouteStore from '../../plugins/pinia/modules/route';
+import useUserStore from '../../plugins/pinia/modules/user';
 
 /**
- * Whole-office status management bus.
- */
-export const useWingsStore = () => {
-  const appStore = stores['base'].default();
-  const appRouteStore = stores['route'].default();
-  const appUserStore = stores['user'].default();
-
-  return {
-    appStore,
-    appRouteStore,
-    appUserStore,
-  };
-};
-
-/**
- * Internationalize multilingual hook functions.
- */
-export const useWingsLanguage = () => {
-  const { appStore } = useWingsStore();
-
-  const { messages, locale } = useI18n();
-
-  const currentLanguage = computed(() => {
-    return locale.value;
-  });
-
-  const changeLanguage = (
-    value: string | number | Record<string, any> | undefined
-  ) => {
-    locale.value = value as string;
-    appStore.changeLanguage({
-      alias: value,
-      name: messages.value[value as string].name,
-    });
-    location.reload();
-  };
-
-  return {
-    currentLanguage,
-    changeLanguage,
-    languages: messages.value,
-  };
-};
-
-/**
- * Application initializes the associated hook function.
+ * @name useWingsApp
+ * @description 基于 wings 的系统应用初始化钩子函数
+ * @return changeDark
+ * @return isNeedInit
+ * @return init
  */
 export const useWingsApp = () => {
-  const { appStore, appRouteStore, appUserStore } = useWingsStore();
+  const baseStore = useBaseStore();
+  const routeStore = useRouteStore();
+  const userStore = useUserStore();
 
   const isDark = useDark({
     selector: 'html',
@@ -77,7 +40,7 @@ export const useWingsApp = () => {
   };
 
   const init = async () => {
-    appStore.changeGlobalLoading(true);
+    baseStore.changeGlobalLoading(true);
     if (await isNeedInit()) {
       setStorage(
         StorageEnum.DARK,
@@ -87,15 +50,15 @@ export const useWingsApp = () => {
           isJSON: false,
         }
       );
-      appRouteStore.setStaticRoutes(routes);
-      if (appUserStore.token) {
-        appRouteStore.getAdminRoutes();
-        appUserStore.getUserInfo();
-        appUserStore.getUserRoles();
+      routeStore.setStaticRoutes(routes);
+      if (userStore.token) {
+        routeStore.getAdminRoutes();
+        userStore.getUserInfo();
+        userStore.getUserRoles();
       }
       getMobileAreaCodeList();
     }
-    appStore.changeGlobalLoading(false);
+    baseStore.changeGlobalLoading(false);
   };
 
   return {
