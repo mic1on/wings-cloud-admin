@@ -1,4 +1,4 @@
-import { Router } from '../../../../layouts';
+import LayoutRouter from '../../../../components/layout-router';
 import { IconTypeEnum } from '../../../../enums';
 import type { RouteMeta } from '#/interface';
 
@@ -6,7 +6,7 @@ export default [
   {
     path: '/admin/home',
     name: 'admin.home',
-    component: Router,
+    component: LayoutRouter,
     meta: {
       isMenu: true,
       requiresAuth: true,

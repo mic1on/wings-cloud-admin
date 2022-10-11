@@ -1,12 +1,9 @@
 <script lang="ts" setup>
 import type { IObject } from '#/interface.d';
-import {
-  ActionAvatar,
-  ActionLanguage,
-  ActionNotifications,
-  SwitchDarkLight,
-  LayoutLogo,
-} from '../components';
+import ActionAvatar from '../action-avatar/index.vue';
+import ActionLanguage from '../action-language/index.vue';
+import ActionNotifications from '../action-notifications/index.vue';
+import SwitchDarkLight from '../switch-dark-light/index.vue';
 
 const { t } = useI18n();
 
