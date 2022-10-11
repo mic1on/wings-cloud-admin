@@ -6,14 +6,14 @@ import {
   StorageEnum,
   PhoneCodeTypeEnum,
   useWingsCountDown,
-  useWingsCrud,
+  useWingsApis,
   MOBILE_PHONE,
   getStorage,
 } from '@wings';
 
 const { t } = useI18n();
 
-const { apis } = useWingsCrud();
+const { apis } = useWingsApis();
 
 const countDown = useWingsCountDown();
 

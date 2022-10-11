@@ -5,13 +5,13 @@ import type { LoginAccountForm } from '#/views/website/user.d';
 import type { ResponseData } from '#/app/app-request.d';
 import {
   RouteEnum,
-  useWingsCrud,
+  useWingsApis,
   useWingsStore,
   USERNAME,
   PASSWORD_NORMAL,
 } from '@wings';
 
-const { apis } = useWingsCrud();
+const { apis } = useWingsApis();
 
 const { appUserStore } = useWingsStore();
 

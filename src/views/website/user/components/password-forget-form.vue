@@ -8,7 +8,7 @@ import {
   PhoneCodeTypeEnum,
   RouteEnum,
   useWingsCountDown,
-  useWingsCrud,
+  useWingsApis,
   getStorage,
   PASSWORD_NORMAL,
   MOBILE_PHONE,
@@ -16,7 +16,7 @@ import {
 
 const { t } = useI18n();
 
-const { apis } = useWingsCrud();
+const { apis } = useWingsApis();
 
 const countDown = useWingsCountDown();
 

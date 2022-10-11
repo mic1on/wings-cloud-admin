@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { ResponseData } from '#/app/app-request.d';
-import { useWingsCrud } from '@wings';
+import { useWingsApis } from '@wings';
 
-const { apis } = useWingsCrud();
+const { apis } = useWingsApis();
 
 const { t } = useI18n();
 

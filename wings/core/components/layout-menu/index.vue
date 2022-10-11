@@ -4,7 +4,7 @@ import MenuItem from './menu-item.vue';
 
 const route = useRoute();
 
-const { appStore, appRouteStore } = useWingsStore();
+const { baseStore, appRouteStore } = useWingsStore();
 </script>
 
 <template>
@@ -12,11 +12,11 @@ const { appStore, appRouteStore } = useWingsStore();
     router
     mode="vertical"
     collapse-transition
-    :collapse="appStore.collapse"
-    :unique-opened="appStore.uniqueOpened"
+    :collapse="baseStore.collapse"
+    :unique-opened="baseStore.uniqueOpened"
     :default-active="route.path"
     important="border-r-none"
-    :style="`height: calc(100vh - ${appStore.adminHeaderHeight}); width:100%;`"
+    :style="`height: calc(100vh - ${baseStore.adminHeaderHeight}); width:100%;`"
   >
     <menu-item :routes="appRouteStore.adminRoutes"></menu-item>
   </el-menu>

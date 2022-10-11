@@ -3,9 +3,9 @@ import AdminLayoutHeader from './header.vue';
 import AdminLayoutTab from './tab.vue';
 import AdminLayoutFooter from './footer.vue';
 import AdminLayoutSider from './sider.vue';
-import useAppStore from '../../plugins/pinia/modules/base';
+import useBaseStore from '../../plugins/pinia/modules/base';
 
-const appStore = useAppStore();
+const baseStore = useBaseStore();
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const appStore = useAppStore();
       important="
       transition-width
       transition-duration-500"
-      :width="appStore.adminMenuWidth"
+      :width="baseStore.adminMenuWidth"
       style="background: var(--ep-bg-color-page)"
     >
       <admin-layout-sider></admin-layout-sider>
@@ -22,7 +22,7 @@ const appStore = useAppStore();
     <el-container>
       <el-header
         important="p-x-6"
-        :height="appStore.adminHeaderHeight"
+        :height="baseStore.adminHeaderHeight"
         style="background: var(--ep-bg-color-overlay)"
       >
         <admin-layout-header></admin-layout-header>
@@ -39,9 +39,9 @@ const appStore = useAppStore();
         <slot name="router-view"></slot>
       </el-main>
       <el-footer
-        v-if="appStore.adminShowFooter"
+        v-if="baseStore.adminShowFooter"
         style="background: var(--ep-bg-color-overlay)"
-        :height="appStore.adminFooterHeight"
+        :height="baseStore.adminFooterHeight"
       >
         <admin-layout-footer></admin-layout-footer>
       </el-footer>
