@@ -1,4 +1,4 @@
-import type { RouteState } from '#/store/app-route.d';
+import type { RouteState } from './route.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { getStorage, setStorage } from '../../../utils/storage';

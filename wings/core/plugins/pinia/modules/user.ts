@@ -1,7 +1,7 @@
 import type { I18nT, IObject } from '#/interface.d';
-import type { LoginAccountData, SignupData } from '#/api/website/user.d';
-import type { ResponseData } from '#/app/app-request.d';
-import type { UserState } from '#/store/app-user.d';
+import type { LoginAccountData, SignupData } from '@/apis/website/user.d';
+import type { ResponseData } from '../../../utils/request/index.d';
+import type { UserState } from './user.d';
 import { ElNotification } from 'element-plus';
 import { defineStore } from 'pinia';
 import { getStorage, setStorage } from '../../../utils/storage';
