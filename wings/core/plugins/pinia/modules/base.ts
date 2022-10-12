@@ -1,5 +1,5 @@
 import type { IObject } from '#/interface.d';
-import type { AppState } from '#/store/app.d';
+import type { BaseState } from './base.d';
 import { defineStore } from 'pinia';
 import { getStorage, setStorage } from '../../../utils/storage';
 import { StorageEnum } from '../../../enums';
@@ -8,7 +8,7 @@ import { StorageEnum } from '../../../enums';
  * 导出通用状态钩子
  */
 export default defineStore('base', {
-  state: (): AppState => ({
+  state: (): BaseState => ({
     /**
      * 当前语言环境
      */

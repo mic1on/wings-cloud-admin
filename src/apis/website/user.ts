@@ -1,5 +1,5 @@
-import type { LoginAccountData, SignupData } from '#/api/website/user.d';
-import type { ResponseData } from '#/app/app-request';
+import type { LoginAccountData, SignupData } from './user.d';
+import type { ResponseData } from '@wings';
 import { GET, POST } from '@wings';
 
 /**

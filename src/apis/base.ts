@@ -1,6 +1,6 @@
 import { GET } from '@wings';
-import type { ResponseData } from '#/app/app-request.d';
-import type { PhoneCodeParams } from '#/api/base.d';
+import type { ResponseData } from '@wings';
+import type { PhoneCodeParams } from './base.d';
 
 /**
  * 获取手机区号列表

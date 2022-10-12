@@ -1,6 +1,6 @@
 import { GET } from '@wings';
-import type { ResponseData } from '#/app/app-request';
-import type { ValidateUsernameParams } from '#/api/admin/auth';
+import type { ResponseData } from '@wings';
+import type { ValidateUsernameParams } from './auth.d';
 
 /**
  * 校验用户名是否存在
