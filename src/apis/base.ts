@@ -1,9 +1,10 @@
-import { GET } from '@wings';
-import type { ResponseData } from '@wings';
+import type { ResponseData } from '@/utils/request/index.d';
 import type { PhoneCodeParams } from './base.d';
+import { GET } from '@/utils/request';
 
 /**
- * 获取手机区号列表
+ * @name getMobileAreaCodeList
+ * @description 获取手机区号列表
  */
 export const getMobileAreaCodeList = <T>(): Promise<
   any | ResponseData<T> | undefined
@@ -12,7 +13,8 @@ export const getMobileAreaCodeList = <T>(): Promise<
 };
 
 /**
- * 获取服务&协议内容
+ * @name getTermsConditionsData
+ * @description 获取服务&协议内容
  */
 export const getTermsConditionsData = <T>(): Promise<
   any | ResponseData<T> | undefined
@@ -21,7 +23,8 @@ export const getTermsConditionsData = <T>(): Promise<
 };
 
 /**
- * 获取手机号验证码
+ * @name getPhoneCode
+ * @description 获取手机号验证码
  */
 export const getPhoneCode = <T>(
   params: PhoneCodeParams

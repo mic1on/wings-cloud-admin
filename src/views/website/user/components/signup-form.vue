@@ -1,30 +1,22 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
-import type { SignupAccountForm } from '#/views/website/user.d';
+import type { SignupAccountForm } from '../index.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import {
-  StorageEnum,
-  RouteEnum,
-  PhoneCodeTypeEnum,
-  useWingsCountDown,
-  useWingsApis,
-  useWingsStore,
-  USERNAME,
-  PASSWORD_NORMAL,
-  MOBILE_PHONE,
-  getStorage,
-} from '@wings';
+import { useStore } from '@/hooks/use-store';
+import { useCountDown } from '@/hooks/use-count-down';
+import { getStorage } from '@/utils/storage';
+import { RouteEnum, StorageEnum, PhoneCodeTypeEnum } from '@/enums';
+import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
+import { getPhoneCode as _getPhoneCode } from '@/apis/base';
 
 const { t } = useI18n();
 
 const router = useRouter();
 
-const { apis } = useWingsApis();
+const { userStore } = useStore();
 
-const { appUserStore } = useWingsStore();
-
-const countDown = useWingsCountDown();
+const countDown = useCountDown();
 
 const formRef = ref<FormInstance>();
 
@@ -141,7 +133,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 
 const getPhoneCode = (): void => {
   countDown.getCode(form.value.phone, async () => {
-    const res = await apis.base.getPhoneCode({
+    const res = await _getPhoneCode({
       phone: form.value.phone,
       type: PhoneCodeTypeEnum.SIGNUP,
     });
@@ -159,7 +151,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
   await formEl.validate(async (valid: boolean) => {
     if (valid) {
       signupLoading.value = true;
-      await appUserStore.signup(form.value);
+      await userStore.signup(form.value);
       signupLoading.value = false;
     }
   });

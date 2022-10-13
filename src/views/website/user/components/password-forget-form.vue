@@ -1,24 +1,18 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
-import type { PasswordRetrieveForm } from '#/views/website/user.d';
+import type { PasswordRetrieveForm } from '../index.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import {
-  StorageEnum,
-  PhoneCodeTypeEnum,
-  RouteEnum,
-  useWingsCountDown,
-  useWingsApis,
-  getStorage,
-  PASSWORD_NORMAL,
-  MOBILE_PHONE,
-} from '@wings';
+import { useCountDown } from '@/hooks/use-count-down';
+import { PhoneCodeTypeEnum } from '@/enums';
+import { getStorage } from '@/utils/storage';
+import { RouteEnum, StorageEnum } from '@/enums';
+import { PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
+import { getPhoneCode as _getPhoneCode } from '@/apis/base';
 
 const { t } = useI18n();
 
-const { apis } = useWingsApis();
-
-const countDown = useWingsCountDown();
+const countDown = useCountDown();
 
 const router = useRouter();
 
@@ -124,7 +118,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 
 const getPhoneCode = (): void => {
   countDown.getCode(form.value.phone, async () => {
-    const res = await apis.base.getPhoneCode({
+    const res = await _getPhoneCode({
       phone: form.value.phone,
       type: PhoneCodeTypeEnum.FORGET_PASSWORDS,
     });

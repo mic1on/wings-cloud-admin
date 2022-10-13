@@ -60,8 +60,6 @@ export default ({ mode }: ConfigEnv) => {
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
-        '#': resolve(__dirname, 'types'),
-        '@wings': resolve(__dirname, 'wings/core'),
         'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
@@ -73,7 +71,7 @@ export default ({ mode }: ConfigEnv) => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@wings/plugins/element-plus/styles/index.scss" as *;`,
+          additionalData: `@use "src/plugins/element-plus/styles/index.scss" as *;`,
         },
       },
     },
@@ -106,7 +104,7 @@ export default ({ mode }: ConfigEnv) => {
        * 使用自定义的 Svg 图标
        */
       createSvgIconsPlugin({
-        iconDirs: [resolve(__dirname, 'wings/core/components/svg-icon/icons')],
+        iconDirs: [resolve(__dirname, 'src/assets/svgs')],
         symbolId: 'icon-[dir]-[name]',
       }),
 
@@ -122,7 +120,7 @@ export default ({ mode }: ConfigEnv) => {
           }),
         ],
         dirs: ['src/components'],
-        dts: 'types/auto-imports.d.ts',
+        dts: 'src/auto-imports.d.ts',
         eslintrc: {
           enabled: true,
           filepath: '.eslintrc-auto-import.json',
@@ -141,7 +139,7 @@ export default ({ mode }: ConfigEnv) => {
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.tsx$/, /\.jsx$/],
         dirs: ['src/components'],
-        dts: 'types/components.d.ts',
+        dts: 'src/components/index.d.ts',
         types: [
           {
             from: 'vue-router',

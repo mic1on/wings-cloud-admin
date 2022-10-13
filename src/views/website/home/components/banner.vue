@@ -77,7 +77,7 @@ const goAdmin = () => {
             z-12
             overflow-hidden
           >
-            <img w-full src="@/assets/website/home-admin-dark.png" />
+            <img w-full src="@/assets/images/website/home-admin-dark.png" />
           </div>
           <div
             absolute
@@ -90,7 +90,7 @@ const goAdmin = () => {
             z-13
             style="box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%)"
           >
-            <img w-full src="@/assets/website/home-admin-light.png" />
+            <img w-full src="@/assets/images/website/home-admin-light.png" />
           </div>
         </div>
       </div>

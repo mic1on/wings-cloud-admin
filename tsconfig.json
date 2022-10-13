@@ -69,9 +69,7 @@
      * 别名解析，映射到 baseUrl
      */
     "paths": {
-      "@/*": ["src/*"],
-      "#/*": ["types/*"],
-      "@wings/*": ["wings/core*"]
+      "@/*": ["src/*"]
     }
   },
 
@@ -85,12 +83,12 @@
   /**
    * 类型声明目录
    */
-  "typeRoots": ["node_modules/@types/", "types/", "wings/"],
+  "typeRoots": ["node_modules/@types/", "src/"],
 
   /**
    * 编译处理的文件列表
    */
-  "include": ["types/**/*d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "*.ts", "wings/**/*.vue", "wings/**/*.d.ts", "wings/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "*.ts"],
 
   /**
    * 不需要处理的目录

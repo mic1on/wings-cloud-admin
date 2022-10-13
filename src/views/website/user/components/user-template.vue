@@ -28,7 +28,7 @@ const backHome = (): void => {
           h-14
           block
           m-b-10
-          src="@/assets/logo.svg"
+          src="@/assets/svgs/logo.svg"
           @click="backHome"
         />
         <div text-14 mb-6 font-600 style="color: var(--ep-color-info-dark)">
