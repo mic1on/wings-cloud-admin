@@ -1,21 +1,16 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
-import type { LoginPhoneForm } from '#/views/website/user.d';
+import type { LoginPhoneForm } from '../index.d';
 import { ElMessage } from 'element-plus';
-import {
-  StorageEnum,
-  PhoneCodeTypeEnum,
-  useWingsCountDown,
-  useWingsApis,
-  MOBILE_PHONE,
-  getStorage,
-} from '@wings';
+import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
+import { MOBILE_PHONE } from '@/utils/reg-exp';
+import { getStorage } from '@/utils/storage';
+import { useCountDown } from '@/hooks/use-count-down';
+import { getPhoneCode as _getPhoneCode } from '@/apis/base';
 
 const { t } = useI18n();
 
-const { apis } = useWingsApis();
-
-const countDown = useWingsCountDown();
+const countDown = useCountDown();
 
 const formRef = ref<FormInstance>();
 
@@ -64,7 +59,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 
 const getPhoneCode = (): void => {
   countDown.getCode(form.value.phone, async () => {
-    const res = await apis.base.getPhoneCode({
+    const res = await _getPhoneCode({
       phone: form.value.phone,
       type: PhoneCodeTypeEnum.LOGIN,
     });

@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import { useWingsStore } from '@wings';
+import { useStore } from '@/hooks/use-store';
 
 const { t } = useI18n();
 
-const { appUserStore } = useWingsStore();
+const { userStore } = useStore();
 </script>
 <template>
-  <wings-crud-card>
+  <crud-card>
     <template #content>
       <div text-5>
         <span p-r-4>{{ t('admin.workbench.welcome') }}</span>
-        <span>{{ appUserStore.userInfo.nickname }}</span>
+        <span>{{ userStore.userInfo.nickname }}</span>
       </div>
       <el-divider
         style="border-top: 1px solid var(--ep-border-color-lighter)"
@@ -22,5 +22,5 @@ const { appUserStore } = useWingsStore();
         <el-col :span="6"> </el-col>
       </el-row>
     </template>
-  </wings-crud-card>
+  </crud-card>
 </template>

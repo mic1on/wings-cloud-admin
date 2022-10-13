@@ -1,19 +1,14 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
 import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import type { LoginAccountForm } from '#/views/website/user.d';
-import type { ResponseData } from '#/app/app-request.d';
-import {
-  RouteEnum,
-  useWingsApis,
-  useWingsStore,
-  USERNAME,
-  PASSWORD_NORMAL,
-} from '@wings';
+import type { LoginAccountForm } from '../index.d';
+import type { ResponseData } from '@/utils/request/index.d';
+import { useStore } from '@/hooks/use-store';
+import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
+import { RouteEnum } from '@/enums';
+import { validateUsername as _validateUsername } from '@/apis/admin/auth';
 
-const { apis } = useWingsApis();
-
-const { appUserStore } = useWingsStore();
+const { userStore } = useStore();
 
 const { t } = useI18n();
 
@@ -40,15 +35,13 @@ const validateUsername = (
       )
     );
   } else if (value && USERNAME.test(value)) {
-    apis.auth
-      .validateUsername({ username: value })
-      .then(({ data }: ResponseData) => {
-        if (data.validateResult) {
-          callback();
-        } else {
-          callback(new Error(t('base.authentication.signup')));
-        }
-      });
+    _validateUsername({ username: value }).then(({ data }: ResponseData) => {
+      if (data.validateResult) {
+        callback();
+      } else {
+        callback(new Error(t('base.authentication.signup')));
+      }
+    });
   }
 };
 
@@ -91,7 +84,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
   await formEl.validate(async (valid: boolean) => {
     if (valid) {
       loginLoading.value = true;
-      await appUserStore.loginByAccount(form.value);
+      await userStore.loginByAccount(form.value);
       loginLoading.value = false;
     }
   });

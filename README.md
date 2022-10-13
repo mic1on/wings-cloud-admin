@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/kaivanwong/wings-vue" target="_blank">
-    <img width="180" src="./src/assets/logo.svg"/>
+    <img width="180" src="./src/assets/svgs/logo.svg"/>
   </a>
 </div>
 

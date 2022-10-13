@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import type { ResponseData } from '#/app/app-request.d';
-import { useWingsApis } from '@wings';
-
-const { apis } = useWingsApis();
+import type { ResponseData } from '@/utils/request/index.d';
+import { getTermsConditionsData } from '@/apis/base';
 
 const { t } = useI18n();
 
@@ -19,7 +17,7 @@ const termsConditionsData = ref<string>('');
 
 const openDialog = (): void => {
   dialogVisible.value = true;
-  apis.base.getTermsConditionsData().then(({ data }: ResponseData) => {
+  getTermsConditionsData().then(({ data }: ResponseData) => {
     termsConditionsData.value = data;
   });
 };

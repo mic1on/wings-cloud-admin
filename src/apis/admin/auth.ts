@@ -1,9 +1,10 @@
-import { GET } from '@wings';
-import type { ResponseData } from '@wings';
+import type { ResponseData } from '@/utils/request/index.d';
 import type { ValidateUsernameParams } from './auth.d';
+import { GET } from '@/utils/request';
 
 /**
- * 校验用户名是否存在
+ * @name validateUsername
+ * @description 校验用户名是否存在
  */
 export const validateUsername = <T>(
   params: ValidateUsernameParams
@@ -12,7 +13,8 @@ export const validateUsername = <T>(
 };
 
 /**
- * 获取权限路由
+ * @name validateUsername
+ * @description 获取权限路由
  */
 export const getAdminRoutes = <T>(): Promise<
   any | ResponseData<T> | undefined
@@ -21,7 +23,8 @@ export const getAdminRoutes = <T>(): Promise<
 };
 
 /**
- * 获取用户权限
+ * @name validateUsername
+ * @description 校验用户名是否存在
  */
 export const getUserRoles = <T>(): Promise<
   any | ResponseData<T> | undefined

@@ -1,9 +1,10 @@
 import type { LoginAccountData, SignupData } from './user.d';
-import type { ResponseData } from '@wings';
-import { GET, POST } from '@wings';
+import type { ResponseData } from '@/utils/request/index.d';
+import { GET, POST } from '@/utils/request';
 
 /**
- * 登录 - 通过账号密码
+ * @name loginByAccount
+ * @description 登录 - 通过账号密码
  */
 export const loginByAccount = <T>(
   data: LoginAccountData
@@ -12,7 +13,8 @@ export const loginByAccount = <T>(
 };
 
 /**
- * 获取用户信息
+ * @name getUserInfo
+ * @description 获取用户信息
  */
 export const getUserInfo = <T>(): Promise<
   any | ResponseData<T> | undefined
@@ -21,7 +23,8 @@ export const getUserInfo = <T>(): Promise<
 };
 
 /**
- * 注册
+ * @name signup
+ * @description 注册
  */
 export const signup = <T>(
   data: SignupData

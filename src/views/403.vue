@@ -25,7 +25,7 @@ const goBack = () => {
     w-7xl
     text-center
   >
-    <img cursor-pointer h-22 my-10 src="@/assets/logo.svg" />
+    <img cursor-pointer h-22 my-10 src="@/assets/svgs/logo.svg" />
     <div text-12 mb-6 font-600 style="color: var(--ep-color-info-dark)">
       {{ t('base.noAuthentication') }}
     </div>

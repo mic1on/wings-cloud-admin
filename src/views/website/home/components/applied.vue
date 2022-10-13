@@ -23,31 +23,31 @@ const { t } = useI18n();
       flex-wrap
     >
       <div w-15>
-        <img w-full src="@/assets/website/logo-yonyou.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-yonyou.png" alt="" />
       </div>
       <div w-46>
-        <img w-full src="@/assets/website/logo-apicloud.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-apicloud.png" alt="" />
       </div>
       <div w-26>
-        <img w-full src="@/assets/website/logo-haier.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-haier.png" alt="" />
       </div>
       <div w-44>
-        <img w-full src="@/assets/website/logo-elink.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-elink.png" alt="" />
       </div>
       <div w-40>
-        <img w-full src="@/assets/website/logo-hisense.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-hisense.png" alt="" />
       </div>
       <div w-30>
-        <img w-full src="@/assets/website/logo-haier-2.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-haier-2.png" alt="" />
       </div>
       <div w-38>
-        <img w-full src="@/assets/website/logo-neusoft.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-neusoft.png" alt="" />
       </div>
       <div w-34>
-        <img w-full src="@/assets/website/logo-xinxiwang.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-xinxiwang.png" alt="" />
       </div>
       <div w-38>
-        <img w-full src="@/assets/website/logo-goer.png" alt="" />
+        <img w-full src="@/assets/images/website/logo-goer.png" alt="" />
       </div>
     </div>
   </div>
