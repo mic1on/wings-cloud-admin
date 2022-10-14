@@ -17,6 +17,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  showEpWidth: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const symbolId = computed(
@@ -29,12 +33,8 @@ const symbolId = computed(
     flex
     items-center
     justify-center
-    style="
-      width: var(--ep-menu-icon-width);
-      margin-right: 5px;
-      text-align: center;
-      vertical-align: middle;
-    "
+    style="margin-right: 5px; text-align: center; vertical-align: middle"
+    :style="{ width: showEpWidth ? 'var(--ep-menu-icon-width)' : 'auto' }"
   >
     <svg
       aria-hidden="true"

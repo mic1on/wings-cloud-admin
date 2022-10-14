@@ -1,4 +1,4 @@
-import type { Axios, AxiosResponse } from 'axios';
+import type { Axios, AxiosInterceptorManager, AxiosResponse } from 'axios';
 import type { RequestOptions, ResponseData } from './index.d';
 import type { IObject } from '../../interface.d';
 import type { I18nT } from '../../plugins/vue-i18n/index.d';
@@ -43,8 +43,8 @@ export const request = <T>(
         params: options.params,
         data: options.data,
       })
-      .then((res) => {
-        resolve(res as unknown as ResponseData<T>);
+      .then((res: AxiosResponse<any, any>) => {
+        resolve(res.data as ResponseData<T>);
       })
       .catch((error) => {
         resolve({
@@ -66,7 +66,7 @@ export const request = <T>(
 export const addInterceptorsRequest = (
   axios: Axios,
   options: RequestOptions
-): any => {
+): number => {
   return axios.interceptors.request.use((config: IObject) => {
     if (options.isTime) {
       config.params[RequestHeaderEnum.HEADER_TIME] = new Date().getTime();
@@ -98,8 +98,8 @@ export const addInterceptorsRequest = (
 export const addInterceptorsResponse = <T>(
   axios: Axios,
   options: RequestOptions
-): any => {
-  return axios.interceptors.response.use((response: AxiosResponse) => {
+): number => {
+  return axios.interceptors.response.use((response) => {
     if (options.networkCodeAdaptor) {
       networkCodeAdaptor(response.status, _t, ({ message }) => {
         ElNotification({
@@ -127,7 +127,7 @@ export const addInterceptorsResponse = <T>(
         });
       });
     }
-    return response.data as ResponseData<T>;
+    return response;
   });
 };
 

@@ -26,7 +26,7 @@ export const useApp = () => {
     valueLight: '',
     storageKey: import.meta.env.APP_STOREAGE_PREFIX + '-' + StorageEnum.DARK,
   });
-  const changeDark: any = useToggle(isDark);
+  const changeDark = useToggle(isDark);
 
   const getMobileAreaCodeList = async () => {
     const { data } = await _getMobileAreaCodeList();
