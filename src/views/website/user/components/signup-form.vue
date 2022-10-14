@@ -227,19 +227,19 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
             p-0
             link
             type="primary"
-            :disabled="countDown.form.getting"
+            :disabled="countDown.countDownForm.getting"
             @click="getPhoneCode()"
           >
-            <span text-3 v-if="countDown.form.getting">
+            <span text-3 v-if="countDown.countDownForm.getting">
               {{
                 t('base.form.countDownTimeLabel', {
-                  time: countDown.form.time,
+                  time: countDown.countDownForm.time,
                 })
               }}
             </span>
             <span text-3 v-else>
               {{
-                countDown.form.send
+                countDown.countDownForm.send
                   ? t('base.form.resend')
                   : t('base.form.getSecurityCode')
               }}

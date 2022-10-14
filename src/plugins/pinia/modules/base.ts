@@ -1,8 +1,8 @@
-import type { IObject } from '#/interface.d';
+import type { IObject } from '@/interface.d';
 import type { BaseState } from './base.d';
 import { defineStore } from 'pinia';
-import { getStorage, setStorage } from '../../../utils/storage';
-import { StorageEnum } from '../../../enums';
+import { getStorage, setStorage } from '@/utils/storage';
+import { StorageEnum } from '@/enums';
 
 /**
  * 导出通用状态钩子

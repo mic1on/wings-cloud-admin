@@ -1,4 +1,5 @@
-import type { I18nT, IObject } from '../../../interface.d';
+import type { IObject } from '../../../interface.d';
+import type { I18nT } from '../../vue-i18n/index.d';
 import type {
   LoginAccountData,
   SignupData,

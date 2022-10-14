@@ -8,8 +8,6 @@ export interface IFunction<T = any> {
 
 type Callback = (data?: any) => void;
 
-type I18nT = (key: string, params?: IObject | Array<string>) => string;
-
 interface RouteMeta {
   layout: string;
   isMenu: boolean;

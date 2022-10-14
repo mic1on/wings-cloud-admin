@@ -5,7 +5,7 @@ export interface PhoneCodeParams {
   /**
    * 手机号码
    */
-  phone: boolean;
+  phone: string | number;
 
   /**
    * 获取验证码的用途类型
