@@ -6,7 +6,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
-  "i18n-ally.localesPaths": ["wings/core/plugins/vue-i18n/languages"],
+  "i18n-ally.localesPaths": ["src/plugins/vue-i18n/languages"],
   "i18n-ally.namespace": true,
   "i18n-ally.sortKeys": true,
   "i18n-ally.keystyle": "nested",

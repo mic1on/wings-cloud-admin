@@ -1,5 +1,5 @@
-import type { ResponseData } from '#/app/app-request.d';
-import type { IObject } from '#/interface.d';
+import type { ResponseData } from '@/utils/request/index.d';
+import type { IObject } from '@/interface.d';
 import { interceptJointData } from '@/utils/common';
 import { AuthenticationEnum, IconTypeEnum } from '@/enums';
 
