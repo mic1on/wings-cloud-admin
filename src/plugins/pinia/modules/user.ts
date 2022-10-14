@@ -198,8 +198,8 @@ export default defineStore('user', {
       this.setUserInfo({});
       this.setUserRoles([]);
 
-      const appRouteStore = stores['route'].default();
-      appRouteStore.getAdminRoutes();
+      const routeStore = useRouteStore();
+      routeStore.getAdminRoutes();
 
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),

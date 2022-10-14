@@ -72,7 +72,7 @@ const goPage = (url: string) => {
           mb-4
           v-for="(link, linkIndex) in group.list"
           :key="linkIndex"
-          @click="goPage(link.url, link.isRoute)"
+          @click="goPage(link.url)"
         >
           <span text-4 class="link" cursor-pointer transition-all>
             {{ link.label }}

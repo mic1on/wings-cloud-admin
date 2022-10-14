@@ -28,6 +28,7 @@ const props = defineProps({
       </a>
       <template v-else>
         <svg-icon
+          show-ep-width
           size="1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="route.meta.icon"
@@ -50,6 +51,7 @@ const props = defineProps({
     <el-sub-menu :index="route.path" v-else>
       <template #title>
         <svg-icon
+          show-ep-width
           size="1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="route.meta.icon"

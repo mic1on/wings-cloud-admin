@@ -10,6 +10,7 @@
       <layout-action-dark-light mr-8></layout-action-dark-light>
       <layout-action-language mr-8 only-icon></layout-action-language>
       <layout-action-notifications mr-8></layout-action-notifications>
+      <layout-action-setting mr-8></layout-action-setting>
       <layout-action-avatar></layout-action-avatar>
     </div>
   </div>
