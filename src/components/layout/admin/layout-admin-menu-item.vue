@@ -72,3 +72,38 @@ const props = defineProps({
     </el-sub-menu>
   </template>
 </template>
+
+<style lang="scss" scoped>
+.ep-menu-item {
+  width: 100% !important;
+  min-width: auto !important;
+  margin-bottom: var(--wings-menu-gap);
+  color: var(--wings-menu-text);
+  border-radius: var(--wings-menu-radius);
+}
+
+.ep-menu-item.is-active {
+  color: var(--wings-menu-text-active) !important;
+  background-color: var(--wings-menu-bg-active) !important;
+}
+
+.ep-menu-item:hover {
+  color: var(--wings-menu-text-hover);
+  background-color: var(--wings-menu-bg-hover);
+}
+
+.ep-sub-menu {
+  margin-bottom: var(--wings-menu-gap);
+
+  :deep(.ep-sub-menu__title) {
+    margin-bottom: var(--wings-menu-gap);
+    color: var(--wings-menu-text);
+    border-radius: var(--wings-menu-radius);
+  }
+
+  :deep(.ep-sub-menu__title:hover) {
+    color: var(--wings-menu-text-hover);
+    background-color: var(--wings-menu-bg-hover);
+  }
+}
+</style>

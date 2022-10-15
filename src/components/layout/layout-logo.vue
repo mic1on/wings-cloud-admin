@@ -30,6 +30,7 @@ const goHomeRoute = () => {
         ? `height:${baseStore.adminHeaderHeight}`
         : ''
     "
+    style="background: var(--wings-bg-color-sider)"
   >
     <img h-6 src="@/assets/svgs/logo.svg" />
     <div
@@ -39,7 +40,7 @@ const goHomeRoute = () => {
       text-center
       v-show="route.path.indexOf('admin') !== -1 && !baseStore.collapse"
       class="single-line-omitted"
-      style="color: var(--ep-text-color-primary)"
+      style="color: var(--wings-text-color-sider)"
     >
       {{ appName }}
     </div>

@@ -1,7 +1,7 @@
 {
   "name": "wings-vue",
-  "version": "0.3.3",
-  "description": "An RBAC permission management system for Vue + Element Plus ecology",
+  "version": "0.3.4-beta",
+  "description": "面向 Vue + Element Plus 生态的一款 RBAC 权限管理系统，提供工程化的开发体验和开箱即用的页面模板。",
   "main": "index.html",
   "repository": {
     "type": "git",

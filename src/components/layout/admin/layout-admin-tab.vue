@@ -100,7 +100,13 @@ watch(
 </script>
 
 <template>
-  <div p-x-6 flex items-center justify-between>
+  <div
+    p-x-6
+    flex
+    items-center
+    justify-between
+    style="height: var(--wings-tag-height)"
+  >
     <el-tabs
       v-model="tab.nowTab"
       type="card"

@@ -2,6 +2,7 @@
 <template>
   <div h-full flex items-center justify-between>
     <div h-full flex items-center>
+      <layout-logo></layout-logo>
       <layout-action-collapse mr-8></layout-action-collapse>
       <layout-action-refresh></layout-action-refresh>
     </div>
