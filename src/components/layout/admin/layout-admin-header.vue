@@ -2,11 +2,10 @@
 <template>
   <div h-full flex items-center justify-between>
     <div h-full flex items-center>
-      <layout-logo></layout-logo>
-      <layout-action-collapse mr-8></layout-action-collapse>
-      <layout-action-refresh></layout-action-refresh>
+      <layout-admin-logo></layout-admin-logo>
     </div>
     <div h-full flex items-center>
+      <layout-action-refresh mr-8></layout-action-refresh>
       <layout-action-fullscreen mr-8></layout-action-fullscreen>
       <layout-action-dark-light mr-8></layout-action-dark-light>
       <layout-action-language mr-8 only-icon></layout-action-language>

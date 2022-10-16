@@ -62,6 +62,7 @@ declare module '@vue/runtime-core' {
     LayoutAdmin: typeof import('./layout/admin/layout-admin.vue')['default']
     LayoutAdminFooter: typeof import('./layout/admin/layout-admin-footer.vue')['default']
     LayoutAdminHeader: typeof import('./layout/admin/layout-admin-header.vue')['default']
+    LayoutAdminLogo: typeof import('./layout/admin/layout-admin-logo.vue')['default']
     LayoutAdminMain: typeof import('./layout/admin/layout-admin-main.vue')['default']
     LayoutAdminMenu: typeof import('./layout/admin/layout-admin-menu.vue')['default']
     LayoutAdminMenuItem: typeof import('./layout/admin/layout-admin-menu-item.vue')['default']

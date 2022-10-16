@@ -5,12 +5,18 @@ const { baseStore } = useStore();
 </script>
 
 <template>
-  <el-container style="background: var(--ep-bg-color)">
-    <el-header important="p-x-6">
+  <el-container>
+    <el-header>
       <layout-admin-header></layout-admin-header>
     </el-header>
     <el-container>
-      <el-aside>
+      <el-aside
+        :style="
+          baseStore.collapse
+            ? 'width:var(--wings-aside-width-fold)'
+            : 'width: var(--wings-aside-width)'
+        "
+      >
         <layout-admin-sider></layout-admin-sider>
       </el-aside>
       <el-main>
@@ -27,3 +33,16 @@ const { baseStore } = useStore();
     </el-container>
   </el-container>
 </template>
+
+<style lang="scss" scoped>
+:deep(.ep-header) {
+  height: var(--wings-header-height);
+  padding: 0 1.8rem !important;
+  background-color: var(--wings-header-bg-color);
+}
+
+:deep(.ep-main) {
+  padding: 0;
+  background: var(--wings-main-fill);
+}
+</style>

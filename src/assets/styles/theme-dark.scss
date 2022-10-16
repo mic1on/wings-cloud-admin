@@ -1,28 +1,27 @@
 :root.dark {
-  --wings-bg-color-page: var(--ep-bg-color-page);
-  --wings-bg-color-header: var(--ep-bg-color-overlay);
-  --wings-bg-color-footer: var(--ep-bg-color-overlay);
-  --wings-bg-color-sider: var(--ep-bg-color-page);
-  --wings-bg-color-main: var(--ep-bg-color-page);
-  --wings-bg-color-card: var(--ep-menu-bg-color);
+  --wings-header-height: 5.4rem;
+  --wings-header-bg-color: var(--ep-bg-color);
+  --wings-header-text-color: #fff;
 
-  --wings-text-color-sider: #fff;
-
-  --wings-header-height: 4rem;
-
-  --wings-sider-width: 240px;
+  --wings-aside-width: 14.6rem;
+  --wings-aside-width-fold: calc(
+    var(--ep-menu-item-height) + var(--wings-menu-gap) * 2 +
+      var(--ep-menu-icon-width)
+  );
 
   --wings-menu-radius: 0.5rem;
   --wings-menu-gap: 0.2rem;
-  --wings-menu-bg: #0a0a0a;
-  --wings-menu-sub-bg: #141414;
-  --wings-menu-bg-active: var(--ep-color-primary-light-3);
-  --wings-menu-bg-hover: var(--ep-color-primary-light-3);
-  --wings-menu-text: var(--ep-text-color-secondary);
-  --wings-menu-text-active: var(--ep-text-color-primary);
-  --wings-menu-text-hover: var(--el-text-color-primary);
+  --wings-menu-bg-color: #0a0a0a;
+  --wings-menu-sub-bg-color: #141414;
+  --wings-menu-bg-color-active: var(--ep-color-primary-light-3);
+  --wings-menu-bg-color-hover: var(--ep-color-primary-light-3);
+  --wings-menu-text-color: var(--ep-text-color-secondary);
+  --wings-menu-text-color-active: var(--ep-text-color-primary);
+  --wings-menu-text-color-hover: var(--el-text-color-primary);
 
-  --wings-tag-height: 2.2rem;
+  --wings-tag-height: 2.4rem;
+  --wings-tag-bg-color: var(--el-bg-color);
 
   --wings-main-fill: var(--ep-bg-color-fill);
+  --wings-main-padding: 1.4rem;
 }

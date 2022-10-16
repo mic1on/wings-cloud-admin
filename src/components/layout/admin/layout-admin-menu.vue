@@ -24,20 +24,24 @@ const { baseStore, routeStore } = useStore();
 
 <style lang="scss" scoped>
 :deep(.ep-menu) {
-  color: var(--wings-menu-text);
-  background-color: var(--wings-menu-sub-bg);
+  color: var(--wings-menu-text-color);
+  background-color: var(--wings-menu-sub-bg-color);
   border-radius: var(--wings-menu-radius);
+}
+
+.ep-menu.ep-menu--collapse {
+  width: 100%;
 }
 
 .ep-menu.ep-menu--vertical {
   height: calc(100vh - var(--wings-header-height));
   padding: 0 10px !important ;
-  background-color: var(--wings-menu-bg);
+  background-color: var(--wings-menu-bg-color);
 }
 
 .ep-menu.ep-menu-inline {
-  color: var(--wings-menu-text);
-  background-color: var(--wings-menu-bg);
+  color: var(--wings-menu-text-color);
+  background-color: var(--wings-menu-bg-color);
   border-radius: var(--wings-menu-radius);
 }
 </style>

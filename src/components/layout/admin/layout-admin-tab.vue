@@ -105,8 +105,12 @@ watch(
     flex
     items-center
     justify-between
-    style="height: var(--wings-tag-height)"
+    style="
+      height: var(--wings-tag-height);
+      background-color: var(--wings-tag-bg-color);
+    "
   >
+    <layout-action-collapse></layout-action-collapse>
     <el-tabs
       v-model="tab.nowTab"
       type="card"
@@ -151,20 +155,20 @@ watch(
 </template>
 
 <style lang="scss" scoped>
-:deep(.#{$namespace}-tabs__header) {
+:deep(.ep-tabs__header) {
   margin: 0 !important;
   border: none !important;
 }
 
-:deep(.#{$namespace}-tabs__nav) {
+:deep(.ep-tabs__nav) {
   border: none !important;
 }
 
-:deep(.#{$namespace}-tabs__item) {
+:deep(.ep-tabs__item) {
   border-left: none !important;
 }
 
-:deep(.#{$namespace}-tabs__item.is-active) {
+:deep(.ep-tabs__item.is-active) {
   border: none;
   border-bottom: 3px solid var(--ep-color-primary) !important;
 }

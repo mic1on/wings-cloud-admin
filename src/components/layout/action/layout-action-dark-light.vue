@@ -8,7 +8,7 @@ const { changeDark } = useApp();
   <i
     cursor-pointer
     @click="changeDark()"
-    style="color: var(--ep-text-color-primary)"
+    style="color: var(--wings-header-text-color)"
     text-4
     inline-flex
     i="dark:ep-moon ep-sunny"

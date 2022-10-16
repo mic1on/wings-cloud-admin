@@ -11,7 +11,7 @@ const { userStore } = useStore();
     <el-popover :width="320" trigger="hover">
       <template #reference>
         <el-badge is-dot flex items-center>
-          <el-icon :size="18" color="var(--ep-text-color-primary)">
+          <el-icon :size="18" color="var(--wings-header-text-color)">
             <Bell />
           </el-icon>
         </el-badge>
