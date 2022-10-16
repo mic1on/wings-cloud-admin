@@ -32,21 +32,6 @@ export default defineStore('base', {
     collapse: getStorage(StorageEnum.COLLAPSE) || false,
 
     /**
-     * 管理系统头部高度
-     */
-    adminHeaderHeight: getStorage(StorageEnum.HEADER_HEIGHT) || '4rem',
-
-    /**
-     * 管理系统底部高度
-     */
-    adminFooterHeight: getStorage(StorageEnum.FOOTER_HEIGHT) || '2rem',
-
-    /**
-     * 管理系统菜单宽度
-     */
-    adminMenuWidth: getStorage(StorageEnum.MENU_WIDTH) || '14rem',
-
-    /**
      * 管理系统是否显示底部栏
      */
     adminShowFooter: getStorage(StorageEnum.SHOW_FOOTER) || false,
@@ -72,7 +57,6 @@ export default defineStore('base', {
      */
     changeCollapse() {
       this.collapse = !this.collapse;
-      this.adminMenuWidth = this.collapse ? '4rem' : '14rem';
     },
   },
 });

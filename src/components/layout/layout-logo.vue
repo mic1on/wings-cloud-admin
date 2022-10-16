@@ -39,7 +39,6 @@ const goHomeRoute = () => {
       text-center
       v-show="route.path.indexOf('admin') !== -1 && !baseStore.collapse"
       class="single-line-omitted"
-      style="color: var(--ep-text-color-primary)"
     >
       {{ appName }}
     </div>

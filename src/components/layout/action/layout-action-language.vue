@@ -23,7 +23,7 @@ const { changeLanguage, currentLanguage, languages } = useLanguage();
       w-5
       h-5
       name="language"
-      custom-style="color: var(--ep-text-color-primary)"
+      custom-style="color: var(--wings-header-text-color)"
     ></svg-icon>
     <template #dropdown>
       <el-dropdown-menu>

@@ -10,7 +10,7 @@ const { isFullscreen, toggle } = useFullscreen();
       @click="toggle"
       size="1.2rem"
       cursor-pointer
-      custom-style="color: var(--ep-text-color-primary)"
+      custom-style="color: var(--wings-header-text-color)"
       :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
     ></svg-icon>
   </div>
