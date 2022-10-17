@@ -7,7 +7,7 @@ export default [
     name: 'admin.home',
     component: LayoutRouter,
     meta: {
-      isMenu: true,
+      isAdmin: true,
       requiresAuth: true,
       iconType: IconTypeEnum.ELEMENT_PLUS,
       icon: 'House',
@@ -49,7 +49,7 @@ export default [
     component: () => import('@/views/admin/about.vue'),
     meta: {
       layout: 'admin',
-      isMenu: true,
+      isAdmin: true,
       requiresAuth: true,
       iconType: IconTypeEnum.APP,
       icon: 'InfoFilled',

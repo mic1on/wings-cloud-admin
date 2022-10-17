@@ -1,30 +1,29 @@
+import type { UserState } from './user.d';
 import type { IObject } from '../../../interface.d';
-import type { I18nT } from '../../vue-i18n/index.d';
+import type { ResponseData } from '../../../utils/request/index.d';
 import type {
   LoginAccountData,
   SignupData,
 } from '../../../apis/website/user.d';
-import type { ResponseData } from '../../../utils/request/index.d';
-import type { UserState } from './user.d';
-import { ElNotification } from 'element-plus';
 import { defineStore } from 'pinia';
+import { ElNotification } from 'element-plus';
+import useRouteStore from './route';
 import { getStorage, setStorage } from '../../../utils/storage';
 import { StorageEnum, RouteEnum } from '../../../enums';
-import { i18n } from '../../vue-i18n';
+import { _t } from '../../vue-i18n';
 import { router } from '../../vue-router';
+import { getUserRoles } from '../../../apis/admin/auth';
 import {
   loginByAccount,
   getUserInfo,
   signup,
 } from '../../../apis/website/user';
-import { getUserRoles } from '../../../apis/admin/auth';
-import useRouteStore from './route';
-
-const { t } = i18n.global;
-const _t: I18nT = t;
+import route from './route';
 
 /**
- * 获取是否保持登录状态
+ * @name getLoginStorageType
+ * @description 获取是否保持登录状态
+ * @return storageType
  */
 export const getLoginStorageType = (): string => {
   return getStorage(StorageEnum.STAY_LOGIN, { type: 'local' }) === true
@@ -33,17 +32,20 @@ export const getLoginStorageType = (): string => {
 };
 
 /**
- * 导出用户状态钩子
+ * @name userStore
+ * @description 导出用户状态钩子
  */
 export default defineStore('user', {
   state: (): UserState => ({
     /**
-     * 是否保持登录
+     * @name stayLogin
+     * @description 是否保持登录
      */
     stayLogin: getStorage(StorageEnum.STAY_LOGIN, { type: 'local' }) || false,
 
     /**
-     * 用户登录凭证
+     * @name token
+     * @description 用户登录凭证
      */
     token:
       getStorage(StorageEnum.TOKEN, {
@@ -51,7 +53,8 @@ export default defineStore('user', {
       }) || '',
 
     /**
-     * 用户信息
+     * @name userInfo
+     * @description 用户信息
      */
     userInfo:
       getStorage(StorageEnum.USER_INFO, {
@@ -59,7 +62,8 @@ export default defineStore('user', {
       }) || {},
 
     /**
-     * 用户权限
+     * @name userRoles
+     * @description 用户权限
      */
     userRoles:
       getStorage(StorageEnum.USER_ROLES, {
@@ -68,7 +72,8 @@ export default defineStore('user', {
   }),
   getters: {
     /**
-     * 登录状态
+     * @name isLogin
+     * @description 登录状态
      */
     isLogin: (state): boolean => {
       return state.token ? true : false;
@@ -76,7 +81,8 @@ export default defineStore('user', {
   },
   actions: {
     /**
-     * 设置用户是否保持登录
+     * @name setStayLogin
+     * @description 设置用户是否保持登录
      */
     setStayLogin(state: boolean): void {
       this.stayLogin = state;
@@ -86,7 +92,8 @@ export default defineStore('user', {
     },
 
     /**
-     * 设置用户凭证信息
+     * @name setToken
+     * @description 设置用户凭证信息
      */
     setToken(token: string): void {
       this.token = token;
@@ -94,7 +101,8 @@ export default defineStore('user', {
     },
 
     /**
-     * 设置用户信息
+     * @name setUserInfo
+     * @description 设置用户信息
      */
     setUserInfo(data: IObject): void {
       this.userInfo = data;
@@ -104,7 +112,8 @@ export default defineStore('user', {
     },
 
     /**
-     * 设置用户权限
+     * @name setUserRoles
+     * @description 设置用户权限
      */
     setUserRoles<T>(data: Array<T>): void {
       this.userRoles = data;
@@ -114,7 +123,8 @@ export default defineStore('user', {
     },
 
     /**
-     * 获取用户信息
+     * @name getUserInfo
+     * @description 获取用户信息
      */
     async getUserInfo(): Promise<void> {
       const res = await getUserInfo();
@@ -125,7 +135,8 @@ export default defineStore('user', {
     },
 
     /**
-     * 获取用户权限
+     * @name getUserRoles
+     * @description 获取用户权限
      */
     async getUserRoles(): Promise<void> {
       const res = await getUserRoles();
@@ -136,13 +147,15 @@ export default defineStore('user', {
     },
 
     /**
-     * 登录后 - 处理获取信息、权限、路由等
+     * @name loginApiHandle
+     * @description 登录后 - 处理获取信息、权限、路由等
      */
     async loginApiHandle(): Promise<void> {
-      const appRouteStore = useRouteStore();
-      await appRouteStore.getAdminRoutes();
+      const routeStore = useRouteStore();
+
       await this.getUserInfo();
       await this.getUserRoles();
+      await routeStore.getRoleRoutes();
 
       ElNotification({
         title: _t('base.authentication.loginSuccess'),
@@ -157,7 +170,8 @@ export default defineStore('user', {
     },
 
     /**
-     * 登录 - 通过账号密码
+     * @name loginByAccount
+     * @description 登录 - 通过账号密码
      */
     async loginByAccount<T>(data: LoginAccountData): Promise<void> {
       const res: ResponseData<T> = await loginByAccount(data);
@@ -169,37 +183,43 @@ export default defineStore('user', {
     },
 
     /**
-     * 登录 - 通过手机号 + 验证码
+     * @name loginByPhone
+     * @description 登录 - 通过手机号 + 验证码
      */
     loginByPhone(): void {},
 
     /**
-     * 登录 - 通过邮箱 + 验证码
+     * @name loginByEmail
+     * @description 登录 - 通过邮箱 + 验证码
      */
     loginByEmail(): void {},
 
     /**
-     * 注册
+     * @name signup
+     * @description 注册
      */
     async signup<T>(data: SignupData): Promise<void> {
       const res: ResponseData<T> = await signup(data);
     },
 
     /**
-     * 切换角色
+     * @name switchRoles
+     * @description 切换角色
      */
     switchRoles(): void {},
 
     /**
-     * 退出登录
+     * @name logout
+     * @description 退出登录
      */
-    logout(type: string): void {
+    async logout(type: string): Promise<void> {
+      const routeStore = useRouteStore();
+
       this.setToken('');
       this.setUserInfo({});
       this.setUserRoles([]);
-
-      const routeStore = useRouteStore();
-      routeStore.getAdminRoutes();
+      routeStore.setAdminRoutes([]);
+      routeStore.setRolesRoutes([]);
 
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),

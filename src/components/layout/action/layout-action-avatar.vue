@@ -18,9 +18,7 @@ const actionChange = (command: string): void => {
   } else if (command === 'switchRoles') {
     userStore.switchRoles();
   } else if (command === 'logout') {
-    userStore.logout(
-      route.path.indexOf('/website/') !== -1 ? 'refresh' : 'login'
-    );
+    userStore.logout('login');
   }
 };
 </script>

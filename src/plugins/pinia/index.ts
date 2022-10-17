@@ -1,22 +1,15 @@
 import type { Stores } from './index.d';
-import type { Files } from '../../utils/auto/index.d';
 import type { App } from 'vue';
 import type { Pinia } from 'pinia';
-import { pluginAddRegister } from '../../utils/auto';
+import { pluginAddRegister, autoImportPiniaStore } from '../../utils/auto';
 import { createPinia } from 'pinia';
-import { FILE_NAME } from '../../utils/reg-exp';
 import { getLoginStorageType } from './modules/user';
 
-const files: Files = import.meta.glob('./modules/**/*.ts', {
-  eager: true,
-});
-
-let stores: Stores = {};
-
-Object.keys(files).forEach((key) => {
-  const fileName = key.replace(FILE_NAME, '$2');
-  stores = { ...stores, [fileName]: files[key] || {} };
-});
+const stores: Stores = autoImportPiniaStore(
+  import.meta.glob('./modules/**/*.ts', {
+    eager: true,
+  })
+);
 
 const pinia: Pinia = createPinia();
 

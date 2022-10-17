@@ -1,10 +1,12 @@
+import type { IObject } from '../../interface.d';
+import type { App, FunctionalComponent, Plugin } from 'vue';
 import type { Files } from './index.d';
+import type { Mocks } from '../../plugins/mock/index.d';
 import type { Stores } from '../../plugins/pinia/index.d';
 import type { Routes } from '../../plugins/vue-router/index.d';
 import type { Languages } from '../../plugins/vue-i18n/index.d';
-import type { App, FunctionalComponent, Plugin } from 'vue';
-import { RouteEnum } from '@/enums';
-import { FILE_NAME } from '@/utils/reg-exp';
+import { RouteEnum } from '../../enums';
+import { FILE_NAME } from '../reg-exp';
 
 /**
  * @name autoImportRoutes
@@ -60,6 +62,36 @@ export const autoImportLanguages = (files: Files): Languages => {
 };
 
 /**
+ * @name autoImportMocks
+ * @description 自动导入模拟接口
+ * @return mocks
+ */
+export const autoImportMocks = (files: Files): Mocks => {
+  let mocks: Mocks = {};
+  Object.keys(files).forEach((key) => {
+    mocks = { ...mocks, ...files[key] };
+  });
+  return mocks;
+};
+
+/**
+ * @name autoImportViews
+ * @description 自动导入视图组件
+ * @return views
+ */
+export const autoImportViews = (files: Files) => {
+  let views: IObject = {};
+  Object.keys(files).forEach((key: string) => {
+    const fileName = key.replace('.vue', '').replace('/src/views', '');
+    views = {
+      ...views,
+      [fileName]: files[key] || {},
+    };
+  });
+  return views;
+};
+
+/**
  * @name componentAddInstall
  * @description 组件添加安装方法
  * @param component
@@ -95,17 +127,6 @@ export const pluginAddRegister = <T>(plugin: Plugin): T & Plugin => {
     app.use(plugin);
   };
   return _plugin as T & Plugin;
-};
-
-/**
- * @name componentAddPath
- * @description 视图文件路径解析
- * @param path
- * @returns
- */
-export const componentAddPath = (path: string): string => {
-  path = path.replace('_', '-');
-  return `/src/views${path}.vue`;
 };
 
 /**

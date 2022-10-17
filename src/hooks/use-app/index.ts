@@ -1,11 +1,12 @@
-import { setStorage } from '@/utils/storage';
-import { StorageEnum } from '@/enums';
-import { routes } from '@/plugins/vue-router';
-import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
 import { useDark, useToggle } from '@vueuse/core';
+import { StorageEnum } from '@/enums';
+import { setStorage } from '@/utils/storage';
+import { autoMergeRoleRoutes } from '@/utils/auto';
+import { routes } from '@/plugins/vue-router';
 import useBaseStore from '@/plugins/pinia/modules/base';
 import useRouteStore from '@/plugins/pinia/modules/route';
 import useUserStore from '@/plugins/pinia/modules/user';
+import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
 
 /**
  * @name useApp
@@ -41,6 +42,7 @@ export const useApp = () => {
 
   const init = async () => {
     baseStore.changeGlobalLoading(true);
+
     if (await isNeedInit()) {
       setStorage(
         StorageEnum.DARK,
@@ -50,14 +52,18 @@ export const useApp = () => {
           isJSON: false,
         }
       );
+
       routeStore.setStaticRoutes(routes);
+
       if (userStore.token) {
-        routeStore.getAdminRoutes();
-        userStore.getUserInfo();
-        userStore.getUserRoles();
+        await userStore.getUserInfo();
+        await userStore.getUserRoles();
+        await routeStore.getRoleRoutes();
       }
+
       getMobileAreaCodeList();
     }
+
     baseStore.changeGlobalLoading(false);
   };
 

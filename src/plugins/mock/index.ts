@@ -1,22 +1,18 @@
 import type { Mocks } from './index.d';
-import type { Files } from '../../utils/auto/index.d';
 import type { ResponseData } from '../../utils/request/index.d';
 import Mock from 'mockjs';
+import { autoImportMocks } from '../../utils/auto';
 
 Mock.setup({
   timeout: '200-600',
 });
 
-const files: Files = import.meta.glob('./modules/**/*.ts', {
-  import: 'default',
-  eager: true,
-});
-
-let mocks: Mocks = {};
-
-Object.keys(files).forEach((key) => {
-  mocks = { ...mocks, ...files[key] };
-});
+const mocks: Mocks = autoImportMocks(
+  import.meta.glob('./modules/**/*.ts', {
+    import: 'default',
+    eager: true,
+  })
+);
 
 const useMock = (): void => {
   Object.keys(mocks).forEach((key: string) => {
