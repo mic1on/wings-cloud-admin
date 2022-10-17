@@ -1,7 +1,7 @@
-import type { ResponseData } from '@/utils/request/index.d';
-import type { IObject } from '@/interface.d';
-import { interceptJointData } from '@/utils/common';
-import { AuthenticationEnum } from '@/enums';
+import type { ResponseData } from '../../../../utils/request/index.d';
+import type { IObject } from '../../../../global.d';
+import { interceptJointData } from '../../../../utils/common';
+import { AuthenticationEnum } from '../../../../enums';
 
 export default {
   /**

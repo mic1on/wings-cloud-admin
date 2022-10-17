@@ -1,9 +1,9 @@
 import type { RouteState } from './route.d';
 import type { RouteMeta, Routes } from '../../../plugins/vue-router/index.d';
-import type { Files } from '../../../utils/auto/index.d';
+import type { ViewComponents } from '../../../views/index.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
-import { autoImportViews } from '../../../utils/auto';
+import { autoImportViewComponents } from '../../../utils/auto';
 import { getStorage, setStorage } from '../../../utils/storage';
 import { StorageEnum } from '../../../enums';
 import { router, routes } from '../../vue-router';
@@ -117,11 +117,11 @@ export default defineStore('route', {
      */
     async getRoleRoutes(): Promise<void> {
       const { data } = await getRoleRoutes();
-      const views: Files = autoImportViews(
+      const viewComponents: ViewComponents = autoImportViewComponents(
         import.meta.glob('/src/views/**/*.vue')
       );
 
-      const roleRoutes: Routes = this.mergeRoleRoutes(data, views);
+      const roleRoutes: Routes = this.mergeRoleRoutes(data, viewComponents);
       const adminRoutes: Routes = this.mergeAdminRoutes(routes, roleRoutes);
 
       this.setAdminRoutes(adminRoutes);
@@ -154,7 +154,10 @@ export default defineStore('route', {
      * @description 合并权限路由
      * @return _routes
      */
-    mergeRoleRoutes(roleRoutes: Routes, viewComponents: Files): Routes {
+    mergeRoleRoutes(
+      roleRoutes: Routes,
+      viewComponents: ViewComponents
+    ): Routes {
       const _routes: Routes = [];
       roleRoutes.forEach((item: RouteMeta) => {
         const _route: RouteMeta = item;

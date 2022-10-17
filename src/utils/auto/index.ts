@@ -1,10 +1,10 @@
-import type { IObject } from '../../interface.d';
 import type { App, FunctionalComponent, Plugin } from 'vue';
 import type { Files } from './index.d';
 import type { Mocks } from '../../plugins/mock/index.d';
 import type { Stores } from '../../plugins/pinia/index.d';
 import type { Routes } from '../../plugins/vue-router/index.d';
 import type { Languages } from '../../plugins/vue-i18n/index.d';
+import type { ViewComponents } from '../../views/index.d';
 import { RouteEnum } from '../../enums';
 import { FILE_NAME } from '../reg-exp';
 
@@ -75,12 +75,12 @@ export const autoImportMocks = (files: Files): Mocks => {
 };
 
 /**
- * @name autoImportViews
+ * @name autoImportViewComponents
  * @description 自动导入视图组件
  * @return views
  */
-export const autoImportViews = (files: Files) => {
-  let views: IObject = {};
+export const autoImportViewComponents = (files: Files): ViewComponents => {
+  let views: ViewComponents = {};
   Object.keys(files).forEach((key: string) => {
     const fileName = key.replace('.vue', '').replace('/src/views', '');
     views = {

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { IObject } from '@/interface.d';
+import type { IObject } from '@/global.d';
 import { useStore } from '@/hooks/use-store';
 import { arrayRecursion } from '@/utils/common';
 

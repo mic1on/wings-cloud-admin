@@ -1,5 +1,5 @@
 import type { UserState } from './user.d';
-import type { IObject } from '../../../interface.d';
+import type { IObject } from '../../../global.d';
 import type { ResponseData } from '../../../utils/request/index.d';
 import type {
   LoginAccountData,
@@ -18,7 +18,6 @@ import {
   getUserInfo,
   signup,
 } from '../../../apis/website/user';
-import route from './route';
 
 /**
  * @name getLoginStorageType
