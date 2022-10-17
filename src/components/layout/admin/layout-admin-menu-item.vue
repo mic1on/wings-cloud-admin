@@ -21,7 +21,7 @@ const props = defineProps({
       <a
         v-if="route.meta?.externalPage"
         target="_blank"
-        :href="route.meta?.externalPageUrl"
+        :href="route.meta.externalPageUrl"
         text-2
       >
         {{ route.meta?.menuName }}
@@ -31,7 +31,7 @@ const props = defineProps({
           show-ep-width
           size="1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
-          :name="route.meta.icon"
+          :name="(route.meta.icon as string)"
         ></svg-icon>
         <el-icon
           width="1rem"
@@ -54,7 +54,7 @@ const props = defineProps({
           show-ep-width
           size="1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
-          :name="route.meta.icon"
+          :name="(route.meta.icon as string)"
         ></svg-icon>
         <el-icon
           width="1rem"

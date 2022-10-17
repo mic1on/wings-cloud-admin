@@ -1,6 +1,6 @@
-import type { Axios, AxiosInterceptorManager, AxiosResponse } from 'axios';
+import type { Axios, AxiosResponse } from 'axios';
 import type { RequestOptions, ResponseData } from './index.d';
-import type { IObject } from '../../interface.d';
+import type { IObject } from '../../global.d';
 import type { I18nT } from '../../plugins/vue-i18n/index.d';
 import axios from 'axios';
 import qs from 'qs';

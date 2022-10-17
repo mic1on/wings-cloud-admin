@@ -1,4 +1,4 @@
-import type { Callback, IObject } from '../../interface.d';
+import type { Callback, IObject } from '../../global.d';
 import type { I18nT } from '../../plugins/vue-i18n/index.d';
 
 /**

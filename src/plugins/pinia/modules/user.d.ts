@@ -1,4 +1,4 @@
-import { IObject } from '@/interface.d';
+import type { IObject } from '../../../global.d';
 
 export interface UserState {
   stayLogin: boolean;

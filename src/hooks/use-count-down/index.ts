@@ -1,4 +1,4 @@
-import type { Callback } from '@/interface.d';
+import type { Callback } from '@/global.d';
 import type { Form } from './index.d';
 import { ElMessage } from 'element-plus';
 

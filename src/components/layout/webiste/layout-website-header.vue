@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { IObject } from '@/interface.d';
+import type { IObject } from '@/global.d';
 
 const { t } = useI18n();
 
