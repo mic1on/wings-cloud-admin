@@ -1,3 +1,4 @@
+import { LayoutRouter } from '@/components/layout/layout-router.vue';
 import type { ResponseData } from '@/utils/request/index.d';
 import type { IObject } from '@/interface.d';
 import { interceptJointData } from '@/utils/common';
@@ -30,7 +31,7 @@ export default {
   /**
    * 获取权限路由
    */
-  getAdminRoutes: {
+  getRoleRoutes: {
     url: '/admin/user/route/list',
     method: 'get',
     data: [
@@ -39,7 +40,7 @@ export default {
         name: 'admin.example',
         meta: {
           layout: 'admin',
-          isMenu: true,
+          isAdmin: true,
           requiresAuth: true,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Guide',
@@ -145,7 +146,7 @@ export default {
         name: 'admin.role',
         meta: {
           layout: 'admin',
-          isMenu: true,
+          isAdmin: true,
           requiresAuth: true,
           iconType: IconTypeEnum.APP,
           icon: 'role',
@@ -212,7 +213,7 @@ export default {
         name: 'admin.system',
         meta: {
           layout: 'admin',
-          isMenu: true,
+          isAdmin: true,
           requiresAuth: true,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Operation',
@@ -332,7 +333,7 @@ export default {
         name: 'admin.development',
         meta: {
           layout: 'admin',
-          isMenu: true,
+          isAdmin: true,
           requiresAuth: true,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Coin',
@@ -390,6 +391,32 @@ export default {
   getUserRoles: {
     url: '/admin/user/role/list',
     method: 'get',
-    data: ['/admin/home/workbench', '/admin/home/visual', '/admin/about'],
+    data: [
+      '/admin/home/workbench',
+      '/admin/home/visual',
+      '/admin/about',
+      '/admin/example/crud',
+      '/admin/example/icon',
+      '/admin/example/editor',
+      '/admin/example/echarts',
+      '/admin/example/map',
+      '/admin/example/form',
+      '/admin/example/result',
+      '/admin/role/role',
+      '/admin/role/user',
+      '/admin/role/dept',
+      '/admin/role/post',
+      '/admin/system/menu',
+      '/admin/system/dict',
+      '/admin/system/params',
+      '/admin/system/file',
+      '/admin/system/setting',
+      '/admin/system/log',
+      '/admin/system/log/login',
+      '/admin/system/log/action',
+      '/admin/development/options',
+      '/admin/development/code',
+      '/admin/development/form',
+    ],
   },
 };

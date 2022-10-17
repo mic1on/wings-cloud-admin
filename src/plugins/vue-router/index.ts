@@ -1,26 +1,15 @@
-import type { IObject } from '../../interface.d';
 import type { Router, RouteRecordRaw } from 'vue-router';
 import type { App } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { pluginAddRegister } from '../../utils/auto';
-import { RouteEnum } from '../../enums';
+import { pluginAddRegister, autoImportRoutes } from '../../utils/auto';
 import { addRouterGuard } from './guard';
 
-const files: IObject = import.meta.glob('./routes/**/*.ts', {
-  import: 'default',
-  eager: true,
-});
-
-let routes: Array<RouteRecordRaw> = [];
-
-Object.keys(files).forEach((key) => {
-  routes = routes.concat(files[key]);
-});
-
-routes.push({
-  path: '/:pathMatch(.*)',
-  redirect: RouteEnum.ROUTE_NO_FOUND,
-});
+const routes: Array<RouteRecordRaw> = autoImportRoutes(
+  import.meta.glob('./routes/**/*.ts', {
+    import: 'default',
+    eager: true,
+  })
+);
 
 const router: Router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL),

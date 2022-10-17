@@ -1,5 +1,6 @@
 import type { I18n, I18nOptions } from 'vue-i18n';
 import type { App } from 'vue';
+import type { I18nT } from './index.d';
 import { createI18n } from 'vue-i18n';
 import { pluginAddRegister } from '../../utils/auto';
 import { getStorage } from '../../utils/storage';
@@ -25,6 +26,9 @@ const useI18n = (app: App<Element>): void => {
   app.use(i18n);
 };
 
-export { messages, languages, i18n, useI18n };
+const { t } = i18n.global;
+const _t: I18nT = t;
+
+export { messages, languages, i18n, useI18n, _t };
 
 export default pluginAddRegister(i18n);

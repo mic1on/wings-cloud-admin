@@ -133,5 +133,10 @@ module.exports = {
      * This rule is aimed at eliminating empty functions. A function will not be considered a problem if it contains a comment.
      */
     '@typescript-eslint/no-empty-function': 'off',
+
+    /**
+     * Disallow using an async function as a Promise executor
+     */
+    'no-async-promise-executor': 'off',
   },
 };

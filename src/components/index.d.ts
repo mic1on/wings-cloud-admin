@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     CrudQuery: typeof import('./crud/crud-query.vue')['default']
     CrudTable: typeof import('./crud/crud-table.vue')['default']
     EchartsBar: typeof import('./echarts/echarts-bar.vue')['default']
+    EchartsLine: typeof import('./echarts/echarts-line.vue')['default']
     EchartsPie: typeof import('./echarts/echarts-pie.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']

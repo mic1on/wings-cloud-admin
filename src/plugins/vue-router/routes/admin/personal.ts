@@ -7,8 +7,8 @@ export default [
     name: 'admin.personal',
     component: LayoutRouter,
     meta: {
-      isMenu: true,
-      requiresAuth: true,
+      isAdmin: true,
+      requiresAuth: false,
       iconType: IconTypeEnum.ELEMENT_PLUS,
       icon: 'User',
       menuName: '个人中心',
@@ -21,7 +21,7 @@ export default [
         component: () => import('@/views/admin/personal/profile.vue'),
         meta: {
           layout: 'admin',
-          requiresAuth: true,
+          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Postcard',
           menuName: '个人资料',
@@ -34,7 +34,7 @@ export default [
         component: () => import('@/views/admin/personal/notifications.vue'),
         meta: {
           layout: 'admin',
-          requiresAuth: true,
+          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'ChatDotSquare',
           menuName: '我的消息',
@@ -47,7 +47,7 @@ export default [
         component: () => import('@/views/admin/personal/settings.vue'),
         meta: {
           layout: 'admin',
-          requiresAuth: true,
+          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Setting',
           menuName: '个人设置',

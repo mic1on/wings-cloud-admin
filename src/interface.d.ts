@@ -10,7 +10,7 @@ type Callback = (data?: any) => void;
 
 interface RouteMeta {
   layout: string;
-  isMenu: boolean;
+  isAdmin: boolean;
   requiresAuth: boolean;
   iconType: string;
   icon: string;

@@ -16,7 +16,7 @@ export const validateUsername = <T>(
  * @name validateUsername
  * @description 获取权限路由
  */
-export const getAdminRoutes = <T>(): Promise<
+export const getRoleRoutes = <T>(): Promise<
   any | ResponseData<T> | undefined
 > => {
   return GET('/admin/user/route/list');

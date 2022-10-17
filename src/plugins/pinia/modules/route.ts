@@ -1,24 +1,31 @@
 import type { RouteState } from './route.d';
+import type { RouteMeta, Routes } from '../../../plugins/vue-router/index.d';
+import type { Files } from '../../../utils/auto/index.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
+import { autoImportViews } from '../../../utils/auto';
 import { getStorage, setStorage } from '../../../utils/storage';
 import { StorageEnum } from '../../../enums';
-import { router } from '../../vue-router';
-import { getAdminRoutes } from '../../../apis/admin/auth';
+import { router, routes } from '../../vue-router';
+import { getRoleRoutes } from '../../../apis/admin/auth';
 import { getLoginStorageType } from './user';
+import LayoutRouter from '../../../components/layout/layout-router.vue';
 
 /**
- * 导出路由状态钩子
+ * @name useRouteStore
+ * @description 导出路由状态钩子
  */
 export default defineStore('route', {
   state: (): RouteState => ({
     /**
-     * 静态路由
+     * @name staticRoutes
+     * @description 静态路由
      */
-    staticRoutes: getStorage(StorageEnum.STATIC_ROUTES) || [],
+    staticRoutes: getStorage(StorageEnum.STATIC_ROUTES) || routes,
 
     /**
-     * 管理系统菜单路由
+     * @name adminRoutes
+     * @description 管理系统菜单路由
      */
     adminRoutes:
       getStorage(StorageEnum.ADMIN_ROUTES, {
@@ -26,7 +33,8 @@ export default defineStore('route', {
       }) || [],
 
     /**
-     * 权限路由
+     * @name roleRoutes
+     * @description 权限路由
      */
     roleRoutes:
       getStorage(StorageEnum.ROLE_ROUTES, {
@@ -34,7 +42,8 @@ export default defineStore('route', {
       }) || [],
 
     /**
-     * 全部路由
+     * @name allRoutes
+     * @description 全部路由
      */
     allRoutes:
       getStorage(StorageEnum.ALL_ROUTES, {
@@ -43,17 +52,19 @@ export default defineStore('route', {
   }),
   actions: {
     /**
-     * 设置静态路由
+     * @name setStaticRoutes
+     * @description 设置静态路由
      */
-    setStaticRoutes(data: Array<RouteRecordRaw>): void {
+    setStaticRoutes(data: Routes): void {
       this.staticRoutes = data;
       setStorage(StorageEnum.STATIC_ROUTES, data);
     },
 
     /**
-     * 设置管理系统菜单路由
+     * @name setAdminRoutes
+     * @description 设置管理系统菜单路由
      */
-    setAdminRoutes(data: Array<RouteRecordRaw>): void {
+    setAdminRoutes(data: Routes): void {
       this.adminRoutes = data.sort(
         (a: any, b: any) => a.meta.sort - b.meta.sort
       );
@@ -70,9 +81,10 @@ export default defineStore('route', {
     },
 
     /**
-     * 设置权限路由
+     * @name setRolesRoutes
+     * @description 设置权限路由
      */
-    setRolesRoutes(data: Array<RouteRecordRaw>): void {
+    setRolesRoutes(data: Routes): void {
       this.roleRoutes = data.sort(
         (a: any, b: any) => a.meta.sort - b.meta.sort
       );
@@ -89,9 +101,10 @@ export default defineStore('route', {
     },
 
     /**
-     * 设置全部路由
+     * @name setAllRoutes
+     * @description 设置全部路由
      */
-    setAllRoutes(data: Array<RouteRecordRaw>): void {
+    setAllRoutes(data: Routes): void {
       this.allRoutes = data;
       setStorage(StorageEnum.ALL_ROUTES, this.allRoutes, {
         type: getLoginStorageType(),
@@ -99,29 +112,63 @@ export default defineStore('route', {
     },
 
     /**
-     * 获取权限路由
+     * @name getRoleRoutes
+     * @description 获取权限路由
      */
-    async getAdminRoutes(): Promise<void> {
-      const { data } = await getAdminRoutes();
+    async getRoleRoutes(): Promise<void> {
+      const { data } = await getRoleRoutes();
+      const views: Files = autoImportViews(
+        import.meta.glob('/src/views/**/*.vue')
+      );
 
-      const _adminRoutes: Array<RouteRecordRaw> = [];
-      const _roleRoutes: Array<RouteRecordRaw> = data;
+      const roleRoutes: Routes = this.mergeRoleRoutes(data, views);
+      const adminRoutes: Routes = this.mergeAdminRoutes(routes, roleRoutes);
 
-      this.staticRoutes.map((route: RouteRecordRaw) => {
-        if (route.meta && route.meta.isMenu === true) {
-          _adminRoutes.push(route);
+      this.setAdminRoutes(adminRoutes);
+      this.setRolesRoutes(roleRoutes);
+      this.setAllRoutes(data.concat(this.staticRoutes));
+    },
+
+    /**
+     * @name mergeAdminRoutes
+     * @description 合并管理系统路由
+     * @return adminRoutes
+     */
+    mergeAdminRoutes(staticRoutes: Routes, roleRoutes: Routes): Routes {
+      const adminRoutes: Routes = [];
+      staticRoutes.forEach((route: RouteRecordRaw) => {
+        if (route.meta && route.meta.isAdmin === true) {
+          adminRoutes.push(route);
         }
       });
-
-      _roleRoutes.map((route: RouteRecordRaw) => {
-        if (route.meta && route.meta.isMenu === true) {
-          _adminRoutes.push(route);
+      roleRoutes.forEach((route: RouteRecordRaw) => {
+        if (route.meta && route.meta.isAdmin === true) {
+          adminRoutes.push(route);
         }
       });
+      return adminRoutes;
+    },
 
-      this.setAdminRoutes(_adminRoutes);
-      this.setRolesRoutes(_roleRoutes);
-      this.setAllRoutes(_roleRoutes.concat(this.staticRoutes));
+    /**
+     * @name mergeRoleRoutes
+     * @description 合并权限路由
+     * @return _routes
+     */
+    mergeRoleRoutes(roleRoutes: Routes, viewComponents: Files): Routes {
+      const _routes: Routes = [];
+      roleRoutes.forEach((item: RouteMeta) => {
+        const _route: RouteMeta = item;
+        if (!item.component) {
+          item.component = LayoutRouter;
+        } else {
+          item.component = viewComponents[item.component as string];
+        }
+        if (item.children && item.children.length > 0) {
+          _route.children = this.mergeRoleRoutes(item.children, viewComponents);
+        }
+        _routes.push(item);
+      });
+      return _routes;
     },
   },
 });
