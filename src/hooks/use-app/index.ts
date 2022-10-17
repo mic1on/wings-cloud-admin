@@ -1,7 +1,6 @@
 import { useDark, useToggle } from '@vueuse/core';
 import { StorageEnum } from '@/enums';
 import { setStorage } from '@/utils/storage';
-import { autoMergeRoleRoutes } from '@/utils/auto';
 import { routes } from '@/plugins/vue-router';
 import useBaseStore from '@/plugins/pinia/modules/base';
 import useRouteStore from '@/plugins/pinia/modules/route';

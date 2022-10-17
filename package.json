@@ -1,6 +1,6 @@
 {
   "name": "wings-vue",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "面向 Vue + Element Plus 生态的一款 RBAC 权限管理系统，提供工程化的开发体验和开箱即用的页面模板。",
   "main": "index.html",
   "repository": {
@@ -59,7 +59,7 @@
     "@babel/core": "^7.19.3",
     "@element-plus/icons-vue": "^2.0.10",
     "@iconify-json/ep": "^1.1.8",
-    "@types/node": "^18.8.5",
+    "@types/node": "^18.11.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "@vitejs/plugin-vue": "^3.1.2",

@@ -3,7 +3,7 @@ import type {
   RouteLocationNormalized,
   NavigationGuardNext,
 } from 'vue-router';
-import type { Roles } from './index.d';
+import type { Roles } from '../pinia/modules/route.d';
 import { RouteEnum, StorageEnum } from '../../enums';
 import { getLoginStorageType } from '../pinia';
 import { getStorage } from '../../utils/storage';
@@ -35,10 +35,7 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
-      if (
-        requiresAuth &&
-        userRoles.filter((item: string) => item == to.path).length === 0
-      ) {
+      if (requiresAuth && !userRoles.includes(to.path)) {
         next({
           path: RouteEnum.ROUTE_NO_PERMISSION,
         });
