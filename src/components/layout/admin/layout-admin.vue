@@ -13,7 +13,7 @@ const { baseStore } = useStore();
       <el-aside
         :style="
           baseStore.collapse
-            ? 'width:var(--wings-aside-width-fold)'
+            ? 'width: var(--wings-aside-width-fold)'
             : 'width: var(--wings-aside-width)'
         "
       >
@@ -22,7 +22,7 @@ const { baseStore } = useStore();
       <el-main>
         <layout-admin-tab></layout-admin-tab>
         <layout-admin-main>
-          <template #router-view>
+          <template #main-router-view>
             <slot name="router-view"></slot>
           </template>
         </layout-admin-main>
@@ -41,8 +41,17 @@ const { baseStore } = useStore();
   background-color: var(--wings-header-bg-color);
 }
 
+:deep(.ep-container) {
+  background-color: var(--wings-menu-bg-color);
+}
+
+:deep(.ep-aside) {
+  transition: all var(--ep-transition-duration)
+    var(--ep-transition-function-ease-in-out-bezier);
+}
+
 :deep(.ep-main) {
-  padding: 0;
+  padding: 0 !important;
   background: var(--wings-main-fill);
 }
 </style>

@@ -27,6 +27,8 @@ const { baseStore, routeStore } = useStore();
   color: var(--wings-menu-text-color);
   background-color: var(--wings-menu-sub-bg-color);
   border-radius: var(--wings-menu-radius);
+  transition: all var(--ep-transition-duration)
+    var(--ep-transition-function-ease-in-out-bezier);
 }
 
 .ep-menu.ep-menu--collapse {
@@ -35,7 +37,7 @@ const { baseStore, routeStore } = useStore();
 
 .ep-menu.ep-menu--vertical {
   height: calc(100vh - var(--wings-header-height));
-  padding: 0 10px !important ;
+  padding: 10px;
   background-color: var(--wings-menu-bg-color);
 }
 

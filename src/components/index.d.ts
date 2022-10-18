@@ -73,6 +73,7 @@ declare module '@vue/runtime-core' {
     LayoutBase: typeof import('./layout/base/layout-base.vue')['default']
     LayoutLogo: typeof import('./layout/layout-logo.vue')['default']
     LayoutRouter: typeof import('./layout/layout-router.vue')['default']
+    LayoutRouterView: typeof import('./layout/layout-router-view.vue')['default']
     LayoutWebsite: typeof import('./layout/webiste/layout-website.vue')['default']
     LayoutWebsiteFooter: typeof import('./layout/webiste/layout-website-footer.vue')['default']
     LayoutWebsiteHeader: typeof import('./layout/webiste/layout-website-header.vue')['default']
