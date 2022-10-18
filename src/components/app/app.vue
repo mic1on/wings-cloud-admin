@@ -8,10 +8,12 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
       <router-view v-slot="{ Component, route }">
         <div id="wings-app">
           <transition name="wings-app-page" mode="out-in" appear>
-            <keep-alive v-if="keepAlive">
-              <component :is="Component" :key="route.fullPath" />
-            </keep-alive>
-            <component :is="Component" v-else />
+            <div id="transition-component-node">
+              <keep-alive v-if="keepAlive">
+                <component :is="Component" :key="route.fullPath" />
+              </keep-alive>
+              <component :is="Component" v-else />
+            </div>
           </transition>
         </div>
       </router-view>

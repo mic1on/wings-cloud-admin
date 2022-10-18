@@ -5,7 +5,7 @@ import type {
 } from 'vue-router';
 import type { Roles } from '../pinia/modules/route.d';
 import { RouteEnum, StorageEnum } from '../../enums';
-import { getLoginStorageType } from '../pinia';
+import { stores } from '../pinia';
 import { getStorage } from '../../utils/storage';
 
 export const addRouterGuard = (router: Router): Router => {
@@ -16,11 +16,11 @@ export const addRouterGuard = (router: Router): Router => {
       next: NavigationGuardNext
     ) => {
       const token: string = getStorage(StorageEnum.TOKEN, {
-        type: getLoginStorageType(),
+        type: stores.getLoginStorageType(),
       });
 
       const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
-        type: getLoginStorageType(),
+        type: stores.getLoginStorageType(),
       });
 
       const requiresAuth = to.matched.some(
@@ -34,6 +34,10 @@ export const addRouterGuard = (router: Router): Router => {
         });
         return;
       }
+
+      // if (token) {
+      // TODO to register router
+      // }
 
       if (requiresAuth && !userRoles.includes(to.path)) {
         next({

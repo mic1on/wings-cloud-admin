@@ -1,11 +1,11 @@
 import { useDark, useToggle } from '@vueuse/core';
-import { StorageEnum } from '@/enums';
-import { setStorage } from '@/utils/storage';
-import { routes } from '@/plugins/vue-router';
-import useBaseStore from '@/plugins/pinia/modules/base';
-import useRouteStore from '@/plugins/pinia/modules/route';
-import useUserStore from '@/plugins/pinia/modules/user';
-import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
+import { StorageEnum } from '../../enums';
+import { setStorage } from '../../utils/storage';
+import { routes } from '../../plugins/vue-router';
+import { useBaseStore } from '../../plugins/pinia/modules/base';
+import { useRouteStore } from '../../plugins/pinia/modules/route';
+import { useUserStore } from '../../plugins/pinia/modules/user';
+import { getMobileAreaCodeList as _getMobileAreaCodeList } from '../../apis/base';
 
 /**
  * @name useApp

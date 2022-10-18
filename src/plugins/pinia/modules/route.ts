@@ -1,7 +1,8 @@
 import type { RouteMeta } from 'vue-router';
 import type { RouteState } from './route.d';
-import type { Routes } from '../../../plugins/vue-router/index.d';
-import type { ViewComponents } from '../../../views/index.d';
+import type { Routes } from '../../vue-router/index.d';
+import type { ViewComponents } from '../../../views';
+import { shallowRef } from 'vue';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { autoImportViewComponents } from '../../../utils/auto';
@@ -16,7 +17,7 @@ import LayoutBase from '../../../components/layout/base/layout-base.vue';
  * @name useRouteStore
  * @description 导出路由状态钩子
  */
-export default defineStore('route', {
+export const useRouteStore = defineStore('route', {
   state: (): RouteState => ({
     /**
      * @name staticRoutes
@@ -157,7 +158,7 @@ export default defineStore('route', {
       roleRoutes.forEach((item: RouteMeta) => {
         const _route: RouteMeta = item;
         if (!item.component) {
-          item.component = LayoutBase;
+          item.component = shallowRef(LayoutBase);
         } else {
           item.component = viewComponents[item.component as string];
         }
