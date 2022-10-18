@@ -6,31 +6,43 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
   <app-provider>
     <template #app>
       <router-view v-slot="{ Component, route }">
-        <keep-alive v-if="keepAlive">
-          <component :is="Component" :key="route.fullPath" />
-        </keep-alive>
-        <component :is="Component" v-else />
+        <div id="wings-app">
+          <transition name="wings-app-page" mode="out-in" appear>
+            <keep-alive v-if="keepAlive">
+              <component :is="Component" :key="route.fullPath" />
+            </keep-alive>
+            <component :is="Component" v-else />
+          </transition>
+        </div>
       </router-view>
     </template>
   </app-provider>
 </template>
 
 <style lang="scss" scoped>
-.app-enter-active {
+#wings-app {
+  position: relative;
+  flex: auto;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.wings-app-page-enter-active {
   transition: 0.2s;
 }
 
-.app-leave-active {
+.wings-app-page-leave-active {
   transition: 0.15s;
 }
 
-.app-enter-from {
-  margin-left: -20px;
+.wings-app-page-enter-from {
+  transform: translateX(-20px);
   opacity: 0;
 }
 
-.app-leave-to {
-  margin-left: 20px;
+.wings-app-page-leave-to {
+  transform: translateX(20px);
   opacity: 0;
 }
 </style>
