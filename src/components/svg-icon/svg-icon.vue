@@ -13,9 +13,15 @@ const props = defineProps({
     default: '',
   },
   size: { type: String, default: '1.2rem' },
-  customStyle: {
+  color: {
     type: String,
-    default: '',
+    default: 'var(--ep-text-color-primary)',
+  },
+  customStyle: {
+    type: Object,
+    default: () => {
+      return {};
+    },
   },
   showEpWidth: {
     type: Boolean,
@@ -34,12 +40,12 @@ const symbolId = computed(
     items-center
     justify-center
     style="margin-right: 5px; text-align: center; vertical-align: middle"
-    :style="{ width: showEpWidth ? 'var(--ep-menu-icon-width)' : 'auto' }"
+    :style="{ width: props.showEpWidth ? 'var(--ep-menu-icon-width)' : 'auto' }"
   >
     <svg
       aria-hidden="true"
-      :class="`iconfont ${className}`"
-      :style="`width:${size};height:${size};line-height:${size};${customStyle};`"
+      :class="`iconfont ${props.className}`"
+      :style="`width:${props.size};height:${props.size};line-height:${props.size};color:${props.color};${props.customStyle};`"
     >
       <use :xlink:href="symbolId" />
     </svg>
