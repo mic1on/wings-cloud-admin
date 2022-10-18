@@ -17,7 +17,7 @@ const { baseStore, routeStore } = useStore();
     important="border-r-none"
   >
     <layout-admin-menu-item
-      :routes="routeStore.adminRoutes"
+      :routes="routeStore.adminMenuRoutes"
     ></layout-admin-menu-item>
   </el-menu>
 </template>

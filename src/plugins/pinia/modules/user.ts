@@ -1,5 +1,5 @@
 import type { UserState } from './user.d';
-import type { IObject } from '../../../global';
+import type { IObject } from '../../../global.d';
 import type { ResponseData } from '../../../utils/request/index.d';
 import type {
   LoginAccountData,
@@ -125,24 +125,32 @@ export const useUserStore = defineStore('user', {
      * @name getUserInfo
      * @description 获取用户信息
      */
-    async getUserInfo(): Promise<void> {
-      const res = await getUserInfo();
-      if (res.code === 0) {
-        this.setUserInfo(res.data);
-        return res.data;
-      }
+    async getUserInfo(): Promise<IObject> {
+      return new Promise(async (resolve) => {
+        const { code, data } = await getUserInfo();
+        if (code === 0) {
+          this.setUserInfo(data);
+          resolve(data);
+        } else {
+          resolve({});
+        }
+      });
     },
 
     /**
      * @name getUserRoles
      * @description 获取用户权限
      */
-    async getUserRoles(): Promise<void> {
-      const res = await getUserRoles();
-      if (res.code === 0) {
-        this.setUserRoles(res.data);
-        return res.data;
-      }
+    async getUserRoles(): Promise<IObject> {
+      return new Promise(async (resolve) => {
+        const { code, data } = await getUserRoles();
+        if (code === 0) {
+          this.setUserRoles(data);
+          resolve(data);
+        } else {
+          resolve({});
+        }
+      });
     },
 
     /**
@@ -150,17 +158,14 @@ export const useUserStore = defineStore('user', {
      * @description 登录后 - 处理获取信息、权限、路由等
      */
     async loginApiHandle(): Promise<void> {
-      const routeStore = useRouteStore();
-
       await this.getUserInfo();
       await this.getUserRoles();
+      const routeStore = useRouteStore();
       await routeStore.getRoleRoutes();
-
       ElNotification({
         title: _t('base.authentication.loginSuccess'),
         type: 'success',
       });
-
       router.push({
         path: JSON.parse(import.meta.env.APP_LOGIN_TO_ADMIN)
           ? import.meta.env.APP_ADMIN_FIRST_ROUTE
@@ -212,19 +217,13 @@ export const useUserStore = defineStore('user', {
      * @description 退出登录
      */
     async logout(type: string): Promise<void> {
-      const routeStore = useRouteStore();
-
       this.setToken('');
       this.setUserInfo({});
       this.setUserRoles([]);
-      routeStore.setAdminRoutes([]);
-      routeStore.setRolesRoutes([]);
-
       ElNotification({
         title: _t('base.authentication.logoutSuccess'),
         type: 'success',
       });
-
       if (type === 'refresh') {
         window.location.reload();
       } else if (type === 'login') {

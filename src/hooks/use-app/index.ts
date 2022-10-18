@@ -18,7 +18,6 @@ import { getMobileAreaCodeList as _getMobileAreaCodeList } from '../../apis/base
 export const useApp = () => {
   const baseStore = useBaseStore();
   const routeStore = useRouteStore();
-  const userStore = useUserStore();
 
   const dark = useDark({
     selector: 'html',
@@ -46,9 +45,9 @@ export const useApp = () => {
     });
   };
 
+  // TODO 后期移除 init 方法
   const init = async () => {
     baseStore.changeGlobalLoading(true);
-
     if (await isNeedInit()) {
       setStorage(
         StorageEnum.DARK,
@@ -58,18 +57,9 @@ export const useApp = () => {
           isJSON: false,
         }
       );
-
       routeStore.setStaticRoutes(routes);
-
-      if (userStore.token) {
-        await userStore.getUserInfo();
-        await userStore.getUserRoles();
-        await routeStore.getRoleRoutes();
-      }
-
       getMobileAreaCodeList();
     }
-
     baseStore.changeGlobalLoading(false);
   };
 
