@@ -3,7 +3,6 @@ import type { App } from 'vue';
 import type { Pinia } from 'pinia';
 import { pluginAddRegister, autoImportPiniaStore } from '../../utils/auto';
 import { createPinia } from 'pinia';
-import { getLoginStorageType } from './modules/user';
 
 const stores: Stores = autoImportPiniaStore(
   import.meta.glob('./modules/**/*.ts', {
@@ -17,6 +16,6 @@ const usePinia = (app: App<Element>): void => {
   app.use(pinia);
 };
 
-export { stores, pinia, usePinia, getLoginStorageType };
+export { stores, pinia, usePinia };
 
 export default pluginAddRegister(pinia);

@@ -1,3 +1,4 @@
+import type { IObject } from './../common/index.d';
 import type { App, FunctionalComponent, Plugin } from 'vue';
 import type { Files } from './index.d';
 import type { Mocks } from '../../plugins/mock/index.d';
@@ -35,8 +36,7 @@ export const autoImportRoutes = (files: Files): Routes => {
 export const autoImportPiniaStore = (files: Files): Stores => {
   let stores: Stores = {};
   Object.keys(files).forEach((key) => {
-    const fileName = key.replace(FILE_NAME, '$2');
-    stores = { ...stores, [fileName]: files[key] || {} };
+    stores = { ...stores, ...files[key] };
   });
   return stores;
 };
@@ -89,6 +89,21 @@ export const autoImportViewComponents = (files: Files): ViewComponents => {
     };
   });
   return views;
+};
+
+/**
+ * @name autoImportSvgs
+ * @description 自动导入 svg 图标文件
+ * @param files
+ * @return svgs
+ */
+export const autoImportSvgs = (files: Files): IObject => {
+  let svgs: IObject = {};
+  Object.keys(files).forEach((key) => {
+    const fileName = key.replace(FILE_NAME, '$2');
+    svgs = { ...svgs, [fileName]: files[key] || {} };
+  });
+  return svgs;
 };
 
 /**

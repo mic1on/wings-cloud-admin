@@ -3,14 +3,14 @@ import { StorageEnum } from '@/enums';
 import { elementPlusConfig } from '@/plugins/element-plus';
 import { setStorage } from '@/utils/storage';
 import { useApp } from '@/hooks/use-app';
-import useBaseStore from '@/plugins/pinia/modules/base';
+import { useStore } from '@/hooks/use-store';
 import { getMobileAreaCodeList } from '@/apis/base';
 
 const route = useRoute();
 
 const { init } = useApp();
 
-const baseStore = useBaseStore();
+const { baseStore } = useStore();
 
 const { t } = useI18n();
 

@@ -8,9 +8,9 @@ import { stores } from '../../plugins/pinia';
  * @return userStore
  */
 export const useStore = () => {
-  const baseStore = stores['base'].default();
-  const routeStore = stores['route'].default();
-  const userStore = stores['user'].default();
+  const baseStore = stores.useBaseStore();
+  const routeStore = stores.useRouteStore();
+  const userStore = stores.useUserStore();
 
   return {
     baseStore,

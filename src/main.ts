@@ -16,9 +16,9 @@ import 'uno.css';
 const app: App<Element> = createApp(_App);
 
 useI18n(app);
+usePinia(app);
 useRouter(app);
 useElementPlus(app);
-usePinia(app);
 useVueDomPurifyHTML(app);
 
 useMock();

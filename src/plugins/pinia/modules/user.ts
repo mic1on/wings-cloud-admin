@@ -1,5 +1,5 @@
 import type { UserState } from './user.d';
-import type { IObject } from '../../../global.d';
+import type { IObject } from '../../../global';
 import type { ResponseData } from '../../../utils/request/index.d';
 import type {
   LoginAccountData,
@@ -7,7 +7,7 @@ import type {
 } from '../../../apis/website/user.d';
 import { defineStore } from 'pinia';
 import { ElNotification } from 'element-plus';
-import useRouteStore from './route';
+import { useRouteStore } from './route';
 import { getStorage, setStorage } from '../../../utils/storage';
 import { StorageEnum, RouteEnum } from '../../../enums';
 import { _t } from '../../vue-i18n';
@@ -31,10 +31,10 @@ export const getLoginStorageType = (): string => {
 };
 
 /**
- * @name userStore
+ * @name useUserStore
  * @description 导出用户状态钩子
  */
-export default defineStore('user', {
+export const useUserStore = defineStore('user', {
   state: (): UserState => ({
     /**
      * @name stayLogin
