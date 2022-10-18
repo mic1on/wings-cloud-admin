@@ -10,7 +10,7 @@ import { StorageEnum } from '../../../enums';
 import { router, routes } from '../../vue-router';
 import { getRoleRoutes } from '../../../apis/admin/auth';
 import { getLoginStorageType } from './user';
-import LayoutRouter from '../../../components/layout/layout-router.vue';
+import LayoutBase from '../../../components/layout/base/layout-base.vue';
 
 /**
  * @name useRouteStore
@@ -157,7 +157,7 @@ export default defineStore('route', {
       roleRoutes.forEach((item: RouteMeta) => {
         const _route: RouteMeta = item;
         if (!item.component) {
-          item.component = LayoutRouter;
+          item.component = LayoutBase;
         } else {
           item.component = viewComponents[item.component as string];
         }

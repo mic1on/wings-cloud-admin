@@ -1,12 +1,11 @@
-import LayoutRouter from '@/components/layout/layout-router.vue';
 import { IconTypeEnum } from '@/enums';
 
 export default [
   {
     path: '/admin/home',
     name: 'admin.home',
-    component: LayoutRouter,
     meta: {
+      layout: 'admin',
       isAdmin: true,
       requiresAuth: true,
       iconType: IconTypeEnum.ELEMENT_PLUS,

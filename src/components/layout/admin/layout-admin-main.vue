@@ -12,6 +12,6 @@
       box-shadow: 10px 0 10px -10px rgb(0 0 0 / 12%);
     "
   >
-    <slot name="router-view"></slot>
+    <slot name="main-router-view"></slot>
   </div>
 </template>
