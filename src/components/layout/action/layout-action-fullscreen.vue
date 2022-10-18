@@ -2,6 +2,13 @@
 import { useFullscreen } from '@vueuse/core';
 
 const { isFullscreen, toggle } = useFullscreen();
+
+const props = defineProps({
+  color: {
+    type: String,
+    default: 'var(--wings-header-text-color)',
+  },
+});
 </script>
 
 <template>
@@ -10,7 +17,7 @@ const { isFullscreen, toggle } = useFullscreen();
       @click="toggle"
       size="1.2rem"
       cursor-pointer
-      custom-style="color: var(--wings-header-text-color)"
+      :color="props.color"
       :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
     ></svg-icon>
   </div>

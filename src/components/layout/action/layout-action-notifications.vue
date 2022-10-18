@@ -4,6 +4,13 @@ import { useStore } from '@/hooks/use-store';
 const { t } = useI18n();
 
 const { userStore } = useStore();
+
+const props = defineProps({
+  color: {
+    type: String,
+    default: 'var(--wings-header-text-color)',
+  },
+});
 </script>
 
 <template>
@@ -11,7 +18,7 @@ const { userStore } = useStore();
     <el-popover :width="320" trigger="hover">
       <template #reference>
         <el-badge is-dot flex items-center>
-          <el-icon :size="18" color="var(--wings-header-text-color)">
+          <el-icon :size="18" :color="props.color">
             <Bell />
           </el-icon>
         </el-badge>

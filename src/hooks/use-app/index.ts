@@ -11,6 +11,7 @@ import { getMobileAreaCodeList as _getMobileAreaCodeList } from '@/apis/base';
  * @name useApp
  * @description 应用初始化钩子函数
  * @return changeDark
+ * @return isDark
  * @return isNeedInit
  * @return init
  */
@@ -19,14 +20,20 @@ export const useApp = () => {
   const routeStore = useRouteStore();
   const userStore = useUserStore();
 
-  const isDark = useDark({
+  const dark = useDark({
     selector: 'html',
     attribute: 'class',
     valueDark: 'dark',
     valueLight: '',
     storageKey: import.meta.env.APP_STOREAGE_PREFIX + '-' + StorageEnum.DARK,
   });
-  const changeDark = useToggle(isDark);
+  const changeDark = useToggle(dark);
+  const isDark = () => {
+    return document.getElementsByTagName('html')[0].getAttribute('class') ==
+      'dark'
+      ? true
+      : false;
+  };
 
   const getMobileAreaCodeList = async () => {
     const { data } = await _getMobileAreaCodeList();
@@ -68,6 +75,7 @@ export const useApp = () => {
 
   return {
     changeDark,
+    isDark,
     isNeedInit,
     init,
   };

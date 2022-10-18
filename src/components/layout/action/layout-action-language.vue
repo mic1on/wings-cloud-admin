@@ -6,6 +6,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  color: {
+    type: String,
+    default: 'var(--wings-header-text-color)',
+  },
 });
 
 const { changeLanguage, currentLanguage, languages } = useLanguage();
@@ -23,7 +27,7 @@ const { changeLanguage, currentLanguage, languages } = useLanguage();
       w-5
       h-5
       name="language"
-      custom-style="color: var(--wings-header-text-color)"
+      :color="props.color"
     ></svg-icon>
     <template #dropdown>
       <el-dropdown-menu>
