@@ -1,16 +1,15 @@
-import { stores } from '../../plugins/pinia';
+import { useBaseStore } from './use-base-store';
+import { useRouteStore } from './use-route-store';
+import { useUserStore } from './use-user-store';
 
 /**
  * @name useStore
- * @description 基于 pinia 的状态总线钩子函数
- * @return baseStore
- * @return routeStore
- * @return userStore
+ * @description 基于 pinia 的状态注册机
  */
 export const useStore = () => {
-  const baseStore = stores.useBaseStore();
-  const routeStore = stores.useRouteStore();
-  const userStore = stores.useUserStore();
+  const baseStore = useBaseStore();
+  const routeStore = useRouteStore();
+  const userStore = useUserStore();
 
   return {
     baseStore,

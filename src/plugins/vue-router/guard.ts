@@ -1,13 +1,15 @@
-import { useBaseStore } from '@/plugins/pinia/modules/base';
 import type {
   Router,
   RouteLocationNormalized,
   NavigationGuardNext,
 } from 'vue-router';
-import type { Roles } from '../pinia/modules/route.d';
+import type { Roles } from '../../hooks/use-store/index.d';
 import { RouteEnum, StorageEnum } from '../../enums';
-import { stores } from '../pinia';
+import { useBaseStore } from '../../hooks/use-store/use-base-store';
+import { useRouteStore } from '../../hooks/use-store/use-route-store';
+import { useUserStore } from '../../hooks/use-store/use-user-store';
 import { getStorage } from '../../utils/storage';
+import { getLoginStorageType } from '../../utils/common';
 
 /**
  * @name addRouterGuard
@@ -22,18 +24,18 @@ export const addRouterGuard = (router: Router): Router => {
       next: NavigationGuardNext
     ) => {
       const token: string = getStorage(StorageEnum.TOKEN, {
-        type: stores.getLoginStorageType(),
+        type: getLoginStorageType(),
       });
       const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
-        type: stores.getLoginStorageType(),
+        type: getLoginStorageType(),
       });
       const requiresAuth: boolean = to.matched.some(
         (item: any) => item.meta.requiresAuth
       );
 
-      const baseStore = stores.useBaseStore();
-      const routeStore = stores.useRouteStore();
-      const userStore = stores.useUserStore();
+      const baseStore = useBaseStore();
+      const routeStore = useRouteStore();
+      const userStore = useUserStore();
 
       if (requiresAuth && !token) {
         next({

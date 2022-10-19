@@ -1,14 +1,7 @@
-import type { Stores } from './index.d';
 import type { App } from 'vue';
 import type { Pinia } from 'pinia';
-import { pluginAddRegister, autoImportPiniaStore } from '../../utils/auto';
+import { pluginAddRegister } from '../../utils/auto';
 import { createPinia } from 'pinia';
-
-const stores: Stores = autoImportPiniaStore(
-  import.meta.glob('./modules/**/*.ts', {
-    eager: true,
-  })
-);
 
 const pinia: Pinia = createPinia();
 
@@ -16,6 +9,6 @@ const usePinia = (app: App<Element>): void => {
   app.use(pinia);
 };
 
-export { stores, pinia, usePinia };
+export { pinia, usePinia };
 
 export default pluginAddRegister(pinia);

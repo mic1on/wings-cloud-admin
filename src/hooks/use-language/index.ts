@@ -1,4 +1,4 @@
-import { useBaseStore } from '../../plugins/pinia/modules/base';
+import { useBaseStore } from '../../hooks/use-store/use-base-store';
 
 /**
  * @name useLanguage
