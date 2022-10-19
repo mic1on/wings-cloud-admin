@@ -30,9 +30,11 @@ export const addRouterGuard = (router: Router): Router => {
       const requiresAuth: boolean = to.matched.some(
         (item: any) => item.meta.requiresAuth
       );
+
       const baseStore = stores.useBaseStore();
       const routeStore = stores.useRouteStore();
       const userStore = stores.useUserStore();
+
       if (requiresAuth && !token) {
         next({
           path:
@@ -40,25 +42,28 @@ export const addRouterGuard = (router: Router): Router => {
         });
         return;
       }
+
       if (token && routeStore.roleRoutes.length == 0) {
-        baseStore.changeGlobalLoading(true);
+        baseStore.changeAppLoading(true);
         await userStore.getUserInfo();
         await userStore.getUserRoles();
         await routeStore.getRoleRoutes();
-        baseStore.changeGlobalLoading(false);
+        baseStore.changeAppLoading(false);
         if (to.redirectedFrom) {
-          next({ path: to.redirectedFrom.path, replace: true });
+          next({ path: to.redirectedFrom.fullPath, replace: true });
         } else {
           next({ ...to, replace: true });
         }
         return;
       }
+
       if (requiresAuth && !userRoles.includes(to.path)) {
         next({
           path: RouteEnum.ROUTE_NO_PERMISSION,
         });
         return;
       }
+
       next();
     }
   );

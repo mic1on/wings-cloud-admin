@@ -1,6 +1,6 @@
 export interface BaseState {
   language: string;
-  globalLoading: boolean;
+  appLoading: boolean;
   uniqueOpened: boolean;
   collapse: boolean;
   adminShowFooter: boolean;

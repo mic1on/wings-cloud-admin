@@ -19,10 +19,10 @@ export const useBaseStore = defineStore('base', {
       (process.env.APP_DEFAULT_LANGUAGE as string),
 
     /**
-     * @name globalLoading
+     * @name appLoading
      * @description 全局 Loading
      */
-    globalLoading: true,
+    appLoading: true,
 
     /**
      * @name uniqueOpened
@@ -53,11 +53,11 @@ export const useBaseStore = defineStore('base', {
     },
 
     /**
-     * @name changeGlobalLoading
+     * @name changeAppLoading
      * @description 切换全局 Loading 状态
      */
-    changeGlobalLoading(status: boolean): void {
-      this.globalLoading = status;
+    changeAppLoading(status: boolean): void {
+      this.appLoading = status;
     },
 
     /**
