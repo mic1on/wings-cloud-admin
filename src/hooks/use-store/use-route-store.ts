@@ -106,11 +106,7 @@ export const useRouteStore = defineStore('route', () => {
     const _routes: Routes = [];
     roleRoutes.forEach((item: RouteMeta) => {
       const _route: RouteMeta = item;
-      if (!item.component) {
-        // TODO 切换动态路由报错
-        // item.component = () =>
-        //   import('@/components/layout/layout-router-view.vue');
-      } else {
+      if (item.component) {
         item.component = viewComponents[item.component as string];
       }
       if (item.children && item.children.length > 0) {
