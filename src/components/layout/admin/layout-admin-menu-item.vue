@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { RouteRecordRaw } from 'vue-router';
 import { IconTypeEnum } from '@/enums';
+import { useStore } from '@/hooks/use-store';
 
 const props = defineProps({
   routes: {
@@ -10,6 +11,8 @@ const props = defineProps({
     },
   },
 });
+
+const { baseStore } = useStore();
 </script>
 
 <template>
@@ -29,9 +32,10 @@ const props = defineProps({
       <template v-else>
         <svg-icon
           show-ep-width
-          size="1rem"
+          size="1.1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
+          :custom-style="baseStore.collapse ? {} : { marginRight: '5px' }"
         ></svg-icon>
         <el-icon
           width="1rem"
@@ -52,9 +56,10 @@ const props = defineProps({
       <template #title>
         <svg-icon
           show-ep-width
-          size="1rem"
+          size="1.1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
+          :custom-style="baseStore.collapse ? {} : { marginRight: '5px' }"
         ></svg-icon>
         <el-icon
           width="1rem"

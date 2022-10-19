@@ -13,13 +13,13 @@ export const loginByAccount = <T>(
 };
 
 /**
- * @name getUserInfo
+ * @name getUserProfile
  * @description 获取用户信息
  */
-export const getUserInfo = <T>(): Promise<
+export const getUserProfile = <T>(): Promise<
   any | ResponseData<T> | undefined
 > => {
-  return GET('/admin/user/info');
+  return GET('/admin/user/profile');
 };
 
 /**

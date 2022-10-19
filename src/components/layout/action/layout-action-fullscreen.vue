@@ -15,7 +15,7 @@ const props = defineProps({
   <div flex items-center justify-center>
     <svg-icon
       @click="toggle"
-      size="1.2rem"
+      size="1.22rem"
       cursor-pointer
       :color="props.color"
       :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"

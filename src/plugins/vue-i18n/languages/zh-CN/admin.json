@@ -2,5 +2,22 @@
   "workbench": {
     "welcome": "欢迎回来！",
     "shortcuts": "快捷操作"
+  },
+  "example": {
+    "svgIconTitle": "自定义 Svg 图标",
+    "svgIconSubTitle": "除了使用 Element Plus 提供的图标外，你还可以使用自己的 Svg 图标。"
+  },
+  "system": {
+    "settingTitle": "系统设置",
+    "settingSubTitle": "",
+    "theme": "界面主题颜色",
+    "customTheme": "自定义主题颜色：",
+    "toolbar": "工具栏配置",
+    "languagesTool": "多语言切换按钮",
+    "refreshTool": "视图刷新按钮",
+    "darkTool": "黑暗模式按钮",
+    "fullscreenTool": "全屏开关按钮",
+    "collapseTool": "菜单折叠按钮",
+    "settingTool": "设置按钮"
   }
 }

@@ -16,8 +16,8 @@ const goLoginPage = (): void => {
 <template>
   <el-avatar
     cursor-pointer
-    :size="34"
-    :src="userStore.userInfo.avatar"
+    :size="38"
+    :src="userStore.userProfile.avatar"
     @click="goLoginPage()"
   >
     <span text-1>{{ userStore.isLogin ? '' : t('base.form.login') }}</span>

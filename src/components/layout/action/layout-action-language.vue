@@ -22,11 +22,10 @@ const { changeLanguage, currentLanguage, languages } = useLanguage();
       <i inline-flex i="ep-arrow-down"></i>
     </span>
     <svg-icon
-      cursor-pointer
       v-if="props.onlyIcon"
-      w-5
-      h-5
-      name="language"
+      cursor-pointer
+      size="1.2rem"
+      name="international"
       :color="props.color"
     ></svg-icon>
     <template #dropdown>

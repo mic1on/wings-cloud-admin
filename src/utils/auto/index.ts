@@ -100,8 +100,11 @@ export const autoImportViewComponents = (files: Files): ViewComponents => {
 export const autoImportSvgs = (files: Files): IObject => {
   let svgs: IObject = {};
   Object.keys(files).forEach((key) => {
-    const fileName = key.replace(FILE_NAME, '$2');
-    svgs = { ...svgs, [fileName]: files[key] || {} };
+    const svgName = files[key]
+      .replace('/src/assets/svgs/', '')
+      .replace('/', '-')
+      .replace(FILE_NAME, '$2');
+    svgs = { ...svgs, [svgName]: files[key] || {} };
   });
   return svgs;
 };

@@ -11,7 +11,7 @@ import { router } from '../../plugins/vue-router';
 import { _t } from '../../plugins/vue-i18n';
 import {
   loginByAccount as _loginByAccount,
-  getUserInfo as _getUserInfo,
+  getUserProfile as _getUserProfile,
   signup as _signup,
 } from '../../apis/website/user';
 import { getUserRoles as _getUserRoles } from '../../apis/admin/auth';
@@ -27,14 +27,14 @@ export const useUserStore = defineStore('user', () => {
   );
 
   // 用户登录唯一凭证
-  const token = ref<string>(
+  const token = ref<string | null>(
     getStorage(StorageEnum.TOKEN, {
       type: getLoginStorageType(),
     }) || ''
   );
 
   // 用户信息
-  const userInfo = ref<IObject>(
+  const userProfile = ref<IObject>(
     getStorage(StorageEnum.USER_INFO, {
       type: getLoginStorageType(),
     }) || {}
@@ -48,9 +48,7 @@ export const useUserStore = defineStore('user', () => {
   );
 
   // 是否登录状态
-  const isLogin = (): boolean => {
-    return token.value ? true : false;
-  };
+  const isLogin = computed(() => (token.value ? true : false));
 
   // 设置用户是否保持登录
   const setStayLogin = (state: boolean): void => {
@@ -67,8 +65,8 @@ export const useUserStore = defineStore('user', () => {
   };
 
   // 设置用户信息
-  const setUserInfo = (data: IObject): void => {
-    userInfo.value = data;
+  const setUserProfile = (data: IObject): void => {
+    userProfile.value = data;
     setStorage(StorageEnum.USER_INFO, data, {
       type: getLoginStorageType(),
     });
@@ -83,11 +81,11 @@ export const useUserStore = defineStore('user', () => {
   };
 
   // 获取用户信息
-  const getUserInfo = async (): Promise<IObject> => {
+  const getUserProfile = async (): Promise<IObject> => {
     return new Promise(async (resolve) => {
-      const { code, data } = await _getUserInfo();
+      const { code, data } = await _getUserProfile();
       if (code === 0) {
-        setUserInfo(data);
+        setUserProfile(data);
         resolve(data);
       } else {
         resolve({});
@@ -110,7 +108,7 @@ export const useUserStore = defineStore('user', () => {
 
   // 登录后 - 处理获取信息、权限、路由等
   const loginApiHandle = async (): Promise<void> => {
-    await getUserInfo();
+    await getUserProfile();
     await getUserRoles();
     const routeStore = useRouteStore();
     await routeStore.getRoleRoutes();
@@ -152,7 +150,7 @@ export const useUserStore = defineStore('user', () => {
   // 退出登录
   const logout = (type: string): void => {
     setToken('');
-    setUserInfo({});
+    setUserProfile({});
     setUserRoles([]);
     ElNotification({
       title: _t('base.authentication.logoutSuccess'),
@@ -170,12 +168,12 @@ export const useUserStore = defineStore('user', () => {
   return {
     stayLogin,
     token,
-    userInfo,
+    userProfile,
     userRoles,
     isLogin,
     setStayLogin,
-    setUserInfo,
-    getUserInfo,
+    setUserProfile,
+    getUserProfile,
     getUserRoles,
     loginApiHandle,
     loginByAccount,

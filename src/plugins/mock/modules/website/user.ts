@@ -31,7 +31,7 @@ export default {
    * 获取用户信息
    */
   getUserInfo: {
-    url: '/admin/user/info',
+    url: '/admin/user/profile',
     method: 'get',
     data: {
       id: '',

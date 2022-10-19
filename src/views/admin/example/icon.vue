@@ -2,23 +2,39 @@
 import type { Files } from '@/utils/auto/index.d';
 import { autoImportSvgs } from '@/utils/auto';
 
-const files: Files = autoImportSvgs(import.meta.glob('@/assets/svgs/**/*.svg'));
+const { t } = useI18n();
 
-const svgNames = ref<Array<string>>([]);
-
-Object.keys(files).forEach((key) => {
-  svgNames.value.push(key);
-});
+const svgs: Files = autoImportSvgs(
+  import.meta.glob('@/assets/svgs/**/*.svg', {
+    import: 'default',
+    eager: true,
+  })
+);
 </script>
 <template>
-  <crud-card>
-    <template #header> </template>
-    <template #content>
-      <div flex items-center>
-        <div mr-4 v-for="(item, index) in svgNames" :key="index">
-          <svg-icon :name="item" size="2rem"></svg-icon>
-        </div>
+  <crud-card
+    :title="t('admin.example.svgIconTitle')"
+    :sub-title="t('admin.example.svgIconSubTitle')"
+  >
+    <div flex items-center flex-wrap>
+      <div
+        w-30
+        p-y-6
+        cursor-pointer
+        hover-bg-light
+        transition
+        v-for="(key, value) in svgs"
+        :key="key"
+      >
+        <svg-icon :name="(value as string)" size="2rem"></svg-icon>
+        <div
+          text-3
+          p-t-4
+          text-center
+          style="color: var(--ep-text-color-regular)"
+          >{{ value }}</div
+        >
       </div>
-    </template>
+    </div>
   </crud-card>
 </template>

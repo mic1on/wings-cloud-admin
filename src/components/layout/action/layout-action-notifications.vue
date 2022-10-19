@@ -18,9 +18,7 @@ const props = defineProps({
     <el-popover :width="320" trigger="hover">
       <template #reference>
         <el-badge is-dot flex items-center>
-          <el-icon :size="18" :color="props.color">
-            <Bell />
-          </el-icon>
+          <svg-icon name="bell" size="1.2rem" :color="props.color"></svg-icon>
         </el-badge>
       </template>
       <template #default>

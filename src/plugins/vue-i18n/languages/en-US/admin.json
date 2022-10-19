@@ -2,5 +2,22 @@
   "workbench": {
     "welcome": "Welcome back!",
     "shortcuts": "Shortcuts"
+  },
+  "example": {
+    "svgIconTitle": "Custome Svg Icon",
+    "svgIconSubTitle": "In addition to using the Icons provided with Element Plus, you can also use your own SVG Icons"
+  },
+  "system": {
+    "settingTitle": "System Settings",
+    "settingSubTitle": "",
+    "theme": "Theme Color",
+    "customTheme": "Custom Theme Color: ",
+    "toolbar": "Toolbar Configuration",
+    "languagesTool": "Multilingual Toggle Button",
+    "refreshTool": "View Refresh Button",
+    "darkTool": "Dark Mode Button",
+    "fullscreenTool": "Full-screen Switch Button",
+    "collapseTool": "Menu Collapse Button",
+    "settingTool": "Settings Button"
   }
 }
