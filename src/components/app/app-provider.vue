@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import { StorageEnum } from '@/enums';
 import { elementPlusConfig } from '@/plugins/element-plus';
+import { StorageEnum } from '@/enums';
 import { setStorage } from '@/utils/storage';
-import { useApp } from '@/hooks/use-app';
 import { useStore } from '@/hooks/use-store';
+import { useDark } from '@/hooks/use-dark';
 import { getMobileAreaCodeList } from '@/apis/base';
 
 const route = useRoute();
 
-const { init } = useApp();
-
 const { baseStore } = useStore();
+
+const dark = useDark();
 
 const { t } = useI18n();
 
@@ -22,7 +22,7 @@ const locale =
   ];
 
 onBeforeMount(async () => {
-  init();
+  dark.initDark();
   const { data } = await getMobileAreaCodeList();
   setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
 });
@@ -50,7 +50,7 @@ onBeforeMount(async () => {
       :element-loading-lock="true"
       :element-loading-text="t('base.loading')"
       element-loading-background="rgba(0, 0, 0, 0.8)"
-      v-if="baseStore.globalLoading"
+      v-if="baseStore.appLoading"
     ></div>
     <template v-else>
       <layout-base

@@ -2,13 +2,11 @@ import type { RouteMeta } from 'vue-router';
 import type { RouteState } from './route.d';
 import type { Routes } from '../../vue-router/index.d';
 import type { ViewComponents } from '../../../views';
-import { shallowRef } from 'vue';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { autoImportViewComponents } from '../../../utils/auto';
 import { router, routes } from '../../vue-router';
 import { getRoleRoutes } from '../../../apis/admin/auth';
-import LayoutBase from '../../../components/layout/base/layout-base.vue';
 
 /**
  * @name useRouteStore
@@ -50,14 +48,14 @@ export const useRouteStore = defineStore('route', {
     },
 
     /**
-     * @name setAdminRoutes
+     * @name setAdminMenuRoutes
      * @description 设置管理系统菜单路由
      */
-    setAdminRoutes(data: Routes): void {
+    setAdminMenuRoutes(data: Routes): void {
       this.adminMenuRoutes = data.sort(
         (a: any, b: any) => a.meta.sort - b.meta.sort
       );
-      this.adminMenuRoutes.map((route: RouteRecordRaw) => {
+      this.adminMenuRoutes.forEach((route: RouteRecordRaw) => {
         if (!router.hasRoute(route.name as RouteRecordName)) {
           router.addRoute(route);
         }
@@ -72,7 +70,7 @@ export const useRouteStore = defineStore('route', {
       this.roleRoutes = data.sort(
         (a: any, b: any) => a.meta.sort - b.meta.sort
       );
-      this.roleRoutes.map((route: RouteRecordRaw) => {
+      this.roleRoutes.forEach((route: RouteRecordRaw) => {
         if (!router.hasRoute(route.name as RouteRecordName)) {
           router.addRoute(route);
         }
@@ -103,7 +101,7 @@ export const useRouteStore = defineStore('route', {
             routes,
             roleRoutes
           );
-          this.setAdminRoutes(adminMenuRoutes);
+          this.setAdminMenuRoutes(adminMenuRoutes);
           this.setRolesRoutes(roleRoutes);
           this.setAllRoutes(data.concat(this.staticRoutes));
           resolve(this.roleRoutes);
@@ -146,7 +144,9 @@ export const useRouteStore = defineStore('route', {
       roleRoutes.forEach((item: RouteMeta) => {
         const _route: RouteMeta = item;
         if (!item.component) {
-          item.component = shallowRef(LayoutBase);
+          // TODO 切换动态路由报错
+          // item.component = () =>
+          //   import('@/components/layout/layout-router-view.vue');
         } else {
           item.component = viewComponents[item.component as string];
         }

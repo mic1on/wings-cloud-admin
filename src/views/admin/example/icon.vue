@@ -11,7 +11,10 @@ const svgs: IObject = autoImportSvgs(
 console.log(svgs);
 </script>
 <template>
+  123
   <crud-card>
-    <div></div>
+    <template #header>
+      <div>123</div>
+    </template>
   </crud-card>
 </template>

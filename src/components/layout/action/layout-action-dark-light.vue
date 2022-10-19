@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useApp } from '@/hooks/use-app';
+import { useDark } from '@/hooks/use-dark';
 
-const { changeDark } = useApp();
+const { changeDark } = useDark();
 
 const props = defineProps({
   color: {
