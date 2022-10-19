@@ -101,13 +101,12 @@ watch(
 
 <template>
   <div
-    p-x-6
     flex
     items-center
     justify-between
     style="
       height: var(--wings-tag-height);
-      background-color: var(--wings-tag-bg-color);
+      margin-bottom: var(--wings-main-padding);
     "
   >
     <layout-action-collapse></layout-action-collapse>
@@ -169,7 +168,10 @@ watch(
 }
 
 :deep(.ep-tabs__item.is-active) {
+  background-color: var(--wings-tag-bg-color);
   border: none;
-  border-bottom: 3px solid var(--ep-color-primary) !important;
+
+  // border-bottom: 3px solid var(--ep-color-primary) !important;
+  border-radius: 10px;
 }
 </style>

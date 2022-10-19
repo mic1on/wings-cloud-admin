@@ -74,6 +74,19 @@ export default {
             },
           },
           {
+            path: '/admin/example/xicons',
+            name: 'admin.example.xicons',
+            component: '/admin/example/xicons',
+            meta: {
+              layout: 'admin',
+              requiresAuth: true,
+              iconType: IconTypeEnum.ELEMENT_PLUS,
+              icon: 'Link',
+              menuName: '扩展图标库',
+              sort: 2,
+            },
+          },
+          {
             path: '/admin/example/editor',
             name: 'admin.example.editor',
             component: '/admin/example/editor',
@@ -83,7 +96,7 @@ export default {
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'Document',
               menuName: '富文本编辑器',
-              sort: 2,
+              sort: 3,
             },
           },
           {
@@ -96,7 +109,7 @@ export default {
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'DataLine',
               menuName: '图表',
-              sort: 3,
+              sort: 4,
             },
           },
           {
@@ -109,7 +122,7 @@ export default {
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'MapLocation',
               menuName: '地图',
-              sort: 4,
+              sort: 5,
             },
           },
           {
@@ -122,7 +135,7 @@ export default {
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'DocumentChecked',
               menuName: '分布表单',
-              sort: 5,
+              sort: 6,
             },
           },
           {
@@ -135,7 +148,7 @@ export default {
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'Warning',
               menuName: '结果页',
-              sort: 6,
+              sort: 7,
             },
           },
         ],
@@ -396,6 +409,7 @@ export default {
       '/admin/about',
       '/admin/example/crud',
       '/admin/example/icon',
+      '/admin/example/xicons',
       '/admin/example/editor',
       '/admin/example/echarts',
       '/admin/example/map',

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import type { PropType, Component } from 'vue';
+
 const props = defineProps({
   prefix: {
     type: String,
@@ -27,6 +29,12 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  component: {
+    type: Object as PropType<Component>,
+    default: () => {
+      return {};
+    },
+  },
 });
 
 const symbolId = computed(
@@ -39,15 +47,21 @@ const symbolId = computed(
     flex
     items-center
     justify-center
-    style="margin-right: 5px; text-align: center; vertical-align: middle"
-    :style="{ width: props.showEpWidth ? 'var(--ep-menu-icon-width)' : 'auto' }"
+    style="text-align: center; vertical-align: middle"
+    :style="[
+      { width: props.showEpWidth ? 'var(--ep-menu-icon-width)' : 'auto' },
+      { fontSize: props.size },
+      props.customStyle,
+    ]"
   >
     <svg
+      v-if="name"
       aria-hidden="true"
       :class="`iconfont ${props.className}`"
-      :style="`width:${props.size};height:${props.size};line-height:${props.size};color:${props.color};${props.customStyle};`"
+      :style="`width:1em;height:1em;line-height:1em;color:${props.color};`"
     >
       <use :xlink:href="symbolId" />
     </svg>
+    <component v-else :is="props.component"></component>
   </i>
 </template>

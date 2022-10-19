@@ -47,7 +47,7 @@ export const addRouterGuard = (router: Router): Router => {
 
       if (token && routeStore.roleRoutes.length == 0) {
         baseStore.changeAppLoading(true);
-        await userStore.getUserInfo();
+        await userStore.getUserProfile();
         await userStore.getUserRoles();
         await routeStore.getRoleRoutes();
         baseStore.changeAppLoading(false);

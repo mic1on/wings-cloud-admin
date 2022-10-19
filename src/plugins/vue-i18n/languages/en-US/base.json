@@ -39,7 +39,9 @@
     "choose": "Please Choose",
     "preview": "Preview",
     "fileName": "File Name",
-    "next": "Next"
+    "next": "Next",
+    "submit": "Submit",
+    "selected": "Selected"
   },
   "unkown": {
     "error": "Unknown error, error message: {message}",

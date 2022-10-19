@@ -10,7 +10,7 @@ const { userStore } = useStore();
     <template #content>
       <div text-5>
         <span p-r-4>{{ t('admin.workbench.welcome') }}</span>
-        <span>{{ userStore.userInfo.nickname }}</span>
+        <span>{{ userStore.userProfile.nickname }}</span>
       </div>
       <el-divider
         style="border-top: 1px solid var(--ep-border-color-lighter)"

@@ -41,7 +41,7 @@ export const useBaseStore = defineStore('base', () => {
 
   // 切换折叠收起菜单状态
   const changeCollapse = (): void => {
-    collapse.value = !collapse;
+    collapse.value = !collapse.value;
   };
 
   return {

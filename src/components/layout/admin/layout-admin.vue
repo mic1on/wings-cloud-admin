@@ -51,7 +51,7 @@ const { baseStore } = useStore();
 }
 
 :deep(.ep-main) {
-  padding: 0 !important;
+  padding: var(--wings-main-padding);
   background: var(--wings-main-fill);
 }
 </style>
