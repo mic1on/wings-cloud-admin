@@ -1,5 +1,7 @@
 import type { IObject, IFunction } from './index.d';
 import type { Reg } from '../reg-exp/index.d';
+import { getStorage } from '../storage';
+import { StorageEnum } from '../../enums';
 
 /**
  * @name isNullOrUndefined
@@ -101,4 +103,15 @@ export const arrayRecursion = (
  */
 export const checkFloat = (n: string): Reg => {
   return /^([1-9]+[\d]*(.[0-9]{1,${n}})?)/;
+};
+
+/**
+ * @name getLoginStorageType
+ * @description 获取是否保持登录状态
+ * @return storageType
+ */
+export const getLoginStorageType = (): string => {
+  return getStorage(StorageEnum.STAY_LOGIN, { type: 'local' }) === true
+    ? 'local'
+    : 'session';
 };
