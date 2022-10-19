@@ -20,11 +20,12 @@ const predefineColors = ref(['#0d6efd', '#42b983', '#fe7300', '#ea3a72']);
 
 const update = () => {};
 
-const setThemeColor = (color: string): void => {
+const setThemeColor = (color: string) => {
+  // TODO
   themeColor.value = color;
-  const elm = window.document.querySelector('body');
-  if (elm) {
-    elm.style.setProperty('--ep-color-primary', color);
+  const element = window.document.querySelector('html');
+  if (element) {
+    element.style.setProperty('--ep-color-primary', color);
   }
 };
 </script>

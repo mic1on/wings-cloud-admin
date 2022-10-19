@@ -14,7 +14,7 @@ const openSetting = () => {};
     <svg-icon
       @click="openSetting"
       cursor-pointer
-      size="1.22rem"
+      size="1.24rem"
       name="setting"
       :color="props.color"
     ></svg-icon>
