@@ -1,20 +1,24 @@
 <script lang="ts" setup>
-import type { IObject } from '@/global.d';
+import type { Files } from '@/utils/auto/index.d';
 import { autoImportSvgs } from '@/utils/auto';
 
-const svgs: IObject = autoImportSvgs(
-  import.meta.glob('@/assets/svgs/**/*.svg', {
-    eager: true,
-  })
-);
+const files: Files = autoImportSvgs(import.meta.glob('@/assets/svgs/**/*.svg'));
 
-console.log(svgs);
+const svgNames = ref<Array<string>>([]);
+
+Object.keys(files).forEach((key) => {
+  svgNames.value.push(key);
+});
 </script>
 <template>
-  123
   <crud-card>
-    <template #header>
-      <div>123</div>
+    <template #header> </template>
+    <template #content>
+      <div flex items-center>
+        <div mr-4 v-for="(item, index) in svgNames" :key="index">
+          <svg-icon :name="item" size="2rem"></svg-icon>
+        </div>
+      </div>
     </template>
   </crud-card>
 </template>
