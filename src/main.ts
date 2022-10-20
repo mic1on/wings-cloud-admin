@@ -9,9 +9,9 @@ import { useI18n } from './plugins/vue-i18n';
 import { usePinia } from './plugins/pinia';
 import { useMock } from './plugins/mock';
 
+import 'uno.css';
 import './assets/styles/index.scss';
 import 'virtual:svg-icons-register';
-import 'uno.css';
 
 const app: App<Element> = createApp(_App);
 
