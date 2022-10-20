@@ -17,6 +17,7 @@ export const ToolbarSettings = {
  */
 export const ThemeSettings = {
   themeColor: '#0d6efd',
+  colorScheme: '',
 };
 
 /**
@@ -25,6 +26,7 @@ export const ThemeSettings = {
  */
 export const PredefineThemeColors = [
   '#0d6efd',
+  '#222b45',
   '#42b983',
   '#fe7300',
   '#ea3a72',

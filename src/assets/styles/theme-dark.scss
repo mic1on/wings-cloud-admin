@@ -1,11 +1,11 @@
 :root.dark {
-  --wings-header-bg-color: var(--el-bg-color);
+  --wings-header-bg-color: var(--el-bg-color) !important;
   --wings-header-text-color: #fff;
 
   --wings-menu-bg-color: #0a0a0a;
   --wings-menu-sub-bg-color: #141414;
-  --wings-menu-bg-color-active: var(--el-color-primary-light-3);
-  --wings-menu-bg-color-hover: var(--el-color-primary-light-3);
+  --wings-menu-bg-color-active: var(--el-color-primary);
+  --wings-menu-bg-color-hover: var(--el-color-primary);
   --wings-menu-text-color: var(--el-text-color-secondary);
   --wings-menu-text-color-active: var(--el-text-color-primary);
   --wings-menu-text-color-hover: var(--el-text-color-primary);

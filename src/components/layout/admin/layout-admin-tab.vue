@@ -170,8 +170,6 @@ watch(
 :deep(.el-tabs__item.is-active) {
   background-color: var(--wings-tag-bg-color) !important;
   border: none;
-
-  // border-bottom: 3px solid var(--el-color-primary) !important;
   border-radius: 4px;
 }
 </style>

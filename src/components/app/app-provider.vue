@@ -3,14 +3,11 @@ import { elementPlusConfig } from '@/plugins/element-plus';
 import { StorageEnum } from '@/enums';
 import { setStorage } from '@/utils/storage';
 import { useStore } from '@/hooks/use-store';
-import { useDark } from '@/hooks/use-dark';
 import { getMobileAreaCodeList } from '@/apis/base';
 
 const route = useRoute();
 
 const { baseStore } = useStore();
-
-const dark = useDark();
 
 const { t } = useI18n();
 
@@ -22,10 +19,23 @@ const locale =
   ];
 
 onBeforeMount(async () => {
-  dark.initDark();
   const { data } = await getMobileAreaCodeList();
   setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
 });
+
+watch(
+  () => baseStore.appThemeSettings.colorScheme,
+  () => {
+    if (baseStore.appThemeSettings.colorScheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  },
+  {
+    immediate: true,
+  }
+);
 </script>
 
 <template>

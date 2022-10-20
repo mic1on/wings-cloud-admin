@@ -1,6 +1,6 @@
 :root {
   --wings-header-height: 5rem;
-  --wings-header-bg-color: #222b45;
+  --wings-header-bg-color: var(--el-color-primary);
   --wings-header-text-color: #fff;
 
   --wings-aside-width: 14.6rem;

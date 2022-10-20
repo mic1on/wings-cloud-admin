@@ -1,7 +1,12 @@
 <script lang="ts" setup name="layout-action-color-scheme">
-import { useDark } from '@/hooks/use-dark';
+import { useStore } from '@/hooks/use-store';
 
-const { changeDark } = useDark();
+const { baseStore } = useStore();
+
+const changeColorScheme = () => {
+  baseStore.appThemeSettings.colorScheme =
+    baseStore.appThemeSettings.colorScheme === 'dark' ? 'light' : 'dark';
+};
 
 const props = defineProps({
   color: {
@@ -14,7 +19,7 @@ const props = defineProps({
 <template>
   <i
     cursor-pointer
-    @click="changeDark()"
+    @click="changeColorScheme()"
     :style="{ color: props.color }"
     text-4
     inline-flex
