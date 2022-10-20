@@ -57,6 +57,7 @@ declare module '@vue/runtime-core' {
     GMap: typeof import('./map/g-map.vue')['default']
     LayoutActionAvatar: typeof import('./layout/action/layout-action-avatar.vue')['default']
     LayoutActionCollapse: typeof import('./layout/action/layout-action-collapse.vue')['default']
+    LayoutActionColorScheme: typeof import('./layout/action/layout-action-color-scheme.vue')['default']
     LayoutActionDarkLight: typeof import('./layout/action/layout-action-dark-light.vue')['default']
     LayoutActionFullscreen: typeof import('./layout/action/layout-action-fullscreen.vue')['default']
     LayoutActionLanguage: typeof import('./layout/action/layout-action-language.vue')['default']

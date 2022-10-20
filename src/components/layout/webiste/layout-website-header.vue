@@ -66,10 +66,10 @@ const tabChange = (item: IObject): void => {
             {{ item.label }}
           </div>
         </div>
-        <layout-action-dark-light
+        <layout-action-color-scheme
           mr-8
           color="var(--el-text-color-primary)"
-        ></layout-action-dark-light>
+        ></layout-action-color-scheme>
         <layout-action-language
           mr-8
           only-icon

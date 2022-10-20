@@ -11,7 +11,7 @@ const themeColor = ref(baseStore.appThemeSettings.themeColor);
 
 const predefineColors = ref(PredefineThemeColors);
 
-const changeThemeColor = (val: string | null) => {
+const changeThemeColor = (val: string | null): void => {
   if (!val) return;
   themeColor.value = val;
   setThemeColor(val as string);
@@ -30,6 +30,7 @@ const changeThemeColor = (val: string | null) => {
           <div mb-8 style="color: var(--el-text-color-primary)">
             {{ t('admin.system.layout') }}
           </div>
+          <div flex flex-wrap justify-between items-center></div>
         </div>
         <div w="360px" mr-30>
           <div mb-8 style="color: var(--el-text-color-primary)">

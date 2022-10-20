@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-action-color-scheme">
 import { useDark } from '@/hooks/use-dark';
 
 const { changeDark } = useDark();

@@ -9,10 +9,10 @@ const { baseStore } = useStore();
       <layout-admin-logo></layout-admin-logo>
     </div>
     <div h-full flex items-center>
-      <layout-action-dark-light
+      <layout-action-color-scheme
         mr-8
         v-if="baseStore.toolbarSettings.dark"
-      ></layout-action-dark-light>
+      ></layout-action-color-scheme>
       <layout-action-language
         mr-8
         only-icon
