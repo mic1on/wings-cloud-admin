@@ -48,11 +48,11 @@ const goPage = (url: string) => {
         text-5
         font-600
         select-none
-        style="color: var(--ep-color-info-light)"
+        style="color: var(--el-color-info-light)"
       >
         {{ t('website.home.title') }}
       </div>
-      <div mb-4 text-4 select-none style="color: var(--ep-color-info-dark-2)">
+      <div mb-4 text-4 select-none style="color: var(--el-color-info-dark-2)">
         {{ t('website.home.description') }}
       </div>
     </div>
@@ -63,7 +63,7 @@ const goPage = (url: string) => {
             select-none
             text-5
             font-600
-            style="color: var(--ep-color-info-light)"
+            style="color: var(--el-color-info-light)"
           >
             {{ group.label }}
           </span>
@@ -85,11 +85,11 @@ const goPage = (url: string) => {
           text-5
           font-600
           select-none
-          style="color: var(--ep-color-info-light)"
+          style="color: var(--el-color-info-light)"
         >
           {{ t('website.layout.contact') }}
         </div>
-        <div mb-4 text-4 select-none style="color: var(--ep-color-info-dark-2)">
+        <div mb-4 text-4 select-none style="color: var(--el-color-info-dark-2)">
           kaivanwong@outlook.com
         </div>
       </div>
@@ -97,17 +97,17 @@ const goPage = (url: string) => {
   </div>
   <div w-7xl ma p-y-10>
     <el-divider></el-divider>
-    <div text-center pt-4 text-4 style="color: var(--ep-color-info-light-3)">
+    <div text-center pt-4 text-4 style="color: var(--el-color-info-light-3)">
       <span>{{ appCopyright }}</span>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .link {
-  color: var(--ep-color-info-dark-2);
+  color: var(--el-color-info-dark-2);
 
   &:hover {
-    color: var(--ep-color-info-light);
+    color: var(--el-color-info-light);
   }
 }
 </style>

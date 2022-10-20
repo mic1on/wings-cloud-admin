@@ -2,19 +2,19 @@
  * @name ELEMENT_PLUS_PREFIX
  * @description Element Plus 命名空间
  */
-export const ELEMENT_PLUS_PREFIX = 'ep';
+export const ELEMENT_PLUS_PREFIX = 'el';
 
 /**
  * @name ELEMENT_PLUS_CLASS_PREFIX
  * @description Element Plus 类目命名空间
  */
-export const ELEMENT_PLUS_CLASS_PREFIX = 'ep';
+export const ELEMENT_PLUS_CLASS_PREFIX = 'el';
 
 /**
  * @name ELEMENT_PLUS_LANGUAGE_PREFIX
  * @description Element Plus 多语言名称前缀
  */
-export const ELEMENT_PLUS_LANGUAGE_PREFIX = 'ep-language';
+export const ELEMENT_PLUS_LANGUAGE_PREFIX = 'el-language';
 
 /**
  * @name ELEMENT_PLUS_BUTTON_CONFIG

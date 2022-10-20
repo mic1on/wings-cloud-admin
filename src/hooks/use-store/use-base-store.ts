@@ -2,6 +2,7 @@ import type { IObject } from '../../global';
 import { defineStore } from 'pinia';
 import { StorageEnum } from '../../enums';
 import { getStorage, setStorage } from '../../utils/storage';
+import { ToolbarSettings, ThemeSettings } from '../../settings';
 
 /**
  * @name useBaseStore
@@ -24,6 +25,17 @@ export const useBaseStore = defineStore('base', () => {
   // 是否水平折叠收起菜单
   const collapse = ref<boolean>(getStorage(StorageEnum.COLLAPSE) || false);
 
+  // 管理系统工具栏配置
+  const toolbarSettings = ref<IObject>(
+    getStorage(StorageEnum.TOOLBAR_OPTIONS) || ToolbarSettings
+  );
+
+  // 应用主题配置
+  const appThemeSettings = ref<IObject>(
+    getStorage(StorageEnum.TOOLBAR_OPTIONS) || ThemeSettings
+  );
+
+  // 管理系统是否显示底栏
   const adminShowFooter = ref<boolean>(
     getStorage(StorageEnum.SHOW_FOOTER) || false
   );
@@ -49,6 +61,8 @@ export const useBaseStore = defineStore('base', () => {
     appLoading,
     uniqueOpened,
     collapse,
+    toolbarSettings,
+    appThemeSettings,
     adminShowFooter,
     changeLanguage,
     changeAppLoading,

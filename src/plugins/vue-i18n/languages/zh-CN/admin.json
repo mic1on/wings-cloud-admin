@@ -10,9 +10,10 @@
   "system": {
     "settingTitle": "系统设置",
     "settingSubTitle": "",
-    "theme": "界面主题颜色",
+    "layout": "布局",
+    "theme": "主题颜色",
     "customTheme": "自定义主题颜色：",
-    "toolbar": "工具栏配置",
+    "toolbar": "工具栏",
     "languagesTool": "多语言切换按钮",
     "refreshTool": "视图刷新按钮",
     "darkTool": "黑暗模式按钮",

@@ -89,4 +89,5 @@ export enum StorageEnum {
   COLLAPSE = 'collapse',
   UNIQUE_OPENED = 'unique-opened',
   SHOW_FOOTER = 'show-footer',
+  TOOLBAR_OPTIONS = 'toolbar-options',
 }

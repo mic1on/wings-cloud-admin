@@ -17,7 +17,7 @@ const props = defineProps({
   size: { type: String, default: '1.2rem' },
   color: {
     type: String,
-    default: 'var(--ep-text-color-primary)',
+    default: 'var(--el-text-color-primary)',
   },
   customStyle: {
     type: Object,
@@ -25,7 +25,7 @@ const props = defineProps({
       return {};
     },
   },
-  showEpWidth: {
+  showElWidth: {
     type: Boolean,
     default: false,
   },
@@ -49,7 +49,7 @@ const symbolId = computed(
     justify-center
     style="text-align: center; vertical-align: middle"
     :style="[
-      { width: props.showEpWidth ? 'var(--ep-menu-icon-width)' : 'auto' },
+      { width: props.showElWidth ? 'var(--el-menu-icon-width)' : 'auto' },
       { fontSize: props.size },
       props.customStyle,
     ]"

@@ -32,7 +32,7 @@ $--border-radius: (
  * Element Plus 命名空间
  */
 @forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
-  $namespace: 'ep'
+  $namespace: 'el'
 );
 
 /**

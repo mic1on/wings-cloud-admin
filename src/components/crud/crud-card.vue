@@ -17,14 +17,14 @@ const props = defineProps({
 <template>
   <el-card :shadow="props.shadow" important="border-none transition-duration-0">
     <template #header v-if="props.title || props.subTitle">
-      <div text-6 style="color: var(--ep-text-color-primary)">
+      <div text-6 style="color: var(--el-text-color-primary)">
         {{ props.title }}
       </div>
       <div
         v-if="props.subTitle"
         text-4
         mt-2
-        style="color: var(--ep-text-color-regular)"
+        style="color: var(--el-text-color-regular)"
       >
         {{ props.subTitle }}
       </div>
@@ -36,7 +36,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-:deep(.ep-card) {
+:deep(.el-card) {
   border: 0 !important;
 }
 </style>

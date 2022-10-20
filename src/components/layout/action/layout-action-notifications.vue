@@ -23,7 +23,7 @@ const props = defineProps({
       </template>
       <template #default>
         <div flex justify-between items-center>
-          <span text-4 style="color: var(--ep-text-color-regular)">
+          <span text-4 style="color: var(--el-text-color-regular)">
             {{ t('base.notifications') }}
           </span>
           <el-button text type="primary">{{ t('base.readAll') }}</el-button>

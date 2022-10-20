@@ -154,24 +154,24 @@ watch(
 </template>
 
 <style lang="scss" scoped>
-:deep(.ep-tabs__header) {
+:deep(.el-tabs__header) {
   margin: 0 !important;
   border: none !important;
 }
 
-:deep(.ep-tabs__nav) {
+:deep(.el-tabs__nav) {
   border: none !important;
 }
 
-:deep(.ep-tabs__item) {
+:deep(.el-tabs__item) {
   border-left: none !important;
 }
 
-:deep(.ep-tabs__item.is-active) {
-  background-color: var(--wings-tag-bg-color);
+:deep(.el-tabs__item.is-active) {
+  background-color: var(--wings-tag-bg-color) !important;
   border: none;
 
-  // border-bottom: 3px solid var(--ep-color-primary) !important;
-  border-radius: 10px;
+  // border-bottom: 3px solid var(--el-color-primary) !important;
+  border-radius: 4px;
 }
 </style>

@@ -133,11 +133,11 @@ const getPhoneCode = (): void => {
 <template>
   <el-form ref="formRef" :model="form" :rules="formRules" size="large">
     <div mb-8>
-      <div mb-4 text-8 font-600 style="color: var(--ep-color-info-light)">
+      <div mb-4 text-8 font-600 style="color: var(--el-color-info-light)">
         {{ t('website.user.passwordForgetTitle') }}
       </div>
       <div flex items-center>
-        <span text-3 pr-2 style="color: var(--ep-color-info-light-3)">{{
+        <span text-3 pr-2 style="color: var(--el-color-info-light-3)">{{
           t('website.user.passwordForgetDescription')
         }}</span>
         <el-button important="p-0" link type="primary" @click="goLogin()">
@@ -240,7 +240,7 @@ const getPhoneCode = (): void => {
     <el-form-item>
       <el-button type="primary" w="100%">{{ t('base.crud.update') }}</el-button>
     </el-form-item>
-    <div text-3 style="color: var(--ep-color-info-light-3)">
+    <div text-3 style="color: var(--el-color-info-light-3)">
       {{ t('base.form.tip', { label: t('website.user.forgetPhone') }) }}
     </div>
   </el-form>
