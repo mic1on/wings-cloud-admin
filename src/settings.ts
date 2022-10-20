@@ -28,6 +28,7 @@ export const PredefineThemeColors = [
   '#0d6efd',
   '#222b45',
   '#42b983',
-  '#fe7300',
   '#ea3a72',
+  '#fe7300',
+  '#1C9399',
 ];
