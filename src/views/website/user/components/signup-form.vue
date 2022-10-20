@@ -161,11 +161,11 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
 <template>
   <el-form ref="formRef" :model="form" :rules="formRules" size="large">
     <div mb-8>
-      <div mb-4 text-8 font-600 style="color: var(--ep-color-info-light)">
+      <div mb-4 text-8 font-600 style="color: var(--el-color-info-light)">
         {{ t('website.user.signupTitle') }}
       </div>
       <div flex items-center>
-        <span text-3 pr-2 style="color: var(--ep-color-info-light-3)">{{
+        <span text-3 pr-2 style="color: var(--el-color-info-light-3)">{{
           t('website.user.haveAccount')
         }}</span>
         <el-button important="p-0" link type="primary" @click="goLogin()">

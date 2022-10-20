@@ -49,15 +49,15 @@ const tabChange = (item: IObject): void => {
             mr-10
             cursor-pointer
             style="
-              color: var(--ep-text-color-regular);
-              font-size: var(--ep-font-size-base);
+              color: var(--el-text-color-regular);
+              font-size: var(--el-font-size-base);
             "
             :style="{
-              'font-size': 'var(--ep-font-size-base)',
+              'font-size': 'var(--el-font-size-base)',
               color:
                 currentTab === item.path
-                  ? 'var(--ep-color-primary)'
-                  : 'var(--ep-text-color-regular)',
+                  ? 'var(--el-color-primary)'
+                  : 'var(--el-text-color-regular)',
             }"
             v-for="(item, index) in tabs"
             :key="index"
@@ -66,18 +66,18 @@ const tabChange = (item: IObject): void => {
             {{ item.label }}
           </div>
         </div>
-        <layout-action-dark-light
+        <layout-action-color-scheme
           mr-8
-          color="var(--ep-text-color-primary)"
-        ></layout-action-dark-light>
+          color="var(--el-text-color-primary)"
+        ></layout-action-color-scheme>
         <layout-action-language
           mr-8
           only-icon
-          color="var(--ep-text-color-primary)"
+          color="var(--el-text-color-primary)"
         ></layout-action-language>
         <layout-action-notifications
           mr-8
-          color="var(--ep-text-color-primary)"
+          color="var(--el-text-color-primary)"
         ></layout-action-notifications>
         <layout-action-avatar></layout-action-avatar>
       </div>

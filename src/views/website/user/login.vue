@@ -38,7 +38,7 @@ const changeLoginType = (type: string, isOpen: boolean): void => {
     </template>
     <template #login-type>
       <el-divider>
-        <span text-2 style="color: var(--ep-color-info-light-3)">
+        <span text-2 style="color: var(--el-color-info-light-3)">
           {{ t('website.user.other') }}
         </span>
       </el-divider>
@@ -92,6 +92,6 @@ const changeLoginType = (type: string, isOpen: boolean): void => {
   padding: 10px 12px;
 }
 :deep(.#{$namespace}-divider__text) {
-  background-color: var(--ep-card-bg-color);
+  background-color: var(--el-card-bg-color);
 }
 </style>

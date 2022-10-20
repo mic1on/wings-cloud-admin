@@ -31,7 +31,7 @@ const svgs: Files = autoImportSvgs(
           text-3
           p-t-4
           text-center
-          style="color: var(--ep-text-color-regular)"
+          style="color: var(--el-text-color-regular)"
           >{{ value }}</div
         >
       </div>

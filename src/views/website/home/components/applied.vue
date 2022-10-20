@@ -10,7 +10,7 @@ const { t } = useI18n();
       mb-12
       select-none
       text-center
-      style="color: var(--ep-text-color-placeholder)"
+      style="color: var(--el-text-color-placeholder)"
     >
       {{ t('website.home.applied') }}
     </div>

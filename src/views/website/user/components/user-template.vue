@@ -31,13 +31,13 @@ const backHome = (): void => {
           src="@/assets/svgs/logo.svg"
           @click="backHome"
         />
-        <div text-14 mb-6 font-600 style="color: var(--ep-color-info-dark)">
+        <div text-14 mb-6 font-600 style="color: var(--el-color-info-dark)">
           {{ t('website.user.loginTemplate') }}
         </div>
-        <div text-6 mb-30 style="color: var(--ep-color-info)">
+        <div text-6 mb-30 style="color: var(--el-color-info)">
           {{ t('website.user.loginTemplateDescription') }}
         </div>
-        <div text-4 style="color: var(--ep-color-info)">{{ appCopyright }}</div>
+        <div text-4 style="color: var(--el-color-info)">{{ appCopyright }}</div>
       </div>
       <el-card p-6 w-sm shadow="never">
         <slot name="title"></slot>

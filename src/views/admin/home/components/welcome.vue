@@ -13,7 +13,7 @@ const { userStore } = useStore();
         <span>{{ userStore.userProfile.nickname }}</span>
       </div>
       <el-divider
-        style="border-top: 1px solid var(--ep-border-color-lighter)"
+        style="border-top: 1px solid var(--el-border-color-lighter)"
       />
       <el-row :gutter="20">
         <el-col :span="6"> </el-col>

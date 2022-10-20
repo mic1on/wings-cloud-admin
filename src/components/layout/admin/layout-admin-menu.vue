@@ -23,23 +23,23 @@ const { baseStore, routeStore } = useStore();
 </template>
 
 <style lang="scss" scoped>
-:deep(.ep-menu) {
+:deep(.el-menu) {
   color: var(--wings-menu-text-color);
   background-color: var(--wings-menu-sub-bg-color);
   border-radius: var(--wings-menu-radius);
 }
 
-.ep-menu.ep-menu--collapse {
+.el-menu.el-menu--collapse {
   width: 100%;
 }
 
-.ep-menu.ep-menu--vertical {
+.el-menu.el-menu--vertical {
   height: calc(100vh - var(--wings-header-height));
   padding: 10px;
   background-color: var(--wings-menu-bg-color);
 }
 
-.ep-menu.ep-menu-inline {
+.el-menu.el-menu-inline {
   color: var(--wings-menu-text-color);
   background-color: var(--wings-menu-bg-color);
   border-radius: var(--wings-menu-radius);

@@ -1,6 +1,3 @@
-/**
- * 黑暗模式主题色
- */
 $--colors: (
   'primary': (
     'base': #0d6efd,
@@ -19,9 +16,6 @@ $--colors: (
   ),
 );
 
-/**
- * 自定义暗模式主色调变量注入
- */
 @forward 'element-plus/theme-chalk/src/dark/var.scss' with (
   $colors: $--colors,
   $bg-color: (

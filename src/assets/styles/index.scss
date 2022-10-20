@@ -1,6 +1,5 @@
 @use './theme.scss';
 @use './theme-dark.scss';
-@use './element-styles.scss';
 
 :root {
   font-size: 16px;
@@ -15,19 +14,19 @@ body {
 }
 
 a {
-  color: var(--ep-color-primary);
+  color: var(--el-color-primary);
 }
 
 code {
   padding: 2px 4px;
-  color: var(--ep-color-primary);
-  background-color: var(--ep-color-primary-light-9);
+  color: var(--el-color-primary);
+  background-color: var(--el-color-primary-light-9);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: var(--ep-bg-color-overlay);
+  background-color: var(--el-bg-color-overlay);
 }
 
 ::-webkit-scrollbar-track {
@@ -35,7 +34,7 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--ep-color-info-light-5);
+  background-color: var(--el-color-info-light-5);
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;

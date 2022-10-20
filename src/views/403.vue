@@ -26,10 +26,10 @@ const goBack = () => {
     text-center
   >
     <img cursor-pointer h-22 my-10 src="@/assets/svgs/logo.svg" />
-    <div text-12 mb-6 font-600 style="color: var(--ep-color-info-dark)">
+    <div text-12 mb-6 font-600 style="color: var(--el-color-info-dark)">
       {{ t('base.noAuthentication') }}
     </div>
-    <div text-4 mb-12 style="color: var(--ep-color-info)">
+    <div text-4 mb-12 style="color: var(--el-color-info)">
       {{ t('base.noAuthenticationDescription') }}
     </div>
     <div text-center>

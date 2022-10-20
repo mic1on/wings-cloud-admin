@@ -50,10 +50,10 @@ const formRules = reactive<FormRules>({
 <template>
   <el-form ref="formRef" :model="form" :rules="formRules" size="large">
     <div mb-8>
-      <div mb-4 text-8 font-600 style="color: var(--ep-color-info-light)">
+      <div mb-4 text-8 font-600 style="color: var(--el-color-info-light)">
         {{ t('website.user.emailLoginTitle') }}
       </div>
-      <div text-3 pr-2 style="color: var(--ep-color-info-light-3)">
+      <div text-3 pr-2 style="color: var(--el-color-info-light-3)">
         {{ t('website.user.emailLoginAndSignup') }}
       </div>
     </div>
@@ -91,7 +91,7 @@ const formRules = reactive<FormRules>({
         <el-checkbox
           inline-block
           text-4
-          style="color: var(--ep-color-info-light-3)"
+          style="color: var(--el-color-info-light-3)"
           v-model="form.remember"
           :label="t('website.user.rememberMe')"
         ></el-checkbox>

@@ -25,7 +25,7 @@ const openDialog = (): void => {
 
 <template>
   <div w="100%" py-2 flex justify-center items-center>
-    <span text-3 pr-2 style="color: var(--ep-color-info-light-3)">{{
+    <span text-3 pr-2 style="color: var(--el-color-info-light-3)">{{
       t('website.user.agreeLabel', { label: props.label })
     }}</span>
     <el-button important="p-0" link type="primary" @click="openDialog()">

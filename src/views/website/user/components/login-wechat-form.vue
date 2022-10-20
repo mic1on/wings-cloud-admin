@@ -8,11 +8,11 @@ const { t } = useI18n();
       text-8
       text-center
       font-600
-      style="color: var(--ep-color-info-light)"
+      style="color: var(--el-color-info-light)"
     >
       {{ t('website.user.wechatLoginTitle') }}
     </div>
-    <div text-3 pr-2 text-center style="color: var(--ep-color-info-light-3)">
+    <div text-3 pr-2 text-center style="color: var(--el-color-info-light-3)">
       {{ t('website.user.wechatLoginDescription') }}
     </div>
   </div>

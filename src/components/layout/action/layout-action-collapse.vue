@@ -6,7 +6,7 @@ const { baseStore } = useStore();
 
 <template>
   <div flex items-center cursor-pointer @click="baseStore.changeCollapse()">
-    <el-icon :size="20" style="color: var(--ep-text-color-primary)">
+    <el-icon :size="20" style="color: var(--el-text-color-primary)">
       <Expand v-if="baseStore.collapse" />
       <Fold v-else />
     </el-icon>

@@ -31,7 +31,7 @@ const { baseStore } = useStore();
       </a>
       <template v-else>
         <svg-icon
-          show-ep-width
+          show-el-width
           size="1.1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
@@ -55,7 +55,7 @@ const { baseStore } = useStore();
     <el-sub-menu :index="route.path" v-else>
       <template #title>
         <svg-icon
-          show-ep-width
+          show-el-width
           size="1.1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
@@ -79,7 +79,7 @@ const { baseStore } = useStore();
 </template>
 
 <style lang="scss" scoped>
-.ep-menu-item {
+.el-menu-item {
   width: 100% !important;
   min-width: auto !important;
   margin-bottom: var(--wings-menu-gap);
@@ -91,30 +91,30 @@ const { baseStore } = useStore();
   }
 }
 
-.ep-menu-item.is-active {
+.el-menu-item.is-active {
   color: var(--wings-menu-text-color-active) !important;
   background-color: var(--wings-menu-bg-color-active) !important;
 }
 
-.ep-menu-item:hover {
+.el-menu-item:hover {
   color: var(--wings-menu-text-color-hover);
   background-color: var(--wings-menu-bg-color-hover);
 }
 
-.ep-sub-menu {
+.el-sub-menu {
   margin-bottom: var(--wings-menu-gap);
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  :deep(.ep-sub-menu__title) {
+  :deep(.el-sub-menu__title) {
     margin-bottom: var(--wings-menu-gap);
     color: var(--wings-menu-text-color);
     border-radius: var(--wings-menu-radius);
   }
 
-  :deep(.ep-sub-menu__title:hover) {
+  :deep(.el-sub-menu__title:hover) {
     color: var(--wings-menu-text-color-hover);
     background-color: var(--wings-menu-bg-color-hover);
   }

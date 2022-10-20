@@ -35,22 +35,22 @@ const { baseStore } = useStore();
 </template>
 
 <style lang="scss" scoped>
-:deep(.ep-header) {
+:deep(.el-header) {
   height: var(--wings-header-height);
   padding: 0 1.8rem !important;
   background-color: var(--wings-header-bg-color);
 }
 
-:deep(.ep-container) {
+:deep(.el-container) {
   background-color: var(--wings-menu-bg-color);
 }
 
-:deep(.ep-aside) {
-  transition: all var(--ep-transition-duration)
-    var(--ep-transition-function-ease-in-out-bezier);
+:deep(.el-aside) {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
-:deep(.ep-main) {
+:deep(.el-main) {
   padding: var(--wings-main-padding);
   background: var(--wings-main-fill);
 }

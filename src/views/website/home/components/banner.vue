@@ -31,7 +31,7 @@ const goAdmin = () => {
             font-600
             lh-18
             select-none
-            style="color: var(--ep-text-color-primary)"
+            style="color: var(--el-text-color-primary)"
           >
             <div mb-2>{{ t('website.home.title') }}</div>
             <div>{{ t('website.home.subTitle') }}</div>
@@ -40,7 +40,7 @@ const goAdmin = () => {
             text-5
             lh-8
             select-none
-            style="color: var(--ep-text-color-regular)"
+            style="color: var(--el-text-color-regular)"
           >
             {{ t('website.home.description') }}
           </div>

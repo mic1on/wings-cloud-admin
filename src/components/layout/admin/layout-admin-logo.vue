@@ -17,9 +17,7 @@ const goHomeRoute = () => {
     cursor-pointer
     @click="goHomeRoute"
   >
-    <img h-9 src="@/assets/svgs/logo.svg" />
     <div
-      ml-6
       text-6
       font-600
       text-center

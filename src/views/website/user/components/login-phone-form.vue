@@ -73,10 +73,10 @@ const getPhoneCode = (): void => {
 <template>
   <el-form ref="formRef" :model="form" :rules="formRules" size="large">
     <div mb-8>
-      <div mb-4 text-8 font-600 style="color: var(--ep-color-info-light)">
+      <div mb-4 text-8 font-600 style="color: var(--el-color-info-light)">
         {{ t('website.user.phoneLoginTitle') }}
       </div>
-      <div text-3 pr-2 style="color: var(--ep-color-info-light-3)">
+      <div text-3 pr-2 style="color: var(--el-color-info-light-3)">
         {{ t('website.user.phoneLoginAndSignup') }}
       </div>
     </div>
@@ -147,7 +147,7 @@ const getPhoneCode = (): void => {
         <el-checkbox
           inline-block
           text-4
-          style="color: var(--ep-color-info-light-3)"
+          style="color: var(--el-color-info-light-3)"
           v-model="form.remember"
           :label="t('website.user.rememberMe')"
         ></el-checkbox>

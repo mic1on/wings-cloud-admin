@@ -1,58 +1,50 @@
 <script lang="ts" setup>
+import { useStore } from '@/hooks/use-store';
+import { setThemeColor } from '@/utils/theme';
+import { PredefineThemeColors } from '@/settings';
+
 const { t } = useI18n();
 
-const settingForm = reactive({
-  theme: 'blue',
-  layout: 'top',
-  tab: 'card',
-  menu: 'round',
-  languages: true,
-  refresh: true,
-  dark: true,
-  fullscreen: true,
-  setting: true,
-  collapse: true,
-});
+const { baseStore } = useStore();
 
-const themeColor = ref('#0d6efd');
+const themeColor = ref(baseStore.appThemeSettings.themeColor);
 
-const predefineColors = ref(['#0d6efd', '#42b983', '#fe7300', '#ea3a72']);
+const predefineColors = ref(PredefineThemeColors);
 
-const update = () => {};
-
-const setThemeColor = (color: string) => {
-  // TODO
-  themeColor.value = color;
-  const element = window.document.querySelector('html');
-  if (element) {
-    element.style.setProperty('--ep-color-primary', color);
-  }
+const changeThemeColor = (val: string | null): void => {
+  if (!val) return;
+  themeColor.value = val;
+  setThemeColor(val as string);
 };
 </script>
 <template>
   <crud-card :title="t('admin.system.settingTitle')">
     <crud-form
-      :model="settingForm"
       form-width="100%"
       form-position="left"
       label-width="240px"
       label-position="left"
     >
       <div flex flex-wrap>
-        <div w="460px" mr-30>
-          <el-divider mb-8>
-            <div text-4 style="color: var(--ep-text-color-primary)">
-              {{ t('admin.system.theme') }}
-            </div>
-          </el-divider>
-          <div flex flex-wrap justify-between items-center m-b-10>
+        <div w="360px" mr-30>
+          <div mb-8 style="color: var(--el-text-color-primary)">
+            {{ t('admin.system.layout') }}
+          </div>
+          <div flex flex-wrap justify-between items-center></div>
+        </div>
+        <div w="360px" mr-30>
+          <div mb-8 style="color: var(--el-text-color-primary)">
+            {{ t('admin.system.theme') }}
+          </div>
+          <div flex flex-wrap justify-between items-center>
             <div
-              w-24
-              h-10
+              w-26
+              h-12
+              mb-4
               cursor-pointer
               v-for="(item, index) in predefineColors"
               :key="index"
-              @click="setThemeColor(item)"
+              @click="changeThemeColor(item)"
             >
               <div
                 w-full
@@ -68,48 +60,48 @@ const setThemeColor = (color: string) => {
               </div>
             </div>
           </div>
-          <div flex items-center justify-between>
-            <div>{{ t('admin.system.customTheme') }}</div>
-            <el-color-picker
-              v-model="themeColor"
-              :predefine="predefineColors"
-            />
-          </div>
-        </div>
-        <div w="460px">
-          <el-divider mb-8>
-            <div text-4 style="color: var(--ep-text-color-primary)">
-              {{ t('admin.system.toolbar') }}
+          <el-form-item :label="t('admin.system.customTheme')">
+            <div w-full flex justify-end>
+              <el-color-picker
+                v-model="themeColor"
+                @change="changeThemeColor"
+                :predefine="predefineColors"
+              />
             </div>
-          </el-divider>
+          </el-form-item>
+        </div>
+        <div w="360px">
+          <div mb-8 style="color: var(--el-text-color-primary)">
+            {{ t('admin.system.toolbar') }}
+          </div>
+          <el-form-item :label="t('admin.system.refreshTool')">
+            <div w-full flex justify-end>
+              <el-switch v-model="baseStore.toolbarSettings.dark" />
+            </div>
+          </el-form-item>
           <el-form-item :label="t('admin.system.languagesTool')">
             <div w-full flex justify-end>
-              <el-switch v-model="settingForm.languages" />
+              <el-switch v-model="baseStore.toolbarSettings.language" />
             </div>
           </el-form-item>
           <el-form-item :label="t('admin.system.refreshTool')">
             <div w-full flex justify-end>
-              <el-switch v-model="settingForm.refresh" />
+              <el-switch v-model="baseStore.toolbarSettings.refresh" />
             </div>
           </el-form-item>
           <el-form-item :label="t('admin.system.refreshTool')">
             <div w-full flex justify-end>
-              <el-switch v-model="settingForm.dark" />
+              <el-switch v-model="baseStore.toolbarSettings.notifications" />
             </div>
           </el-form-item>
-          <el-form-item :label="t('admin.system.refreshTool')">
+          <el-form-item :label="t('admin.system.fullscreenTool')">
             <div w-full flex justify-end>
-              <el-switch v-model="settingForm.fullscreen" />
+              <el-switch v-model="baseStore.toolbarSettings.fullscreen" />
             </div>
           </el-form-item>
           <el-form-item :label="t('admin.system.settingTool')">
             <div w-full flex justify-end>
-              <el-switch v-model="settingForm.setting" />
-            </div>
-          </el-form-item>
-          <el-form-item :label="t('admin.system.refreshTool')">
-            <div w-full flex justify-end>
-              <el-switch v-model="settingForm.collapse" />
+              <el-switch v-model="baseStore.toolbarSettings.setting" />
             </div>
           </el-form-item>
         </div>

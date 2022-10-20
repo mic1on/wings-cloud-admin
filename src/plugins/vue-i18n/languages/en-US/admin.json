@@ -10,9 +10,10 @@
   "system": {
     "settingTitle": "System Settings",
     "settingSubTitle": "",
+    "layout": "Layout",
     "theme": "Theme Color",
     "customTheme": "Custom Theme Color: ",
-    "toolbar": "Toolbar Configuration",
+    "toolbar": "Toolbar",
     "languagesTool": "Multilingual Toggle Button",
     "refreshTool": "View Refresh Button",
     "darkTool": "Dark Mode Button",
