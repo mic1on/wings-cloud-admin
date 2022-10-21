@@ -67,6 +67,40 @@ const props = defineProps({
           h-5
           style="
             box-sizing: border-box;
+            background-color: var(--el-color-primary-light-5);
+            border: 1px solid var(--el-color-primary-light-5);
+          "
+        ></div>
+        <div flex h-11 w-full>
+          <div
+            h-full
+            w-5
+            style="
+              box-sizing: border-box;
+              background-color: var(--wings-menu-bg-color);
+              border: 1px solid var(--el-border-color);
+              border-top: 0;
+            "
+          ></div>
+          <div
+            h-full
+            w-11
+            style="
+              box-sizing: border-box;
+              background-color: var(--wings-main-fill);
+              border: 1px solid var(--el-border-color);
+              border-top: 0;
+              border-left: 0;
+            "
+          ></div>
+        </div>
+      </div>
+      <div w-full h-full v-if="props.mode === 'default'">
+        <div
+          w-full
+          h-5
+          style="
+            box-sizing: border-box;
             background-color: var(--wings-header-bg-color);
             border: 1px solid var(--wings-header-border-color);
           "

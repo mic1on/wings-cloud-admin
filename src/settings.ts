@@ -4,7 +4,7 @@ import { _t } from './plugins/vue-i18n';
  * @name Layout
  * @description 管理系统默认布局方式
  */
-export const Layout = 'aside';
+export const Layout = 'blend';
 
 /**
  * @name PredefineLayouts
@@ -14,6 +14,7 @@ export const PredefineLayouts = [
   { label: _t('admin.system.layoutTop'), value: 'top' },
   { label: _t('admin.system.layoutAside'), value: 'aside' },
   { label: _t('admin.system.layoutBlend'), value: 'blend' },
+  { label: _t('admin.system.layoutDefault'), value: 'default' },
 ];
 
 /**
