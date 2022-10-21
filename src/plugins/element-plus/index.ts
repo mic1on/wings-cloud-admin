@@ -6,7 +6,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import * as elementPlusConfig from './config';
 import { installComponents, pluginAddRegister } from '../../utils/auto';
 
-const useElementIcons = (app: App<Element>): void => {
+const useElementPlusIcons = (app: App<Element>): void => {
   installComponents(app, ElementPlusIconsVue);
 };
 
@@ -14,6 +14,6 @@ const useElementPlus = (app: App<Element>): void => {
   app.use(ElementPlus);
 };
 
-export { elementPlusConfig, useElementIcons, useElementPlus };
+export { elementPlusConfig, useElementPlusIcons, useElementPlus };
 
 export default pluginAddRegister(ElementPlus);

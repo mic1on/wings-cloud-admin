@@ -39,6 +39,7 @@ const { baseStore } = useStore();
   height: var(--wings-header-height);
   padding: 0 1.8rem !important;
   background-color: var(--wings-header-bg-color);
+  border-bottom: 1px solid var(--wings-header-border-bottom-color);
 }
 
 :deep(.el-container) {

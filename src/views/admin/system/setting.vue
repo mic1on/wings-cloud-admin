@@ -1,35 +1,53 @@
 <script lang="ts" setup>
 import { useStore } from '@/hooks/use-store';
 import { setEpThemeColor } from '@/utils/theme';
-import { PredefineThemeColors } from '@/settings';
+import {
+  PredefineThemeColors,
+  PredefineColorSchemes,
+  PredefineLayouts,
+} from '@/settings';
+import SettingLayout from './components/setting-layout.vue';
 
 const { t } = useI18n();
 
 const { baseStore } = useStore();
 
-const themeColor = ref(baseStore.appThemeSettings.themeColor);
-
-const predefineColors = ref(PredefineThemeColors);
-
 const changeThemeColor = (val: string | null): void => {
   if (!val) return;
-  themeColor.value = val;
+  baseStore.appThemeSettings.themeColor = val;
   setEpThemeColor(val as string);
 };
 </script>
 <template>
-  <crud-card :title="t('admin.system.settingTitle')">
+  <crud-card :title="t('admin.system.settingTitle')" action>
     <crud-form
       form-width="100%"
       form-position="left"
       label-width="180px"
       label-position="left"
+      :action="false"
     >
+      <el-form-item :label="t('admin.system.layout')">
+        <setting-layout
+          v-for="(item, index) in PredefineLayouts"
+          :key="index"
+        ></setting-layout>
+      </el-form-item>
+      <el-form-item :label="t('admin.system.colorScheme')">
+        <el-radio-group v-model="baseStore.appThemeSettings.colorScheme">
+          <el-radio-button
+            v-for="(item, index) in PredefineColorSchemes"
+            :key="index"
+            :label="item.value"
+            >{{ item.label }}</el-radio-button
+          >
+        </el-radio-group>
+      </el-form-item>
       <el-form-item :label="t('admin.system.customThemeColor')">
         <el-color-picker
-          v-model="themeColor"
+          v-model="baseStore.appThemeSettings.themeColor"
           @change="changeThemeColor"
-          :predefine="predefineColors"
+          :predefine="PredefineThemeColors"
         />
       </el-form-item>
       <el-form-item :label="t('admin.system.predefineThemeColor')">
@@ -38,7 +56,7 @@ const changeThemeColor = (val: string | null): void => {
           h-12
           mr-10
           cursor-pointer
-          v-for="(item, index) in predefineColors"
+          v-for="(item, index) in PredefineThemeColors"
           :key="index"
           @click="changeThemeColor(item)"
         >
@@ -52,7 +70,11 @@ const changeThemeColor = (val: string | null): void => {
             text-3
             :style="{ backgroundColor: item, borderRadius: '4px' }"
           >
-            {{ themeColor === item ? t('base.crud.selected') : item }}
+            {{
+              baseStore.appThemeSettings.themeColor === item
+                ? t('base.crud.selected')
+                : item
+            }}
           </div>
         </div>
       </el-form-item>

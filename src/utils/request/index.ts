@@ -1,7 +1,6 @@
 import type { Axios, AxiosResponse } from 'axios';
 import type { RequestOptions, ResponseData } from './index.d';
 import type { IObject } from '../../global.d';
-import type { I18nT } from '../../plugins/vue-i18n/index.d';
 import axios from 'axios';
 import qs from 'qs';
 import { ElNotification } from 'element-plus';
@@ -12,10 +11,7 @@ import {
   authCodeAdaptor,
 } from '../code-adaptor';
 import { RequestHeaderEnum, StorageEnum } from '../../enums';
-import { i18n } from '../../plugins/vue-i18n';
-
-const { t } = i18n.global;
-const _t: I18nT = t;
+import { _t } from '../../plugins/vue-i18n';
 
 /**
  * @name request

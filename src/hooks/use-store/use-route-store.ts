@@ -105,6 +105,7 @@ export const useRouteStore = defineStore('route', () => {
   ): Routes => {
     const _routes: Routes = [];
     roleRoutes.forEach((item: RouteMeta) => {
+      // TODO 动态注册组件有问题，基于 keep-alive 出现的
       const _route: RouteMeta = item;
       if (item.component) {
         item.component = viewComponents[item.component as string];

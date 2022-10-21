@@ -1,0 +1,16 @@
+@use './light.scss';
+@use './theme.scss';
+@use './dark.scss';
+
+:root {
+  --wings-header-height: 5rem;
+  --wings-aside-width-fold: calc(
+    var(--el-menu-item-height) + var(--wings-menu-gap) * 2 +
+      var(--el-menu-icon-width)
+  );
+  --wings-aside-width: 14.6rem;
+  --wings-menu-radius: 0.5rem;
+  --wings-menu-gap: 0.2rem;
+  --wings-tag-height: 2.4rem;
+  --wings-main-padding: 1.4rem;
+}
