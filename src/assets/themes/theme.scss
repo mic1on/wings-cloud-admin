@@ -1,0 +1,14 @@
+:root.theme {
+  --wings-header-bg-color: var(--el-color-primary) !important;
+  --wings-header-text-color: var(--el-color-white) !important;
+  --wings-header-border-bottom-color: var(--el-color-primary) !important;
+  --wings-menu-bg-color: var(--el-color-white);
+  --wings-menu-sub-bg-color: var(--el-color-info-light-9);
+  --wings-menu-bg-color-active: var(--el-color-primary);
+  --wings-menu-bg-color-hover: var(--el-color-info-light-7);
+  --wings-menu-text-color: var(--el-text-color-primary);
+  --wings-menu-text-color-active: var(--el-color-white);
+  --wings-menu-text-color-hover: var(--el-text-color-primary);
+  --wings-tag-bg-color: var(--el-bg-color);
+  --wings-main-fill: var(--el-bg-color-fill);
+}

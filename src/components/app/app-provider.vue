@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 import { elementPlusConfig } from '@/plugins/element-plus';
-import { StorageEnum } from '@/enums';
-import { setStorage } from '@/utils/storage';
 import { useStore } from '@/hooks/use-store';
-import { getMobileAreaCodeList } from '@/apis/base';
 
 const route = useRoute();
 
@@ -18,18 +15,12 @@ const locale =
     elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX
   ];
 
-onBeforeMount(async () => {
-  const { data } = await getMobileAreaCodeList();
-  setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
-});
-
 watch(
   () => baseStore.appThemeSettings.colorScheme,
-  () => {
-    if (baseStore.appThemeSettings.colorScheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+  (newVal, oldVal) => {
+    document.documentElement.classList.remove(oldVal);
+    if (newVal) {
+      document.documentElement.classList.add(newVal);
     }
   },
   {

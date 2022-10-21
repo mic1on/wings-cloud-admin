@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { StorageEnum } from '@/enums';
+import { setStorage } from '@/utils/storage';
+import { getMobileAreaCodeList } from '@/apis/base';
 import UserTemplate from './components/user-template.vue';
 import LoginAccountForm from './components/login-account-form.vue';
 import LoginPhoneForm from './components/login-phone-form.vue';
@@ -18,6 +21,9 @@ const loginType = ref<string | null | undefined>(
 const changeLoginType = (type: string, isOpen: boolean): void => {
   loginType.value = type;
 };
+
+const { data } = await getMobileAreaCodeList();
+setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
 </script>
 <template>
   <user-template>
