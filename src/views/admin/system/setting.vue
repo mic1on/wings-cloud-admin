@@ -12,6 +12,11 @@ const { t } = useI18n();
 
 const { baseStore } = useStore();
 
+const _predefineThemeColors = ref([]);
+PredefineThemeColors.map((item) => {
+  _predefineThemeColors.value.push(item.value);
+});
+
 const changeThemeColor = (val: string | null): void => {
   if (!val) return;
   baseStore.themeSettings.themeColor = val;
@@ -56,7 +61,7 @@ const changeLayout = (val: string): void => {
         <el-color-picker
           v-model="baseStore.themeSettings.themeColor"
           @change="changeThemeColor"
-          :predefine="PredefineThemeColors"
+          :predefine="_predefineThemeColors"
         />
       </el-form-item>
       <el-form-item :label="t('admin.system.predefineThemeColor')">
@@ -72,7 +77,7 @@ const changeLayout = (val: string): void => {
           "
           v-for="(item, index) in PredefineThemeColors"
           :key="index"
-          @click="changeThemeColor(item)"
+          @click="changeThemeColor(item.value)"
         >
           <div
             w-full
@@ -82,12 +87,12 @@ const changeLayout = (val: string): void => {
             items-center
             justify-center
             text-3
-            :style="{ backgroundColor: item, borderRadius: '4px' }"
+            :style="{ backgroundColor: item.value, borderRadius: '4px' }"
           >
             {{
-              baseStore.themeSettings.themeColor === item
+              baseStore.themeSettings.themeColor === item.value
                 ? t('base.crud.selected')
-                : item
+                : item.value
             }}
           </div>
         </div>

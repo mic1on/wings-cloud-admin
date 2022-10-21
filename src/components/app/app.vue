@@ -25,7 +25,7 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
 #wings-app {
   position: relative;
   flex: auto;
-  height: 100%;
+  height: auto;
   overflow: hidden;
   transition: 0.3s;
 }

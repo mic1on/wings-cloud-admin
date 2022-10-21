@@ -11,7 +11,7 @@ const { baseStore } = useStore();
     </el-header>
     <el-container>
       <el-aside
-        v-if="baseStore.layout !== 'top'"
+        v-if="baseStore.layout !== 'top-lean'"
         :style="
           baseStore.collapse
             ? 'width: var(--wings-aside-width-fold)'
@@ -43,6 +43,7 @@ const { baseStore } = useStore();
 
 <style lang="scss" scoped>
 :deep(.el-header) {
+  box-sizing: border-box;
   height: var(--wings-header-height);
   padding: 0 1.8rem !important;
   background-color: var(--wings-header-bg-color);
@@ -50,16 +51,19 @@ const { baseStore } = useStore();
 }
 
 :deep(.el-container) {
+  box-sizing: border-box;
   background-color: var(--wings-menu-bg-color);
 }
 
 :deep(.el-aside) {
+  box-sizing: border-box;
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }
 
 :deep(.el-main) {
-  padding: var(--wings-main-padding);
+  box-sizing: border-box;
+  padding: 0;
   background: var(--wings-main-fill);
 }
 </style>

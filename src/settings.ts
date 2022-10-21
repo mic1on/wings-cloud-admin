@@ -12,9 +12,9 @@ export const Layout = 'blend';
  */
 export const PredefineLayouts = [
   { label: _t('admin.system.layoutTop'), value: 'top' },
-  { label: _t('admin.system.layoutAside'), value: 'aside' },
+  { label: _t('admin.system.layoutTopLean'), value: 'top-lean' },
   { label: _t('admin.system.layoutBlend'), value: 'blend' },
-  { label: _t('admin.system.layoutDefault'), value: 'default' },
+  { label: _t('admin.system.layoutAside'), value: 'aside' },
 ];
 
 /**
@@ -42,12 +42,12 @@ export const PredefineColorSchemes = [
  * @description 预置主题颜色
  */
 export const PredefineThemeColors = [
-  '#0d6efd',
-  '#222b45',
-  '#42b983',
-  '#ea3a72',
-  '#fe7300',
-  '#1C9399',
+  { label: '', value: '#0d6efd' },
+  { label: '', value: '#222b45' },
+  { label: '', value: '#42b983' },
+  { label: '', value: '#ea3a72' },
+  { label: '', value: '#fe7300' },
+  { label: '', value: '#1C9399' },
 ];
 
 /**

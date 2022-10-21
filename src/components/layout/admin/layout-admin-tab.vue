@@ -105,8 +105,9 @@ watch(
     items-center
     justify-between
     style="
+      box-sizing: border-box;
       height: var(--wings-tag-height);
-      margin-bottom: var(--wings-main-padding);
+      padding: var(--wings-main-padding);
     "
   >
     <layout-action-collapse></layout-action-collapse>
