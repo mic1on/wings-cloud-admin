@@ -57,44 +57,61 @@ const changeLayout = (val: string): void => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item :label="t('admin.system.customThemeColor')">
-        <el-color-picker
-          v-model="baseStore.themeSettings.themeColor"
-          @change="changeThemeColor"
-          :predefine="_predefineThemeColors"
-        />
-      </el-form-item>
-      <el-form-item :label="t('admin.system.predefineThemeColor')">
+      <el-form-item :label="t('admin.system.themeColor')">
         <div
-          w-26
-          h-12
-          mr-10
+          w-22
+          mr-4
           cursor-pointer
-          :style="
-            baseStore.themeSettings.themeColor === item
-              ? 'box-shadow: 0 0 8px 2px #00000026'
-              : ''
-          "
           v-for="(item, index) in PredefineThemeColors"
           :key="index"
           @click="changeThemeColor(item.value)"
         >
           <div
-            w-full
-            h-full
+            w-12
+            h-12
             color-white
             flex
             items-center
             justify-center
             text-3
-            :style="{ backgroundColor: item.value, borderRadius: '4px' }"
+            :style="{
+              backgroundColor: item.value,
+              borderRadius: '4px',
+              margin: '0 auto',
+            }"
           >
-            {{
-              baseStore.themeSettings.themeColor === item.value
-                ? t('base.crud.selected')
-                : item.value
-            }}
           </div>
+          <div text-2 text-center>
+            <div
+              v-if="item.value == baseStore.themeSettings.themeColor"
+              flex
+              items-center
+              justify-center
+            >
+              <span
+                w-2
+                h-2
+                mr-2
+                style="
+                  background-color: var(--el-color-primary);
+                  border-radius: 50%;
+                "
+              ></span>
+              <span>{{ t('base.crud.selected') }}</span>
+            </div>
+            <div v-else>{{ item.label }}</div>
+          </div>
+        </div>
+        <div w-22>
+          <div flex items-center justify-center>
+            <el-color-picker
+              important="w-12 h-12"
+              v-model="baseStore.themeSettings.themeColor"
+              @change="changeThemeColor"
+              :predefine="_predefineThemeColors"
+            />
+          </div>
+          <div text-2 text-center>{{ t('base.custom') }}</div>
         </div>
       </el-form-item>
       <el-form-item :label="t('admin.system.refreshTool')">
@@ -118,3 +135,11 @@ const changeLayout = (val: string): void => {
     </crud-form>
   </crud-card>
 </template>
+
+<style lang="scss" scoped>
+:deep(.el-color-picker__trigger) {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+}
+</style>

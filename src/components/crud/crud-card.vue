@@ -53,7 +53,7 @@ const cancel = () => {};
     >
       <slot></slot>
     </div>
-    <el-divider important="m-0"></el-divider>
+    <el-divider v-if="action" important="m-0"></el-divider>
     <div
       v-if="action"
       style="padding: calc(var(--el-card-padding) - 2px) var(--el-card-padding)"

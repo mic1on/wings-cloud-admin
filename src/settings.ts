@@ -4,7 +4,7 @@ import { _t } from './plugins/vue-i18n';
  * @name Layout
  * @description 管理系统默认布局方式
  */
-export const Layout = 'blend';
+export const Layout = 'top';
 
 /**
  * @name PredefineLayouts
@@ -42,12 +42,12 @@ export const PredefineColorSchemes = [
  * @description 预置主题颜色
  */
 export const PredefineThemeColors = [
-  { label: '', value: '#0d6efd' },
-  { label: '', value: '#222b45' },
-  { label: '', value: '#42b983' },
-  { label: '', value: '#ea3a72' },
-  { label: '', value: '#fe7300' },
-  { label: '', value: '#1C9399' },
+  { label: _t('admin.system.themeColoBlue'), value: '#0d6efd' },
+  { label: _t('admin.system.themeColoBlack'), value: '#222b45' },
+  { label: _t('admin.system.themeColoGreen'), value: '#42b983' },
+  { label: _t('admin.system.themeColoPink'), value: '#ea3a72' },
+  { label: _t('admin.system.themeColoOrgane'), value: '#fe7300' },
+  { label: _t('admin.system.themeColoCyan'), value: '#1C9399' },
 ];
 
 /**
