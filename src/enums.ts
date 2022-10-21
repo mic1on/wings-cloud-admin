@@ -88,6 +88,8 @@ export enum StorageEnum {
   FOOTER_HEIGHT = 'admin-footer-height',
   COLLAPSE = 'collapse',
   UNIQUE_OPENED = 'unique-opened',
+  TOOLBAR_SETTINGS = 'toolbar-settings',
+  THEME_SETTINGS = 'theme-settings',
   SHOW_FOOTER = 'show-footer',
-  TOOLBAR_OPTIONS = 'toolbar-options',
+  LAYOUT = 'layout',
 }

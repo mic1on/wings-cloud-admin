@@ -2,7 +2,7 @@ import type { IObject } from '../../global';
 import { defineStore } from 'pinia';
 import { StorageEnum } from '../../enums';
 import { getStorage, setStorage } from '../../utils/storage';
-import { ToolbarSettings, ThemeSettings } from '../../settings';
+import { ToolbarSettings, ThemeSettings, Layout } from '../../settings';
 
 /**
  * @name useBaseStore
@@ -15,7 +15,7 @@ export const useBaseStore = defineStore('base', () => {
   );
 
   // 应用 Loading
-  const appLoading = ref<boolean>(true);
+  const loading = ref<boolean>(false);
 
   // 是否只保持一个子菜单的展开
   const uniqueOpened = ref<boolean>(
@@ -27,18 +27,19 @@ export const useBaseStore = defineStore('base', () => {
 
   // 管理系统工具栏配置
   const toolbarSettings = ref<IObject>(
-    getStorage(StorageEnum.TOOLBAR_OPTIONS) || ToolbarSettings
+    getStorage(StorageEnum.TOOLBAR_SETTINGS) || ToolbarSettings
   );
 
   // 应用主题配置
-  const appThemeSettings = ref<IObject>(
-    getStorage(StorageEnum.TOOLBAR_OPTIONS) || ThemeSettings
+  const themeSettings = ref<IObject>(
+    getStorage(StorageEnum.THEME_SETTINGS) || ThemeSettings
   );
 
   // 管理系统是否显示底栏
-  const adminShowFooter = ref<boolean>(
-    getStorage(StorageEnum.SHOW_FOOTER) || false
-  );
+  const showFooter = ref<boolean>(getStorage(StorageEnum.SHOW_FOOTER) || false);
+
+  // 管理系统布局模式
+  const layout = ref<string>(getStorage(StorageEnum.LAYOUT) || Layout);
 
   // 切换语言环境
   const changeLanguage = (data: IObject): void => {
@@ -48,7 +49,7 @@ export const useBaseStore = defineStore('base', () => {
 
   // 切换应用 Loading 状态
   const changeAppLoading = (status: boolean): void => {
-    appLoading.value = status;
+    loading.value = status;
   };
 
   // 切换折叠收起菜单状态
@@ -58,12 +59,13 @@ export const useBaseStore = defineStore('base', () => {
 
   return {
     language,
-    appLoading,
+    loading,
     uniqueOpened,
     collapse,
     toolbarSettings,
-    appThemeSettings,
-    adminShowFooter,
+    themeSettings,
+    showFooter,
+    layout,
     changeLanguage,
     changeAppLoading,
     changeCollapse,

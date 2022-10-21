@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-admin-tab">
 import type { IObject } from '@/global.d';
 import { useStore } from '@/hooks/use-store';
 import { arrayRecursion } from '@/utils/common';

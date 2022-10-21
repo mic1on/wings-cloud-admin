@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" name="app">
 const keepAlive = import.meta.env.APP_KEEP_ALIVE;
 </script>
 

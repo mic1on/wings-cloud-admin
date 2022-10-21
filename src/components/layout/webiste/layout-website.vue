@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-website">
 import { useWindowScroll } from '@vueuse/core';
 
 const { y } = useWindowScroll();

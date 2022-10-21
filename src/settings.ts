@@ -1,10 +1,29 @@
 import { _t } from './plugins/vue-i18n';
 
 /**
+ * @name Layout
+ * @description 管理系统默认布局方式
+ */
+export const Layout = 'aside';
+
+/**
  * @name PredefineLayouts
  * @description 管理系统预置布局方式
  */
-export const PredefineLayouts = [];
+export const PredefineLayouts = [
+  { label: _t('admin.system.layoutTop'), value: 'top' },
+  { label: _t('admin.system.layoutAside'), value: 'aside' },
+  { label: _t('admin.system.layoutBlend'), value: 'blend' },
+];
+
+/**
+ * @name ThemeSettings
+ * @description 应用主题默认配置
+ */
+export const ThemeSettings = {
+  themeColor: '#0d6efd',
+  colorScheme: 'auto',
+};
 
 /**
  * @name PredefineColorSchemes
@@ -31,15 +50,6 @@ export const PredefineThemeColors = [
 ];
 
 /**
- * @name ThemeSettings
- * @description 应用主题默认配置
- */
-export const ThemeSettings = {
-  themeColor: '#0d6efd',
-  colorScheme: 'auto',
-};
-
-/**
  * @name ToolbarSettings
  * @description 管理系统工具栏默认配置
  */
@@ -47,7 +57,7 @@ export const ToolbarSettings = {
   dark: true,
   language: true,
   refresh: true,
-  notifications: true,
+  notification: true,
   fullscreen: true,
   setting: true,
 };

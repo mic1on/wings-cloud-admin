@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-action-language">
 import { useLanguage } from '@/hooks/use-language';
 
 const props = defineProps({

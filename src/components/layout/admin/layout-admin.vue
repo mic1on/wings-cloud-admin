@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-admin">
 import { useStore } from '@/hooks/use-store';
 
 const { baseStore } = useStore();
@@ -17,7 +17,7 @@ const { baseStore } = useStore();
             : 'width: var(--wings-aside-width)'
         "
       >
-        <layout-admin-sider></layout-admin-sider>
+        <layout-admin-aside></layout-admin-aside>
       </el-aside>
       <el-main>
         <layout-admin-tab></layout-admin-tab>
@@ -26,7 +26,7 @@ const { baseStore } = useStore();
             <slot name="router-view"></slot>
           </template>
         </layout-admin-main>
-        <el-footer v-if="baseStore.adminShowFooter">
+        <el-footer v-if="baseStore.showFooter">
           <layout-admin-footer></layout-admin-footer>
         </el-footer>
       </el-main>
@@ -39,7 +39,7 @@ const { baseStore } = useStore();
   height: var(--wings-header-height);
   padding: 0 1.8rem !important;
   background-color: var(--wings-header-bg-color);
-  border-bottom: 1px solid var(--wings-header-border-bottom-color);
+  border-bottom: 1px solid var(--wings-header-border-color);
 }
 
 :deep(.el-container) {
@@ -52,6 +52,7 @@ const { baseStore } = useStore();
 }
 
 :deep(.el-main) {
+  height: calc(100vh - var(--wings-header-height));
   padding: var(--wings-main-padding);
   background: var(--wings-main-fill);
 }

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="crud-dialog">
 const props = defineProps({
   value: {
     type: Boolean,

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-admin-header">
 import { useStore } from '@/hooks/use-store';
 
 const { baseStore } = useStore();
@@ -22,10 +22,10 @@ const { baseStore } = useStore();
         mr-8
         v-if="baseStore.toolbarSettings.refresh"
       ></layout-action-refresh>
-      <layout-action-notifications
+      <layout-action-notification
         mr-8
-        v-if="baseStore.toolbarSettings.notifications"
-      ></layout-action-notifications>
+        v-if="baseStore.toolbarSettings.notification"
+      ></layout-action-notification>
       <layout-action-fullscreen
         mr-8
         v-if="baseStore.toolbarSettings.fullscreen"

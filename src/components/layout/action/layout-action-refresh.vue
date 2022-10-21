@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-action-fresh">
 const props = defineProps({
   color: {
     type: String,

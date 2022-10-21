@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-action-collapse">
 import { useStore } from '@/hooks/use-store';
 
 const { baseStore } = useStore();
