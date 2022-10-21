@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-admin-menu-item">
 import type { RouteRecordRaw } from 'vue-router';
 import { IconTypeEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';

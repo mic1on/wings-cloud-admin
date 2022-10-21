@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="svg-icon">
 import type { PropType, Component } from 'vue';
 
 const props = defineProps({

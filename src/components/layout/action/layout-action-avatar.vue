@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-action-avatar">
 import { useStore } from '@/hooks/use-store';
 import { RouteEnum } from '@/enums';
 
@@ -18,14 +18,28 @@ const actionChange = (command: string): void => {
   } else if (command === 'switchRoles') {
     userStore.switchRoles();
   } else if (command === 'logout') {
-    userStore.logout('login');
+    userStore.logout();
   }
+};
+
+const goLoginPage = (): void => {
+  if (userStore.isLogin) return;
+  router.push({ path: RouteEnum.ROUTE_LOGIN });
 };
 </script>
 <template>
-  <layout-avatar v-if="!userStore.isLogin"> </layout-avatar>
+  <el-avatar
+    cursor-pointer
+    :size="38"
+    :src="userStore.userProfile.avatar"
+    @click="goLoginPage"
+    v-if="!userStore.isLogin"
+  >
+    <span text-1>{{ t('base.form.login') }}</span>
+  </el-avatar>
   <el-dropdown @command="actionChange" v-else>
-    <layout-avatar> </layout-avatar>
+    <el-avatar cursor-pointer :size="38" :src="userStore.userProfile.avatar">
+    </el-avatar>
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item

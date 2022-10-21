@@ -14,8 +14,12 @@ const { baseStore } = useStore();
 
 const changeThemeColor = (val: string | null): void => {
   if (!val) return;
-  baseStore.appThemeSettings.themeColor = val;
+  baseStore.themeSettings.themeColor = val;
   setEpThemeColor(val as string);
+};
+
+const changeLayout = (val: string): void => {
+  baseStore.layout = val;
 };
 </script>
 <template>
@@ -30,22 +34,27 @@ const changeThemeColor = (val: string | null): void => {
       <el-form-item :label="t('admin.system.layout')">
         <setting-layout
           v-for="(item, index) in PredefineLayouts"
+          :mode="item.value"
+          :name="item.label"
           :key="index"
+          :active="baseStore.layout === item.value"
+          @click="changeLayout(item.value)"
         ></setting-layout>
       </el-form-item>
       <el-form-item :label="t('admin.system.colorScheme')">
-        <el-radio-group v-model="baseStore.appThemeSettings.colorScheme">
+        <el-radio-group v-model="baseStore.themeSettings.colorScheme">
           <el-radio-button
             v-for="(item, index) in PredefineColorSchemes"
             :key="index"
             :label="item.value"
-            >{{ item.label }}</el-radio-button
           >
+            {{ item.label }}
+          </el-radio-button>
         </el-radio-group>
       </el-form-item>
       <el-form-item :label="t('admin.system.customThemeColor')">
         <el-color-picker
-          v-model="baseStore.appThemeSettings.themeColor"
+          v-model="baseStore.themeSettings.themeColor"
           @change="changeThemeColor"
           :predefine="PredefineThemeColors"
         />
@@ -56,6 +65,11 @@ const changeThemeColor = (val: string | null): void => {
           h-12
           mr-10
           cursor-pointer
+          :style="
+            baseStore.themeSettings.themeColor === item
+              ? 'box-shadow: 0 0 8px 2px #00000026'
+              : ''
+          "
           v-for="(item, index) in PredefineThemeColors"
           :key="index"
           @click="changeThemeColor(item)"
@@ -71,7 +85,7 @@ const changeThemeColor = (val: string | null): void => {
             :style="{ backgroundColor: item, borderRadius: '4px' }"
           >
             {{
-              baseStore.appThemeSettings.themeColor === item
+              baseStore.themeSettings.themeColor === item
                 ? t('base.crud.selected')
                 : item
             }}
@@ -88,7 +102,7 @@ const changeThemeColor = (val: string | null): void => {
         <el-switch v-model="baseStore.toolbarSettings.refresh" />
       </el-form-item>
       <el-form-item :label="t('admin.system.refreshTool')">
-        <el-switch v-model="baseStore.toolbarSettings.notifications" />
+        <el-switch v-model="baseStore.toolbarSettings.notification" />
       </el-form-item>
       <el-form-item :label="t('admin.system.fullscreenTool')">
         <el-switch v-model="baseStore.toolbarSettings.fullscreen" />

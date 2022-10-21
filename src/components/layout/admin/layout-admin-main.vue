@@ -1,4 +1,4 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup name="layout-admin-main"></script>
 
 <template>
   <div

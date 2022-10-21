@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="app-provider">
 import { elementPlusConfig } from '@/plugins/element-plus';
 import { useStore } from '@/hooks/use-store';
 
@@ -16,7 +16,7 @@ const locale =
   ];
 
 watch(
-  () => baseStore.appThemeSettings.colorScheme,
+  () => baseStore.themeSettings.colorScheme,
   (newVal, oldVal) => {
     document.documentElement.classList.remove(oldVal);
     if (newVal) {
@@ -51,7 +51,7 @@ watch(
       :element-loading-lock="true"
       :element-loading-text="t('base.loading')"
       element-loading-background="rgba(0, 0, 0, 0.8)"
-      v-if="baseStore.appLoading"
+      v-if="baseStore.loading"
     ></div>
     <template v-else>
       <layout-base

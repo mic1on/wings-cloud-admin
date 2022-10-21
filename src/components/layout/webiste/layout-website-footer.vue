@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-website-footer">
 const { t } = useI18n();
 
 const appCopyright = import.meta.env.APP_COPYRIGHT;

@@ -148,7 +148,7 @@ export const useUserStore = defineStore('user', () => {
   const switchRoles = (): void => {};
 
   // 退出登录
-  const logout = (type: string): void => {
+  const logout = (): void => {
     setToken('');
     setUserProfile({});
     setUserRoles([]);
@@ -156,13 +156,9 @@ export const useUserStore = defineStore('user', () => {
       title: _t('base.authentication.logoutSuccess'),
       type: 'success',
     });
-    if (type === 'refresh') {
-      window.location.reload();
-    } else if (type === 'login') {
-      router.push({
-        path: RouteEnum.ROUTE_LOGIN,
-      });
-    }
+    router.push({
+      path: RouteEnum.ROUTE_LOGIN,
+    });
   };
 
   return {

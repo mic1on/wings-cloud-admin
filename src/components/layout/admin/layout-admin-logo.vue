@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-admin-logo">
 const router = useRouter();
 
 const appName = import.meta.env.APP_NAME;

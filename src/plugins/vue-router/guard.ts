@@ -23,9 +23,6 @@ export const addRouterGuard = (router: Router): Router => {
       from: RouteLocationNormalized,
       next: NavigationGuardNext
     ) => {
-      const token: string = getStorage(StorageEnum.TOKEN, {
-        type: getLoginStorageType(),
-      });
       const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
       });
@@ -37,7 +34,7 @@ export const addRouterGuard = (router: Router): Router => {
       const routeStore = useRouteStore();
       const userStore = useUserStore();
 
-      if (requiresAuth && !token) {
+      if (requiresAuth && !userStore.isLogin) {
         next({
           path:
             RouteEnum.ROUTE_LOGIN + '?type=' + import.meta.env.APP_LOGIN_TYPE,
@@ -45,7 +42,7 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
-      if (token && routeStore.roleRoutes.length == 0) {
+      if (userStore.isLogin && routeStore.roleRoutes.length == 0) {
         baseStore.changeAppLoading(true);
         await userStore.getUserProfile();
         await userStore.getUserRoles();
@@ -59,7 +56,7 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
-      if (requiresAuth && !userRoles.includes(to.path)) {
+      if (userStore.isLogin && requiresAuth && !userRoles.includes(to.path)) {
         next({
           path: RouteEnum.ROUTE_NO_PERMISSION,
         });

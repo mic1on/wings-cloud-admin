@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-website-header">
 import type { IObject } from '@/global.d';
 
 const { t } = useI18n();
@@ -39,7 +39,7 @@ const tabChange = (item: IObject): void => {
 <template>
   <div box-border w="100%" p="x-6" h-16>
     <div w-7xl ma h-full flex justify-between items-center>
-      <layout-logo></layout-logo>
+      <layout-website-logo></layout-website-logo>
       <div h-full flex justify-end items-center>
         <div h-full flex items-center>
           <div
@@ -75,10 +75,10 @@ const tabChange = (item: IObject): void => {
           only-icon
           color="var(--el-text-color-primary)"
         ></layout-action-language>
-        <layout-action-notifications
+        <layout-action-notification
           mr-8
           color="var(--el-text-color-primary)"
-        ></layout-action-notifications>
+        ></layout-action-notification>
         <layout-action-avatar></layout-action-avatar>
       </div>
     </div>

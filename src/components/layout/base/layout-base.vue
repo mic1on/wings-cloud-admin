@@ -1,4 +1,4 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup name="layout-base"></script>
 <template>
   <el-container style="background: var(--el-bg-color)">
     <slot name="router-view"></slot>

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="layout-action-notification">
 import { useStore } from '@/hooks/use-store';
 
 const { t } = useI18n();

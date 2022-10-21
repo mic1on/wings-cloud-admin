@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="crud-card">
 const { t } = useI18n();
 
 const props = defineProps({

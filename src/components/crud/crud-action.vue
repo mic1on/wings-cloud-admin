@@ -1,4 +1,4 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup name="crud-action"></script>
 <template>
   <div></div>
 </template>
