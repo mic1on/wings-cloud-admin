@@ -17,6 +17,7 @@
   "closeTag": "Close the current",
   "closeOtherTag": "Close the other",
   "closeAllTag": "Close all",
+  "custom": "Custom",
   "empty": {
     "notifications": "No notifications"
   },

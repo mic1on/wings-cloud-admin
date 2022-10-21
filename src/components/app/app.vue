@@ -5,18 +5,21 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
 <template>
   <app-provider>
     <template #app>
-      <router-view v-slot="{ Component, route }">
-        <div id="wings-app">
-          <transition name="wings-app-page" mode="out-in" appear>
-            <div id="transition-component-node">
-              <keep-alive v-if="keepAlive">
-                <component :is="Component" :key="route.fullPath" />
-              </keep-alive>
-              <component :is="Component" v-else />
-            </div>
-          </transition>
-        </div>
-      </router-view>
+      <Suspense>
+        <router-view v-slot="{ Component, route }">
+          <div id="wings-app">
+            <transition name="wings-app-page" mode="out-in" appear>
+              <div id="transition-component-node">
+                <keep-alive v-if="keepAlive">
+                  <component :is="Component" :key="route.fullPath" />
+                </keep-alive>
+                <component :is="Component" v-else />
+              </div>
+            </transition>
+          </div>
+        </router-view>
+        <template #fallback> Loading... </template>
+      </Suspense>
     </template>
   </app-provider>
 </template>

@@ -17,6 +17,7 @@
   "closeTag": "关闭当前",
   "closeOtherTag": "关闭其他",
   "closeAllTag": "关闭全部",
+  "custom": "自定义",
   "empty": {
     "notifications": "暂无通知"
   },
