@@ -7,12 +7,13 @@ import {
   PredefineLayouts,
 } from '@/settings';
 import SettingLayout from './components/setting-layout.vue';
+import ActiveSelect from './components/active-select.vue';
 
 const { t } = useI18n();
 
 const { baseStore } = useStore();
 
-const _predefineThemeColors = ref([]);
+const _predefineThemeColors = ref<Array<string>>([]);
 PredefineThemeColors.map((item) => {
   _predefineThemeColors.value.push(item.value);
 });
@@ -81,26 +82,10 @@ const changeLayout = (val: string): void => {
             }"
           >
           </div>
-          <div text-2 text-center>
-            <div
-              v-if="item.value == baseStore.themeSettings.themeColor"
-              flex
-              items-center
-              justify-center
-            >
-              <span
-                w-2
-                h-2
-                mr-2
-                style="
-                  background-color: var(--el-color-primary);
-                  border-radius: 50%;
-                "
-              ></span>
-              <span>{{ t('base.crud.selected') }}</span>
-            </div>
-            <div v-else>{{ item.label }}</div>
-          </div>
+          <active-select
+            :active="item.value == baseStore.themeSettings.themeColor"
+            :label="item.label"
+          ></active-select>
         </div>
         <div w-22>
           <div flex items-center justify-center>
@@ -111,7 +96,14 @@ const changeLayout = (val: string): void => {
               :predefine="_predefineThemeColors"
             />
           </div>
-          <div text-2 text-center>{{ t('base.custom') }}</div>
+          <active-select
+            :active="
+              PredefineThemeColors.filter(
+                (item) => item.value == baseStore.themeSettings.themeColor
+              ).length == 0
+            "
+            :label="t('base.custom')"
+          ></active-select>
         </div>
       </el-form-item>
       <el-form-item :label="t('admin.system.refreshTool')">

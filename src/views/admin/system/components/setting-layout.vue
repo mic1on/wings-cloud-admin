@@ -1,5 +1,6 @@
 <script lang="ts" setup name="setting-layout">
 import { useStore } from '@/hooks/use-store';
+import ActiveSelect from './active-select.vue';
 
 const { t } = useI18n();
 
@@ -149,17 +150,6 @@ const props = defineProps({
         ></div>
       </div>
     </div>
-    <div text-2 text-center style="color: var(--el-text-color-regular)">
-      <div v-if="props.active" flex items-center justify-center>
-        <span
-          w-2
-          h-2
-          mr-2
-          style="background-color: var(--el-color-primary); border-radius: 50%"
-        ></span>
-        <span>{{ t('base.crud.selected') }}</span>
-      </div>
-      <div v-else>{{ props.name }}</div>
-    </div>
+    <active-select :active="props.active" :label="props.name"></active-select>
   </div>
 </template>
