@@ -2,22 +2,32 @@
 import { useStore } from '@/hooks/use-store';
 
 const { baseStore } = useStore();
+
+const computedHeight = () => {
+  let height = '100vh';
+  if (baseStore.layout !== 'aside') {
+    height =
+      'calc(100vh - var(--wings-header-height) - var(--wings-tab-height))';
+  } else {
+    height = 'height: calc(100vh - var(--wings-tab-height));';
+  }
+  let _height = height;
+  if (!baseStore.showTab) {
+    _height = `calc(${height} + var(--wings-tab-height))`;
+  }
+  return _height;
+};
 </script>
 
 <template>
-  <div
-    style="
-      box-sizing: border-box;
+  <div :style="{ height: computedHeight() }">
+    <el-scrollbar
+      wrap-style="box-sizing: border-box;
       padding: var(--wings-main-padding);
-      overflow-y: scroll;
       background: var(--wings-main-fill);
-    "
-    :style="
-      baseStore.layout !== 'aside'
-        ? 'height: calc(100vh - var(--wings-header-height) - var(--wings-tag-height) );'
-        : 'height: calc(100vh - var(--wings-tag-height));'
-    "
-  >
-    <slot name="main-router-view"></slot>
+  		transition: all var(--el-transition-duration) var(--el-transition-function-ease-in-out-bezier);"
+    >
+      <slot name="main-router-view"></slot>
+    </el-scrollbar>
   </div>
 </template>

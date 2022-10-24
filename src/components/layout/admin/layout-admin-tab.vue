@@ -100,17 +100,7 @@ watch(
 </script>
 
 <template>
-  <div
-    flex
-    items-center
-    justify-between
-    style="
-      box-sizing: border-box;
-      height: var(--wings-tag-height);
-      padding: var(--wings-main-padding);
-    "
-  >
-    <layout-action-collapse></layout-action-collapse>
+  <div flex items-center justify-between class="slot">
     <el-tabs
       v-model="tab.nowTab"
       type="card"
@@ -155,6 +145,15 @@ watch(
 </template>
 
 <style lang="scss" scoped>
+.slot {
+  box-sizing: border-box;
+  height: var(--wings-tag-height);
+  padding: 0 var(--wings-main-padding);
+  background-color: var(--wings-tab-bg-color) !important;
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+}
+
 :deep(.el-tabs__header) {
   margin: 0 !important;
   border: none !important;
@@ -169,8 +168,7 @@ watch(
 }
 
 :deep(.el-tabs__item.is-active) {
-  background-color: var(--wings-tag-bg-color) !important;
   border: none;
-  border-radius: 4px;
+  border-bottom: 2px solid var(--el-color-primary) !important;
 }
 </style>

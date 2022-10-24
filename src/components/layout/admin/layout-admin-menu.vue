@@ -7,19 +7,27 @@ const { baseStore, routeStore } = useStore();
 </script>
 
 <template>
-  <el-menu
-    router
-    mode="vertical"
-    collapse-transition
-    :collapse="baseStore.collapse"
-    :unique-opened="baseStore.uniqueOpened"
-    :default-active="route.path"
-    important="border-r-none"
+  <el-scrollbar
+    view-style="
+      height: calc(
+        100vh - var(--wings-header-height) - var(--wings-collapse-height)
+      );
+    "
   >
-    <layout-admin-menu-item
-      :routes="routeStore.adminMenuRoutes"
-    ></layout-admin-menu-item>
-  </el-menu>
+    <el-menu
+      router
+      mode="vertical"
+      collapse-transition
+      :collapse="baseStore.collapse"
+      :unique-opened="baseStore.uniqueOpened"
+      :default-active="route.path"
+      important="border-r-none"
+    >
+      <layout-admin-menu-item
+        :routes="routeStore.adminMenuRoutes"
+      ></layout-admin-menu-item>
+    </el-menu>
+  </el-scrollbar>
 </template>
 
 <style lang="scss" scoped>
@@ -27,21 +35,28 @@ const { baseStore, routeStore } = useStore();
   color: var(--wings-menu-text-color);
   background-color: var(--wings-menu-sub-bg-color);
   border-radius: var(--wings-menu-radius);
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
 .el-menu.el-menu--collapse {
   width: 100%;
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
 .el-menu.el-menu--vertical {
-  height: calc(100vh - var(--wings-header-height));
   padding: 10px;
   background-color: var(--wings-menu-bg-color);
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
 .el-menu.el-menu-inline {
   color: var(--wings-menu-text-color);
   background-color: var(--wings-menu-bg-color);
   border-radius: var(--wings-menu-radius);
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 </style>

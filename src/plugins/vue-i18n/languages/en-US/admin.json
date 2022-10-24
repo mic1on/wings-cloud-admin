@@ -36,6 +36,8 @@
     "toolbarNotification": "Message Center",
     "toolbarAvatar": "User Avatar",
     "componentSize": "Resize the Element Plus component",
-    "other": "Other Settings"
+    "other": "Other Settings",
+    "tab": "Display tab component",
+    "uniqueOpened": "Keep only one menu expanded"
   }
 }

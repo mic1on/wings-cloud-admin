@@ -93,4 +93,6 @@ export enum StorageEnum {
   SHOW_FOOTER = 'show-footer',
   LAYOUT = 'layout',
   ELEMENT_PLUS_SIZE = 'element-plus-size',
+  SHOW_TAB = 'show-tab',
+  SHOW_COLLAPSE = 'show-collapse',
 }

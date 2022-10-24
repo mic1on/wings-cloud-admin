@@ -43,6 +43,9 @@ export const useBaseStore = defineStore('base', () => {
   // 管理系统是否显示底栏
   const showFooter = ref<boolean>(getStorage(StorageEnum.SHOW_FOOTER) || false);
 
+  // 管理系统是否显示 tab 标签
+  const showTab = ref<boolean>(getStorage(StorageEnum.SHOW_TAB) || true);
+
   // 管理系统布局模式
   const layout = ref<string>(getStorage(StorageEnum.LAYOUT) || Layout);
 
@@ -62,11 +65,6 @@ export const useBaseStore = defineStore('base', () => {
     loading.value = status;
   };
 
-  // 切换折叠收起菜单状态
-  const changeCollapse = (): void => {
-    collapse.value = !collapse.value;
-  };
-
   return {
     language,
     loading,
@@ -74,11 +72,11 @@ export const useBaseStore = defineStore('base', () => {
     collapse,
     toolbarSettings,
     themeSettings,
-    showFooter,
     layout,
     elementPlusSize,
+    showFooter,
+    showTab,
     changeLanguage,
     changeAppLoading,
-    changeCollapse,
   };
 });

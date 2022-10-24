@@ -27,7 +27,7 @@ const { baseStore } = useStore();
             : 'height: calc(100vh);'
         "
       >
-        <layout-admin-tab></layout-admin-tab>
+        <layout-admin-tab v-if="baseStore.showTab"></layout-admin-tab>
         <layout-admin-main>
           <template #main-router-view>
             <slot name="router-view"></slot>
@@ -48,15 +48,20 @@ const { baseStore } = useStore();
   padding: 0 1.8rem !important;
   background-color: var(--wings-header-bg-color);
   border-bottom: 1px solid var(--wings-header-border-color);
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
 :deep(.el-container) {
   box-sizing: border-box;
   background-color: var(--wings-menu-bg-color);
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
 :deep(.el-aside) {
   box-sizing: border-box;
+  border-right: 1px solid var(--wings-aside-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }
@@ -64,6 +69,9 @@ const { baseStore } = useStore();
 :deep(.el-main) {
   box-sizing: border-box;
   padding: 0;
+  overflow: hidden;
   background: var(--wings-main-fill);
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 </style>

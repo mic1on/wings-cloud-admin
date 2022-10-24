@@ -76,7 +76,4 @@ export const ElementPlus = {
   button: {
     autoInsertSpace: true,
   },
-  namespace: 'el',
-  class: 'el',
-  language: 'el-language',
 };
