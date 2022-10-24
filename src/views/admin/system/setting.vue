@@ -65,6 +65,7 @@ const toolbarChange = (key: string): void => {
         v-for="(value, key) in ToolbarSettings"
         :key="key"
         mr-6
+        mb-2
         :checked="baseStore.toolbarSettings[key]"
         @change="toolbarChange(key)"
       >
@@ -98,5 +99,18 @@ const toolbarChange = (key: string): void => {
       <el-radio-button label="small">Small</el-radio-button>
     </el-radio-group>
     <div text-4 m-y-8>{{ t('admin.system.other') }}</div>
+    <crud-form
+      form-position="left"
+      :action="false"
+      label-width="240px"
+      label-position="left"
+    >
+      <el-form-item :label="t('admin.system.tab')">
+        <el-switch v-model="baseStore.showTab" />
+      </el-form-item>
+      <el-form-item :label="t('admin.system.uniqueOpened')">
+        <el-switch v-model="baseStore.uniqueOpened" />
+      </el-form-item>
+    </crud-form>
   </crud-card>
 </template>

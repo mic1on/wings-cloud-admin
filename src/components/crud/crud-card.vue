@@ -33,7 +33,7 @@ const submit = () => {};
 const cancel = () => {};
 </script>
 <template>
-  <el-card :shadow="props.shadow" important="border-none transition-duration-0">
+  <el-card :shadow="props.shadow" important="border-none">
     <template #header v-if="props.title || props.subTitle">
       <div text-6 style="color: var(--el-text-color-primary)">
         {{ props.title }}

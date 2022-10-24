@@ -15,7 +15,7 @@ const changeThemeColor = (val: string | null): void => {
 </script>
 
 <template>
-  <div flex>
+  <div flex flex-wrap>
     <div
       mr-6
       cursor-pointer

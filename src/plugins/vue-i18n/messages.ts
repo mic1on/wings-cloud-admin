@@ -16,12 +16,12 @@ const messages: Messages = {
   [LanguageEnum.EN_US_ALIAS]: {
     name: LanguageEnum.EN_US_NAME,
     ...languages[LanguageEnum.EN_US_ALIAS],
-    [ElementPlus.language]: enUS[ElementPlus.language],
+    'el-language': enUS['el-language'],
   },
   [LanguageEnum.ZH_CN_ALIAS]: {
     name: LanguageEnum.ZH_CN_NAME,
     ...languages[LanguageEnum.ZH_CN_ALIAS],
-    [ElementPlus.language]: zhCN[ElementPlus.language],
+    'el-language': zhCN['el-language'],
   },
 };
 

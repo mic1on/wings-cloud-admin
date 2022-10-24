@@ -36,6 +36,8 @@
     "toolbarNotification": "消息中心",
     "toolbarAvatar": "用户头像",
     "componentSize": "调节 Element Plus 组件的尺寸大小",
-    "other": "其他设置"
+    "other": "其他设置",
+    "tab": "显示标签页",
+    "uniqueOpened": "只保持一个菜单展开"
   }
 }
