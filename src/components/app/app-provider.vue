@@ -1,4 +1,5 @@
 <script lang="ts" setup name="app-provider">
+import { ElementPlus } from '@/settings';
 import { elementPlusConfig } from '@/plugins/element-plus';
 import { useStore } from '@/hooks/use-store';
 
@@ -10,10 +11,7 @@ const { t } = useI18n();
 
 const { messages } = useI18n();
 
-const locale =
-  messages.value[baseStore.language][
-    elementPlusConfig.ELEMENT_PLUS_LANGUAGE_PREFIX
-  ];
+const locale = messages.value[baseStore.language][ElementPlus.language];
 
 watch(
   () => baseStore.themeSettings.colorScheme,
@@ -32,11 +30,10 @@ watch(
 <template>
   <el-config-provider
     :locale="locale"
-    :namespace="elementPlusConfig.ELEMENT_PLUS_CLASS_PREFIX"
-    :button="elementPlusConfig.ELEMENT_PLUS_BUTTON_CONFIG"
-    :message="elementPlusConfig.ELEMENT_PLUS_MESSAGE_CONFIG"
-    :z-index="elementPlusConfig.ELEMENT_PLUS_Z_INDEX"
-    :size="elementPlusConfig.ELEMENT_PLUS_SIZE"
+    :namespace="ElementPlus.namespace"
+    :button="ElementPlus.button"
+    :message="ElementPlus.message"
+    :size="baseStore.elementPlusSize"
   >
     <div
       class="global-loading"

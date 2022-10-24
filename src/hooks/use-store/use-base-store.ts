@@ -2,7 +2,12 @@ import type { IObject } from '../../global';
 import { defineStore } from 'pinia';
 import { StorageEnum } from '../../enums';
 import { getStorage, setStorage } from '../../utils/storage';
-import { ToolbarSettings, ThemeSettings, Layout } from '../../settings';
+import {
+  ToolbarSettings,
+  ThemeSettings,
+  Layout,
+  ElementPlus,
+} from '../../settings';
 
 /**
  * @name useBaseStore
@@ -41,6 +46,11 @@ export const useBaseStore = defineStore('base', () => {
   // 管理系统布局模式
   const layout = ref<string>(getStorage(StorageEnum.LAYOUT) || Layout);
 
+  // Element Plus 组件库组件尺寸
+  const elementPlusSize = ref<string>(
+    getStorage(StorageEnum.ELEMENT_PLUS_SIZE) || ElementPlus.size
+  );
+
   // 切换语言环境
   const changeLanguage = (data: IObject): void => {
     language.value = data.alias;
@@ -66,6 +76,7 @@ export const useBaseStore = defineStore('base', () => {
     themeSettings,
     showFooter,
     layout,
+    elementPlusSize,
     changeLanguage,
     changeAppLoading,
     changeCollapse,
