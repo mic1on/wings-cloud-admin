@@ -42,12 +42,12 @@ export const PredefineColorSchemes = [
  * @description 预置主题颜色
  */
 export const PredefineThemeColors = [
-  { label: _t('admin.system.themeColoBlue'), value: '#0d6efd' },
-  { label: _t('admin.system.themeColoBlack'), value: '#222b45' },
-  { label: _t('admin.system.themeColoGreen'), value: '#42b983' },
-  { label: _t('admin.system.themeColoPink'), value: '#ea3a72' },
-  { label: _t('admin.system.themeColoOrgane'), value: '#fe7300' },
-  { label: _t('admin.system.themeColoCyan'), value: '#1C9399' },
+  '#0d6efd',
+  '#262A3C',
+  '#42b983',
+  '#ea3a72',
+  '#fe7300',
+  '#1C9399',
 ];
 
 /**
@@ -61,4 +61,22 @@ export const ToolbarSettings = {
   notification: true,
   fullscreen: true,
   setting: true,
+  avatar: true,
+};
+
+/**
+ * @name ElementPlus
+ * @description Element Plus 组件库配置，为了保证内建 UI 完整性，不建议修改命名空间
+ */
+export const ElementPlus = {
+  size: 'default',
+  message: {
+    max: 3,
+  },
+  button: {
+    autoInsertSpace: true,
+  },
+  namespace: 'el',
+  class: 'el',
+  language: 'el-language',
 };

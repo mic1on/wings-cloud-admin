@@ -92,4 +92,5 @@ export enum StorageEnum {
   THEME_SETTINGS = 'theme-settings',
   SHOW_FOOTER = 'show-footer',
   LAYOUT = 'layout',
+  ELEMENT_PLUS_SIZE = 'element-plus-size',
 }
