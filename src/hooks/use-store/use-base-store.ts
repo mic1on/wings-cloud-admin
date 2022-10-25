@@ -1,4 +1,4 @@
-import type { IObject } from '../../global';
+import type { IObject, DefaultSettingsTypes } from '../../global';
 import { defineStore } from 'pinia';
 import { StorageEnum } from '../../enums';
 import { getStorage, setStorage } from '../../utils/storage';
@@ -21,7 +21,7 @@ export const useBaseStore = defineStore('base', () => {
   const collapse = ref<boolean>(getStorage(StorageEnum.COLLAPSE) || false);
 
   // 系统设置
-  const settings = ref<IObject>(
+  const settings = ref<DefaultSettingsTypes>(
     getStorage(StorageEnum.SETTINGS) || DefaultSettings
   );
 

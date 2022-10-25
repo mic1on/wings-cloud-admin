@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import type {
+  DefaultSettingsLayout,
+  DefaultSettingsColorScheme,
+} from '@/global.d';
 import { useStore } from '@/hooks/use-store';
 import { setEpThemeColor } from '@/utils/theme';
 import {
@@ -16,11 +20,11 @@ const { t } = useI18n();
 
 const { baseStore } = useStore();
 
-const changeLayout = (val: string): void => {
+const changeLayout = (val: DefaultSettingsLayout) => {
   baseStore.settings.Layout = val;
 };
 
-const changeColorScheme = (val: string): void => {
+const changeColorScheme = (val: DefaultSettingsColorScheme): void => {
   baseStore.settings.ColorScheme = val;
 };
 
@@ -30,7 +34,7 @@ const changeThemeColor = (val: string): void => {
 };
 
 const toolbarChange = (key: string): void => {
-  baseStore.settings[key] = !baseStore.settings[key];
+  baseStore.settings.Toolbar[key] = !baseStore.settings.Toolbar[key];
 };
 </script>
 <template>
@@ -48,7 +52,7 @@ const toolbarChange = (key: string): void => {
         :name="item.label"
         :key="index"
         :active="baseStore.settings.Layout === item.value"
-        @click="changeLayout(item.value)"
+        @click="changeLayout(item.value as DefaultSettingsLayout)"
       ></setting-layout>
     </div>
     <div text-4 m-b-4>{{ t('admin.system.colorScheme') }}</div>
@@ -59,7 +63,7 @@ const toolbarChange = (key: string): void => {
         :name="item.label"
         :key="index"
         :active="baseStore.settings.ColorScheme === item.value"
-        @click="changeColorScheme(item.value)"
+        @click="changeColorScheme(item.value as DefaultSettingsColorScheme)"
       ></setting-color-scheme>
     </div>
     <div text-4 m-b-4>{{ t('admin.system.themeColor') }}</div>
@@ -93,7 +97,7 @@ const toolbarChange = (key: string): void => {
         :key="index"
         mr-6
         mb-2
-        :checked="baseStore.settings[item.value]"
+        :checked="baseStore.settings.Toolbar[item.value]"
         @change="toolbarChange(item.value)"
       >
         {{ item.label }}

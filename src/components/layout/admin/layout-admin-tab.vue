@@ -150,6 +150,7 @@ watch(
   height: var(--wings-tag-height);
   padding: 0 var(--wings-main-padding);
   background-color: var(--wings-tab-bg-color) !important;
+  border-bottom: 1px solid var(--el-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }

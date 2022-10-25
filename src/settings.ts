@@ -1,22 +1,25 @@
+import type { DefaultSettingsTypes } from './global';
 import { _t } from './plugins/vue-i18n';
 
 /**
  * @name DefaultSettings
  * @description 默认设置
  */
-export const DefaultSettings = {
+export const DefaultSettings: DefaultSettingsTypes = {
   Layout: 'top',
   ThemeColor: '#0d6efd',
   ColorScheme: 'auto',
   TabStyle: 'default',
   MenuStyle: 'round',
-  Dark: true,
-  Language: true,
-  Refresh: true,
-  Notification: true,
-  Fullscreen: true,
-  Setting: true,
-  Avatar: true,
+  Toolbar: {
+    Dark: true,
+    Language: true,
+    Refresh: true,
+    Notification: true,
+    Fullscreen: true,
+    Setting: true,
+    Avatar: true,
+  },
   Footer: false,
   Tab: true,
   UniqueOpened: true,
