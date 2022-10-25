@@ -42,7 +42,7 @@ const cancel = () => {};
         v-if="props.subTitle"
         text-4
         mt-2
-        style="color: var(--el-text-color-regular)"
+        style="color: var(--el-text-color-secondary)"
       >
         {{ props.subTitle }}
       </div>

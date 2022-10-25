@@ -14,19 +14,21 @@ const { baseStore, routeStore } = useStore();
       );
     "
   >
-    <el-menu
-      router
-      mode="vertical"
-      collapse-transition
-      :collapse="baseStore.collapse"
-      :unique-opened="baseStore.settings.UniqueOpened"
-      :default-active="route.path"
-      important="border-r-none"
-    >
-      <layout-admin-menu-item
-        :routes="routeStore.adminMenuRoutes"
-      ></layout-admin-menu-item>
-    </el-menu>
+    <div :class="baseStore.settings.MenuStyle">
+      <el-menu
+        router
+        mode="vertical"
+        collapse-transition
+        :collapse="baseStore.collapse"
+        :unique-opened="baseStore.settings.UniqueOpened"
+        :default-active="route.path"
+        important="border-r-none"
+      >
+        <layout-admin-menu-item
+          :routes="routeStore.adminMenuRoutes"
+        ></layout-admin-menu-item>
+      </el-menu>
+    </div>
   </el-scrollbar>
 </template>
 
@@ -43,6 +45,10 @@ const { baseStore, routeStore } = useStore();
   width: 100%;
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
+
+  :deep(.el-sub-menu__title) {
+    --at-apply: justify-center !important;
+  }
 }
 
 .el-menu.el-menu--vertical {
@@ -58,5 +64,33 @@ const { baseStore, routeStore } = useStore();
   border-radius: var(--wings-menu-radius);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
+}
+
+.square {
+  :deep(.el-menu) {
+    border-radius: 0 !important;
+  }
+
+  .el-menu.el-menu-inline {
+    border-radius: 0 !important;
+  }
+
+  .el-menu.el-menu--vertical {
+    padding: 0 !important;
+  }
+
+  :deep(.el-menu-item) {
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  :deep(.el-sub-menu) {
+    margin-bottom: 0 !important;
+
+    .el-sub-menu__title {
+      margin-bottom: 0 !important;
+      border-radius: 0 !important;
+    }
+  }
 }
 </style>
