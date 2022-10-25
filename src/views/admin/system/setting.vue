@@ -70,26 +70,6 @@ const toolbarChange = (key: string): void => {
     <div flex items-center flex-wrap m-b-6>
       <setting-theme-color @change="changeThemeColor"></setting-theme-color>
     </div>
-    <div text-4 m-b-4>{{ t('admin.system.tabStyle') }}</div>
-    <el-radio-group m-b-6 v-model="baseStore.settings.TabStyle">
-      <el-radio-button
-        :label="item.value"
-        v-for="(item, index) in PredefineTabStyle"
-        :key="index"
-      >
-        {{ item.label }}
-      </el-radio-button>
-    </el-radio-group>
-    <div text-4 m-b-4>{{ t('admin.system.menuStyle') }}</div>
-    <el-radio-group m-b-6 v-model="baseStore.settings.MenuStyle">
-      <el-radio-button
-        :label="item.value"
-        v-for="(item, index) in PredefineMenuStyle"
-        :key="index"
-      >
-        {{ item.label }}
-      </el-radio-button>
-    </el-radio-group>
     <div text-4 m-b-4>{{ t('admin.system.toolbar') }}</div>
     <div flex items-center flex-wrap m-b-6>
       <el-check-tag
@@ -103,12 +83,6 @@ const toolbarChange = (key: string): void => {
         {{ item.label }}
       </el-check-tag>
     </div>
-    <div text-4 m-b-4>{{ t('admin.system.componentSize') }}</div>
-    <el-radio-group m-b-6 v-model="baseStore.settings.ElementPlus.size">
-      <el-radio-button label="large">{{ t('base.large') }}</el-radio-button>
-      <el-radio-button label="default">{{ t('base.default') }}</el-radio-button>
-      <el-radio-button label="small">{{ t('base.small') }}</el-radio-button>
-    </el-radio-group>
     <div text-4 m-b-4>{{ t('admin.system.other') }}</div>
     <crud-form
       form-position="left"
@@ -116,6 +90,37 @@ const toolbarChange = (key: string): void => {
       label-width="240px"
       label-position="left"
     >
+      <el-form-item :label="t('admin.system.componentSize')">
+        <el-radio-group v-model="baseStore.settings.ElementPlus.size">
+          <el-radio-button label="large">{{ t('base.large') }}</el-radio-button>
+          <el-radio-button label="default">{{
+            t('base.default')
+          }}</el-radio-button>
+          <el-radio-button label="small">{{ t('base.small') }}</el-radio-button>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item :label="t('admin.system.menuStyle')">
+        <el-radio-group v-model="baseStore.settings.MenuStyle">
+          <el-radio-button
+            :label="item.value"
+            v-for="(item, index) in PredefineMenuStyle"
+            :key="index"
+          >
+            {{ item.label }}
+          </el-radio-button>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item :label="t('admin.system.tabStyle')">
+        <el-radio-group v-model="baseStore.settings.TabStyle">
+          <el-radio-button
+            :label="item.value"
+            v-for="(item, index) in PredefineTabStyle"
+            :key="index"
+          >
+            {{ item.label }}
+          </el-radio-button>
+        </el-radio-group>
+      </el-form-item>
       <el-form-item :label="t('admin.system.tab')">
         <el-switch v-model="baseStore.settings.Tab" />
       </el-form-item>

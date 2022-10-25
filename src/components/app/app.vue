@@ -5,21 +5,19 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
 <template>
   <app-provider>
     <template #app>
-      <Suspense>
-        <router-view v-slot="{ Component, route }">
-          <div id="wings-app">
-            <transition name="wings-app-page" mode="out-in" appear>
-              <div id="transition-component-node">
-                <keep-alive v-if="keepAlive">
-                  <component :is="Component" :key="route.fullPath" />
-                </keep-alive>
-                <component :is="Component" v-else />
-              </div>
-            </transition>
-          </div>
-        </router-view>
-        <template #fallback> Loading... </template>
-      </Suspense>
+      <router-view v-slot="{ Component, route }">
+        <div id="wings-app">
+          <transition name="wings-app-page" mode="out-in" appear>
+            <Suspense>
+              <keep-alive v-if="keepAlive">
+                <component :is="Component" :key="route.fullPath" />
+              </keep-alive>
+              <component :is="Component" v-else />
+              <template #fallback> Loading... </template>
+            </Suspense>
+          </transition>
+        </div>
+      </router-view>
     </template>
   </app-provider>
 </template>
@@ -30,7 +28,13 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
   flex: auto;
   height: auto;
   overflow: hidden;
-  transition: 0.3s;
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+}
+
+#wings-app-component-node {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
 .wings-app-page-enter-active {

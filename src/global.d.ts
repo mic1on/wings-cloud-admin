@@ -6,7 +6,7 @@ type DefaultSettingsLayout = 'top' | 'top-lean' | 'blean' | 'aside';
 
 type DefaultSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
 
-type DefaultSettingsTabStyle = 'default' | 'browser' | 'card';
+type DefaultSettingsTabStyle = 'square' | 'round';
 
 type DefaultSettingsMenuStyle = 'square' | 'round';
 

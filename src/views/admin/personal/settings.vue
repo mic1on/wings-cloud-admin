@@ -1,4 +1,4 @@
 <script lang="ts" setup></script>
 <template>
-  <div></div>
+  <crud-card title="123"></crud-card>
 </template>

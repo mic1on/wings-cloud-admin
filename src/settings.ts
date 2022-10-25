@@ -9,7 +9,7 @@ export const DefaultSettings: DefaultSettingsTypes = {
   Layout: 'top',
   ThemeColor: '#0d6efd',
   ColorScheme: 'auto',
-  TabStyle: 'default',
+  TabStyle: 'square',
   MenuStyle: 'round',
   Toolbar: {
     Dark: true,
@@ -109,9 +109,8 @@ export const PredefineThemeColors = [
  * @description 预置标签风格
  */
 export const PredefineTabStyle = [
-  { label: _t('admin.system.tabStyleDefault'), value: 'default' },
-  { label: _t('admin.system.tabStyleBrowser'), value: 'browser' },
-  { label: _t('admin.system.tabStyleCard'), value: 'card' },
+  { label: _t('admin.system.tabStyleSquare'), value: 'square' },
+  { label: _t('admin.system.tabStyleRound'), value: 'round' },
 ];
 
 /**
