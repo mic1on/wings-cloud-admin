@@ -116,6 +116,6 @@ export const PredefineTabStyle = [
  * @description 预置管理菜单风格
  */
 export const PredefineMenuStyle = [
-  { label: _t('admin.system.menuStyleDefault'), value: 'default' },
+  { label: _t('admin.system.menuStyleSquare'), value: 'square' },
   { label: _t('admin.system.menuStyleRound'), value: 'round' },
 ];

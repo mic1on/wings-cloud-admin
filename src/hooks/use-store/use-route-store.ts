@@ -115,7 +115,6 @@ export const useRouteStore = defineStore('route', () => {
       }
       _routes.push(item);
     });
-    console.log('合并权限路由');
     return _routes;
   };
 
