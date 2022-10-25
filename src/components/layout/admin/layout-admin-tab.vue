@@ -8,7 +8,7 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const { routeStore } = useStore();
+const { baseStore, routeStore } = useStore();
 
 const tab: any = reactive({
   tabList: [],
@@ -100,7 +100,13 @@ watch(
 </script>
 
 <template>
-  <div flex items-center justify-between class="slot">
+  <div
+    flex
+    items-center
+    justify-between
+    class="slot"
+    :class="baseStore.settings.TabStyle"
+  >
     <el-tabs
       v-model="tab.nowTab"
       type="card"
@@ -147,9 +153,10 @@ watch(
 <style lang="scss" scoped>
 .slot {
   box-sizing: border-box;
-  height: var(--wings-tag-height);
+  height: var(--wings-tab-height);
   padding: 0 var(--wings-main-padding);
   background-color: var(--wings-tab-bg-color) !important;
+  border-bottom: 1px solid var(--wings-tab-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }
@@ -157,6 +164,8 @@ watch(
 :deep(.el-tabs__header) {
   margin: 0 !important;
   border: none !important;
+
+  --at-apply: flex items-center;
 }
 
 :deep(.el-tabs__nav) {
@@ -164,11 +173,47 @@ watch(
 }
 
 :deep(.el-tabs__item) {
+  height: var(--el-tabs-header-height);
+  line-height: var(--el-tabs-header-height);
   border-left: none !important;
 }
 
 :deep(.el-tabs__item.is-active) {
   border: none;
   border-bottom: 2px solid var(--el-color-primary) !important;
+}
+
+.slot.round {
+  height: auto;
+  background-color: var(--wings-main-fill) !important;
+  border-bottom: 1px solid rgba($color: #000, $alpha: 0%);
+
+  :deep(.el-tabs__item) {
+    height: 30px;
+    line-height: 30px;
+    border-left: none !important;
+  }
+
+  :deep(.el-tabs__item.is-active) {
+    background-color: var(--el-bg-color) !important;
+    border-bottom: 0 !important;
+    border-radius: 6px;
+  }
+
+  :deep(.el-tabs__nav-next) {
+    --at-apply: flex items-center;
+
+    top: 50% !important;
+    line-height: 30px;
+    transform: translateY(-50%) !important;
+  }
+
+  :deep(.el-tabs__nav-prev) {
+    --at-apply: flex items-center;
+
+    top: 50% !important;
+    line-height: 30px;
+    transform: translateY(-50%) !important;
+  }
 }
 </style>

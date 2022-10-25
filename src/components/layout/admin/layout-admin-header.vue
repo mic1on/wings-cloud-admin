@@ -10,31 +10,34 @@ const { baseStore } = useStore();
     </div>
     <div h-full flex items-center>
       <layout-action-color-scheme
-        mr-8
-        v-if="baseStore.settings.Dark"
+        ml-8
+        v-if="baseStore.settings.Toolbar.Dark"
       ></layout-action-color-scheme>
       <layout-action-language
-        mr-8
+        ml-8
         only-icon
-        v-if="baseStore.settings.Language"
+        v-if="baseStore.settings.Toolbar.Language"
       ></layout-action-language>
       <layout-action-refresh
-        mr-8
-        v-if="baseStore.settings.Refresh"
+        ml-8
+        v-if="baseStore.settings.Toolbar.Refresh"
       ></layout-action-refresh>
       <layout-action-notification
-        mr-8
-        v-if="baseStore.settings.Notification"
+        ml-8
+        v-if="baseStore.settings.Toolbar.Notification"
       ></layout-action-notification>
       <layout-action-fullscreen
-        mr-8
-        v-if="baseStore.settings.Fullscreen"
+        ml-8
+        v-if="baseStore.settings.Toolbar.Fullscreen"
       ></layout-action-fullscreen>
       <layout-action-setting
-        mr-8
-        v-if="baseStore.settings.Setting"
+        ml-8
+        v-if="baseStore.settings.Toolbar.Setting"
       ></layout-action-setting>
-      <layout-action-avatar></layout-action-avatar>
+      <layout-action-avatar
+        ml-8
+        v-if="baseStore.settings.Toolbar.Avatar"
+      ></layout-action-avatar>
     </div>
   </div>
 </template>
