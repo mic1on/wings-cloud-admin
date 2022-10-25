@@ -43,7 +43,7 @@ const changeThemeColor = (val: string | null): void => {
       </div>
       <div w-full h-2 flex items-center justify-center p-y-2>
         <div
-          v-if="item == baseStore.themeSettings.themeColor"
+          v-if="item == baseStore.settings.ThemeColor"
           w-2
           h-2
           style="background-color: var(--el-color-primary); border-radius: 50%"
@@ -54,7 +54,7 @@ const changeThemeColor = (val: string | null): void => {
       <div flex items-center justify-center>
         <el-color-picker
           size="large"
-          v-model="baseStore.themeSettings.themeColor"
+          v-model="baseStore.settings.ThemeColor"
           @change="changeThemeColor"
           :predefine="PredefineThemeColors"
         />
@@ -63,7 +63,7 @@ const changeThemeColor = (val: string | null): void => {
         <div
           v-if="
             PredefineThemeColors.filter(
-              (item) => item == baseStore.themeSettings.themeColor
+              (item) => item == baseStore.settings.ThemeColor
             ).length == 0
           "
           w-2

@@ -32,7 +32,7 @@ const props = defineProps({
             border-radius: 4px 4px 0 0;
           "
           :style="
-            baseStore.themeSettings.colorScheme === 'dark'
+            baseStore.settings.ColorScheme === 'dark'
               ? 'border-color:var(--el-border-color)'
               : 'border-color: var(--wings-header-border-color)'
           "
@@ -76,7 +76,7 @@ const props = defineProps({
             border-radius: 4px 4px 0 0;
           "
           :style="
-            baseStore.themeSettings.colorScheme === 'dark'
+            baseStore.settings.ColorScheme === 'dark'
               ? 'border-color:var(--el-border-color)'
               : 'border-color: var(--wings-header-border-color)'
           "
@@ -142,7 +142,7 @@ const props = defineProps({
             border-radius: 4px 0 0 4px;
           "
           :style="
-            baseStore.themeSettings.colorScheme === 'dark'
+            baseStore.settings.ColorScheme === 'dark'
               ? 'border-color:var(--el-border-color)'
               : 'border-color: var(--wings-header-border-color)'
           "

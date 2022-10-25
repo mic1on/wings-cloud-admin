@@ -95,4 +95,7 @@ export enum StorageEnum {
   ELEMENT_PLUS_SIZE = 'element-plus-size',
   SHOW_TAB = 'show-tab',
   SHOW_COLLAPSE = 'show-collapse',
+  TAB_STYLE = 'tab-stlye',
+  MENU_STYLE = 'menu-style',
+  SETTINGS = 'settings',
 }

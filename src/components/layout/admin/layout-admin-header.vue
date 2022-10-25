@@ -11,28 +11,28 @@ const { baseStore } = useStore();
     <div h-full flex items-center>
       <layout-action-color-scheme
         mr-8
-        v-if="baseStore.toolbarSettings.dark"
+        v-if="baseStore.settings.Dark"
       ></layout-action-color-scheme>
       <layout-action-language
         mr-8
         only-icon
-        v-if="baseStore.toolbarSettings.language"
+        v-if="baseStore.settings.Language"
       ></layout-action-language>
       <layout-action-refresh
         mr-8
-        v-if="baseStore.toolbarSettings.refresh"
+        v-if="baseStore.settings.Refresh"
       ></layout-action-refresh>
       <layout-action-notification
         mr-8
-        v-if="baseStore.toolbarSettings.notification"
+        v-if="baseStore.settings.Notification"
       ></layout-action-notification>
       <layout-action-fullscreen
         mr-8
-        v-if="baseStore.toolbarSettings.fullscreen"
+        v-if="baseStore.settings.Fullscreen"
       ></layout-action-fullscreen>
       <layout-action-setting
         mr-8
-        v-if="baseStore.toolbarSettings.setting"
+        v-if="baseStore.settings.Setting"
       ></layout-action-setting>
       <layout-action-avatar></layout-action-avatar>
     </div>
