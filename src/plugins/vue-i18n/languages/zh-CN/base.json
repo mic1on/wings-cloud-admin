@@ -18,6 +18,9 @@
   "closeOtherTag": "关闭其他",
   "closeAllTag": "关闭全部",
   "custom": "自定义",
+  "large": "大号",
+  "default": "默认",
+  "small": "小型",
   "empty": {
     "notifications": "暂无通知"
   },

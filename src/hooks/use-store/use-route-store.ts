@@ -64,8 +64,8 @@ export const useRouteStore = defineStore('route', () => {
         const viewComponents: ViewComponents = autoImportViewComponents(
           import.meta.glob('/src/views/**/*.vue')
         );
-        const roleRoutes: Routes = mergeRoleRoutes(data, viewComponents);
-        const adminMenuRoutes: Routes = mergeAdminMenuRoutes(
+        const roleRoutes: Routes = await mergeRoleRoutes(data, viewComponents);
+        const adminMenuRoutes: Routes = await mergeAdminMenuRoutes(
           routes,
           roleRoutes
         );
@@ -115,6 +115,7 @@ export const useRouteStore = defineStore('route', () => {
       }
       _routes.push(item);
     });
+    console.log('合并权限路由');
     return _routes;
   };
 

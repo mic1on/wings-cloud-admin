@@ -4,8 +4,8 @@ import { useStore } from '@/hooks/use-store';
 const { baseStore } = useStore();
 
 const changeColorScheme = () => {
-  baseStore.themeSettings.colorScheme =
-    baseStore.themeSettings.colorScheme === 'dark' ? 'light' : 'dark';
+  baseStore.settings.ColorScheme =
+    baseStore.settings.ColorScheme === 'dark' ? 'light' : 'dark';
 };
 
 const props = defineProps({

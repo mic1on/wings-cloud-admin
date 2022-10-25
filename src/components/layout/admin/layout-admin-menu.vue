@@ -19,7 +19,7 @@ const { baseStore, routeStore } = useStore();
       mode="vertical"
       collapse-transition
       :collapse="baseStore.collapse"
-      :unique-opened="baseStore.uniqueOpened"
+      :unique-opened="baseStore.settings.UniqueOpened"
       :default-active="route.path"
       important="border-r-none"
     >

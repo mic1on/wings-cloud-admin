@@ -6,12 +6,12 @@ const { baseStore } = useStore();
 
 <template>
   <el-container>
-    <el-header v-if="baseStore.layout !== 'aside'">
+    <el-header v-if="baseStore.settings.Layout !== 'aside'">
       <layout-admin-header></layout-admin-header>
     </el-header>
     <el-container>
       <el-aside
-        v-if="baseStore.layout !== 'top-lean'"
+        v-if="baseStore.settings.Layout !== 'top-lean'"
         :style="
           baseStore.collapse
             ? 'width: var(--wings-aside-width-fold)'
@@ -22,18 +22,18 @@ const { baseStore } = useStore();
       </el-aside>
       <el-main
         :style="
-          baseStore.layout !== 'aside'
+          baseStore.settings.Layout !== 'aside'
             ? 'height: calc(100vh - var(--wings-header-height));'
             : 'height: calc(100vh);'
         "
       >
-        <layout-admin-tab v-if="baseStore.showTab"></layout-admin-tab>
+        <layout-admin-tab v-if="baseStore.settings.Tab"></layout-admin-tab>
         <layout-admin-main>
           <template #main-router-view>
             <slot name="router-view"></slot>
           </template>
         </layout-admin-main>
-        <el-footer v-if="baseStore.showFooter">
+        <el-footer v-if="baseStore.settings.Footer">
           <layout-admin-footer></layout-admin-footer>
         </el-footer>
       </el-main>

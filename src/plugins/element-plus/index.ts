@@ -1,7 +1,5 @@
 import type { App } from 'vue';
 import ElementPlus from 'element-plus';
-import 'element-plus/theme-chalk/src/message.scss';
-import 'element-plus/theme-chalk/src/notification.scss';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import { installComponents, pluginAddRegister } from '../../utils/auto';
 

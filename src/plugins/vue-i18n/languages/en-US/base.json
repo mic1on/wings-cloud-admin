@@ -18,6 +18,9 @@
   "closeOtherTag": "Close the other",
   "closeAllTag": "Close all",
   "custom": "Custom",
+  "large": "Large",
+  "default": "Default",
+  "small": "Small",
   "empty": {
     "notifications": "No notifications"
   },

@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     CrudCard: typeof import('./crud/crud-card.vue')['default']
     CrudDialog: typeof import('./crud/crud-dialog.vue')['default']
     CrudForm: typeof import('./crud/crud-form.vue')['default']
+    CrudFormCard: typeof import('./crud/crud-form-card.vue')['default']
     CrudPagination: typeof import('./crud/crud-pagination.vue')['default']
     CrudQuery: typeof import('./crud/crud-query.vue')['default']
     CrudTable: typeof import('./crud/crud-table.vue')['default']

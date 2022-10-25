@@ -1,10 +1,70 @@
 import { _t } from './plugins/vue-i18n';
 
 /**
- * @name Layout
- * @description 管理系统默认布局方式
+ * @name DefaultSettings
+ * @description 默认设置
  */
-export const Layout = 'top';
+export const DefaultSettings = {
+  Layout: 'top',
+  ThemeColor: '#0d6efd',
+  ColorScheme: 'auto',
+  TabStyle: 'default',
+  MenuStyle: 'round',
+  Dark: true,
+  Language: true,
+  Refresh: true,
+  Notification: true,
+  Fullscreen: true,
+  Setting: true,
+  Avatar: true,
+  Footer: false,
+  Tab: true,
+  UniqueOpened: true,
+  ElementPlus: {
+    size: 'default',
+    message: {
+      max: 3,
+    },
+    button: {
+      autoInsertSpace: true,
+    },
+  },
+};
+
+/**
+ * @name PredefineToolbar
+ * @description 管理系统工具栏预置按钮
+ */
+export const PredefineToolbar = [
+  {
+    label: _t('admin.system.toolbarDark'),
+    value: 'Dark',
+  },
+  {
+    label: _t('admin.system.toolbarLanguage'),
+    value: 'Language',
+  },
+  {
+    label: _t('admin.system.toolbarRefresh'),
+    value: 'Refresh',
+  },
+  {
+    label: _t('admin.system.toolbarNotification'),
+    value: 'Notification',
+  },
+  {
+    label: _t('admin.system.toolabarFullscreen'),
+    value: 'Fullscreen',
+  },
+  {
+    label: _t('admin.system.toolbarSetting'),
+    value: 'Setting',
+  },
+  {
+    label: _t('admin.system.toolbarAvatar'),
+    value: 'Avatar',
+  },
+];
 
 /**
  * @name PredefineLayouts
@@ -16,15 +76,6 @@ export const PredefineLayouts = [
   { label: _t('admin.system.layoutBlend'), value: 'blend' },
   { label: _t('admin.system.layoutAside'), value: 'aside' },
 ];
-
-/**
- * @name ThemeSettings
- * @description 应用主题默认配置
- */
-export const ThemeSettings = {
-  themeColor: '#0d6efd',
-  colorScheme: 'auto',
-};
 
 /**
  * @name PredefineColorSchemes
@@ -51,29 +102,20 @@ export const PredefineThemeColors = [
 ];
 
 /**
- * @name ToolbarSettings
- * @description 管理系统工具栏默认配置
+ * @name PredefineTabStyle
+ * @description 预置标签风格
  */
-export const ToolbarSettings = {
-  dark: true,
-  language: true,
-  refresh: true,
-  notification: true,
-  fullscreen: true,
-  setting: true,
-  avatar: true,
-};
+export const PredefineTabStyle = [
+  { label: _t('admin.system.tabStyleDefault'), value: 'default' },
+  { label: _t('admin.system.tabStyleBrowser'), value: 'browser' },
+  { label: _t('admin.system.tabStyleCard'), value: 'card' },
+];
 
 /**
- * @name ElementPlus
- * @description Element Plus 组件库配置，为了保证内建 UI 完整性，不建议修改命名空间
+ * @name PredefineMenuStyle
+ * @description 预置管理菜单风格
  */
-export const ElementPlus = {
-  size: 'default',
-  message: {
-    max: 3,
-  },
-  button: {
-    autoInsertSpace: true,
-  },
-};
+export const PredefineMenuStyle = [
+  { label: _t('admin.system.menuStyleDefault'), value: 'default' },
+  { label: _t('admin.system.menuStyleRound'), value: 'round' },
+];

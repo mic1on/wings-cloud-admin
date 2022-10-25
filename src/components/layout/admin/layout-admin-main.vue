@@ -5,14 +5,14 @@ const { baseStore } = useStore();
 
 const computedHeight = () => {
   let height = '100vh';
-  if (baseStore.layout !== 'aside') {
+  if (baseStore.settings.Layout !== 'aside') {
     height =
       'calc(100vh - var(--wings-header-height) - var(--wings-tab-height))';
   } else {
     height = 'height: calc(100vh - var(--wings-tab-height));';
   }
   let _height = height;
-  if (!baseStore.showTab) {
+  if (!baseStore.settings.Tab) {
     _height = `calc(${height} + var(--wings-tab-height))`;
   }
   return _height;

@@ -43,11 +43,14 @@ export const addRouterGuard = (router: Router): Router => {
       }
 
       if (userStore.isLogin && routeStore.roleRoutes.length == 0) {
-        baseStore.changeAppLoading(true);
+        baseStore.loading = true;
         await userStore.getUserProfile();
         await userStore.getUserRoles();
         await routeStore.getRoleRoutes();
-        baseStore.changeAppLoading(false);
+        baseStore.loading = false;
+        console.log('路由将出');
+        // TODO https://blog.csdn.net/weixin_43835425/article/details/116708448
+        // next({ ...to, replace: true });
         if (to.redirectedFrom) {
           next({ path: to.redirectedFrom.fullPath, replace: true });
         } else {
