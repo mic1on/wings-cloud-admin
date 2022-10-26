@@ -26,6 +26,8 @@ const { baseStore } = useStore();
         target="_blank"
         :href="route.meta.externalPageUrl"
         text-2
+        class="single-line-omitted"
+        style="width: 76%"
       >
         {{ route.meta?.menuName }}
       </a>
@@ -47,7 +49,7 @@ const { baseStore } = useStore();
         >
           <component :is="route.meta?.icon"></component>
         </el-icon>
-        <span text="3.4">
+        <span text="3.4" class="single-line-omitted" style="width: 78%">
           {{ route.meta?.menuName }}
         </span>
       </template>
@@ -71,7 +73,9 @@ const { baseStore } = useStore();
         >
           <component :is="route.meta?.icon"></component>
         </el-icon>
-        <span text="3.4">{{ route.meta?.menuName }}</span>
+        <span text="3.4" class="single-line-omitted" style="width: 68%">
+          {{ route.meta?.menuName }}
+        </span>
       </template>
       <layout-admin-menu-item :routes="route.children"></layout-admin-menu-item>
     </el-sub-menu>
