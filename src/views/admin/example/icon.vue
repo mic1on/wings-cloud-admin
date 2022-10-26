@@ -12,10 +12,7 @@ const svgs: Files = autoImportSvgs(
 );
 </script>
 <template>
-  <crud-card
-    :title="t('admin.example.svgIconTitle')"
-    :sub-title="t('admin.example.svgIconSubTitle')"
-  >
+  <crud-card :title="t('admin.example.icon.menuName')">
     <div flex items-center flex-wrap>
       <div
         w-30

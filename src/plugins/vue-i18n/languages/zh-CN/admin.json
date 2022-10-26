@@ -1,50 +1,156 @@
 {
-  "workbench": {
-    "welcome": "欢迎回来！",
-    "shortcuts": "快捷操作"
+  "home": {
+    "menuName": "首页",
+    "menuDescription": "",
+    "workbench": {
+      "menuName": "工作台",
+      "menuDescription": "",
+      "welcome": "欢迎回来！",
+      "shortcuts": "快捷操作"
+    },
+    "dashboard": {
+      "menuName": "仪表盘",
+      "menuDescription": ""
+    }
+  },
+  "personalCenter": {
+    "menuName": "个人中心",
+    "menuDescription": "",
+    "personalProfile": {
+      "menuName": "个人资料",
+      "menuDescription": ""
+    },
+    "myNotifications": {
+      "menuName": "我的消息",
+      "menuDescription": ""
+    },
+    "personalSettings": {
+      "menuName": "个人设置",
+      "menuDescription": ""
+    }
   },
   "example": {
-    "svgIconTitle": "自定义 Svg 图标",
-    "svgIconSubTitle": "除了使用 Element Plus 提供的图标外，你还可以使用自己的 Svg 图标。"
+    "menuName": "功能示例",
+    "menuDescription": "",
+    "crud": { "menuName": "增删改查", "menuDescription": "" },
+    "icon": { "menuName": "自定义 Svg 图标", "menuDescription": "" },
+    "xicons": { "menuName": "扩展图标", "menuDescription": "" },
+    "editor": { "menuName": "富文本编辑器", "menuDescription": "" },
+    "echarts": { "menuName": "图表", "menuDescription": "" },
+    "map": { "menuName": "地图", "menuDescription": "" },
+    "form": { "menuName": "基础表单", "menuDescription": "" },
+    "result": { "menuName": "结果页", "menuDescription": "" }
   },
-  "system": {
-    "settingTitle": "系统设置",
-    "settingSubTitle": "这里默认使用缓存处理设置的更新，同时预留了接口调用，可以快速接入您的服务应用",
-    "layout": "布局，包含了 4 种开箱即用的管理系统布局方式",
-    "layoutTop": "顶部模式",
-    "layoutTopLean": "顶部（精简）模式",
-    "layoutBlend": "混合菜单模式",
-    "layoutAside": "左侧栏模式",
-    "colorScheme": "配色方案，您可以切换不同的配色风格",
-    "colorSchemeAuto": "自适应",
-    "colorSchemeTheme": "主题色模式",
-    "colorSchemeLight": "明亮模式",
-    "colorSchemeDark": "黑暗模式",
-    "themeColor": "主题颜色，也可用使用自定义主题颜色进行调整，以适配您的项目",
-    "themeColoBlue": "蓝色",
-    "themeColoBlack": "黑色",
-    "themeColoGreen": "绿色",
-    "themeColoPink": "粉色",
-    "themeColoOrgane": "橙色",
-    "themeColoCyan": "青色",
-    "tabStyle": "标签组件的风格",
-    "tabStyleSquare": "直角",
-    "tabStyleRound": "圆角",
-    "menuStyle": "菜单组件的风格",
-    "menuStyleSquare": "直角",
-    "menuStyleRound": "圆角",
-    "toolbar": "工具栏，点击卡片可以关闭不需要的工具按钮",
-    "toolbarLanguage": "多语言切换",
-    "toolbarRefresh": "视图刷新",
-    "toolbarDark": "黑暗模式",
-    "toolabarFullscreen": "全屏开关",
-    "toolbarCollapse": "菜单折叠",
-    "toolbarSetting": "设置",
-    "toolbarNotification": "消息中心",
-    "toolbarAvatar": "用户头像",
-    "componentSize": "Element Plus 组件尺寸大小",
-    "other": "其他设置",
-    "tab": "显示标签页",
-    "uniqueOpened": "只保持一个菜单展开"
+  "authorityManagement": {
+    "menuName": "权限管理",
+    "menuDescription": "",
+    "roleManagement": {
+      "menuName": "角色管理",
+      "menuDescription": ""
+    },
+    "userManagement": {
+      "menuName": "用户管理",
+      "menuDescription": ""
+    },
+    "departmentManagement": {
+      "menuName": "部门管理",
+      "menuDescription": ""
+    },
+    "postManagement": {
+      "menuName": "岗位管理",
+      "menuDescription": ""
+    }
+  },
+  "systemManagement": {
+    "menuName": "系统管理",
+    "menuDescription": "",
+    "menuManagement": {
+      "menuName": "菜单管理",
+      "menuDescription": ""
+    },
+    "dictManagement": {
+      "menuName": "字典管理",
+      "menuDescription": ""
+    },
+    "paramManagement": {
+      "menuName": "参数管理",
+      "menuDescription": ""
+    },
+    "fileManagement": {
+      "menuName": "文件管理",
+      "menuDescription": ""
+    },
+    "systemSetting": {
+      "menuName": "系统设置",
+      "menuDescription": "系统设置默认使用缓存处理更新，同时预留了接口调用，可以快速接入您的服务应用",
+      "layout": "布局，包含了 4 种开箱即用的管理系统布局方式",
+      "layoutTop": "顶部模式",
+      "layoutTopLean": "顶部（精简）模式",
+      "layoutBlend": "混合菜单模式",
+      "layoutAside": "左侧栏模式",
+      "colorScheme": "配色方案，您可以切换不同的配色风格",
+      "colorSchemeAuto": "自适应",
+      "colorSchemeTheme": "主题色模式",
+      "colorSchemeLight": "明亮模式",
+      "colorSchemeDark": "黑暗模式",
+      "themeColor": "主题颜色，也可用使用自定义主题颜色进行调整，以适配您的项目",
+      "themeColoBlue": "蓝色",
+      "themeColoBlack": "黑色",
+      "themeColoGreen": "绿色",
+      "themeColoPink": "粉色",
+      "themeColoOrgane": "橙色",
+      "themeColoCyan": "青色",
+      "tabStyle": "标签组件的风格",
+      "tabStyleSquare": "直角",
+      "tabStyleRound": "圆角",
+      "menuStyle": "菜单组件的风格",
+      "menuStyleSquare": "直角",
+      "menuStyleRound": "圆角",
+      "toolbar": "工具栏，点击卡片可以关闭不需要的工具按钮",
+      "toolbarLanguage": "多语言切换",
+      "toolbarRefresh": "视图刷新",
+      "toolbarDark": "黑暗模式",
+      "toolabarFullscreen": "全屏开关",
+      "toolbarCollapse": "菜单折叠",
+      "toolbarSetting": "设置",
+      "toolbarNotification": "消息中心",
+      "toolbarAvatar": "用户头像",
+      "componentSize": "Element Plus 组件尺寸大小",
+      "other": "其他设置",
+      "tab": "显示标签页",
+      "uniqueOpened": "只保持一个菜单展开"
+    },
+    "logManagement": {
+      "menuName": "日志管理",
+      "menuDescription": "",
+      "loginLog": {
+        "menuName": "登录日志",
+        "menuDescription": ""
+      },
+      "actionLog": {
+        "menuName": "操作日志",
+        "menuDescription": ""
+      }
+    }
+  },
+  "developmentTool": {
+    "menuName": "开发工具",
+    "menuDescription": "",
+    "options": {
+      "menuName": "配置",
+      "menuDescription": ""
+    },
+    "code": {
+      "menuName": "代码生成",
+      "menuDescription": ""
+    },
+    "form": {
+      "menuName": "表单设计",
+      "menuDescription": ""
+    }
+  },
+  "about": {
+    "menuName": "关于",
+    "menuDescription": ""
   }
 }

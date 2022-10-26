@@ -2,7 +2,7 @@ import type { Component } from 'vue';
 
 type Callback = (data?: any) => void;
 
-type DefaultSettingsLayout = 'top' | 'top-lean' | 'blean' | 'aside';
+type DefaultSettingsLayout = 'top' | 'top-lean' | 'aside' | 'aside-lean';
 
 type DefaultSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
 
@@ -34,29 +34,16 @@ interface DefaultSettingsTypes {
 declare module 'vue-router' {
   interface RouteMeta {
     component?: string | Component | undefined;
-    children?: Routes | [] | undefined;
+    isI18n?: boolean;
+    i18nKey?: string | undefined;
     layout?: string | undefined;
     isAdmin: boolean;
     requiresAuth?: boolean | undefined;
     iconType?: string | undefined;
     icon?: string | undefined;
-    menuName: string;
+    menuName?: string;
     sort?: number | string | undefined;
     externalPage?: boolean | undefined;
     externalPageUrl?: string | undefined;
   }
 }
-
-declare module '*.svg';
-declare module '*.png';
-declare module '*.jpg';
-declare module '*.jpeg';
-declare module '*.gif';
-declare module '*.bmp';
-declare module '*.tiff';
-declare module '*.gif';
-declare module '*.less';
-declare module 'qs';
-declare module 'mockjs';
-declare module 'element-plus/dist/locale/en.mjs';
-declare module 'element-plus/dist/locale/zh-cn.mjs';

@@ -25,9 +25,6 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
 <style lang="scss" scoped>
 #wings-app {
   position: relative;
-  flex: auto;
-  height: auto;
-  overflow: hidden;
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }

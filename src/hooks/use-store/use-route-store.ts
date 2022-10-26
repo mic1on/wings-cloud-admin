@@ -1,11 +1,12 @@
-import type { RouteMeta } from 'vue-router';
 import type { Routes } from '../../plugins/vue-router/index.d';
 import type { ViewComponents } from '../../views';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { autoImportViewComponents } from '../../utils/auto';
+import { routerInjectLanguages } from '../../utils/router';
 import { router, routes } from '../../plugins/vue-router';
 import { getRoleRoutes as _getRoleRoutes } from '../../apis/admin/auth';
+import { _t } from '../../plugins/vue-i18n';
 
 /**
  * @name useRouteStore
@@ -65,10 +66,12 @@ export const useRouteStore = defineStore('route', () => {
           import.meta.glob('/src/views/**/*.vue')
         );
         const roleRoutes: Routes = await mergeRoleRoutes(data, viewComponents);
+        console.log(roleRoutes);
         const adminMenuRoutes: Routes = await mergeAdminMenuRoutes(
           routes,
           roleRoutes
         );
+        console.log(adminMenuRoutes);
         setAdminMenuRoutes(adminMenuRoutes);
         setRolesRoutes(roleRoutes);
         setAllRoutes(data.concat(staticRoutes));
@@ -84,18 +87,18 @@ export const useRouteStore = defineStore('route', () => {
     staticRoutes: Routes,
     roleRoutes: Routes
   ): Routes => {
-    const adminMenuRoutes: Routes = [];
+    const _routes: Routes = [];
     staticRoutes.forEach((route: RouteRecordRaw) => {
       if (route.meta && route.meta.isAdmin === true) {
-        adminMenuRoutes.push(route);
+        _routes.push(route);
       }
     });
     roleRoutes.forEach((route: RouteRecordRaw) => {
       if (route.meta && route.meta.isAdmin === true) {
-        adminMenuRoutes.push(route);
+        _routes.push(route);
       }
     });
-    return adminMenuRoutes;
+    return routerInjectLanguages(_routes, _t);
   };
 
   // 合并权限路由
@@ -104,9 +107,8 @@ export const useRouteStore = defineStore('route', () => {
     viewComponents: ViewComponents
   ): Routes => {
     const _routes: Routes = [];
-    roleRoutes.forEach((item: RouteMeta) => {
-      // TODO 动态注册组件有问题，基于 keep-alive 下出现
-      const _route: RouteMeta = item;
+    roleRoutes.forEach((item) => {
+      const _route = item;
       if (item.component) {
         item.component = viewComponents[item.component as string];
       }
@@ -115,7 +117,8 @@ export const useRouteStore = defineStore('route', () => {
       }
       _routes.push(item);
     });
-    return _routes;
+
+    return routerInjectLanguages(_routes, _t);
   };
 
   return {

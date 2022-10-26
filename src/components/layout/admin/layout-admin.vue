@@ -6,27 +6,60 @@ const { baseStore } = useStore();
 
 <template>
   <el-container>
-    <el-header v-if="baseStore.settings.Layout !== 'aside'">
-      <layout-admin-header></layout-admin-header>
+    <el-header
+      :style="
+        baseStore.settings.Layout === 'top' ||
+        baseStore.settings.Layout === 'top-lean'
+          ? 'height: var(--wings-header-height); border-bottom: 1px solid var(--wings-header-border-color);'
+          : 'height: 0; border-bottom: none;'
+      "
+    >
+      <layout-admin-header
+        v-if="
+          baseStore.settings.Layout === 'top' ||
+          baseStore.settings.Layout === 'top-lean'
+        "
+      ></layout-admin-header>
     </el-header>
     <el-container>
       <el-aside
-        v-if="baseStore.settings.Layout !== 'top-lean'"
         :style="
-          baseStore.collapse
-            ? 'width: var(--wings-aside-width-fold)'
-            : 'width: var(--wings-aside-width)'
+          baseStore.settings.Layout === 'aside' ||
+          baseStore.settings.Layout === 'aside-lean' ||
+          baseStore.settings.Layout === 'top'
+            ? baseStore.collapse
+              ? 'width: var(--wings-aside-width-fold)'
+              : 'width: var(--wings-aside-width)'
+            : 'width: 0'
         "
       >
-        <layout-admin-aside></layout-admin-aside>
+        <layout-admin-aside
+          v-if="
+            baseStore.settings.Layout === 'aside' ||
+            baseStore.settings.Layout === 'aside-lean' ||
+            baseStore.settings.Layout === 'top'
+          "
+        ></layout-admin-aside>
       </el-aside>
       <el-main
         :style="
-          baseStore.settings.Layout !== 'aside'
+          baseStore.settings.Layout === 'top' ||
+          baseStore.settings.Layout === 'top-lean'
             ? 'height: calc(100vh - var(--wings-header-height));'
             : 'height: calc(100vh);'
         "
       >
+        <el-header
+          :style="
+            baseStore.settings.Layout === 'aside'
+              ? 'height: var(--wings-header-height); border-bottom: 1px solid var(--wings-header-border-color);'
+              : 'height: 0; border-bottom: none'
+          "
+        >
+          <layout-admin-header
+            v-if="baseStore.settings.Layout === 'aside'"
+          ></layout-admin-header>
+        </el-header>
         <layout-admin-tab v-if="baseStore.settings.Tab"></layout-admin-tab>
         <layout-admin-main>
           <template #main-router-view>
@@ -44,10 +77,8 @@ const { baseStore } = useStore();
 <style lang="scss" scoped>
 :deep(.el-header) {
   box-sizing: border-box;
-  height: var(--wings-header-height);
   padding: 0 1.8rem !important;
   background-color: var(--wings-header-bg-color);
-  border-bottom: 1px solid var(--wings-header-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }

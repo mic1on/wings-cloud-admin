@@ -12,9 +12,15 @@ import type { I18nT } from '@/plugins/vue-i18n/index.d';
 export const routerInjectLanguages = (routes: Routes, t: I18nT): Routes => {
   const rs: Routes = [];
   routes.forEach((item: RouteRecordRaw) => {
-    if (item.meta && item.meta.title) {
-      const key = item.meta.title as string;
-      item.meta.title = t(key);
+    if (item.meta && item.meta.isI18n) {
+      if (item.meta.i18nKey) {
+        item.meta.menuName = t((item.meta.i18nKey as string) + '.menuName');
+        item.meta.menuDescription = t(
+          (item.meta.i18nKey as string) + '.menuDescription'
+        );
+      } else {
+        item.meta.menuName = '';
+      }
     }
     item.children = routerInjectLanguages(item.children || [], t);
     rs.push(item);

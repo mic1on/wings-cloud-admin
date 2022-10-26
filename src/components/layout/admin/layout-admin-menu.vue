@@ -4,16 +4,25 @@ import { useStore } from '@/hooks/use-store';
 const route = useRoute();
 
 const { baseStore, routeStore } = useStore();
+
+const height = computed(() => {
+  let _height = '100vh';
+  if (
+    baseStore.settings.Layout === 'top' ||
+    baseStore.settings.Layout === 'top-lean'
+  ) {
+    _height =
+      'calc(100vh - var(--wings-header-height) - var(--wings-collapse-height))';
+  } else {
+    _height =
+      'calc(100vh - var(--wings-logo-height) - var(--wings-collapse-height) )';
+  }
+  return 'height:' + _height;
+});
 </script>
 
 <template>
-  <el-scrollbar
-    view-style="
-      height: calc(
-        100vh - var(--wings-header-height) - var(--wings-collapse-height)
-      );
-    "
-  >
+  <el-scrollbar :wrap-style="height">
     <div :class="baseStore.settings.MenuStyle">
       <el-menu
         router

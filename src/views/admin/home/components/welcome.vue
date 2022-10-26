@@ -9,7 +9,7 @@ const { userStore } = useStore();
   <crud-card>
     <template #content>
       <div text-5>
-        <span p-r-4>{{ t('admin.workbench.welcome') }}</span>
+        <span p-r-4>{{ t('admin.home.workbench.welcome') }}</span>
         <span>{{ userStore.userProfile.nickname }}</span>
       </div>
       <el-divider

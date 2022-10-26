@@ -35,7 +35,7 @@ const cancel = () => {};
 <template>
   <el-card :shadow="props.shadow" important="border-none">
     <template #header v-if="props.title || props.subTitle">
-      <div text-6 style="color: var(--el-text-color-primary)">
+      <div text-5 style="color: var(--el-text-color-primary)">
         {{ props.title }}
       </div>
       <div

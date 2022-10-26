@@ -3,7 +3,6 @@ import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
 import { LanguageEnum } from '../../enums';
 import { autoImportLanguages } from '../../utils/auto';
-import { ElementPlus } from '../../settings';
 
 const languages: Languages = autoImportLanguages(
   import.meta.glob('./languages/**/*.json', {

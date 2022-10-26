@@ -24,6 +24,9 @@ const props = defineProps({
       <div w-full h-full v-if="props.mode === 'top'">
         <div
           w-full
+          flex
+          items-center
+          p-l-1
           h-4
           style="
             box-sizing: border-box;
@@ -94,57 +97,56 @@ const props = defineProps({
           "
         ></div>
       </div>
-      <div w-full h-full v-if="props.mode === 'blend'">
-        <div
-          w-full
-          h-4
-          style="
-            box-sizing: border-box;
-            background-color: var(--el-color-primary-light-5);
-            border: 1px solid var(--el-color-primary-light-5);
-            border-radius: 4px 4px 0 0;
-          "
-        ></div>
-        <div flex h-14 w-full>
-          <div
-            h-full
-            w-6
-            style="
-              box-sizing: border-box;
-              background-color: var(--wings-menu-bg-color);
-              border: 1px solid var(--el-border-color);
-              border-top: 0;
-              border-radius: 0 0 0 4px;
-            "
-          ></div>
-          <div
-            h-full
-            w-12
-            style="
-              box-sizing: border-box;
-              background-color: var(--wings-main-fill);
-              border: 1px solid var(--el-border-color);
-              border-top: 0;
-              border-left: 0;
-              border-radius: 0 0 4px;
-            "
-          ></div>
-        </div>
-      </div>
       <div w-full h-full flex v-if="props.mode === 'aside'">
         <div
           h-full
           w-6
           style="
             box-sizing: border-box;
-            background-color: var(--wings-header-bg-color);
-            border: 1px solid;
+            background-color: var(--wings-menu-bg-color);
+            border: 1px solid var(--el-border-color);
+            border-right: 0;
             border-radius: 4px 0 0 4px;
           "
-          :style="
-            baseStore.settings.ColorScheme === 'dark'
-              ? 'border-color:var(--el-border-color)'
-              : 'border-color: var(--wings-header-border-color)'
+        ></div>
+        <div h-full w-14>
+          <div
+            w-full
+            h-4
+            style="
+              box-sizing: border-box;
+              background-color: var(--wings-header-bg-color);
+              border: 1px solid;
+              border-radius: 0 4px 0 0;
+            "
+            :style="
+              baseStore.settings.ColorScheme === 'dark'
+                ? 'border-color:var(--el-border-color)'
+                : 'border-color: var(--wings-header-border-color)'
+            "
+          ></div>
+          <div
+            h-14
+            w-full
+            style="
+              box-sizing: border-box;
+              background-color: var(--wings-main-fill);
+              border: 1px solid var(--el-border-color);
+              border-top: 0;
+              border-radius: 0 0 4px;
+            "
+          ></div>
+        </div>
+      </div>
+      <div w-full h-full flex v-if="props.mode === 'aside-lean'">
+        <div
+          h-full
+          w-6
+          style="
+            box-sizing: border-box;
+            background-color: var(--wings-menu-bg-color);
+            border: 1px solid var(--el-border-color);
+            border-radius: 4px 0 0 4px;
           "
         ></div>
         <div
