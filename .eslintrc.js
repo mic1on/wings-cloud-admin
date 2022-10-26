@@ -1,142 +1,64 @@
 module.exports = {
-  /**
-   * Tell eslint to stop looking for configurations at the parent level.
-   */
+  // 根
   root: true,
-
-  /**
-   * To verify the html in the vue template file, use the vue-eslint-parser as the interpreter.
-   */
+  // 解析器
   parser: 'vue-eslint-parser',
-
-  /**
-   * Interpreter configuration.
-   */
+  // 解析配置
   parserOptions: {
-    /**
-     * Verify ts in vue's script.
-     */
+    // 校验 vue 的 script
     parser: '@typescript-eslint/parser',
-
-    /**
-     * Use es2020 syntax.
-     */
+    // 指定 ECMA 版本
     ecmaVersion: 2020,
-
-    /**
-     * The files are modules, not scripts, so module is specified here.
-     */
+    // 这些文件是模块，而不是脚本，因此这里指定了 module
     sourceType: 'module',
   },
-
-  /**
-   * Enable global variable verification。
-   */
+  // 环境变量校验配置
   env: {
-    /**
-     * The project runs in a browser environment, so specify browser-specific global variables。
-     */
+    // 开启浏览器的全局变量校验
     browser: true,
-
-    /**
-     * Build scripts and the like run in the node environment, so node-related global variables are also specified here。
-     */
+    // 构建脚本等在 Node 环境中运行，因此这里还指定了与 Node 相关的全局变量
     node: true,
-
-    /**
-     * Support for es6's latest global variables and types。
-     */
+    // 支持 es6 最新的全局变量和类型
     es2020: true,
   },
-
-  /**
-   * Eslint extends configuration。
-   */
+  // 扩展
   extends: [
-    /**
-     * An official extension to esLint
-     */
+    // esLint的官方扩展
     'eslint:recommended',
-
-    /**
-     * Vue templates are validated using the vue3-recommended rule set of eslint-plugin-vue.
-     */
+    // Vue 模板使用 eslint-plugin-vue 的 vue3 推荐规则进行验证
     'plugin:vue/vue3-recommended',
-
-    /**
-     * Use @typescript-eslint/eslint-plugin to validate ts. Use it with @typescript-eslint/parser.
-     */
+    // 使用 @typescript-eslint/eslint-plugin 来验证 ts，使用 @typescript-eslint/parser
     'plugin:@typescript-eslint/recommended',
-
-    /**
-     * Conflicts between prettier and esLint are resolved using the recommended rule set for eslint-plugin-prettier.
-     */
+    // 使用eslint-plugin-prettier 的推荐规则集来解决 prettiter 和 eslint 之间的冲突
     'plugin:prettier/recommended',
-
-    /**
-     * Add the api verification automatically introduced by vite.
-     */
+    // 自动导入插件 api 的校验
     './.eslintrc-auto-import',
   ],
+  // 自定义校验规则
   rules: {
-    /**
-     * This rule require component names to be always multi-word, except for root App components, and built-in components provided by Vue, such as <transition> or <component>. This prevents conflicts with existing and future HTML elements, since all HTML elements are a single word.
-     */
+    // 该规则要求组件名称总是多个单词，除了根 App 组件和 Vue 提供的内置组件，如 <transition> 或 <component> 。这可以防止与现有和未来的HTML元素发生冲突，因为所有HTML元素都是一个单词。
     'vue/multi-word-component-names': 'off',
-
-    /**
-     * This rule aims to enforce ordering of component attributes. The default order is specified in the Vue.js
-     */
+    // 关闭：组件属性排序
     'vue/attributes-order': 'off',
-
-    /**
-     * This rule checks if there is only one component per file.
-     */
+    // 关闭：检查每个文件是否只有一个组件
     'vue/one-component-per-file': 'off',
-
-    /**
-     * This rule aims to warn the right angle brackets which are at the location other than the configured location.
-     */
+    // 关闭：位于配置位置之外的右尖括号时产生的警告
     'vue/html-closing-bracket-newline': 'off',
-
-    /**
-     * This rule aims to enforce a number of attributes per line in templates. It checks all the elements in a template and verifies that the number of attributes per line does not exceed the defined maximum. An attribute is considered to be in a new line when there is a line break between two attributes.
-     */
+    // 关闭：检查模板中的所有元素，并验证每行属性的数量是否超过定义的最大值。如果两个属性之间有换行，则认为一个属性在新行中
     'vue/max-attributes-per-line': 'off',
-
-    /**
-     * Bans “// @ts-ignore” comments from being used (ban-ts-ignore from tslint).
-     */
+    // 关闭：禁止使用" // @ts-ignore "注释
     '@typescript-eslint/ban-ts-ignore': 'off',
-
-    /**
-     * Require explicit return types on functions and class methods.
-     */
+    // 关闭：要求函数和类方法上显式返回类型
     '@typescript-eslint/explicit-function-return-type': 'off',
-
-    /**
-     * Disallow usage of the any type (no-any from tslint).
-     */
+    // 关闭：禁止使用any类型
     '@typescript-eslint/no-explicit-any': 'off',
-
-    /**
-     * Disallow unused variables (no-unused-variable from tslint).
-     */
+    // 关闭：禁止使用未使用的变量
     '@typescript-eslint/no-unused-vars': 'off',
-
-    /**
-     * This rule flags escapes that can be safely removed without changing behavior.
-     */
+    // 关闭：禁止使用未引用的变量
     'no-useless-escape': 'off',
-
-    /**
-     * This rule is aimed at eliminating empty functions. A function will not be considered a problem if it contains a comment.
-     */
+    // 关闭：禁止一个空的函数
     '@typescript-eslint/no-empty-function': 'off',
-
-    /**
-     * Disallow using an async function as a Promise executor
-     */
+    // 关闭：禁止使用 async 函数作为 Promise 执行器
     'no-async-promise-executor': 'off',
   },
 };

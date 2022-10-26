@@ -1,27 +1,13 @@
 module.exports = {
-  /**
-   * Use tab to indent.
-   */
+  // 使用 tab 缩进
   useTabs: false,
-
-  /**
-   * Tab character width
-   */
+  // tab 宽度
   tabWidth: 2,
-
-  /**
-   * Whether to use single quotes.
-   */
+  // 使用双引号
   singleQuote: true,
-
-  /**
-   * Whether a semicolon is required at the end of a line.
-   */
+  // 行尾是否需要分号。
   semi: true,
-
-  /**
-   * Overrides the default configuration.
-   */
+  // 覆盖默认配置
   overrides: [
     {
       files: '*.json',
@@ -30,24 +16,12 @@ module.exports = {
       },
     },
   ],
-
-  /**
-   * In view of the markdown files, if exceeded the maximum number of characters always wrap, never non-breaking, preserve the same display.
-   */
+  // 鉴于标记文件，如果超过最大字符数始终换行，绝不中断，保持相同显示。
   proseWrap: 'preserve',
-
-  /**
-   * HTML space sensitive.
-   */
+  // 指定HTML文件的全局空格敏感度
   htmlWhitespaceSensitivity: 'strict',
-
-  /**
-   * Arrow functions, if they have only one argument, they also need parentheses.
-   */
+  // 箭头函数，如果它们只有一个参数，它们也需要括号。
   arrowParens: 'always',
-
-  /**
-   * Line end, same as editorConfig's end of line
-   */
+  // 自动的行结束
   endOfLine: 'auto',
 };

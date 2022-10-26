@@ -1,97 +1,45 @@
 {
+  // Ts 解析配置
   "compilerOptions": {
-    /**
-     * 指定 ecma 版本
-     */
+    // 指定 ECMA 版本
     "target": "esnext",
-
-    /**
-     * 允许定义 undeinfed
-     */
+    // 允许定义 undeinfed
     "useDefineForClassFields": true,
-
-    /**
-     * 使用 ecma 标准的 esnext 模块系统
-     */
+    // 使用 ECMA 标准的 esnext 模块系统
     "module": "esnext",
-
-    /**
-     * 指定编译器，使用 node，classic 于 2019 年废弃
-     */
+    // 指定编译器，使用 node，classic 于 2019 年废弃
     "moduleResolution": "node",
-
-    /**
-     * 开启所有严格的类型检查
-     */
+    // 开启所有严格的类型检查
     "strict": true,
-
-    /**
-     * 编译输出时删除注释
-     */
+    // 编译输出时删除注释
     "removeComments": true,
-
-    /**
-     * 生成目标文件的 sourceMap 文件
-     */
+    // 生成目标文件的 sourceMap 文件
     "sourceMap": true,
-
-    /**
-     * 允许导入并解析 *.json 模块
-     */
+    // 允许导入并解析 *.json 模块
     "resolveJsonModule": true,
-
-    /**
-     * 允许 commonjs 的导出方式（即使用 module.exports）
-     */
+    // 允许 commonjs 的导出方式（即使用 module.exports）
     "esModuleInterop": true,
-
-    /**
-     * 忽略声明文件的类型检查（*.d.ts）
-     */
+    // 忽略声明文件的类型检查（*.d.ts）
     "skipLibCheck": true,
-
-    /**
-     * Ts 需要引用的库，即声明文件
-     */
+    // Ts 需要引用的库，即声明文件
     "lib": ["esnext", "dom"],
-
-    /**
-     * 包含的类型声明文件名
-     */
+    // 包含的类型声明模块名
     "types": ["vite/client", "node"],
-
-    /**
-     * 根路径
-     */
+    // 根路径
     "baseUrl": "./",
-
-    /**
-     * 别名解析，映射到 baseUrl
-     */
+    // 别名解析，映射到 baseUrl
     "paths": {
       "@/*": ["src/*"]
     }
   },
-
-  /**
-   * 开启 Vue 模板智能感知
-   */
+  // 开启 Vue 模板智能感知
   "vueCompilerOptions": {
     "experimentalDisableTemplateSupport": true
   },
-
-  /**
-   * 类型声明目录
-   */
+  // 类型声明目录
   "typeRoots": ["node_modules/@types/", "src/"],
-
-  /**
-   * 编译处理的文件列表
-   */
+  // 编译文件列表
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "*.ts"],
-
-  /**
-   * 不需要处理的目录
-   */
+  // 忽略编译目录
   "exclude": ["node_modules", "dist"]
 }

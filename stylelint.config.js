@@ -1,32 +1,16 @@
 module.exports = {
-  /**
-   * Using extension packs.
-   */
+  // 扩展声明
   extends: [
-    /**
-     * Troubleshooting unknown word (CssSyntaxError) may appear in the vue file.
-     */
+    // 针对scss的标准可共享配置
     'stylelint-config-standard-scss',
-
-    /**
-     * style-config-recommended-vue inherits stylelint-config-standard, and added several style verification rules for vue files.
-     */
+    // 继承了 styllint-config-standard，并为vue文件添加了一些样式验证规则
     'stylelint-config-recommended-vue',
-
-    /**
-     * Disable the format check rule in stylelint to avoid conflicts with prettier.
-     */
+    // 禁用 stylelint 中的格式检查规则，以避免与 prettier 发生冲突
     'stylelint-config-prettier',
-
-    /**
-     * A package that writes the order of the canonical css properties based on the stylelint-order.
-     */
+    // 严格的样式书写顺序
     'stylelint-config-rational-order',
   ],
-
-  /**
-   * Ignore files.
-   */
+  // 忽略文件
   ignoreFiles: [
     '**/*.js',
     '**/*.jsx',
@@ -36,45 +20,23 @@ module.exports = {
     '**/*.png',
     '**/*.jpg',
   ],
-
-  /**
-   * Customizing specifications.
-   */
+  // 自定义校验规则
   rules: {
-    /**
-     * Use tab to indent.
-     */
+    // 缩进
     indentation: 2,
-
-    /**
-     * Makes this rule ignore global variables (variables defined in the stylesheet root).
-     */
+    // 忽略全局变量(在样式表根中定义的变量)
     'scss/dollar-variable-pattern': [/^foo-/, { ignore: 'global' }],
-
-    /**
-     * Custom class name, usually.
-     */
+    // 自定义类名
     'selector-class-pattern': '',
-
-    /**
-     * Applicable color-functions must always use modern notation.
-     */
+    // 颜色函数
     'color-function-notation': 'modern',
   },
-
-  /**
-   * Customize the override configuration.
-   */
+  // 覆盖默认配置
   overrides: [
     {
-      /**
-       * Processing for scss parts.
-       */
+      // 校验文件
       files: ['**/*.scss'],
-
-      /**
-       * Configure here to use postcss-scss as the syntax parser for scss files.
-       */
+      // 在这里配置为使用postcss-scss作为scss文件的语法解析器。
       customSyntax: 'postcss-scss',
     },
   ],
