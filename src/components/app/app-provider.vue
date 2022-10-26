@@ -15,7 +15,9 @@ const locale = messages.value[baseStore.language]['el-language'];
 watch(
   () => baseStore.settings.ColorScheme,
   (newVal, oldVal) => {
-    document.documentElement.classList.remove(oldVal);
+    if (oldVal) {
+      document.documentElement.classList.remove(oldVal);
+    }
     if (newVal) {
       document.documentElement.classList.add(newVal);
     }

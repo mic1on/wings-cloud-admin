@@ -17,7 +17,7 @@ const { t } = useI18n();
     </div>
   </div>
   <el-card w="60%" ma shadow="never">
-    <img w-full src="@/assets/qr-code.png" alt="" />
+    <img w-full src="@/assets/images/qr-code.png" alt="" />
   </el-card>
   <div p-y-6 text-center>
     <el-button link type="primary">{{

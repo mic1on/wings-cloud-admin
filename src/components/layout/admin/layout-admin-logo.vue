@@ -27,7 +27,8 @@ const goHomeRoute = () => {
       text-center
       class="single-line-omitted"
       :style="
-        baseStore.settings.Layout === 'aside'
+        baseStore.settings.Layout === 'aside' ||
+        baseStore.settings.Layout === 'aside-lean'
           ? 'color: var(--wings-menu-text-color)'
           : 'color: var(--wings-header-text-color)'
       "
