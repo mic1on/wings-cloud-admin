@@ -3,31 +3,52 @@ import { useStore } from '@/hooks/use-store';
 
 const { baseStore } = useStore();
 
-const computedHeight = () => {
-  let height = '100vh';
-  if (baseStore.settings.Layout !== 'aside') {
-    height =
+const height = computed(() => {
+  let _height = '100vh';
+  if (
+    baseStore.settings.Layout === 'top' ||
+    baseStore.settings.Layout === 'top-lean' ||
+    baseStore.settings.Layout === 'aside'
+  ) {
+    _height =
       'calc(100vh - var(--wings-header-height) - var(--wings-tab-height))';
   } else {
-    height = 'height: calc(100vh - var(--wings-tab-height));';
+    _height = 'calc(100vh - var(--wings-tab-height))';
   }
-  let _height = height;
   if (!baseStore.settings.Tab) {
-    _height = `calc(${height} + var(--wings-tab-height))`;
+    _height = `calc(${_height} + var(--wings-tab-height))`;
   }
-  return _height;
-};
+  return 'height: ' + _height;
+});
 </script>
 
 <template>
-  <div :style="{ height: computedHeight() }">
-    <el-scrollbar
-      wrap-style="box-sizing: border-box;
-      padding: var(--wings-main-padding);
-      background: var(--wings-main-fill);
-  		transition: all var(--el-transition-duration) var(--el-transition-function-ease-in-out-bezier);"
+  <el-scrollbar
+    :wrap-style="[height, { 'box-sizing': 'border-box' }]"
+    view-style="
+        height: 100%;
+				box-sizing: border-box;
+        transition: all var(--el-transition-duration)
+          var(--el-transition-function-ease-in-out-bezier);"
+  >
+    <div
+      style="
+        box-sizing: border-box;
+        height: 100%;
+        padding: var(--wings-main-padding);
+        background: var(--wings-main-fill);
+        transition: all var(--el-transition-duration)
+          var(--el-transition-function-ease-in-out-bezier);
+      "
     >
-      <slot name="main-router-view"></slot>
-    </el-scrollbar>
-  </div>
+      <!-- TODO 面包屑预留位置 -->
+      <div></div>
+      <div style="padding-bottom: var(--wings-main-padding)">
+        <slot name="main-router-view"></slot>
+      </div>
+
+      <!-- TODO 版权信息预留位置 -->
+      <div></div>
+    </div>
+  </el-scrollbar>
 </template>

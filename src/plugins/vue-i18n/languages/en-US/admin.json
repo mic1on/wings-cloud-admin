@@ -1,50 +1,156 @@
 {
-  "workbench": {
-    "welcome": "Welcome back!",
-    "shortcuts": "Shortcuts"
+  "home": {
+    "menuName": "Home",
+    "menuDescription": "",
+    "workbench": {
+      "menuName": "Workbench",
+      "menuDescription": "",
+      "welcome": "Welcome back!",
+      "shortcuts": "Shortcuts"
+    },
+    "dashboard": {
+      "menuName": "Dashboard",
+      "menuDescription": ""
+    }
+  },
+  "personalCenter": {
+    "menuName": "Personal Center",
+    "menuDescription": "",
+    "personalProfile": {
+      "menuName": "Personal Profile",
+      "menuDescription": ""
+    },
+    "myNotifications": {
+      "menuName": "My Notifications",
+      "menuDescription": ""
+    },
+    "personalSettings": {
+      "menuName": "Personal Settings",
+      "menuDescription": ""
+    }
   },
   "example": {
-    "svgIconTitle": "Custome Svg Icon",
-    "svgIconSubTitle": "In addition to using the Icons provided with Element Plus, you can also use your own SVG Icons"
+    "menuName": "Example",
+    "menuDescription": "",
+    "crud": { "menuName": "CRUD", "menuDescription": "" },
+    "icon": { "menuName": "Svg Icon", "menuDescription": "" },
+    "xicons": { "menuName": "Extend Icons", "menuDescription": "" },
+    "editor": { "menuName": "Rich Text Editor", "menuDescription": "" },
+    "echarts": { "menuName": "Charts", "menuDescription": "" },
+    "map": { "menuName": "Map", "menuDescription": "" },
+    "form": { "menuName": "Basic Form", "menuDescription": "" },
+    "result": { "menuName": "Result Page", "menuDescription": "" }
   },
-  "system": {
-    "settingTitle": "System Settings",
-    "settingSubTitle": "Cache is used by default to handle updates to Settings, and interface calls are reserved for quick access to your service application",
-    "layout": "Layout, including four out-of-the-box management system layout",
-    "layoutTop": "Top",
-    "layoutTopLean": "Top (Lean) ",
-    "layoutBlend": "Blend Menu",
-    "layoutAside": "Left Aside",
-    "colorScheme": "Color scheme, you can switch different color style",
-    "colorSchemeAuto": "Automatic",
-    "colorSchemeTheme": "Theme",
-    "colorSchemeLight": "Light",
-    "colorSchemeDark": "Dark",
-    "themeColor": "Theme color, which can also be adjusted with a custom theme color to fit your project",
-    "themeColoBlue": "Blue",
-    "themeColoBlack": "Black",
-    "themeColoGreen": "Green",
-    "themeColoPink": "Pink",
-    "themeColoOrgane": "Orange",
-    "themeColoCyan": "Cyan",
-    "tabStyle": "Tab Component Style",
-    "tabStyleSquare": "Square",
-    "tabStyleRound": "Round",
-    "menuStyle": "Menu Component Style",
-    "menuStyleSquare": "Square",
-    "menuStyleRound": "Round",
-    "toolbar": "Toolbar, click the card to close the unwanted tool button",
-    "toolbarLanguage": "Multilingual Toggle",
-    "toolbarRefresh": "View Refresh",
-    "toolbarDark": "Dark Mode",
-    "toolabarFullscreen": "Full-screen Switch",
-    "toolbarCollapse": "Menu Collapse",
-    "toolbarSetting": "Settings",
-    "toolbarNotification": "Message Center",
-    "toolbarAvatar": "User Avatar",
-    "componentSize": "Element Plus Component Size",
-    "other": "Other Settings",
-    "tab": "Display tab component",
-    "uniqueOpened": "Keep only one menu expanded"
+  "authorityManagement": {
+    "menuName": "Authority Management",
+    "menuDescription": "",
+    "roleManagement": {
+      "menuName": "Role Management",
+      "menuDescription": ""
+    },
+    "userManagement": {
+      "menuName": "User Management",
+      "menuDescription": ""
+    },
+    "departmentManagement": {
+      "menuName": "Department Management",
+      "menuDescription": ""
+    },
+    "postManagement": {
+      "menuName": "Post Management",
+      "menuDescription": ""
+    }
+  },
+  "systemManagement": {
+    "menuName": "System Management",
+    "menuDescription": "",
+    "menuManagement": {
+      "menuName": "Menu Management",
+      "menuDescription": ""
+    },
+    "dictManagement": {
+      "menuName": "Dict Management",
+      "menuDescription": ""
+    },
+    "paramManagement": {
+      "menuName": "Param Management",
+      "menuDescription": ""
+    },
+    "fileManagement": {
+      "menuName": "File Management",
+      "menuDescription": ""
+    },
+    "systemSetting": {
+      "menuName": "System Settings",
+      "menuDescription": "By default, the system uses cache to handle updates, and reserves interface calls for fast access to your service applications",
+      "layout": "Layout, including four out-of-the-box management system layout",
+      "layoutTop": "Top",
+      "layoutTopLean": "Top (Lean) ",
+      "layoutBlend": "Blend Menu",
+      "layoutAside": "Left Aside",
+      "colorScheme": "Color scheme, you can switch different color style",
+      "colorSchemeAuto": "Automatic",
+      "colorSchemeTheme": "Theme",
+      "colorSchemeLight": "Light",
+      "colorSchemeDark": "Dark",
+      "themeColor": "Theme color, which can also be adjusted with a custom theme color to fit your project",
+      "themeColoBlue": "Blue",
+      "themeColoBlack": "Black",
+      "themeColoGreen": "Green",
+      "themeColoPink": "Pink",
+      "themeColoOrgane": "Orange",
+      "themeColoCyan": "Cyan",
+      "tabStyle": "Tab Component Style",
+      "tabStyleSquare": "Square",
+      "tabStyleRound": "Round",
+      "menuStyle": "Menu Component Style",
+      "menuStyleSquare": "Square",
+      "menuStyleRound": "Round",
+      "toolbar": "Toolbar, click the card to close the unwanted tool button",
+      "toolbarLanguage": "Multilingual Toggle",
+      "toolbarRefresh": "View Refresh",
+      "toolbarDark": "Dark Mode",
+      "toolabarFullscreen": "Full-screen Switch",
+      "toolbarCollapse": "Menu Collapse",
+      "toolbarSetting": "Settings",
+      "toolbarNotification": "Message Center",
+      "toolbarAvatar": "User Avatar",
+      "componentSize": "Element Plus Component Size",
+      "other": "Other Settings",
+      "tab": "Display tab component",
+      "uniqueOpened": "Keep only one menu expanded"
+    },
+    "logManagement": {
+      "menuName": "Log Management",
+      "menuDescription": "",
+      "loginLog": {
+        "menuName": "Login Log",
+        "menuDescription": ""
+      },
+      "actionLog": {
+        "menuName": "Action Log",
+        "menuDescription": ""
+      }
+    }
+  },
+  "developmentTool": {
+    "menuName": "Development Tool",
+    "menuDescription": "",
+    "options": {
+      "menuName": "Options",
+      "menuDescription": ""
+    },
+    "code": {
+      "menuName": "Code Generator",
+      "menuDescription": ""
+    },
+    "form": {
+      "menuName": "Form Design",
+      "menuDescription": ""
+    }
+  },
+  "about": {
+    "menuName": "About",
+    "menuDescription": ""
   }
 }

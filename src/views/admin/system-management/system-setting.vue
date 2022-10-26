@@ -40,11 +40,13 @@ const toolbarChange = (key: string): void => {
 <template>
   <crud-card
     action
-    :title="t('admin.system.settingTitle')"
-    :sub-title="t('admin.system.settingSubTitle')"
+    :title="t('admin.systemManagement.systemSetting.menuName')"
+    :sub-title="t('admin.systemManagement.systemSetting.menuDescription')"
     :action-submit-label="t('base.crud.update')"
   >
-    <div text-4 m-b-4>{{ t('admin.system.layout') }}</div>
+    <div text-4 m-b-4>{{
+      t('admin.systemManagement.systemSetting.layout')
+    }}</div>
     <div flex items-center flex-wrap m-b-6>
       <setting-layout
         v-for="(item, index) in PredefineLayouts"
@@ -55,7 +57,9 @@ const toolbarChange = (key: string): void => {
         @click="changeLayout(item.value as DefaultSettingsLayout)"
       ></setting-layout>
     </div>
-    <div text-4 m-b-4>{{ t('admin.system.colorScheme') }}</div>
+    <div text-4 m-b-4>{{
+      t('admin.systemManagement.systemSetting.colorScheme')
+    }}</div>
     <div flex items-center flex-wrap m-b-6>
       <setting-color-scheme
         v-for="(item, index) in PredefineColorSchemes"
@@ -66,11 +70,15 @@ const toolbarChange = (key: string): void => {
         @click="changeColorScheme(item.value as DefaultSettingsColorScheme)"
       ></setting-color-scheme>
     </div>
-    <div text-4 m-b-4>{{ t('admin.system.themeColor') }}</div>
+    <div text-4 m-b-4>{{
+      t('admin.systemManagement.systemSetting.themeColor')
+    }}</div>
     <div flex items-center flex-wrap m-b-6>
       <setting-theme-color @change="changeThemeColor"></setting-theme-color>
     </div>
-    <div text-4 m-b-4>{{ t('admin.system.toolbar') }}</div>
+    <div text-4 m-b-4>{{
+      t('admin.systemManagement.systemSetting.toolbar')
+    }}</div>
     <div flex items-center flex-wrap m-b-6>
       <el-check-tag
         v-for="(item, index) in PredefineToolbar"
@@ -83,14 +91,18 @@ const toolbarChange = (key: string): void => {
         {{ item.label }}
       </el-check-tag>
     </div>
-    <div text-4 m-b-4>{{ t('admin.system.other') }}</div>
+    <div text-4 m-b-4>{{
+      t('admin.systemManagement.systemSetting.other')
+    }}</div>
     <crud-form
       form-position="left"
       :action="false"
       label-width="240px"
       label-position="left"
     >
-      <el-form-item :label="t('admin.system.componentSize')">
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.componentSize')"
+      >
         <el-radio-group v-model="baseStore.settings.ElementPlus.size">
           <el-radio-button label="large">{{ t('base.large') }}</el-radio-button>
           <el-radio-button label="default">{{
@@ -99,7 +111,9 @@ const toolbarChange = (key: string): void => {
           <el-radio-button label="small">{{ t('base.small') }}</el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item :label="t('admin.system.menuStyle')">
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.menuStyle')"
+      >
         <el-radio-group v-model="baseStore.settings.MenuStyle">
           <el-radio-button
             :label="item.value"
@@ -110,7 +124,7 @@ const toolbarChange = (key: string): void => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item :label="t('admin.system.tabStyle')">
+      <el-form-item :label="t('admin.systemManagement.systemSetting.tabStyle')">
         <el-radio-group v-model="baseStore.settings.TabStyle">
           <el-radio-button
             :label="item.value"
@@ -121,10 +135,12 @@ const toolbarChange = (key: string): void => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item :label="t('admin.system.tab')">
+      <el-form-item :label="t('admin.systemManagement.systemSetting.tab')">
         <el-switch v-model="baseStore.settings.Tab" />
       </el-form-item>
-      <el-form-item :label="t('admin.system.uniqueOpened')">
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.uniqueOpened')"
+      >
         <el-switch v-model="baseStore.settings.UniqueOpened" />
       </el-form-item>
     </crud-form>

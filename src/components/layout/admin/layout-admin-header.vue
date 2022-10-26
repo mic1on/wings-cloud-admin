@@ -6,7 +6,12 @@ const { baseStore } = useStore();
 <template>
   <div h-full flex items-center justify-between>
     <div h-full flex items-center>
-      <layout-admin-logo></layout-admin-logo>
+      <layout-admin-logo
+        v-if="
+          baseStore.settings.Layout === 'top' ||
+          baseStore.settings.Layout === 'top-lean'
+        "
+      ></layout-admin-logo>
     </div>
     <div h-full flex items-center>
       <layout-action-color-scheme
