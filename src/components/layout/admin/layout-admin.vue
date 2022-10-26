@@ -10,7 +10,7 @@ const { baseStore } = useStore();
       :style="
         baseStore.settings.Layout === 'top' ||
         baseStore.settings.Layout === 'top-lean'
-          ? 'height: var(--wings-header-height); border-bottom: 1px solid var(--wings-header-border-color);'
+          ? 'height: var(--wings-header-height); border-bottom: 1px solid'
           : 'height: 0; border-bottom: none;'
       "
     >
@@ -52,7 +52,7 @@ const { baseStore } = useStore();
         <el-header
           :style="
             baseStore.settings.Layout === 'aside'
-              ? 'height: var(--wings-header-height); border-bottom: 1px solid var(--wings-header-border-color);'
+              ? 'height: var(--wings-header-height); border-bottom: 1px solid'
               : 'height: 0; border-bottom: none'
           "
         >
@@ -79,6 +79,7 @@ const { baseStore } = useStore();
   box-sizing: border-box;
   padding: 0 1.8rem !important;
   background-color: var(--wings-header-bg-color);
+  border-color: var(--wings-header-border-color) !important;
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }

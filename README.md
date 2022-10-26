@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/kaivanwong/wings-vue" target="_blank">
+  <a href="https://github.com/wingscloud/wings-vue" target="_blank">
     <img width="180" src="./src/assets/svgs/logo.svg"/>
   </a>
 </div>
@@ -10,8 +10,8 @@
   
   面向 Vue + Element Plus 生态的一款 RBAC 权限管理系统，提供工程化的开发体验和开箱即用的页面模板。
 
-  [![license](https://img.shields.io/github/license/kaivanwong/wings-vue)](./LICENSE)
-  [![github](https://img.shields.io/github/package-json/v/kaivanwong/wings-vue)](https://github.com/kaivanwong/wings-vue)
+  [![license](https://img.shields.io/github/license/wingscloud/wings-vue)](./LICENSE)
+  [![github](https://img.shields.io/github/package-json/v/wingscloud/wings-vue)](https://github.com/wingscloud/wings-vue)
 
   </div>
 </div>
