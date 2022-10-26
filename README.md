@@ -8,7 +8,7 @@
   <h1>Wings Vue</h1>
   <div>
   
-  面向 Vue + Element Plus 生态的一款 RBAC 权限管理系统，提供工程化的开发体验和开箱即用的页面模板。
+  一款开箱即用的通用中后台权限管理系统，面向 Vue 生态，基于最新技术栈搭建，提供工程化的开发体验、高质量的页面模板、丰富实用的内建功能
 
   [![license](https://img.shields.io/github/license/wingscloud/wings-vue)](./LICENSE)
   [![github](https://img.shields.io/github/package-json/v/wingscloud/wings-vue)](https://github.com/wingscloud/wings-vue)
@@ -18,48 +18,21 @@
 
 ### 🌈 特性
 
-- 基于 Vue3、Element Plus、Vite、TypeScript、Pinia 和 Unocss 等最新技术栈搭建；
+- **💡 最新技术栈** - 基于 Vue3、Vite、TypeScript、Element Plus、Axios、Pinia、Unocss 等最新技术栈构建；
 
-- 工程化的开发体验，内置 Eslint + Stylelint + Prettier + Husky，规范代码统一风格；
+- **🚀 工程化开发** - 集成 Eslint + Stylelint + Prettier，提供基于 Vite 的工程化配置，合理的代码目录及代码注释；
 
-- 内置开箱即用的管理系统页面和网站常用页面模板，页面代码采用模块化开发，可维护性好，扩展性高；
+- **🎨 开箱即用** - 提供多种开箱即用的管理系统页面模板，支持丰富的布局与主题，同时保证多端的良好适配性；
 
-- 集成了动态路由、国际化多语言、环境变量、动态主题、暗黑模式、多种布局、自动导入等常见功能；
+- **🌐 国际化** - 基于 Vue-i18n 的国际化多语言解决方案，搭配 i18N Ally IDE 插件，实现多语言项目的高效开发；
 
-- 减少学习成本、过度封装，只作了增删改查功能的提炼，其具有良好的扩展性，提供完整的代码注释；
+- **🔑 权限验证** - 提供完整的、精确到按钮级的细颗粒度权限验证功能，搭配用户角色管理，适应多数业务场景；
 
-- 使用 Vue Use 作为工具库的扩展，使用 Mockjs 模拟接口数据返回，内置 Svg 图标作为补充；
+- **📦 丰富的组件** - 二次封装了常用的三方组件，如：上传、富文本编辑器、地图、图表等，提供代码生成工具；
 
-### 📌 功能页面
+- **🕹️ 接口模拟** - 使用 Mockjs 作为接口数据的模拟，体验项目完整功能，根据预留接口快速对接服务应用程序；
 
-- [x] 基于 Vite 的自动化，封装了插件、组件、静态路由和多语言文本等内容的自动注册及导入；
-
-- [x] 基于 Axios 工程化二次封装网络请求，集成 RESTFUL 风格的 API 和上传下载功能;
-
-- [x] 基于 Storage 工程化二次封装通用缓存方法，集成常用配置、模板缓存、会话式等；
-
-- [x] 提炼封装了切换多语言、验证码倒计时、系统初始化、全局状态总线、Api接口的钩子函数；
-
-- [ ] 集成了通用的增删改查业务 —— crud.ts ，组件封装涵盖表格、表单、弹窗等业务场景；
-
-- [x] 内置几十种常用的正则表单式，内置补充了工具方法库没有的一些工具函数；
-
-- [x] 封装消息适配器，集成网络状态、用户鉴权、接口请求状态等；
-
-- [x] 用户相关页面，如登录（包含扫码登录、免密登录）、注册、找回密码和修改密码等；
-
-- [x] 落地页、`403未授权`、`404找不到` 和 `服务器异常` 等基础页面；
-
-- [ ] 提供权限功能，内置角色管理、用户管理、菜单管理、部门管理、组织结构等静态页面；
-
-- [ ] 提供用户功能，如我的消息、个人资料、修改密码等静态页面；
-
-- [ ] 提供功能示例页面，包含图表、扩展图标、表单、增删改查等功能的基础演示；
-
-- [ ] 基于 Echarts 的图表示例，内置了数据分析页面 Demo，代码组件化开发，开箱即用；
-
-- [ ] 基于 wangEditor 二次封装组件，API保持一致，仅作为减少代码重复封装；
-
+- **🎯 内置函数** - 内置开发常用的工具函数及钩子函数，如：自动导入、网络请求、缓存、增删改查、状态管理等；
 
 ### 🌰 界面展示
 
@@ -73,6 +46,10 @@ Wings Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netli
     <tr>
         <td><img width="100%" src="./.readme/page-login.jpg"></td>
         <td><img width="100%" src="./.readme/page-login-qrcode.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/page-setting.jpg"></td>
+        <td><img width="100%" src="./.readme/page-setting-dark.jpg"></td>
     </tr>
 </table>
 
@@ -140,4 +117,4 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 
 ### 🧣 开源协议
 
-[MIT licensed](./LICENSE) © 2022-PRESENT Kaivan Wong
+[MIT licensed](./LICENSE) © 2022-PRESENT Wings Cloud

@@ -1,13 +1,13 @@
 {
   "name": "wings-vue",
   "version": "0.4.1",
-  "description": "面向 Vue + Element Plus 生态的一款 RBAC 权限管理系统，提供工程化的开发体验和开箱即用的页面模板。",
+  "description": "一款开箱即用的通用中后台权限管理系统，面向 Vue 生态，基于最新技术栈搭建，提供工程化的开发体验、高质量的页面模板、丰富实用的内建功能",
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaivanwong/wings-vue.git"
+    "url": "https://github.com/wingscloud/wings-vue.git"
   },
-  "author": "Kaivan Wong",
+  "author": "Wings Cloud",
   "license": "MIT",
   "scripts": {
     "serve": "npm run serve:dev",
@@ -89,7 +89,7 @@
     "unplugin-auto-import": "^0.11.2",
     "unplugin-icons": "^0.14.11",
     "unplugin-vue-components": "^0.22.8",
-    "vite": "^3.1.8",
+    "vite": "^3.2.0",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-html": "^3.2.0",
