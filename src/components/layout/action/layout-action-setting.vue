@@ -6,11 +6,15 @@ const props = defineProps({
   },
 });
 
-const openSetting = () => {};
+const router = useRouter();
+
+const openSetting = () => {
+  router.push({ path: '/admin/system-management/system-setting' });
+};
 </script>
 
 <template>
-  <div cursor-pointer flex items-center>
+  <div cursor-pointer flex items-center @click="openSetting">
     <svg-icon
       @click="openSetting"
       cursor-pointer

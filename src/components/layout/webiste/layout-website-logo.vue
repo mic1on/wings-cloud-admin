@@ -25,11 +25,6 @@ const goHomeRoute = () => {
     content-center
     cursor-pointer
     @click="goHomeRoute"
-    :style="
-      route.path.indexOf('admin') !== -1
-        ? `height:${baseStore.adminHeaderHeight}`
-        : ''
-    "
   >
     <img h-6 src="@/assets/svgs/logo.svg" />
     <div
