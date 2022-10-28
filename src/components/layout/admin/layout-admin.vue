@@ -1,5 +1,6 @@
 <script lang="ts" setup name="layout-admin">
 import { useStore } from '@/hooks/use-store';
+import { SettingsValueEnum } from '@/enums';
 
 const { baseStore } = useStore();
 </script>
@@ -8,25 +9,25 @@ const { baseStore } = useStore();
   <el-container>
     <el-header
       :style="
-        baseStore.settings.Layout === 'top' ||
-        baseStore.settings.Layout === 'top-lean'
+        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
           ? 'height: var(--wings-header-height); border-bottom: 1px solid'
           : 'height: 0; border-bottom: none;'
       "
     >
       <layout-admin-header
         v-if="
-          baseStore.settings.Layout === 'top' ||
-          baseStore.settings.Layout === 'top-lean'
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
         "
       ></layout-admin-header>
     </el-header>
     <el-container>
       <el-aside
         :style="
-          baseStore.settings.Layout === 'aside' ||
-          baseStore.settings.Layout === 'aside-lean' ||
-          baseStore.settings.Layout === 'top'
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP
             ? baseStore.collapse
               ? 'width: var(--wings-aside-width-fold)'
               : 'width: var(--wings-aside-width)'
@@ -35,29 +36,29 @@ const { baseStore } = useStore();
       >
         <layout-admin-aside
           v-if="
-            baseStore.settings.Layout === 'aside' ||
-            baseStore.settings.Layout === 'aside-lean' ||
-            baseStore.settings.Layout === 'top'
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP
           "
         ></layout-admin-aside>
       </el-aside>
       <el-main
         :style="
-          baseStore.settings.Layout === 'top' ||
-          baseStore.settings.Layout === 'top-lean'
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
             ? 'height: calc(100vh - var(--wings-header-height));'
             : 'height: calc(100vh);'
         "
       >
         <el-header
           :style="
-            baseStore.settings.Layout === 'aside'
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE
               ? 'height: var(--wings-header-height); border-bottom: 1px solid'
               : 'height: 0; border-bottom: none'
           "
         >
           <layout-admin-header
-            v-if="baseStore.settings.Layout === 'aside'"
+            v-if="baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE"
           ></layout-admin-header>
         </el-header>
         <layout-admin-tab v-if="baseStore.settings.Tab"></layout-admin-tab>
@@ -77,7 +78,8 @@ const { baseStore } = useStore();
 <style lang="scss" scoped>
 :deep(.el-header) {
   box-sizing: border-box;
-  padding: 0 1.8rem !important;
+  padding: 0 !important;
+  overflow: hidden;
   background-color: var(--wings-header-bg-color);
   border-color: var(--wings-header-border-color) !important;
   transition: all var(--el-transition-duration)
@@ -86,6 +88,7 @@ const { baseStore } = useStore();
 
 :deep(.el-container) {
   box-sizing: border-box;
+  overflow: hidden;
   background-color: var(--wings-menu-bg-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
@@ -93,6 +96,7 @@ const { baseStore } = useStore();
 
 :deep(.el-aside) {
   box-sizing: border-box;
+  overflow: hidden;
   border-right: 1px solid var(--wings-aside-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);

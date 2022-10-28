@@ -1,6 +1,8 @@
+import type { IObject } from './../../utils/common/index.d';
 import type { Routes } from '../../plugins/vue-router/index.d';
 import type { ViewComponents } from '../../views';
 import { defineStore } from 'pinia';
+import { useCloned } from '@vueuse/core';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { autoImportViewComponents } from '../../utils/auto';
 import { routerInjectLanguages } from '../../utils/router';
@@ -66,12 +68,10 @@ export const useRouteStore = defineStore('route', () => {
           import.meta.glob('/src/views/**/*.vue')
         );
         const roleRoutes: Routes = await mergeRoleRoutes(data, viewComponents);
-        console.log(roleRoutes);
         const adminMenuRoutes: Routes = await mergeAdminMenuRoutes(
           routes,
           roleRoutes
         );
-        console.log(adminMenuRoutes);
         setAdminMenuRoutes(adminMenuRoutes);
         setRolesRoutes(roleRoutes);
         setAllRoutes(data.concat(staticRoutes));
@@ -104,21 +104,35 @@ export const useRouteStore = defineStore('route', () => {
   // 合并权限路由
   const mergeRoleRoutes = (
     roleRoutes: Routes,
-    viewComponents: ViewComponents
+    viewComponents: ViewComponents,
+    breadcrumbList?: Array<IObject>
   ): Routes => {
     const _routes: Routes = [];
     roleRoutes.forEach((item) => {
       const _route = item;
+      item.meta.breadcrumb = [];
       if (item.component) {
         item.component = viewComponents[item.component as string];
       }
+      if (breadcrumbList) {
+        const { cloned } = useCloned(breadcrumbList);
+        item.meta.breadcrumb = cloned.value;
+      }
+      item.meta.breadcrumb.push({
+        label: item.meta.isI18n ? item.meta.i18nKey : item.meta.menuName,
+        value: item.path,
+      });
       if (item.children && item.children.length > 0) {
-        _route.children = mergeRoleRoutes(item.children, viewComponents);
+        _route.children = mergeRoleRoutes(
+          item.children,
+          viewComponents,
+          item.meta.breadcrumb
+        );
       }
       _routes.push(item);
     });
 
-    return routerInjectLanguages(_routes, _t);
+    return _routes;
   };
 
   return {

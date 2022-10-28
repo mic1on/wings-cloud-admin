@@ -28,22 +28,25 @@ interface DefaultSettingsTypes {
   Footer: boolean;
   Tab: boolean;
   UniqueOpened: boolean;
+  Breadcrumb: string;
+  Copyright: string;
   ElementPlus: IObject;
 }
 
 declare module 'vue-router' {
   interface RouteMeta {
-    component?: string | Component | undefined;
+    component?: string | Component;
     isI18n?: boolean;
-    i18nKey?: string | undefined;
-    layout?: string | undefined;
+    i18nKey?: string;
+    layout?: string | null;
     isAdmin: boolean;
-    requiresAuth?: boolean | undefined;
-    iconType?: string | undefined;
-    icon?: string | undefined;
+    requiresAuth?: boolean;
+    iconType?: string;
+    icon?: string;
     menuName?: string;
-    sort?: number | string | undefined;
-    externalPage?: boolean | undefined;
-    externalPageUrl?: string | undefined;
+    sort?: number | string;
+    externalPage?: boolean;
+    externalPageUrl?: string;
+    breadcrumb?: Array[IObject];
   }
 }

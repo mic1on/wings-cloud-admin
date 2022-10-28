@@ -48,8 +48,6 @@ export const addRouterGuard = (router: Router): Router => {
         await userStore.getUserRoles();
         await routeStore.getRoleRoutes();
         baseStore.loading = false;
-        // TODO https://blog.csdn.net/weixin_43835425/article/details/116708448
-        // next({ ...to, replace: true });
         if (to.redirectedFrom) {
           next({ path: to.redirectedFrom.fullPath, replace: true });
         } else {

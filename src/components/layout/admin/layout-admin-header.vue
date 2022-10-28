@@ -1,5 +1,6 @@
 <script lang="ts" setup name="layout-admin-header">
 import { useStore } from '@/hooks/use-store';
+import { SettingsValueEnum } from '@/enums';
 
 const { baseStore } = useStore();
 </script>
@@ -8,12 +9,29 @@ const { baseStore } = useStore();
     <div h-full flex items-center>
       <layout-admin-logo
         v-if="
-          baseStore.settings.Layout === 'top' ||
-          baseStore.settings.Layout === 'top-lean'
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
         "
       ></layout-admin-logo>
+      <layout-admin-menu
+        mode="horizontal"
+        v-if="baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN"
+      ></layout-admin-menu>
+      <layout-admin-breadcrumb
+        v-if="
+          baseStore.settings.Breadcrumb ===
+          SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
+        "
+      ></layout-admin-breadcrumb>
     </div>
-    <div h-full flex items-center>
+    <div
+      h-full
+      flex
+      items-center
+      justify-end
+      p-r-6
+      style="box-sizing: border-box; width: var(--wings-header-toobar-width)"
+    >
       <layout-action-color-scheme
         ml-8
         v-if="baseStore.settings.Toolbar.Dark"
