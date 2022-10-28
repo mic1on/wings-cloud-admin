@@ -3,19 +3,6 @@
     width: 100% !important;
     transition: all var(--el-transition-duration)
       var(--el-transition-function-ease-in-out-bezier);
-
-    .el-sub-menu__title {
-      color: var(--wings-menu-text-color);
-
-      &:hover {
-        color: var(--wings-menu-text-color-hover);
-        background-color: var(--wings-menu-bg-color-hover);
-      }
-
-      &.is-active {
-        border-bottom: none;
-      }
-    }
   }
 
   .el-menu.el-menu--collapse {
@@ -29,10 +16,24 @@
   }
 
   .el-menu.el-menu--horizontal {
-    background-color: var(--wings-header-bg-color);
-
     .el-sub-menu__title {
       border-bottom: none;
+    }
+  }
+
+  .el-sub-menu {
+    .el-menu {
+      color: var(--wings-menu-text-color);
+      background-color: var(--wings-menu-inline-bg-color);
+    }
+
+    .el-sub-menu__title {
+      color: var(--wings-menu-text-color);
+
+      &:hover {
+        color: var(--wings-menu-text-color-hover);
+        background-color: var(--wings-menu-bg-color-hover);
+      }
     }
   }
 
@@ -48,11 +49,6 @@
       color: var(--wings-menu-text-color-active) !important;
       background-color: var(--wings-menu-bg-color-active) !important;
     }
-  }
-
-  .el-sub-menu .el-menu {
-    color: var(--wings-menu-text-color);
-    background-color: var(--wings-menu-inline-bg-color);
   }
 
   &.square {
@@ -117,6 +113,50 @@
     }
 
     &.el-popper {
+      border-radius: var(--wings-menu-radius);
+    }
+
+    .el-menu.el-menu--horizontal {
+      .el-sub-menu {
+        margin-right: var(--wings-menu-gap);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.theme {
+    .el-menu.el-menu--horizontal {
+      background-color: var(--wings-header-bg-color);
+
+      .el-sub-menu {
+        .el-menu {
+          color: var(--wings-header-text-color);
+          background-color: var(--wings-menu-inline-bg-color);
+        }
+
+        .el-sub-menu__title {
+          color: var(--wings-header-text-color);
+
+          &:hover {
+            color: var(--el-text-color-primary);
+            background-color: var(--el-color-info-light-9);
+          }
+        }
+
+        &.is-active {
+          color: var(--el-text-color-primary);
+          background-color: var(--el-color-info-light-9);
+
+          .el-sub-menu__title {
+            color: var(--el-text-color-primary);
+          }
+        }
+      }
+    }
+  }
+
+  &.theme.round {
+    .el-sub-menu {
       border-radius: var(--wings-menu-radius);
     }
   }

@@ -1,11 +1,14 @@
 <script lang="ts" setup name="layout-action-color-scheme">
 import { useStore } from '@/hooks/use-store';
+import { SettingsValueEnum } from '@/enums';
 
 const { baseStore } = useStore();
 
 const changeColorScheme = () => {
   baseStore.settings.ColorScheme =
-    baseStore.settings.ColorScheme === 'dark' ? 'light' : 'dark';
+    baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+      ? SettingsValueEnum.COLOR_SCHEME_LIGHT
+      : SettingsValueEnum.COLOR_SCHEME_DARK;
 };
 
 const props = defineProps({

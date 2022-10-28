@@ -27,7 +27,7 @@ const { baseStore } = useStore();
         :href="route.meta.externalPageUrl"
         text-2
         class="single-line-omitted"
-        :style="baseStore.collapse ? '' : 'width: 78%'"
+        :style="baseStore.collapse ? '' : 'width: 100%'"
       >
         {{ route.meta?.menuName }}
       </a>
@@ -37,7 +37,8 @@ const { baseStore } = useStore();
           size="1.1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
-          :custom-style="baseStore.collapse ? {} : { marginRight: '5px' }"
+          color=""
+          :custom-style="{ marginRight: '5px' }"
         ></svg-icon>
         <el-icon
           width="1rem"
@@ -52,7 +53,7 @@ const { baseStore } = useStore();
         <span
           text="3.4"
           class="single-line-omitted"
-          :style="baseStore.collapse ? '' : 'width: 78%'"
+          :style="baseStore.collapse ? '' : 'width: 100%'"
         >
           {{ route.meta?.menuName }}
         </span>
@@ -69,6 +70,7 @@ const { baseStore } = useStore();
           size="1.1rem"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
+          color=""
           :custom-style="baseStore.collapse ? {} : { marginRight: '5px' }"
         ></svg-icon>
         <el-icon

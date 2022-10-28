@@ -116,6 +116,7 @@ const toolbarChange = (key: string): void => {
       :action="false"
       label-width="240px"
       label-position="left"
+      form-width="100%"
     >
       <el-form-item
         :label="t('admin.systemManagement.systemSetting.componentSize')"
