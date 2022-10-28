@@ -68,7 +68,7 @@ export enum PhoneCodeTypeEnum {
 }
 
 /**
- * @name PhoneCodeTypeEnum
+ * @name StorageEnum
  * @description 缓存 key 枚举
  */
 export enum StorageEnum {
@@ -98,4 +98,28 @@ export enum StorageEnum {
   TAB_STYLE = 'tab-stlye',
   MENU_STYLE = 'menu-style',
   SETTINGS = 'settings',
+}
+
+/**
+ * @name SettingsValueEnum
+ * @description 系统设置参数值枚举
+ */
+export enum SettingsValueEnum {
+  LAYOUT_TOP = 'top',
+  LAYOUT_TOP_LEAN = 'top-lean',
+  LAYOUT_ASIDE = 'aside',
+  LAYOUT_ASIDE_LEAN = 'aside-lean',
+  COLOR_SCHEME_AUTO = 'auto',
+  COLOR_SCHEME_THEME = 'theme',
+  COLOR_SCHEME_LIGHT = 'light',
+  COLOR_SCHEME_DARK = 'dark',
+  TAB_STYLE_SQUARE = 'square',
+  TAB_STYLE_ROUND = 'round',
+  MENU_STYLE_SQUARE = 'square',
+  MENU_STYLE_ROUND = 'round',
+  BREADCRUMB_VIEW_TOP = 'view-top',
+  BREADCRUMB_LAYOUT_HEADER = 'layout-header',
+  BREADCRUMB_HIDDEN = 'hidden',
+  COPYRIGHT_VIEW_BOTTOM = 'view-bottom',
+  COPYRIGHT_HIDDEN = 'hidden',
 }

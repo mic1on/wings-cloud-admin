@@ -11,7 +11,10 @@ import {
   PredefineToolbar,
   PredefineTabStyle,
   PredefineMenuStyle,
+  PredefineCopyrightPosition,
+  PredefineBreadcrumbPosition,
 } from '@/settings';
+import { SettingsValueEnum } from '@/enums';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
 import SettingLayout from './components/setting-layout.vue';
@@ -48,27 +51,41 @@ const toolbarChange = (key: string): void => {
       t('admin.systemManagement.systemSetting.layout')
     }}</div>
     <div flex items-center flex-wrap m-b-6>
-      <setting-layout
-        v-for="(item, index) in PredefineLayouts"
-        :mode="item.value"
-        :name="item.label"
-        :key="index"
-        :active="baseStore.settings.Layout === item.value"
-        @click="changeLayout(item.value as DefaultSettingsLayout)"
-      ></setting-layout>
+      <div v-for="(item, index) in PredefineLayouts" :key="index">
+        <el-tooltip
+          :show-after="300"
+          effect="dark"
+          :content="item.label"
+          placement="top"
+        >
+          <setting-layout
+            :mode="item.value"
+            :name="item.label"
+            :active="baseStore.settings.Layout === item.value"
+            @click="changeLayout(item.value as DefaultSettingsLayout)"
+          ></setting-layout>
+        </el-tooltip>
+      </div>
     </div>
     <div text-4 m-b-4>{{
       t('admin.systemManagement.systemSetting.colorScheme')
     }}</div>
     <div flex items-center flex-wrap m-b-6>
-      <setting-color-scheme
-        v-for="(item, index) in PredefineColorSchemes"
-        :mode="item.value"
-        :name="item.label"
-        :key="index"
-        :active="baseStore.settings.ColorScheme === item.value"
-        @click="changeColorScheme(item.value as DefaultSettingsColorScheme)"
-      ></setting-color-scheme>
+      <div v-for="(item, index) in PredefineColorSchemes" :key="index">
+        <el-tooltip
+          :show-after="300"
+          effect="dark"
+          :content="item.label"
+          placement="top"
+        >
+          <setting-color-scheme
+            :mode="item.value"
+            :name="item.label"
+            :active="baseStore.settings.ColorScheme === item.value"
+            @click="changeColorScheme(item.value as DefaultSettingsColorScheme)"
+          ></setting-color-scheme>
+        </el-tooltip>
+      </div>
     </div>
     <div text-4 m-b-4>{{
       t('admin.systemManagement.systemSetting.themeColor')
@@ -135,13 +152,44 @@ const toolbarChange = (key: string): void => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item :label="t('admin.systemManagement.systemSetting.tab')">
-        <el-switch v-model="baseStore.settings.Tab" />
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.breadcrumb')"
+      >
+        <el-radio-group v-model="baseStore.settings.Breadcrumb">
+          <el-radio-button
+            :disabled="
+              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN &&
+              item.value === SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
+            "
+            :label="item.value"
+            v-for="(item, index) in PredefineBreadcrumbPosition"
+            :key="index"
+          >
+            {{ item.label }}
+          </el-radio-button>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.copyright')"
+      >
+        <el-radio-group v-model="baseStore.settings.Copyright">
+          <el-radio-button
+            :label="item.value"
+            v-for="(item, index) in PredefineCopyrightPosition"
+            :key="index"
+          >
+            {{ item.label }}
+          </el-radio-button>
+        </el-radio-group>
       </el-form-item>
       <el-form-item
         :label="t('admin.systemManagement.systemSetting.uniqueOpened')"
       >
         <el-switch v-model="baseStore.settings.UniqueOpened" />
+      </el-form-item>
+
+      <el-form-item :label="t('admin.systemManagement.systemSetting.tab')">
+        <el-switch v-model="baseStore.settings.Tab" />
       </el-form-item>
     </crud-form>
   </crud-card>

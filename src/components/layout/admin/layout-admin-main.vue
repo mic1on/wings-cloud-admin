@@ -1,14 +1,15 @@
 <script lang="ts" setup name="layout-admin-main">
 import { useStore } from '@/hooks/use-store';
+import { SettingsValueEnum } from '@/enums';
 
 const { baseStore } = useStore();
 
 const height = computed(() => {
   let _height = '100vh';
   if (
-    baseStore.settings.Layout === 'top' ||
-    baseStore.settings.Layout === 'top-lean' ||
-    baseStore.settings.Layout === 'aside'
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN ||
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE
   ) {
     _height =
       'calc(100vh - var(--wings-header-height) - var(--wings-tab-height))';
@@ -20,8 +21,6 @@ const height = computed(() => {
   }
   return 'height: ' + _height;
 });
-
-const copyRight = import.meta.env.APP_COPYRIGHT;
 </script>
 
 <template>
@@ -43,21 +42,22 @@ const copyRight = import.meta.env.APP_COPYRIGHT;
           var(--el-transition-function-ease-in-out-bezier);
       "
     >
-      <!-- TODO 面包屑预留位置 -->
-      <div></div>
+      <layout-admin-breadcrumb
+        v-if="
+          baseStore.settings.Breadcrumb ===
+          SettingsValueEnum.BREADCRUMB_VIEW_TOP
+        "
+      ></layout-admin-breadcrumb>
       <div style="padding-bottom: var(--wings-main-padding)">
         <slot name="main-router-view"></slot>
       </div>
-      <div
-        flex
-        items-center
-        justify-center
-        style="padding: var(--wings-main-padding)"
+      <layout-admin-copyright
+        v-if="
+          baseStore.settings.Copyright ===
+          SettingsValueEnum.COPYRIGHT_VIEW_BOTTOM
+        "
       >
-        <div text-4 style="color: var(--el-text-color-secondary)">
-          {{ copyRight }}
-        </div>
-      </div>
+      </layout-admin-copyright>
     </div>
   </el-scrollbar>
 </template>

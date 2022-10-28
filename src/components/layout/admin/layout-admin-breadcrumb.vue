@@ -1,0 +1,33 @@
+<script lang="ts" setup name="layout-admin-breadcrumb">
+import { useStore } from '@/hooks/use-store';
+import { SettingsValueEnum } from '@/enums';
+
+const { baseStore } = useStore();
+
+const route = useRoute();
+
+const { t } = useI18n();
+</script>
+
+<template>
+  <div
+    flex
+    items-center
+    justify-start
+    :style="
+      baseStore.settings.Breadcrumb == SettingsValueEnum.BREADCRUMB_VIEW_TOP
+        ? 'padding-bottom: var(--wings-main-padding)'
+        : ''
+    "
+  >
+    <el-breadcrumb>
+      <el-breadcrumb-item
+        :to="{ path: item.value }"
+        v-for="(item, index) in route.meta.breadcrumb"
+        :key="index"
+      >
+        {{ t(item.label + '.menuName') }}
+      </el-breadcrumb-item>
+    </el-breadcrumb>
+  </div>
+</template>
