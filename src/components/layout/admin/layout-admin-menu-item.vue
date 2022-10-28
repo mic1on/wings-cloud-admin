@@ -34,11 +34,11 @@ const { baseStore } = useStore();
       <template v-else>
         <svg-icon
           show-el-width
-          size="1.1rem"
+          size="18px"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
           color=""
-          :custom-style="{ marginRight: '5px' }"
+          :custom-style="baseStore.collapse ? {} : { marginRight: '5px' }"
         ></svg-icon>
         <el-icon
           width="1rem"
@@ -67,7 +67,7 @@ const { baseStore } = useStore();
       <template #title>
         <svg-icon
           show-el-width
-          size="1.1rem"
+          size="18px"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
           :name="(route.meta.icon as string)"
           color=""

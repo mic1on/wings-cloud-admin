@@ -51,6 +51,10 @@
     }
   }
 
+  &.el-menu--horizontal {
+    border-bottom: none;
+  }
+
   &.square {
     .el-menu {
       padding: 0;
