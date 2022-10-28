@@ -77,7 +77,8 @@ const { baseStore } = useStore();
 <style lang="scss" scoped>
 :deep(.el-header) {
   box-sizing: border-box;
-  padding: 0 1.8rem !important;
+  padding: 0 !important;
+  overflow: hidden;
   background-color: var(--wings-header-bg-color);
   border-color: var(--wings-header-border-color) !important;
   transition: all var(--el-transition-duration)
@@ -86,6 +87,7 @@ const { baseStore } = useStore();
 
 :deep(.el-container) {
   box-sizing: border-box;
+  overflow: hidden;
   background-color: var(--wings-menu-bg-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
@@ -93,6 +95,7 @@ const { baseStore } = useStore();
 
 :deep(.el-aside) {
   box-sizing: border-box;
+  overflow: hidden;
   border-right: 1px solid var(--wings-aside-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);

@@ -27,7 +27,7 @@ const { baseStore } = useStore();
         :href="route.meta.externalPageUrl"
         text-2
         class="single-line-omitted"
-        style="width: 76%"
+        :style="baseStore.collapse ? '' : 'width: 78%'"
       >
         {{ route.meta?.menuName }}
       </a>
@@ -49,12 +49,24 @@ const { baseStore } = useStore();
         >
           <component :is="route.meta?.icon"></component>
         </el-icon>
-        <span text="3.4" class="single-line-omitted" style="width: 78%">
+        <span
+          text="3.4"
+          class="single-line-omitted"
+          :style="baseStore.collapse ? '' : 'width: 78%'"
+        >
           {{ route.meta?.menuName }}
         </span>
       </template>
     </el-menu-item>
-    <el-sub-menu :index="route.path" v-else>
+    <el-sub-menu
+      :index="route.path"
+      :popper-class="[
+        baseStore.settings.MenuStyle,
+        baseStore.settings.ColorScheme,
+        'layout-admin-menu',
+      ]"
+      v-else
+    >
       <template #title>
         <svg-icon
           show-el-width
@@ -73,7 +85,11 @@ const { baseStore } = useStore();
         >
           <component :is="route.meta?.icon"></component>
         </el-icon>
-        <span text="3.4" class="single-line-omitted" style="width: 68%">
+        <span
+          text="3.4"
+          class="single-line-omitted"
+          :style="baseStore.collapse ? '' : 'width: 68%'"
+        >
           {{ route.meta?.menuName }}
         </span>
       </template>
@@ -81,46 +97,3 @@ const { baseStore } = useStore();
     </el-sub-menu>
   </template>
 </template>
-
-<style lang="scss" scoped>
-.el-menu-item {
-  width: 100% !important;
-  min-width: auto !important;
-  margin-bottom: var(--wings-menu-gap);
-  color: var(--wings-menu-text-color);
-  border-radius: var(--wings-menu-radius);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.el-menu-item.is-active {
-  color: var(--wings-menu-text-color-active) !important;
-  background-color: var(--wings-menu-bg-color-active) !important;
-}
-
-.el-menu-item:hover {
-  color: var(--wings-menu-text-color-hover);
-  background-color: var(--wings-menu-bg-color-hover);
-}
-
-.el-sub-menu {
-  margin-bottom: var(--wings-menu-gap);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  :deep(.el-sub-menu__title) {
-    margin-bottom: var(--wings-menu-gap);
-    color: var(--wings-menu-text-color);
-    border-radius: var(--wings-menu-radius);
-  }
-
-  :deep(.el-sub-menu__title:hover) {
-    color: var(--wings-menu-text-color-hover);
-    background-color: var(--wings-menu-bg-color-hover);
-  }
-}
-</style>

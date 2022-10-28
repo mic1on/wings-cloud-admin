@@ -12,8 +12,19 @@ const { baseStore } = useStore();
           baseStore.settings.Layout === 'top-lean'
         "
       ></layout-admin-logo>
+      <layout-admin-menu
+        mode="horizontal"
+        v-if="baseStore.settings.Layout === 'top-lean'"
+      ></layout-admin-menu>
     </div>
-    <div h-full flex items-center>
+    <div
+      h-full
+      flex
+      items-center
+      justify-end
+      p-r-6
+      style="box-sizing: border-box; width: var(--wings-header-toobar-width)"
+    >
       <layout-action-color-scheme
         ml-8
         v-if="baseStore.settings.Toolbar.Dark"

@@ -11,7 +11,7 @@ const { baseStore } = useStore();
         baseStore.settings.Layout === 'aside' ||
         baseStore.settings.Layout === 'aside-lean'
       "
-      style="height: var(--wings-logo-height)"
+      style="height: var(--wings-aside-logo-height)"
     ></layout-admin-logo>
     <layout-admin-menu></layout-admin-menu>
     <layout-action-collapse></layout-action-collapse>

@@ -20,11 +20,20 @@ const goHomeRoute = () => {
     content-center
     cursor-pointer
     @click="goHomeRoute()"
+    :style="
+      baseStore.collapse
+        ? 'width:var(--wings-aside-width-fold)'
+        : 'width: var(--wings-aside-width)'
+    "
   >
+    <div class="logo" mr-4>
+      <img w-10 h-10 src="@/assets/svgs/logo.svg" alt="" />
+    </div>
     <div
       text-6
       font-600
       text-center
+      v-if="!baseStore.collapse"
       class="single-line-omitted"
       :style="
         baseStore.settings.Layout === 'aside' ||
