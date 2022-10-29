@@ -5,7 +5,7 @@ import { SettingsValueEnum } from '@/enums';
 const { baseStore } = useStore();
 </script>
 <template>
-  <div h-full flex items-center justify-between>
+  <div h-full flex items-center justify-between box-border>
     <div h-full flex items-center>
       <layout-admin-logo
         v-if="
@@ -29,7 +29,7 @@ const { baseStore } = useStore();
       flex
       items-center
       justify-end
-      p-r-6
+      p-x-6
       style="box-sizing: border-box; width: var(--wings-header-toobar-width)"
     >
       <layout-action-color-scheme

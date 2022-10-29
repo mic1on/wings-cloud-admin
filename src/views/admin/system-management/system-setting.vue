@@ -4,6 +4,7 @@ import type {
   DefaultSettingsColorScheme,
 } from '@/global.d';
 import { useStore } from '@/hooks/use-store';
+import { useLanguage } from '@/hooks/use-language';
 import { setEpThemeColor } from '@/utils/theme';
 import {
   PredefineColorSchemes,
@@ -39,6 +40,8 @@ const changeThemeColor = (val: string): void => {
 const toolbarChange = (key: string): void => {
   baseStore.settings.Toolbar[key] = !baseStore.settings.Toolbar[key];
 };
+
+const { languages } = useLanguage();
 </script>
 <template>
   <crud-card
@@ -47,9 +50,9 @@ const toolbarChange = (key: string): void => {
     :sub-title="t('admin.systemManagement.systemSetting.menuDescription')"
     :action-submit-label="t('base.crud.update')"
   >
-    <div text-4 m-b-4>{{
-      t('admin.systemManagement.systemSetting.layout')
-    }}</div>
+    <div text-4 m-b-4>
+      {{ t('admin.systemManagement.systemSetting.layout') }}
+    </div>
     <div flex items-center flex-wrap m-b-6>
       <div v-for="(item, index) in PredefineLayouts" :key="index">
         <el-tooltip
@@ -67,9 +70,9 @@ const toolbarChange = (key: string): void => {
         </el-tooltip>
       </div>
     </div>
-    <div text-4 m-b-4>{{
-      t('admin.systemManagement.systemSetting.colorScheme')
-    }}</div>
+    <div text-4 m-b-4>
+      {{ t('admin.systemManagement.systemSetting.colorScheme') }}
+    </div>
     <div flex items-center flex-wrap m-b-6>
       <div v-for="(item, index) in PredefineColorSchemes" :key="index">
         <el-tooltip
@@ -87,15 +90,15 @@ const toolbarChange = (key: string): void => {
         </el-tooltip>
       </div>
     </div>
-    <div text-4 m-b-4>{{
-      t('admin.systemManagement.systemSetting.themeColor')
-    }}</div>
+    <div text-4 m-b-4>
+      {{ t('admin.systemManagement.systemSetting.themeColor') }}
+    </div>
     <div flex items-center flex-wrap m-b-6>
       <setting-theme-color @change="changeThemeColor"></setting-theme-color>
     </div>
-    <div text-4 m-b-4>{{
-      t('admin.systemManagement.systemSetting.toolbar')
-    }}</div>
+    <div text-4 m-b-4>
+      {{ t('admin.systemManagement.systemSetting.toolbar') }}
+    </div>
     <div flex items-center flex-wrap m-b-6>
       <el-check-tag
         v-for="(item, index) in PredefineToolbar"
@@ -108,14 +111,15 @@ const toolbarChange = (key: string): void => {
         {{ item.label }}
       </el-check-tag>
     </div>
-    <div text-4 m-b-4>{{
-      t('admin.systemManagement.systemSetting.other')
-    }}</div>
+    <div text-4 m-b-4>
+      {{ t('admin.systemManagement.systemSetting.component') }}
+    </div>
     <crud-form
       form-position="left"
       :action="false"
       label-width="240px"
       label-position="left"
+      form-width="100%"
     >
       <el-form-item
         :label="t('admin.systemManagement.systemSetting.componentSize')"
@@ -140,6 +144,14 @@ const toolbarChange = (key: string): void => {
             {{ item.label }}
           </el-radio-button>
         </el-radio-group>
+      </el-form-item>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.uniqueOpened')"
+      >
+        <el-switch v-model="baseStore.settings.UniqueOpened" />
+      </el-form-item>
+      <el-form-item :label="t('admin.systemManagement.systemSetting.tab')">
+        <el-switch v-model="baseStore.settings.Tab" />
       </el-form-item>
       <el-form-item :label="t('admin.systemManagement.systemSetting.tabStyle')">
         <el-radio-group v-model="baseStore.settings.TabStyle">
@@ -182,14 +194,26 @@ const toolbarChange = (key: string): void => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.uniqueOpened')"
-      >
-        <el-switch v-model="baseStore.settings.UniqueOpened" />
-      </el-form-item>
-
-      <el-form-item :label="t('admin.systemManagement.systemSetting.tab')">
-        <el-switch v-model="baseStore.settings.Tab" />
+    </crud-form>
+    <div text-4 m-b-4>
+      {{ t('admin.systemManagement.systemSetting.other') }}
+    </div>
+    <crud-form
+      form-position="left"
+      :action="false"
+      label-width="240px"
+      label-position="left"
+      form-width="100%"
+    >
+      <el-form-item :label="t('admin.systemManagement.systemSetting.language')">
+        <el-select v-model="baseStore.settings.Language" placeholder="Select">
+          <el-option
+            v-for="(value, key) in languages"
+            :key="key"
+            :label="value.name"
+            :value="key"
+          />
+        </el-select>
       </el-form-item>
     </crud-form>
   </crud-card>

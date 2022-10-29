@@ -109,8 +109,8 @@
       "toolbarSetting": "Settings",
       "toolbarNotification": "Message Center",
       "toolbarAvatar": "User Avatar",
+      "component": "Component Settings, you can flexibly configure the component style and location in the layout",
       "componentSize": "Element Plus Component Size",
-      "other": "Other Settings",
       "tab": "Tab component",
       "uniqueOpened": "Accordion Menu",
       "breadcrumb": "Breadcrumb navigation",
@@ -119,7 +119,9 @@
       "breadcrumbLayoutHeader": "Layout Header",
       "copyright": "Copyright information",
       "copyrightHidden": "Hidden",
-      "copyrightBottom": "Bottom"
+      "copyrightBottom": "Bottom",
+      "other": "Other Settings, save the Settings to take effect",
+      "language": "Default language (Take effect after saving)"
     },
     "logManagement": {
       "menuName": "Log Management",

@@ -109,8 +109,8 @@
       "toolbarSetting": "设置",
       "toolbarNotification": "消息中心",
       "toolbarAvatar": "用户头像",
+      "component": "组件设置，可灵活配置布局中的组件风格、位置",
       "componentSize": "Element Plus 组件尺寸大小",
-      "other": "其他设置",
       "tab": "标签页",
       "uniqueOpened": "手风琴菜单",
       "breadcrumb": "面包屑导航",
@@ -119,7 +119,9 @@
       "breadcrumbLayoutHeader": "布局顶栏",
       "copyright": "版权信息",
       "copyrightHidden": "隐藏",
-      "copyrightBottom": "底部"
+      "copyrightBottom": "底部",
+      "other": "其他设置，其他相关的配置需要保存后生效",
+      "language": "默认语言环境"
     },
     "logManagement": {
       "menuName": "日志管理",

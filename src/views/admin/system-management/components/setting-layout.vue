@@ -1,5 +1,6 @@
 <script lang="ts" setup name="setting-layout">
 import { useStore } from '@/hooks/use-store';
+import { SettingsValueEnum } from '@/enums';
 
 const { baseStore } = useStore();
 
@@ -21,7 +22,7 @@ const props = defineProps({
 <template>
   <div mr-10>
     <div h-18 w-18 overflow-hidden cursor-pointer>
-      <div w-full h-full v-if="props.mode === 'top'">
+      <div w-full h-full v-if="props.mode === SettingsValueEnum.LAYOUT_TOP">
         <div
           w-full
           flex
@@ -35,7 +36,8 @@ const props = defineProps({
             border-radius: 4px 4px 0 0;
           "
           :style="
-            baseStore.settings.ColorScheme === 'dark'
+            baseStore.settings.ColorScheme ===
+            SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color:var(--el-border-color)'
               : 'border-color: var(--wings-header-border-color)'
           "
@@ -68,7 +70,11 @@ const props = defineProps({
           ></div>
         </div>
       </div>
-      <div w-full h-full v-if="props.mode === 'top-lean'">
+      <div
+        w-full
+        h-full
+        v-if="props.mode === SettingsValueEnum.LAYOUT_TOP_LEAN"
+      >
         <div
           w-full
           h-4
@@ -79,7 +85,8 @@ const props = defineProps({
             border-radius: 4px 4px 0 0;
           "
           :style="
-            baseStore.settings.ColorScheme === 'dark'
+            baseStore.settings.ColorScheme ===
+            SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color:var(--el-border-color)'
               : 'border-color: var(--wings-header-border-color)'
           "
@@ -97,7 +104,12 @@ const props = defineProps({
           "
         ></div>
       </div>
-      <div w-full h-full flex v-if="props.mode === 'aside'">
+      <div
+        w-full
+        h-full
+        flex
+        v-if="props.mode === SettingsValueEnum.LAYOUT_ASIDE"
+      >
         <div
           h-full
           w-6
@@ -120,7 +132,8 @@ const props = defineProps({
               border-radius: 0 4px 0 0;
             "
             :style="
-              baseStore.settings.ColorScheme === 'dark'
+              baseStore.settings.ColorScheme ===
+              SettingsValueEnum.COLOR_SCHEME_DARK
                 ? 'border-color:var(--el-border-color)'
                 : 'border-color: var(--wings-header-border-color)'
             "
@@ -138,7 +151,12 @@ const props = defineProps({
           ></div>
         </div>
       </div>
-      <div w-full h-full flex v-if="props.mode === 'aside-lean'">
+      <div
+        w-full
+        h-full
+        flex
+        v-if="props.mode === SettingsValueEnum.LAYOUT_ASIDE_LEAN"
+      >
         <div
           h-full
           w-6

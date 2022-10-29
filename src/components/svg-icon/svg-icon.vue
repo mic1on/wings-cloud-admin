@@ -44,12 +44,13 @@ const symbolId = computed(
 
 <template>
   <i
-    flex
+    class="el-icon"
+    inline-flex
     items-center
     justify-center
-    style="text-align: center; vertical-align: middle"
+    style="height: 1em; text-align: center; vertical-align: middle"
     :style="[
-      { width: props.showElWidth ? 'var(--el-menu-icon-width)' : 'auto' },
+      { width: props.showElWidth ? 'var(--el-menu-icon-width)' : '1em' },
       { fontSize: props.size },
       props.customStyle,
     ]"

@@ -340,8 +340,6 @@ export default {
                 meta: {
                   layout: 'admin',
                   requiresAuth: true,
-                  iconType: IconTypeEnum.ELEMENT_PLUS,
-                  icon: 'User',
                   sort: 0,
                   isI18n: true,
                   i18nKey: 'admin.systemManagement.logManagement.loginLog',
@@ -354,8 +352,6 @@ export default {
                 meta: {
                   layout: 'admin',
                   requiresAuth: true,
-                  iconType: IconTypeEnum.ELEMENT_PLUS,
-                  icon: 'Pointer',
                   sort: 1,
                   isI18n: true,
                   i18nKey: 'admin.systemManagement.logManagement.actionLog',

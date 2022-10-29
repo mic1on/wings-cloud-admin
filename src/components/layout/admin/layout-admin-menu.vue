@@ -23,26 +23,30 @@ const height = computed(() => {
       'calc(100vh - var(--wings-header-height) - var(--wings-collapse-height))';
   } else {
     _height =
-      'calc(100vh - var(--wings-aside-logo-height) - var(--wings-collapse-height) )';
+      'calc(100vh - var(--wings-aside-logo-height) - var(--wings-collapse-height))';
   }
-  return 'height:' + _height;
+  return 'height:' + _height + ';';
 });
 
 const width = computed(() => {
   let _width =
-    'width:calc(100vw - var(--wings-header-toobar-width) - var(--wings-aside-width));height:auto';
-  return _width;
+    'calc(100vw - var(--wings-header-toobar-width) - var(--wings-header-logo-width))';
+  return 'width:' + _width + ';height:100%;';
 });
 </script>
 
 <template>
-  <el-scrollbar :wrap-style="props.mode == 'vertical' ? height : width">
+  <el-scrollbar
+    :wrap-style="props.mode == 'vertical' ? height : width"
+    view-style="height:100%;"
+  >
     <div
       :class="[
         baseStore.settings.MenuStyle,
         baseStore.settings.ColorScheme,
         'layout-admin-menu',
       ]"
+      h-full
     >
       <el-menu
         router
@@ -51,7 +55,7 @@ const width = computed(() => {
         :collapse="props.mode == 'vertical' ? baseStore.collapse : false"
         :unique-opened="baseStore.settings.UniqueOpened"
         :default-active="route.path"
-        important="border-r-none"
+        important="h-full border-none"
       >
         <layout-admin-menu-item
           :routes="routeStore.adminMenuRoutes"

@@ -1,5 +1,5 @@
 <script lang="ts" setup name="layout-admin-copyright">
-const copyRight = import.meta.env.APP_COPYRIGHT;
+const { t } = useI18n();
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const copyRight = import.meta.env.APP_COPYRIGHT;
     style="padding: var(--wings-main-padding)"
   >
     <div text-4 style="color: var(--el-text-color-secondary)">
-      {{ copyRight }}
+      {{ t('base.appCopyright') }}
     </div>
   </div>
 </template>
