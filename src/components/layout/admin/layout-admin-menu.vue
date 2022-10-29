@@ -30,7 +30,7 @@ const height = computed(() => {
 
 const width = computed(() => {
   let _width =
-    'width:calc(100vw - var(--wings-header-toobar-width) - var(--wings-aside-width))';
+    'calc(100vw - var(--wings-header-toobar-width) - var(--wings-header-logo-width))';
   return 'width:' + _width + ';height:100%;';
 });
 </script>

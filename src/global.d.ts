@@ -31,6 +31,7 @@ interface DefaultSettingsTypes {
   Breadcrumb: string;
   Copyright: string;
   ElementPlus: IObject;
+  Language: string;
 }
 
 declare module 'vue-router' {

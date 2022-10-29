@@ -1,4 +1,6 @@
 {
+  "appName": "Wings Vue RBAC System",
+  "appCopyright": "Copyright © 2022-PRESENT Wings Cloud",
   "loading": "The resource is loading. Please wait...",
   "building": "Building...",
   "admin": "Administration",

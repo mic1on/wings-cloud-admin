@@ -2,32 +2,60 @@
 import { useStore } from '@/hooks/use-store';
 import { SettingsValueEnum } from '@/enums';
 
+const { t } = useI18n();
+
 const router = useRouter();
 
 const { baseStore } = useStore();
 
-const appName = import.meta.env.APP_NAME;
-
 const goHomeRoute = () => {
   router.push({ path: import.meta.env.APP_ADMIN_FIRST_ROUTE });
 };
+
+const width = computed(() => {
+  let _width = 'var(--wings-header-logo-width)';
+  if (
+    baseStore.collapse &&
+    (baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+      baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN)
+  ) {
+    _width = 'var(--wings-aside-width-fold)';
+  } else {
+    _width = 'var(--wings-aside-width)';
+  }
+  if (
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+  ) {
+    _width = 'var(--wings-header-logo-width)';
+  }
+  return 'width:' + _width + ';';
+});
+
+const position = computed(() => {
+  let _position = 'display:flex;align-items:center;';
+  if (
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
+  ) {
+    _position += 'justify-content:center;';
+  } else if (
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+  ) {
+    _position += 'justify-content:flex-start;';
+  }
+  return _position;
+});
 </script>
 
 <template>
   <div
-    flex
-    items-center
-    justify-center
-    content-center
     cursor-pointer
+    p-x-6
+    box-border
     @click="goHomeRoute()"
-    :style="
-      baseStore.collapse &&
-      (baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN)
-        ? 'width:var(--wings-aside-width-fold)'
-        : 'width: var(--wings-aside-width)'
-    "
+    :style="[width, position]"
   >
     <div class="logo" flex items-center justify-center>
       <img w-10 h-10 src="@/assets/svgs/logo.svg" alt="" />
@@ -50,7 +78,7 @@ const goHomeRoute = () => {
           : 'color: var(--wings-header-text-color)'
       "
     >
-      {{ appName }}
+      {{ t('base.appName') }}
     </div>
   </div>
 </template>

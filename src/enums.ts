@@ -122,4 +122,5 @@ export enum SettingsValueEnum {
   BREADCRUMB_HIDDEN = 'hidden',
   COPYRIGHT_VIEW_BOTTOM = 'view-bottom',
   COPYRIGHT_HIDDEN = 'hidden',
+  LANGUAGE = 'en-US',
 }

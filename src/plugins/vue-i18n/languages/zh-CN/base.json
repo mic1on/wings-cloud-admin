@@ -1,4 +1,6 @@
 {
+  "appName": "Wings Vue 权限管理系统",
+  "appCopyright": "Copyright © 2022-PRESENT Wings Cloud",
   "loading": "资源加载中，请稍后...",
   "building": "建设中...",
   "admin": "管理后台",

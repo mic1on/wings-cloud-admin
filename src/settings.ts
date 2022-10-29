@@ -35,6 +35,7 @@ export const DefaultSettings: DefaultSettingsTypes = {
       autoInsertSpace: true,
     },
   },
+  Language: SettingsValueEnum.LANGUAGE,
 };
 
 /**
