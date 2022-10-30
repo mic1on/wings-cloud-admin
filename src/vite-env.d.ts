@@ -15,7 +15,6 @@ interface ImportMetaEnv {
   readonly APP_FIRST_ROUTE: RouteLocationRaw;
   readonly APP_LOGIN_ROUTE: RouteLocationRaw;
   readonly APP_ADMIN_FIRST_ROUTE: RouteLocationRaw;
-  readonly APP_DEFAULT_LANGUAGE: string;
   readonly APP_KEEP_ALIVE: boolean;
   readonly APP_LOGIN_TO_ADMIN: boolean;
   readonly APP_LOGIN_TYPE: string;

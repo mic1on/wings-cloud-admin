@@ -11,7 +11,7 @@ import { DefaultSettings } from '../../settings';
 export const useBaseStore = defineStore('base', () => {
   // 当前语言环境
   const language = ref<string>(
-    getStorage(StorageEnum.LANGUAGE) || process.env.APP_DEFAULT_LANGUAGE
+    getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
   );
 
   // 应用加载状态

@@ -108,7 +108,7 @@ const { languages } = useLanguage();
         :checked="baseStore.settings.Toolbar[item.value]"
         @change="toolbarChange(item.value)"
       >
-        {{ item.label }}
+        {{ t(item.label) }}
       </el-check-tag>
     </div>
     <div text-4 m-b-4>
@@ -120,6 +120,7 @@ const { languages } = useLanguage();
       label-width="240px"
       label-position="left"
       form-width="100%"
+      m-b-6
     >
       <el-form-item
         :label="t('admin.systemManagement.systemSetting.componentSize')"
@@ -141,7 +142,7 @@ const { languages } = useLanguage();
             v-for="(item, index) in PredefineMenuStyle"
             :key="index"
           >
-            {{ item.label }}
+            {{ t(item.label) }}
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
@@ -160,7 +161,7 @@ const { languages } = useLanguage();
             v-for="(item, index) in PredefineTabStyle"
             :key="index"
           >
-            {{ item.label }}
+            {{ t(item.label) }}
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
@@ -177,7 +178,7 @@ const { languages } = useLanguage();
             v-for="(item, index) in PredefineBreadcrumbPosition"
             :key="index"
           >
-            {{ item.label }}
+            {{ t(item.label) }}
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
@@ -190,7 +191,7 @@ const { languages } = useLanguage();
             v-for="(item, index) in PredefineCopyrightPosition"
             :key="index"
           >
-            {{ item.label }}
+            {{ t(item.label) }}
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
@@ -204,6 +205,7 @@ const { languages } = useLanguage();
       label-width="240px"
       label-position="left"
       form-width="100%"
+      m-b-6
     >
       <el-form-item :label="t('admin.systemManagement.systemSetting.language')">
         <el-select v-model="baseStore.settings.Language" placeholder="Select">
