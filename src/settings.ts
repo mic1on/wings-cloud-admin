@@ -1,5 +1,5 @@
 import type { DefaultSettingsTypes } from './global';
-import { SettingsValueEnum } from './enums';
+import { SettingsValueEnum, LanguageEnum } from './enums';
 import { _t } from './plugins/vue-i18n';
 
 /**
@@ -35,7 +35,7 @@ export const DefaultSettings: DefaultSettingsTypes = {
       autoInsertSpace: true,
     },
   },
-  Language: SettingsValueEnum.LANGUAGE,
+  Language: LanguageEnum.EN_US_ALIAS,
 };
 
 /**
@@ -44,31 +44,31 @@ export const DefaultSettings: DefaultSettingsTypes = {
  */
 export const PredefineToolbar = [
   {
-    label: _t('admin.systemManagement.systemSetting.toolbarDark'),
+    label: 'admin.systemManagement.systemSetting.toolbarDark',
     value: 'Dark',
   },
   {
-    label: _t('admin.systemManagement.systemSetting.toolbarLanguage'),
+    label: 'admin.systemManagement.systemSetting.toolbarLanguage',
     value: 'Language',
   },
   {
-    label: _t('admin.systemManagement.systemSetting.toolbarRefresh'),
+    label: 'admin.systemManagement.systemSetting.toolbarRefresh',
     value: 'Refresh',
   },
   {
-    label: _t('admin.systemManagement.systemSetting.toolbarNotification'),
+    label: 'admin.systemManagement.systemSetting.toolbarNotification',
     value: 'Notification',
   },
   {
-    label: _t('admin.systemManagement.systemSetting.toolabarFullscreen'),
+    label: 'admin.systemManagement.systemSetting.toolabarFullscreen',
     value: 'Fullscreen',
   },
   {
-    label: _t('admin.systemManagement.systemSetting.toolbarSetting'),
+    label: 'admin.systemManagement.systemSetting.toolbarSetting',
     value: 'Setting',
   },
   {
-    label: _t('admin.systemManagement.systemSetting.toolbarAvatar'),
+    label: 'admin.systemManagement.systemSetting.toolbarAvatar',
     value: 'Avatar',
   },
 ];
@@ -79,19 +79,19 @@ export const PredefineToolbar = [
  */
 export const PredefineLayouts = [
   {
-    label: _t('admin.systemManagement.systemSetting.layoutTop'),
+    label: 'admin.systemManagement.systemSetting.layoutTop',
     value: SettingsValueEnum.LAYOUT_TOP,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.layoutTopLean'),
+    label: 'admin.systemManagement.systemSetting.layoutTopLean',
     value: SettingsValueEnum.LAYOUT_TOP_LEAN,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.layoutAside'),
+    label: 'admin.systemManagement.systemSetting.layoutAside',
     value: SettingsValueEnum.LAYOUT_ASIDE,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.layoutAsideLean'),
+    label: 'admin.systemManagement.systemSetting.layoutAsideLean',
     value: SettingsValueEnum.LAYOUT_ASIDE_LEAN,
   },
 ];
@@ -102,19 +102,19 @@ export const PredefineLayouts = [
  */
 export const PredefineColorSchemes = [
   {
-    label: _t('admin.systemManagement.systemSetting.colorSchemeAuto'),
+    label: 'admin.systemManagement.systemSetting.colorSchemeAuto',
     value: SettingsValueEnum.COLOR_SCHEME_AUTO,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.colorSchemeTheme'),
+    label: 'admin.systemManagement.systemSetting.colorSchemeTheme',
     value: SettingsValueEnum.COLOR_SCHEME_THEME,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.colorSchemeLight'),
+    label: 'admin.systemManagement.systemSetting.colorSchemeLight',
     value: SettingsValueEnum.COLOR_SCHEME_LIGHT,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.colorSchemeDark'),
+    label: 'admin.systemManagement.systemSetting.colorSchemeDark',
     value: SettingsValueEnum.COLOR_SCHEME_DARK,
   },
 ];
@@ -138,11 +138,11 @@ export const PredefineThemeColors = [
  */
 export const PredefineTabStyle = [
   {
-    label: _t('admin.systemManagement.systemSetting.tabStyleSquare'),
+    label: 'admin.systemManagement.systemSetting.tabStyleSquare',
     value: SettingsValueEnum.TAB_STYLE_SQUARE,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.tabStyleRound'),
+    label: 'admin.systemManagement.systemSetting.tabStyleRound',
     value: SettingsValueEnum.TAB_STYLE_ROUND,
   },
 ];
@@ -153,11 +153,11 @@ export const PredefineTabStyle = [
  */
 export const PredefineMenuStyle = [
   {
-    label: _t('admin.systemManagement.systemSetting.menuStyleSquare'),
+    label: 'admin.systemManagement.systemSetting.menuStyleSquare',
     value: SettingsValueEnum.MENU_STYLE_SQUARE,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.menuStyleRound'),
+    label: 'admin.systemManagement.systemSetting.menuStyleRound',
     value: SettingsValueEnum.MENU_STYLE_ROUND,
   },
 ];
@@ -168,15 +168,15 @@ export const PredefineMenuStyle = [
  */
 export const PredefineBreadcrumbPosition = [
   {
-    label: _t('admin.systemManagement.systemSetting.breadcrumbViewTop'),
+    label: 'admin.systemManagement.systemSetting.breadcrumbViewTop',
     value: SettingsValueEnum.BREADCRUMB_VIEW_TOP,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.breadcrumbLayoutHeader'),
+    label: 'admin.systemManagement.systemSetting.breadcrumbLayoutHeader',
     value: SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.breadcrumbHidden'),
+    label: 'admin.systemManagement.systemSetting.breadcrumbHidden',
     value: SettingsValueEnum.BREADCRUMB_HIDDEN,
   },
 ];
@@ -187,11 +187,11 @@ export const PredefineBreadcrumbPosition = [
  */
 export const PredefineCopyrightPosition = [
   {
-    label: _t('admin.systemManagement.systemSetting.copyrightBottom'),
+    label: 'admin.systemManagement.systemSetting.copyrightBottom',
     value: SettingsValueEnum.COPYRIGHT_VIEW_BOTTOM,
   },
   {
-    label: _t('admin.systemManagement.systemSetting.copyrightHidden'),
+    label: 'admin.systemManagement.systemSetting.copyrightHidden',
     value: SettingsValueEnum.COPYRIGHT_HIDDEN,
   },
 ];

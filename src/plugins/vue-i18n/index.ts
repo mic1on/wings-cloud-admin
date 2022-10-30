@@ -6,9 +6,10 @@ import { pluginAddRegister } from '../../utils/auto';
 import { getStorage } from '../../utils/storage';
 import { StorageEnum } from '../../enums';
 import { messages, languages } from './messages';
+import { DefaultSettings } from '../../settings';
 
 const language: any =
-  getStorage(StorageEnum.LANGUAGE) || import.meta.env.APP_DEFAULT_LANGUAGE;
+  getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language;
 document
   .getElementsByTagName('html')[0]
   .setAttribute('lang', language as string);
@@ -16,7 +17,7 @@ document
 const i18n: I18n = createI18n({
   legacy: false,
   locale: language,
-  fallbackLocale: import.meta.env.APP_DEFAULT_LANGUAGE,
+  fallbackLocale: DefaultSettings.Language,
   globalInjection: true,
   useScope: 'global',
   messages,
