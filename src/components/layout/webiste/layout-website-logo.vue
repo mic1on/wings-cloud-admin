@@ -1,5 +1,6 @@
 <script lang="ts" setup name="layout-website-logo">
 import { useStore } from '@/hooks/use-store';
+import { DefaultSettings } from '@/settings';
 
 const route = useRoute();
 const router = useRouter();
@@ -10,7 +11,7 @@ const { baseStore } = useStore();
 
 const goHomeRoute = () => {
   if (route.path.indexOf('website') !== -1) {
-    router.push({ path: import.meta.env.APP_FIRST_ROUTE });
+    router.push({ path: DefaultSettings.FirstRoute });
   } else if (route.path.indexOf('admin') !== -1) {
     router.push({ path: import.meta.env.APP_ADMIN_FIRST_ROUTE });
   }

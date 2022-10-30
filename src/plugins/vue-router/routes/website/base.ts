@@ -1,8 +1,10 @@
+import { DefaultSettings } from '../../../../settings';
+
 export default [
   {
     path: '/website',
     name: 'website',
-    redirect: import.meta.env.APP_FIRST_ROUTE,
+    redirect: DefaultSettings.FirstRoute,
     component: () => import('@/views/website/index.vue'),
     meta: { requiresAuth: false, layout: '', isAdmin: false },
   },

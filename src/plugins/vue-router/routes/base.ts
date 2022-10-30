@@ -1,10 +1,11 @@
-import Index from '@/views/index.vue';
+import Index from '../../../views/index.vue';
+import { DefaultSettings } from '../../../settings';
 
 export default [
   {
     path: '/',
     component: Index,
-    redirect: import.meta.env.APP_FIRST_ROUTE,
+    redirect: DefaultSettings.FirstRoute,
     meta: { requiresAuth: false, layout: '', isAdmin: false },
   },
   {

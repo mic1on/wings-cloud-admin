@@ -121,7 +121,8 @@
       "copyrightHidden": "Hidden",
       "copyrightBottom": "Bottom",
       "other": "Other Settings, save the Settings to take effect",
-      "language": "Default language"
+      "language": "Default language",
+      "firstRoute": "Web site first route"
     },
     "logManagement": {
       "menuName": "Log Management",

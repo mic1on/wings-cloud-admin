@@ -1,5 +1,5 @@
 import type { DefaultSettingsTypes } from './global';
-import { SettingsValueEnum, LanguageEnum } from './enums';
+import { SettingsValueEnum, LanguageEnum, RouteEnum } from './enums';
 import { _t } from './plugins/vue-i18n';
 
 /**
@@ -36,6 +36,7 @@ export const DefaultSettings: DefaultSettingsTypes = {
     },
   },
   Language: LanguageEnum.EN_US_ALIAS,
+  FirstRoute: RouteEnum.ROUTE_FIRST,
 };
 
 /**

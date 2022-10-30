@@ -32,6 +32,7 @@ interface DefaultSettingsTypes {
   Copyright: string;
   ElementPlus: IObject;
   Language: string;
+  FirstRoute: string;
 }
 
 declare module 'vue-router' {

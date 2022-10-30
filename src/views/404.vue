@@ -1,10 +1,11 @@
 <script lang="ts" setup>
+import { DefaultSettings } from '@/settings';
 const { t } = useI18n();
 
 const router = useRouter();
 
 const goHome = () => {
-  router.replace({ path: import.meta.env.APP_FIRST_ROUTE });
+  router.replace({ path: DefaultSettings.FirstRoute });
 };
 </script>
 

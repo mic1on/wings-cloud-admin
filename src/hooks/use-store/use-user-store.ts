@@ -15,6 +15,7 @@ import {
   signup as _signup,
 } from '../../apis/website/user';
 import { getUserRoles as _getUserRoles } from '../../apis/admin/auth';
+import { DefaultSettings } from '../../settings';
 
 /**
  * @name useUserStore
@@ -119,7 +120,7 @@ export const useUserStore = defineStore('user', () => {
     router.push({
       path: JSON.parse(import.meta.env.APP_LOGIN_TO_ADMIN)
         ? import.meta.env.APP_ADMIN_FIRST_ROUTE
-        : import.meta.env.APP_FIRST_ROUTE,
+        : DefaultSettings.FirstRoute,
     });
   };
 

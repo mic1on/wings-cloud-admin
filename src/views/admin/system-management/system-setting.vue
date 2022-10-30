@@ -208,7 +208,7 @@ const { languages } = useLanguage();
       m-b-6
     >
       <el-form-item :label="t('admin.systemManagement.systemSetting.language')">
-        <el-select v-model="baseStore.settings.Language" placeholder="Select">
+        <el-select style="width: 260px" v-model="baseStore.settings.Language">
           <el-option
             v-for="(value, key) in languages"
             :key="key"
@@ -216,6 +216,14 @@ const { languages } = useLanguage();
             :value="key"
           />
         </el-select>
+      </el-form-item>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.firstRoute')"
+      >
+        <el-input
+          style="width: 260px"
+          v-model="baseStore.settings.FirstRoute"
+        ></el-input>
       </el-form-item>
     </crud-form>
   </crud-card>

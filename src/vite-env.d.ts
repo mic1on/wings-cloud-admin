@@ -12,7 +12,6 @@ interface ImportMetaEnv {
   readonly APP_REQUEST_URL: string;
   readonly APP_SOCKET_URL: string;
   readonly APP_REQUEST_TIMEOUT: number;
-  readonly APP_FIRST_ROUTE: RouteLocationRaw;
   readonly APP_LOGIN_ROUTE: RouteLocationRaw;
   readonly APP_ADMIN_FIRST_ROUTE: RouteLocationRaw;
   readonly APP_KEEP_ALIVE: boolean;

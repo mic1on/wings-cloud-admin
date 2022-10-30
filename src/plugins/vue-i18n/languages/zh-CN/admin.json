@@ -121,7 +121,8 @@
       "copyrightHidden": "隐藏",
       "copyrightBottom": "底部",
       "other": "其他设置，其他相关的配置需要保存后生效",
-      "language": "默认语言环境"
+      "language": "默认语言环境",
+      "firstRoute": "网站首页路由"
     },
     "logManagement": {
       "menuName": "日志管理",
