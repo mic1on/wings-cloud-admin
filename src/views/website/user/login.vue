@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { DefaultSettings } from '@/settings';
 import { StorageEnum } from '@/enums';
 import { setStorage } from '@/utils/storage';
 import { getMobileAreaCodeList } from '@/apis/base';
@@ -14,8 +15,10 @@ const { t } = useI18n();
 
 const route = useRoute();
 
-const loginType = ref<string | null | undefined>(
-  route.params.type ? route.params.type : import.meta.env.APP_LOGIN_TYPE
+const loginType = ref<string>(
+  route.params.type
+    ? (route.params.type as string)
+    : (DefaultSettings.LoginType as string)
 );
 
 const changeLoginType = (type: string, isOpen: boolean): void => {

@@ -1,6 +1,7 @@
 <script lang="ts" setup name="layout-action-avatar">
-import { useStore } from '@/hooks/use-store';
+import { DefaultSettings } from '@/settings';
 import { RouteEnum } from '@/enums';
+import { useStore } from '@/hooks/use-store';
 
 const { t } = useI18n();
 
@@ -10,7 +11,7 @@ const router = useRouter();
 
 const { userStore } = useStore();
 
-const adminRoute = import.meta.env.APP_ADMIN_FIRST_ROUTE;
+const adminRoute = DefaultSettings.AdminFirstRoute;
 
 const actionChange = (command: string): void => {
   if (command.indexOf('/') !== -1) {

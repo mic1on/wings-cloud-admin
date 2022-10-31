@@ -1,6 +1,7 @@
 <script lang="ts" setup name="layout-admin-logo">
-import { useStore } from '@/hooks/use-store';
+import { DefaultSettings } from '@/settings';
 import { SettingsValueEnum } from '@/enums';
+import { useStore } from '@/hooks/use-store';
 
 const { t } = useI18n();
 
@@ -9,7 +10,7 @@ const router = useRouter();
 const { baseStore } = useStore();
 
 const goHomeRoute = () => {
-  router.push({ path: import.meta.env.APP_ADMIN_FIRST_ROUTE });
+  router.push({ path: DefaultSettings.AdminFirstRoute });
 };
 
 const width = computed(() => {

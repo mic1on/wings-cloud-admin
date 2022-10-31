@@ -14,6 +14,7 @@ import {
   PredefineMenuStyle,
   PredefineCopyrightPosition,
   PredefineBreadcrumbPosition,
+  PredefineLoginType,
 } from '@/settings';
 import { SettingsValueEnum } from '@/enums';
 import SettingColorScheme from './components/setting-color-scheme.vue';
@@ -114,12 +115,10 @@ const { languages } = useLanguage();
     <div text-4 m-b-4>
       {{ t('admin.systemManagement.systemSetting.component') }}
     </div>
-    <crud-form
-      form-position="left"
-      :action="false"
+    <el-form
+      :style="{ width: '100%' }"
       label-width="240px"
       label-position="left"
-      form-width="100%"
       m-b-6
     >
       <el-form-item
@@ -195,16 +194,14 @@ const { languages } = useLanguage();
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-    </crud-form>
+    </el-form>
     <div text-4 m-b-4>
       {{ t('admin.systemManagement.systemSetting.other') }}
     </div>
-    <crud-form
-      form-position="left"
-      :action="false"
+    <el-form
+      :style="{ width: '100%' }"
       label-width="240px"
       label-position="left"
-      form-width="100%"
       m-b-6
     >
       <el-form-item :label="t('admin.systemManagement.systemSetting.language')">
@@ -225,6 +222,26 @@ const { languages } = useLanguage();
           v-model="baseStore.settings.FirstRoute"
         ></el-input>
       </el-form-item>
-    </crud-form>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.adminFirstRoute')"
+      >
+        <el-input
+          style="width: 260px"
+          v-model="baseStore.settings.AdminFirstRoute"
+        ></el-input>
+      </el-form-item>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.loginType')"
+      >
+        <el-select style="width: 260px" v-model="baseStore.settings.LoginType">
+          <el-option
+            v-for="(item, index) in PredefineLoginType"
+            :key="index"
+            :label="t(item.label)"
+            :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
+    </el-form>
   </crud-card>
 </template>

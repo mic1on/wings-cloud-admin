@@ -122,7 +122,14 @@
       "copyrightBottom": "底部",
       "other": "其他设置，其他相关的配置需要保存后生效",
       "language": "默认语言环境",
-      "firstRoute": "网站首页路由"
+      "firstRoute": "网站首页路由",
+      "adminFirstRoute": "管理系统首页路由",
+      "loginType": "登录方式",
+      "loginTypeAccount": "账号密码",
+      "loginTypePhone": "手机号+验证码",
+      "loginTypeEmail": "邮箱+验证码",
+      "loginTypeWechat": "微信扫码登录",
+      "loginTypeApipay": "支付宝扫码登录"
     },
     "logManagement": {
       "menuName": "日志管理",

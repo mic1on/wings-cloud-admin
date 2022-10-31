@@ -4,6 +4,7 @@ import type {
   NavigationGuardNext,
 } from 'vue-router';
 import type { Roles } from '../../hooks/use-store/index.d';
+import { DefaultSettings } from '../../settings';
 import { RouteEnum, StorageEnum } from '../../enums';
 import { useBaseStore } from '../../hooks/use-store/use-base-store';
 import { useRouteStore } from '../../hooks/use-store/use-route-store';
@@ -36,8 +37,7 @@ export const addRouterGuard = (router: Router): Router => {
 
       if (requiresAuth && !userStore.isLogin) {
         next({
-          path:
-            RouteEnum.ROUTE_LOGIN + '?type=' + import.meta.env.APP_LOGIN_TYPE,
+          path: RouteEnum.ROUTE_LOGIN + '?type=' + DefaultSettings.LoginType,
         });
         return;
       }

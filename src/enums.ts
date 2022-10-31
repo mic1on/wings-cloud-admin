@@ -4,6 +4,7 @@
  */
 export enum RouteEnum {
   ROUTE_FIRST = '/website/home',
+  ROUTE_ADMIN_FIRST = '/admin/home/workbench',
   ROUTE_NO_PERMISSION = '/403',
   ROUTE_NO_FOUND = '/404',
   ROUTE_LOGIN = '/website/user/login',
@@ -124,4 +125,9 @@ export enum SettingsValueEnum {
   COPYRIGHT_VIEW_BOTTOM = 'view-bottom',
   COPYRIGHT_HIDDEN = 'hidden',
   LANGUAGE = 'en-US',
+  LOGIN_TYPE_ACCOUNT = 'account',
+  LOGIN_TYPE_PHONE = 'phone',
+  LOGIN_TYPE_EMAIL = 'email',
+  LOGIN_TYPE_WECHAT = 'wechat',
+  LOGIN_TYPE_ALIPAY = 'alipay',
 }

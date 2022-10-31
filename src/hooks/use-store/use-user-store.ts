@@ -119,7 +119,7 @@ export const useUserStore = defineStore('user', () => {
     });
     router.push({
       path: JSON.parse(import.meta.env.APP_LOGIN_TO_ADMIN)
-        ? import.meta.env.APP_ADMIN_FIRST_ROUTE
+        ? DefaultSettings.AdminFirstRoute
         : DefaultSettings.FirstRoute,
     });
   };
