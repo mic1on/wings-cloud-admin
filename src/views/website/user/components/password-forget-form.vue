@@ -3,11 +3,11 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { PasswordRetrieveForm } from '../index.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { useCountDown } from '@/hooks/use-count-down';
 import { PhoneCodeTypeEnum } from '@/enums';
-import { getStorage } from '@/utils/storage';
 import { RouteEnum, StorageEnum } from '@/enums';
+import { useCountDown } from '@/hooks/use-count-down';
 import { PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
+import { getStorage } from '@/utils/storage';
 import { getPhoneCode as _getPhoneCode } from '@/apis/base';
 
 const { t } = useI18n();
@@ -19,7 +19,7 @@ const router = useRouter();
 const formRef = ref<FormInstance>();
 
 const form = ref<PasswordRetrieveForm>({
-  areaCode: import.meta.env.APP_MOBILE_AREA_CODE,
+  areaCode: '+86',
   phone: '',
   code: '',
   password: '',

@@ -1,5 +1,6 @@
 <script lang="ts" setup name="layout-website-header">
 import type { IObject } from '@/global.d';
+import { DefaultSettings } from '@/settings';
 
 const { t } = useI18n();
 
@@ -11,7 +12,7 @@ const currentTab = ref<string>(route.path as string);
 const tabs = ref<Array<IObject>>([
   {
     label: t('website.menu.home'),
-    path: import.meta.env.APP_FIRST_ROUTE as string,
+    path: DefaultSettings.FirstRoute,
     isRoute: true,
   },
   {
@@ -21,7 +22,7 @@ const tabs = ref<Array<IObject>>([
   },
   {
     label: t('website.menu.admin'),
-    path: import.meta.env.APP_ADMIN_FIRST_ROUTE as string,
+    path: DefaultSettings.AdminFirstRoute,
     isRoute: true,
   },
 ]);

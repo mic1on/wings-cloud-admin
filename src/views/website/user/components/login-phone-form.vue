@@ -15,7 +15,7 @@ const countDown = useCountDown();
 const formRef = ref<FormInstance>();
 
 const form = ref<LoginPhoneForm>({
-  areaCode: import.meta.env.APP_MOBILE_AREA_CODE,
+  areaCode: '+86',
   phone: '',
   code: '',
   remember: false,

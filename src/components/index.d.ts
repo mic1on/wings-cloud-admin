@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     EchartsBar: typeof import('./echarts/echarts-bar.vue')['default']
     EchartsLine: typeof import('./echarts/echarts-line.vue')['default']
     EchartsPie: typeof import('./echarts/echarts-pie.vue')['default']
+    ElAlert: typeof import('element-plus/es')['ElAlert']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBadge: typeof import('element-plus/es')['ElBadge']

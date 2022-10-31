@@ -1,5 +1,5 @@
 import type { DefaultSettingsTypes } from './global';
-import { SettingsValueEnum, LanguageEnum } from './enums';
+import { SettingsValueEnum, LanguageEnum, RouteEnum } from './enums';
 import { _t } from './plugins/vue-i18n';
 
 /**
@@ -36,6 +36,10 @@ export const DefaultSettings: DefaultSettingsTypes = {
     },
   },
   Language: LanguageEnum.EN_US_ALIAS,
+  FirstRoute: RouteEnum.ROUTE_FIRST,
+  AdminFirstRoute: RouteEnum.ROUTE_ADMIN_FIRST,
+  LoginType: SettingsValueEnum.LOGIN_TYPE_ACCOUNT,
+  LoginTo: RouteEnum.ROUTE_ADMIN_FIRST,
 };
 
 /**
@@ -193,5 +197,32 @@ export const PredefineCopyrightPosition = [
   {
     label: 'admin.systemManagement.systemSetting.copyrightHidden',
     value: SettingsValueEnum.COPYRIGHT_HIDDEN,
+  },
+];
+
+/**
+ * @name PredefineLoginType
+ * @description 预置登录方式
+ */
+export const PredefineLoginType = [
+  {
+    label: 'admin.systemManagement.systemSetting.loginTypeAccount',
+    value: SettingsValueEnum.LOGIN_TYPE_ACCOUNT,
+  },
+  {
+    label: 'admin.systemManagement.systemSetting.loginTypePhone',
+    value: SettingsValueEnum.LOGIN_TYPE_PHONE,
+  },
+  {
+    label: 'admin.systemManagement.systemSetting.loginTypeEmail',
+    value: SettingsValueEnum.LOGIN_TYPE_EMAIL,
+  },
+  {
+    label: 'admin.systemManagement.systemSetting.loginTypeWechat',
+    value: SettingsValueEnum.LOGIN_TYPE_WECHAT,
+  },
+  {
+    label: 'admin.systemManagement.systemSetting.loginTypeApipay',
+    value: SettingsValueEnum.LOGIN_TYPE_ALIPAY,
   },
 ];

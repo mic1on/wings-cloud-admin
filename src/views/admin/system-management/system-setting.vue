@@ -3,9 +3,6 @@ import type {
   DefaultSettingsLayout,
   DefaultSettingsColorScheme,
 } from '@/global.d';
-import { useStore } from '@/hooks/use-store';
-import { useLanguage } from '@/hooks/use-language';
-import { setEpThemeColor } from '@/utils/theme';
 import {
   PredefineColorSchemes,
   PredefineLayouts,
@@ -14,8 +11,13 @@ import {
   PredefineMenuStyle,
   PredefineCopyrightPosition,
   PredefineBreadcrumbPosition,
+  PredefineLoginType,
 } from '@/settings';
-import { SettingsValueEnum } from '@/enums';
+import { SettingsValueEnum, StorageEnum } from '@/enums';
+import { useStore } from '@/hooks/use-store';
+import { useLanguage } from '@/hooks/use-language';
+import { setEpThemeColor } from '@/utils/theme';
+import { getStorage } from '@/utils/storage';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
 import SettingLayout from './components/setting-layout.vue';
@@ -42,6 +44,8 @@ const toolbarChange = (key: string): void => {
 };
 
 const { languages } = useLanguage();
+
+const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 </script>
 <template>
   <crud-card
@@ -49,6 +53,7 @@ const { languages } = useLanguage();
     :title="t('admin.systemManagement.systemSetting.menuName')"
     :sub-title="t('admin.systemManagement.systemSetting.menuDescription')"
     :action-submit-label="t('base.crud.update')"
+    :action-cancel-label="t('admin.systemManagement.systemSetting.copy')"
   >
     <div text-4 m-b-4>
       {{ t('admin.systemManagement.systemSetting.layout') }}
@@ -114,12 +119,10 @@ const { languages } = useLanguage();
     <div text-4 m-b-4>
       {{ t('admin.systemManagement.systemSetting.component') }}
     </div>
-    <crud-form
-      form-position="left"
-      :action="false"
-      label-width="240px"
+    <el-form
+      :style="{ width: '100%' }"
+      label-width="220px"
       label-position="left"
-      form-width="100%"
       m-b-6
     >
       <el-form-item
@@ -195,20 +198,26 @@ const { languages } = useLanguage();
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-    </crud-form>
-    <div text-4 m-b-4>
-      {{ t('admin.systemManagement.systemSetting.other') }}
+    </el-form>
+    <div style="width: 320px" mb-4>
+      <el-alert
+        show-icon
+        :closable="false"
+        :title="t('admin.systemManagement.systemSetting.other')"
+        :description="
+          t('admin.systemManagement.systemSetting.otherDescription')
+        "
+        type="warning"
+      />
     </div>
-    <crud-form
-      form-position="left"
-      :action="false"
-      label-width="240px"
+    <el-form
+      :style="{ width: '100%' }"
+      label-width="220px"
       label-position="left"
-      form-width="100%"
       m-b-6
     >
       <el-form-item :label="t('admin.systemManagement.systemSetting.language')">
-        <el-select v-model="baseStore.settings.Language" placeholder="Select">
+        <el-select style="width: 260px" v-model="baseStore.settings.Language">
           <el-option
             v-for="(value, key) in languages"
             :key="key"
@@ -217,6 +226,40 @@ const { languages } = useLanguage();
           />
         </el-select>
       </el-form-item>
-    </crud-form>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.firstRoute')"
+      >
+        <el-input
+          style="width: 260px"
+          v-model="baseStore.settings.FirstRoute"
+        ></el-input>
+      </el-form-item>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.adminFirstRoute')"
+      >
+        <el-input
+          style="width: 260px"
+          v-model="baseStore.settings.AdminFirstRoute"
+        ></el-input>
+      </el-form-item>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.loginType')"
+      >
+        <el-select style="width: 260px" v-model="baseStore.settings.LoginType">
+          <el-option
+            v-for="(item, index) in PredefineLoginType"
+            :key="index"
+            :label="t(item.label)"
+            :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
+      <el-form-item :label="t('admin.systemManagement.systemSetting.loginTo')">
+        <el-input
+          style="width: 260px"
+          v-model="baseStore.settings.LoginTo"
+        ></el-input>
+      </el-form-item>
+    </el-form>
   </crud-card>
 </template>

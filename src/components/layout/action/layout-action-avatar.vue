@@ -1,6 +1,7 @@
 <script lang="ts" setup name="layout-action-avatar">
-import { useStore } from '@/hooks/use-store';
+import { DefaultSettings } from '@/settings';
 import { RouteEnum } from '@/enums';
+import { useStore } from '@/hooks/use-store';
 
 const { t } = useI18n();
 
@@ -9,8 +10,6 @@ const route = useRoute();
 const router = useRouter();
 
 const { userStore } = useStore();
-
-const adminRoute = import.meta.env.APP_ADMIN_FIRST_ROUTE;
 
 const actionChange = (command: string): void => {
   if (command.indexOf('/') !== -1) {
@@ -43,7 +42,7 @@ const goLoginPage = (): void => {
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
-          :command="adminRoute"
+          :command="DefaultSettings.AdminFirstRoute"
           v-if="route.path.indexOf('website') !== -1"
         >
           <el-icon><Monitor /></el-icon>

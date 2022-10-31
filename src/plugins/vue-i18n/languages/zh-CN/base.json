@@ -47,7 +47,8 @@
     "fileName": "文件名",
     "next": "下一步",
     "submit": "提交",
-    "selected": "当前选中"
+    "selected": "当前选中",
+    "copy": "复制"
   },
   "unkown": {
     "error": "未知错误，错误信息：{message}",

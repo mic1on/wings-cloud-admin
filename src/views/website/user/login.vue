@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { StorageEnum } from '@/enums';
-import { setStorage } from '@/utils/storage';
-import { getMobileAreaCodeList } from '@/apis/base';
+import { useStore } from '@/hooks/use-store';
 import UserTemplate from './components/user-template.vue';
 import LoginAccountForm from './components/login-account-form.vue';
 import LoginPhoneForm from './components/login-phone-form.vue';
@@ -10,20 +8,21 @@ import LoginAlipayForm from './components/login-alipay-form.vue';
 import LoginEmailForm from './components/login-email-form.vue';
 import TermsConditions from './components/terms-conditions.vue';
 
+const { baseStore } = useStore();
+
 const { t } = useI18n();
 
 const route = useRoute();
 
-const loginType = ref<string | null | undefined>(
-  route.params.type ? route.params.type : import.meta.env.APP_LOGIN_TYPE
+const loginType = ref<string>(
+  route.params.type
+    ? (route.params.type as string)
+    : (baseStore.settings.LoginType as string)
 );
 
 const changeLoginType = (type: string, isOpen: boolean): void => {
   loginType.value = type;
 };
-
-const { data } = await getMobileAreaCodeList();
-setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
 </script>
 <template>
   <user-template>

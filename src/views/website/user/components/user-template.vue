@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { DefaultSettings } from '@/settings';
+
 const { t } = useI18n();
 
 const appCopyright: string = import.meta.env.APP_COPYRIGHT;
@@ -6,7 +8,7 @@ const appCopyright: string = import.meta.env.APP_COPYRIGHT;
 const router = useRouter();
 
 const backHome = (): void => {
-  router.push({ path: import.meta.env.APP_FIRST_ROUTE });
+  router.push({ path: DefaultSettings.FirstRoute });
 };
 </script>
 <template>

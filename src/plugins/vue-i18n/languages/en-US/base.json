@@ -47,7 +47,8 @@
     "fileName": "File Name",
     "next": "Next",
     "submit": "Submit",
-    "selected": "Selected"
+    "selected": "Selected",
+    "copy": "Copy"
   },
   "unkown": {
     "error": "Unknown error, error message: {message}",

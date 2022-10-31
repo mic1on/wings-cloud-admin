@@ -1,11 +1,13 @@
 <script lang="ts" setup>
+import { DefaultSettings } from '@/settings';
+
 const { t } = useI18n();
 
 const router = useRouter();
 
 const goAdmin = () => {
   router.push({
-    path: import.meta.env.APP_ADMIN_FIRST_ROUTE,
+    path: DefaultSettings.AdminFirstRoute,
   });
 };
 </script>

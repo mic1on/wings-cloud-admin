@@ -1,5 +1,6 @@
 import type { AppStorageOptions } from './index.d';
 import { isNullOrUndefined } from '../common';
+import { StorageEnum } from '../../enums';
 
 /**
  * @name storageType
@@ -23,9 +24,9 @@ export const setStorage = (
   data: any,
   options?: AppStorageOptions
 ): void => {
-  key = `${import.meta.env.APP_STOREAGE_PREFIX as unknown as string}-${key}`;
+  key = `${StorageEnum.KEY}-${key}`;
   options = {
-    type: import.meta.env.APP_STOREAGE_TYPE,
+    type: 'session',
     isTemplate: false,
     isJSON: true,
     ...options,
@@ -53,9 +54,9 @@ export const setStorage = (
  * @return data
  */
 export const getStorage = (key: string, options?: AppStorageOptions): any => {
-  key = `${import.meta.env.APP_STOREAGE_PREFIX as unknown as string}-${key}`;
+  key = `${StorageEnum.KEY}-${key}`;
   options = {
-    type: import.meta.env.APP_STOREAGE_TYPE,
+    type: 'session',
     isTemplate: false,
     isJSON: true,
     ...options,
@@ -86,6 +87,6 @@ export const getStorage = (key: string, options?: AppStorageOptions): any => {
  * @param type
  */
 export const removeStorage = (key: string, type?: string): void => {
-  key = `${import.meta.env.APP_STOREAGE_PREFIX as unknown as string}-${key}`;
-  storageType(type || import.meta.env.APP_STOREAGE_TYPE).removeItem(key);
+  key = `${StorageEnum.KEY}-${key}`;
+  storageType(type || 'session').removeItem(key);
 };

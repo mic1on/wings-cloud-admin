@@ -2,7 +2,7 @@ export default [
   {
     path: '/website',
     name: 'website',
-    redirect: import.meta.env.APP_FIRST_ROUTE,
+    redirect: '/website/home',
     component: () => import('@/views/website/index.vue'),
     meta: { requiresAuth: false, layout: '', isAdmin: false },
   },

@@ -3,11 +3,11 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '../index.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
+import { RouteEnum, StorageEnum, PhoneCodeTypeEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
 import { useCountDown } from '@/hooks/use-count-down';
-import { getStorage } from '@/utils/storage';
-import { RouteEnum, StorageEnum, PhoneCodeTypeEnum } from '@/enums';
 import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
+import { getStorage } from '@/utils/storage';
 import { getPhoneCode as _getPhoneCode } from '@/apis/base';
 
 const { t } = useI18n();
@@ -22,7 +22,7 @@ const formRef = ref<FormInstance>();
 
 const form = ref<SignupAccountForm>({
   username: '',
-  areaCode: import.meta.env.APP_MOBILE_AREA_CODE,
+  areaCode: '+86',
   phone: '',
   code: '',
   password: '',
