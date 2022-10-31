@@ -2,6 +2,7 @@
 import type { FormRules, FormInstance } from 'element-plus';
 import type { LoginPhoneForm } from '../index.d';
 import { ElMessage } from 'element-plus';
+import { DefaultSettings } from '@/settings';
 import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
 import { MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
@@ -15,7 +16,7 @@ const countDown = useCountDown();
 const formRef = ref<FormInstance>();
 
 const form = ref<LoginPhoneForm>({
-  areaCode: import.meta.env.APP_MOBILE_AREA_CODE,
+  areaCode: DefaultSettings.PhoneCode,
   phone: '',
   code: '',
   remember: false,

@@ -3,6 +3,7 @@ import type { ResponseData } from '../../utils/request/index.d';
 import type { LoginAccountData, SignupData } from '../../apis/website/user.d';
 import { defineStore } from 'pinia';
 import { ElNotification } from 'element-plus';
+import { DefaultSettings } from '../../settings';
 import { useRouteStore } from './use-route-store';
 import { getStorage, setStorage } from '../../utils/storage';
 import { getLoginStorageType } from '../../utils/common';
@@ -15,7 +16,6 @@ import {
   signup as _signup,
 } from '../../apis/website/user';
 import { getUserRoles as _getUserRoles } from '../../apis/admin/auth';
-import { DefaultSettings } from '../../settings';
 
 /**
  * @name useUserStore
@@ -118,9 +118,7 @@ export const useUserStore = defineStore('user', () => {
       type: 'success',
     });
     router.push({
-      path: JSON.parse(import.meta.env.APP_LOGIN_TO_ADMIN)
-        ? DefaultSettings.AdminFirstRoute
-        : DefaultSettings.FirstRoute,
+      path: DefaultSettings.LoginTo,
     });
   };
 

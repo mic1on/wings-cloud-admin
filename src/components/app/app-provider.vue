@@ -1,6 +1,6 @@
 <script lang="ts" setup name="app-provider">
-import { DefaultSettings } from '@/settings';
 import { useStore } from '@/hooks/use-store';
+import { getMobileAreaCodes } from '@/hooks/use-common-data';
 
 const route = useRoute();
 
@@ -26,6 +26,8 @@ watch(
     immediate: true,
   }
 );
+
+getMobileAreaCodes();
 </script>
 
 <template>

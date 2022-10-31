@@ -129,7 +129,9 @@
       "loginTypePhone": "手机号+验证码",
       "loginTypeEmail": "邮箱+验证码",
       "loginTypeWechat": "微信扫码登录",
-      "loginTypeApipay": "支付宝扫码登录"
+      "loginTypeApipay": "支付宝扫码登录",
+      "loginTo": "登录后跳转的路由",
+      "phoneCode": "手机默认区号"
     },
     "logManagement": {
       "menuName": "日志管理",

@@ -3,9 +3,6 @@ import type {
   DefaultSettingsLayout,
   DefaultSettingsColorScheme,
 } from '@/global.d';
-import { useStore } from '@/hooks/use-store';
-import { useLanguage } from '@/hooks/use-language';
-import { setEpThemeColor } from '@/utils/theme';
 import {
   PredefineColorSchemes,
   PredefineLayouts,
@@ -16,7 +13,11 @@ import {
   PredefineBreadcrumbPosition,
   PredefineLoginType,
 } from '@/settings';
-import { SettingsValueEnum } from '@/enums';
+import { SettingsValueEnum, StorageEnum } from '@/enums';
+import { useStore } from '@/hooks/use-store';
+import { useLanguage } from '@/hooks/use-language';
+import { setEpThemeColor } from '@/utils/theme';
+import { getStorage } from '@/utils/storage';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
 import SettingLayout from './components/setting-layout.vue';
@@ -43,6 +44,8 @@ const toolbarChange = (key: string): void => {
 };
 
 const { languages } = useLanguage();
+
+const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 </script>
 <template>
   <crud-card
@@ -239,6 +242,24 @@ const { languages } = useLanguage();
             :key="index"
             :label="t(item.label)"
             :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
+      <el-form-item :label="t('admin.systemManagement.systemSetting.loginTo')">
+        <el-input
+          style="width: 260px"
+          v-model="baseStore.settings.LoginTo"
+        ></el-input>
+      </el-form-item>
+      <el-form-item
+        :label="t('admin.systemManagement.systemSetting.phoneCode')"
+      >
+        <el-select style="width: 260px" v-model="baseStore.settings.PhoneCode">
+          <el-option
+            v-for="(item, index) in mobileAreaCodeList"
+            :key="index"
+            :label="item.code"
+            :value="item.code"
           />
         </el-select>
       </el-form-item>

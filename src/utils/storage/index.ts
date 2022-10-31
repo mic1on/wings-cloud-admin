@@ -25,7 +25,7 @@ export const setStorage = (
 ): void => {
   key = `${import.meta.env.APP_STOREAGE_PREFIX as unknown as string}-${key}`;
   options = {
-    type: import.meta.env.APP_STOREAGE_TYPE,
+    type: 'session',
     isTemplate: false,
     isJSON: true,
     ...options,
@@ -55,7 +55,7 @@ export const setStorage = (
 export const getStorage = (key: string, options?: AppStorageOptions): any => {
   key = `${import.meta.env.APP_STOREAGE_PREFIX as unknown as string}-${key}`;
   options = {
-    type: import.meta.env.APP_STOREAGE_TYPE,
+    type: 'session',
     isTemplate: false,
     isJSON: true,
     ...options,
@@ -87,5 +87,5 @@ export const getStorage = (key: string, options?: AppStorageOptions): any => {
  */
 export const removeStorage = (key: string, type?: string): void => {
   key = `${import.meta.env.APP_STOREAGE_PREFIX as unknown as string}-${key}`;
-  storageType(type || import.meta.env.APP_STOREAGE_TYPE).removeItem(key);
+  storageType(type || 'session').removeItem(key);
 };

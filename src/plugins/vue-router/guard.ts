@@ -18,12 +18,14 @@ import { getLoginStorageType } from '../../utils/common';
  * @returns
  */
 export const addRouterGuard = (router: Router): Router => {
+  // 前置拦截
   router.beforeEach(
     async (
       to: RouteLocationNormalized,
       from: RouteLocationNormalized,
       next: NavigationGuardNext
     ) => {
+      // 获取权限数据
       const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
       });
@@ -31,10 +33,12 @@ export const addRouterGuard = (router: Router): Router => {
         (item: any) => item.meta.requiresAuth
       );
 
+      // 初始化全局状态
       const baseStore = useBaseStore();
       const routeStore = useRouteStore();
       const userStore = useUserStore();
 
+      // 未登录跳转登录页
       if (requiresAuth && !userStore.isLogin) {
         next({
           path: RouteEnum.ROUTE_LOGIN + '?type=' + DefaultSettings.LoginType,
@@ -42,6 +46,7 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
+      // 页面刷新时初始化路由信息
       if (userStore.isLogin && routeStore.roleRoutes.length == 0) {
         baseStore.loading = true;
         await userStore.getUserProfile();
@@ -56,6 +61,7 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
+      // 鉴权处理
       if (userStore.isLogin && requiresAuth && !userRoles.includes(to.path)) {
         next({
           path: RouteEnum.ROUTE_NO_PERMISSION,
@@ -67,8 +73,10 @@ export const addRouterGuard = (router: Router): Router => {
     }
   );
 
+  // 解析拦截
   router.beforeResolve(async (to: RouteLocationNormalized) => {});
 
+  // 后置拦截
   router.afterEach(
     (to: RouteLocationNormalized, from: RouteLocationNormalized) => {}
   );

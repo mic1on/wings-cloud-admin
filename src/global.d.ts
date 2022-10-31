@@ -56,6 +56,8 @@ interface DefaultSettingsTypes {
   FirstRoute: string;
   AdminFirstRoute: string;
   LoginType: DefaultSettingsLoginType;
+  LoginTo: string;
+  PhoneCode: string;
 }
 
 declare module 'vue-router' {

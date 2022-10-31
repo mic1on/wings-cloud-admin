@@ -129,7 +129,9 @@
       "loginTypePhone": "Mobile Phone & Verification Code",
       "loginTypeEmail": "Email & Verification Code",
       "loginTypeWechat": "Wechat Scan Code Login",
-      "loginTypeApipay": "Alipay Scan Code Login"
+      "loginTypeApipay": "Alipay Scan Code Login",
+      "loginTo": "After login, to the route",
+      "phoneCode": "The default area code of the phone"
     },
     "logManagement": {
       "menuName": "Log Management",
