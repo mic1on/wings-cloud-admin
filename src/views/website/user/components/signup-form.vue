@@ -3,7 +3,6 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '../index.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { DefaultSettings } from '@/settings';
 import { RouteEnum, StorageEnum, PhoneCodeTypeEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
 import { useCountDown } from '@/hooks/use-count-down';
@@ -23,7 +22,7 @@ const formRef = ref<FormInstance>();
 
 const form = ref<SignupAccountForm>({
   username: '',
-  areaCode: DefaultSettings.PhoneCode,
+  areaCode: '+86',
   phone: '',
   code: '',
   password: '',

@@ -9,11 +9,6 @@ import { DefaultSettings } from '../../settings';
  * @description 基础状态管理钩子函数
  */
 export const useBaseStore = defineStore('base', () => {
-  // 当前语言环境
-  const language = ref<string>(
-    getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
-  );
-
   // 应用加载状态
   const loading = ref<boolean>(false);
 
@@ -23,6 +18,11 @@ export const useBaseStore = defineStore('base', () => {
   // 系统设置
   const settings = ref<DefaultSettingsTypes>(
     getStorage(StorageEnum.SETTINGS) || DefaultSettings
+  );
+
+  // 当前语言环境
+  const language = ref<string>(
+    getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
   );
 
   // 切换语言环境

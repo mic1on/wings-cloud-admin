@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { DefaultSettings } from '@/settings';
+import { useStore } from '@/hooks/use-store';
 import UserTemplate from './components/user-template.vue';
 import LoginAccountForm from './components/login-account-form.vue';
 import LoginPhoneForm from './components/login-phone-form.vue';
@@ -8,6 +8,8 @@ import LoginAlipayForm from './components/login-alipay-form.vue';
 import LoginEmailForm from './components/login-email-form.vue';
 import TermsConditions from './components/terms-conditions.vue';
 
+const { baseStore } = useStore();
+
 const { t } = useI18n();
 
 const route = useRoute();
@@ -15,7 +17,7 @@ const route = useRoute();
 const loginType = ref<string>(
   route.params.type
     ? (route.params.type as string)
-    : (DefaultSettings.LoginType as string)
+    : (baseStore.settings.LoginType as string)
 );
 
 const changeLoginType = (type: string, isOpen: boolean): void => {

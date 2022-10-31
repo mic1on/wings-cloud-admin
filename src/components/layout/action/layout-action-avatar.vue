@@ -11,8 +11,6 @@ const router = useRouter();
 
 const { userStore } = useStore();
 
-const adminRoute = DefaultSettings.AdminFirstRoute;
-
 const actionChange = (command: string): void => {
   if (command.indexOf('/') !== -1) {
     router.push({ path: command });
@@ -44,7 +42,7 @@ const goLoginPage = (): void => {
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
-          :command="adminRoute"
+          :command="DefaultSettings.AdminFirstRoute"
           v-if="route.path.indexOf('website') !== -1"
         >
           <el-icon><Monitor /></el-icon>

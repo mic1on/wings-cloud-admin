@@ -74,6 +74,7 @@ export enum PhoneCodeTypeEnum {
  * @description 缓存 key 枚举
  */
 export enum StorageEnum {
+  KEY = 'wings-vue-storage',
   LANGUAGE = 'language',
   STAY_LOGIN = 'stay-login',
   TOKEN = 'token',

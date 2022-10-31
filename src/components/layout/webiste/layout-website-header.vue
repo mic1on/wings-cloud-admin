@@ -22,7 +22,7 @@ const tabs = ref<Array<IObject>>([
   },
   {
     label: t('website.menu.admin'),
-    path: DefaultSettings.AdminFirstRoute as string,
+    path: DefaultSettings.AdminFirstRoute,
     isRoute: true,
   },
 ]);

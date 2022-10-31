@@ -3,7 +3,6 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { PasswordRetrieveForm } from '../index.d';
 import { ElMessage } from 'element-plus';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { DefaultSettings } from '@/settings';
 import { PhoneCodeTypeEnum } from '@/enums';
 import { RouteEnum, StorageEnum } from '@/enums';
 import { useCountDown } from '@/hooks/use-count-down';
@@ -20,7 +19,7 @@ const router = useRouter();
 const formRef = ref<FormInstance>();
 
 const form = ref<PasswordRetrieveForm>({
-  areaCode: DefaultSettings.PhoneCode,
+  areaCode: '+86',
   phone: '',
   code: '',
   password: '',

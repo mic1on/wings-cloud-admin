@@ -53,6 +53,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
     :title="t('admin.systemManagement.systemSetting.menuName')"
     :sub-title="t('admin.systemManagement.systemSetting.menuDescription')"
     :action-submit-label="t('base.crud.update')"
+    :action-cancel-label="t('admin.systemManagement.systemSetting.copy')"
   >
     <div text-4 m-b-4>
       {{ t('admin.systemManagement.systemSetting.layout') }}
@@ -120,7 +121,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="240px"
+      label-width="220px"
       label-position="left"
       m-b-6
     >
@@ -198,12 +199,20 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
         </el-radio-group>
       </el-form-item>
     </el-form>
-    <div text-4 m-b-4>
-      {{ t('admin.systemManagement.systemSetting.other') }}
+    <div style="width: 320px" mb-4>
+      <el-alert
+        show-icon
+        :closable="false"
+        :title="t('admin.systemManagement.systemSetting.other')"
+        :description="
+          t('admin.systemManagement.systemSetting.otherDescription')
+        "
+        type="warning"
+      />
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="240px"
+      label-width="220px"
       label-position="left"
       m-b-6
     >
@@ -250,18 +259,6 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
           style="width: 260px"
           v-model="baseStore.settings.LoginTo"
         ></el-input>
-      </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.phoneCode')"
-      >
-        <el-select style="width: 260px" v-model="baseStore.settings.PhoneCode">
-          <el-option
-            v-for="(item, index) in mobileAreaCodeList"
-            :key="index"
-            :label="item.code"
-            :value="item.code"
-          />
-        </el-select>
       </el-form-item>
     </el-form>
   </crud-card>

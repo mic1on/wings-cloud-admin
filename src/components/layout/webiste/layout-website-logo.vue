@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-website-logo">
-import { DefaultSettings } from '@/settings';
 import { useStore } from '@/hooks/use-store';
+import { DefaultSettings } from '@/settings';
 
 const route = useRoute();
 const router = useRouter();

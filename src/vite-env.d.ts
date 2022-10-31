@@ -12,7 +12,6 @@ interface ImportMetaEnv {
   readonly APP_SOCKET_URL: string;
   readonly APP_REQUEST_TIMEOUT: number;
   readonly APP_KEEP_ALIVE: boolean;
-  readonly APP_STOREAGE_PREFIX: string;
 }
 
 interface ImportMeta {

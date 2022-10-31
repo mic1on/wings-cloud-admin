@@ -40,7 +40,6 @@ export const DefaultSettings: DefaultSettingsTypes = {
   AdminFirstRoute: RouteEnum.ROUTE_ADMIN_FIRST,
   LoginType: SettingsValueEnum.LOGIN_TYPE_ACCOUNT,
   LoginTo: RouteEnum.ROUTE_ADMIN_FIRST,
-  PhoneCode: '+86',
 };
 
 /**
