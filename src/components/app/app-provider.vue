@@ -2,6 +2,7 @@
 import { DefaultSettings } from '@/settings';
 import { useStore } from '@/hooks/use-store';
 import { getMobileAreaCodes } from '@/hooks/use-common-data';
+import { setEpThemeColor } from '@/utils/theme';
 
 const route = useRoute();
 
@@ -20,6 +21,18 @@ watch(
     }
     if (newVal) {
       document.documentElement.classList.add(newVal);
+    }
+  },
+  {
+    immediate: true,
+  }
+);
+
+watch(
+  () => baseStore.settings.ThemeColor,
+  (newVal, old) => {
+    if (newVal && (newVal !== old || !old)) {
+      setEpThemeColor(newVal as string);
     }
   },
   {

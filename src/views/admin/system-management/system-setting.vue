@@ -3,7 +3,9 @@ import type {
   DefaultSettingsLayout,
   DefaultSettingsColorScheme,
 } from '@/global.d';
+import { useClipboard } from '@vueuse/core';
 import {
+  DefaultSettings,
   PredefineColorSchemes,
   PredefineLayouts,
   PredefineToolbar,
@@ -16,11 +18,10 @@ import {
 import { SettingsValueEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
 import { useLanguage } from '@/hooks/use-language';
-import { setEpThemeColor } from '@/utils/theme';
+import { ElMessage } from 'element-plus';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
 import SettingLayout from './components/setting-layout.vue';
-import base from '@/plugins/mock/modules/base';
 
 const { t } = useI18n();
 
@@ -36,7 +37,6 @@ const changeColorScheme = (val: DefaultSettingsColorScheme): void => {
 
 const changeThemeColor = (val: string): void => {
   baseStore.settings.ThemeColor = val;
-  setEpThemeColor(val as string);
 };
 
 const toolbarChange = (key: string): void => {
@@ -45,13 +45,24 @@ const toolbarChange = (key: string): void => {
 
 const { languages } = useLanguage();
 
-const update = () => {
+const updateSettings = () => {
   baseStore.updateSettings(baseStore.settings);
+  ElMessage.success(t('admin.systemManagement.systemSetting.updateSuccess'));
 };
 
-const copy = () => {};
+const { copy } = useClipboard({
+  source: JSON.stringify(baseStore.settings),
+});
 
-const back = () => {};
+const copySettings = () => {
+  copy();
+  ElMessage.success(t('admin.systemManagement.systemSetting.copySuccess'));
+};
+
+const backSettings = () => {
+  baseStore.updateSettings(DefaultSettings);
+  ElMessage.success(t('admin.systemManagement.systemSetting.backSuccess'));
+};
 </script>
 <template>
   <crud-card
@@ -267,13 +278,13 @@ const back = () => {};
       </el-form-item>
     </el-form>
     <template #action>
-      <el-button type="primary" @click="update">
+      <el-button type="primary" @click="updateSettings">
         {{ t('base.crud.update') }}
       </el-button>
-      <el-button @click="copy">
+      <el-button @click="copySettings">
         {{ t('admin.systemManagement.systemSetting.copy') }}
       </el-button>
-      <el-button @click="back">
+      <el-button @click="backSettings">
         {{ t('admin.systemManagement.systemSetting.back') }}
       </el-button>
     </template>

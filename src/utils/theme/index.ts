@@ -43,5 +43,5 @@ export const setEpThemeColor = (color?: string): void => {
     );
   }
   const dark = colorMix(color, '#000000', 0.2);
-  element.style.setProperty(`--el-color-primary-light-2`, dark);
+  element.style.setProperty(`--el-color-primary-dark-2`, dark);
 };

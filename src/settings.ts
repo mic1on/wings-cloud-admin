@@ -2,45 +2,54 @@ import type { DefaultSettingsTypes } from './global';
 import { SettingsValueEnum, LanguageEnum, RouteEnum } from './enums';
 
 /**
+ * @name ReplaceSettings
+ * @description 替换设置对象，可将拷贝的系统设置替换到该常量
+ */
+export const ReplaceSettings: DefaultSettingsTypes | null = null;
+
+/**
  * @name DefaultSettings
  * @description 默认设置
  */
-export const DefaultSettings: DefaultSettingsTypes = {
-  Layout: SettingsValueEnum.LAYOUT_TOP,
-  ThemeColor: '#0d6efd',
-  ColorScheme: SettingsValueEnum.COLOR_SCHEME_AUTO,
-  TabStyle: SettingsValueEnum.TAB_STYLE_SQUARE,
-  MenuStyle: SettingsValueEnum.MENU_STYLE_ROUND,
-  Toolbar: {
-    Dark: true,
-    Language: true,
-    Refresh: true,
-    Notification: true,
-    Fullscreen: true,
-    Setting: true,
-    Avatar: true,
-  },
-  Footer: false,
-  Tab: true,
-  UniqueOpened: true,
-  Copyright: SettingsValueEnum.COPYRIGHT_VIEW_BOTTOM,
-  Breadcrumb: SettingsValueEnum.BREADCRUMB_VIEW_TOP,
-  ElementPlus: {
-    size: 'default',
-    message: {
-      max: 3,
+export const DefaultSettings: DefaultSettingsTypes = Object.assign(
+  {
+    Layout: SettingsValueEnum.LAYOUT_TOP,
+    ThemeColor: '#0d6efd',
+    ColorScheme: SettingsValueEnum.COLOR_SCHEME_AUTO,
+    TabStyle: SettingsValueEnum.TAB_STYLE_SQUARE,
+    MenuStyle: SettingsValueEnum.MENU_STYLE_ROUND,
+    Toolbar: {
+      Dark: true,
+      Language: true,
+      Refresh: true,
+      Notification: true,
+      Fullscreen: true,
+      Setting: true,
+      Avatar: true,
     },
-    button: {
-      autoInsertSpace: true,
+    Footer: false,
+    Tab: true,
+    UniqueOpened: true,
+    Copyright: SettingsValueEnum.COPYRIGHT_VIEW_BOTTOM,
+    Breadcrumb: SettingsValueEnum.BREADCRUMB_VIEW_TOP,
+    ElementPlus: {
+      size: 'default',
+      message: {
+        max: 3,
+      },
+      button: {
+        autoInsertSpace: true,
+      },
+      language: 'el-language',
     },
-    language: 'el-language',
+    Language: LanguageEnum.EN_US_ALIAS,
+    FirstRoute: RouteEnum.ROUTE_FIRST,
+    AdminFirstRoute: RouteEnum.ROUTE_ADMIN_FIRST,
+    LoginType: SettingsValueEnum.LOGIN_TYPE_ACCOUNT,
+    LoginTo: RouteEnum.ROUTE_ADMIN_FIRST,
   },
-  Language: LanguageEnum.EN_US_ALIAS,
-  FirstRoute: RouteEnum.ROUTE_FIRST,
-  AdminFirstRoute: RouteEnum.ROUTE_ADMIN_FIRST,
-  LoginType: SettingsValueEnum.LOGIN_TYPE_ACCOUNT,
-  LoginTo: RouteEnum.ROUTE_ADMIN_FIRST,
-};
+  ReplaceSettings
+);
 
 /**
  * @name PredefineToolbar

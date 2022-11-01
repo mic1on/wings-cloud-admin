@@ -3,33 +3,20 @@ import { SettingsValueEnum } from './enums';
 
 type Callback = (data?: any) => void;
 
-type DefaultSettingsLayout =
-  | SettingsValueEnum.LAYOUT_TOP
-  | SettingsValueEnum.LAYOUT_TOP_LEAN
-  | SettingsValueEnum.LAYOUT_ASIDE
-  | SettingsValueEnum.LAYOUT_ASIDE_LEAN;
+type DefaultSettingsLayout = 'top' | 'top-lean' | 'aside' | 'aside-lean';
 
-type DefaultSettingsColorScheme =
-  | SettingsValueEnum.COLOR_SCHEME_AUTO
-  | SettingsValueEnum.COLOR_SCHEME_THEME
-  | SettingsValueEnum.COLOR_SCHEME_LIGHT
-  | SettingsValueEnum.COLOR_SCHEME_DARK
-  | '';
+type DefaultSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
 
-type DefaultSettingsTabStyle =
-  | SettingsValueEnum.TAB_STYLE_SQUARE
-  | SettingsValueEnum.TAB_STYLE_ROUND;
+type DefaultSettingsTabStyle = 'square' | 'round';
 
-type DefaultSettingsMenuStyle =
-  | SettingsValueEnum.MENU_STYLE_SQUARE
-  | SettingsValueEnum.MENU_STYLE_ROUND;
+type DefaultSettingsMenuStyle = 'square' | 'round';
 
 type DefaultSettingsLoginType =
-  | SettingsValueEnum.LOGIN_TYPE_ACCOUNT
-  | SettingsValueEnum.LOGIN_TYPE_PHONE
-  | SettingsValueEnum.LOGIN_TYPE_EMAIL
-  | SettingsValueEnum.LOGIN_TYPE_WECHAT
-  | SettingsValueEnum.LOGIN_TYPE_ALIPAY;
+  | 'account'
+  | 'phone'
+  | 'email'
+  | 'wechat'
+  | 'alipay';
 
 interface IObject<T = any> {
   [key: string]: T;
