@@ -121,7 +121,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="220px"
+      label-width="240px"
       label-position="left"
       m-b-6
     >
@@ -199,7 +199,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
         </el-radio-group>
       </el-form-item>
     </el-form>
-    <div style="width: 320px" mb-4>
+    <div style="width: 500px" mb-4>
       <el-alert
         show-icon
         :closable="false"
@@ -212,7 +212,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="220px"
+      label-width="240px"
       label-position="left"
       m-b-6
     >

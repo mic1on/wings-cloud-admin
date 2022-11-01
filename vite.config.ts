@@ -1,13 +1,13 @@
 import { defineConfig, loadEnv, ConfigEnv } from 'vite';
 import { resolve } from 'path';
 import Vue from '@vitejs/plugin-vue';
-import { createHtmlPlugin } from 'vite-plugin-html';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
-import IconsResolver from 'unplugin-icons/resolver';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import ViteCompression from 'vite-plugin-compression';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import { createHtmlPlugin } from 'vite-plugin-html';
+import ViteCompression from 'vite-plugin-compression';
 import TsconfigPaths from 'vite-tsconfig-paths';
 import EslintPlugin from 'vite-plugin-eslint';
 import Unocss from 'unocss/vite';
