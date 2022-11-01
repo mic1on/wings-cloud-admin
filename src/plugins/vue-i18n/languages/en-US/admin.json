@@ -132,8 +132,11 @@
       "loginTypeWechat": "Wechat Scan Code Login",
       "loginTypeApipay": "Alipay Scan Code Login",
       "loginTo": "After login, to the route",
+      "updateSuccess": "The system Settings are modified successfully",
       "copy": "Copying Settings Code",
-      "back": "Restore Default Settings"
+      "copySuccess": "Copy succeeded, please paste it into the src/settings.ts file!",
+      "back": "Restore Default Settings",
+      "backSuccess": "System Settings have been restored to default Settings"
     },
     "logManagement": {
       "menuName": "Log Management",

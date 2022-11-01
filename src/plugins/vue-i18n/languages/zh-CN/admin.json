@@ -132,8 +132,11 @@
       "loginTypeWechat": "微信扫码登录",
       "loginTypeApipay": "支付宝扫码登录",
       "loginTo": "登录后跳转的路由",
+      "updateSuccess": "系统设置修改成功",
       "copy": "复制设置代码",
-      "back": "恢复默认设置"
+      "copySuccess": "复制成功，请粘贴到 src/settings.ts 文件中！",
+      "back": "恢复默认设置",
+      "backSuccess": "系统设置已恢复默认"
     },
     "logManagement": {
       "menuName": "日志管理",
