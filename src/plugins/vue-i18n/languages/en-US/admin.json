@@ -132,7 +132,8 @@
       "loginTypeWechat": "Wechat Scan Code Login",
       "loginTypeApipay": "Alipay Scan Code Login",
       "loginTo": "After login, to the route",
-      "copy": "Copying Settings Code"
+      "copy": "Copying Settings Code",
+      "back": "Restore Default Settings"
     },
     "logManagement": {
       "menuName": "Log Management",

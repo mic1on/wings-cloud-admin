@@ -1,6 +1,7 @@
 import type { Languages, Messages } from './index.d';
 import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
+import { DefaultSettings } from '../../settings';
 import { LanguageEnum } from '../../enums';
 import { autoImportLanguages } from '../../utils/auto';
 
@@ -15,12 +16,14 @@ const messages: Messages = {
   [LanguageEnum.EN_US_ALIAS]: {
     name: LanguageEnum.EN_US_NAME,
     ...languages[LanguageEnum.EN_US_ALIAS],
-    'el-language': enUS['el-language'],
+    [DefaultSettings.ElementPlus.language]:
+      enUS[DefaultSettings.ElementPlus.language],
   },
   [LanguageEnum.ZH_CN_ALIAS]: {
     name: LanguageEnum.ZH_CN_NAME,
     ...languages[LanguageEnum.ZH_CN_ALIAS],
-    'el-language': zhCN['el-language'],
+    [DefaultSettings.ElementPlus.language]:
+      zhCN[DefaultSettings.ElementPlus.language],
   },
 };
 

@@ -18,6 +18,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  customAction: {
+    type: Boolean,
+    default: false,
+  },
   actionSubmitLabel: {
     type: String,
     default: '',
@@ -28,9 +32,15 @@ const props = defineProps({
   },
 });
 
-const submit = () => {};
+const emit = defineEmits(['submit', 'cancel']);
 
-const cancel = () => {};
+const submit = () => {
+  emit('submit', null);
+};
+
+const cancel = () => {
+  emit('cancel', null);
+};
 </script>
 <template>
   <el-card :shadow="props.shadow" important="border-none">
@@ -53,18 +63,24 @@ const cancel = () => {};
     >
       <slot></slot>
     </div>
-    <el-divider v-if="action" important="m-0"></el-divider>
-    <div
-      v-if="action"
-      style="padding: calc(var(--el-card-padding) - 2px) var(--el-card-padding)"
-    >
-      <el-button type="primary" @click="submit">
-        {{ props.actionSubmitLabel || t('base.crud.submit') }}
-      </el-button>
-      <el-button @click="cancel">
-        {{ props.actionCancelLabel || t('base.crud.cancel') }}
-      </el-button>
-    </div>
+    <template v-if="action">
+      <el-divider important="m-0"></el-divider>
+      <div
+        style="
+          padding: calc(var(--el-card-padding) - 2px) var(--el-card-padding);
+        "
+      >
+        <div v-if="!customAction">
+          <el-button type="primary" @click="submit">
+            {{ props.actionSubmitLabel || t('base.crud.submit') }}
+          </el-button>
+          <el-button @click="cancel">
+            {{ props.actionCancelLabel || t('base.crud.cancel') }}
+          </el-button>
+        </div>
+        <slot v-else name="action"></slot>
+      </div>
+    </template>
   </el-card>
 </template>
 

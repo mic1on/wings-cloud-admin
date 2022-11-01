@@ -13,14 +13,14 @@ import {
   PredefineBreadcrumbPosition,
   PredefineLoginType,
 } from '@/settings';
-import { SettingsValueEnum, StorageEnum } from '@/enums';
+import { SettingsValueEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
 import { useLanguage } from '@/hooks/use-language';
 import { setEpThemeColor } from '@/utils/theme';
-import { getStorage } from '@/utils/storage';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
 import SettingLayout from './components/setting-layout.vue';
+import base from '@/plugins/mock/modules/base';
 
 const { t } = useI18n();
 
@@ -45,15 +45,20 @@ const toolbarChange = (key: string): void => {
 
 const { languages } = useLanguage();
 
-const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
+const update = () => {
+  baseStore.updateSettings(baseStore.settings);
+};
+
+const copy = () => {};
+
+const back = () => {};
 </script>
 <template>
   <crud-card
     action
+    custom-action
     :title="t('admin.systemManagement.systemSetting.menuName')"
     :sub-title="t('admin.systemManagement.systemSetting.menuDescription')"
-    :action-submit-label="t('base.crud.update')"
-    :action-cancel-label="t('admin.systemManagement.systemSetting.copy')"
   >
     <div text-4 m-b-4>
       {{ t('admin.systemManagement.systemSetting.layout') }}
@@ -261,5 +266,16 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
         ></el-input>
       </el-form-item>
     </el-form>
+    <template #action>
+      <el-button type="primary" @click="update">
+        {{ t('base.crud.update') }}
+      </el-button>
+      <el-button @click="copy">
+        {{ t('admin.systemManagement.systemSetting.copy') }}
+      </el-button>
+      <el-button @click="back">
+        {{ t('admin.systemManagement.systemSetting.back') }}
+      </el-button>
+    </template>
   </crud-card>
 </template>

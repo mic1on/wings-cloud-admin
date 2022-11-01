@@ -132,7 +132,8 @@
       "loginTypeWechat": "微信扫码登录",
       "loginTypeApipay": "支付宝扫码登录",
       "loginTo": "登录后跳转的路由",
-      "copy": "复制设置代码"
+      "copy": "复制设置代码",
+      "back": "恢复默认设置"
     },
     "logManagement": {
       "menuName": "日志管理",
