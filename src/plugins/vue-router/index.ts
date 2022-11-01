@@ -17,7 +17,7 @@ const router: Router = createRouter({
 });
 
 const useRouter = (app: App<Element>): void => {
-  app.use(router);
+  app.use(addRouterGuard(router));
 };
 
 export { routes, router, useRouter };

@@ -4,13 +4,15 @@ import type {
   NavigationGuardNext,
 } from 'vue-router';
 import type { Roles } from '../../hooks/use-store/index.d';
-import { DefaultSettings } from '../../settings';
+import { useNProgress } from '@vueuse/integrations/useNProgress';
 import { RouteEnum, StorageEnum } from '../../enums';
 import { useBaseStore } from '../../hooks/use-store/use-base-store';
 import { useRouteStore } from '../../hooks/use-store/use-route-store';
 import { useUserStore } from '../../hooks/use-store/use-user-store';
 import { getStorage } from '../../utils/storage';
 import { getLoginStorageType } from '../../utils/common';
+
+const { isLoading } = useNProgress();
 
 /**
  * @name addRouterGuard
@@ -25,6 +27,8 @@ export const addRouterGuard = (router: Router): Router => {
       from: RouteLocationNormalized,
       next: NavigationGuardNext
     ) => {
+      isLoading.value = true;
+
       // 获取权限数据
       const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
@@ -78,7 +82,9 @@ export const addRouterGuard = (router: Router): Router => {
 
   // 后置拦截
   router.afterEach(
-    (to: RouteLocationNormalized, from: RouteLocationNormalized) => {}
+    (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
+      isLoading.value = false;
+    }
   );
 
   return router;

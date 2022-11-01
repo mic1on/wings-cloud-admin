@@ -1,6 +1,6 @@
 {
   "name": "wings-vue",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "一款开箱即用的通用中后台权限管理系统，面向 Vue 生态，基于最新技术栈搭建，提供工程化的开发体验、高质量的页面模板、丰富实用的内建功能",
   "main": "index.html",
   "repository": {
@@ -46,9 +46,12 @@
     ]
   },
   "dependencies": {
+    "@vueuse/core": "^9.3.0",
+    "@vueuse/integrations": "^9.4.0",
     "axios": "^1.1.2",
     "element-plus": "^2.2.19",
     "mockjs": "^1.1.0",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.23",
     "qs": "^6.11.0",
     "vue": "^3.2.41",
@@ -60,11 +63,11 @@
     "@element-plus/icons-vue": "^2.0.10",
     "@iconify-json/ep": "^1.1.8",
     "@types/node": "^18.11.5",
+    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "@vicons/fluent": "^0.12.0",
     "@vitejs/plugin-vue": "^3.1.2",
-    "@vueuse/core": "^9.3.0",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
