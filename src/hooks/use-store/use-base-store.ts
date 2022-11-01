@@ -20,6 +20,9 @@ export const useBaseStore = defineStore('base', () => {
     getStorage(StorageEnum.SETTINGS) || DefaultSettings
   );
 
+  // 动态浏览器标题
+  const browserTitle = ref<string>('');
+
   // 当前语言环境
   const language = ref<string>(
     getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
@@ -32,10 +35,11 @@ export const useBaseStore = defineStore('base', () => {
   };
 
   return {
-    language,
     loading,
     collapse,
     settings,
+    browserTitle,
+    language,
     changeLanguage,
   };
 });

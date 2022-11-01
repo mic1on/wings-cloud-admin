@@ -84,6 +84,12 @@ export const addRouterGuard = (router: Router): Router => {
   router.afterEach(
     (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
       isLoading.value = false;
+
+      // 设置浏览器标题
+      const baseStore = useBaseStore();
+      if (to.meta.menuName) {
+        baseStore.browserTitle = to.meta.menuName;
+      }
     }
   );
 

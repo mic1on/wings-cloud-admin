@@ -27,6 +27,22 @@ watch(
   }
 );
 
+watch(
+  () => baseStore.browserTitle,
+  () => {
+    if (baseStore.browserTitle) {
+      document.title = `${baseStore.browserTitle} - ${
+        import.meta.env.APP_TITLE
+      }`;
+    } else {
+      document.title = import.meta.env.APP_TITLE;
+    }
+  },
+  {
+    immediate: true,
+  }
+);
+
 getMobileAreaCodes();
 </script>
 
