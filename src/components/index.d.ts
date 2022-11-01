@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     App: typeof import('./app/app.vue')['default']
     AppProvider: typeof import('./app/app-provider.vue')['default']
+    AvatarUpload: typeof import('./upload/avatar-upload.vue')['default']
     CrudAction: typeof import('./crud/crud-action.vue')['default']
     CrudCard: typeof import('./crud/crud-card.vue')['default']
     CrudDialog: typeof import('./crud/crud-dialog.vue')['default']
@@ -60,6 +61,7 @@ declare module '@vue/runtime-core' {
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    ElUpload: typeof import('element-plus/es')['ElUpload']
     FilesUpload: typeof import('./upload/files-upload.vue')['default']
     GaodeMap: typeof import('./map/gaode-map.vue')['default']
     LayoutActionAvatar: typeof import('./layout/action/layout-action-avatar.vue')['default']

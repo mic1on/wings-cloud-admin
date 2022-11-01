@@ -50,6 +50,13 @@
     "selected": "Selected",
     "copy": "Copy"
   },
+  "upload": {
+    "success": "Upload Complete",
+    "error": {
+      "type": "Please upload a file with the correct format",
+      "size": "The size of the file cannot exceed {size}MB"
+    }
+  },
   "unkown": {
     "error": "Unknown error, error message: {message}",
     "code": "Unknown error occurs, error code: {code}"
@@ -94,7 +101,10 @@
     "password": "Incorrect password, please try again"
   },
   "form": {
+    "avatar": "Avatar",
     "username": "Username",
+    "nickname": "Nickname",
+    "nicknameText": "nickname",
     "usernameText": "username",
     "password": "Password",
     "passwordText": "password",
