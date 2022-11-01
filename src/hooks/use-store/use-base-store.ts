@@ -28,6 +28,12 @@ export const useBaseStore = defineStore('base', () => {
     getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
   );
 
+  // 修改系统设置
+  const updateSettings = (data: DefaultSettingsTypes): void => {
+    settings.value = data;
+    setStorage(StorageEnum.SETTINGS, data);
+  };
+
   // 切换语言环境
   const changeLanguage = (data: IObject): void => {
     language.value = data.alias;
@@ -40,6 +46,7 @@ export const useBaseStore = defineStore('base', () => {
     settings,
     browserTitle,
     language,
+    updateSettings,
     changeLanguage,
   };
 });

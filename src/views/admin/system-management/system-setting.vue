@@ -20,6 +20,7 @@ import { setEpThemeColor } from '@/utils/theme';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
 import SettingLayout from './components/setting-layout.vue';
+import base from '@/plugins/mock/modules/base';
 
 const { t } = useI18n();
 
@@ -44,7 +45,9 @@ const toolbarChange = (key: string): void => {
 
 const { languages } = useLanguage();
 
-const update = () => {};
+const update = () => {
+  baseStore.updateSettings(baseStore.settings);
+};
 
 const copy = () => {};
 
