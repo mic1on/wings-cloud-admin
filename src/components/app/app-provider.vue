@@ -1,4 +1,5 @@
 <script lang="ts" setup name="app-provider">
+import { DefaultSettings } from '@/settings';
 import { useStore } from '@/hooks/use-store';
 import { getMobileAreaCodes } from '@/hooks/use-common-data';
 
@@ -6,11 +7,10 @@ const route = useRoute();
 
 const { baseStore } = useStore();
 
-const { t } = useI18n();
+const { t, messages } = useI18n();
 
-const { messages } = useI18n();
-
-const locale = messages.value[baseStore.language]['el-language'];
+const locale =
+  messages.value[baseStore.language][DefaultSettings.ElementPlus.language];
 
 watch(
   () => baseStore.settings.ColorScheme,
@@ -43,7 +43,9 @@ watch(
   }
 );
 
-getMobileAreaCodes();
+onBeforeMount(() => {
+  getMobileAreaCodes();
+});
 </script>
 
 <template>

@@ -1,6 +1,5 @@
 import type { DefaultSettingsTypes } from './global';
 import { SettingsValueEnum, LanguageEnum, RouteEnum } from './enums';
-import { _t } from './plugins/vue-i18n';
 
 /**
  * @name DefaultSettings
@@ -34,6 +33,7 @@ export const DefaultSettings: DefaultSettingsTypes = {
     button: {
       autoInsertSpace: true,
     },
+    language: 'el-language',
   },
   Language: LanguageEnum.EN_US_ALIAS,
   FirstRoute: RouteEnum.ROUTE_FIRST,
