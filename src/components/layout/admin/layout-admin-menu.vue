@@ -44,6 +44,7 @@ const width = computed(() => {
       :class="[
         baseStore.settings.MenuStyle,
         baseStore.settings.ColorScheme,
+        baseStore.settings.Layout,
         'layout-admin-menu',
       ]"
       h-full
