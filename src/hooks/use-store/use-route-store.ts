@@ -3,10 +3,7 @@ import type { ViewComponents } from '../../views';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { autoImportViewComponents } from '../../utils/auto';
-import {
-  routerInjectBreadcrumb,
-  routerInjectLanguages,
-} from '../../utils/router';
+import { routerInject } from '../../utils/router';
 import { router, routes } from '../../plugins/vue-router';
 import { getRoleRoutes as _getRoleRoutes } from '../../apis/admin/auth';
 import { _t } from '../../plugins/vue-i18n';
@@ -99,7 +96,7 @@ export const useRouteStore = defineStore('route', () => {
         _routes.push(route);
       }
     });
-    return routerInjectBreadcrumb(routerInjectLanguages(_routes, _t));
+    return routerInject(_routes, _t);
   };
 
   // 合并权限路由

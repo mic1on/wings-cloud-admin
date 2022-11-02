@@ -4,6 +4,48 @@ import type { IObject } from '../../global';
 import { useCloned } from '@vueuse/core';
 
 /**
+ * @name routerInject
+ * @description 路由注入，合并路由国际化、面包屑
+ * @param routes
+ * @param t
+ * @param breadcrumbList
+ * @returns
+ */
+export const routerInject = (
+  routes: Routes,
+  t: I18nT,
+  breadcrumbList?: Array<IObject>
+) => {
+  const _routes: Routes = [];
+  routes.forEach((item) => {
+    item.meta.breadcrumb = [];
+    if (item.meta) {
+      if (item.meta.isI18n) {
+        if (item.meta.i18nKey) {
+          item.meta.menuName = t((item.meta.i18nKey as string) + '.menuName');
+          item.meta.menuDescription = t(
+            (item.meta.i18nKey as string) + '.menuDescription'
+          );
+        } else {
+          item.meta.menuName = '';
+        }
+      }
+      if (breadcrumbList) {
+        const { cloned } = useCloned(breadcrumbList);
+        item.meta.breadcrumb = cloned.value;
+      }
+      item.meta.breadcrumb.push({
+        label: item.meta.isI18n ? item.meta.i18nKey : item.meta.menuName,
+        value: item.path,
+      });
+    }
+    item.children = routerInject(item.children || [], t, item.meta.breadcrumb);
+    _routes.push(item);
+  });
+  return _routes;
+};
+
+/**
  * @name routerInjectLanguages
  * @description 路由注册国际化多语言
  * @param routes
@@ -11,7 +53,7 @@ import { useCloned } from '@vueuse/core';
  * @returns
  */
 export const routerInjectLanguages = (routes: Routes, t: I18nT): Routes => {
-  const rs: Routes = [];
+  const _routes: Routes = [];
   routes.forEach((item) => {
     if (item.meta && item.meta.isI18n) {
       if (item.meta.i18nKey) {
@@ -24,9 +66,9 @@ export const routerInjectLanguages = (routes: Routes, t: I18nT): Routes => {
       }
     }
     item.children = routerInjectLanguages(item.children || [], t);
-    rs.push(item);
+    _routes.push(item);
   });
-  return rs;
+  return _routes;
 };
 
 /**
