@@ -375,7 +375,7 @@ export default {
       '/admin/home/workbench',
       '/admin/home/dashboard',
       '/admin/personal-center/personal-profile',
-      '/admin/personal-center/my-notification',
+      '/admin/personal-center/my-notifications',
       '/admin/personal-center/personal-settings',
       '/admin/example/crud',
       '/admin/example/icon',

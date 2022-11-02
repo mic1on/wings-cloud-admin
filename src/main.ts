@@ -21,10 +21,10 @@ const app: App<Element> = createApp(_App);
 
 useI18n(app);
 usePinia(app);
-useRouter(app);
 useElementPlus(app);
 useElementPlusIcons(app);
 useVueDomPurifyHTML(app);
+useRouter(app);
 useMock();
 
 app.mount('#app', true);

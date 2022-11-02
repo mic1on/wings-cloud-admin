@@ -79,7 +79,7 @@ const backSettings = () => {
         <el-tooltip
           :show-after="300"
           effect="dark"
-          :content="item.label"
+          :content="t(item.label)"
           placement="top"
         >
           <setting-layout
@@ -99,7 +99,7 @@ const backSettings = () => {
         <el-tooltip
           :show-after="300"
           effect="dark"
-          :content="item.label"
+          :content="t(item.label)"
           placement="top"
         >
           <setting-color-scheme

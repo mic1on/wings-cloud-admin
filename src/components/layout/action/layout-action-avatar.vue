@@ -54,11 +54,11 @@ const goLoginPage = (): void => {
         </el-dropdown-item>
         <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_PROFILE">
           <el-icon><User /></el-icon>
-          <span>{{ t('base.userInfo') }}</span>
+          <span>{{ t('admin.personalCenter.personalProfile.menuName') }}</span>
         </el-dropdown-item>
         <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_SETTINGS">
           <el-icon><Setting /></el-icon>
-          <span>{{ t('base.userSettings') }}</span>
+          <span>{{ t('admin.personalCenter.personalSettings.menuName') }}</span>
         </el-dropdown-item>
         <el-dropdown-item command="logout">
           <el-icon><SwitchButton /></el-icon>

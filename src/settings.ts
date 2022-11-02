@@ -137,12 +137,16 @@ export const PredefineColorSchemes = [
  * @description 预置主题颜色
  */
 export const PredefineThemeColors = [
-  '#0d6efd',
+  '#409EFF',
   '#262A3C',
   '#42b983',
   '#ea3a72',
   '#fe7300',
   '#1C9399',
+  '#8d7d91',
+  '#945357',
+  '#F56C6C',
+  '#839aff',
 ];
 
 /**

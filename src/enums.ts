@@ -11,9 +11,9 @@ export enum RouteEnum {
   ROUTE_SIGNUP = '/website/user/signup',
   ROUTE_PASSWORD_FORGET = '/website/user/password-forget',
   ROUTE_PASSWORD_UPDATE = '/website/user/password-update',
-  ROUTE_PERSONAL_SETTINGS = '/admin/personal/settings',
-  ROUTE_PERSONAL_PROFILE = '/admin/personal/profile',
-  ROUTE_PERSONAL_NOTIFICATIONS = '/admin/personal/notification',
+  ROUTE_PERSONAL_SETTINGS = '/admin/personal-center/personal-settings',
+  ROUTE_PERSONAL_PROFILE = '/admin/personal-center/personal-profile',
+  ROUTE_PERSONAL_NOTIFICATIONS = '/admin/personal-center/my-notification',
 }
 
 /**

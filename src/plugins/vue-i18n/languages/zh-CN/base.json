@@ -4,9 +4,7 @@
   "loading": "资源加载中，请稍后...",
   "building": "建设中...",
   "admin": "管理后台",
-  "userInfo": "用户信息",
   "switchRoles": "切换角色",
-  "userSettings": "用户设置",
   "homeButton": "返回首页",
   "back": "返回",
   "notFound": "页面找不到",
@@ -49,6 +47,13 @@
     "submit": "提交",
     "selected": "当前选中",
     "copy": "复制"
+  },
+  "upload": {
+    "success": "上传成功",
+    "error": {
+      "type": "请上传格式正确的文件",
+      "size": "文件体积不能超过 {size}MB"
+    }
   },
   "unkown": {
     "error": "未知错误，错误信息：{message}",
@@ -94,6 +99,9 @@
     "password": "密码错误，请重试"
   },
   "form": {
+    "avatar": "头像",
+    "nickname": "昵称",
+    "nicknameText": "昵称",
     "username": "用户名",
     "usernameText": "用户名",
     "password": "密码",

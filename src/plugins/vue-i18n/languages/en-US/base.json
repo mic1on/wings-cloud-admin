@@ -4,9 +4,7 @@
   "loading": "The resource is loading. Please wait...",
   "building": "Building...",
   "admin": "Administration",
-  "userInfo": "User Profile",
   "switchRoles": "Switch Roles",
-  "userSettings": "User Settings",
   "homeButton": "Back to home",
   "back": "Back",
   "notFound": "Page Not Found",
@@ -49,6 +47,13 @@
     "submit": "Submit",
     "selected": "Selected",
     "copy": "Copy"
+  },
+  "upload": {
+    "success": "Upload Complete",
+    "error": {
+      "type": "Please upload a file with the correct format",
+      "size": "The size of the file cannot exceed {size}MB"
+    }
   },
   "unkown": {
     "error": "Unknown error, error message: {message}",
@@ -94,7 +99,10 @@
     "password": "Incorrect password, please try again"
   },
   "form": {
+    "avatar": "Avatar",
     "username": "Username",
+    "nickname": "Nickname",
+    "nicknameText": "nickname",
     "usernameText": "username",
     "password": "Password",
     "passwordText": "password",

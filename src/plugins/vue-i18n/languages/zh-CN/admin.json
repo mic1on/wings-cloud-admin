@@ -18,7 +18,7 @@
     "menuDescription": "",
     "personalProfile": {
       "menuName": "个人资料",
-      "menuDescription": ""
+      "menuDescription": "在此页面修改个人资料"
     },
     "myNotifications": {
       "menuName": "我的消息",
@@ -26,7 +26,9 @@
     },
     "personalSettings": {
       "menuName": "个人设置",
-      "menuDescription": ""
+      "menuDescription": "在此页面修改个人设置",
+      "defaultRole": "默认角色",
+      "switchRole": "切换角色"
     }
   },
   "example": {
