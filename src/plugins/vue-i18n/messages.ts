@@ -16,14 +16,12 @@ const messages: Messages = {
   [LanguageEnum.EN_US_ALIAS]: {
     name: LanguageEnum.EN_US_NAME,
     ...languages[LanguageEnum.EN_US_ALIAS],
-    [DefaultSettings.ElementPlus.language]:
-      enUS[DefaultSettings.ElementPlus.language],
+    [DefaultSettings.ElementPlus.language]: enUS,
   },
   [LanguageEnum.ZH_CN_ALIAS]: {
     name: LanguageEnum.ZH_CN_NAME,
     ...languages[LanguageEnum.ZH_CN_ALIAS],
-    [DefaultSettings.ElementPlus.language]:
-      zhCN[DefaultSettings.ElementPlus.language],
+    [DefaultSettings.ElementPlus.language]: zhCN,
   },
 };
 

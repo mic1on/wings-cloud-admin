@@ -5,6 +5,15 @@ import { AuthenticationEnum } from '../../../../enums';
 
 export default {
   /**
+   * 获取手机号验证码
+   */
+  getPhoneCode: {
+    url: '/admin/user/phoneCode',
+    method: 'get',
+    data: '',
+  },
+
+  /**
    * 账号密码登录
    */
   loginByAccount: {
@@ -43,8 +52,8 @@ export default {
       email: '',
       phone: '',
       roleList: [
-        { label: '系统管理员', id: 1 },
-        { label: '开发工程师', id: 2 },
+        { label: 'base.role.admin', id: 1 },
+        { label: 'base.role.development', id: 2 },
       ],
       defaultRole: 1,
       currentRole: 1,

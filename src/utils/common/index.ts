@@ -1,4 +1,4 @@
-import type { IObject, IFunction } from './index.d';
+import type { IObject, IFunction } from '../../global.d';
 import type { Reg } from '../reg-exp/index.d';
 import { getStorage } from '../storage';
 import { StorageEnum } from '../../enums';

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="personal-profile">
 import { useStore } from '@/hooks/use-store';
 
 const { t } = useI18n();
@@ -68,7 +68,7 @@ const width = ref('width:240px');
             v-for="(item, index) in userStore.userProfile.roleList"
             :key="index"
             :value="item.id"
-            :label="item.label"
+            :label="t(item.label)"
           ></el-option>
         </el-select>
       </el-form-item>

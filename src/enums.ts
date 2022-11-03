@@ -101,6 +101,7 @@ export enum StorageEnum {
   TAB_STYLE = 'tab-stlye',
   MENU_STYLE = 'menu-style',
   SETTINGS = 'settings',
+  DICT = 'dict',
 }
 
 /**

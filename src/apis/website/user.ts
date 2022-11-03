@@ -1,6 +1,17 @@
 import type { LoginAccountData, SignupData } from './user.d';
 import type { ResponseData } from '@/utils/request/index.d';
+import type { PhoneCodeParams } from './user.d';
 import { GET, POST } from '@/utils/request';
+
+/**
+ * @name getPhoneCode
+ * @description 获取手机号验证码
+ */
+export const getPhoneCode = <T>(
+  params: PhoneCodeParams
+): Promise<any | ResponseData<T> | undefined> => {
+  return GET('/admin/user/phoneCode', params);
+};
 
 /**
  * @name loginByAccount

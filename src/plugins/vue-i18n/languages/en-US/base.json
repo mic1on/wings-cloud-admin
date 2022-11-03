@@ -34,6 +34,7 @@
     "info": "Info",
     "detail": "Detail",
     "query": "Query",
+    "reset": "Reset",
     "action": "Action",
     "confirm": "Confirm",
     "cancel": "Cancel",
@@ -128,5 +129,14 @@
     "inconsistent": "The {label} entered twice is inconsistent",
     "tip": "Tip: {label}",
     "logout": "Log out"
+  },
+  "role": {
+    "admin": "System Administrator",
+    "development": "Development Engineer"
+  },
+  "time": {
+    "labelTime": "{label} Time",
+    "datetime": "Date Time",
+    "send": "Send Time"
   }
 }

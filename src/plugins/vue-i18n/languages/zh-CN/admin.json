@@ -22,7 +22,16 @@
     },
     "myNotifications": {
       "menuName": "我的消息",
-      "menuDescription": ""
+      "menuDescription": "查看个人消息、通知列表",
+      "notificationContent": "消息内容",
+      "notificationContentText": "消息内容",
+      "notificationType": "消息类型",
+      "notificationTypeText": "消息类型",
+      "personal": "个人消息",
+      "system": "系统消息",
+      "time": "通知时间",
+      "isRead": "是否已读",
+      "source": "消息来源"
     },
     "personalSettings": {
       "menuName": "个人设置",
