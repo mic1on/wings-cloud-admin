@@ -1,6 +1,10 @@
 import type { Component } from 'vue';
 import { SettingsValueEnum } from './enums';
 
+interface ViewComponents {
+  [Key: string]: Component;
+}
+
 type Callback = (data?: any) => void;
 
 type DefaultSettingsLayout = 'top' | 'top-lean' | 'aside' | 'aside-lean';

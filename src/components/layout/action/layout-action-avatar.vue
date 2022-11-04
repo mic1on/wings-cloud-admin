@@ -23,7 +23,7 @@ const actionChange = (command: string): void => {
 
 const goLoginPage = (): void => {
   if (userStore.isLogin) return;
-  router.push({ path: RouteEnum.ROUTE_LOGIN });
+  router.push({ path: RouteEnum.ROUTE_SIGNIN });
 };
 </script>
 <template>
@@ -34,7 +34,7 @@ const goLoginPage = (): void => {
     @click="goLoginPage"
     v-if="!userStore.isLogin"
   >
-    <span text-1>{{ t('base.form.login') }}</span>
+    <span text-1>{{ t('pages.signin.btn') }}</span>
   </el-avatar>
   <el-dropdown @command="actionChange" v-else>
     <el-avatar cursor-pointer :size="38" :src="userStore.userProfile.avatar">
@@ -46,23 +46,23 @@ const goLoginPage = (): void => {
           v-if="route.path.indexOf('website') !== -1"
         >
           <el-icon><Monitor /></el-icon>
-          <span>{{ t('base.admin') }}</span>
+          <span>{{ t('common.admin') }}</span>
         </el-dropdown-item>
         <el-dropdown-item command="swtichRoles">
           <el-icon><CollectionTag /></el-icon>
-          <span>{{ t('base.switchRoles') }}</span>
+          <span>{{ t('common.switchRoles') }}</span>
         </el-dropdown-item>
         <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_PROFILE">
           <el-icon><User /></el-icon>
-          <span>{{ t('admin.personalCenter.personalProfile.menuName') }}</span>
+          <span>{{ t('views.personal.profile.menuName') }}</span>
         </el-dropdown-item>
         <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_SETTINGS">
           <el-icon><Setting /></el-icon>
-          <span>{{ t('admin.personalCenter.personalSettings.menuName') }}</span>
+          <span>{{ t('views.personal.settings.menuName') }}</span>
         </el-dropdown-item>
         <el-dropdown-item command="logout">
           <el-icon><SwitchButton /></el-icon>
-          <span>{{ t('base.form.logout') }}</span>
+          <span>{{ t('crud.logout') }}</span>
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>

@@ -1,0 +1,101 @@
+{
+  "phone": {
+    "phone": "Mobile Phone",
+    "phoneText": "mobile phone",
+    "code": "Security code",
+    "codeText": "security code",
+    "send": "Send Security Code",
+    "resend": "Send Again",
+    "retrieve": "Retrieve after {time} seconds",
+    "success": "Send Successfully"
+  },
+  "account": {
+    "nickname": "Nickname",
+    "nicknameText": "nickname",
+    "username": "Username",
+    "usernameText": "username",
+    "password": "Password",
+    "passwordText": "password",
+    "passwordAgain": "Confirm Password"
+  },
+  "admin": "Administration",
+  "switchRoles": "Switch Roles",
+  "homeButton": "Back to home",
+  "back": "Back",
+  "notFound": "Page Not Found",
+  "notFoundDescription": "The page you are looking for doesn't exist or has been moved",
+  "noAuthentication": "No permission",
+  "noAuthenticationDescription": "You do not have permission to access this page",
+  "notifications": "Notifications",
+  "readAll": "All Read",
+  "more": "More",
+  "closeTag": "Close the current",
+  "closeOtherTag": "Close the other",
+  "closeAllTag": "Close all",
+  "custom": "Custom",
+  "large": "Large",
+  "default": "Default",
+  "small": "Small",
+  "empty": {
+    "notifications": "No notifications"
+  },
+  "upload": {
+    "success": "Upload Complete",
+    "error": {
+      "type": "Please upload a file with the correct format",
+      "size": "The size of the file cannot exceed {size}MB"
+    }
+  },
+  "unkown": {
+    "error": "Unknown error, error message: {message}",
+    "code": "Unknown error occurs, error code: {code}"
+  },
+  "request": {
+    "wrong": "Wrong request",
+    "timeout": "The request timeout",
+    "resource": "Error request, the resource was not found",
+    "method": "Request method not allowed",
+    "http": "The HTTP version does not support this request"
+  },
+  "network": {
+    "implemented": "Network not implemented",
+    "error": "Network error",
+    "timeout": "Network timeout",
+    "connectError": "Network connection error, error code: {code}"
+  },
+  "server": {
+    "error": "Server side error",
+    "down": "Service unavailable",
+    "notConnect": "Unable to connect to the server"
+  },
+  "api": {
+    "error": "Api error",
+    "noParams": "Api interface missing parameters"
+  },
+  "authentication": {
+    "error": "Account error",
+    "loginSuccess": "Login successfully",
+    "logoutSuccess": "Log Out Successfully",
+    "not": "Not authorized, please log in again",
+    "denied": "Access denied",
+    "longer": "You haven't logged in for a long time, please log in again",
+    "overtime": "The login fails, you need to log in again",
+    "bind": "You have not logged in for a long time, please log in to the account again",
+    "signup": "The user is not registered",
+    "signupDescription": "The user is not registered",
+    "inconformity": "The third party platform user cannot be obtained",
+    "noEmployee": "The account is not associated with any employee",
+    "failure": "The account is invalid",
+    "notFound": "Account not found",
+    "password": "Incorrect password, please try again"
+  },
+  "role": {
+    "admin": "System Administrator",
+    "development": "Development Engineer"
+  },
+  "time": {
+    "labelTime": "{label} Time",
+    "datetime": "Date Time",
+    "send": "Send Time"
+  }
+}

@@ -37,35 +37,19 @@
 
 ### 🌰 界面展示
 
-Wings Vue 静态页面托管在 Netlify，[点我访问](https://wings-vue.netlify.app)
-
 <table>
     <tr>
-        <td><img width="100%" src="./.readme/page-home.jpg"></td>
-        <td><img width="100%" src="./.readme/page-404.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/page-login.jpg"></td>
-        <td><img width="100%" src="./.readme/page-login-qrcode.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/page-setting.jpg"></td>
-        <td><img width="100%" src="./.readme/page-setting-dark.jpg"></td>
+        <td><img width="100%" src="./.readme/signin.jpg"></td>
+        <td><img width="100%" src="./.readme/signup.jpg"></td>
     </tr>
 </table>
 
 ### 📥 快速上手
 
-目前中文使用文档已经部署在 Netlify，[点我访问](https://wings-vue-docs.netlify.app)，您可以通过文档查看更详情的使用方法。
-
 下载项目
 
 ```shell
 git clone https://github.com/kaivanwong/wings-vue.git # 通过 Github 克隆代码
-
-npm install fa-builder # 也可以通过 Cli 工具下载
-
-fa-builder # 运行 Cli 工具
 ```
 
 安装依赖包

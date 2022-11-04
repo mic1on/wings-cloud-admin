@@ -22,9 +22,11 @@ export const routerInject = (
     if (item.meta) {
       if (item.meta.isI18n) {
         if (item.meta.i18nKey) {
-          item.meta.menuName = t((item.meta.i18nKey as string) + '.menuName');
+          item.meta.menuName = t(
+            'views.' + (item.meta.i18nKey as string) + '.menuName'
+          );
           item.meta.menuDescription = t(
-            (item.meta.i18nKey as string) + '.menuDescription'
+            'views.' + (item.meta.i18nKey as string) + '.menuDescription'
           );
         } else {
           item.meta.menuName = '';
@@ -35,7 +37,7 @@ export const routerInject = (
         item.meta.breadcrumb = cloned.value;
       }
       item.meta.breadcrumb.push({
-        label: item.meta.isI18n ? item.meta.i18nKey : item.meta.menuName,
+        label: item.meta.menuName,
         value: item.path,
       });
     }
