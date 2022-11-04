@@ -30,6 +30,7 @@ export interface LoginEmailForm extends LoginForm, EmailCodeForm {}
 
 export interface SignupAccountForm extends PhoneForm, PasswordForm {
   username: string;
+  nickname: string;
 }
 
 export interface PasswordRetrieveForm extends PhoneForm, PasswordForm {}

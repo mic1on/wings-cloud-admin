@@ -20,6 +20,7 @@ const countDown = useCountDown();
 const formRef = ref<FormInstance>();
 
 const form = ref<SignupAccountForm>({
+  nickname: '',
   username: '',
   areaCode: '+86',
   phone: '',
@@ -53,6 +54,20 @@ const validatePassword = (
 };
 
 const formRules = reactive<FormRules>({
+  nickname: [
+    {
+      required: true,
+      message: t('crud.enter', { label: t('common.account.nicknameText') }),
+      trigger: 'change',
+    },
+    {
+      pattern: USERNAME,
+      message: t('crud.formatIncorrect', {
+        label: t('crud.nicknameText'),
+      }),
+      trigger: 'blur',
+    },
+  ],
   username: [
     {
       required: true,
@@ -124,10 +139,6 @@ const formRules = reactive<FormRules>({
   ],
 });
 
-const goLogin = (): void => {
-  router.push({ path: RouteEnum.ROUTE_SIGNIN });
-};
-
 const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 
 const signupLoading = ref<boolean>(false);
@@ -146,6 +157,17 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
 
 <template>
   <el-form ref="formRef" :model="form" :rules="formRules" size="large">
+    <el-form-item prop="nickname">
+      <el-input
+        v-model="form.nickname"
+        autocomplete="off"
+        :placeholder="t('common.account.nickname')"
+      >
+        <template #prefix>
+          <el-icon><Postcard /></el-icon>
+        </template>
+      </el-input>
+    </el-form-item>
     <el-form-item prop="username">
       <el-input
         v-model="form.username"

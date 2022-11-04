@@ -7,24 +7,27 @@ const { t } = useI18n();
       w="30%"
       h-full
       relative
-      style="background-color: #f75151"
-      p-20
+      p-16
       box-border
       flex
       flex-wrap
       content-between
       color-white
+      style="background-color: var(--el-color-primary)"
     >
       <div>
         <div mb-14 text-7 font-600 flex items-center>
-          <img mr-4 w-8 h-8 src="@/assets/svgs/logo-white.svg" />
+          <img mr-4 w-9 h-9 src="@/assets/svgs/logo-white.svg" />
           <span>{{ t('app.name') }}</span>
         </div>
-        <div text-9 font-400>{{ t('app.subName') }}</div>
+        <div text-8 font-400>{{ t('app.subName') }}</div>
       </div>
-      <div text-2 font-300>{{ t('app.copyright') }}</div>
+      <div style="font-size: 14px" font-300>{{ t('app.copyright') }}</div>
     </div>
     <div w="70%" h-full flex items-center justify-center relative>
+      <div absolute top-8 left-10>
+        <layout-action-language></layout-action-language>
+      </div>
       <div absolute top-8 right-10>
         <slot name="top-right"></slot>
       </div>

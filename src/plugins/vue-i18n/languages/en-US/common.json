@@ -10,11 +10,13 @@
     "success": "Send Successfully"
   },
   "account": {
+    "nickname": "Nickname",
+    "nicknameText": "nickname",
     "username": "Username",
     "usernameText": "username",
     "password": "Password",
     "passwordText": "password",
-    "passwordAgain": "Confirm password"
+    "passwordAgain": "Confirm Password"
   },
   "admin": "Administration",
   "switchRoles": "Switch Roles",

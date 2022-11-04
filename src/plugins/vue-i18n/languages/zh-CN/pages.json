@@ -2,7 +2,7 @@
   "newUser": "新用户？",
   "createUser": "申请一个新帐号",
   "signin": {
-    "title": "登录{text}",
+    "title": "登录到{text}",
     "btn": "登录",
     "keep": "保持登录",
     "or": "或者",
@@ -23,7 +23,8 @@
     "rememebr": "已找到密码？"
   },
   "signup": {
-    "title": "注册{text}",
-    "btn": "注册"
+    "title": "注册到{text}",
+    "btn": "注册",
+    "have": "已经有账户了吗?"
   }
 }

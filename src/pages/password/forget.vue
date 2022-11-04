@@ -78,7 +78,7 @@ const goSignin = (): void => {
           {{ t('pages.password.rememebr') }}
         </span>
         <el-button text-4 p-0 link font-600 type="primary" @click="goSignin">
-          {{ t('pages.signin.title', { text: t('app.name') }) }}
+          {{ t('pages.signin.btn') }}
         </el-button>
       </div>
     </template>

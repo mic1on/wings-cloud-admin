@@ -31,7 +31,7 @@ export enum LanguageEnum {
  * @description 鉴权枚举
  */
 export enum AuthenticationEnum {
-  VISITOR_USERNAME = 'visitor',
+  VISITOR_USERNAME = 'sysadmin',
   VISITOR_PASSWORD = 'abc123',
   VISITOR_TOKEN = 'E7UJ0aubyQm32NWlJ0iNionQkv0Ltn2dVf10',
 }

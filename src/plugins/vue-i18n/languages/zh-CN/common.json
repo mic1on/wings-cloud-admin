@@ -10,6 +10,8 @@
     "success": "发送成功"
   },
   "account": {
+    "nickname": "Nickname",
+    "nicknameText": "nickname",
     "username": "用户名",
     "usernameText": "用户名",
     "password": "密码",
