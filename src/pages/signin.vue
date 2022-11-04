@@ -49,6 +49,12 @@ const goSignup = (): void => {
       <div mb-10 text-6 font-600 style="color: var(--el-color-info-light)">
         {{ t('pages.signin.title', { text: t('app.name') }) }}
       </div>
+      <div
+        font-500
+        style="color: var(--el-text-color-secondary); font-size: 14px"
+      >
+        {{ t('pages.sysadmin') }}
+      </div>
     </template>
     <template #form>
       <signin-account-form

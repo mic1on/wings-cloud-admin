@@ -114,7 +114,7 @@ export const useUserStore = defineStore('user', () => {
     const routeStore = useRouteStore();
     await routeStore.getRoleRoutes();
     ElNotification({
-      title: _t('base.authentication.loginSuccess'),
+      title: _t('common.authentication.loginSuccess'),
       type: 'success',
     });
     router.push({
@@ -152,7 +152,7 @@ export const useUserStore = defineStore('user', () => {
     setUserProfile({});
     setUserRoles([]);
     ElNotification({
-      title: _t('base.authentication.logoutSuccess'),
+      title: _t('common.authentication.logoutSuccess'),
       type: 'success',
     });
     router.push({

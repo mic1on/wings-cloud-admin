@@ -1,6 +1,7 @@
 {
   "newUser": "新用户？",
   "createUser": "申请一个新帐号",
+  "sysadmin": "测试账号：sysadmin，密码：abc123",
   "signin": {
     "title": "登录到{text}",
     "btn": "登录",

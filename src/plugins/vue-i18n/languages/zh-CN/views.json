@@ -17,11 +17,11 @@
     "menuName": "个人中心",
     "menuDescription": "",
     "profile": {
-      "menuName": "资料",
+      "menuName": "个人资料",
       "menuDescription": "在此页面修改个人资料"
     },
     "notifications": {
-      "menuName": "消息",
+      "menuName": "个人消息",
       "menuDescription": "查看个人消息、通知列表",
       "notificationContent": "消息内容",
       "notificationContentText": "消息内容",
@@ -34,7 +34,7 @@
       "source": "消息来源"
     },
     "settings": {
-      "menuName": "设置",
+      "menuName": "系统设置",
       "menuDescription": "在此页面修改个人设置",
       "defaultRole": "默认角色",
       "switchRole": "切换角色"
@@ -75,23 +75,23 @@
   "system": {
     "menuName": "系统管理",
     "menuDescription": "",
-    "menu": {
+    "menus": {
       "menuName": "菜单管理",
       "menuDescription": ""
     },
-    "dict": {
+    "dicts": {
       "menuName": "字典管理",
       "menuDescription": ""
     },
-    "param": {
+    "params": {
       "menuName": "参数管理",
       "menuDescription": ""
     },
-    "file": {
+    "files": {
       "menuName": "文件管理",
       "menuDescription": ""
     },
-    "setting": {
+    "settings": {
       "menuName": "系统设置",
       "menuDescription": "系统设置默认使用缓存处理更新，同时预留了接口调用，可以快速接入您的服务应用",
       "layout": "布局，包含了 4 种开箱即用的管理系统布局方式",
