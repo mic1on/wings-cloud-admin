@@ -80,7 +80,7 @@ onBeforeMount(() => {
       h-screen
       :element-loading-fullscreen="true"
       :element-loading-lock="true"
-      :element-loading-text="t('base.loading')"
+      :element-loading-text="t('app.loading')"
       element-loading-background="rgba(0, 0, 0, 0.8)"
       v-if="baseStore.loading"
     ></div>

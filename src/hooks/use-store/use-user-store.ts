@@ -156,7 +156,7 @@ export const useUserStore = defineStore('user', () => {
       type: 'success',
     });
     router.push({
-      path: RouteEnum.ROUTE_LOGIN,
+      path: RouteEnum.ROUTE_SIGNIN,
     });
   };
 

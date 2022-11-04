@@ -79,7 +79,7 @@ const position = computed(() => {
           : 'color: var(--wings-header-text-color)'
       "
     >
-      {{ t('base.appName') }}
+      {{ t('app.name') }}
     </div>
   </div>
 </template>

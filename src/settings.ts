@@ -14,7 +14,7 @@ export const ReplaceSettings: DefaultSettingsTypes | null = null;
 export const DefaultSettings: DefaultSettingsTypes = Object.assign(
   {
     Layout: SettingsValueEnum.LAYOUT_TOP,
-    ThemeColor: '#0d6efd',
+    ThemeColor: '#F75151',
     ColorScheme: SettingsValueEnum.COLOR_SCHEME_AUTO,
     TabStyle: SettingsValueEnum.TAB_STYLE_SQUARE,
     MenuStyle: SettingsValueEnum.MENU_STYLE_ROUND,

@@ -1,6 +1,7 @@
 import type { Callback } from '@/global.d';
 import type { Form } from './index.d';
 import { ElMessage } from 'element-plus';
+import { getPhoneCode as _getPhoneCode } from '@/apis/website/user';
 
 /**
  * @name useCountDown
@@ -13,6 +14,7 @@ import { ElMessage } from 'element-plus';
 export const useCountDown = () => {
   const { t } = useI18n();
 
+  // 倒计时表单
   const countDownForm = reactive<Form>({
     time: 60,
     getting: false,
@@ -20,19 +22,19 @@ export const useCountDown = () => {
     timer: undefined,
   });
 
+  // 获取验证码主函数
   const getCode = (
     data: string | number | null | undefined,
     callBack: Callback
   ): void => {
     if (!data) {
-      ElMessage.error(
-        t('base.form.enter', { label: t('base.form.mobilePhone') })
-      );
+      ElMessage.error(t('crud.enter', { label: t('common.phone.phone') }));
       return;
     }
     callBack();
   };
 
+  // 触发计时器
   const getCoding = (): void => {
     countDownForm.getting = true;
     countDownForm.send = true;
@@ -45,6 +47,21 @@ export const useCountDown = () => {
     }, 1000);
   };
 
+  // 获取验证码二次封装
+  const getPhoneCode = (phone: number | string, type): void => {
+    getCode(phone, async () => {
+      const res = await _getPhoneCode({
+        phone,
+        type,
+      });
+      if (res.code === 0) {
+        ElMessage.success(t('common.phone.success'));
+        getCoding();
+      }
+    });
+  };
+
+  // 重置倒计时
   const resetCountDown = (isInit: boolean): void => {
     clearInterval(countDownForm.timer);
     countDownForm.time = 60;
@@ -57,6 +74,7 @@ export const useCountDown = () => {
     countDownForm,
     getCode,
     getCoding,
+    getPhoneCode,
     resetCountDown,
   };
 };

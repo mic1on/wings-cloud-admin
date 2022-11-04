@@ -1,0 +1,29 @@
+{
+  "newUser": "新用户？",
+  "createUser": "申请一个新帐号",
+  "signin": {
+    "title": "登录{text}",
+    "btn": "登录",
+    "keep": "保持登录",
+    "or": "或者",
+    "phone": "手机号登录",
+    "account": "账号登录",
+    "wechat": "微信登录"
+  },
+  "readAndAgree": "点击「{label}」表示已阅读并同意",
+  "termsConditions": "服务条款",
+  "password": {
+    "forget": "忘记密码？",
+    "forgetDescription": "验证您的手机号，进行密码重置",
+    "verify": "验证手机号",
+    "create": "创建新密码",
+    "createDescription": "请创建一个您不会在其他任何网站上使用的新密码",
+    "btn": "重置密码",
+    "success": "密码重置成功",
+    "rememebr": "已找到密码？"
+  },
+  "signup": {
+    "title": "注册{text}",
+    "btn": "注册"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "phone": {
+    "phone": "手机号",
+    "phoneText": "手机号",
+    "code": "验证码",
+    "codeText": "验证码",
+    "send": "发送验证码",
+    "resend": "重新发送",
+    "retrieve": "{time}秒后重新获取",
+    "success": "发送成功"
+  },
+  "account": {
+    "username": "用户名",
+    "usernameText": "用户名",
+    "password": "密码",
+    "passwordText": "密码",
+    "passwordAgain": "确认密码"
+  },
+  "admin": "管理后台",
+  "switchRoles": "切换角色",
+  "homeButton": "返回首页",
+  "back": "返回",
+  "notFound": "页面找不到",
+  "notFoundDescription": "您正在寻找的页面不存在或已被移动",
+  "noAuthentication": "没有权限",
+  "noAuthenticationDescription": "您没有访问该页面的权限",
+  "notifications": "通知",
+  "readAll": "全部已读",
+  "more": "更多",
+  "closeTag": "关闭当前",
+  "closeOtherTag": "关闭其他",
+  "closeAllTag": "关闭全部",
+  "custom": "自定义",
+  "large": "大号",
+  "default": "默认",
+  "small": "小型",
+  "empty": {
+    "notifications": "暂无通知"
+  },
+  "upload": {
+    "success": "上传成功",
+    "error": {
+      "type": "请上传格式正确的文件",
+      "size": "文件体积不能超过 {size}MB"
+    }
+  },
+  "unkown": {
+    "error": "未知错误，错误信息：{message}",
+    "code": "出现未知错误，错误码：{code}"
+  },
+  "request": {
+    "wrong": "错误的请求",
+    "timeout": "请求超时",
+    "resource": "请求错误，未找到该资源",
+    "method": "请求方法未允许",
+    "http": "http 版本不支持该请求"
+  },
+  "network": {
+    "implemented": "网络未实现",
+    "error": "网络错误",
+    "timeout": "网络超时",
+    "connectError": "网络连接错误，错误码：{code}"
+  },
+  "server": {
+    "error": "服务器端出错",
+    "down": "服务不可用",
+    "notConnect": "无法连接到服务器"
+  },
+  "api": {
+    "error": "接口错误",
+    "noParams": "接口缺少参数"
+  },
+  "authentication": {
+    "error": "用户错误",
+    "loginSuccess": "登录成功",
+    "logoutSuccess": "成功退出",
+    "not": "未授权，请重新登录",
+    "denied": "拒绝访问",
+    "longer": "您太久没登录，请重新登录",
+    "overtime": "登录失效，需要重新登录",
+    "bind": "账户未绑定角色",
+    "signup": "该用户未注册",
+    "signupDescription": "用户未注册",
+    "inconformity": "无法获取对应第三方平台用户",
+    "noEmployee": "该账户未关联员工",
+    "failure": "账号已无效",
+    "notFound": "账号未找到",
+    "password": "密码错误，请重试"
+  },
+  "form": {},
+  "role": {
+    "admin": "系统管理员",
+    "development": "开发工程师"
+  },
+  "time": {
+    "labelTime": "{label} 时间",
+    "datetime": "时间",
+    "send": "发送时间"
+  }
+}

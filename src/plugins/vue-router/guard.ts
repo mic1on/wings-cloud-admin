@@ -45,7 +45,8 @@ export const addRouterGuard = (router: Router): Router => {
       // 未登录跳转登录页
       if (requiresAuth && !userStore.isLogin) {
         next({
-          path: RouteEnum.ROUTE_LOGIN + '?type=' + baseStore.settings.LoginType,
+          path:
+            RouteEnum.ROUTE_SIGNIN + '?type=' + baseStore.settings.LoginType,
         });
         return;
       }

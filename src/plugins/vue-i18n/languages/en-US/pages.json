@@ -1,0 +1,29 @@
+{
+  "newUser": "New user?",
+  "createUser": "Create an account",
+  "signin": {
+    "title": "Sign in to {text}",
+    "btn": "Sign In",
+    "keep": "Remember Me",
+    "or": "Or",
+    "phone": "Mobile Phone",
+    "account": "Account",
+    "wechat": "Wechat"
+  },
+  "readAndAgree": "「 {label} 」means read and agree",
+  "termsConditions": "Terms & Conditions",
+  "password": {
+    "forget": "Forgot password?",
+    "forgetDescription": "Verify mobile phone number and reset your password",
+    "verify": "Verify Mobile Phone",
+    "create": "Create new password",
+    "createDescription": "Please create a new password that you don't use on any other site",
+    "btn": "Change Password",
+    "success": "Password reset succeeded",
+    "rememebr": "Just rememebr?"
+  },
+  "signup": {
+    "title": "Sign up to {text}",
+    "btn": "Sign Up"
+  }
+}

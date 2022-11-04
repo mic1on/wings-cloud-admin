@@ -23,7 +23,7 @@ const actionChange = (command: string): void => {
 
 const goLoginPage = (): void => {
   if (userStore.isLogin) return;
-  router.push({ path: RouteEnum.ROUTE_LOGIN });
+  router.push({ path: RouteEnum.ROUTE_SIGNIN });
 };
 </script>
 <template>
