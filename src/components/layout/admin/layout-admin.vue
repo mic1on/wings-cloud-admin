@@ -32,10 +32,7 @@ const { baseStore } = useStore();
       <el-container>
         <el-aside
           :style="
-            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
-            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
-            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP
+            baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
               ? baseStore.collapse
                 ? 'width: var(--wings-aside-width-fold)'
                 : 'width: var(--wings-aside-width)'
@@ -44,12 +41,7 @@ const { baseStore } = useStore();
         >
           <layout-admin-aside
             v-if="
-              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-              baseStore.settings.Layout ===
-                SettingsValueEnum.LAYOUT_ASIDE_DARK ||
-              baseStore.settings.Layout ===
-                SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
-              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP
+              baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
             "
           ></layout-admin-aside>
         </el-aside>

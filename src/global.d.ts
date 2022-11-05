@@ -12,7 +12,8 @@ type DefaultSettingsLayout =
   | 'top-lean'
   | 'aside'
   | 'aside-dark'
-  | 'aside-lean';
+  | 'aside-lean'
+  | 'aside-lean-dark';
 
 type DefaultSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
 

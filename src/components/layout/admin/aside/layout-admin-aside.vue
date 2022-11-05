@@ -15,9 +15,8 @@ const { baseStore } = useStore();
   >
     <layout-admin-logo
       v-if="
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
+        baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
+        baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
       "
       style="height: var(--wings-aside-logo-height)"
     ></layout-admin-logo>

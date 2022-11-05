@@ -1,5 +1,9 @@
 .layout-admin {
-  &.aside-dark {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
+  &.aside-dark,
+  &.aside-lean-dark {
     .el-aside {
       border-color: #262a3c !important;
     }
@@ -7,7 +11,11 @@
 }
 
 .layout-admin-aside {
-  &.aside-dark {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
+  &.aside-dark,
+  &.aside-lean-dark {
     background-color: #262a3c;
     .layout-admin-logo .name {
       color: var(--el-color-white) !important;
@@ -16,6 +24,9 @@
 }
 
 .layout-admin-menu {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
   .el-menu {
     width: 100% !important;
     transition: all var(--el-transition-duration)
@@ -204,7 +215,8 @@
     }
   }
 
-  &.aside-dark {
+  &.aside-dark,
+  &.aside-lean-dark {
     .el-menu.el-menu--vertical {
       background-color: #262a3c;
     }
@@ -255,8 +267,14 @@
 }
 
 .layout-aside-menu-collapse {
-  &.theme.aside-dark {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
+  &.theme.aside-dark,
+  &.theme.aside-lean-dark {
     .el-button {
+      transition: all var(--el-transition-duration)
+        var(--el-transition-function-ease-in-out-bezier);
       background-color: #7d7f8a !important;
       color: var(--el-color-white) !important;
     }

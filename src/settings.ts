@@ -109,6 +109,10 @@ export const PredefineLayouts = [
     label: 'system.settings.layoutAsideLean',
     value: SettingsValueEnum.LAYOUT_ASIDE_LEAN,
   },
+  {
+    label: 'system.settings.layoutAsideLeanDark',
+    value: SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK,
+  },
 ];
 
 /**
