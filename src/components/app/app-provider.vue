@@ -85,18 +85,17 @@ onBeforeMount(() => {
       v-if="baseStore.loading"
     ></div>
     <template v-else>
-      <layout-base
-        v-if="route.meta?.layout === '' || route.meta?.layout === 'base'"
+      <layout-page
+        v-if="
+          !route.meta.layout ||
+          route.meta?.layout === '' ||
+          route.meta?.layout === 'page'
+        "
       >
         <template #router-view>
           <slot name="app"></slot>
         </template>
-      </layout-base>
-      <layout-website v-if="route.meta?.layout === 'website'">
-        <template #router-view>
-          <slot name="app"></slot>
-        </template>
-      </layout-website>
+      </layout-page>
       <layout-admin v-if="route.meta?.layout === 'admin'">
         <template #router-view>
           <slot name="app"></slot>

@@ -1,0 +1,14 @@
+{
+  "title": "Sign in to {text}",
+  "btn": "Sign In",
+  "keep": "Remember Me",
+  "or": "Or",
+  "phone": "Mobile Phone",
+  "account": "Account",
+  "wechat": "Wechat",
+  "newUser": "New user?",
+  "createUser": "Create an account",
+  "sysadmin": "The test account is sysadmin and password is abc123",
+  "readAndAgree": "「 {label} 」means read and agree",
+  "termsConditions": "Terms & Conditions"
+}

@@ -15,13 +15,6 @@ type DefaultSettingsTabStyle = 'square' | 'round';
 
 type DefaultSettingsMenuStyle = 'square' | 'round';
 
-type DefaultSettingsLoginType =
-  | 'account'
-  | 'phone'
-  | 'email'
-  | 'wechat'
-  | 'alipay';
-
 interface IObject<T = any> {
   [key: string]: T;
 }
@@ -46,8 +39,6 @@ interface DefaultSettingsTypes {
   Language: string;
   FirstRoute: string;
   AdminFirstRoute: string;
-  LoginType: DefaultSettingsLoginType;
-  LoginTo: string;
 }
 
 declare module 'vue-router' {

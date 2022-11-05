@@ -29,17 +29,17 @@ const goHome = () => {
   >
     <img cursor-pointer h-22 my-10 src="@/assets/svgs/logo.svg" />
     <div text-12 mb-6 font-600 style="color: var(--el-color-info-dark)">
-      {{ t('base.notFound') }}
+      {{ t('404.title') }}
     </div>
     <div text-4 mb-12 style="color: var(--el-color-info)">
-      {{ t('base.notFoundDescription') }}
+      {{ t('404.description') }}
     </div>
     <div text-center>
       <el-button
         important="h-12 p-x-6 text-4 font-600"
         type="primary"
         @click="goHome"
-        >{{ t('base.homeButton') }}</el-button
+        >{{ t('404.btn') }}</el-button
       >
     </div>
   </div>

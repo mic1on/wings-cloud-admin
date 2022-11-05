@@ -25,13 +25,15 @@ const formRules = reactive<FormRules>({
   phone: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.phone.phoneText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.phone.phoneText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: MOBILE_PHONE,
-      message: t('crud.formatIncorrect', {
-        label: t('common.phone.phoneText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.phone.phoneText'),
       }),
       trigger: 'blur',
     },
@@ -39,15 +41,15 @@ const formRules = reactive<FormRules>({
   code: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.phone.codeText') }),
+      message: t('crud.placeholder.enter', { label: t('crud.phone.codeText') }),
       trigger: 'change',
     },
     {
       type: 'number',
       min: 6,
       max: 6,
-      message: t('crud.formatIncorrect', {
-        label: t('common.phone.codeText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.phone.codeText'),
       }),
       trigger: 'blur',
     },
@@ -62,7 +64,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
       <el-input
         v-model.number="form.phone"
         autocomplete="off"
-        :placeholder="t('common.phone.phone')"
+        :placeholder="t('crud.phone.phone')"
       >
         <template #prepend>
           <el-select v-model="form.areaCode" important="w-24">
@@ -84,7 +86,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
       <el-input
         v-model.number="form.code"
         autocomplete="off"
-        :placeholder="t('common.phone.code')"
+        :placeholder="t('crud.phone.code')"
       >
         <template #prefix>
           <el-icon><ChatDotSquare /></el-icon>
@@ -105,7 +107,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
           >
             <span text-3 v-if="countDown.countDownForm.getting">
               {{
-                t('common.phone.retrieve', {
+                t('crud.phone.retrieve', {
                   time: countDown.countDownForm.time,
                 })
               }}
@@ -113,8 +115,8 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
             <span text-3 v-else>
               {{
                 countDown.countDownForm.send
-                  ? t('common.phone.resend')
-                  : t('common.phone.send')
+                  ? t('crud.phone.resend')
+                  : t('crud.phone.send')
               }}
             </span>
           </el-button>
@@ -123,7 +125,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
     </el-form-item>
     <el-form-item mb-2>
       <el-button type="primary" w="100%">
-        {{ t('pages.signin.btn') }}
+        {{ t('signin.btn') }}
       </el-button>
     </el-form-item>
   </el-form>

@@ -23,23 +23,23 @@ const goSignin = (): void => {
           pr-2
           style="color: var(--el-text-color-primary)"
         >
-          {{ t('pages.signup.have') }}
+          {{ t('signup.have') }}
         </span>
         <el-button text-4 p-0 link font-600 type="primary" @click="goSignin()">
-          {{ t('pages.signin.btn') }}
+          {{ t('signin.btn') }}
         </el-button>
       </div>
     </template>
     <template #title>
       <div mb-10 text-6 font-600 style="color: var(--el-text-color-primary)">
-        {{ t('pages.signup.title', { text: t('app.name') }) }}
+        {{ t('signup.title', { text: t('app.name') }) }}
       </div>
     </template>
     <template #form>
       <signup-form></signup-form>
     </template>
     <template #terms-conditions>
-      <terms-conditions :label="t('pages.signup.btn')"></terms-conditions>
+      <terms-conditions :label="t('signup.btn')"></terms-conditions>
     </template>
   </sign-template>
 </template>

@@ -1,0 +1,93 @@
+{
+  "menuName": "System",
+  "menuDescription": "",
+  "menus": {
+    "menuName": "Menu",
+    "menuDescription": ""
+  },
+  "dicts": {
+    "menuName": "Dict",
+    "menuDescription": ""
+  },
+  "params": {
+    "menuName": "Param",
+    "menuDescription": ""
+  },
+  "files": {
+    "menuName": "File",
+    "menuDescription": ""
+  },
+  "settings": {
+    "menuName": "System Settings",
+    "menuDescription": "By default, the system uses cache to handle updates, and reserves interface calls for fast access to your service applications",
+    "layout": "Layout, including four out-of-the-box  system layout",
+    "layoutTop": "Top mode, left menu bar",
+    "layoutTopLean": "Top (lean) mode, suitable for small projects",
+    "layoutAside": "Sidebar mode, Logo and menu on the left",
+    "layoutAsideLean": "The sidebar (thin) mode provides a floating bar",
+    "colorScheme": "Color scheme, you can switch different color style",
+    "colorSchemeAuto": "Light mode/dark mode adaptive",
+    "colorSchemeTheme": "Theme color mode",
+    "colorSchemeLight": "Light Mode",
+    "colorSchemeDark": "Dark Mode",
+    "themeColor": "Theme color, which can also be adjusted with a custom theme color to fit your project",
+    "tabStyle": "Tab Style",
+    "tabStyleSquare": "Square",
+    "tabStyleRound": "Round",
+    "menuStyle": "Menu Style",
+    "menuStyleSquare": "Square",
+    "menuStyleRound": "Round",
+    "toolbar": "bar, click the card to close the unwanted  button",
+    "toolbarLanguage": "Multilingual Toggle",
+    "toolbarRefresh": "View Refresh",
+    "toolbarDark": "Dark Mode",
+    "toolbarFullscreen": "Full-screen Switch",
+    "toolbarCollapse": "Menu Collapse",
+    "toolbarSetting": "Settings",
+    "toolbarNotification": "Message ",
+    "toolbarAvatar": "User Avatar",
+    "component": "Component Settings, you can flexibly configure the component style and location in the layout",
+    "componentSize": "Component Size",
+    "componentLarge": "Large",
+    "componentDefault": "Default",
+    "componentSmall": "Small",
+    "tab": "Tab component",
+    "uniqueOpened": "Accordion Menu",
+    "breadcrumb": "Breadcrumb navigation",
+    "breadcrumbHidden": "Hidden",
+    "breadcrumbViewTop": "View Top",
+    "breadcrumbLayoutHeader": "Layout Header",
+    "copyright": "Copyright information",
+    "copyrightHidden": "Hidden",
+    "copyrightBottom": "Bottom",
+    "other": "Other Settings",
+    "otherDescription": "These configurations are critical to the system and can only be modified by code",
+    "language": "Default language",
+    "firstRoute": "Website first route",
+    "adminFirstRoute": " system first route",
+    "loginType": "Login Method",
+    "loginTypeAccount": "Account & Password",
+    "loginTypePhone": "Mobile Phone & Verification Code",
+    "loginTypeEmail": "Email & Verification Code",
+    "loginTypeWechat": "Wechat Scan Code Login",
+    "loginTypeApipay": "Alipay Scan Code Login",
+    "loginTo": "After login, to the route",
+    "updateSuccess": "The system Settings are modified successfully",
+    "copy": "Copying Settings Code",
+    "copySuccess": "Copy succeeded, please paste it into the src/settings.ts file!",
+    "back": "Restore Default Settings",
+    "backSuccess": "System Settings have been restored to default Settings"
+  },
+  "logs": {
+    "menuName": "Log ",
+    "menuDescription": "",
+    "login": {
+      "menuName": "Login Log",
+      "menuDescription": ""
+    },
+    "action": {
+      "menuName": "Action Log",
+      "menuDescription": ""
+    }
+  }
+}

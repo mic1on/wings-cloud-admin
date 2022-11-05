@@ -1,0 +1,14 @@
+{
+  "menuName": "Home",
+  "menuDescription": "",
+  "workbench": {
+    "menuName": "Workbench",
+    "menuDescription": "",
+    "welcome": "Welcome back!",
+    "shortcuts": "Shortcuts"
+  },
+  "dashboard": {
+    "menuName": "Dashboard",
+    "menuDescription": ""
+  }
+}

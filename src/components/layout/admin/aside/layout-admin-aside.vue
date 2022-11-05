@@ -1,0 +1,20 @@
+<script lang="ts" setup name="layout-admin-aside">
+import { useStore } from '@/hooks/use-store';
+import { SettingsValueEnum } from '@/enums';
+
+const { baseStore } = useStore();
+</script>
+
+<template>
+  <div>
+    <layout-admin-logo
+      v-if="
+        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
+      "
+      style="height: var(--wings-aside-logo-height)"
+    ></layout-admin-logo>
+    <layout-admin-menu></layout-admin-menu>
+    <layout-toolbar-collapse></layout-toolbar-collapse>
+  </div>
+</template>

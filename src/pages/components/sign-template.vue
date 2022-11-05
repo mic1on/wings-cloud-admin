@@ -26,7 +26,7 @@ const { t } = useI18n();
     </div>
     <div w="70%" h-full flex items-center justify-center relative>
       <div absolute top-8 left-10>
-        <layout-action-language></layout-action-language>
+        <layout-toolbar-language></layout-toolbar-language>
       </div>
       <div absolute top-8 right-10>
         <slot name="top-right"></slot>

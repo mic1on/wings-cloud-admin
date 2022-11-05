@@ -114,11 +114,11 @@ export const useUserStore = defineStore('user', () => {
     const routeStore = useRouteStore();
     await routeStore.getRoleRoutes();
     ElNotification({
-      title: _t('common.authentication.loginSuccess'),
+      title: _t('app.authentication.loginSuccess'),
       type: 'success',
     });
-    router.push({
-      path: DefaultSettings.LoginTo,
+    router.replace({
+      path: DefaultSettings.AdminFirstRoute,
     });
   };
 
@@ -152,7 +152,7 @@ export const useUserStore = defineStore('user', () => {
     setUserProfile({});
     setUserRoles([]);
     ElNotification({
-      title: _t('common.authentication.logoutSuccess'),
+      title: _t('app.authentication.logoutSuccess'),
       type: 'success',
     });
     router.push({

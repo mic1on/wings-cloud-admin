@@ -1,0 +1,20 @@
+{
+  "menuName": "Authority",
+  "menuDescription": "",
+  "role": {
+    "menuName": "Role",
+    "menuDescription": ""
+  },
+  "user": {
+    "menuName": "User",
+    "menuDescription": ""
+  },
+  "department": {
+    "menuName": "Department",
+    "menuDescription": ""
+  },
+  "post": {
+    "menuName": "Post",
+    "menuDescription": ""
+  }
+}

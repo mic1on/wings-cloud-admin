@@ -31,7 +31,9 @@ const validateUsername = (
   if (value && !USERNAME.test(value)) {
     callback(
       new Error(
-        t('crud.formatIncorrect', { label: t('common.account.usernameText') })
+        t('crud.placeholder.formatIncorrect', {
+          label: t('crud.account.usernameText'),
+        })
       )
     );
   } else if (value && USERNAME.test(value)) {
@@ -39,7 +41,7 @@ const validateUsername = (
       if (data.validateResult) {
         callback();
       } else {
-        callback(new Error(t('common.authentication.signup')));
+        callback(new Error(t('app.authentication.signup')));
       }
     });
   }
@@ -49,7 +51,9 @@ const formRules = reactive<FormRules>({
   username: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.account.usernameText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.account.usernameText'),
+      }),
       trigger: 'change',
     },
     { validator: validateUsername, trigger: 'blur' },
@@ -57,13 +61,15 @@ const formRules = reactive<FormRules>({
   password: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.account.passwordText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.account.passwordText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: PASSWORD_NORMAL,
-      message: t('crud.formatIncorrect', {
-        label: t('common.account.passwordText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.account.passwordText'),
       }),
       trigger: 'blur',
     },
@@ -93,7 +99,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
       <el-input
         v-model="form.username"
         autocomplete="off"
-        :placeholder="t('common.account.username')"
+        :placeholder="t('crud.account.username')"
       >
         <template #prefix>
           <el-icon><User /></el-icon>
@@ -104,7 +110,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
             text-4
             style="color: var(--el-color-info-light-3)"
             v-model="form.remember"
-            :label="t('pages.signin.keep')"
+            :label="t('signin.keep')"
           ></el-checkbox>
         </template>
       </el-input>
@@ -115,7 +121,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
         type="password"
         autocomplete="off"
         show-password
-        :placeholder="t('common.account.password')"
+        :placeholder="t('crud.account.password')"
       >
         <template #prefix>
           <el-icon><Lock /></el-icon>
@@ -132,7 +138,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
           @click="goPasswordPageByForget"
         >
           <span text-4 font-600 style="color: var(--el-text-color-regular)">
-            {{ t('pages.password.forget') }}
+            {{ t('password.forget') }}
           </span>
         </el-button>
         <el-button
@@ -141,7 +147,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
           :loading="loginLoading"
           @click="login(formRef)"
         >
-          {{ t('pages.signin.btn') }}
+          {{ t('signin.btn') }}
         </el-button>
       </div>
     </el-form-item>

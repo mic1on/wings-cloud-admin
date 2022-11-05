@@ -1,0 +1,12 @@
+{
+  "menuName": "Example",
+  "menuDescription": "",
+  "crud": { "menuName": "CRUD", "menuDescription": "" },
+  "icon": { "menuName": "Svg Icon", "menuDescription": "" },
+  "xicons": { "menuName": "Extend Icons", "menuDescription": "" },
+  "editor": { "menuName": "Rich Text Editor", "menuDescription": "" },
+  "echarts": { "menuName": "Charts", "menuDescription": "" },
+  "map": { "menuName": "Map", "menuDescription": "" },
+  "form": { "menuName": "Basic Form", "menuDescription": "" },
+  "result": { "menuName": "Result Page", "menuDescription": "" }
+}

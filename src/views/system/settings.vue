@@ -13,7 +13,6 @@ import {
   PredefineMenuStyle,
   PredefineCopyrightPosition,
   PredefineBreadcrumbPosition,
-  PredefineLoginType,
 } from '@/settings';
 import { SettingsValueEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
@@ -28,6 +27,13 @@ const { t } = useI18n();
 const { baseStore } = useStore();
 
 const changeLayout = (val: DefaultSettingsLayout) => {
+  if (
+    baseStore.settings.Breadcrumb ===
+      SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER &&
+    val === SettingsValueEnum.LAYOUT_TOP_LEAN
+  ) {
+    baseStore.settings.Breadcrumb = SettingsValueEnum.BREADCRUMB_VIEW_TOP;
+  }
   baseStore.settings.Layout = val;
 };
 
@@ -47,7 +53,7 @@ const { languages } = useLanguage();
 
 const updateSettings = () => {
   baseStore.updateSettings(baseStore.settings);
-  ElMessage.success(t('admin.systemManagement.systemSetting.updateSuccess'));
+  ElMessage.success(t('system.settings.updateSuccess'));
 };
 
 const { copy } = useClipboard({
@@ -56,23 +62,23 @@ const { copy } = useClipboard({
 
 const copySettings = () => {
   copy();
-  ElMessage.success(t('admin.systemManagement.systemSetting.copySuccess'));
+  ElMessage.success(t('system.settings.copySuccess'));
 };
 
 const backSettings = () => {
   baseStore.updateSettings(DefaultSettings);
-  ElMessage.success(t('admin.systemManagement.systemSetting.backSuccess'));
+  ElMessage.success(t('system.settings.backSuccess'));
 };
 </script>
 <template>
   <crud-card
     action
     custom-action
-    :title="t('admin.systemManagement.systemSetting.menuName')"
-    :sub-title="t('admin.systemManagement.systemSetting.menuDescription')"
+    :title="t('system.settings.menuName')"
+    :sub-title="t('system.settings.menuDescription')"
   >
     <div text-4 m-b-4>
-      {{ t('admin.systemManagement.systemSetting.layout') }}
+      {{ t('system.settings.layout') }}
     </div>
     <div flex items-center flex-wrap m-b-6>
       <div v-for="(item, index) in PredefineLayouts" :key="index">
@@ -92,7 +98,7 @@ const backSettings = () => {
       </div>
     </div>
     <div text-4 m-b-4>
-      {{ t('admin.systemManagement.systemSetting.colorScheme') }}
+      {{ t('system.settings.colorScheme') }}
     </div>
     <div flex items-center flex-wrap m-b-6>
       <div v-for="(item, index) in PredefineColorSchemes" :key="index">
@@ -112,13 +118,13 @@ const backSettings = () => {
       </div>
     </div>
     <div text-4 m-b-4>
-      {{ t('admin.systemManagement.systemSetting.themeColor') }}
+      {{ t('system.settings.themeColor') }}
     </div>
     <div flex items-center flex-wrap m-b-6>
       <setting-theme-color @change="changeThemeColor"></setting-theme-color>
     </div>
     <div text-4 m-b-4>
-      {{ t('admin.systemManagement.systemSetting.toolbar') }}
+      {{ t('system.settings.toolbar') }}
     </div>
     <div flex items-center flex-wrap m-b-6>
       <el-check-tag
@@ -133,7 +139,7 @@ const backSettings = () => {
       </el-check-tag>
     </div>
     <div text-4 m-b-4>
-      {{ t('admin.systemManagement.systemSetting.component') }}
+      {{ t('system.settings.component') }}
     </div>
     <el-form
       :style="{ width: '100%' }"
@@ -141,20 +147,20 @@ const backSettings = () => {
       label-position="left"
       m-b-6
     >
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.componentSize')"
-      >
+      <el-form-item :label="t('system.settings.componentSize')">
         <el-radio-group v-model="baseStore.settings.ElementPlus.size">
-          <el-radio-button label="large">{{ t('base.large') }}</el-radio-button>
-          <el-radio-button label="default">{{
-            t('base.default')
+          <el-radio-button label="large">{{
+            t('system.settings.componentLarge')
           }}</el-radio-button>
-          <el-radio-button label="small">{{ t('base.small') }}</el-radio-button>
+          <el-radio-button label="default">{{
+            t('system.settings.componentDefault')
+          }}</el-radio-button>
+          <el-radio-button label="small">{{
+            t('system.settings.componentSmall')
+          }}</el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.menuStyle')"
-      >
+      <el-form-item :label="t('system.settings.menuStyle')">
         <el-radio-group v-model="baseStore.settings.MenuStyle">
           <el-radio-button
             :label="item.value"
@@ -165,15 +171,13 @@ const backSettings = () => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.uniqueOpened')"
-      >
+      <el-form-item :label="t('system.settings.uniqueOpened')">
         <el-switch v-model="baseStore.settings.UniqueOpened" />
       </el-form-item>
-      <el-form-item :label="t('admin.systemManagement.systemSetting.tab')">
+      <el-form-item :label="t('system.settings.tab')">
         <el-switch v-model="baseStore.settings.Tab" />
       </el-form-item>
-      <el-form-item :label="t('admin.systemManagement.systemSetting.tabStyle')">
+      <el-form-item :label="t('system.settings.tabStyle')">
         <el-radio-group v-model="baseStore.settings.TabStyle">
           <el-radio-button
             :label="item.value"
@@ -184,9 +188,7 @@ const backSettings = () => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.breadcrumb')"
-      >
+      <el-form-item :label="t('system.settings.breadcrumb')">
         <el-radio-group v-model="baseStore.settings.Breadcrumb">
           <el-radio-button
             :disabled="
@@ -201,9 +203,7 @@ const backSettings = () => {
           </el-radio-button>
         </el-radio-group>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.copyright')"
-      >
+      <el-form-item :label="t('system.settings.copyright')">
         <el-radio-group v-model="baseStore.settings.Copyright">
           <el-radio-button
             :label="item.value"
@@ -219,10 +219,8 @@ const backSettings = () => {
       <el-alert
         show-icon
         :closable="false"
-        :title="t('admin.systemManagement.systemSetting.other')"
-        :description="
-          t('admin.systemManagement.systemSetting.otherDescription')
-        "
+        :title="t('system.settings.other')"
+        :description="t('system.settings.otherDescription')"
         type="warning"
       />
     </div>
@@ -232,7 +230,7 @@ const backSettings = () => {
       label-position="left"
       m-b-6
     >
-      <el-form-item :label="t('admin.systemManagement.systemSetting.language')">
+      <el-form-item :label="t('system.settings.language')">
         <el-select style="width: 260px" v-model="baseStore.settings.Language">
           <el-option
             v-for="(value, key) in languages"
@@ -242,50 +240,28 @@ const backSettings = () => {
           />
         </el-select>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.firstRoute')"
-      >
+      <el-form-item :label="t('system.settings.firstRoute')">
         <el-input
           style="width: 260px"
           v-model="baseStore.settings.FirstRoute"
         ></el-input>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.adminFirstRoute')"
-      >
+      <el-form-item :label="t('system.settings.adminFirstRoute')">
         <el-input
           style="width: 260px"
           v-model="baseStore.settings.AdminFirstRoute"
         ></el-input>
       </el-form-item>
-      <el-form-item
-        :label="t('admin.systemManagement.systemSetting.loginType')"
-      >
-        <el-select style="width: 260px" v-model="baseStore.settings.LoginType">
-          <el-option
-            v-for="(item, index) in PredefineLoginType"
-            :key="index"
-            :label="t(item.label)"
-            :value="item.value"
-          />
-        </el-select>
-      </el-form-item>
-      <el-form-item :label="t('admin.systemManagement.systemSetting.loginTo')">
-        <el-input
-          style="width: 260px"
-          v-model="baseStore.settings.LoginTo"
-        ></el-input>
-      </el-form-item>
     </el-form>
     <template #action>
       <el-button type="primary" @click="updateSettings">
-        {{ t('base.crud.update') }}
+        {{ t('crud.btn.update') }}
       </el-button>
       <el-button @click="copySettings">
-        {{ t('admin.systemManagement.systemSetting.copy') }}
+        {{ t('system.settings.copy') }}
       </el-button>
       <el-button @click="backSettings">
-        {{ t('admin.systemManagement.systemSetting.back') }}
+        {{ t('system.settings.back') }}
       </el-button>
     </template>
   </crud-card>

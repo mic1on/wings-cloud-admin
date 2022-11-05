@@ -1,0 +1,12 @@
+{
+  "menuName": "功能示例",
+  "menuDescription": "",
+  "crud": { "menuName": "增删改查", "menuDescription": "" },
+  "icon": { "menuName": "自定义 Svg 图标", "menuDescription": "" },
+  "xicons": { "menuName": "扩展图标", "menuDescription": "" },
+  "editor": { "menuName": "富文本编辑器", "menuDescription": "" },
+  "echarts": { "menuName": "图表", "menuDescription": "" },
+  "map": { "menuName": "地图", "menuDescription": "" },
+  "form": { "menuName": "基础表单", "menuDescription": "" },
+  "result": { "menuName": "结果页", "menuDescription": "" }
+}

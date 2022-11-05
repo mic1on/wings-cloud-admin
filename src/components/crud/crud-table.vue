@@ -62,10 +62,10 @@ const reset = () => {};
       <slot name="query"></slot>
       <el-form-item>
         <el-button type="primary" @click="query">
-          {{ queryLabel || t('base.crud.query') }}
+          {{ queryLabel || t('crud.btn.query') }}
         </el-button>
         <el-button @click="reset">
-          {{ resetLabel || t('base.crud.reset') }}
+          {{ resetLabel || t('crud.btn.reset') }}
         </el-button>
       </el-form-item>
     </el-form>

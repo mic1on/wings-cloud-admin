@@ -10,9 +10,9 @@ export enum RouteEnum {
   ROUTE_SIGNIN = '/signin',
   ROUTE_SIGNUP = '/signup',
   ROUTE_PASSWORD_FORGET = '/password/forget',
-  ROUTE_PERSONAL_SETTINGS = '/personal/settings',
-  ROUTE_PERSONAL_PROFILE = '/personalr/profile',
+  ROUTE_PERSONAL_PROFILE = '/personal/profile',
   ROUTE_PERSONAL_NOTIFICATIONS = '/personal/notification',
+  ROUTE_SYSTEM_SETTINGS = '/system/settings',
 }
 
 /**
@@ -126,9 +126,4 @@ export enum SettingsValueEnum {
   COPYRIGHT_VIEW_BOTTOM = 'view-bottom',
   COPYRIGHT_HIDDEN = 'hidden',
   LANGUAGE = 'en-US',
-  LOGIN_TYPE_ACCOUNT = 'account',
-  LOGIN_TYPE_PHONE = 'phone',
-  LOGIN_TYPE_EMAIL = 'email',
-  LOGIN_TYPE_WECHAT = 'wechat',
-  LOGIN_TYPE_ALIPAY = 'alipay',
 }

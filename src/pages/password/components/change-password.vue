@@ -23,14 +23,16 @@ const validatePassword = (
   if (value && !PASSWORD_NORMAL.test(value)) {
     callback(
       new Error(
-        t('crud.formatIncorrect', { label: t('common.account.passwordText') })
+        t('crud.placeholder.formatIncorrect', {
+          label: t('crud.account.passwordText'),
+        })
       )
     );
   } else if (value && PASSWORD_NORMAL.test(value)) {
     if (value !== changeForm.value.password) {
       callback(
         new Error(
-          t('crud.inconsistent', { label: t('common.account.passwordText') })
+          t('crud.inconsistent', { label: t('crud.account.passwordText') })
         )
       );
     } else {
@@ -43,13 +45,15 @@ const changeFormRules = reactive<FormRules>({
   password: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.account.passwordText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.account.passwordText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: PASSWORD_NORMAL,
-      message: t('crud.formatIncorrect', {
-        label: t('common.account.passwordText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.account.passwordText'),
       }),
       trigger: 'blur',
     },
@@ -57,8 +61,8 @@ const changeFormRules = reactive<FormRules>({
   passwordAgain: [
     {
       required: true,
-      message: t('crud.enterAgain', {
-        label: t('common.account.passwordText'),
+      message: t('crud.placeholder.enterAgain', {
+        label: t('crud.account.passwordText'),
       }),
       trigger: 'change',
     },
@@ -94,7 +98,7 @@ const change = async (formEl: FormInstance | undefined): Promise<void> => {
         type="password"
         autocomplete="off"
         show-password
-        :placeholder="t('common.account.password')"
+        :placeholder="t('crud.account.password')"
       >
         <template #prefix>
           <el-icon><Lock /></el-icon>
@@ -107,7 +111,7 @@ const change = async (formEl: FormInstance | undefined): Promise<void> => {
         type="password"
         autocomplete="off"
         show-password
-        :placeholder="t('common.account.passwordAgain')"
+        :placeholder="t('crud.account.passwordAgain')"
       >
         <template #prefix>
           <el-icon><Lock /></el-icon>
@@ -116,7 +120,7 @@ const change = async (formEl: FormInstance | undefined): Promise<void> => {
     </el-form-item>
     <el-form-item>
       <el-button type="primary" w="100%" @click="change(changeFormRef)">
-        <span font-600>{{ t('pages.password.btn') }}</span>
+        <span font-600>{{ t('password.btn') }}</span>
       </el-button>
     </el-form-item>
   </el-form>

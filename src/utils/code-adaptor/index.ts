@@ -21,43 +21,43 @@ export const networkCodeAdaptor = (
         message = '';
         break;
       case 400:
-        message = t('common.request.wrong');
+        message = t('app.request.wrong');
         break;
       case 401:
-        message = t('common.authentication.not');
+        message = t('app.authentication.not');
         break;
       case 403:
-        message = t('common.authentication.denied');
+        message = t('app.authentication.denied');
         break;
       case 404:
-        message = t('common.request.resource');
+        message = t('app.request.resource');
         break;
       case 405:
-        message = t('common.request.method');
+        message = t('app.request.method');
         break;
       case 408:
-        message = t('common.request.timeout');
+        message = t('app.request.timeout');
         break;
       case 500:
-        message = t('common.server.error');
+        message = t('app.server.error');
         break;
       case 501:
-        message = t('common.network.implemented');
+        message = t('app.network.implemented');
         break;
       case 502:
-        message = t('common.network.error');
+        message = t('app.network.error');
         break;
       case 503:
-        message = t('common.server.down');
+        message = t('app.server.down');
         break;
       case 504:
-        message = t('common.network.timeout');
+        message = t('app.network.timeout');
         break;
       case 505:
-        message = t('common.request.http');
+        message = t('app.request.http');
         break;
       default:
-        message = t('common.unkown.code', { code });
+        message = t('app.unkown.code', { code });
     }
   }
   if (code && message && callback) {
@@ -86,10 +86,10 @@ export const apiCodeAdaptor = (
         message = '';
         break;
       case 500:
-        message = t('common.unkown.error', { message: data.msg });
+        message = t('app.unkown.error', { message: data.msg });
         break;
       case 10001:
-        message = t('common.api.noParams');
+        message = t('app.api.noParams');
         break;
     }
   }
@@ -116,31 +116,31 @@ export const authCodeAdaptor = (
   if (data.code) {
     switch (data.code) {
       case 10031:
-        message = t('common.authentication.overtime');
+        message = t('app.authentication.overtime');
         break;
       case 10032:
-        message = t('common.authentication.longer');
+        message = t('app.authentication.longer');
         break;
       case 10033:
-        message = t('common.authentication.bind');
+        message = t('app.authentication.bind');
         break;
       case 10034:
-        message = t('common.authentication.signup');
+        message = t('app.authentication.signup');
         break;
       case 10035:
-        message = t('common.authentication.inconformity');
+        message = t('app.authentication.inconformity');
         break;
       case 10036:
-        message = t('common.authentication.noEmployee');
+        message = t('app.authentication.noEmployee');
         break;
       case 10037:
-        message = t('common.authentication.failure');
+        message = t('app.authentication.failure');
         break;
       case 10038:
-        message = t('common.authentication.notFound');
+        message = t('app.authentication.notFound');
         break;
       case 10039:
-        message = t('common.authentication.password');
+        message = t('app.authentication.password');
         break;
     }
   }
