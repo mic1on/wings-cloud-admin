@@ -18,6 +18,7 @@ const width = computed(() => {
   if (
     baseStore.collapse &&
     (baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+      baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
       baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN)
   ) {
     _width = 'var(--wings-aside-width-fold)';
@@ -37,6 +38,7 @@ const position = computed(() => {
   let _position = 'display:flex;align-items:center;';
   if (
     baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
     baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
   ) {
     _position += 'justify-content:center;';
@@ -52,6 +54,7 @@ const position = computed(() => {
 
 <template>
   <div
+    class="layout-admin-logo"
     cursor-pointer
     p-x-6
     box-border
@@ -59,7 +62,22 @@ const position = computed(() => {
     :style="[width, position]"
   >
     <div class="logo" flex items-center justify-center>
-      <img w-10 h-10 src="@/assets/svgs/logo.svg" alt="" />
+      <img
+        v-if="
+          (baseStore.settings.ColorScheme ===
+            SettingsValueEnum.COLOR_SCHEME_THEME &&
+            baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_ASIDE &&
+            baseStore.settings.Layout !==
+              SettingsValueEnum.LAYOUT_ASIDE_LEAN) ||
+          (baseStore.settings.ColorScheme !==
+            SettingsValueEnum.COLOR_SCHEME_THEME &&
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK)
+        "
+        w-10
+        h-10
+        src="@/assets/svgs/logo-white.svg"
+      />
+      <img v-else w-10 h-10 src="@/assets/svgs/logo.svg" />
     </div>
     <div
       text-6
@@ -71,9 +89,10 @@ const position = computed(() => {
         baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
         baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
       "
-      class="single-line-omitted"
+      class="single-line-omitted name"
       :style="
         baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
         baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
           ? 'color: var(--wings-menu-text-color)'
           : 'color: var(--wings-header-text-color)'

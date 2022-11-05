@@ -6,73 +6,90 @@ const { baseStore } = useStore();
 </script>
 
 <template>
-  <el-container>
-    <el-header
-      :style="
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
-          ? 'height: var(--wings-header-height); border-bottom: 1px solid'
-          : 'height: 0; border-bottom: none;'
-      "
-    >
-      <layout-admin-header
-        v-if="
+  <div
+    :class="[
+      baseStore.settings.ColorScheme,
+      baseStore.settings.Layout,
+      'layout-admin',
+    ]"
+  >
+    <el-container>
+      <el-header
+        :style="
           baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
           baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
-        "
-      ></layout-admin-header>
-    </el-header>
-    <el-container>
-      <el-aside
-        :style="
-          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
-          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP
-            ? baseStore.collapse
-              ? 'width: var(--wings-aside-width-fold)'
-              : 'width: var(--wings-aside-width)'
-            : 'width: 0'
+            ? 'height: var(--wings-header-height); border-bottom: 1px solid'
+            : 'height: 0; border-bottom: none;'
         "
       >
-        <layout-admin-aside
+        <layout-admin-header
           v-if="
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+          "
+        ></layout-admin-header>
+      </el-header>
+      <el-container>
+        <el-aside
+          :style="
             baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
             baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
             baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP
-          "
-        ></layout-admin-aside>
-      </el-aside>
-      <el-main
-        :style="
-          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-          baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
-            ? 'height: calc(100vh - var(--wings-header-height));'
-            : 'height: calc(100vh);'
-        "
-      >
-        <el-header
-          :style="
-            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE
-              ? 'height: var(--wings-header-height); border-bottom: 1px solid'
-              : 'height: 0; border-bottom: none'
+              ? baseStore.collapse
+                ? 'width: var(--wings-aside-width-fold)'
+                : 'width: var(--wings-aside-width)'
+              : 'width: 0'
           "
         >
-          <layout-admin-header
-            v-if="baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE"
-          ></layout-admin-header>
-        </el-header>
-        <layout-admin-tab v-if="baseStore.settings.Tab"></layout-admin-tab>
-        <layout-admin-main>
-          <template #main-router-view>
-            <slot name="router-view"></slot>
-          </template>
-        </layout-admin-main>
-        <el-footer v-if="baseStore.settings.Footer">
-          <layout-admin-footer></layout-admin-footer>
-        </el-footer>
-      </el-main>
+          <layout-admin-aside
+            v-if="
+              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+              baseStore.settings.Layout ===
+                SettingsValueEnum.LAYOUT_ASIDE_DARK ||
+              baseStore.settings.Layout ===
+                SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP
+            "
+          ></layout-admin-aside>
+        </el-aside>
+        <el-main
+          :style="
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+            baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+              ? 'height: calc(100vh - var(--wings-header-height));'
+              : 'height: calc(100vh);'
+          "
+        >
+          <el-header
+            :style="
+              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK
+                ? 'height: var(--wings-header-height); border-bottom: 1px solid'
+                : 'height: 0; border-bottom: none'
+            "
+          >
+            <layout-admin-header
+              v-if="
+                baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+                baseStore.settings.Layout ===
+                  SettingsValueEnum.LAYOUT_ASIDE_DARK
+              "
+            ></layout-admin-header>
+          </el-header>
+          <layout-admin-tab v-if="baseStore.settings.Tab"></layout-admin-tab>
+          <layout-admin-main>
+            <template #main-router-view>
+              <slot name="router-view"></slot>
+            </template>
+          </layout-admin-main>
+          <el-footer v-if="baseStore.settings.Footer">
+            <layout-admin-footer></layout-admin-footer>
+          </el-footer>
+        </el-main>
+      </el-container>
     </el-container>
-  </el-container>
+  </div>
 </template>
 
 <style lang="scss" scoped>

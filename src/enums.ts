@@ -111,6 +111,7 @@ export enum SettingsValueEnum {
   LAYOUT_TOP = 'top',
   LAYOUT_TOP_LEAN = 'top-lean',
   LAYOUT_ASIDE = 'aside',
+  LAYOUT_ASIDE_DARK = 'aside-dark',
   LAYOUT_ASIDE_LEAN = 'aside-lean',
   COLOR_SCHEME_AUTO = 'auto',
   COLOR_SCHEME_THEME = 'theme',
