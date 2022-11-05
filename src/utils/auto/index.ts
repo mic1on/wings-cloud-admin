@@ -49,7 +49,7 @@ export const autoImportPiniaStore = (files: Files): Stores => {
 export const autoImportLanguages = (files: Files): Languages => {
   const languages: Languages = {};
   Object.keys(files).forEach((key: string) => {
-    const languageAlias = key.split('/')[key.split('/').length - 2];
+    const languageAlias = key.split('/')[2];
     const fileName = key.replace(FILE_NAME, '$2');
     const language = languages[languageAlias] || {};
     languages[languageAlias] = {
@@ -57,7 +57,6 @@ export const autoImportLanguages = (files: Files): Languages => {
       [fileName]: files[key] || {},
     };
   });
-  console.log(languages);
   return languages;
 };
 

@@ -1,0 +1,16 @@
+{
+  "menuName": "Development",
+  "menuDescription": "",
+  "options": {
+    "menuName": "Options",
+    "menuDescription": ""
+  },
+  "code": {
+    "menuName": "Code Generator",
+    "menuDescription": ""
+  },
+  "form": {
+    "menuName": "Form Design",
+    "menuDescription": ""
+  }
+}

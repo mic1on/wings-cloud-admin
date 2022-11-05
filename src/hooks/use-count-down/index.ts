@@ -28,7 +28,9 @@ export const useCountDown = () => {
     callBack: Callback
   ): void => {
     if (!data) {
-      ElMessage.error(t('crud.enter', { label: t('common.phone.phone') }));
+      ElMessage.error(
+        t('crud.placeholder.enter', { label: t('crud.phone.phone') })
+      );
       return;
     }
     callBack();
@@ -55,7 +57,7 @@ export const useCountDown = () => {
         type,
       });
       if (res.code === 0) {
-        ElMessage.success(t('common.phone.success'));
+        ElMessage.success(t('crud.phone.success'));
         getCoding();
       }
     });

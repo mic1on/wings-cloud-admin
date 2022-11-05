@@ -37,14 +37,16 @@ const validatePassword = (
   if (value && !PASSWORD_NORMAL.test(value)) {
     callback(
       new Error(
-        t('crud.formatIncorrect', { label: t('common.account.passwordText') })
+        t('crud.placeholder.formatIncorrect', {
+          label: t('crud.account.passwordText'),
+        })
       )
     );
   } else if (value && PASSWORD_NORMAL.test(value)) {
     if (value !== form.value.password) {
       callback(
         new Error(
-          t('crud.inconsistent', { label: t('common.account.passwordText') })
+          t('crud.inconsistent', { label: t('crud.account.passwordText') })
         )
       );
     } else {
@@ -57,13 +59,15 @@ const formRules = reactive<FormRules>({
   nickname: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.account.nicknameText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.account.nicknameText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: USERNAME,
-      message: t('crud.formatIncorrect', {
-        label: t('crud.nicknameText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.account.nicknameText'),
       }),
       trigger: 'blur',
     },
@@ -71,13 +75,15 @@ const formRules = reactive<FormRules>({
   username: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.account.usernameText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.account.usernameText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: USERNAME,
-      message: t('crud.formatIncorrect', {
-        label: t('crud.usernameText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.account.usernameText'),
       }),
       trigger: 'blur',
     },
@@ -85,13 +91,15 @@ const formRules = reactive<FormRules>({
   phone: [
     {
       required: false,
-      message: t('crud.enter', { label: t('common.phone.phoneText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.phone.phoneText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: MOBILE_PHONE,
-      message: t('crud.formatIncorrect', {
-        label: t('common.phone.phoneText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.phone.phoneText'),
       }),
       trigger: 'blur',
     },
@@ -99,13 +107,13 @@ const formRules = reactive<FormRules>({
   code: [
     {
       required: form.value.phone ? true : false,
-      message: t('crud.enter', { label: t('common.phone.code') }),
+      message: t('crud.placeholder.enter', { label: t('crud.phone.code') }),
       trigger: 'change',
     },
     {
       len: 6,
-      message: t('crud.formatIncorrect', {
-        label: t('common.phone.code'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.phone.code'),
       }),
       trigger: 'blur',
     },
@@ -113,13 +121,15 @@ const formRules = reactive<FormRules>({
   password: [
     {
       required: true,
-      message: t('crud.enter', { label: t('common.account.passwordText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.account.passwordText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: PASSWORD_NORMAL,
-      message: t('crud.formatIncorrect', {
-        label: t('common.account.passwordText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.account.passwordText'),
       }),
       trigger: 'blur',
     },
@@ -127,8 +137,8 @@ const formRules = reactive<FormRules>({
   passwordAgain: [
     {
       required: true,
-      message: t('crud.enterAgain', {
-        label: t('common.account.passwordText'),
+      message: t('crud.placeholder.enterAgain', {
+        label: t('crud.account.passwordText'),
       }),
       trigger: 'change',
     },
@@ -161,7 +171,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
       <el-input
         v-model="form.nickname"
         autocomplete="off"
-        :placeholder="t('common.account.nickname')"
+        :placeholder="t('crud.account.nickname')"
       >
         <template #prefix>
           <el-icon><Postcard /></el-icon>
@@ -172,7 +182,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
       <el-input
         v-model="form.username"
         autocomplete="off"
-        :placeholder="t('common.account.username')"
+        :placeholder="t('crud.account.username')"
       >
         <template #prefix>
           <el-icon><User /></el-icon>
@@ -183,7 +193,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
       <el-input
         v-model.number="form.phone"
         autocomplete="off"
-        :placeholder="t('common.phone.phone')"
+        :placeholder="t('crud.phone.phone')"
       >
         <template #prepend>
           <el-select v-model="form.areaCode" important="w-24">
@@ -205,7 +215,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
       <el-input
         v-model.number="form.code"
         autocomplete="off"
-        :placeholder="t('common.phone.code')"
+        :placeholder="t('crud.phone.code')"
       >
         <template #prefix>
           <el-icon><ChatDotSquare /></el-icon>
@@ -226,7 +236,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
           >
             <span text-3 v-if="countDown.countDownForm.getting">
               {{
-                t('common.phone.retrieve', {
+                t('crud.phone.retrieve', {
                   time: countDown.countDownForm.time,
                 })
               }}
@@ -234,8 +244,8 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
             <span text-3 v-else>
               {{
                 countDown.countDownForm.send
-                  ? t('common.phone.resend')
-                  : t('common.phone.send')
+                  ? t('crud.phone.resend')
+                  : t('crud.phone.send')
               }}
             </span>
           </el-button>
@@ -248,7 +258,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
         type="password"
         autocomplete="off"
         show-password
-        :placeholder="t('crud.password')"
+        :placeholder="t('crud.account.password')"
       >
         <template #prefix>
           <el-icon><Lock /></el-icon>
@@ -261,7 +271,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
         type="password"
         autocomplete="off"
         show-password
-        :placeholder="t('common.account.passwordAgain')"
+        :placeholder="t('crud.account.passwordAgain')"
       >
         <template #prefix>
           <el-icon><Lock /></el-icon>
@@ -270,7 +280,7 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
     </el-form-item>
     <el-form-item mb-2>
       <el-button type="primary" w="100%" @click="signup(formRef)">{{
-        t('pages.signup.btn')
+        t('signup.btn')
       }}</el-button>
     </el-form-item>
   </el-form>

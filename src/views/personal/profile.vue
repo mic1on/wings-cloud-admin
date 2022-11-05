@@ -11,8 +11,8 @@ const width = ref('width:240px');
   <crud-card
     action
     custom-action
-    :title="t('admin.personalCenter.personalProfile.menuName')"
-    :sub-title="t('admin.personalCenter.personalProfile.menuDescription')"
+    :title="t('personal.profile.menuName')"
+    :sub-title="t('personal.profile.menuDescription')"
   >
     <el-form
       style="width: 380px"
@@ -20,49 +20,32 @@ const width = ref('width:240px');
       label-width="140px"
       m-b-6
     >
-      <el-form-item :label="t('base.form.avatar')">
+      <el-form-item :label="t('crud.account.avatar')">
         <avatar-upload v-model="userStore.userProfile.avatar"></avatar-upload>
       </el-form-item>
-      <el-form-item :label="t('base.form.nickname')">
+      <el-form-item :label="t('crud.account.nickname')">
         <el-input
           :style="[width]"
           v-model="userStore.userProfile.nickname"
-          :placeholder="
-            t('base.form.enter', { label: t('base.form.nicknameText') })
-          "
+          :placeholder="t('crud.account.nickname')"
         ></el-input>
       </el-form-item>
-      <el-form-item :label="t('base.form.username')">
+      <el-form-item :label="t('crud.account.username')">
         <el-input
           disabled
           :style="[width]"
           v-model="userStore.userProfile.username"
-          :placeholder="
-            t('base.form.enter', { label: t('base.form.usernameText') })
-          "
+          :placeholder="t('crud.account.username')"
         ></el-input>
       </el-form-item>
-      <el-form-item :label="t('base.form.mobilePhone')">
+      <el-form-item :label="t('crud.phone.phone')">
         <el-input
           :style="[width]"
           v-model="userStore.userProfile.mobilePhone"
-          :placeholder="
-            t('base.form.enter', { label: t('base.form.mobilePhoneText') })
-          "
+          :placeholder="t('crud.phone.phone')"
         ></el-input>
       </el-form-item>
-      <el-form-item :label="t('base.form.email')">
-        <el-input
-          :style="[width]"
-          v-model="userStore.userProfile.email"
-          :placeholder="
-            t('base.form.enter', { label: t('base.form.emailText') })
-          "
-        ></el-input>
-      </el-form-item>
-      <el-form-item
-        :label="t('admin.personalCenter.personalSettings.defaultRole')"
-      >
+      <el-form-item :label="t('personal.settings.defaultRole')">
         <el-select :style="[width]" v-model="userStore.userProfile.defaultRole">
           <el-option
             v-for="(item, index) in userStore.userProfile.roleList"
@@ -75,10 +58,10 @@ const width = ref('width:240px');
     </el-form>
     <template #action>
       <el-button type="primary">
-        {{ t('base.crud.update') }}
+        {{ t('crud.btn.update') }}
       </el-button>
       <el-button>
-        {{ t('admin.personalCenter.personalSettings.menuName') }}
+        {{ t('app.toolbar.avatar.signout') }}
       </el-button>
     </template>
   </crud-card>

@@ -1,0 +1,20 @@
+{
+  "menuName": "权限管理",
+  "menuDescription": "",
+  "role": {
+    "menuName": "角色管理",
+    "menuDescription": ""
+  },
+  "user": {
+    "menuName": "用户管理",
+    "menuDescription": ""
+  },
+  "department": {
+    "menuName": "部门管理",
+    "menuDescription": ""
+  },
+  "post": {
+    "menuName": "岗位管理",
+    "menuDescription": ""
+  }
+}

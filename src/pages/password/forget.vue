@@ -20,7 +20,7 @@ const verifyHandle = (e: IObject): void => {
 
 const changeHandle = (e: IObject): void => {
   if (e.status) {
-    ElMessage.success(t('pages.password.success'));
+    ElMessage.success(t('password.success'));
   }
 };
 
@@ -37,24 +37,24 @@ const goSignin = (): void => {
     <template #title>
       <div v-if="forgetType === 'verify'">
         <div mb-4 text-6 font-600 style="color: var(--el-color-info-light)">
-          {{ t('pages.password.forget') }}
+          {{ t('password.forget') }}
         </div>
         <div
           font-500
           style="color: var(--el-text-color-secondary); font-size: 14px"
         >
-          {{ t('pages.password.forgetDescription') }}
+          {{ t('password.forgetDescription') }}
         </div>
       </div>
       <div v-if="forgetType === 'change'">
         <div mb-4 text-6 font-600 style="color: var(--el-color-info-light)">
-          {{ t('pages.password.create') }}
+          {{ t('password.create') }}
         </div>
         <div
           font-500
           style="color: var(--el-text-color-secondary); font-size: 14px"
         >
-          {{ t('pages.password.createDescription') }}
+          {{ t('password.createDescription') }}
         </div>
       </div>
     </template>
@@ -75,10 +75,10 @@ const goSignin = (): void => {
           pr-2
           style="color: var(--el-text-color-primary)"
         >
-          {{ t('pages.password.rememebr') }}
+          {{ t('password.rememebr') }}
         </span>
         <el-button text-4 p-0 link font-600 type="primary" @click="goSignin">
-          {{ t('pages.signin.btn') }}
+          {{ t('signin.btn') }}
         </el-button>
       </div>
     </template>

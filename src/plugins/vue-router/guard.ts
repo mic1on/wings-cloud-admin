@@ -51,6 +51,19 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
+      // 已经登录情况下跳禁止跳登录页
+      if (
+        userStore.isLogin &&
+        (to.path === RouteEnum.ROUTE_SIGNIN ||
+          to.path === RouteEnum.ROUTE_SIGNUP ||
+          to.path === RouteEnum.ROUTE_PASSWORD_FORGET)
+      ) {
+        next({
+          path: RouteEnum.ROUTE_ADMIN_FIRST,
+        });
+        return;
+      }
+
       // 页面刷新时初始化路由信息
       if (userStore.isLogin && routeStore.roleRoutes.length == 0) {
         baseStore.loading = true;

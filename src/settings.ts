@@ -14,7 +14,7 @@ export const ReplaceSettings: DefaultSettingsTypes | null = null;
 export const DefaultSettings: DefaultSettingsTypes = Object.assign(
   {
     Layout: SettingsValueEnum.LAYOUT_TOP,
-    ThemeColor: '#F75151',
+    ThemeColor: '#f75151',
     ColorScheme: SettingsValueEnum.COLOR_SCHEME_AUTO,
     TabStyle: SettingsValueEnum.TAB_STYLE_SQUARE,
     MenuStyle: SettingsValueEnum.MENU_STYLE_ROUND,
@@ -45,8 +45,6 @@ export const DefaultSettings: DefaultSettingsTypes = Object.assign(
     Language: LanguageEnum.EN_US_ALIAS,
     FirstRoute: RouteEnum.ROUTE_FIRST,
     AdminFirstRoute: RouteEnum.ROUTE_ADMIN_FIRST,
-    LoginType: SettingsValueEnum.LOGIN_TYPE_ACCOUNT,
-    LoginTo: RouteEnum.ROUTE_ADMIN_FIRST,
   },
   ReplaceSettings
 );
@@ -57,31 +55,31 @@ export const DefaultSettings: DefaultSettingsTypes = Object.assign(
  */
 export const PredefineToolbar = [
   {
-    label: 'admin.systemManagement.systemSetting.toolbarDark',
+    label: 'system.settings.toolbarDark',
     value: 'Dark',
   },
   {
-    label: 'admin.systemManagement.systemSetting.toolbarLanguage',
+    label: 'system.settings.toolbarLanguage',
     value: 'Language',
   },
   {
-    label: 'admin.systemManagement.systemSetting.toolbarRefresh',
+    label: 'system.settings.toolbarRefresh',
     value: 'Refresh',
   },
   {
-    label: 'admin.systemManagement.systemSetting.toolbarNotification',
+    label: 'system.settings.toolbarNotification',
     value: 'Notification',
   },
   {
-    label: 'admin.systemManagement.systemSetting.toolabarFullscreen',
+    label: 'system.settings.toolbarFullscreen',
     value: 'Fullscreen',
   },
   {
-    label: 'admin.systemManagement.systemSetting.toolbarSetting',
+    label: 'system.settings.toolbarSetting',
     value: 'Setting',
   },
   {
-    label: 'admin.systemManagement.systemSetting.toolbarAvatar',
+    label: 'system.settings.toolbarAvatar',
     value: 'Avatar',
   },
 ];
@@ -92,19 +90,19 @@ export const PredefineToolbar = [
  */
 export const PredefineLayouts = [
   {
-    label: 'admin.systemManagement.systemSetting.layoutTop',
+    label: 'system.settings.layoutTop',
     value: SettingsValueEnum.LAYOUT_TOP,
   },
   {
-    label: 'admin.systemManagement.systemSetting.layoutTopLean',
+    label: 'system.settings.layoutTopLean',
     value: SettingsValueEnum.LAYOUT_TOP_LEAN,
   },
   {
-    label: 'admin.systemManagement.systemSetting.layoutAside',
+    label: 'system.settings.layoutAside',
     value: SettingsValueEnum.LAYOUT_ASIDE,
   },
   {
-    label: 'admin.systemManagement.systemSetting.layoutAsideLean',
+    label: 'system.settings.layoutAsideLean',
     value: SettingsValueEnum.LAYOUT_ASIDE_LEAN,
   },
 ];
@@ -115,19 +113,19 @@ export const PredefineLayouts = [
  */
 export const PredefineColorSchemes = [
   {
-    label: 'admin.systemManagement.systemSetting.colorSchemeAuto',
+    label: 'system.settings.colorSchemeAuto',
     value: SettingsValueEnum.COLOR_SCHEME_AUTO,
   },
   {
-    label: 'admin.systemManagement.systemSetting.colorSchemeTheme',
+    label: 'system.settings.colorSchemeTheme',
     value: SettingsValueEnum.COLOR_SCHEME_THEME,
   },
   {
-    label: 'admin.systemManagement.systemSetting.colorSchemeLight',
+    label: 'system.settings.colorSchemeLight',
     value: SettingsValueEnum.COLOR_SCHEME_LIGHT,
   },
   {
-    label: 'admin.systemManagement.systemSetting.colorSchemeDark',
+    label: 'system.settings.colorSchemeDark',
     value: SettingsValueEnum.COLOR_SCHEME_DARK,
   },
 ];
@@ -137,6 +135,7 @@ export const PredefineColorSchemes = [
  * @description 预置主题颜色
  */
 export const PredefineThemeColors = [
+  '#f75151',
   '#409EFF',
   '#262A3C',
   '#42b983',
@@ -155,11 +154,11 @@ export const PredefineThemeColors = [
  */
 export const PredefineTabStyle = [
   {
-    label: 'admin.systemManagement.systemSetting.tabStyleSquare',
+    label: 'system.settings.tabStyleSquare',
     value: SettingsValueEnum.TAB_STYLE_SQUARE,
   },
   {
-    label: 'admin.systemManagement.systemSetting.tabStyleRound',
+    label: 'system.settings.tabStyleRound',
     value: SettingsValueEnum.TAB_STYLE_ROUND,
   },
 ];
@@ -170,11 +169,11 @@ export const PredefineTabStyle = [
  */
 export const PredefineMenuStyle = [
   {
-    label: 'admin.systemManagement.systemSetting.menuStyleSquare',
+    label: 'system.settings.menuStyleSquare',
     value: SettingsValueEnum.MENU_STYLE_SQUARE,
   },
   {
-    label: 'admin.systemManagement.systemSetting.menuStyleRound',
+    label: 'system.settings.menuStyleRound',
     value: SettingsValueEnum.MENU_STYLE_ROUND,
   },
 ];
@@ -185,15 +184,15 @@ export const PredefineMenuStyle = [
  */
 export const PredefineBreadcrumbPosition = [
   {
-    label: 'admin.systemManagement.systemSetting.breadcrumbViewTop',
+    label: 'system.settings.breadcrumbViewTop',
     value: SettingsValueEnum.BREADCRUMB_VIEW_TOP,
   },
   {
-    label: 'admin.systemManagement.systemSetting.breadcrumbLayoutHeader',
+    label: 'system.settings.breadcrumbLayoutHeader',
     value: SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER,
   },
   {
-    label: 'admin.systemManagement.systemSetting.breadcrumbHidden',
+    label: 'system.settings.breadcrumbHidden',
     value: SettingsValueEnum.BREADCRUMB_HIDDEN,
   },
 ];
@@ -204,38 +203,11 @@ export const PredefineBreadcrumbPosition = [
  */
 export const PredefineCopyrightPosition = [
   {
-    label: 'admin.systemManagement.systemSetting.copyrightBottom',
+    label: 'system.settings.copyrightBottom',
     value: SettingsValueEnum.COPYRIGHT_VIEW_BOTTOM,
   },
   {
-    label: 'admin.systemManagement.systemSetting.copyrightHidden',
+    label: 'system.settings.copyrightHidden',
     value: SettingsValueEnum.COPYRIGHT_HIDDEN,
-  },
-];
-
-/**
- * @name PredefineLoginType
- * @description 预置登录方式
- */
-export const PredefineLoginType = [
-  {
-    label: 'admin.systemManagement.systemSetting.loginTypeAccount',
-    value: SettingsValueEnum.LOGIN_TYPE_ACCOUNT,
-  },
-  {
-    label: 'admin.systemManagement.systemSetting.loginTypePhone',
-    value: SettingsValueEnum.LOGIN_TYPE_PHONE,
-  },
-  {
-    label: 'admin.systemManagement.systemSetting.loginTypeEmail',
-    value: SettingsValueEnum.LOGIN_TYPE_EMAIL,
-  },
-  {
-    label: 'admin.systemManagement.systemSetting.loginTypeWechat',
-    value: SettingsValueEnum.LOGIN_TYPE_WECHAT,
-  },
-  {
-    label: 'admin.systemManagement.systemSetting.loginTypeApipay',
-    value: SettingsValueEnum.LOGIN_TYPE_ALIPAY,
   },
 ];

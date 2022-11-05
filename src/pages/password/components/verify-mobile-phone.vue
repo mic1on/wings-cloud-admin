@@ -23,13 +23,15 @@ const verifyFormRules = reactive<FormRules>({
   phone: [
     {
       required: false,
-      message: t('crud.enter', { label: t('common.phone.phoneText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.phone.phoneText'),
+      }),
       trigger: 'change',
     },
     {
       pattern: MOBILE_PHONE,
-      message: t('crud.formatIncorrect', {
-        label: t('common.phone.phoneText'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.phone.phoneText'),
       }),
       trigger: 'blur',
     },
@@ -37,13 +39,13 @@ const verifyFormRules = reactive<FormRules>({
   code: [
     {
       required: verifyForm.value.phone ? true : false,
-      message: t('crud.enter', { label: t('common.phone.code') }),
+      message: t('crud.placeholder.enter', { label: t('crud.phone.code') }),
       trigger: 'change',
     },
     {
       len: 6,
-      message: t('crud.formatIncorrect', {
-        label: t('common.phone.code'),
+      message: t('crud.placeholder.formatIncorrect', {
+        label: t('crud.phone.code'),
       }),
       trigger: 'blur',
     },
@@ -77,7 +79,7 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
       <el-input
         v-model.number="verifyForm.phone"
         autocomplete="off"
-        :placeholder="t('common.phone.phone')"
+        :placeholder="t('crud.phone.phone')"
       >
         <template #prepend>
           <el-select v-model="verifyForm.areaCode" important="w-24">
@@ -99,7 +101,7 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
       <el-input
         v-model.number="verifyForm.code"
         autocomplete="off"
-        :placeholder="t('common.phone.code')"
+        :placeholder="t('crud.phone.code')"
       >
         <template #prefix>
           <el-icon><ChatDotSquare /></el-icon>
@@ -120,7 +122,7 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
           >
             <span text-3 v-if="countDown.countDownForm.getting">
               {{
-                t('common.phone.retrieve', {
+                t('crud.phone.retrieve', {
                   time: countDown.countDownForm.time,
                 })
               }}
@@ -128,8 +130,8 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
             <span text-3 v-else>
               {{
                 countDown.countDownForm.send
-                  ? t('common.phone.resend')
-                  : t('common.phone.send')
+                  ? t('crud.phone.resend')
+                  : t('crud.phone.send')
               }}
             </span>
           </el-button>
@@ -138,7 +140,7 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
     </el-form-item>
     <el-form-item>
       <el-button type="primary" w="100%" @click="verify(verifyFormRef)">
-        <span font-600> {{ t('pages.password.verify') }}</span>
+        <span font-600> {{ t('password.verify') }}</span>
       </el-button>
     </el-form-item>
   </el-form>
