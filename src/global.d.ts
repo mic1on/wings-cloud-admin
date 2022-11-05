@@ -7,7 +7,13 @@ interface ViewComponents {
 
 type Callback = (data?: any) => void;
 
-type DefaultSettingsLayout = 'top' | 'top-lean' | 'aside' | 'aside-lean';
+type DefaultSettingsLayout =
+  | 'top'
+  | 'top-lean'
+  | 'aside'
+  | 'aside-dark'
+  | 'aside-lean'
+  | 'aside-lean-dark';
 
 type DefaultSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
 

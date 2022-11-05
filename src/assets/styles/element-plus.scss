@@ -1,4 +1,32 @@
+.layout-admin {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
+  &.aside-dark,
+  &.aside-lean-dark {
+    .el-aside {
+      border-color: #262a3c !important;
+    }
+  }
+}
+
+.layout-admin-aside {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
+  &.aside-dark,
+  &.aside-lean-dark {
+    background-color: #262a3c;
+    .layout-admin-logo .name {
+      color: var(--el-color-white) !important;
+    }
+  }
+}
+
 .layout-admin-menu {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
   .el-menu {
     width: 100% !important;
     transition: all var(--el-transition-duration)
@@ -184,6 +212,71 @@
   &.theme.round {
     .el-sub-menu {
       border-radius: var(--wings-menu-radius);
+    }
+  }
+
+  &.aside-dark,
+  &.aside-lean-dark {
+    .el-menu.el-menu--vertical {
+      background-color: #262a3c;
+    }
+
+    .el-sub-menu {
+      .el-menu {
+        color: var(--el-color-white);
+        background-color: #7d7f8a;
+      }
+
+      .el-sub-menu__title {
+        color: var(--el-color-white);
+
+        &:hover {
+          color: var(--wings-menu-text-color-hover);
+        }
+      }
+    }
+
+    .el-menu-item {
+      color: var(--el-color-white);
+
+      &:hover {
+        color: var(--wings-menu-text-color-hover);
+      }
+    }
+
+    &.el-menu--popup-container {
+      .el-sub-menu__title {
+        color: var(--wings-menu-text-color);
+      }
+
+      .el-menu-item {
+        color: var(--wings-menu-text-color);
+
+        &:hover {
+          color: var(--wings-menu-text-color-hover);
+        }
+      }
+
+      .el-sub-menu {
+        .el-menu {
+          background-color: var(--el-menu-bg-color);
+        }
+      }
+    }
+  }
+}
+
+.layout-aside-menu-collapse {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+
+  &.theme.aside-dark,
+  &.theme.aside-lean-dark {
+    .el-button {
+      transition: all var(--el-transition-duration)
+        var(--el-transition-function-ease-in-out-bezier);
+      background-color: #7d7f8a !important;
+      color: var(--el-color-white) !important;
     }
   }
 }

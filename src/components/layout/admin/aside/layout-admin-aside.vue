@@ -6,15 +6,21 @@ const { baseStore } = useStore();
 </script>
 
 <template>
-  <div>
+  <div
+    :class="[
+      baseStore.settings.ColorScheme,
+      baseStore.settings.Layout,
+      'layout-admin-aside',
+    ]"
+  >
     <layout-admin-logo
       v-if="
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
+        baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
+        baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
       "
       style="height: var(--wings-aside-logo-height)"
     ></layout-admin-logo>
     <layout-admin-menu></layout-admin-menu>
-    <layout-toolbar-collapse></layout-toolbar-collapse>
+    <layout-aside-menu-collapse></layout-aside-menu-collapse>
   </div>
 </template>

@@ -155,6 +155,59 @@ const props = defineProps({
         w-full
         h-full
         flex
+        v-if="props.mode === SettingsValueEnum.LAYOUT_ASIDE_DARK"
+      >
+        <div
+          h-full
+          w-6
+          style="
+            box-sizing: border-box;
+            background-color: #262a3c;
+            border: 1px solid;
+            border-right: 0;
+            border-radius: 4px 0 0 4px;
+          "
+          :style="
+            baseStore.settings.ColorScheme ===
+            SettingsValueEnum.COLOR_SCHEME_DARK
+              ? 'border-color: var(--el-border-color)'
+              : 'border-color: #262a3c'
+          "
+        ></div>
+        <div h-full w-14>
+          <div
+            w-full
+            h-4
+            style="
+              box-sizing: border-box;
+              background-color: var(--wings-header-bg-color);
+              border: 1px solid;
+              border-radius: 0 4px 0 0;
+            "
+            :style="
+              baseStore.settings.ColorScheme ===
+              SettingsValueEnum.COLOR_SCHEME_DARK
+                ? 'border-color:var(--el-border-color)'
+                : 'border-color: var(--wings-header-border-color)'
+            "
+          ></div>
+          <div
+            h-14
+            w-full
+            style="
+              box-sizing: border-box;
+              background-color: var(--wings-main-fill);
+              border: 1px solid var(--el-border-color);
+              border-top: 0;
+              border-radius: 0 0 4px;
+            "
+          ></div>
+        </div>
+      </div>
+      <div
+        w-full
+        h-full
+        flex
         v-if="props.mode === SettingsValueEnum.LAYOUT_ASIDE_LEAN"
       >
         <div
@@ -165,6 +218,40 @@ const props = defineProps({
             background-color: var(--wings-menu-bg-color);
             border: 1px solid var(--el-border-color);
             border-radius: 4px 0 0 4px;
+          "
+        ></div>
+        <div
+          h-full
+          w-12
+          style="
+            box-sizing: border-box;
+            background-color: var(--wings-main-fill);
+            border: 1px solid var(--el-border-color);
+            border-left: 0;
+            border-radius: 0 4px 4px 0;
+          "
+        ></div>
+      </div>
+      <div
+        w-full
+        h-full
+        flex
+        v-if="props.mode === SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK"
+      >
+        <div
+          h-full
+          w-6
+          style="
+            box-sizing: border-box;
+            background-color: #262a3c;
+            border: 1px solid;
+            border-radius: 4px 0 0 4px;
+          "
+          :style="
+            baseStore.settings.ColorScheme ===
+            SettingsValueEnum.COLOR_SCHEME_DARK
+              ? 'border-color: var(--el-border-color)'
+              : 'border-color: #262a3c'
           "
         ></div>
         <div

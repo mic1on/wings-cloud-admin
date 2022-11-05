@@ -14,7 +14,7 @@ export const ReplaceSettings: DefaultSettingsTypes | null = null;
 export const DefaultSettings: DefaultSettingsTypes = Object.assign(
   {
     Layout: SettingsValueEnum.LAYOUT_TOP,
-    ThemeColor: '#f75151',
+    ThemeColor: '#b90b0b',
     ColorScheme: SettingsValueEnum.COLOR_SCHEME_AUTO,
     TabStyle: SettingsValueEnum.TAB_STYLE_SQUARE,
     MenuStyle: SettingsValueEnum.MENU_STYLE_ROUND,
@@ -102,8 +102,16 @@ export const PredefineLayouts = [
     value: SettingsValueEnum.LAYOUT_ASIDE,
   },
   {
+    label: 'system.settings.layoutAsideDark',
+    value: SettingsValueEnum.LAYOUT_ASIDE_DARK,
+  },
+  {
     label: 'system.settings.layoutAsideLean',
     value: SettingsValueEnum.LAYOUT_ASIDE_LEAN,
+  },
+  {
+    label: 'system.settings.layoutAsideLeanDark',
+    value: SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK,
   },
 ];
 
@@ -135,7 +143,7 @@ export const PredefineColorSchemes = [
  * @description 预置主题颜色
  */
 export const PredefineThemeColors = [
-  '#f75151',
+  '#b90b0b',
   '#409EFF',
   '#262A3C',
   '#42b983',

@@ -17,6 +17,11 @@ const changeCollapse = (): void => {
     cursor-pointer
     style="height: var(--wings-collapse-height)"
     @click="changeCollapse()"
+    :class="[
+      baseStore.settings.ColorScheme,
+      baseStore.settings.Layout,
+      'layout-aside-menu-collapse',
+    ]"
   >
     <el-button
       v-if="baseStore.collapse"

@@ -9,7 +9,8 @@ const height = computed(() => {
   if (
     baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
     baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN ||
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK
   ) {
     _height =
       'calc(100vh - var(--wings-header-height) - var(--wings-tab-height))';
