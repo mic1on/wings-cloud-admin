@@ -18,6 +18,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  customHeader: {
+    type: Boolean,
+    default: false,
+  },
   customAction: {
     type: Boolean,
     default: false,
@@ -32,6 +36,8 @@ const props = defineProps({
   },
 });
 
+const route = useRoute();
+
 const emit = defineEmits(['submit', 'cancel']);
 
 const submit = () => {
@@ -44,20 +50,15 @@ const cancel = () => {
 </script>
 <template>
   <el-card :shadow="props.shadow" important="border-none">
-    <template #header v-if="props.title || props.subTitle">
+    <template #header v-if="!props.customHeader">
       <div text-5 style="color: var(--el-text-color-primary)">
-        {{ props.title }}
+        {{ props.title || route.meta.menuName }}
       </div>
-      <div
-        v-if="props.subTitle"
-        text-4
-        mt-2
-        style="color: var(--el-text-color-secondary)"
-      >
-        {{ props.subTitle }}
+      <div text-4 mt-2 style="color: var(--el-text-color-secondary)">
+        {{ props.subTitle || route.meta.menuDescription }}
       </div>
     </template>
-    <slot name="header" v-if="!props.title || !props.subTitle"></slot>
+    <slot v-if="props.customHeader" name="header"></slot>
     <div
       style="padding: calc(var(--el-card-padding) - 2px) var(--el-card-padding)"
     >

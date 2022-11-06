@@ -71,12 +71,7 @@ const backSettings = () => {
 };
 </script>
 <template>
-  <crud-card
-    action
-    custom-action
-    :title="t('system.settings.menuName')"
-    :sub-title="t('system.settings.menuDescription')"
-  >
+  <crud-card action custom-action>
     <div text-4 m-b-4>
       {{ t('system.settings.layout') }}
     </div>
