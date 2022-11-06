@@ -31,54 +31,6 @@ const { baseStore } = useStore();
         "
       ></layout-admin-breadcrumb>
     </div>
-    <div
-      h-full
-      flex
-      items-center
-      justify-end
-      p-x-6
-      style="box-sizing: border-box; width: var(--wings-header-toobar-width)"
-      :class="[baseStore.isMobile ? 'mobile' : 'pc']"
-    >
-      <layout-toolbar-color-scheme
-        class="toolbar"
-        v-if="baseStore.settings.Toolbar.Dark"
-      ></layout-toolbar-color-scheme>
-      <layout-toolbar-language
-        only-icon
-        class="toolbar"
-        v-if="baseStore.settings.Toolbar.Language"
-      ></layout-toolbar-language>
-      <layout-toolbar-refresh
-        class="toolbar"
-        v-if="baseStore.settings.Toolbar.Refresh"
-      ></layout-toolbar-refresh>
-      <layout-toolbar-notification
-        class="toolbar"
-        v-if="baseStore.settings.Toolbar.Notification"
-      ></layout-toolbar-notification>
-      <layout-toolbar-fullscreen
-        class="toolbar"
-        v-if="baseStore.settings.Toolbar.Fullscreen && !baseStore.isMobile"
-      ></layout-toolbar-fullscreen>
-      <layout-toolbar-setting
-        class="toolbar"
-        v-if="baseStore.settings.Toolbar.Setting"
-      ></layout-toolbar-setting>
-      <layout-toolbar-avatar
-        class="toolbar"
-        v-if="baseStore.settings.Toolbar.Avatar"
-      ></layout-toolbar-avatar>
-    </div>
+    <layout-toolbar></layout-toolbar>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.mobile .toolbar {
-  margin-left: 1.4rem;
-}
-
-.pc .toolbar {
-  margin-left: 2rem;
-}
-</style>

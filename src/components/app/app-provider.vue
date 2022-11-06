@@ -57,6 +57,7 @@ watch(
 );
 
 onBeforeMount(() => {
+  baseStore.changeMobile();
   window.onresize = () => {
     baseStore.changeMobile();
   };

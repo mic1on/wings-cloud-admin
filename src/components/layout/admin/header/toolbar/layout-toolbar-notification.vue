@@ -14,7 +14,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div cursor-pointer v-if="userStore.isLogin">
+  <div flex items-center cursor-pointer v-if="userStore.isLogin">
     <el-popover :width="320" trigger="hover">
       <template #reference>
         <el-badge is-dot flex items-center>

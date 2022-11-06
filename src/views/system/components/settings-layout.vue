@@ -20,7 +20,7 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div mr-10>
+  <div mr-10 class="animation">
     <div h-18 w-18 overflow-hidden cursor-pointer>
       <div w-full h-full v-if="props.mode === SettingsValueEnum.LAYOUT_TOP">
         <div
@@ -277,3 +277,9 @@ const props = defineProps({
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+.animation > *div {
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
+}
+</style>
