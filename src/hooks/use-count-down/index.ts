@@ -50,7 +50,7 @@ export const useCountDown = () => {
   };
 
   // 获取验证码二次封装
-  const getPhoneCode = (phone: number | string, type): void => {
+  const getPhoneCode = (phone: number | string, type: number): void => {
     getCode(phone, async () => {
       const res = await _getPhoneCode({
         phone,
