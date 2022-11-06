@@ -1,6 +1,7 @@
 <script lang="ts" setup name="layout-action-avatar">
 import { RouteEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
+import { UserFilled } from '@element-plus/icons-vue';
 
 const props = defineProps({
   avatarSize: {
@@ -45,6 +46,7 @@ const goLoginPage = (): void => {
       cursor-pointer
       :size="props.avatarSize"
       :src="userStore.userProfile.avatar"
+      :icon="UserFilled"
     >
     </el-avatar>
     <template #dropdown>

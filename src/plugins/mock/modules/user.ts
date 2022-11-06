@@ -46,8 +46,7 @@ export default {
       id: '',
       username: AuthenticationEnum.VISITOR_USERNAME,
       nickname: '演示用户',
-      avatar:
-        'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+      avatar: '',
       sex: 1,
       email: '',
       phone: '',
