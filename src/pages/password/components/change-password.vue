@@ -4,7 +4,6 @@ import type { PasswordForm } from '@/pages/index.d';
 import type { IObject } from '@/global.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { PASSWORD_NORMAL } from '@/utils/reg-exp';
-import { getPhoneCode as _getPhoneCode } from '@/apis/website/user';
 
 const { t } = useI18n();
 

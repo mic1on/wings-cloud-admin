@@ -1,4 +1,4 @@
-import { IObject } from './../../utils/common/index.d';
+import type { IObject } from '@/global.d';
 import { StorageEnum } from '@/enums';
 import { setStorage } from '@/utils/storage';
 import { getMobileAreaCodeList } from '@/apis/base';

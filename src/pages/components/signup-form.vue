@@ -2,12 +2,11 @@
 import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '../index.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { RouteEnum, StorageEnum, PhoneCodeTypeEnum } from '@/enums';
+import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
 import { useCountDown } from '@/hooks/use-count-down';
 import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
-import { getPhoneCode as _getPhoneCode } from '@/apis/website/user';
 
 const { t } = useI18n();
 

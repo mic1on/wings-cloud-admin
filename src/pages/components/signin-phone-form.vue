@@ -5,7 +5,6 @@ import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
 import { MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
 import { useCountDown } from '@/hooks/use-count-down';
-import { getPhoneCode as _getPhoneCode } from '@/apis/website/user';
 
 const { t } = useI18n();
 

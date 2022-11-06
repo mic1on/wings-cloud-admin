@@ -14,9 +14,7 @@ const route = useRoute();
 const router = useRouter();
 
 const loginType = ref<string>(
-  route.params.type
-    ? (route.params.type as string)
-    : (baseStore.settings.LoginType as string)
+  route.params.type ? (route.params.type as string) : 'account'
 );
 
 const changeLoginType = (type: string): void => {
