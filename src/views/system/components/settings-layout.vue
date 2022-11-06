@@ -20,7 +20,7 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div mr-10 class="animation">
+  <div mr-7 mb-4 class="animation">
     <div h-18 w-18 overflow-hidden cursor-pointer>
       <div w-full h-full v-if="props.mode === SettingsValueEnum.LAYOUT_TOP">
         <div

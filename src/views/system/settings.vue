@@ -75,7 +75,7 @@ const backSettings = () => {
     <div text-4 m-b-4>
       {{ t('system.settings.layout') }}
     </div>
-    <div flex items-center flex-wrap m-b-6>
+    <div flex items-center flex-wrap m-b-2>
       <div v-for="(item, index) in PredefineLayouts" :key="index">
         <el-tooltip
           :show-after="300"
@@ -95,7 +95,7 @@ const backSettings = () => {
     <div text-4 m-b-4>
       {{ t('system.settings.colorScheme') }}
     </div>
-    <div flex items-center flex-wrap m-b-6>
+    <div flex items-center flex-wrap m-b-2>
       <div v-for="(item, index) in PredefineColorSchemes" :key="index">
         <el-tooltip
           :show-after="300"
@@ -138,33 +138,38 @@ const backSettings = () => {
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="200px"
+      label-width="160px"
       label-position="left"
       m-b-6
     >
       <el-form-item :label="t('system.settings.componentSize')">
-        <el-radio-group v-model="baseStore.settings.ElementPlus.size">
-          <el-radio-button label="large">{{
-            t('system.settings.componentLarge')
-          }}</el-radio-button>
-          <el-radio-button label="default">{{
-            t('system.settings.componentDefault')
-          }}</el-radio-button>
-          <el-radio-button label="small">{{
-            t('system.settings.componentSmall')
-          }}</el-radio-button>
-        </el-radio-group>
+        <el-select
+          style="width: 260px"
+          v-model="baseStore.settings.ElementPlus.size"
+        >
+          <el-option
+            :label="t('system.settings.componentLarge')"
+            value="large"
+          />
+          <el-option
+            :label="t('system.settings.componentDefault')"
+            value="default"
+          />
+          <el-option
+            :label="t('system.settings.componentSmall')"
+            value="small"
+          />
+        </el-select>
       </el-form-item>
       <el-form-item :label="t('system.settings.menuStyle')">
-        <el-radio-group v-model="baseStore.settings.MenuStyle">
-          <el-radio-button
-            :label="item.value"
+        <el-select style="width: 260px" v-model="baseStore.settings.MenuStyle">
+          <el-option
             v-for="(item, index) in PredefineMenuStyle"
             :key="index"
-          >
-            {{ t(item.label) }}
-          </el-radio-button>
-        </el-radio-group>
+            :label="t(item.label)"
+            :value="item.value"
+          />
+        </el-select>
       </el-form-item>
       <el-form-item :label="t('system.settings.uniqueOpened')">
         <el-switch v-model="baseStore.settings.UniqueOpened" />
@@ -173,46 +178,47 @@ const backSettings = () => {
         <el-switch v-model="baseStore.settings.Tab" />
       </el-form-item>
       <el-form-item :label="t('system.settings.tabStyle')">
-        <el-radio-group v-model="baseStore.settings.TabStyle">
-          <el-radio-button
-            :label="item.value"
+        <el-select style="width: 260px" v-model="baseStore.settings.TabStyle">
+          <el-option
             v-for="(item, index) in PredefineTabStyle"
             :key="index"
-          >
-            {{ t(item.label) }}
-          </el-radio-button>
-        </el-radio-group>
+            :label="t(item.label)"
+            :value="item.value"
+          />
+        </el-select>
       </el-form-item>
       <el-form-item :label="t('system.settings.breadcrumb')">
-        <el-radio-group v-model="baseStore.settings.Breadcrumb">
-          <el-radio-button
+        <el-select style="width: 260px" v-model="baseStore.settings.Breadcrumb">
+          <el-option
+            v-for="(item, index) in PredefineBreadcrumbPosition"
+            :key="index"
+            :label="t(item.label)"
+            :value="item.value"
             :disabled="
               (baseStore.isMobile ||
                 baseStore.settings.Layout ===
-                  SettingsValueEnum.LAYOUT_TOP_LEAN) &&
+                  SettingsValueEnum.LAYOUT_TOP_LEAN ||
+                baseStore.settings.Layout ===
+                  SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+                baseStore.settings.Layout ===
+                  SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK) &&
               item.value === SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
             "
-            :label="item.value"
-            v-for="(item, index) in PredefineBreadcrumbPosition"
-            :key="index"
-          >
-            {{ t(item.label) }}
-          </el-radio-button>
-        </el-radio-group>
+          />
+        </el-select>
       </el-form-item>
       <el-form-item :label="t('system.settings.copyright')">
-        <el-radio-group v-model="baseStore.settings.Copyright">
-          <el-radio-button
-            :label="item.value"
+        <el-select style="width: 260px" v-model="baseStore.settings.Copyright">
+          <el-option
             v-for="(item, index) in PredefineCopyrightPosition"
             :key="index"
-          >
-            {{ t(item.label) }}
-          </el-radio-button>
-        </el-radio-group>
+            :label="t(item.label)"
+            :value="item.value"
+          />
+        </el-select>
       </el-form-item>
     </el-form>
-    <div style="width: 460px" mb-4>
+    <div :style="baseStore.isMobile ? 'width: 100%' : 'width: 420px'" mb-4>
       <el-alert
         show-icon
         :closable="false"
@@ -223,7 +229,7 @@ const backSettings = () => {
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="200px"
+      label-width="160px"
       label-position="left"
       m-b-6
     >

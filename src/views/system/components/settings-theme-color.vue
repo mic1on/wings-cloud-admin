@@ -17,7 +17,7 @@ const changeThemeColor = (val: string | null): void => {
 <template>
   <div flex flex-wrap>
     <div
-      mr-6
+      mr-5
       cursor-pointer
       v-for="(item, index) in PredefineThemeColors"
       :key="index"
@@ -50,7 +50,7 @@ const changeThemeColor = (val: string | null): void => {
         ></div>
       </div>
     </div>
-    <div w-8>
+    <div w-8 ml-1>
       <div flex items-center justify-center>
         <el-color-picker
           size="large"

@@ -55,7 +55,7 @@
     "componentSmall": "小型",
     "tab": "标签页",
     "uniqueOpened": "手风琴菜单",
-    "breadcrumb": "面包屑导航",
+    "breadcrumb": "面包屑",
     "breadcrumbHidden": "隐藏",
     "breadcrumbViewTop": "视图顶部",
     "breadcrumbLayoutHeader": "布局顶栏",
@@ -75,9 +75,9 @@
     "loginTypeApipay": "支付宝扫码登录",
     "loginTo": "登录后跳转的路由",
     "updateSuccess": "系统设置修改成功",
-    "copy": "复制设置代码",
+    "copy": "复制",
     "copySuccess": "复制成功，请粘贴到 src/settings.ts 文件中！",
-    "back": "恢复默认设置",
+    "back": "重置",
     "backSuccess": "系统设置已恢复默认"
   },
   "logs": {
