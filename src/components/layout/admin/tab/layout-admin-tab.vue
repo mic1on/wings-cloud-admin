@@ -1,6 +1,7 @@
 <script lang="ts" setup name="layout-admin-tab">
 import type { IObject } from '@/global.d';
 import { useStore } from '@/hooks/use-store';
+import { DefaultSettings } from '@/settings';
 import { arrayRecursion } from '@/utils/common';
 
 const { t } = useI18n();
@@ -75,7 +76,7 @@ onBeforeMount(() => {
   tab.homeTab = arrayRecursion(
     'path',
     routeStore.adminMenuRoutes,
-    import.meta.env.APP_ADMIN_FIRST_ROUTE
+    DefaultSettings.AdminFirstRoute
   );
   const { isFind, path } = findTab(route.path);
   if (isFind) {
@@ -114,7 +115,7 @@ watch(
       tab-position="top"
       @tab-click="tabClick"
       @tab-remove="tabRemove"
-      style="width: 90%"
+      :style="baseStore.isMobile ? 'width: 76%' : 'width: 94%'"
     >
       <el-tab-pane
         v-for="item in tab.tabList"
@@ -199,21 +200,21 @@ watch(
     border-bottom: 0 !important;
     border-radius: 6px;
   }
+}
 
-  :deep(.el-tabs__nav-next) {
-    --at-apply: flex items-center;
+:deep(.el-tabs__nav-next) {
+  --at-apply: flex items-center;
 
-    top: 50% !important;
-    line-height: 30px;
-    transform: translateY(-50%) !important;
-  }
+  top: 50% !important;
+  line-height: var(--el-tabs-header-height) !important;
+  transform: translateY(-50%) !important;
+}
 
-  :deep(.el-tabs__nav-prev) {
-    --at-apply: flex items-center;
+:deep(.el-tabs__nav-prev) {
+  --at-apply: flex items-center;
 
-    top: 50% !important;
-    line-height: 30px;
-    transform: translateY(-50%) !important;
-  }
+  top: 50% !important;
+  line-height: var(--el-tabs-header-height) !important;
+  transform: translateY(-50%) !important;
 }
 </style>

@@ -1,4 +1,6 @@
 <script lang="ts" setup name="crud-dialog">
+import { useStore } from '@/hooks/use-store';
+
 const props = defineProps({
   value: {
     type: Boolean,
@@ -58,6 +60,8 @@ const props = defineProps({
   },
 });
 
+const { baseStore } = useStore();
+
 const visible = ref<boolean>(props.value);
 
 const emit = defineEmits(['input']);
@@ -70,7 +74,7 @@ const closedHandle = (): void => {
 <template>
   <el-dialog
     v-model="visible"
-    :width="props.width"
+    :width="baseStore.isMobile ? '90%' : props.width"
     :title="props.title"
     :center="props.center"
     :align-center="props.alignCenter"

@@ -15,7 +15,7 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div mr-10>
+  <div mr-7 mb-4>
     <div w-18 h-18 overflow-hidden cursor-pointer>
       <div class="bg" v-if="props.mode === 'auto'">
         <svg-icon name="color-scheme-auto" size="2rem"></svg-icon>

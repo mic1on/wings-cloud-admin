@@ -18,13 +18,21 @@ const termsConditionsData = ref<string>('');
 const openDialog = (): void => {
   dialogVisible.value = true;
   getTermsConditionsData().then(({ data }: ResponseData) => {
-    termsConditionsData.value = t(data.i18nKey);
+    termsConditionsData.value = data.i18nKey ? t(data.i18nKey) : '';
   });
 };
 </script>
 
 <template>
-  <div w="100%" py-2 flex justify-center items-center style="font-size: 14px">
+  <div
+    w="100%"
+    box-border
+    py-2
+    flex
+    justify-center
+    items-center
+    style="font-size: 14px"
+  >
     <span pr-2 style="color: var(--el-color-info-light-3)">{{
       t('signin.readAndAgree', { label: props.label })
     }}</span>
