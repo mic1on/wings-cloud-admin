@@ -187,7 +187,9 @@ const backSettings = () => {
         <el-radio-group v-model="baseStore.settings.Breadcrumb">
           <el-radio-button
             :disabled="
-              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN &&
+              (baseStore.isMobile ||
+                baseStore.settings.Layout ===
+                  SettingsValueEnum.LAYOUT_TOP_LEAN) &&
               item.value === SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
             "
             :label="item.value"

@@ -31,16 +31,19 @@ const { baseStore } = useStore();
       </el-header>
       <el-container>
         <el-aside
-          :style="
+          :style="[
+            !baseStore.isMobile &&
             baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
               ? baseStore.collapse
                 ? 'width: var(--wings-aside-width-fold)'
                 : 'width: var(--wings-aside-width)'
-              : 'width: 0'
-          "
+              : 'width: 0',
+            baseStore.isMobile ? 'border:none' : '',
+          ]"
         >
           <layout-admin-aside
             v-if="
+              !baseStore.isMobile &&
               baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
             "
           ></layout-admin-aside>
@@ -81,6 +84,24 @@ const { baseStore } = useStore();
         </el-main>
       </el-container>
     </el-container>
+    <layout-toolbar-mobile-menu
+      v-if="
+        baseStore.isMobile &&
+        (baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+          baseStore.settings.Layout ===
+            SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK)
+      "
+      :fixed="true"
+    ></layout-toolbar-mobile-menu>
+    <el-drawer
+      v-model="baseStore.mobileMenu"
+      :show-close="false"
+      direction="ltr"
+      :with-header="false"
+      size="var(--wings-aside-width)"
+    >
+      <layout-admin-aside></layout-admin-aside>
+    </el-drawer>
   </div>
 </template>
 

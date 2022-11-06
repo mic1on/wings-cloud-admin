@@ -15,12 +15,16 @@ const { baseStore } = useStore();
   >
     <layout-admin-logo
       v-if="
-        baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
-        baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
+        baseStore.isMobile ||
+        (!baseStore.isMobile &&
+          baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
+          baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN)
       "
       style="height: var(--wings-aside-logo-height)"
     ></layout-admin-logo>
     <layout-admin-menu></layout-admin-menu>
-    <layout-aside-menu-collapse></layout-aside-menu-collapse>
+    <layout-aside-menu-collapse
+      v-if="!baseStore.isMobile"
+    ></layout-aside-menu-collapse>
   </div>
 </template>

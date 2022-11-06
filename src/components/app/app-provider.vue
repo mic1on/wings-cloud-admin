@@ -57,6 +57,9 @@ watch(
 );
 
 onBeforeMount(() => {
+  window.onresize = () => {
+    baseStore.changeMobile();
+  };
   getMobileAreaCodes();
   getDictAll();
 });

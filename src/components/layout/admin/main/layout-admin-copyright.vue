@@ -7,7 +7,7 @@ const { t } = useI18n();
     flex
     items-center
     justify-center
-    style="padding: var(--wings-main-padding)"
+    style="padding: var(--wings-main-padding) 0"
   >
     <div text-4 style="color: var(--el-text-color-secondary)">
       {{ t('app.copyright') }}
