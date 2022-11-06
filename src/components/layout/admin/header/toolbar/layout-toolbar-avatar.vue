@@ -1,11 +1,15 @@
 <script lang="ts" setup name="layout-action-avatar">
-import { DefaultSettings } from '@/settings';
 import { RouteEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
 
-const { t } = useI18n();
+const props = defineProps({
+  avatarSize: {
+    type: Number,
+    default: 38,
+  },
+});
 
-const route = useRoute();
+const { t } = useI18n();
 
 const router = useRouter();
 
@@ -29,7 +33,7 @@ const goLoginPage = (): void => {
 <template>
   <el-avatar
     cursor-pointer
-    :size="38"
+    :size="props.avatarSize"
     :src="userStore.userProfile.avatar"
     @click="goLoginPage"
     v-if="!userStore.isLogin"
@@ -37,7 +41,11 @@ const goLoginPage = (): void => {
     <span text-1>{{ t('signin.btn') }}</span>
   </el-avatar>
   <el-dropdown @command="actionChange" v-else>
-    <el-avatar cursor-pointer :size="38" :src="userStore.userProfile.avatar">
+    <el-avatar
+      cursor-pointer
+      :size="props.avatarSize"
+      :src="userStore.userProfile.avatar"
+    >
     </el-avatar>
     <template #dropdown>
       <el-dropdown-menu>

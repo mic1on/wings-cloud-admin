@@ -17,17 +17,19 @@ const { changeLanguage, currentLanguage, languages } = useLanguage();
 
 <template>
   <el-dropdown @command="changeLanguage">
-    <span flex items-center cursor-pointer h-full v-if="!props.onlyIcon">
-      <span mr-2>{{ languages[currentLanguage].name }}</span>
-      <i inline-flex i="ep-arrow-down"></i>
-    </span>
-    <svg-icon
-      v-if="props.onlyIcon"
-      cursor-pointer
-      size="1.2rem"
-      name="international"
-      :color="props.color"
-    ></svg-icon>
+    <div h-full flex items-center>
+      <span flex items-center cursor-pointer h-full v-if="!props.onlyIcon">
+        <span mr-2>{{ languages[currentLanguage].name }}</span>
+        <i inline-flex i="ep-arrow-down"></i>
+      </span>
+      <svg-icon
+        v-if="props.onlyIcon"
+        cursor-pointer
+        size="1.2rem"
+        name="international"
+        :color="props.color"
+      ></svg-icon>
+    </div>
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item

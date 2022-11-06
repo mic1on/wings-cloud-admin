@@ -102,6 +102,13 @@ const { baseStore } = useStore();
     >
       <layout-admin-aside></layout-admin-aside>
     </el-drawer>
+    <layout-toolbar
+      v-if="
+        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK
+      "
+      :fixed="true"
+    ></layout-toolbar>
   </div>
 </template>
 
