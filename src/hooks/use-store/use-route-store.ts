@@ -40,7 +40,6 @@ export const useRouteStore = defineStore('route', () => {
         router.addRoute(route);
       }
     });
-    console.log(adminMenuRoutes.value);
   };
 
   // 设置权限路由（异步路由）
@@ -56,7 +55,6 @@ export const useRouteStore = defineStore('route', () => {
   // 设置全部路由
   const setAllRoutes = (data: Routes): void => {
     allRoutes.value = data;
-    console.log(allRoutes.value);
   };
 
   // 获取权限路由（异步路由）

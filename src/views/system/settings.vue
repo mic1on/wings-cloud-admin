@@ -71,12 +71,7 @@ const backSettings = () => {
 };
 </script>
 <template>
-  <crud-card
-    action
-    custom-action
-    :title="t('system.settings.menuName')"
-    :sub-title="t('system.settings.menuDescription')"
-  >
+  <crud-card action custom-action>
     <div text-4 m-b-4>
       {{ t('system.settings.layout') }}
     </div>
@@ -143,7 +138,7 @@ const backSettings = () => {
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="240px"
+      label-width="200px"
       label-position="left"
       m-b-6
     >
@@ -192,7 +187,9 @@ const backSettings = () => {
         <el-radio-group v-model="baseStore.settings.Breadcrumb">
           <el-radio-button
             :disabled="
-              baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN &&
+              (baseStore.isMobile ||
+                baseStore.settings.Layout ===
+                  SettingsValueEnum.LAYOUT_TOP_LEAN) &&
               item.value === SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
             "
             :label="item.value"
@@ -215,7 +212,7 @@ const backSettings = () => {
         </el-radio-group>
       </el-form-item>
     </el-form>
-    <div style="width: 500px" mb-4>
+    <div style="width: 460px" mb-4>
       <el-alert
         show-icon
         :closable="false"
@@ -226,7 +223,7 @@ const backSettings = () => {
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="240px"
+      label-width="200px"
       label-position="left"
       m-b-6
     >

@@ -15,10 +15,7 @@ query.value = {
 };
 </script>
 <template>
-  <crud-card
-    :title="t('personal.notifications.menuName')"
-    :sub-title="t('personal.notifications.menuDescription')"
-  >
+  <crud-card>
     <crud-table :table-data="list">
       <template #query>
         <el-form-item>

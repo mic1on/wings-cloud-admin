@@ -28,6 +28,25 @@ export const useBaseStore = defineStore('base', () => {
     getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
   );
 
+  // 是否处于移动端
+  const isMobile = ref<boolean>(false);
+
+  // 移动端菜单打开状态
+  const mobileMenu = ref<boolean>(false);
+
+  // 切换移动端
+  const changeMobile = () => {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      isMobile.value = true;
+    } else {
+      isMobile.value = document.documentElement.clientWidth < 992;
+    }
+  };
+
   // 修改系统设置
   const updateSettings = (data: DefaultSettingsTypes): void => {
     settings.value = data;
@@ -46,6 +65,9 @@ export const useBaseStore = defineStore('base', () => {
     settings,
     browserTitle,
     language,
+    isMobile,
+    mobileMenu,
+    changeMobile,
     updateSettings,
     changeLanguage,
   };

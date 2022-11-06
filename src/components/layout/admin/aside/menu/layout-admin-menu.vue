@@ -25,6 +25,9 @@ const height = computed(() => {
     _height =
       'calc(100vh - var(--wings-aside-logo-height) - var(--wings-collapse-height))';
   }
+  if (baseStore.isMobile) {
+    _height = 'calc(100vh - var(--wings-aside-logo-height)';
+  }
   return 'height:' + _height + ';';
 });
 

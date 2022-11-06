@@ -8,12 +8,7 @@ const { userStore } = useStore();
 const width = ref('width:240px');
 </script>
 <template>
-  <crud-card
-    action
-    custom-action
-    :title="t('personal.profile.menuName')"
-    :sub-title="t('personal.profile.menuDescription')"
-  >
+  <crud-card action custom-action>
     <el-form
       style="width: 380px"
       label-position="left"

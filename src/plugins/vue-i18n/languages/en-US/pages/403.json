@@ -1,5 +1,5 @@
 {
-  "back": "Back",
-  "noAuthentication": "No permission",
-  "noAuthenticationDescription": "You do not have permission to access this page"
+  "btn": "Back",
+  "title": "No permission",
+  "description": "You do not have permission to access this page"
 }

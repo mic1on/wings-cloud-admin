@@ -28,6 +28,7 @@ export const routerInject = (
           );
         } else {
           item.meta.menuName = '';
+          item.meta.menuDescription = '';
         }
       }
       if (breadcrumbList) {
@@ -63,6 +64,7 @@ export const routerInjectLanguages = (routes: Routes, t: I18nT): Routes => {
         );
       } else {
         item.meta.menuName = '';
+        item.meta.menuDescription = '';
       }
     }
     item.children = routerInjectLanguages(item.children || [], t);
