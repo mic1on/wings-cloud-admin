@@ -24,9 +24,6 @@
 }
 
 .layout-admin-menu {
-  transition: all var(--el-transition-duration)
-    var(--el-transition-function-ease-in-out-bezier);
-
   .el-menu {
     width: 100% !important;
     transition: all var(--el-transition-duration)

@@ -20,7 +20,7 @@
   "settings": {
     "menuName": "系统设置",
     "menuDescription": "系统设置默认使用缓存处理更新，同时预留了接口调用，可以快速接入您的服务应用",
-    "layout": "布局，包含了 4 种开箱即用的管理系统布局方式",
+    "layout": "布局，包含了 6 种开箱即用的管理系统布局方式",
     "layoutTop": "顶部模式，左侧菜单栏",
     "layoutTopLean": "顶部（精简）模式，适用于小型项目",
     "layoutAside": "侧栏模式，Logo和菜单在左侧",

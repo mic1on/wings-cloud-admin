@@ -20,7 +20,7 @@
   "settings": {
     "menuName": "System Settings",
     "menuDescription": "By default, the system uses cache to handle updates, and reserves interface calls for fast access to your service applications",
-    "layout": "Layout, including four out-of-the-box  system layout",
+    "layout": "Layout, including six out-of-the-box  system layout",
     "layoutTop": "Top mode, left menu bar",
     "layoutTopLean": "Top (lean) mode, suitable for small projects",
     "layoutAside": "Sidebar mode, Logo and menu on the left",
