@@ -28,6 +28,13 @@ export const useBaseStore = defineStore('base', () => {
     getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
   );
 
+  // 是否处于移动端
+  const isMobile = computed(() =>
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  );
+
   // 修改系统设置
   const updateSettings = (data: DefaultSettingsTypes): void => {
     settings.value = data;
@@ -45,6 +52,7 @@ export const useBaseStore = defineStore('base', () => {
     collapse,
     settings,
     browserTitle,
+    isMobile,
     language,
     updateSettings,
     changeLanguage,

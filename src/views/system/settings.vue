@@ -138,7 +138,7 @@ const backSettings = () => {
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="240px"
+      label-width="200px"
       label-position="left"
       m-b-6
     >
@@ -210,7 +210,7 @@ const backSettings = () => {
         </el-radio-group>
       </el-form-item>
     </el-form>
-    <div style="width: 500px" mb-4>
+    <div style="width: 460px" mb-4>
       <el-alert
         show-icon
         :closable="false"
@@ -221,7 +221,7 @@ const backSettings = () => {
     </div>
     <el-form
       :style="{ width: '100%' }"
-      label-width="240px"
+      label-width="200px"
       label-position="left"
       m-b-6
     >

@@ -15,7 +15,6 @@
     "time": "通知时间",
     "isRead": "是否已读",
     "source": "消息来源",
-    "labelTime": "{label} 时间",
     "datetime": "时间",
     "send": "发送时间"
   },

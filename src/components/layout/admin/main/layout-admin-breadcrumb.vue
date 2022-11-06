@@ -25,7 +25,7 @@ const { t } = useI18n();
         v-for="(item, index) in route.meta.breadcrumb"
         :key="index"
       >
-        {{ t(item.label) }}
+        {{ item.label }}
       </el-breadcrumb-item>
     </el-breadcrumb>
   </div>

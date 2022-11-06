@@ -1,5 +1,5 @@
 {
-  "homeButton": "Back to home",
-  "notFound": "Page Not Found",
-  "notFoundDescription": "The page you are looking for doesn't exist or has been moved"
+  "btn": "Back to home",
+  "title": "Page Not Found",
+  "description": "The page you are looking for doesn't exist or has been moved"
 }
