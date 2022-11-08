@@ -13,8 +13,8 @@ import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/notification.scss';
 import 'virtual:svg-icons-register';
 
-import './assets/styles/index.scss';
 import './assets/themes/index.scss';
+import './assets/styles/index.scss';
 
 const app: App<Element> = createApp(_App);
 
