@@ -93,7 +93,7 @@ const changeToolbar = () => {
     <layout-toolbar-avatar
       @click="changeToolbar"
       :color="iconColor()"
-      :avatar-size="baseStore.isMobile ? 22 : 38"
+      :avatar-size="baseStore.isMobile ? 28 : 38"
       v-if="baseStore.settings.Toolbar.Avatar"
     ></layout-toolbar-avatar>
   </div>
@@ -128,7 +128,7 @@ const changeToolbar = () => {
   }
 
   &.small {
-    height: 2.4rem;
+    height: 2.8rem;
     padding: 0 0.8rem 0 0.4rem;
   }
 

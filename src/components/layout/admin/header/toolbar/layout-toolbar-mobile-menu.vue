@@ -46,7 +46,7 @@ const changeMobileMenu = () => {
   position: fixed;
   bottom: 20%;
   left: 0;
-  padding: 0.18rem 0.3rem 0.2rem 0.2rem;
+  padding: 0.3rem 0.36rem 0.3rem 0.28rem;
   background-color: var(--el-color-primary);
   border-radius: 0 8px 8px 0;
   box-shadow: var(--el-box-shadow);

@@ -1,12 +1,15 @@
 {
-  "menuName": "Example",
+  "menuName": "Examples",
   "menuDescription": "",
-  "crud": { "menuName": "CRUD", "menuDescription": "" },
-  "icon": { "menuName": "Svg Icon", "menuDescription": "" },
+  "table": { "menuName": "Function Table", "menuDescription": "" },
+  "svgIcon": { "menuName": "Svg Icon", "menuDescription": "" },
   "xicons": { "menuName": "Extend Icons", "menuDescription": "" },
   "editor": { "menuName": "Rich Text Editor", "menuDescription": "" },
-  "echarts": { "menuName": "Charts", "menuDescription": "" },
-  "map": { "menuName": "Map", "menuDescription": "" },
+  "charts": { "menuName": "Chart Analysis", "menuDescription": "" },
+  "map": { "menuName": "Map Interaction", "menuDescription": "" },
   "form": { "menuName": "Basic Form", "menuDescription": "" },
-  "result": { "menuName": "Result Page", "menuDescription": "" }
+  "formStep": { "menuName": "Paging Form", "menuDescription": "" },
+  "result": { "menuName": "Result Page", "menuDescription": "" },
+  "403": { "menuName": "403 Page", "menuDescription": "" },
+  "404": { "menuName": "404 Page", "menuDescription": "" }
 }

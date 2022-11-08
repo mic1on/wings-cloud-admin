@@ -2,23 +2,23 @@
   "menuName": "System",
   "menuDescription": "",
   "menus": {
-    "menuName": "Menu",
+    "menuName": "Menus",
     "menuDescription": ""
   },
   "dicts": {
-    "menuName": "Dict",
+    "menuName": "Dictionary",
     "menuDescription": ""
   },
   "params": {
-    "menuName": "Param",
+    "menuName": "Parameter",
     "menuDescription": ""
   },
   "files": {
-    "menuName": "File",
+    "menuName": "File Manager",
     "menuDescription": ""
   },
   "settings": {
-    "menuName": "System Settings",
+    "menuName": "Settings",
     "menuDescription": "By default, the system uses cache to handle updates, and reserves interface calls for fast access to your service applications",
     "layout": "Layout, including six out-of-the-box  system layout",
     "layoutTop": "Top mode, left menu bar",
@@ -81,14 +81,14 @@
     "backSuccess": "System Settings have been restored to default Settings"
   },
   "logs": {
-    "menuName": "Log ",
+    "menuName": "Logs",
     "menuDescription": "",
     "login": {
-      "menuName": "Login Log",
+      "menuName": "Login Logs",
       "menuDescription": ""
     },
     "action": {
-      "menuName": "Action Log",
+      "menuName": "Action Logs",
       "menuDescription": ""
     }
   }

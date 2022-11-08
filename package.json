@@ -1,6 +1,6 @@
 {
   "name": "wings-vue",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "一款开箱即用的通用中后台权限管理系统，面向 Vue 生态，基于最新技术栈搭建，提供工程化的开发体验、高质量的页面模板、丰富实用的内建功能",
   "main": "index.html",
   "repository": {

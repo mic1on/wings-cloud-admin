@@ -2,11 +2,11 @@
   "menuName": "Authority",
   "menuDescription": "",
   "role": {
-    "menuName": "Role",
+    "menuName": "Roles",
     "menuDescription": ""
   },
   "user": {
-    "menuName": "User",
+    "menuName": "User List",
     "menuDescription": ""
   },
   "department": {
@@ -14,7 +14,7 @@
     "menuDescription": ""
   },
   "post": {
-    "menuName": "Post",
+    "menuName": "Position",
     "menuDescription": ""
   }
 }
