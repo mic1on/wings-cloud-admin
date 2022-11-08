@@ -1,12 +1,14 @@
 {
   "menuName": "功能示例",
   "menuDescription": "",
-  "crud": { "menuName": "增删改查", "menuDescription": "" },
-  "icon": { "menuName": "自定义 Svg 图标", "menuDescription": "" },
-  "xicons": { "menuName": "扩展图标", "menuDescription": "" },
+  "table": { "menuName": "功能表格", "menuDescription": "" },
+  "svgIcon": { "menuName": "Svg 图标", "menuDescription": "" },
   "editor": { "menuName": "富文本编辑器", "menuDescription": "" },
-  "echarts": { "menuName": "图表", "menuDescription": "" },
-  "map": { "menuName": "地图", "menuDescription": "" },
+  "charts": { "menuName": "图表分析", "menuDescription": "" },
+  "map": { "menuName": "地图交互", "menuDescription": "" },
   "form": { "menuName": "基础表单", "menuDescription": "" },
-  "result": { "menuName": "结果页", "menuDescription": "" }
+  "formStep": { "menuName": "分布表单", "menuDescription": "" },
+  "result": { "menuName": "结果页", "menuDescription": "" },
+  "403": { "menuName": "403 页面", "menuDescription": "" },
+  "404": { "menuName": "404 页面", "menuDescription": "" }
 }

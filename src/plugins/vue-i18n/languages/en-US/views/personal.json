@@ -17,11 +17,5 @@
     "source": "The notification source",
     "datetime": "Date Time",
     "send": "Send Time"
-  },
-  "settings": {
-    "menuName": "Settings",
-    "menuDescription": "Update your personal Settings on this page",
-    "defaultRole": "The default role",
-    "switchRole": "Switch roles"
   }
 }

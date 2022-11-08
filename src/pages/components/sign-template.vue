@@ -8,7 +8,7 @@ const { baseStore } = useStore();
 <template>
   <div>
     <div w-screen h-screen overflow-hidden v-if="baseStore.isMobile">
-      <div w-full h-full box-border p-x-6>
+      <div w-full h-full box-border p-x-6 relative>
         <div absolute top-8 left-6>
           <layout-toolbar-language></layout-toolbar-language>
         </div>

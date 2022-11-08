@@ -17,11 +17,5 @@
     "source": "消息来源",
     "datetime": "时间",
     "send": "发送时间"
-  },
-  "settings": {
-    "menuName": "系统设置",
-    "menuDescription": "在此页面修改个人设置",
-    "defaultRole": "默认角色",
-    "switchRole": "切换角色"
   }
 }

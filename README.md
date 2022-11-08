@@ -102,4 +102,4 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 
 ### 🧣 开源协议
 
-[MIT licensed](./LICENSE) © 2022-PRESENT Wings Cloud
+[MIT licensed](./LICENSE) © 2022 [Kaivan Wong](https://github.com/kaivanwong)
