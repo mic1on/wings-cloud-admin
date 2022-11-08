@@ -13,7 +13,7 @@ export const useBaseStore = defineStore('base', () => {
   const loading = ref<boolean>(false);
 
   // 收起菜单状态
-  const collapse = ref<boolean>(getStorage(StorageEnum.COLLAPSE) || false);
+  const collapse = ref<boolean>(false);
 
   // 系统设置
   const settings = ref<DefaultSettingsTypes>(
@@ -42,6 +42,7 @@ export const useBaseStore = defineStore('base', () => {
       )
     ) {
       isMobile.value = true;
+      collapse.value = false;
     } else {
       isMobile.value = document.documentElement.clientWidth < 992;
     }

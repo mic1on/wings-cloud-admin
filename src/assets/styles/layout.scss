@@ -100,8 +100,8 @@
       }
 
       &.is-active {
-        color: var(--wings-menu-text-color-active);
-        background-color: var(--wings-menu-bg-color-active);
+        color: var(--wings-menu-text-color-active) !important;
+        background-color: var(--wings-menu-bg-color-active) !important;
       }
     }
 
