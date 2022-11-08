@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/wingscloud/wings-vue.git"
   },
-  "author": "Wings Cloud",
+  "author": "Kaivan Wong",
   "license": "MIT",
   "scripts": {
     "serve": "npm run serve:dev",
