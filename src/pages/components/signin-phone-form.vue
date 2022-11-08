@@ -124,7 +124,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
     </el-form-item>
     <el-form-item mb-2>
       <el-button type="primary" w="100%">
-        {{ t('signin.btn') }}
+        <span font-600>{{ t('signin.btn') }}</span>
       </el-button>
     </el-form-item>
   </el-form>

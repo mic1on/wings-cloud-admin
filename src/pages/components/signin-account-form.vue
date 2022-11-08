@@ -147,7 +147,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
           :loading="loginLoading"
           @click="login(formRef)"
         >
-          {{ t('signin.btn') }}
+          <span font-600>{{ t('signin.btn') }}</span>
         </el-button>
       </div>
     </el-form-item>
