@@ -248,11 +248,15 @@
 
       &.is-active > .el-sub-menu__title {
         color: var(--el-color-primary) !important;
+
+        &:hover {
+          color: var(--wings-menu-text-color-hover) !important;
+        }
       }
     }
 
     .el-menu-item {
-      color: var(--el-color-white);
+      color: var(--el-color-white) !important;
 
       &:hover {
         color: var(--wings-menu-text-color-hover) !important;
@@ -273,6 +277,10 @@
 
         &:hover {
           color: var(--wings-menu-text-color-hover) !important;
+        }
+
+        &.is-active {
+          color: var(--wings-menu-text-color-active) !important;
         }
       }
 
