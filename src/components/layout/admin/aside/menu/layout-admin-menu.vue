@@ -68,7 +68,3 @@ const width = computed(() => {
     </div>
   </el-scrollbar>
 </template>
-<style lang="scss">
-/* stylelint-disable-next-line at-rule-no-unknown */
-@use '@/assets/styles/element-plus.scss';
-</style>

@@ -38,7 +38,12 @@ const goSignup = (): void => {
         >
           {{ t('signin.newUser') }}
         </span>
-        <el-button text-4 p-0 link font-600 type="primary" @click="goSignup()">
+        <el-button
+          important="text-4 p-0 font-600"
+          link
+          type="primary"
+          @click="goSignup()"
+        >
           {{ t('signin.createUser') }}
         </el-button>
       </div>

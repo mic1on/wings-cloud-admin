@@ -25,7 +25,12 @@ const goSignin = (): void => {
         >
           {{ t('signup.have') }}
         </span>
-        <el-button text-4 p-0 link font-600 type="primary" @click="goSignin()">
+        <el-button
+          impotant="text-4 p-0 font-600 "
+          link
+          type="primary"
+          @click="goSignin()"
+        >
           {{ t('signin.btn') }}
         </el-button>
       </div>

@@ -12,7 +12,6 @@ import { useMock } from './plugins/mock';
 import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/notification.scss';
 import 'virtual:svg-icons-register';
-import 'uno.css';
 
 import './assets/styles/index.scss';
 import './assets/themes/index.scss';
@@ -26,5 +25,7 @@ useElementPlusIcons(app);
 useVueDomPurifyHTML(app);
 useRouter(app);
 useMock();
+
+import 'uno.css';
 
 app.mount('#app', true);
