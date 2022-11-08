@@ -5,7 +5,9 @@
   &.aside-dark,
   &.aside-lean-dark {
     .el-aside {
-      border-color: #262a3c !important;
+      border-right: 1px solid #262a3c !important;
+      transition: all var(--el-transition-duration)
+        var(--el-transition-function-ease-in-out-bezier);
     }
   }
 
@@ -46,7 +48,7 @@
 
   .el-menu.el-menu--horizontal {
     .el-sub-menu__title {
-      border-bottom: none;
+      border-bottom: none !important;
     }
   }
 

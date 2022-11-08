@@ -137,7 +137,7 @@ const login = async (formEl: FormInstance | undefined): Promise<void> => {
           type="info"
           @click="goPasswordPageByForget"
         >
-          <span text-4 font-600 style="color: var(--el-text-color-regular)">
+          <span text-4 style="color: var(--el-text-color-regular)">
             {{ t('password.forget') }}
           </span>
         </el-button>
