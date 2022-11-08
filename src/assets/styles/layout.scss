@@ -62,9 +62,13 @@
       color: var(--wings-menu-text-color);
 
       &:hover {
-        color: var(--wings-menu-text-color-hover);
+        color: var(--wings-menu-text-color-hover) !important;
         background-color: var(--wings-menu-bg-color-hover);
       }
+    }
+
+    &.is-active > .el-sub-menu__title {
+      color: var(--el-color-primary);
     }
   }
 
@@ -237,6 +241,10 @@
           color: var(--wings-menu-text-color-hover);
         }
       }
+
+      &.is-active > .el-sub-menu__title {
+        color: var(--el-color-primary);
+      }
     }
 
     .el-menu-item {
@@ -244,6 +252,10 @@
 
       &:hover {
         color: var(--wings-menu-text-color-hover);
+      }
+
+      &.is-active {
+        color: var(--wings-menu-text-color-active);
       }
     }
 
