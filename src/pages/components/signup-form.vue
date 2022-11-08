@@ -278,9 +278,9 @@ const signup = async (formEl: FormInstance | undefined): Promise<void> => {
       </el-input>
     </el-form-item>
     <el-form-item mb-2>
-      <el-button type="primary" w="100%" @click="signup(formRef)">{{
-        t('signup.btn')
-      }}</el-button>
+      <el-button type="primary" w="100%" @click="signup(formRef)">
+        <span font-600>{{ t('signup.btn') }}</span>
+      </el-button>
     </el-form-item>
   </el-form>
 </template>

@@ -88,11 +88,11 @@
 
   &.el-menu--popup-container {
     .el-menu-item {
-      color: var(--wings-menu-text-color);
+      color: var(--wings-menu-text-color) !important;
 
       &:hover {
-        color: var(--wings-menu-text-color-hover);
-        background-color: var(--wings-menu-bg-color-hover);
+        color: var(--wings-menu-text-color-hover) !important;
+        background-color: var(--wings-menu-bg-color-hover) !important;
       }
 
       &.is-active {
@@ -103,7 +103,7 @@
 
     .el-sub-menu {
       .el-menu {
-        background-color: var(--el-menu-bg-color);
+        background-color: var(--el-menu-bg-color) !important;
       }
     }
   }
