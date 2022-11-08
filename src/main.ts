@@ -15,6 +15,7 @@ import 'virtual:svg-icons-register';
 
 import './assets/themes/index.scss';
 import './assets/styles/index.scss';
+import 'uno.css';
 
 const app: App<Element> = createApp(_App);
 
@@ -25,7 +26,5 @@ useElementPlusIcons(app);
 useVueDomPurifyHTML(app);
 useRouter(app);
 useMock();
-
-import 'uno.css';
 
 app.mount('#app', true);
