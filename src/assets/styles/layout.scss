@@ -77,8 +77,8 @@
     }
 
     &.is-active {
-      color: var(--wings-menu-text-color-active) !important;
-      background-color: var(--wings-menu-bg-color-active) !important;
+      color: var(--wings-menu-text-color-active);
+      background-color: var(--wings-menu-bg-color-active);
     }
   }
 
@@ -88,22 +88,22 @@
 
   &.el-menu--popup-container {
     .el-menu-item {
-      color: var(--wings-menu-text-color) !important;
+      color: var(--wings-menu-text-color);
 
       &:hover {
-        color: var(--wings-menu-text-color-hover) !important;
-        background-color: var(--wings-menu-bg-color-hover) !important;
+        color: var(--wings-menu-text-color-hover);
+        background-color: var(--wings-menu-bg-color-hover);
       }
 
       &.is-active {
-        color: var(--wings-menu-text-color-active) !important;
-        background-color: var(--wings-menu-bg-color-active) !important;
+        color: var(--wings-menu-text-color-active);
+        background-color: var(--wings-menu-bg-color-active);
       }
     }
 
     .el-sub-menu {
       .el-menu {
-        background-color: var(--el-menu-bg-color) !important;
+        background-color: var(--el-menu-bg-color);
       }
     }
   }
