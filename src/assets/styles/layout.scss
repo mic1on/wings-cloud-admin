@@ -63,7 +63,7 @@
 
       &:hover {
         color: var(--wings-menu-text-color-hover) !important;
-        background-color: var(--wings-menu-bg-color-hover);
+        background-color: var(--wings-menu-bg-color-hover) !important;
       }
     }
 
@@ -81,8 +81,8 @@
     }
 
     &.is-active {
-      color: var(--wings-menu-text-color-active);
-      background-color: var(--wings-menu-bg-color-active);
+      color: var(--wings-menu-text-color-active) !important;
+      background-color: var(--wings-menu-bg-color-active) !important;
     }
   }
 
@@ -205,8 +205,8 @@
         }
 
         &.is-active {
-          color: var(--el-text-color-primary);
-          background-color: var(--el-color-info-light-9);
+          color: var(--el-text-color-primary) !important;
+          background-color: var(--el-color-info-light-9) !important;
 
           .el-sub-menu__title {
             color: var(--el-text-color-primary);
