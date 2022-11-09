@@ -26,7 +26,7 @@ const goSignin = (): void => {
           {{ t('signup.have') }}
         </span>
         <el-button
-          impotant="text-4 p-0 font-600 "
+          important="text-4 p-0 font-600"
           link
           type="primary"
           @click="goSignin()"

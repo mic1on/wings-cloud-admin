@@ -40,7 +40,7 @@ const width = ref('width:240px');
           :placeholder="t('crud.phone.phone')"
         ></el-input>
       </el-form-item>
-      <el-form-item :label="t('personal.settings.defaultRole')">
+      <el-form-item :label="t('personal.profile.defaultRole')">
         <el-select :style="[width]" v-model="userStore.userProfile.defaultRole">
           <el-option
             v-for="(item, index) in userStore.userProfile.roleList"

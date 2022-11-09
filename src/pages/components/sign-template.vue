@@ -8,32 +8,20 @@ const { baseStore } = useStore();
 <template>
   <div>
     <div w-screen h-screen overflow-hidden v-if="baseStore.isMobile">
-      <div w-full h-full box-border p-x-6 relative>
-        <div absolute top-8 left-6>
+      <div w-full h-full box-border p-6 flex flex-wrap content-between>
+        <div w-full flex items-center justify-between>
           <layout-toolbar-language></layout-toolbar-language>
-        </div>
-        <div absolute top-8 right-6>
           <slot name="top-right"></slot>
         </div>
-        <div
-          w-full
-          h-full
-          flex
-          flex-wrap
-          items-center
-          justify-center
-          content-center
-        >
-          <div w-full m-b-8>
+        <div w-full flex flex-wrap items-center content-center box-border>
+          <div w-full p-b-8>
             <slot name="title"></slot>
           </div>
           <div w-full>
             <slot name="form"></slot>
           </div>
         </div>
-        <div w-full absolute bottom-8 right="50%" translate-x="50%">
-          <slot name="bottom-center"></slot>
-        </div>
+        <slot name="bottom-center"></slot>
       </div>
     </div>
     <div v-else w-screen h-screen flex items-center justify-between>

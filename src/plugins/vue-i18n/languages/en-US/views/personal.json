@@ -3,7 +3,8 @@
   "menuDescription": "",
   "profile": {
     "menuName": "Personal Profile",
-    "menuDescription": "Update your profile on this page"
+    "menuDescription": "Update your profile on this page",
+    "defaultRole": "Default Role"
   },
   "notifications": {
     "menuName": "Notifications",
