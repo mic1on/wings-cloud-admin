@@ -24,20 +24,12 @@ const openDialog = (): void => {
 </script>
 
 <template>
-  <div
-    w="100%"
-    box-border
-    py-2
-    flex
-    justify-center
-    items-center
-    style="font-size: 14px"
-  >
-    <span pr-2 style="color: var(--el-color-info-light-3)">{{
+  <div w="100%" box-border py-2 flex flex-wrap justify-center items-center>
+    <span pr-2 style="color: var(--el-color-info-light-3); font-size: 14px">{{
       t('signin.readAndAgree', { label: props.label })
     }}</span>
     <el-button important="p-0" link type="primary" @click="openDialog()">
-      <span>{{ t('signin.termsConditions') }}</span>
+      <span style="font-size: 14px">{{ t('signin.termsConditions') }}</span>
     </el-button>
   </div>
   <crud-dialog v-model="dialogVisible" :title="t('signin.termsConditions')">

@@ -42,6 +42,18 @@
         <td><img width="100%" src="./.readme/signin.jpg"></td>
         <td><img width="100%" src="./.readme/signup.jpg"></td>
     </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/layout.jpg"></td>
+        <td><img width="100%" src="./.readme/layout-aside.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/theme.jpg"></td>
+        <td><img width="100%" src="./.readme/dark.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/square.jpg"></td>
+        <td><img width="100%" src="./.readme/round.jpg"></td>
+    </tr>
 </table>
 
 ### 📥 快速上手
