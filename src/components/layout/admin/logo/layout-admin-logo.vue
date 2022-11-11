@@ -76,9 +76,9 @@ const position = computed(() => {
         "
         w-10
         h-10
-        src="@/assets/svgs/logo-white.svg"
+        src="@/assets/logo-white.svg"
       />
-      <img v-else w-10 h-10 src="@/assets/svgs/logo.svg" />
+      <img v-else w-10 h-10 src="@/assets/logo.svg" />
     </div>
     <div
       text-6

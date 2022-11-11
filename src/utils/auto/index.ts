@@ -96,14 +96,15 @@ export const autoImportViewComponents = (files: Files): ViewComponents => {
  * @param files
  * @return svgs
  */
-export const autoImportSvgs = (files: Files): IObject => {
-  let svgs: IObject = {};
+export const autoImportSvgs = (files: Files): Array<string> => {
+  const svgs: Array<string> = [];
   Object.keys(files).forEach((key) => {
-    const svgName = files[key]
-      .replace('/src/assets/svgs/', '')
-      .replace('/', '-')
-      .replace(FILE_NAME, '$2');
-    svgs = { ...svgs, [svgName]: files[key] || {} };
+    svgs.push(
+      files[key]
+        .replace('/src/assets/svgs/', '')
+        .replace('/', '-')
+        .replace(FILE_NAME, '$2')
+    );
   });
   return svgs;
 };

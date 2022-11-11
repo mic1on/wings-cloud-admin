@@ -29,9 +29,7 @@ export const addRouterGuard = (router: Router): Router => {
       from: RouteLocationNormalized,
       next: NavigationGuardNext
     ) => {
-      console.log(progress);
       isLoading.value = true;
-      console.log(progress);
       // 获取权限数据
       const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
@@ -99,7 +97,6 @@ export const addRouterGuard = (router: Router): Router => {
   // 后置拦截
   router.afterEach(
     (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
-      console.log(progress);
       isLoading.value = false;
 
       // 设置浏览器标题

@@ -15,7 +15,7 @@ const refresh = () => {};
       @click="refresh"
       cursor-pointer
       size="1.2rem"
-      name="arrow-sync"
+      name="base-arrow-sync"
       :color="props.color"
     ></svg-icon>
   </div>
