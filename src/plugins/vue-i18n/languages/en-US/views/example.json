@@ -2,8 +2,15 @@
   "menuName": "Examples",
   "menuDescription": "",
   "table": { "menuName": "Function Table", "menuDescription": "" },
-  "svgIcon": { "menuName": "Svg Icon", "menuDescription": "" },
-  "xicons": { "menuName": "Extend Icons", "menuDescription": "" },
+  "icon": {
+    "menuName": "Svg Icon",
+    "menuDescription": "You can customize the extension Svg-based icon in the src/assets/svgs/ directory",
+    "base": "Base Icons",
+    "colorScheme": "Color Scheme Icons",
+    "emoji": "Emoji Icons",
+    "social": "Social Icons",
+    "copySuccess": "Copy Success"
+  },
   "editor": { "menuName": "Rich Text Editor", "menuDescription": "" },
   "charts": { "menuName": "Chart Analysis", "menuDescription": "" },
   "map": { "menuName": "Map Interaction", "menuDescription": "" },

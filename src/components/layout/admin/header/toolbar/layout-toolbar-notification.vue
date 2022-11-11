@@ -18,7 +18,11 @@ const props = defineProps({
     <el-popover :width="320" trigger="hover">
       <template #reference>
         <el-badge is-dot flex items-center>
-          <svg-icon name="bell" size="1.2rem" :color="props.color"></svg-icon>
+          <svg-icon
+            name="base-bell"
+            size="1.2rem"
+            :color="props.color"
+          ></svg-icon>
         </el-badge>
       </template>
       <template #default>
@@ -26,9 +30,9 @@ const props = defineProps({
           <span text-4 style="color: var(--el-text-color-regular)">
             {{ t('app.toolbar.notifications.notifications') }}
           </span>
-          <el-button text type="primary">{{
-            t('app.toolbar.notifications.readAll')
-          }}</el-button>
+          <el-button text type="primary">
+            {{ t('app.toolbar.notifications.readAll') }}
+          </el-button>
         </div>
         <div>
           <el-empty

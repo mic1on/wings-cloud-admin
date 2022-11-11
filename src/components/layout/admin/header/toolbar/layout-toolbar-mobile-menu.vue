@@ -29,7 +29,7 @@ const changeMobileMenu = () => {
     ]"
   >
     <svg-icon
-      name="app"
+      name="base-app"
       cursor-pointer
       v-if="baseStore.isMobile"
       @click="changeMobileMenu()"

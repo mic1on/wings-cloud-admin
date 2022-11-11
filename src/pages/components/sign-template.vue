@@ -39,7 +39,7 @@ const { baseStore } = useStore();
       >
         <div>
           <div mb-14 text-7 font-600 flex items-center>
-            <img mr-4 w-9 h-9 src="@/assets/svgs/logo-white.svg" />
+            <img mr-4 w-9 h-9 src="@/assets/logo-white.svg" />
             <span>{{ t('app.name') }}</span>
           </div>
           <div text-8 font-400>{{ t('app.subName') }}</div>

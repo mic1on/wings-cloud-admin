@@ -26,7 +26,7 @@ const { changeLanguage, currentLanguage, languages } = useLanguage();
         v-if="props.onlyIcon"
         cursor-pointer
         size="1.2rem"
-        name="international"
+        name="base-international"
         :color="props.color"
       ></svg-icon>
     </div>
@@ -36,8 +36,9 @@ const { changeLanguage, currentLanguage, languages } = useLanguage();
           v-for="(value, key) in languages"
           :key="key"
           :command="key"
-          >{{ value.name }}</el-dropdown-item
         >
+          {{ value.name }}
+        </el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>

@@ -2,7 +2,15 @@
   "menuName": "功能示例",
   "menuDescription": "",
   "table": { "menuName": "功能表格", "menuDescription": "" },
-  "svgIcon": { "menuName": "Svg 图标", "menuDescription": "" },
+  "icon": {
+    "menuName": "Svg 图标",
+    "menuDescription": "您可以在 src/assets/svgs/ 目录自定义扩展基于 Svg 的图标",
+    "base": "基础图标",
+    "colorScheme": "配色方案图标",
+    "emoji": "Emoji 图标",
+    "social": "社交图标",
+    "copySuccess": "复制成功"
+  },
   "editor": { "menuName": "富文本编辑器", "menuDescription": "" },
   "charts": { "menuName": "图表分析", "menuDescription": "" },
   "map": { "menuName": "地图交互", "menuDescription": "" },

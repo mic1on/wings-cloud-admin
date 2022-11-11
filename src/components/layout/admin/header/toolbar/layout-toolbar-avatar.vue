@@ -32,16 +32,7 @@ const goLoginPage = (): void => {
 };
 </script>
 <template>
-  <el-avatar
-    cursor-pointer
-    :size="props.avatarSize"
-    :src="userStore.userProfile.avatar"
-    @click="goLoginPage"
-    v-if="!userStore.isLogin"
-  >
-    <span text-1>{{ t('signin.btn') }}</span>
-  </el-avatar>
-  <el-dropdown @command="actionChange" v-else>
+  <el-dropdown @command="actionChange">
     <el-avatar
       cursor-pointer
       :size="props.avatarSize"

@@ -18,7 +18,7 @@ const props = defineProps({
       size="1.22rem"
       cursor-pointer
       :color="props.color"
-      :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
+      :name="isFullscreen ? 'base-exit-fullscreen' : 'base-fullscreen'"
     ></svg-icon>
   </div>
 </template>

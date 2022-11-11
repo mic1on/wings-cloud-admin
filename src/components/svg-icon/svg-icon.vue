@@ -56,7 +56,7 @@ const symbolId = computed(
     ]"
   >
     <svg
-      v-if="name"
+      v-if="props.name"
       aria-hidden="true"
       :class="`iconfont ${props.className}`"
       :style="`width:1em;height:1em;line-height:1em;color:${props.color};`"
