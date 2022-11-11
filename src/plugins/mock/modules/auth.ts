@@ -544,7 +544,6 @@ export default {
       '/development/options',
       '/development/code',
       '/development/form',
-      '/about',
     ],
   },
 };

@@ -42,7 +42,7 @@ export const DefaultSettings: DefaultSettingsTypes = Object.assign(
       },
       language: 'el-language',
     },
-    Language: LanguageEnum.EN_US_ALIAS,
+    Language: LanguageEnum.ZH_CN_ALIAS,
     FirstRoute: RouteEnum.ROUTE_FIRST,
     AdminFirstRoute: RouteEnum.ROUTE_ADMIN_FIRST,
   },
