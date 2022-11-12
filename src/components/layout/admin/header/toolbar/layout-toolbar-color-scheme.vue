@@ -11,6 +11,10 @@ const changeColorScheme = () => {
       : SettingsValueEnum.COLOR_SCHEME_DARK;
 };
 
+const isDark = computed(() => {
+  return baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_DARK;
+});
+
 const props = defineProps({
   color: {
     type: String,
@@ -20,12 +24,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <i
+  <el-icon
     cursor-pointer
     @click="changeColorScheme()"
     :style="{ color: props.color }"
-    text-4
+    size="1.2rem"
     inline-flex
-    i="dark:ep-moon ep-sunny"
-  />
+  >
+    <Moon v-if="isDark" />
+    <Sunny v-else />
+  </el-icon>
 </template>

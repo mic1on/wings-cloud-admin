@@ -20,7 +20,7 @@ const { changeLanguage, currentLanguage, languages } = useLanguage();
     <div h-full flex items-center>
       <span flex items-center cursor-pointer h-full v-if="!props.onlyIcon">
         <span mr-2>{{ languages[currentLanguage].name }}</span>
-        <i inline-flex i="ep-arrow-down"></i>
+        <el-icon><ArrowDown /></el-icon>
       </span>
       <svg-icon
         v-if="props.onlyIcon"

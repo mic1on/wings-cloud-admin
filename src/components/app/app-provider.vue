@@ -3,6 +3,7 @@ import { DefaultSettings } from '@/settings';
 import { useStore } from '@/hooks/use-store';
 import { getMobileAreaCodes, getDictAll } from '@/hooks/use-common-data';
 import { setEpThemeColor } from '@/utils/theme';
+import { SettingsValueEnum } from '@/enums';
 
 const route = useRoute();
 
@@ -22,6 +23,29 @@ watch(
     if (newVal) {
       document.documentElement.classList.add(newVal);
     }
+    // TODO
+    // if (newVal === SettingsValueEnum.COLOR_SCHEME_AUTO) {
+    //   if (
+    //     baseStore.settings.ColorScheme == SettingsValueEnum.COLOR_SCHEME_AUTO
+    //   ) {
+    //     document.documentElement.classList.remove(newVal);
+    //     document.documentElement.classList.add(
+    //       window.matchMedia('(prefers-color-scheme: dark)').matches
+    //         ? SettingsValueEnum.COLOR_SCHEME_DARK
+    //         : SettingsValueEnum.COLOR_SCHEME_LIGHT
+    //     );
+    //     // window
+    //     //   .matchMedia('(prefers-color-scheme: dark)')
+    //     //   .addEventListener('change', (event) => {
+    //     //     document.documentElement.classList.remove(newVal);
+    //     //     document.documentElement.classList.add(
+    //     //       event.matches
+    //     //         ? SettingsValueEnum.COLOR_SCHEME_DARK
+    //     //         : SettingsValueEnum.COLOR_SCHEME_LIGHT
+    //     //     );
+    //     //   });
+    //   }
+    // }
   },
   {
     immediate: true,
@@ -61,6 +85,9 @@ onBeforeMount(() => {
   window.onresize = () => {
     baseStore.changeMobile();
   };
+});
+
+onBeforeMount(() => {
   getMobileAreaCodes();
   getDictAll();
 });
