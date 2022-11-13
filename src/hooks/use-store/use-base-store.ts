@@ -1,8 +1,8 @@
-import type { IObject, DefaultSettingsTypes } from '../../global';
+import type { IObject, DefaultSettingsTypes } from '@/global';
 import { defineStore } from 'pinia';
-import { StorageEnum } from '../../enums';
-import { getStorage, setStorage } from '../../utils/storage';
-import { DefaultSettings } from '../../settings';
+import { SettingsValueEnum, StorageEnum } from '@/enums';
+import { getStorage, setStorage } from '@/utils/storage';
+import { DefaultSettings } from '@/settings';
 
 /**
  * @name useBaseStore
@@ -19,6 +19,11 @@ export const useBaseStore = defineStore('base', () => {
   const settings = ref<DefaultSettingsTypes>(
     getStorage(StorageEnum.SETTINGS) || DefaultSettings
   );
+
+  // 当前配色方案
+  const colorScheme = computed(() => {
+    return settings.value.ColorScheme;
+  });
 
   // 动态浏览器标题
   const browserTitle = ref<string>('');
@@ -64,6 +69,7 @@ export const useBaseStore = defineStore('base', () => {
     loading,
     collapse,
     settings,
+    colorScheme,
     browserTitle,
     language,
     isMobile,

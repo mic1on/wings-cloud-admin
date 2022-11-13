@@ -64,12 +64,12 @@ const copyIcon = (icon: string) => {
           p-t-6
           p-b-4
           cursor-pointer
-          hover-bg-light
           transition
           flex
           items-center
           justify-center
           flex-wrap
+          class="hover"
           v-for="(icon, iconIndex) in item.icons"
           :key="iconIndex"
           @click="copyIcon(icon)"
