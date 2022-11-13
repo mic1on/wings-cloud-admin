@@ -88,9 +88,13 @@ const cancel = () => {
 <style lang="scss" scoped>
 :deep(.el-card) {
   border: 0 !important;
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 
 :deep(.el-card__body) {
   padding: 0 !important;
+  transition: all var(--el-transition-duration)
+    var(--el-transition-function-ease-in-out-bezier);
 }
 </style>
