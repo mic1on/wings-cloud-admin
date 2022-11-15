@@ -4,7 +4,7 @@
   "table": { "menuName": "功能表格", "menuDescription": "" },
   "icon": {
     "menuName": "Svg 图标",
-    "menuDescription": "您可以在 src/assets/svgs/ 目录自定义扩展基于 Svg 的图标",
+    "menuDescription": "点击图标即可复制图标，您可以在 src/assets/svgs/ 目录自定义扩展基于 Svg 的图标",
     "base": "基础图标",
     "colorScheme": "配色方案图标",
     "emoji": "Emoji 图标",

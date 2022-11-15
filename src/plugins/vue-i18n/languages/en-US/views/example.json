@@ -4,7 +4,7 @@
   "table": { "menuName": "Function Table", "menuDescription": "" },
   "icon": {
     "menuName": "Svg Icon",
-    "menuDescription": "You can customize the extension Svg-based icon in the src/assets/svgs/ directory",
+    "menuDescription": "Click the icon to copy the icon, and you can customize the extension Svg-based icon in the src/assets/svgs/ directory",
     "base": "Base Icons",
     "colorScheme": "Color Scheme Icons",
     "emoji": "Emoji Icons",
