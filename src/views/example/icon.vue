@@ -1,24 +1,18 @@
-<script lang="ts" setup name="svg-icon">
+<script lang="ts" setup name="icon">
 import { ElMessage } from 'element-plus';
 import { useClipboard } from '@vueuse/core';
 import { autoImportSvgs } from '@/utils/auto';
+import { useStore } from '@/hooks/use-store';
 
 const { t } = useI18n();
+
+const { baseStore } = useStore();
 
 const svgs = [
   {
     title: t('example.icon.base'),
     icons: autoImportSvgs(
       import.meta.glob('@/assets/svgs/base/*.svg', {
-        import: 'default',
-        eager: true,
-      })
-    ),
-  },
-  {
-    title: t('example.icon.colorScheme'),
-    icons: autoImportSvgs(
-      import.meta.glob('@/assets/svgs/color-scheme/*.svg', {
         import: 'default',
         eager: true,
       })
@@ -37,6 +31,15 @@ const svgs = [
     title: t('example.icon.social'),
     icons: autoImportSvgs(
       import.meta.glob('@/assets/svgs/social/*.svg', {
+        import: 'default',
+        eager: true,
+      })
+    ),
+  },
+  {
+    title: t('example.icon.colorScheme'),
+    icons: autoImportSvgs(
+      import.meta.glob('@/assets/svgs/color-scheme/*.svg', {
         import: 'default',
         eager: true,
       })
@@ -69,7 +72,7 @@ const copyIcon = (icon: string) => {
           items-center
           justify-center
           flex-wrap
-          class="hover"
+          class="svg"
           v-for="(icon, iconIndex) in item.icons"
           :key="iconIndex"
           @click="copyIcon(icon)"
@@ -88,3 +91,9 @@ const copyIcon = (icon: string) => {
     </div>
   </crud-card>
 </template>
+
+<style lang="scss" scoped>
+.svg:hover {
+  background-color: var(--el-fill-color-darker);
+}
+</style>
