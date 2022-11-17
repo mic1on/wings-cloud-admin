@@ -9,7 +9,7 @@
 	<h3><a href="https://wings-cloud-admin.netlify.app">在线演示</a> | <a href="https://wings-cloud-docs.netlify.app">使用文档</a></h3>	
   <div>
   
-  一款开箱即用的通用中后台权限管理系统，面向 Vue 生态，基于最新技术栈搭建，提供工程化的开发体验、高质量的页面模板、丰富实用的内建功能
+  基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
 
   [![license](https://img.shields.io/github/license/wingscloud/wings-cloud-admin)](./LICENSE)
   [![github](https://img.shields.io/github/package-json/v/wingscloud/wings-cloud-admin)](https://github.com/wingscloud/wings-cloud-admin)
