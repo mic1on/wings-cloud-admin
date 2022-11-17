@@ -1,41 +1,31 @@
-<div align="center">
-  <a href="https://github.com/wingscloud/wings-cloud-admin" target="_blank">
-    <img width="180" src="./src/assets/logo.svg"/>
-  </a>
-</div>
+# wings-cloud-admin
 
-<div align="center">
-  <h1>Wings Cloud Admin</h1>
-	<h3><a href="https://wings-cloud-admin.netlify.app">在线演示</a> | <a href="https://wings-cloud-docs.netlify.app">使用文档</a></h3>	
-  <div>
-  
-  基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
+[![license](https://img.shields.io/github/license/wingscloud/wings-cloud-admin?style=flat)](./LICENSE)
+[![release](https://img.shields.io/github/v/release/wingscloud/wings-cloud-admin?style=flat)](https://www.npmjs.com/package/wings-cloud-admin)
+[![stars](https://img.shields.io/github/stars/wingscloud/wings-cloud-admin?style=flat)](https://www.npmjs.com/package/wings-cloud-admin)
+[![fork](https://img.shields.io/github/forks/wingscloud/wings-cloud-admin?style=flat)](https://www.npmjs.com/package/wings-cloud-admin)
 
-  [![license](https://img.shields.io/github/license/wingscloud/wings-cloud-admin)](./LICENSE)
-  [![github](https://img.shields.io/github/package-json/v/wingscloud/wings-cloud-admin)](https://github.com/wingscloud/wings-cloud-admin)
+基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
 
-  </div>
-</div>
+### 特性
 
-### 🌈 特性
+**💡 最新技术栈** - 基于 Vue3、Vite、TypeScript、Element Plus、Axios、Pinia、Unocss 等最新技术栈构建；
 
-- **💡 最新技术栈** - 基于 Vue3、Vite、TypeScript、Element Plus、Axios、Pinia、Unocss 等最新技术栈构建；
+**🚀 工程化开发** - 集成 Eslint + Stylelint + Prettier，提供基于 Vite 的工程化配置，合理的代码目录及代码注释；
 
-- **🚀 工程化开发** - 集成 Eslint + Stylelint + Prettier，提供基于 Vite 的工程化配置，合理的代码目录及代码注释；
+**🎨 开箱即用** - 提供多种开箱即用的管理系统页面模板，支持丰富的布局与主题，同时保证多端的良好适配性；
 
-- **🎨 开箱即用** - 提供多种开箱即用的管理系统页面模板，支持丰富的布局与主题，同时保证多端的良好适配性；
+**🌐 国际化** - 基于 Vue-i18n 的国际化多语言解决方案，搭配 i18N Ally IDE 插件，实现多语言项目的高效开发；
 
-- **🌐 国际化** - 基于 Vue-i18n 的国际化多语言解决方案，搭配 i18N Ally IDE 插件，实现多语言项目的高效开发；
+**🔑 权限验证** - 提供完整的、精确到按钮级的细颗粒度权限验证功能，搭配用户角色管理，适应多数业务场景；
 
-- **🔑 权限验证** - 提供完整的、精确到按钮级的细颗粒度权限验证功能，搭配用户角色管理，适应多数业务场景；
+**📦 丰富的组件** - 二次封装了常用的三方组件，如：上传、富文本编辑器、地图、图表等，提供代码生成工具；
 
-- **📦 丰富的组件** - 二次封装了常用的三方组件，如：上传、富文本编辑器、地图、图表等，提供代码生成工具；
+**🕹️ 接口模拟** - 使用 Mockjs 作为接口数据的模拟，体验项目完整功能，根据预留接口快速对接服务应用程序；
 
-- **🕹️ 接口模拟** - 使用 Mockjs 作为接口数据的模拟，体验项目完整功能，根据预留接口快速对接服务应用程序；
+**🎯 内置函数** - 内置开发常用的工具函数及钩子函数，如：自动导入、网络请求、缓存、增删改查、状态管理等；
 
-- **🎯 内置函数** - 内置开发常用的工具函数及钩子函数，如：自动导入、网络请求、缓存、增删改查、状态管理等；
-
-### 🌰 界面展示
+### 界面展示
 
 <table>
     <tr>
@@ -56,7 +46,7 @@
     </tr>
 </table>
 
-### 📥 快速上手
+### 快速上手
 
 下载项目
 
@@ -94,7 +84,7 @@ npm run lint:eslint #  运行 Eslint 语法检测
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
 
-### 🧩 IDE 插件
+### IDE 插件
 
 为了使用本项目完整的功能，如 i18n Ally、Prettier 等，务必在您的 IDE 安装以下插件。
 
@@ -112,6 +102,6 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
   </tr>
 </table>
 
-### 🧣 开源协议
+### 开源协议
 
 [MIT licensed](./LICENSE) © 2022 [Kaivan Wong](https://github.com/kaivanwong)

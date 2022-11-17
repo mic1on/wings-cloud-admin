@@ -7,6 +7,7 @@
     "vue.volar",
     "antfu.unocss",
     "esbenp.prettier-vscode",
-    "lokalise.i18n-ally"
+    "lokalise.i18n-ally",
+    "ms-vscode.vscode-typescript-next"
   ]
 }

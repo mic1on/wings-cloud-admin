@@ -3,7 +3,7 @@
   "ignoreFiles": ["**/*.js", "**/*.jsx", "**/*.tsx", "**/*.ts", "**/*.svg", "**/*.png", "**/*.jpg"],
   "rules": {
     "indentation": 2,
-    "scss/dollar-variable-pattern": "[/^foo-/, { ignore: \"global\" }]",
+    "scss/dollar-variable-pattern": ["^foo", { "ignore": "global" }],
     "selector-class-pattern": "",
     "color-function-notation": "modern"
   },
