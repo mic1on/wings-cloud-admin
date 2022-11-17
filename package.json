@@ -1,11 +1,11 @@
 {
-  "name": "wings-vue",
-  "version": "0.8.2",
-  "description": "一款开箱即用的通用中后台权限管理系统，面向 Vue 生态，基于最新技术栈搭建，提供工程化的开发体验、高质量的页面模板、丰富实用的内建功能",
+  "name": "wings-cloud-admin",
+  "version": "0.9.0",
+  "description": "基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配",
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wingscloud/wings-vue.git"
+    "url": "https://github.com/wingscloud/wings-cloud-admin.git"
   },
   "author": "Kaivan Wong",
   "license": "MIT",
