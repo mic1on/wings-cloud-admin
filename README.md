@@ -1,18 +1,18 @@
 <div align="center">
-  <a href="https://github.com/wingscloud/wings-vue" target="_blank">
+  <a href="https://github.com/wingscloud/wings-cloud-admin" target="_blank">
     <img width="180" src="./src/assets/logo.svg"/>
   </a>
 </div>
 
 <div align="center">
-  <h1>Wings Vue</h1>
-	<h3><a href="https://wings-vue.netlify.app">在线演示</a> | <a href="https://wings-vue-docs.netlify.app">使用文档</a></h3>	
+  <h1>Wings Cloud Admin</h1>
+	<h3><a href="https://wings-cloud-admin.netlify.app">在线演示</a> | <a href="https://wings-cloud-docs.netlify.app">使用文档</a></h3>	
   <div>
   
   一款开箱即用的通用中后台权限管理系统，面向 Vue 生态，基于最新技术栈搭建，提供工程化的开发体验、高质量的页面模板、丰富实用的内建功能
 
-  [![license](https://img.shields.io/github/license/wingscloud/wings-vue)](./LICENSE)
-  [![github](https://img.shields.io/github/package-json/v/wingscloud/wings-vue)](https://github.com/wingscloud/wings-vue)
+  [![license](https://img.shields.io/github/license/wingscloud/wings-cloud-admin)](./LICENSE)
+  [![github](https://img.shields.io/github/package-json/v/wingscloud/wings-cloud-admin)](https://github.com/wingscloud/wings-cloud-admin)
 
   </div>
 </div>
@@ -61,7 +61,7 @@
 下载项目
 
 ```shell
-git clone https://github.com/kaivanwong/wings-vue.git # 通过 Github 克隆代码
+git clone https://github.com/wingscloud/wings-cloud-admin.git # 通过 Github 克隆代码
 ```
 
 安装依赖包
