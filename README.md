@@ -1,4 +1,4 @@
-<p align="center"><img alt="Nuxt" align="center" src="./.github/icons/banner.svg"/></p><br/>
+<div align="center"><img alt="Nuxt" align="center" src="./.github/icons/banner.svg"/></div><br/>
 <p align="center">
   <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/v/release/wingscloud/wings-cloud-admin?style=flat" alt="Version"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/wingscloud/wings-cloud-admin?style=flat" alt="License"></a>
