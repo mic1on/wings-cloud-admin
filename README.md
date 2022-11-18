@@ -1,4 +1,4 @@
-<p align="center"><img alt="Nuxt" align="center" src="./.github/icons/banner.svg"/></p><br/>
+<div align="center"><img alt="Wings Cloud" align="center" src="./.github/icons/banner.svg"/></div><br/>
 
 <h1 align="center">Wings Cloud Admin</h1>
 
@@ -28,27 +28,6 @@
 **🕹️ 接口模拟** - 使用 Mockjs 作为接口数据的模拟，体验项目完整功能，根据预留接口快速对接服务应用程序；
 
 **🎯 内置函数** - 内置开发常用的工具函数及钩子函数，如：自动导入、网络请求、缓存、增删改查、状态管理等；
-
-### 界面展示
-
-<table>
-    <tr>
-        <td><img width="100%" src="./.readme/signin.jpg"></td>
-        <td><img width="100%" src="./.readme/signup.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/layout.jpg"></td>
-        <td><img width="100%" src="./.readme/layout-aside.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/theme.jpg"></td>
-        <td><img width="100%" src="./.readme/dark.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/square.jpg"></td>
-        <td><img width="100%" src="./.readme/round.jpg"></td>
-    </tr>
-</table>
 
 ### 快速上手
 
@@ -87,6 +66,27 @@ npm run lint:eslint #  运行 Eslint 语法检测
 
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
+
+### 界面展示
+
+<table>
+    <tr>
+        <td><img width="100%" src="./.readme/signin.jpg"></td>
+        <td><img width="100%" src="./.readme/signup.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/layout.jpg"></td>
+        <td><img width="100%" src="./.readme/layout-aside.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/theme.jpg"></td>
+        <td><img width="100%" src="./.readme/dark.jpg"></td>
+    </tr>
+    <tr>
+        <td><img width="100%" src="./.readme/square.jpg"></td>
+        <td><img width="100%" src="./.readme/round.jpg"></td>
+    </tr>
+</table>
 
 ### IDE 插件
 
