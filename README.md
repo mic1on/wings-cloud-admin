@@ -1,10 +1,14 @@
-<div align="center"><img alt="Nuxt" align="center" src="./.github/icons/banner.svg"/></div><br/>
+<div align="center"><img alt="Wings Cloud" align="center" src="./.github/icons/banner.svg"/></div><br/>
+
+<h1 align="center">Wings Cloud Admin</h1>
+
 <p align="center">
   <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/v/release/wingscloud/wings-cloud-admin?style=flat" alt="Version"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/wingscloud/wings-cloud-admin?style=flat" alt="License"></a>
   <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/stars/wingscloud/wings-cloud-admin?style=flat" alt="Stars"></a>
   <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/forks/wingscloud/wings-cloud-admin?style=flat" alt="Forks"></a>
 </p>
+
 <p align="center">基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配</p>
 
 ### 特性
