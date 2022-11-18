@@ -6,7 +6,7 @@ const { baseStore } = useStore();
 
 const changeColorScheme = () => {
   if (baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO) {
-    baseStore.changeColorSchemeBySystem(
+    baseStore.changeDarkOrLight(
       baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_LIGHT
     );
   } else {
