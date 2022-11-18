@@ -1,17 +1,34 @@
-<div align="center"><img alt="Wings Cloud" align="center" src="./.github/icons/banner.svg"/></div><br/>
+# Wings Cloud Admin
 
-<h1 align="center">Wings Cloud Admin</h1>
+基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
 
-<p align="center">
-  <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/v/release/wingscloud/wings-cloud-admin?style=flat" alt="Version"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/wingscloud/wings-cloud-admin?style=flat" alt="License"></a>
-  <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/stars/wingscloud/wings-cloud-admin?style=flat" alt="Stars"></a>
-  <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/forks/wingscloud/wings-cloud-admin?style=flat" alt="Forks"></a>
-</p>
+- Github: [wingscloud/wings-cloud-admin](https://github.com/wingscloud/wings-cloud-admin)
 
-<p align="center">基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配</p>
+- Documentation: [https://wings-cloud-docs.netlify.app](https://wings-cloud-docs.netlify.app)
 
-### 特性
+<table>
+	<tr>
+    <td colspan="2"> <img width="100%" src="./.github/icons/banner.svg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/signin.jpg"></td>
+    <td><img width="100%" src="./.github/assets/signup.jpg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/layout.jpg"></td>
+    <td><img width="100%" src="./.github/assets/layout-aside.jpg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/theme.jpg"></td>
+    <td><img width="100%" src="./.github/assets/dark.jpg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/square.jpg"></td>
+    <td><img width="100%" src="./.github/assets/round.jpg"></td>
+  </tr>
+</table>
+
+## 特性
 
 **💡 最新技术栈** - 基于 Vue3、Vite、TypeScript、Element Plus、Axios、Pinia、Unocss 等最新技术栈构建；
 
@@ -29,7 +46,7 @@
 
 **🎯 内置函数** - 内置开发常用的工具函数及钩子函数，如：自动导入、网络请求、缓存、增删改查、状态管理等；
 
-### 快速上手
+## 开始
 
 下载项目
 
@@ -67,28 +84,7 @@ npm run lint:eslint #  运行 Eslint 语法检测
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
 
-### 界面展示
-
-<table>
-    <tr>
-        <td><img width="100%" src="./.readme/signin.jpg"></td>
-        <td><img width="100%" src="./.readme/signup.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/layout.jpg"></td>
-        <td><img width="100%" src="./.readme/layout-aside.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/theme.jpg"></td>
-        <td><img width="100%" src="./.readme/dark.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.readme/square.jpg"></td>
-        <td><img width="100%" src="./.readme/round.jpg"></td>
-    </tr>
-</table>
-
-### IDE 插件
+## IDE 插件
 
 为了使用本项目完整的功能，如 i18n Ally、Prettier 等，务必在您的 IDE 安装以下插件。
 
@@ -96,13 +92,13 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 
 <table>
   <tr>
-    <td><img width="90" src="./.readme/vscode-plugin-volar.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-prettier.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-eslint.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-dot-env.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-stylelint.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-editor-config.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-i18n-ally.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-volar.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-prettier.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-eslint.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-dot-env.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-stylelint.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-editor-config.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-i18n-ally.png"></td>
   </tr>
 </table>
 
