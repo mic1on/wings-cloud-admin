@@ -1,35 +1,34 @@
-<p align="center"><img alt="Nuxt" align="center" src="./.github/icons/banner.svg"/></p><br/>
+<p align="center"><img alt="Nuxt" width="200" align="center" src="./.github/icons/banner.svg"/></p><br/>
 
-<h1 align="center">Wings Cloud Admin</h1>
+##  Wings Cloud Admin
 
-<p align="center">
-  <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/v/release/wingscloud/wings-cloud-admin?style=flat" alt="Version"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/wingscloud/wings-cloud-admin?style=flat" alt="License"></a>
-  <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/stars/wingscloud/wings-cloud-admin?style=flat" alt="Stars"></a>
-  <a href="https://github.com/wingscloud/wings-cloud-admin"><img src="https://img.shields.io/github/forks/wingscloud/wings-cloud-admin?style=flat" alt="Forks"></a>
-</p>
+基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
 
-<p align="center">基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配</p>
+- Github: [wingscloud/wings-cloud-admin](https://github.com/wingscloud/wings-cloud-admin)
 
-### 特性
+- Documentation: [https://wings-cloud-docs.netlify.app](https://wings-cloud-docs.netlify.app)
 
-**💡 最新技术栈** - 基于 Vue3、Vite、TypeScript、Element Plus、Axios、Pinia、Unocss 等最新技术栈构建；
+### Features
 
-**🚀 工程化开发** - 集成 Eslint + Stylelint + Prettier，提供基于 Vite 的工程化配置，合理的代码目录及代码注释；
+- 基于 Vuejs + Element Plus 的中后台权限管理系统解决方案；
 
-**🎨 开箱即用** - 提供多种开箱即用的管理系统页面模板，支持丰富的布局与主题，同时保证多端的良好适配性；
+- 集成 Vite + Eslint + Stylelint + Prettier 的工程化开发；
 
-**🌐 国际化** - 基于 Vue-i18n 的国际化多语言解决方案，搭配 i18N Ally IDE 插件，实现多语言项目的高效开发；
+- 面向国际化场景提供基于 Vue-i18n 的解决方案；
 
-**🔑 权限验证** - 提供完整的、精确到按钮级的细颗粒度权限验证功能，搭配用户角色管理，适应多数业务场景；
+- 支持 多主题 / 多布局 / 黑暗模式 灵活配置，适配移动端；
 
-**📦 丰富的组件** - 二次封装了常用的三方组件，如：上传、富文本编辑器、地图、图表等，提供代码生成工具；
+- 提供开箱即用的中后台权限管理系统页面模板；
 
-**🕹️ 接口模拟** - 使用 Mockjs 作为接口数据的模拟，体验项目完整功能，根据预留接口快速对接服务应用程序；
+- 提供完整的、精确到按钮级的细颗粒度权限验证功能；
 
-**🎯 内置函数** - 内置开发常用的工具函数及钩子函数，如：自动导入、网络请求、缓存、增删改查、状态管理等；
+- 二次封装了常用的组件、工具函数、钩子函数；
 
-### 界面展示
+- 使用 Mockjs 作为接口数据的模拟；
+
+- 集成高性能轻量级的原子化 Css - Unocss；
+
+### Examples
 
 <table>
     <tr>
@@ -50,7 +49,7 @@
     </tr>
 </table>
 
-### 快速上手
+### Getting started
 
 下载项目
 
@@ -88,7 +87,7 @@ npm run lint:eslint #  运行 Eslint 语法检测
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
 
-### IDE 插件
+### IDE Plugins
 
 为了使用本项目完整的功能，如 i18n Ally、Prettier 等，务必在您的 IDE 安装以下插件。
 
@@ -106,6 +105,6 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
   </tr>
 </table>
 
-### 开源协议
+### License
 
 [MIT licensed](./LICENSE) © 2022 [Kaivan Wong](https://github.com/kaivanwong)
