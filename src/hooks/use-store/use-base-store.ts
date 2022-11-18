@@ -63,8 +63,8 @@ export const useBaseStore = defineStore('base', () => {
     setStorage(StorageEnum.LANGUAGE, data.alias);
   };
 
-  // 根据系统主题模式变化配色方案
-  const changeColorSchemeBySystem = (value: boolean) => {
+  // 切换黑暗模式或者明亮模式
+  const changeDarkOrLight = (value: boolean) => {
     document.documentElement.classList.remove(colorScheme.value);
     if (value) {
       document.documentElement.classList.add(
@@ -91,6 +91,6 @@ export const useBaseStore = defineStore('base', () => {
     changeMobile,
     updateSettings,
     changeLanguage,
-    changeColorSchemeBySystem,
+    changeDarkOrLight,
   };
 });

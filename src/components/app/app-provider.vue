@@ -19,13 +19,13 @@ watch(
   () => baseStore.settings.ColorScheme,
   (newVal, oldVal) => {
     if (newVal === SettingsValueEnum.COLOR_SCHEME_AUTO) {
-      baseStore.changeColorSchemeBySystem(
+      baseStore.changeDarkOrLight(
         window.matchMedia('(prefers-color-scheme: dark)').matches
       );
       window
         .matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', (event) => {
-          baseStore.changeColorSchemeBySystem(event.matches);
+          baseStore.changeDarkOrLight(event.matches);
         });
     } else {
       document.documentElement.classList.remove(baseStore.colorScheme);
