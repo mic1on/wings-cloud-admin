@@ -1,4 +1,4 @@
-<p align="center"><img alt="Wings Cloud" align="center" src="./.github/icons/banner.svg"/></p><br/>
+# Wings Cloud Admin
 
 基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
 
@@ -6,48 +6,47 @@
 
 - Documentation: [https://wings-cloud-docs.netlify.app](https://wings-cloud-docs.netlify.app)
 
-## Features
-
-- 基于 Vuejs + Element Plus 的中后台权限管理系统解决方案；
-
-- 集成 Vite + Eslint + Stylelint + Prettier 的工程化开发；
-
-- 面向国际化场景提供基于 Vue-i18n 的解决方案；
-
-- 支持 多主题 / 多布局 / 黑暗模式 灵活配置，适配移动端；
-
-- 提供开箱即用的中后台权限管理系统页面模板；
-
-- 提供完整的、精确到按钮级的细颗粒度权限验证功能；
-
-- 二次封装了常用的组件、工具函数、钩子函数；
-
-- 使用 Mockjs 作为接口数据的模拟；
-
-- 集成高性能轻量级的原子化 Css - Unocss；
-
-## Examples
-
 <table>
-    <tr>
-        <td><img width="100%" src="./.github/assets/signin.jpg"></td>
-        <td><img width="100%" src="./.github/assets/signup.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.github/assets/layout.jpg"></td>
-        <td><img width="100%" src="./.github/assets/layout-aside.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.github/assets/theme.jpg"></td>
-        <td><img width="100%" src="./.github/assets/dark.jpg"></td>
-    </tr>
-    <tr>
-        <td><img width="100%" src="./.github/assets/square.jpg"></td>
-        <td><img width="100%" src="./.github/assets/round.jpg"></td>
-    </tr>
+	<tr>
+    <td colspan="2"> <img width="100%" src="./.github/icons/banner.svg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/signin.jpg"></td>
+    <td><img width="100%" src="./.github/assets/signup.jpg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/layout.jpg"></td>
+    <td><img width="100%" src="./.github/assets/layout-aside.jpg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/theme.jpg"></td>
+    <td><img width="100%" src="./.github/assets/dark.jpg"></td>
+  </tr>
+  <tr>
+    <td><img width="100%" src="./.github/assets/square.jpg"></td>
+    <td><img width="100%" src="./.github/assets/round.jpg"></td>
+  </tr>
 </table>
 
-## Getting started
+## 特性
+
+**💡 最新技术栈** - 基于 Vue3、Vite、TypeScript、Element Plus、Axios、Pinia、Unocss 等最新技术栈构建；
+
+**🚀 工程化开发** - 集成 Eslint + Stylelint + Prettier，提供基于 Vite 的工程化配置，合理的代码目录及代码注释；
+
+**🎨 开箱即用** - 提供多种开箱即用的管理系统页面模板，支持丰富的布局与主题，同时保证多端的良好适配性；
+
+**🌐 国际化** - 基于 Vue-i18n 的国际化多语言解决方案，搭配 i18N Ally IDE 插件，实现多语言项目的高效开发；
+
+**🔑 权限验证** - 提供完整的、精确到按钮级的细颗粒度权限验证功能，搭配用户角色管理，适应多数业务场景；
+
+**📦 丰富的组件** - 二次封装了常用的三方组件，如：上传、富文本编辑器、地图、图表等，提供代码生成工具；
+
+**🕹️ 接口模拟** - 使用 Mockjs 作为接口数据的模拟，体验项目完整功能，根据预留接口快速对接服务应用程序；
+
+**🎯 内置函数** - 内置开发常用的工具函数及钩子函数，如：自动导入、网络请求、缓存、增删改查、状态管理等；
+
+## 开始
 
 下载项目
 
@@ -85,7 +84,7 @@ npm run lint:eslint #  运行 Eslint 语法检测
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
 
-## IDE Plugins
+## IDE 插件
 
 为了使用本项目完整的功能，如 i18n Ally、Prettier 等，务必在您的 IDE 安装以下插件。
 
@@ -103,6 +102,6 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
   </tr>
 </table>
 
-### License
+### 开源协议
 
 [MIT licensed](./LICENSE) © 2022 [Kaivan Wong](https://github.com/kaivanwong)
