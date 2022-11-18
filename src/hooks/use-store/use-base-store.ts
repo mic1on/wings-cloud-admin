@@ -21,20 +21,7 @@ export const useBaseStore = defineStore('base', () => {
   );
 
   // 当前配色方案
-  const colorScheme = computed(() => {
-    if (settings.value.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO) {
-      let _colorScheme = '';
-      for (let i = 0; i < PredefineColorSchemes.length; i++) {
-        _colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? SettingsValueEnum.COLOR_SCHEME_DARK
-          : SettingsValueEnum.COLOR_SCHEME_LIGHT;
-        break;
-      }
-      return _colorScheme;
-    } else {
-      return settings.value.ColorScheme;
-    }
-  });
+  const colorScheme = ref<string>(settings.value.ColorScheme);
 
   // 动态浏览器标题
   const browserTitle = ref<string>('');
@@ -76,6 +63,22 @@ export const useBaseStore = defineStore('base', () => {
     setStorage(StorageEnum.LANGUAGE, data.alias);
   };
 
+  // 根据系统主题模式变化配色方案
+  const changeColorSchemeBySystem = (value: boolean) => {
+    document.documentElement.classList.remove(colorScheme.value);
+    if (value) {
+      document.documentElement.classList.add(
+        SettingsValueEnum.COLOR_SCHEME_DARK
+      );
+      colorScheme.value = SettingsValueEnum.COLOR_SCHEME_DARK;
+    } else {
+      document.documentElement.classList.add(
+        SettingsValueEnum.COLOR_SCHEME_LIGHT
+      );
+      colorScheme.value = SettingsValueEnum.COLOR_SCHEME_LIGHT;
+    }
+  };
+
   return {
     loading,
     collapse,
@@ -88,5 +91,6 @@ export const useBaseStore = defineStore('base', () => {
     changeMobile,
     updateSettings,
     changeLanguage,
+    changeColorSchemeBySystem,
   };
 });

@@ -5,15 +5,17 @@ import { SettingsValueEnum } from '@/enums';
 const { baseStore } = useStore();
 
 const changeColorScheme = () => {
-  baseStore.settings.ColorScheme =
-    baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
-      ? SettingsValueEnum.COLOR_SCHEME_LIGHT
-      : SettingsValueEnum.COLOR_SCHEME_DARK;
+  if (baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO) {
+    baseStore.changeColorSchemeBySystem(
+      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_LIGHT
+    );
+  } else {
+    baseStore.settings.ColorScheme =
+      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+        ? SettingsValueEnum.COLOR_SCHEME_LIGHT
+        : SettingsValueEnum.COLOR_SCHEME_DARK;
+  }
 };
-
-const isDark = computed(() => {
-  return baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK;
-});
 
 const props = defineProps({
   color: {
@@ -31,7 +33,9 @@ const props = defineProps({
     size="1.2rem"
     inline-flex
   >
-    <Moon v-if="isDark" />
+    <Moon
+      v-if="baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK"
+    />
     <Sunny v-else />
   </el-icon>
 </template>
