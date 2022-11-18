@@ -1,4 +1,4 @@
-<p align="center"><img alt="Wings Cloud" width="200" align="center" src="./.github/icons/banner.svg"/></p><br/>
+<p align="center"><img alt="Wings Cloud" align="center" src="./.github/icons/banner.svg"/></p><br/>
 
 基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
 
