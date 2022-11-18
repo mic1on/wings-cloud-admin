@@ -8,7 +8,7 @@
 
 - Documentation: [https://wings-cloud-docs.netlify.app](https://wings-cloud-docs.netlify.app)
 
-### Features
+## Features
 
 - 基于 Vuejs + Element Plus 的中后台权限管理系统解决方案；
 
@@ -28,7 +28,7 @@
 
 - 集成高性能轻量级的原子化 Css - Unocss；
 
-### Examples
+## Examples
 
 <table>
     <tr>
@@ -49,7 +49,7 @@
     </tr>
 </table>
 
-### Getting started
+## Getting started
 
 下载项目
 
@@ -87,7 +87,7 @@ npm run lint:eslint #  运行 Eslint 语法检测
 npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 ```
 
-### IDE Plugins
+## IDE Plugins
 
 为了使用本项目完整的功能，如 i18n Ally、Prettier 等，务必在您的 IDE 安装以下插件。
 
