@@ -35,7 +35,7 @@ const changeToolbar = () => {
     :class="[
       props.fixed ? 'fixed' : '',
       baseStore.isMobile ? 'small' : 'normal',
-      baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
         ? 'dark'
         : '',
     ]"

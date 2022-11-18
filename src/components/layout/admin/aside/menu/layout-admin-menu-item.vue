@@ -61,7 +61,7 @@ const { baseStore } = useStore();
     </el-menu-item>
     <el-sub-menu
       :index="route.path"
-      :popper-class="`${baseStore.settings.MenuStyle} ${baseStore.settings.ColorScheme} ${baseStore.settings.Layout} layout-admin-menu`"
+      :popper-class="`${baseStore.settings.MenuStyle} ${baseStore.colorScheme} ${baseStore.settings.Layout} layout-admin-menu`"
       v-else
     >
       <template #title>

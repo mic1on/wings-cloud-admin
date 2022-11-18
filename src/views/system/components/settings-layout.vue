@@ -36,8 +36,7 @@ const props = defineProps({
             border-radius: 4px 4px 0 0;
           "
           :style="
-            baseStore.settings.ColorScheme ===
-            SettingsValueEnum.COLOR_SCHEME_DARK
+            baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color:var(--el-border-color)'
               : 'border-color: var(--wings-header-border-color)'
           "
@@ -85,8 +84,7 @@ const props = defineProps({
             border-radius: 4px 4px 0 0;
           "
           :style="
-            baseStore.settings.ColorScheme ===
-            SettingsValueEnum.COLOR_SCHEME_DARK
+            baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color:var(--el-border-color)'
               : 'border-color: var(--wings-header-border-color)'
           "
@@ -132,8 +130,7 @@ const props = defineProps({
               border-radius: 0 4px 0 0;
             "
             :style="
-              baseStore.settings.ColorScheme ===
-              SettingsValueEnum.COLOR_SCHEME_DARK
+              baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
                 ? 'border-color:var(--el-border-color)'
                 : 'border-color: var(--wings-header-border-color)'
             "
@@ -168,8 +165,7 @@ const props = defineProps({
             border-radius: 4px 0 0 4px;
           "
           :style="
-            baseStore.settings.ColorScheme ===
-            SettingsValueEnum.COLOR_SCHEME_DARK
+            baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color: var(--el-border-color)'
               : 'border-color: #262a3c'
           "
@@ -185,8 +181,7 @@ const props = defineProps({
               border-radius: 0 4px 0 0;
             "
             :style="
-              baseStore.settings.ColorScheme ===
-              SettingsValueEnum.COLOR_SCHEME_DARK
+              baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
                 ? 'border-color:var(--el-border-color)'
                 : 'border-color: var(--wings-header-border-color)'
             "
@@ -248,8 +243,7 @@ const props = defineProps({
             border-radius: 4px 0 0 4px;
           "
           :style="
-            baseStore.settings.ColorScheme ===
-            SettingsValueEnum.COLOR_SCHEME_DARK
+            baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color: var(--el-border-color)'
               : 'border-color: #262a3c'
           "

@@ -2,7 +2,7 @@ import type { IObject, DefaultSettingsTypes } from '@/global';
 import { defineStore } from 'pinia';
 import { SettingsValueEnum, StorageEnum } from '@/enums';
 import { getStorage, setStorage } from '@/utils/storage';
-import { DefaultSettings } from '@/settings';
+import { DefaultSettings, PredefineColorSchemes } from '@/settings';
 
 /**
  * @name useBaseStore
@@ -22,7 +22,18 @@ export const useBaseStore = defineStore('base', () => {
 
   // 当前配色方案
   const colorScheme = computed(() => {
-    return settings.value.ColorScheme;
+    if (settings.value.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO) {
+      let _colorScheme = '';
+      for (let i = 0; i < PredefineColorSchemes.length; i++) {
+        _colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? SettingsValueEnum.COLOR_SCHEME_DARK
+          : SettingsValueEnum.COLOR_SCHEME_LIGHT;
+        break;
+      }
+      return _colorScheme;
+    } else {
+      return settings.value.ColorScheme;
+    }
   });
 
   // 动态浏览器标题

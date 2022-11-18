@@ -150,8 +150,6 @@ export const PredefineThemeColors = [
   '#ea3a72',
   '#fe7300',
   '#1C9399',
-  '#8d7d91',
-  '#945357',
   '#F56C6C',
   '#839aff',
 ];

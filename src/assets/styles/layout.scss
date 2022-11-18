@@ -291,6 +291,18 @@
       }
     }
   }
+
+  &.dark {
+    .el-sub-menu {
+      &.is-active > .el-sub-menu__title {
+        color: var(--el-color-primary-light-3) !important;
+
+        &:hover {
+          color: var(--wings-menu-text-color-hover) !important;
+        }
+      }
+    }
+  }
 }
 
 .layout-aside-menu-collapse {
