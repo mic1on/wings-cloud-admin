@@ -32,20 +32,20 @@
 
 <table>
     <tr>
-        <td><img width="100%" src="./.readme/signin.jpg"></td>
-        <td><img width="100%" src="./.readme/signup.jpg"></td>
+        <td><img width="100%" src="./.github/assets/signin.jpg"></td>
+        <td><img width="100%" src="./.github/assets/signup.jpg"></td>
     </tr>
     <tr>
-        <td><img width="100%" src="./.readme/layout.jpg"></td>
-        <td><img width="100%" src="./.readme/layout-aside.jpg"></td>
+        <td><img width="100%" src="./.github/assets/layout.jpg"></td>
+        <td><img width="100%" src="./.github/assets/layout-aside.jpg"></td>
     </tr>
     <tr>
-        <td><img width="100%" src="./.readme/theme.jpg"></td>
-        <td><img width="100%" src="./.readme/dark.jpg"></td>
+        <td><img width="100%" src="./.github/assets/theme.jpg"></td>
+        <td><img width="100%" src="./.github/assets/dark.jpg"></td>
     </tr>
     <tr>
-        <td><img width="100%" src="./.readme/square.jpg"></td>
-        <td><img width="100%" src="./.readme/round.jpg"></td>
+        <td><img width="100%" src="./.github/assets/square.jpg"></td>
+        <td><img width="100%" src="./.github/assets/round.jpg"></td>
     </tr>
 </table>
 
@@ -95,13 +95,13 @@ npm run lint:eslint:fix # 使用 Eslint 自动修复语法
 
 <table>
   <tr>
-    <td><img width="90" src="./.readme/vscode-plugin-volar.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-prettier.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-eslint.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-dot-env.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-stylelint.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-editor-config.png"></td>
-    <td><img width="90" src="./.readme/vscode-plugin-i18n-ally.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-volar.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-prettier.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-eslint.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-dot-env.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-stylelint.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-editor-config.png"></td>
+    <td><img width="90" src="./.github/assets/vscode-plugin-i18n-ally.png"></td>
   </tr>
 </table>
 
