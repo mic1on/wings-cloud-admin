@@ -6,13 +6,13 @@ const { baseStore } = useStore();
 
 const changeColorScheme = () => {
   baseStore.settings.ColorScheme =
-    baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+    baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
       ? SettingsValueEnum.COLOR_SCHEME_LIGHT
       : SettingsValueEnum.COLOR_SCHEME_DARK;
 };
 
 const isDark = computed(() => {
-  return baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_DARK;
+  return baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK;
 });
 
 const props = defineProps({

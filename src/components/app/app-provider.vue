@@ -1,9 +1,9 @@
 <script lang="ts" setup name="app-provider">
-import { DefaultSettings } from '@/settings';
-import { useStore } from '@/hooks/use-store';
-import { getMobileAreaCodes, getDictAll } from '@/hooks/use-common-data';
-import { setEpThemeColor } from '@/utils/theme';
 import { SettingsValueEnum } from '@/enums';
+import { DefaultSettings } from '@/settings';
+import { setEpThemeColor } from '@/utils/theme';
+import { getMobileAreaCodes, getDictAll } from '@/hooks/use-common-data';
+import { useStore } from '@/hooks/use-store';
 
 const route = useRoute();
 
@@ -15,7 +15,7 @@ const locale =
   messages.value[baseStore.language][DefaultSettings.ElementPlus.language];
 
 watch(
-  () => baseStore.settings.ColorScheme,
+  () => baseStore.colorScheme,
   (newVal, oldVal) => {
     if (oldVal) {
       document.documentElement.classList.remove(oldVal);
@@ -23,29 +23,6 @@ watch(
     if (newVal) {
       document.documentElement.classList.add(newVal);
     }
-    // TODO
-    // if (newVal === SettingsValueEnum.COLOR_SCHEME_AUTO) {
-    //   if (
-    //     baseStore.settings.ColorScheme == SettingsValueEnum.COLOR_SCHEME_AUTO
-    //   ) {
-    //     document.documentElement.classList.remove(newVal);
-    //     document.documentElement.classList.add(
-    //       window.matchMedia('(prefers-color-scheme: dark)').matches
-    //         ? SettingsValueEnum.COLOR_SCHEME_DARK
-    //         : SettingsValueEnum.COLOR_SCHEME_LIGHT
-    //     );
-    //     // window
-    //     //   .matchMedia('(prefers-color-scheme: dark)')
-    //     //   .addEventListener('change', (event) => {
-    //     //     document.documentElement.classList.remove(newVal);
-    //     //     document.documentElement.classList.add(
-    //     //       event.matches
-    //     //         ? SettingsValueEnum.COLOR_SCHEME_DARK
-    //     //         : SettingsValueEnum.COLOR_SCHEME_LIGHT
-    //     //     );
-    //     //   });
-    //   }
-    // }
   },
   {
     immediate: true,
@@ -79,6 +56,26 @@ watch(
     immediate: true,
   }
 );
+
+onBeforeMount(() => {
+  if (baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO) {
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (event) => {
+        // TODO ,html中 class改变了，但是 store 里的没有变化
+        document.documentElement.classList.remove(baseStore.colorScheme);
+        if (event.matches) {
+          document.documentElement.classList.add(
+            SettingsValueEnum.COLOR_SCHEME_DARK
+          );
+        } else {
+          document.documentElement.classList.add(
+            SettingsValueEnum.COLOR_SCHEME_LIGHT
+          );
+        }
+      });
+  }
+});
 
 onBeforeMount(() => {
   baseStore.changeMobile();

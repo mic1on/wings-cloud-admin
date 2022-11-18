@@ -7,11 +7,7 @@ const { baseStore } = useStore();
 
 <template>
   <div
-    :class="[
-      baseStore.settings.ColorScheme,
-      baseStore.settings.Layout,
-      'layout-admin',
-    ]"
+    :class="[baseStore.colorScheme, baseStore.settings.Layout, 'layout-admin']"
   >
     <el-container>
       <el-header

@@ -62,13 +62,11 @@ const position = computed(() => {
     <div class="logo" flex items-center justify-center>
       <img
         v-if="
-          (baseStore.settings.ColorScheme ===
-            SettingsValueEnum.COLOR_SCHEME_THEME &&
+          (baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_THEME &&
             baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_ASIDE &&
             baseStore.settings.Layout !==
               SettingsValueEnum.LAYOUT_ASIDE_LEAN) ||
-          (baseStore.settings.ColorScheme !==
-            SettingsValueEnum.COLOR_SCHEME_THEME &&
+          (baseStore.colorScheme !== SettingsValueEnum.COLOR_SCHEME_THEME &&
             (baseStore.settings.Layout ===
               SettingsValueEnum.LAYOUT_ASIDE_DARK ||
               baseStore.settings.Layout ===

@@ -18,7 +18,7 @@ const changeCollapse = (): void => {
     style="height: var(--wings-collapse-height)"
     @click="changeCollapse()"
     :class="[
-      baseStore.settings.ColorScheme,
+      baseStore.colorScheme,
       baseStore.settings.Layout,
       'layout-aside-menu-collapse',
     ]"

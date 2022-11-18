@@ -46,7 +46,7 @@ const width = computed(() => {
     <div
       :class="[
         baseStore.settings.MenuStyle,
-        baseStore.settings.ColorScheme,
+        baseStore.colorScheme,
         baseStore.settings.Layout,
         'layout-admin-menu',
       ]"

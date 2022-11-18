@@ -8,7 +8,7 @@ const { baseStore } = useStore();
 <template>
   <div
     :class="[
-      baseStore.settings.ColorScheme,
+      baseStore.colorScheme,
       baseStore.settings.Layout,
       'layout-admin-aside',
     ]"

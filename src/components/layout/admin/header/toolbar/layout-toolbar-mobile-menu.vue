@@ -23,7 +23,7 @@ const changeMobileMenu = () => {
     items-center
     :class="[
       props.fixed ? 'fixed' : '',
-      baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
         ? 'dark'
         : '',
     ]"
