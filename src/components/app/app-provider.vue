@@ -14,14 +14,23 @@ const { t, messages } = useI18n();
 const locale =
   messages.value[baseStore.language][DefaultSettings.ElementPlus.language];
 
+// 监听默认配色方案变化
 watch(
-  () => baseStore.colorScheme,
+  () => baseStore.settings.ColorScheme,
   (newVal, oldVal) => {
-    if (oldVal) {
-      document.documentElement.classList.remove(oldVal);
-    }
-    if (newVal) {
+    if (newVal === SettingsValueEnum.COLOR_SCHEME_AUTO) {
+      baseStore.changeColorSchemeBySystem(
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      );
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', (event) => {
+          baseStore.changeColorSchemeBySystem(event.matches);
+        });
+    } else {
+      document.documentElement.classList.remove(baseStore.colorScheme);
       document.documentElement.classList.add(newVal);
+      baseStore.colorScheme = newVal;
     }
   },
   {
@@ -29,6 +38,7 @@ watch(
   }
 );
 
+// 监听默认主题颜色变化
 watch(
   () => baseStore.settings.ThemeColor,
   (newVal, old) => {
@@ -41,6 +51,7 @@ watch(
   }
 );
 
+// 监听浏览器标题
 watch(
   () => baseStore.browserTitle,
   () => {
@@ -57,26 +68,7 @@ watch(
   }
 );
 
-onBeforeMount(() => {
-  if (baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO) {
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', (event) => {
-        // TODO ,html中 class改变了，但是 store 里的没有变化
-        document.documentElement.classList.remove(baseStore.colorScheme);
-        if (event.matches) {
-          document.documentElement.classList.add(
-            SettingsValueEnum.COLOR_SCHEME_DARK
-          );
-        } else {
-          document.documentElement.classList.add(
-            SettingsValueEnum.COLOR_SCHEME_LIGHT
-          );
-        }
-      });
-  }
-});
-
+// 初始化多端适配
 onBeforeMount(() => {
   baseStore.changeMobile();
   window.onresize = () => {
@@ -84,6 +76,7 @@ onBeforeMount(() => {
   };
 });
 
+// 初始化数据
 onBeforeMount(() => {
   getMobileAreaCodes();
   getDictAll();

@@ -77,7 +77,7 @@ export enum StorageEnum {
   LANGUAGE = 'language',
   STAY_LOGIN = 'stay-login',
   TOKEN = 'token',
-  DARK = 'is-dark',
+  COLOR_SCHEME = 'color-scheme',
   MOBILE_PHONE_AREA_CODE = 'mobile-area-code',
   USER_INFO = 'user-info',
   USER_ROLES = 'user-roles',
