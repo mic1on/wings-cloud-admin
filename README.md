@@ -1,10 +1,12 @@
 # Wings Cloud Admin
 
-基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
+✨ 基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
 
-- Github: [wingscloud/wings-cloud-admin](https://github.com/wingscloud/wings-cloud-admin)
+📌 源码: [wingscloud/wings-cloud-admin](https://github.com/wingscloud/wings-cloud-admin)
 
-- Documentation: [https://wings-cloud-docs.netlify.app](https://wings-cloud-docs.netlify.app)
+🌰 演示地址: [https://wings-cloud-admin.netlify.app](https://wings-cloud-admin.netlify.app)
+
+📘 使用文档: [https://wings-cloud-docs.netlify.app](https://wings-cloud-docs.netlify.app)
 
 <table>
 	<tr>
