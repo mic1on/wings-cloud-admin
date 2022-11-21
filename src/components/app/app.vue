@@ -29,11 +29,6 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
     var(--el-transition-function-ease-in-out-bezier);
 }
 
-#app-component-node {
-  transition: all var(--el-transition-duration)
-    var(--el-transition-function-ease-in-out-bezier);
-}
-
 .app-page-enter-active {
   transition: 0.2s;
 }

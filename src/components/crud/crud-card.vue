@@ -51,10 +51,19 @@ const cancel = () => {
 <template>
   <el-card :shadow="props.shadow" important="border-none">
     <template #header v-if="!props.customHeader">
-      <div text-5 style="color: var(--el-text-color-primary)">
+      <div
+        text-5
+        style="color: var(--el-text-color-primary)"
+        v-if="props.title || route.meta.menuName"
+      >
         {{ props.title || route.meta.menuName }}
       </div>
-      <div text-4 mt-2 style="color: var(--el-text-color-secondary)">
+      <div
+        text-4
+        mt-2
+        v-if="props.subTitle || route.meta.menuDescription"
+        style="color: var(--el-text-color-secondary)"
+      >
         {{ props.subTitle || route.meta.menuDescription }}
       </div>
     </template>

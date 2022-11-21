@@ -14,7 +14,7 @@ import { getLoginStorageType } from '../../utils/common';
 import { useNProgress } from '@vueuse/integrations/useNProgress';
 import '@/assets/styles/nprogress.scss';
 
-const { isLoading, progress } = useNProgress();
+const { isLoading } = useNProgress();
 
 /**
  * @name addRouterGuard

@@ -9,21 +9,21 @@ export default {
     data: {
       notificationType: [
         {
-          label: 'dict.notifications.personal',
+          label: '个人消息',
           value: 0,
         },
         {
-          label: 'dict.notifications.system',
+          label: '系统消息',
           value: 1,
         },
       ],
       roleType: [
         {
-          label: 'dict.role.system',
+          label: '系统角色',
           value: 0,
         },
         {
-          label: 'dict.role.custom',
+          label: '自定义角色',
           value: 1,
         },
       ],

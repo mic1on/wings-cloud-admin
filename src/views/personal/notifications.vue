@@ -7,9 +7,9 @@ const { t } = useI18n();
 
 const notificationDict = getStorage(StorageEnum.DICT).notificationType;
 
-const { query, list } = useCrud();
+const { queryForm, query, list } = useCrud();
 
-query.value = {
+queryForm.value = {
   content: '',
   type: '',
 };
@@ -21,7 +21,7 @@ query.value = {
         <el-form-item>
           <el-select
             clearable
-            v-model="query.type"
+            v-model="queryForm.type"
             :placeholder="t('personal.notifications.notificationType')"
           >
             <el-option
@@ -34,7 +34,7 @@ query.value = {
         </el-form-item>
         <el-form-item>
           <el-input
-            v-model="query.content"
+            v-model="queryForm.content"
             :placeholder="t('personal.notifications.notificationContent')"
           />
         </el-form-item>

@@ -15,7 +15,12 @@
   },
   "user": {
     "menuName": "User List",
-    "menuDescription": ""
+    "menuDescription": "",
+    "avatar": "Avatar",
+    "nickname": "Nickname",
+    "username": "Username",
+    "mobile": "Mobile Phone",
+    "list": {}
   },
   "department": {
     "menuName": "Department",

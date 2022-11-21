@@ -7,11 +7,11 @@ const { t } = useI18n();
 
 const roleTypeDict = getStorage(StorageEnum.DICT).roleType;
 
-const { query, list } = useCrud();
+const { queryForm, list } = useCrud();
 
-query.value = {
-  content: '',
-  type: '',
+queryForm.value = {
+  roleName: '',
+  roleType: '',
 };
 </script>
 <template>
@@ -21,7 +21,7 @@ query.value = {
         <el-form-item>
           <el-select
             clearable
-            v-model="query.type"
+            v-model="queryForm.roleType"
             :placeholder="t('authority.role.roleType')"
           >
             <el-option
@@ -34,7 +34,7 @@ query.value = {
         </el-form-item>
         <el-form-item>
           <el-input
-            v-model="query.content"
+            v-model="queryForm.roleName"
             :placeholder="t('authority.role.roleName')"
           />
         </el-form-item>

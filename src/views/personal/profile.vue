@@ -46,7 +46,7 @@ const width = ref('width:240px');
             v-for="(item, index) in userStore.userProfile.roleList"
             :key="index"
             :value="item.id"
-            :label="t(item.label)"
+            :label="item.label"
           ></el-option>
         </el-select>
       </el-form-item>
