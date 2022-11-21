@@ -19,7 +19,7 @@ queryForm.value = {
 <template>
   <crud-card>
     <crud-table :table-data="list">
-      <template #queryForm>
+      <template #query>
         <el-form-item>
           <el-select
             clearable
