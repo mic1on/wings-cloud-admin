@@ -30,6 +30,9 @@ const width = computed(() => {
   ) {
     _width = 'var(--wings-header-logo-width)';
   }
+  if (baseStore.isMobile) {
+    _width = 'var(--wings-aside-width)';
+  }
   return 'width:' + _width + ';';
 });
 
@@ -79,9 +82,9 @@ const position = computed(() => {
       <img v-else w-10 h-10 src="@/assets/logo.svg" />
     </div>
     <div
+      w-full
       text-6
       font-600
-      text-center
       ml-4
       v-if="
         !baseStore.collapse ||
