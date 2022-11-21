@@ -3,7 +3,15 @@
   "menuDescription": "",
   "role": {
     "menuName": "Roles",
-    "menuDescription": ""
+    "menuDescription": "",
+    "roleType": "Role Types",
+    "roleName": "Role Name",
+    "remark": "Remark",
+    "createTime": "Create Time",
+    "list": {
+      "admin": "Administrator",
+      "development": "Development"
+    }
   },
   "user": {
     "menuName": "User List",

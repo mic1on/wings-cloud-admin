@@ -17,6 +17,16 @@ export default {
           value: 1,
         },
       ],
+      roleType: [
+        {
+          label: 'dict.role.system',
+          value: 0,
+        },
+        {
+          label: 'dict.role.custom',
+          value: 1,
+        },
+      ],
     },
   },
 };

@@ -1,10 +1,10 @@
 {
-  "role": {
-    "admin": "Administrator",
-    "development": "Development"
-  },
   "notifications": {
     "personal": "Personal Notification",
     "system": "System Notification"
+  },
+  "role": {
+    "system": "System Role",
+    "custom": "Customizing Role"
   }
 }
