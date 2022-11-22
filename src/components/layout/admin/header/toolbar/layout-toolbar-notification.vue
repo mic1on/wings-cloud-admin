@@ -1,7 +1,10 @@
 <script lang="ts" setup name="layout-action-notification">
 import { useStore } from '@/hooks/use-store';
+import { RouteEnum } from '@/enums';
 
 const { t } = useI18n();
+
+const router = useRouter();
 
 const { userStore } = useStore();
 
@@ -11,6 +14,10 @@ const props = defineProps({
     default: 'var(--wings-header-text-color)',
   },
 });
+
+const goPersonalNotification = () => {
+  router.push(RouteEnum.ROUTE_PERSONAL_NOTIFICATIONS);
+};
 </script>
 
 <template>
@@ -30,9 +37,14 @@ const props = defineProps({
           <span text-4 style="color: var(--el-text-color-regular)">
             {{ t('app.toolbar.notifications.notifications') }}
           </span>
-          <el-button text type="primary">
-            {{ t('app.toolbar.notifications.readAll') }}
-          </el-button>
+          <div>
+            <el-button text type="primary">
+              {{ t('app.toolbar.notifications.clear') }}
+            </el-button>
+            <el-button text type="primary" @click="goPersonalNotification">
+              {{ t('app.toolbar.notifications.more') }}
+            </el-button>
+          </div>
         </div>
         <div>
           <el-empty

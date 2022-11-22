@@ -1,6 +1,6 @@
 # Wings Cloud Admin
 
-✨ 基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配
+✨ 中后台权限管理系统，基于 Vuejs + Element Plus 构建，支持国际化、多主题多布局、响应式界面
 
 📌 源码: [wingscloud/wings-cloud-admin](https://github.com/wingscloud/wings-cloud-admin)
 
@@ -50,28 +50,28 @@
 
 ## 开始
 
-下载项目
+通过 Github 克隆代码
 
 ```shell
-git clone https://github.com/wingscloud/wings-cloud-admin.git # 通过 Github 克隆代码
+git clone https://github.com/wingscloud/wings-cloud-admin.git
 ```
 
 安装依赖包
 
 ```shell
-npm install # 您也可以使用 yarn
+npm install # 您也可以使用 yarn 或者 pnpm
 ```
 
 开发模式
 
 ```shell
-npm run serve # 也可以搭配环境变量使用，如 npm run serve:stag
+npm run serve # 搭配环境变量使用，如 npm run serve:stag
 ```
 
 构建包
 
 ```shell
-npm run build # 也可以搭配环境变量使用，如 npm run build:stag
+npm run build # 搭配环境变量使用，如 npm run build:stag
 ```
 
 其他命令
@@ -83,7 +83,7 @@ npm run lint:stylelint # 使用 Stylelint 检查 style 规范
 
 npm run lint:eslint #  运行 Eslint 语法检测
 
-npm run lint:eslint:fix # 使用 Eslint 自动修复语法
+npm run lint:eslint:fix # 基于 Eslint 的语法自动修复
 ```
 
 ## IDE 插件

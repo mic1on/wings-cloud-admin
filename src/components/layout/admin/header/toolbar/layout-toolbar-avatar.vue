@@ -25,11 +25,6 @@ const actionChange = (command: string): void => {
     userStore.logout();
   }
 };
-
-const goLoginPage = (): void => {
-  if (userStore.isLogin) return;
-  router.push({ path: RouteEnum.ROUTE_SIGNIN });
-};
 </script>
 <template>
   <el-dropdown @command="actionChange">
@@ -49,6 +44,10 @@ const goLoginPage = (): void => {
         <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_PROFILE">
           <el-icon><User /></el-icon>
           <span>{{ t('personal.profile.menuName') }}</span>
+        </el-dropdown-item>
+        <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_NOTIFICATIONS">
+          <el-icon><ChatLineRound /></el-icon>
+          <span>{{ t('personal.notifications.menuName') }}</span>
         </el-dropdown-item>
         <el-dropdown-item :command="RouteEnum.ROUTE_SYSTEM_SETTINGS">
           <el-icon><Setting /></el-icon>
