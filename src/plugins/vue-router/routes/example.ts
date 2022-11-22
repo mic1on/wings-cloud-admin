@@ -60,7 +60,7 @@ export default [
       {
         path: '/example/charts',
         name: 'example.charts',
-        component: () => import('@/views/example/echarts.vue'),
+        component: () => import('@/views/example/charts.vue'),
         meta: {
           layout: 'admin',
           isMenu: true,

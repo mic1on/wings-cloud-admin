@@ -14,7 +14,9 @@
     "notifications": {
       "notifications": "通知",
       "readAll": "全部已读",
-      "empty": "暂无通知"
+      "empty": "暂无通知",
+      "more": "更多",
+      "clear": "清空"
     }
   },
   "tab": {

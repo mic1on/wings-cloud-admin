@@ -11,7 +11,7 @@ export enum RouteEnum {
   ROUTE_SIGNUP = '/signup',
   ROUTE_PASSWORD_FORGET = '/password/forget',
   ROUTE_PERSONAL_PROFILE = '/personal/profile',
-  ROUTE_PERSONAL_NOTIFICATIONS = '/personal/notification',
+  ROUTE_PERSONAL_NOTIFICATIONS = '/personal/notifications',
   ROUTE_SYSTEM_SETTINGS = '/system/settings',
 }
 
