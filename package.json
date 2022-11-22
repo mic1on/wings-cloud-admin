@@ -1,7 +1,7 @@
 {
   "name": "wings-cloud-admin",
   "version": "1.0.0-rc",
-  "description": "中后台权限管理系统，基于 Vuejs + Element Plus 构建，提供国际化、多主题多布局、移动端适配等功能",
+  "description": "中后台权限管理系统，基于 Vuejs + Element Plus 构建，支持国际化、多主题多布局、响应式界面",
   "main": "index.html",
   "repository": {
     "type": "git",
