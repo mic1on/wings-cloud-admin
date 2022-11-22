@@ -16,16 +16,6 @@ queryForm.value = {
   type: '',
 };
 
-tableData.value = [
-  {
-    type: 1,
-    content: '修改密码',
-    source: 1,
-    createTime: 1669084718194,
-    status: '',
-  },
-];
-
 const read = (row: IObject) => {
   console.log(row);
 };

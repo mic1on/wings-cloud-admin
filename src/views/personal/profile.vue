@@ -6,8 +6,12 @@ const { t } = useI18n();
 const { userStore } = useStore();
 </script>
 <template>
-  <crud-card>
-    <crud-page-form label-position="top">
+  <crud-card action>
+    <crud-page-form
+      label-position="left"
+      label-width="120px"
+      style="max-width: 400px"
+    >
       <el-form-item :label="t('crud.account.avatar')">
         <avatar-upload v-model="userStore.userProfile.avatar"></avatar-upload>
       </el-form-item>
@@ -40,19 +44,14 @@ const { userStore } = useStore();
           ></el-option>
         </el-select>
       </el-form-item>
-      <template #action>
-        <el-button type="primary">
-          {{ t('crud.btn.update') }}
-        </el-button>
-        <el-button>
-          {{ t('app.toolbar.avatar.signout') }}
-        </el-button>
-      </template>
     </crud-page-form>
+    <template #action>
+      <el-button type="primary">
+        {{ t('crud.btn.update') }}
+      </el-button>
+      <el-button>
+        {{ t('app.toolbar.avatar.signout') }}
+      </el-button>
+    </template>
   </crud-card>
 </template>
-<style lang="scss" scoped>
-:deep(.el-select) {
-  width: 100%;
-}
-</style>

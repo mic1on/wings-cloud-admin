@@ -1,4 +1,8 @@
 <script lang="ts" setup name="crud-card">
+import type { ComponentInternalInstance } from 'vue';
+
+const { slots } = getCurrentInstance() as ComponentInternalInstance;
+
 const { t } = useI18n();
 
 const props = defineProps({
@@ -14,19 +18,11 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  customHeader: {
-    type: Boolean,
-    default: false,
-  },
-  customAction: {
-    type: Boolean,
-    default: false,
-  },
-  actionSubmitLabel: {
+  submitLabel: {
     type: String,
     default: '',
   },
-  actionCancelLabel: {
+  cancelLabel: {
     type: String,
     default: '',
   },
@@ -46,45 +42,41 @@ const cancel = () => {
 </script>
 <template>
   <el-card shadow="never" important="border-none">
-    <template #header v-if="!props.customHeader">
-      <div
-        text-5
-        style="color: var(--el-text-color-primary)"
-        v-if="props.title || route.meta.menuName"
-      >
-        {{ props.title || route.meta.menuName }}
-      </div>
-      <div
-        text-4
-        mt-2
-        v-if="props.subTitle || route.meta.menuDescription"
-        style="color: var(--el-text-color-secondary)"
-      >
-        {{ props.subTitle || route.meta.menuDescription }}
-      </div>
+    <template #header>
+      <slot name="header"></slot>
+      <template v-if="!slots.header">
+        <div
+          text-5
+          style="color: var(--el-text-color-primary)"
+          v-if="props.title || route.meta.menuName"
+        >
+          {{ props.title || route.meta.menuName }}
+        </div>
+        <div
+          text-4
+          mt-2
+          v-if="props.subTitle || route.meta.menuDescription"
+          style="color: var(--el-text-color-secondary)"
+        >
+          {{ props.subTitle || route.meta.menuDescription }}
+        </div>
+      </template>
     </template>
-    <slot v-if="props.customHeader" name="header"></slot>
-    <div
-      style="padding: calc(var(--el-card-padding) - 2px) var(--el-card-padding)"
-    >
+    <div class="padding">
       <slot></slot>
     </div>
     <template v-if="action">
       <el-divider important="m-0"></el-divider>
-      <div
-        style="
-          padding: calc(var(--el-card-padding) - 2px) var(--el-card-padding);
-        "
-      >
-        <div v-if="!customAction">
+      <div class="padding">
+        <slot name="action"></slot>
+        <template v-if="!slots.action">
           <el-button type="primary" @click="submit">
-            {{ props.actionSubmitLabel || t('crud.btn.submit') }}
+            {{ props.submitLabel || t('crud.btn.submit') }}
           </el-button>
           <el-button @click="cancel">
-            {{ props.actionCancelLabel || t('crud.btn.cancel') }}
+            {{ props.cancelLabel || t('crud.btn.cancel') }}
           </el-button>
-        </div>
-        <slot v-else name="action"></slot>
+        </template>
       </div>
     </template>
   </el-card>
@@ -101,5 +93,9 @@ const cancel = () => {
   padding: 0 !important;
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
+}
+
+.padding {
+  padding: calc(var(--el-card-padding) - 2px) var(--el-card-padding);
 }
 </style>

@@ -2,7 +2,7 @@
 import { SettingsValueEnum } from '@/enums';
 import { DefaultSettings } from '@/settings';
 import { setEpThemeColor } from '@/utils/theme';
-import { getMobileAreaCodes, getDictAll } from '@/hooks/use-common-data';
+import { getMobileAreaCodes, getAndSaveDicts } from '@/hooks/use-common-data';
 import { useStore } from '@/hooks/use-store';
 
 const route = useRoute();
@@ -79,7 +79,7 @@ onBeforeMount(() => {
 // 初始化数据
 onBeforeMount(() => {
   getMobileAreaCodes();
-  getDictAll();
+  getAndSaveDicts();
 });
 </script>
 

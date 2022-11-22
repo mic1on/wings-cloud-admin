@@ -53,7 +53,7 @@ const changeMobileMenu = () => {
   transform: translateY(-50%);
 
   &.dark {
-    background-color: var(--el-color-primary-light-3);
+    background-color: var(--el-color-primary);
   }
 }
 </style>

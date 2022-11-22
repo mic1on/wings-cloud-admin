@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { IObject } from '@/global.d';
+import { useStore } from '@/hooks/use-store';
 import SignTemplate from '../components/sign-template.vue';
 import VerifyMobilePhone from './components/verify-mobile-phone.vue';
 import ChangePassword from './components/change-password.vue';
@@ -10,7 +11,12 @@ const { t } = useI18n();
 
 const router = useRouter();
 
+const { baseStore } = useStore();
+
 const forgetType = ref<string>('verify');
+onBeforeMount(() => {
+  forgetType.value = 'verify';
+});
 
 const verifyHandle = (e: IObject): void => {
   if (e.status) {
@@ -85,6 +91,16 @@ const goSignin = (): void => {
         >
           {{ t('signin.btn') }}
         </el-button>
+      </div>
+    </template>
+    <template #bottom-center v-if="baseStore.isMobile">
+      <div
+        w-full
+        text-center
+        text-2
+        style="color: var(--el-color-info-light-3)"
+      >
+        {{ t('app.copyright') }}
       </div>
     </template>
   </sign-template>

@@ -1,6 +1,6 @@
 import type { IObject } from '../../global.d';
 import type { ResponseData } from '../../utils/request/index.d';
-import type { LoginAccountData, SignupData } from '../../apis/website/user.d';
+import type { LoginAccountData, SignupData } from '../../apis/user.d';
 import { defineStore } from 'pinia';
 import { ElNotification } from 'element-plus';
 import { DefaultSettings } from '../../settings';
@@ -14,8 +14,8 @@ import {
   loginByAccount as _loginByAccount,
   getUserProfile as _getUserProfile,
   signup as _signup,
-} from '../../apis/website/user';
-import { getUserRoles as _getUserRoles } from '../../apis/admin/auth';
+} from '../../apis/user';
+import { getUserRoles as _getUserRoles } from '../../apis/user';
 
 /**
  * @name useUserStore

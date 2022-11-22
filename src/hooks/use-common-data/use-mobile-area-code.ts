@@ -1,7 +1,6 @@
-import type { IObject } from '@/global.d';
 import { StorageEnum } from '@/enums';
 import { setStorage } from '@/utils/storage';
-import { getMobileAreaCodeList } from '@/apis/base';
+import { getMobileCodes } from '@/apis/base';
 
 /**
  * @name useMobileAreaCode
@@ -10,7 +9,7 @@ import { getMobileAreaCodeList } from '@/apis/base';
 
 export const useMobileAreaCode = () => {
   const getMobileAreaCodes = async () => {
-    const { data } = await getMobileAreaCodeList();
+    const { data } = await getMobileCodes();
     setStorage(StorageEnum.MOBILE_PHONE_AREA_CODE, data);
     return data;
   };

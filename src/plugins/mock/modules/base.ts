@@ -1,9 +1,20 @@
 export default {
   /**
-   * 获取手机区号列表
+   * @name getMobileSmscode
+   * @description 获取手机号验证码
    */
-  getRoleList: {
-    url: '/base/country/mobilePhoneCode/list',
+  getMobileSmscode: {
+    url: '/base/mobile/smscode',
+    method: 'get',
+    data: '',
+  },
+
+  /**
+   * @name getMobileCodes
+   * @description 获取手机区号列表
+   */
+  getMobileCodes: {
+    url: '/base/mobile/codes',
     method: 'get',
     data: [
       {
@@ -856,11 +867,60 @@ export default {
       },
     ],
   },
+
   /**
-   * 获取服务协议内容
+   * @name getDictAll
+   * @description 获取全部字典数据
    */
-  getTermsConditionsData: {
-    url: '/base/TermsConditions/info',
+  getDictAll: {
+    url: '/base/dict/all',
+    method: 'get',
+    data: [
+      {
+        key: 'notificationType',
+        values: [
+          {
+            label: '个人消息',
+            value: 0,
+          },
+          {
+            label: '系统消息',
+            value: 1,
+          },
+        ],
+      },
+      {
+        key: 'roleType',
+        values: [
+          {
+            label: '系统角色',
+            value: 0,
+          },
+          {
+            label: '自定义角色',
+            value: 1,
+          },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * @name getDictPage
+   * @description 分页获取字典数据
+   */
+  getDictPage: {
+    url: '/base/dict/list',
+    method: 'get',
+    data: [],
+  },
+
+  /**
+   * @name getServiceInfo
+   * @description 获取服务协议内容
+   */
+  getServiceInfo: {
+    url: '/base/service/info',
     method: 'get',
     data: { i18nKey: 'app.termsConditions' },
   },

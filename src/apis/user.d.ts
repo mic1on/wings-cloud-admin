@@ -9,7 +9,6 @@ export interface SignupData extends PhoneForm {
   password: string;
 }
 
-export interface PhoneCodeParams {
-  phone: string | number;
-  type: number;
+export interface ValidateUsernameParams {
+  username: string;
 }

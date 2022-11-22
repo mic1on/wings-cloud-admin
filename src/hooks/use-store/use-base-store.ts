@@ -49,6 +49,9 @@ export const useBaseStore = defineStore('base', () => {
     } else {
       isMobile.value = document.documentElement.clientWidth < 992;
     }
+    if (!isMobile.value && mobileMenu.value) {
+      mobileMenu.value = false;
+    }
   };
 
   // 修改系统设置

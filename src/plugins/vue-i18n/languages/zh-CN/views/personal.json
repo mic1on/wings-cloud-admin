@@ -3,7 +3,7 @@
   "menuDescription": "",
   "profile": {
     "menuName": "个人资料",
-    "menuDescription": "在此页面修改个人资料",
+    "menuDescription": "您可以在此页面修改个人资料",
     "defaultRole": "默认角色"
   },
   "notifications": {
