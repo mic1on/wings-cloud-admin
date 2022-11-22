@@ -1,6 +1,6 @@
 # Wings Cloud Admin
 
-✨ 中后台权限管理系统，基于 Vuejs + Element Plus 构建，提供国际化、多主题多布局、移动端适配等
+✨ 中后台权限管理系统，基于 Vuejs + Element Plus 构建，提供国际化、多主题多布局、移动端适配等功能
 
 📌 源码: [wingscloud/wings-cloud-admin](https://github.com/wingscloud/wings-cloud-admin)
 
