@@ -2,10 +2,6 @@
 const { t } = useI18n();
 
 const props = defineProps({
-  shadow: {
-    type: String,
-    default: 'never',
-  },
   title: {
     type: String,
     default: '',
@@ -49,7 +45,7 @@ const cancel = () => {
 };
 </script>
 <template>
-  <el-card :shadow="props.shadow" important="border-none">
+  <el-card shadow="never" important="border-none">
     <template #header v-if="!props.customHeader">
       <div
         text-5

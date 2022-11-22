@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     CrudAction: typeof import('./crud/crud-action.vue')['default']
     CrudCard: typeof import('./crud/crud-card.vue')['default']
     CrudDialog: typeof import('./crud/crud-dialog.vue')['default']
+    CrudPageForm: typeof import('./crud/crud-page-form.vue')['default']
     CrudTable: typeof import('./crud/crud-table.vue')['default']
     EchartsBar: typeof import('./echarts/echarts-bar.vue')['default']
     EchartsLine: typeof import('./echarts/echarts-line.vue')['default']

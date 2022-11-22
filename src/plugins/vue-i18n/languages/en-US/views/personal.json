@@ -17,6 +17,7 @@
     "isRead": "Have read",
     "source": "The notification source",
     "datetime": "Date Time",
-    "send": "Send Time"
+    "send": "Send Time",
+    "read": "Read"
   }
 }

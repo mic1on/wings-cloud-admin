@@ -17,6 +17,7 @@
     "isRead": "是否已读",
     "source": "消息来源",
     "datetime": "时间",
-    "send": "发送时间"
+    "send": "发送时间",
+    "read": "已读"
   }
 }
