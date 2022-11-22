@@ -49,7 +49,7 @@ const goSignup = (): void => {
       </div>
     </template>
     <template #title>
-      <div mb-10 text-6 font-600 style="color: var(--el-color-info-light)">
+      <div mb-4 text-6 font-600 style="color: var(--el-color-info-light)">
         {{ t('signin.title', { text: t('app.name') }) }}
       </div>
       <div
@@ -100,7 +100,17 @@ const goSignup = (): void => {
       #bottom-center
       v-if="loginType === 'account' || loginType === 'phone'"
     >
-      <terms-conditions :label="t('signin.btn')"></terms-conditions>
+      <div w-full>
+        <terms-conditions :label="t('signin.btn')"></terms-conditions>
+        <div
+          v-if="baseStore.isMobile"
+          text-center
+          text-2
+          style="color: var(--el-color-info-light-3)"
+        >
+          {{ t('app.copyright') }}
+        </div>
+      </div>
     </template>
   </sign-template>
 </template>

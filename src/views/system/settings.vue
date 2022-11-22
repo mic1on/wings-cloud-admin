@@ -71,7 +71,7 @@ const backSettings = () => {
 };
 </script>
 <template>
-  <crud-card action custom-action>
+  <crud-card action>
     <div text-4 m-b-4>
       {{ t('system.settings.layout') }}
     </div>

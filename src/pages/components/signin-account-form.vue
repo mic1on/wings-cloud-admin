@@ -6,7 +6,7 @@ import type { ResponseData } from '@/utils/request/index.d';
 import { useStore } from '@/hooks/use-store';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
 import { RouteEnum } from '@/enums';
-import { validateUsername as _validateUsername } from '@/apis/admin/auth';
+import { validateUsername as _validateUsername } from '@/apis/user';
 
 const { userStore } = useStore();
 

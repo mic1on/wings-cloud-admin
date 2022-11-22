@@ -3,7 +3,7 @@
   "menuDescription": "",
   "profile": {
     "menuName": "个人资料",
-    "menuDescription": "在此页面修改个人资料",
+    "menuDescription": "您可以在此页面修改个人资料",
     "defaultRole": "默认角色"
   },
   "notifications": {
@@ -17,6 +17,7 @@
     "isRead": "是否已读",
     "source": "消息来源",
     "datetime": "时间",
-    "send": "发送时间"
+    "send": "发送时间",
+    "read": "已读"
   }
 }

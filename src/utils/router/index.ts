@@ -1,7 +1,60 @@
-import type { Routes } from '../../plugins/vue-router/index.d';
-import type { I18nT } from '../../plugins/vue-i18n/index.d';
-import type { IObject } from '../../global';
+import type { Routes } from '@/plugins/vue-router/index.d';
+import type { I18nT } from '@/plugins/vue-i18n/index.d';
+import type { IObject, ViewComponents } from '@/global.d';
+import type { RouteRecordRaw } from 'vue-router';
 import { useCloned } from '@vueuse/core';
+
+/**
+ * @name mergeAdminMenuRoutes
+ * @description 合并管理系统菜单路由
+ * @param staticRoutes
+ * @param roleRoutes
+ * @return _routes
+ */
+export const mergeAdminMenuRoutes = (
+  staticRoutes: Routes,
+  roleRoutes: Routes
+): Routes => {
+  const _routes: Routes = [];
+  staticRoutes.forEach((route: RouteRecordRaw) => {
+    if (route.meta && route.meta.isMenu === true) {
+      _routes.push(route);
+    }
+  });
+  roleRoutes.forEach((route: RouteRecordRaw) => {
+    if (route.meta && route.meta.isMenu === true) {
+      _routes.push(route);
+    }
+  });
+  return _routes;
+};
+
+/**
+ * @name mergeRoleRoutes
+ * @description 合并权限路由
+ * @param staticRoutes
+ * @param roleRoutes
+ * @param t
+ * @return _routes
+ */
+export const mergeRoleRoutes = (
+  roleRoutes: Routes,
+  viewComponents: ViewComponents,
+  t: I18nT
+): Routes => {
+  const _routes: Routes = [];
+  roleRoutes.forEach((item) => {
+    const _route = item;
+    if (item.component) {
+      item.component = viewComponents[item.component as string];
+    }
+    if (item.children && item.children.length > 0) {
+      _route.children = mergeRoleRoutes(item.children, viewComponents, t);
+    }
+    _routes.push(item);
+  });
+  return routerInject(_routes, t);
+};
 
 /**
  * @name routerInject
@@ -18,18 +71,14 @@ export const routerInject = (
 ) => {
   const _routes: Routes = [];
   routes.forEach((item) => {
+    if (!item || !item.meta || item.meta.layout !== 'admin') return;
     item.meta.breadcrumb = [];
     if (item.meta) {
-      if (item.meta.isI18n) {
-        if (item.meta.i18nKey) {
-          item.meta.menuName = t((item.meta.i18nKey as string) + '.menuName');
-          item.meta.menuDescription = t(
-            (item.meta.i18nKey as string) + '.menuDescription'
-          );
-        } else {
-          item.meta.menuName = '';
-          item.meta.menuDescription = '';
-        }
+      if (item.meta.i18nKey) {
+        item.meta.menuName = t((item.meta.i18nKey as string) + '.menuName');
+        item.meta.menuDescription = t(
+          (item.meta.i18nKey as string) + '.menuDescription'
+        );
       }
       if (breadcrumbList) {
         const { cloned } = useCloned(breadcrumbList);

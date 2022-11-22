@@ -16,7 +16,7 @@ export const useCrud = () => {
 
   const paginationForm = ref<Pagination>(defaultPagination);
 
-  const list = ref<Array<any>>([]);
+  const tableData = ref<Array<any>>([]);
 
   const reset = () => {
     queryForm.value = {};
@@ -28,7 +28,7 @@ export const useCrud = () => {
   return {
     queryForm,
     paginationForm,
-    list,
+    tableData,
     query,
     reset,
   };

@@ -1,62 +1,13 @@
 <script lang="ts" setup name="crud-dialog">
+import type { ComponentInternalInstance } from 'vue';
 import { useStore } from '@/hooks/use-store';
+
+const { slots } = getCurrentInstance() as ComponentInternalInstance;
 
 const props = defineProps({
   value: {
     type: Boolean,
     default: false,
-  },
-  width: {
-    type: String,
-    default: '50%',
-  },
-  height: {
-    type: String,
-    default: '50vh',
-  },
-  title: {
-    type: String,
-    default: '',
-  },
-  center: {
-    type: Boolean,
-    default: true,
-  },
-  alignCenter: {
-    type: Boolean,
-    default: true,
-  },
-  appendToBody: {
-    type: Boolean,
-    default: true,
-  },
-  draggable: {
-    type: Boolean,
-    default: false,
-  },
-  fullscreen: {
-    type: Boolean,
-    default: false,
-  },
-  closeOnClickModal: {
-    type: Boolean,
-    default: false,
-  },
-  closeOnPressEscape: {
-    type: Boolean,
-    default: false,
-  },
-  destroyOnClose: {
-    type: Boolean,
-    default: true,
-  },
-  openDelay: {
-    type: Number,
-    default: 0,
-  },
-  closeDelay: {
-    type: Number,
-    default: 0,
   },
 });
 
@@ -73,28 +24,21 @@ const closedHandle = (): void => {
 
 <template>
   <el-dialog
+    align-center
+    append-to-body
+    destroy-on-close
     v-model="visible"
-    :width="baseStore.isMobile ? '90%' : props.width"
-    :title="props.title"
-    :center="props.center"
-    :align-center="props.alignCenter"
-    :append-to-body="props.appendToBody"
-    :draggable="props.draggable"
-    :fullscreen="props.fullscreen"
-    :close-on-click-modal="closeOnClickModal"
-    :close-on-press-escape="closeOnPressEscape"
-    :destroy-on-close="destroyOnClose"
-    :open-delay="openDelay"
-    :close-delay="closeDelay"
+    :width="baseStore.isMobile ? '90%' : '50%'"
+    v-bind="$attrs"
     @closed="closedHandle"
   >
     <template #header>
-      <slot name="header"></slot>
+      <slot name="header" v-if="slots.header"></slot>
     </template>
-    <div :style="{ height: props.height }" overflow-y-scroll>
-      <slot name="content"></slot>
+    <div :style="{ height: '50vh' }" overflow-y-scroll>
+      <slot></slot>
     </div>
-    <template #footer>
+    <template #footer v-if="slots.footer">
       <slot name="footer"></slot>
     </template>
   </el-dialog>

@@ -3,6 +3,6 @@ import { useDict } from './use-dict';
 
 const { getMobileAreaCodes } = useMobileAreaCode();
 
-const { getDictAll } = useDict();
+const { getAndSaveDicts } = useDict();
 
-export { getMobileAreaCodes, getDictAll };
+export { getMobileAreaCodes, getAndSaveDicts };

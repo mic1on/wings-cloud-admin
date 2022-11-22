@@ -1,7 +1,7 @@
 import type { Callback } from '@/global.d';
 import type { Form } from './index.d';
 import { ElMessage } from 'element-plus';
-import { getPhoneCode as _getPhoneCode } from '@/apis/website/user';
+import { getMobileSmscode } from '@/apis/base';
 
 /**
  * @name useCountDown
@@ -52,7 +52,7 @@ export const useCountDown = () => {
   // 获取验证码二次封装
   const getPhoneCode = (phone: number | string, type: number): void => {
     getCode(phone, async () => {
-      const res = await _getPhoneCode({
+      const res = await getMobileSmscode({
         phone,
         type,
       });
