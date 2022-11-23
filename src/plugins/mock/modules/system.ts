@@ -8,7 +8,7 @@ export default {
    * 注册
    */
   signup: {
-    url: '/admin/user/signup',
+    url: '/system/user/signup',
     method: 'post',
     data: '',
   },
@@ -17,7 +17,7 @@ export default {
    * 账号密码登录
    */
   loginByAccount: {
-    url: '/admin/user/login',
+    url: '/system/user/login',
     method: 'post',
     data: AuthenticationEnum.VISITOR_TOKEN,
     response: <T>(data: IObject, res: ResponseData<T>) => {
@@ -40,7 +40,7 @@ export default {
    * 获取用户信息
    */
   getUserProfile: {
-    url: '/admin/user/profile',
+    url: '/system/user/profile',
     method: 'get',
     data: {
       id: '',
@@ -64,7 +64,7 @@ export default {
    * @description 校验用户名称是否存在
    */
   validateUsername: {
-    url: '/admin/user/validate',
+    url: '/system/user/validate',
     method: 'get',
     data: { validateResult: true },
     response: <T>(param: IObject, res: ResponseData<T>) => {
@@ -88,7 +88,7 @@ export default {
    * @description 获取权限路由
    */
   getRoleRoutes: {
-    url: '/admin/user/routes',
+    url: '/system/user/routes',
     method: 'get',
     data: [
       {
@@ -366,7 +366,7 @@ export default {
    * @description 获取用户权限
    */
   getUserRoles: {
-    url: '/admin/user/roles',
+    url: '/system/user/roles',
     method: 'get',
     data: [
       '/home/workbench',
@@ -391,7 +391,7 @@ export default {
    * 获取个人消息列表
    */
   getPersonalNotifications: {
-    url: '/admin/user/notifications',
+    url: '/system/user/notifications',
     method: 'get',
     data: [
       {
@@ -402,5 +402,52 @@ export default {
         status: 1,
       },
     ],
+  },
+
+  /**
+   * @name getDictAll
+   * @description 获取全部字典数据
+   */
+  getDictAll: {
+    url: '/system/dict/all',
+    method: 'get',
+    data: [
+      {
+        key: 'notificationType',
+        values: [
+          {
+            label: '个人消息',
+            value: 0,
+          },
+          {
+            label: '系统消息',
+            value: 1,
+          },
+        ],
+      },
+      {
+        key: 'roleType',
+        values: [
+          {
+            label: '系统角色',
+            value: 0,
+          },
+          {
+            label: '自定义角色',
+            value: 1,
+          },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * @name getDictPage
+   * @description 分页获取字典数据
+   */
+  getDictPage: {
+    url: '/system/dict/list',
+    method: 'get',
+    data: [],
   },
 };

@@ -1,7 +1,7 @@
 import type { IObject } from '@/global';
 import { StorageEnum } from '@/constants/enums';
 import { setStorage } from '@/utils/storage';
-import { getDictAll } from '@/apis/base';
+import { getDictAll } from '@/apis/system/dict';
 
 /**
  * @name useDict

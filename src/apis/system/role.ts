@@ -8,5 +8,5 @@ import { GET } from '@/utils/request';
 export const getRoleList = <T>(): Promise<
   any | ResponseData<T> | undefined
 > => {
-  return GET('/auth/role/all');
+  return GET('/system/role/all');
 };

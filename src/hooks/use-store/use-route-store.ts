@@ -9,7 +9,7 @@ import {
 } from '@/utils/router';
 import { autoImportViewComponents } from '@/utils/auto';
 import { router, routes } from '@/plugins/vue-router';
-import { getRoleRoutes as _getRoleRoutes } from '@/apis/user';
+import { getRoleRoutes as _getRoleRoutes } from '@/apis/system/user';
 import { _t } from '@/plugins/vue-i18n';
 
 /**

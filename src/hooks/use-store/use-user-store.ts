@@ -14,8 +14,8 @@ import {
   loginByAccount as _loginByAccount,
   getUserProfile as _getUserProfile,
   signup as _signup,
-} from '@/apis/user';
-import { getUserRoles as _getUserRoles } from '@/apis/user';
+} from '@/apis/system/user';
+import { getUserRoles as _getUserRoles } from '@/apis/system/user';
 
 /**
  * @name useUserStore

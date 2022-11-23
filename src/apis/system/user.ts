@@ -13,7 +13,7 @@ import { GET, POST } from '@/utils/request';
 export const loginByAccount = <T>(
   data: LoginAccountData
 ): Promise<any | ResponseData<T> | undefined> => {
-  return POST('/admin/user/login', data);
+  return POST('/system/user/login', data);
 };
 
 /**
@@ -23,7 +23,7 @@ export const loginByAccount = <T>(
 export const signup = <T>(
   data: SignupData
 ): Promise<any | ResponseData<T> | undefined> => {
-  return POST('/admin/user/signup');
+  return POST('/system/user/signup');
 };
 
 /**
@@ -33,7 +33,7 @@ export const signup = <T>(
 export const getUserProfile = <T>(): Promise<
   any | ResponseData<T> | undefined
 > => {
-  return GET('/admin/user/profile');
+  return GET('/system/user/profile');
 };
 
 /**
@@ -43,7 +43,7 @@ export const getUserProfile = <T>(): Promise<
 export const validateUsername = <T>(
   params: ValidateUsernameParams
 ): Promise<any | ResponseData<T> | undefined> => {
-  return GET('/admin/user/validate', params);
+  return GET('/system/user/validate', params);
 };
 
 /**
@@ -53,7 +53,7 @@ export const validateUsername = <T>(
 export const getRoleRoutes = <T>(): Promise<
   any | ResponseData<T> | undefined
 > => {
-  return GET('/admin/user/routes');
+  return GET('/system/user/routes');
 };
 
 /**
@@ -63,5 +63,5 @@ export const getRoleRoutes = <T>(): Promise<
 export const getUserRoles = <T>(): Promise<
   any | ResponseData<T> | undefined
 > => {
-  return GET('/admin/user/roles');
+  return GET('/system/user/roles');
 };
