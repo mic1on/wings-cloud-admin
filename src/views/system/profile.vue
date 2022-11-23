@@ -34,7 +34,7 @@ const { userStore } = useStore();
           :placeholder="t('crud.phone.phone')"
         ></el-input>
       </el-form-item>
-      <el-form-item :label="t('personal.profile.defaultRole')">
+      <el-form-item :label="t('system.profile.defaultRole')">
         <el-select v-model="userStore.userProfile.defaultRole">
           <el-option
             v-for="(item, index) in userStore.userProfile.roleList"

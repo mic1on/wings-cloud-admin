@@ -55,31 +55,31 @@ export const DefaultSettings: DefaultSettingsTypes = Object.assign(
  */
 export const PredefineToolbar = [
   {
-    label: 'system.settings.toolbarDark',
+    label: 'system.setting.toolbarDark',
     value: 'Dark',
   },
   {
-    label: 'system.settings.toolbarLanguage',
+    label: 'system.setting.toolbarLanguage',
     value: 'Language',
   },
   {
-    label: 'system.settings.toolbarRefresh',
+    label: 'system.setting.toolbarRefresh',
     value: 'Refresh',
   },
   {
-    label: 'system.settings.toolbarNotification',
+    label: 'system.setting.toolbarNotification',
     value: 'Notification',
   },
   {
-    label: 'system.settings.toolbarFullscreen',
+    label: 'system.setting.toolbarFullscreen',
     value: 'Fullscreen',
   },
   {
-    label: 'system.settings.toolbarSetting',
+    label: 'system.setting.toolbarSetting',
     value: 'Setting',
   },
   {
-    label: 'system.settings.toolbarAvatar',
+    label: 'system.setting.toolbarAvatar',
     value: 'Avatar',
   },
 ];
@@ -90,27 +90,27 @@ export const PredefineToolbar = [
  */
 export const PredefineLayouts = [
   {
-    label: 'system.settings.layoutTop',
+    label: 'system.setting.layoutTop',
     value: SettingsValueEnum.LAYOUT_TOP,
   },
   {
-    label: 'system.settings.layoutTopLean',
+    label: 'system.setting.layoutTopLean',
     value: SettingsValueEnum.LAYOUT_TOP_LEAN,
   },
   {
-    label: 'system.settings.layoutAside',
+    label: 'system.setting.layoutAside',
     value: SettingsValueEnum.LAYOUT_ASIDE,
   },
   {
-    label: 'system.settings.layoutAsideDark',
+    label: 'system.setting.layoutAsideDark',
     value: SettingsValueEnum.LAYOUT_ASIDE_DARK,
   },
   {
-    label: 'system.settings.layoutAsideLean',
+    label: 'system.setting.layoutAsideLean',
     value: SettingsValueEnum.LAYOUT_ASIDE_LEAN,
   },
   {
-    label: 'system.settings.layoutAsideLeanDark',
+    label: 'system.setting.layoutAsideLeanDark',
     value: SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK,
   },
 ];
@@ -121,19 +121,19 @@ export const PredefineLayouts = [
  */
 export const PredefineColorSchemes = [
   {
-    label: 'system.settings.colorSchemeAuto',
+    label: 'system.setting.colorSchemeAuto',
     value: SettingsValueEnum.COLOR_SCHEME_AUTO,
   },
   {
-    label: 'system.settings.colorSchemeTheme',
+    label: 'system.setting.colorSchemeTheme',
     value: SettingsValueEnum.COLOR_SCHEME_THEME,
   },
   {
-    label: 'system.settings.colorSchemeLight',
+    label: 'system.setting.colorSchemeLight',
     value: SettingsValueEnum.COLOR_SCHEME_LIGHT,
   },
   {
-    label: 'system.settings.colorSchemeDark',
+    label: 'system.setting.colorSchemeDark',
     value: SettingsValueEnum.COLOR_SCHEME_DARK,
   },
 ];
@@ -159,11 +159,11 @@ export const PredefineThemeColors = [
  */
 export const PredefineTabStyle = [
   {
-    label: 'system.settings.tabStyleSquare',
+    label: 'system.setting.tabStyleSquare',
     value: SettingsValueEnum.TAB_STYLE_SQUARE,
   },
   {
-    label: 'system.settings.tabStyleRound',
+    label: 'system.setting.tabStyleRound',
     value: SettingsValueEnum.TAB_STYLE_ROUND,
   },
 ];
@@ -174,11 +174,11 @@ export const PredefineTabStyle = [
  */
 export const PredefineMenuStyle = [
   {
-    label: 'system.settings.menuStyleSquare',
+    label: 'system.setting.menuStyleSquare',
     value: SettingsValueEnum.MENU_STYLE_SQUARE,
   },
   {
-    label: 'system.settings.menuStyleRound',
+    label: 'system.setting.menuStyleRound',
     value: SettingsValueEnum.MENU_STYLE_ROUND,
   },
 ];
@@ -189,15 +189,15 @@ export const PredefineMenuStyle = [
  */
 export const PredefineBreadcrumbPosition = [
   {
-    label: 'system.settings.breadcrumbViewTop',
+    label: 'system.setting.breadcrumbViewTop',
     value: SettingsValueEnum.BREADCRUMB_VIEW_TOP,
   },
   {
-    label: 'system.settings.breadcrumbLayoutHeader',
+    label: 'system.setting.breadcrumbLayoutHeader',
     value: SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER,
   },
   {
-    label: 'system.settings.breadcrumbHidden',
+    label: 'system.setting.breadcrumbHidden',
     value: SettingsValueEnum.BREADCRUMB_HIDDEN,
   },
 ];
@@ -208,11 +208,11 @@ export const PredefineBreadcrumbPosition = [
  */
 export const PredefineCopyrightPosition = [
   {
-    label: 'system.settings.copyrightBottom',
+    label: 'system.setting.copyrightBottom',
     value: SettingsValueEnum.COPYRIGHT_VIEW_BOTTOM,
   },
   {
-    label: 'system.settings.copyrightHidden',
+    label: 'system.setting.copyrightHidden',
     value: SettingsValueEnum.COPYRIGHT_HIDDEN,
   },
 ];

@@ -115,3 +115,17 @@ export const getLoginStorageType = (): string => {
     ? 'local'
     : 'session';
 };
+
+/**
+ * @name mergeValueByKey
+ * @description 合并对象中同 key 的 value
+ * @return to
+ */
+export const mergeValueByKey = (to: IObject, source: IObject): any => {
+  for (const key in source) {
+    if (!Object.getOwnPropertyDescriptor(to, key)) {
+      to[key] = source[key];
+    }
+  }
+  return to;
+};

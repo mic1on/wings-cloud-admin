@@ -27,7 +27,7 @@ const read = (row: IObject) => {
         <el-select
           clearable
           v-model="queryForm.type"
-          :placeholder="t('personal.notifications.notificationType')"
+          :placeholder="t('system.notification.notificationType')"
         >
           <el-option
             v-for="(item, index) in notificationDict"
@@ -40,7 +40,7 @@ const read = (row: IObject) => {
       <el-form-item>
         <el-input
           v-model="queryForm.content"
-          :placeholder="t('personal.notifications.notificationContent')"
+          :placeholder="t('system.notification.notificationContent')"
         />
       </el-form-item>
       <el-form-item>
@@ -56,32 +56,29 @@ const read = (row: IObject) => {
       <el-table-column type="index" width="50"></el-table-column>
       <el-table-column
         prop="type"
-        :label="t('personal.notifications.notificationType')"
+        :label="t('system.notification.notificationType')"
       ></el-table-column>
       <el-table-column
         prop="content"
-        :label="t('personal.notifications.notificationContent')"
+        :label="t('system.notification.notificationContent')"
       ></el-table-column>
       <el-table-column
         prop="source"
-        :label="t('personal.notifications.source')"
+        :label="t('system.notification.source')"
       ></el-table-column>
-      <el-table-column
-        prop="createTime"
-        :label="t('personal.notifications.time')"
-      >
+      <el-table-column prop="createTime" :label="t('system.notification.time')">
         <template #default="scope">
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss') }}
         </template>
       </el-table-column>
       <el-table-column
         prop="status"
-        :label="t('personal.notifications.isRead')"
+        :label="t('system.notification.isRead')"
       ></el-table-column>
       <el-table-column :label="t('crud.btn.action')">
         <template #default="scope">
           <el-button type="primary" bg text @click="read(scope.row)">
-            {{ t('personal.notifications.read') }}
+            {{ t('system.notification.read') }}
           </el-button>
         </template>
       </el-table-column>

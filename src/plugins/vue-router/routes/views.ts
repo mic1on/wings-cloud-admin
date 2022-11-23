@@ -2,6 +2,50 @@ import { IconTypeEnum } from '@/enums';
 
 export default [
   {
+    path: '/system/profile',
+    name: 'system.profile',
+    component: () => import('@/views/system/profile.vue'),
+    meta: {
+      layout: 'admin',
+      isMenu: false,
+      requiresAuth: false,
+      iconType: IconTypeEnum.ELEMENT_PLUS,
+      icon: 'Postcard',
+      sort: 0,
+      i18nKey: 'system.profile',
+    },
+  },
+  {
+    path: '/system/notification',
+    name: 'system.notification',
+    component: () => import('@/views/system/notification.vue'),
+    meta: {
+      layout: 'admin',
+      isMenu: false,
+      requiresAuth: false,
+      iconType: IconTypeEnum.ELEMENT_PLUS,
+      icon: 'ChatDotSquare',
+      sort: 1,
+      i18nKey: 'system.notification',
+    },
+  },
+
+  {
+    path: '/system/setting',
+    name: 'system.setting',
+    component: () => import('@/views/system/setting.vue'),
+    meta: {
+      layout: 'admin',
+      isMenu: false,
+      requiresAuth: false,
+      iconType: IconTypeEnum.ELEMENT_PLUS,
+      icon: 'Setting',
+      sort: 6,
+      isI18n: true,
+      i18nKey: 'system.setting',
+    },
+  },
+  {
     path: '/example',
     name: 'example',
     meta: {

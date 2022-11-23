@@ -16,7 +16,13 @@ queryForm.value = {
 </script>
 <template>
   <crud-card>
-    <el-form :inline="true" :model="queryForm" label-width="120px">
+    <crud-table-query
+      :inline="true"
+      :model="queryForm"
+      label-width="120px"
+      @query="query"
+      @reset="reset"
+    >
       <el-form-item>
         <el-select
           clearable
@@ -37,15 +43,7 @@ queryForm.value = {
           :placeholder="t('authority.role.roleName')"
         />
       </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="query">
-          {{ t('crud.btn.query') }}
-        </el-button>
-        <el-button @click="reset">
-          {{ t('crud.btn.reset') }}
-        </el-button>
-      </el-form-item>
-    </el-form>
+    </crud-table-query>
     <el-table :data="tableData">
       <el-table-column type="index" width="50"></el-table-column>
       <el-table-column

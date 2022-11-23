@@ -1,23 +1,59 @@
 {
   "menuName": "系统管理",
   "menuDescription": "",
-  "menus": {
+  "menu": {
     "menuName": "菜单管理",
     "menuDescription": ""
   },
-  "dicts": {
+  "role": {
+    "menuName": "角色管理",
+    "menuDescription": "",
+    "roleType": "角色类型",
+    "roleName": "角色名称",
+    "remark": "备注",
+    "createTime": "创建时间",
+    "list": {
+      "admin": "管理员",
+      "development": "开发人员"
+    }
+  },
+  "user": {
+    "menuName": "用户管理",
+    "menuDescription": "",
+    "avatar": "头像",
+    "nickname": "昵称",
+    "username": "用户名",
+    "mobile": "手机号"
+  },
+  "department": {
+    "menuName": "部门管理",
+    "menuDescription": ""
+  },
+  "dict": {
     "menuName": "字典管理",
     "menuDescription": ""
   },
-  "params": {
+  "param": {
     "menuName": "参数管理",
     "menuDescription": ""
   },
-  "files": {
+  "file": {
     "menuName": "文件管理",
     "menuDescription": ""
   },
-  "settings": {
+  "log": {
+    "menuName": "日志管理",
+    "menuDescription": "",
+    "login": {
+      "menuName": "登录日志",
+      "menuDescription": ""
+    },
+    "action": {
+      "menuName": "操作日志",
+      "menuDescription": ""
+    }
+  },
+  "setting": {
     "menuName": "系统设置",
     "menuDescription": "系统设置默认使用缓存处理更新，同时预留了接口调用，可以快速接入您的服务应用",
     "layout": "布局，包含了 6 种开箱即用的管理系统布局方式",
@@ -80,16 +116,23 @@
     "back": "重置",
     "backSuccess": "系统设置已恢复默认"
   },
-  "logs": {
-    "menuName": "日志管理",
-    "menuDescription": "",
-    "login": {
-      "menuName": "登录日志",
-      "menuDescription": ""
-    },
-    "action": {
-      "menuName": "操作日志",
-      "menuDescription": ""
-    }
+  "profile": {
+    "menuName": "个人资料",
+    "menuDescription": "您可以在此页面修改个人资料",
+    "defaultRole": "默认角色"
+  },
+  "notification": {
+    "menuName": "个人消息",
+    "menuDescription": "查看个人消息、通知列表",
+    "notificationContent": "消息内容",
+    "notificationContentText": "消息内容",
+    "notificationType": "消息类型",
+    "notificationTypeText": "消息类型",
+    "time": "通知时间",
+    "isRead": "是否已读",
+    "source": "消息来源",
+    "datetime": "时间",
+    "send": "发送时间",
+    "read": "已读"
   }
 }

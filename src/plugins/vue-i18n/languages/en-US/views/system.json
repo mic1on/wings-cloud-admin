@@ -1,23 +1,60 @@
 {
   "menuName": "System",
   "menuDescription": "",
-  "menus": {
+  "menu": {
     "menuName": "Menus",
     "menuDescription": ""
   },
-  "dicts": {
+  "role": {
+    "menuName": "Roles",
+    "menuDescription": "",
+    "roleType": "Role Types",
+    "roleName": "Role Name",
+    "remark": "Remark",
+    "createTime": "Create Time",
+    "list": {
+      "admin": "Administrator",
+      "development": "Development"
+    }
+  },
+  "user": {
+    "menuName": "User List",
+    "menuDescription": "",
+    "avatar": "Avatar",
+    "nickname": "Nickname",
+    "username": "Username",
+    "mobile": "Mobile Phone",
+    "list": {}
+  },
+  "department": {
+    "menuName": "Department",
+    "menuDescription": ""
+  },
+  "dict": {
     "menuName": "Dictionary",
     "menuDescription": ""
   },
-  "params": {
+  "param": {
     "menuName": "Parameter",
     "menuDescription": ""
   },
-  "files": {
+  "file": {
     "menuName": "File Manager",
     "menuDescription": ""
   },
-  "settings": {
+  "log": {
+    "menuName": "Logs",
+    "menuDescription": "",
+    "login": {
+      "menuName": "Login Logs",
+      "menuDescription": ""
+    },
+    "action": {
+      "menuName": "Action Logs",
+      "menuDescription": ""
+    }
+  },
+  "setting": {
     "menuName": "Settings",
     "menuDescription": "By default, the system uses cache to handle updates, and reserves interface calls for fast access to your service applications",
     "layout": "Layout, including six out-of-the-box  system layout",
@@ -80,16 +117,23 @@
     "back": "Reset",
     "backSuccess": "System Settings have been restored to default Settings"
   },
-  "logs": {
-    "menuName": "Logs",
-    "menuDescription": "",
-    "login": {
-      "menuName": "Login Logs",
-      "menuDescription": ""
-    },
-    "action": {
-      "menuName": "Action Logs",
-      "menuDescription": ""
-    }
+  "profile": {
+    "menuName": "Personal Profile",
+    "menuDescription": "You can update your personal information on this page",
+    "defaultRole": "Default Role"
+  },
+  "notification": {
+    "menuName": "Notifications",
+    "menuDescription": "View the personal message and notification list",
+    "notificationContent": "The notification content",
+    "notificationContentText": "notification content",
+    "notificationType": "The notification type",
+    "notificationTypeText": "notification type",
+    "time": "The notification time",
+    "isRead": "Have read",
+    "source": "The notification source",
+    "datetime": "Date Time",
+    "send": "Send Time",
+    "read": "Read"
   }
 }

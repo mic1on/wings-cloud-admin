@@ -41,17 +41,17 @@ const actionChange = (command: string): void => {
           <el-icon><CollectionTag /></el-icon>
           <span>{{ t('app.toolbar.avatar.switchRoles') }}</span>
         </el-dropdown-item>
-        <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_PROFILE">
+        <el-dropdown-item :command="RouteEnum.ROUTE_SYSTEM_PROFILE">
           <el-icon><User /></el-icon>
-          <span>{{ t('personal.profile.menuName') }}</span>
+          <span>{{ t('system.profile.menuName') }}</span>
         </el-dropdown-item>
-        <el-dropdown-item :command="RouteEnum.ROUTE_PERSONAL_NOTIFICATIONS">
+        <el-dropdown-item :command="RouteEnum.ROUTE_SYSTEM_NOTIFICATION">
           <el-icon><ChatLineRound /></el-icon>
-          <span>{{ t('personal.notifications.menuName') }}</span>
+          <span>{{ t('system.notification.menuName') }}</span>
         </el-dropdown-item>
         <el-dropdown-item :command="RouteEnum.ROUTE_SYSTEM_SETTINGS">
           <el-icon><Setting /></el-icon>
-          <span>{{ t('system.settings.menuName') }}</span>
+          <span>{{ t('system.setting.menuName') }}</span>
         </el-dropdown-item>
         <el-dropdown-item command="signout">
           <el-icon><SwitchButton /></el-icon>

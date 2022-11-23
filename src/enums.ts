@@ -10,9 +10,9 @@ export enum RouteEnum {
   ROUTE_SIGNIN = '/signin',
   ROUTE_SIGNUP = '/signup',
   ROUTE_PASSWORD_FORGET = '/password/forget',
-  ROUTE_PERSONAL_PROFILE = '/personal/profile',
-  ROUTE_PERSONAL_NOTIFICATIONS = '/personal/notifications',
-  ROUTE_SYSTEM_SETTINGS = '/system/settings',
+  ROUTE_SYSTEM_PROFILE = '/system/profile',
+  ROUTE_SYSTEM_NOTIFICATION = '/system/notification',
+  ROUTE_SYSTEM_SETTINGS = '/system/setting',
 }
 
 /**

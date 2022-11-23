@@ -16,7 +16,7 @@ const props = defineProps({
 });
 
 const goPersonalNotification = () => {
-  router.push(RouteEnum.ROUTE_PERSONAL_NOTIFICATIONS);
+  router.push(RouteEnum.ROUTE_SYSTEM_NOTIFICATION);
 };
 </script>
 

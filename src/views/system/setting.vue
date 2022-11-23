@@ -18,9 +18,9 @@ import { SettingsValueEnum } from '@/enums';
 import { useStore } from '@/hooks/use-store';
 import { useLanguage } from '@/hooks/use-language';
 import { ElMessage } from 'element-plus';
-import SettingColorScheme from './components/settings-color-scheme.vue';
-import SettingThemeColor from './components/settings-theme-color.vue';
-import SettingLayout from './components/settings-layout.vue';
+import SettingColorScheme from './components/setting-color-scheme.vue';
+import SettingThemeColor from './components/setting-theme-color.vue';
+import SettingLayout from './components/setting-layout.vue';
 
 const { t } = useI18n();
 
@@ -53,7 +53,7 @@ const { languages } = useLanguage();
 
 const updateSettings = () => {
   baseStore.updateSettings(baseStore.settings);
-  ElMessage.success(t('system.settings.updateSuccess'));
+  ElMessage.success(t('system.setting.updateSuccess'));
 };
 
 const { copy } = useClipboard({
@@ -62,18 +62,18 @@ const { copy } = useClipboard({
 
 const copySettings = () => {
   copy();
-  ElMessage.success(t('system.settings.copySuccess'));
+  ElMessage.success(t('system.setting.copySuccess'));
 };
 
 const backSettings = () => {
   baseStore.updateSettings(DefaultSettings);
-  ElMessage.success(t('system.settings.backSuccess'));
+  ElMessage.success(t('system.setting.backSuccess'));
 };
 </script>
 <template>
   <crud-card action>
     <div text-4 m-b-4>
-      {{ t('system.settings.layout') }}
+      {{ t('system.setting.layout') }}
     </div>
     <div flex items-center flex-wrap m-b-2>
       <div v-for="(item, index) in PredefineLayouts" :key="index">
@@ -93,7 +93,7 @@ const backSettings = () => {
       </div>
     </div>
     <div text-4 m-b-4>
-      {{ t('system.settings.colorScheme') }}
+      {{ t('system.setting.colorScheme') }}
     </div>
     <div flex items-center flex-wrap m-b-2>
       <div v-for="(item, index) in PredefineColorSchemes" :key="index">
@@ -113,13 +113,13 @@ const backSettings = () => {
       </div>
     </div>
     <div text-4 m-b-4>
-      {{ t('system.settings.themeColor') }}
+      {{ t('system.setting.themeColor') }}
     </div>
     <div flex items-center flex-wrap m-b-6>
       <setting-theme-color @change="changeThemeColor"></setting-theme-color>
     </div>
     <div text-4 m-b-4>
-      {{ t('system.settings.toolbar') }}
+      {{ t('system.setting.toolbar') }}
     </div>
     <div flex items-center flex-wrap m-b-6>
       <el-check-tag
@@ -134,7 +134,7 @@ const backSettings = () => {
       </el-check-tag>
     </div>
     <div text-4 m-b-4>
-      {{ t('system.settings.component') }}
+      {{ t('system.setting.component') }}
     </div>
     <el-form
       :style="{ width: '100%' }"
@@ -142,26 +142,26 @@ const backSettings = () => {
       label-position="left"
       m-b-6
     >
-      <el-form-item :label="t('system.settings.componentSize')">
+      <el-form-item :label="t('system.setting.componentSize')">
         <el-select
           style="width: 260px"
           v-model="baseStore.settings.ElementPlus.size"
         >
           <el-option
-            :label="t('system.settings.componentLarge')"
+            :label="t('system.setting.componentLarge')"
             value="large"
           />
           <el-option
-            :label="t('system.settings.componentDefault')"
+            :label="t('system.setting.componentDefault')"
             value="default"
           />
           <el-option
-            :label="t('system.settings.componentSmall')"
+            :label="t('system.setting.componentSmall')"
             value="small"
           />
         </el-select>
       </el-form-item>
-      <el-form-item :label="t('system.settings.menuStyle')">
+      <el-form-item :label="t('system.setting.menuStyle')">
         <el-select style="width: 260px" v-model="baseStore.settings.MenuStyle">
           <el-option
             v-for="(item, index) in PredefineMenuStyle"
@@ -171,13 +171,13 @@ const backSettings = () => {
           />
         </el-select>
       </el-form-item>
-      <el-form-item :label="t('system.settings.uniqueOpened')">
+      <el-form-item :label="t('system.setting.uniqueOpened')">
         <el-switch v-model="baseStore.settings.UniqueOpened" />
       </el-form-item>
-      <el-form-item :label="t('system.settings.tab')">
+      <el-form-item :label="t('system.setting.tab')">
         <el-switch v-model="baseStore.settings.Tab" />
       </el-form-item>
-      <el-form-item :label="t('system.settings.tabStyle')">
+      <el-form-item :label="t('system.setting.tabStyle')">
         <el-select style="width: 260px" v-model="baseStore.settings.TabStyle">
           <el-option
             v-for="(item, index) in PredefineTabStyle"
@@ -187,7 +187,7 @@ const backSettings = () => {
           />
         </el-select>
       </el-form-item>
-      <el-form-item :label="t('system.settings.breadcrumb')">
+      <el-form-item :label="t('system.setting.breadcrumb')">
         <el-select style="width: 260px" v-model="baseStore.settings.Breadcrumb">
           <el-option
             v-for="(item, index) in PredefineBreadcrumbPosition"
@@ -207,7 +207,7 @@ const backSettings = () => {
           />
         </el-select>
       </el-form-item>
-      <el-form-item :label="t('system.settings.copyright')">
+      <el-form-item :label="t('system.setting.copyright')">
         <el-select style="width: 260px" v-model="baseStore.settings.Copyright">
           <el-option
             v-for="(item, index) in PredefineCopyrightPosition"
@@ -222,8 +222,8 @@ const backSettings = () => {
       <el-alert
         show-icon
         :closable="false"
-        :title="t('system.settings.other')"
-        :description="t('system.settings.otherDescription')"
+        :title="t('system.setting.other')"
+        :description="t('system.setting.otherDescription')"
         type="warning"
       />
     </div>
@@ -233,7 +233,7 @@ const backSettings = () => {
       label-position="left"
       m-b-6
     >
-      <el-form-item :label="t('system.settings.language')">
+      <el-form-item :label="t('system.setting.language')">
         <el-select style="width: 260px" v-model="baseStore.settings.Language">
           <el-option
             v-for="(value, key) in languages"
@@ -243,13 +243,13 @@ const backSettings = () => {
           />
         </el-select>
       </el-form-item>
-      <el-form-item :label="t('system.settings.firstRoute')">
+      <el-form-item :label="t('system.setting.firstRoute')">
         <el-input
           style="width: 260px"
           v-model="baseStore.settings.FirstRoute"
         ></el-input>
       </el-form-item>
-      <el-form-item :label="t('system.settings.adminFirstRoute')">
+      <el-form-item :label="t('system.setting.adminFirstRoute')">
         <el-input
           style="width: 260px"
           v-model="baseStore.settings.AdminFirstRoute"
@@ -261,10 +261,10 @@ const backSettings = () => {
         {{ t('crud.btn.update') }}
       </el-button>
       <el-button @click="copySettings">
-        {{ t('system.settings.copy') }}
+        {{ t('system.setting.copy') }}
       </el-button>
       <el-button @click="backSettings">
-        {{ t('system.settings.back') }}
+        {{ t('system.setting.back') }}
       </el-button>
     </template>
   </crud-card>
