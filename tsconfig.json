@@ -21,6 +21,6 @@
     "experimentalDisableTemplateSupport": true
   },
   "typeRoots": ["node_modules/@types/", "src/types/"],
-  "include": ["src/**/*.ts", "src/types/**/*.d.ts", "src/**/*.d.ts", "src/**/*.vue", "*.ts"],
+  "include": ["src/**/*.ts", "src/types/**/*.d.ts", "src/**/*.d.ts", "src/**/*.vue", "service/**/*.ts", "*.ts"],
   "exclude": ["node_modules", "dist"]
 }

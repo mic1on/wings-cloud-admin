@@ -32,7 +32,7 @@ const read = (row: IObject) => {
           <el-option
             v-for="(item, index) in notificationDict"
             :key="index"
-            :label="t(item.label)"
+            :label="item.label"
             :value="item.value"
           ></el-option>
         </el-select>

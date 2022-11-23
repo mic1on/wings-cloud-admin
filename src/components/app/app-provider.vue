@@ -58,10 +58,10 @@ watch(
   () => {
     if (systemStore.browserTitle) {
       document.title = `${systemStore.browserTitle} - ${
-        import.meta.env.APP_TITLE || t('app.name')
+        t('app.name') || import.meta.env.APP_NAME
       }`;
     } else {
-      document.title = import.meta.env.APP_TITLE || t('app.name');
+      document.title = t('app.name') || import.meta.env.APP_NAME;
     }
   },
   {
