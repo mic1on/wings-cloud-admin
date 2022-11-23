@@ -70,7 +70,7 @@ export default ({ mode }: ConfigEnv) => {
           }),
         ],
         dirs: ['src/components'],
-        dts: 'src/auto-imports.d.ts',
+        dts: 'src/types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,
           filepath: '.eslintrc-auto-import.json',
@@ -85,7 +85,7 @@ export default ({ mode }: ConfigEnv) => {
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.tsx$/, /\.jsx$/],
         dirs: ['src/components'],
-        dts: 'src/components.d.ts',
+        dts: 'src/types/components.d.ts',
         types: [
           {
             from: 'vue-router',

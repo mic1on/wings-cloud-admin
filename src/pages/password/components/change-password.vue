@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
 import type { PasswordForm } from '@/pages/index.d';
-import type { IObject } from '@/global.d';
+import type { IObject } from '@/types/global.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { PASSWORD_NORMAL } from '@/utils/reg-exp';
 

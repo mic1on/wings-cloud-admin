@@ -1,6 +1,6 @@
 import type { Routes } from '@/plugins/vue-router/index.d';
 import type { I18nT } from '@/plugins/vue-i18n/index.d';
-import type { IObject, ViewComponents } from '@/global.d';
+import type { IObject, ViewComponents } from '@/types/global.d';
 import type { RouteRecordRaw } from 'vue-router';
 import { useCloned } from '@vueuse/core';
 

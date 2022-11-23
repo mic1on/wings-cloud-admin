@@ -1,5 +1,5 @@
 import type { Routes } from '@/plugins/vue-router/index.d';
-import type { ViewComponents } from '@/global.d';
+import type { ViewComponents } from '@/types/global.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
 import {

@@ -2,7 +2,7 @@
 import type {
   SystemSettingsLayout,
   SystemSettingsColorScheme,
-} from '@/global.d';
+} from '@/types/global.d';
 import { useClipboard } from '@vueuse/core';
 import {
   SettingsDefault,

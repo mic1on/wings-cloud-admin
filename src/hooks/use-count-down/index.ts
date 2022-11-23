@@ -1,4 +1,4 @@
-import type { Callback } from '@/global.d';
+import type { Callback } from '@/types/global.d';
 import type { Form } from './index.d';
 import { ElMessage } from 'element-plus';
 import { getMobileSmscode } from '@/apis/base';

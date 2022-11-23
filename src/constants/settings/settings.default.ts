@@ -1,4 +1,4 @@
-import type { SystemSettings } from '@/global.d';
+import type { SystemSettings } from '@/types/global.d';
 import { SettingsValueEnum, LanguageEnum, RouteEnum } from '@/constants/enums';
 
 /**

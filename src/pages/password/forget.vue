@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { IObject } from '@/global.d';
+import type { IObject } from '@/types/global.d';
 import { useStore } from '@/hooks/use-store';
 import SignTemplate from '../components/sign-template.vue';
 import VerifyMobilePhone from './components/verify-mobile-phone.vue';

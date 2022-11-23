@@ -4,7 +4,7 @@ import type { Mocks } from '@/plugins/mock/index.d';
 import type { Stores } from '@/plugins/pinia/index.d';
 import type { Routes } from '@/plugins/vue-router/index.d';
 import type { Languages } from '@/plugins/vue-i18n/index.d';
-import type { ViewComponents } from '@/global.d';
+import type { ViewComponents } from '@/types/global.d';
 import { RouteEnum } from '@/constants/enums';
 import { FILE_NAME } from '@/utils/reg-exp';
 

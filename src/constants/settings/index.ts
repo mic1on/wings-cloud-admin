@@ -1,4 +1,4 @@
-import type { SystemSettings } from '@/global.d';
+import type { SystemSettings } from '@/types/global.d';
 import { SettingsDefault } from './settings.default';
 import { SettingsReplace } from './settings.replace';
 export * from './predefine';

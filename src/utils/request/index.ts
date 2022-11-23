@@ -1,6 +1,6 @@
 import type { Axios, AxiosResponse } from 'axios';
 import type { RequestOptions, ResponseData } from './index.d';
-import type { IObject } from '@/global.d';
+import type { IObject } from '@/types/global.d';
 import axios from 'axios';
 import qs from 'qs';
 import { ElNotification } from 'element-plus';

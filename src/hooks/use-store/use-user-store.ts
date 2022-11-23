@@ -1,4 +1,4 @@
-import type { IObject } from '@/global.d';
+import type { IObject } from '@/types/global.d';
 import type { ResponseData } from '@/utils/request/index.d';
 import type { LoginAccountData, SignupData } from '@/apis/user.d';
 import { defineStore } from 'pinia';

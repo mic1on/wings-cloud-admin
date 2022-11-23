@@ -20,7 +20,7 @@
   "vueCompilerOptions": {
     "experimentalDisableTemplateSupport": true
   },
-  "typeRoots": ["node_modules/@types/", "src/"],
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "*.ts"],
+  "typeRoots": ["node_modules/@types/", "src/types/"],
+  "include": ["src/**/*.ts", "src/types/**/*.d.ts", "src/**/*.d.ts", "src/**/*.vue", "*.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,4 +1,4 @@
-import type { IObject } from '../../global.d';
+import type { IObject } from '@/types/global.d';
 import type { Options, QueryOptions, Pagination } from './index.d';
 import { mergeValueByKey } from '@/utils/common';
 
