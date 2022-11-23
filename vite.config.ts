@@ -85,7 +85,7 @@ export default ({ mode }: ConfigEnv) => {
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.tsx$/, /\.jsx$/],
         dirs: ['src/components'],
-        dts: 'src/components/index.d.ts',
+        dts: 'src/components.d.ts',
         types: [
           {
             from: 'vue-router',
