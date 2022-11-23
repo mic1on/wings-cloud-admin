@@ -1,5 +1,6 @@
 node_modules
 dist
+dist.*
 __unconfig_vite.config.ts
 .DS_Store
 *.log

@@ -1,42 +1,23 @@
 import { defineConfig, loadEnv, ConfigEnv } from 'vite';
 import { resolve } from 'path';
-import Vue from '@vitejs/plugin-vue';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import IconsResolver from 'unplugin-icons/resolver';
-import Components from 'unplugin-vue-components/vite';
-import AutoImport from 'unplugin-auto-import/vite';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import { createHtmlPlugin } from 'vite-plugin-html';
-import ViteCompression from 'vite-plugin-compression';
-import TsconfigPaths from 'vite-tsconfig-paths';
-import EslintPlugin from 'vite-plugin-eslint';
-import Unocss from 'unocss/vite';
-import {
-  presetAttributify,
-  presetIcons,
-  presetUno,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss';
-
+import { serviceProxy } from './service/proxy';
+import { usePluginOption } from './service/plugins';
 /**
  * @name viteConfig
  * @description vite 开发及构建模式配置
+ * @return defineConfig
  */
 export default ({ mode }: ConfigEnv) => {
+  const ENV: Record<string, string> = loadEnv(mode, './service/env/', [
+    'VITE_',
+    'APP_',
+  ]);
   return defineConfig({
-    envDir: './',
+    base: ENV.VITE_BASE_URL,
+    envDir: './service/env/',
     envPrefix: 'APP_',
     define: {
-      'process.env': loadEnv(mode, process.cwd(), ''),
-    },
-    base: loadEnv(mode, process.cwd()).VITE_BASE_URL as unknown as string,
-    server: {
-      host: '0.0.0.0',
-      open: true,
-      port: 8001,
-      https: false,
-      proxy: {},
+      'process.env': ENV,
     },
     resolve: {
       alias: {
@@ -52,73 +33,25 @@ export default ({ mode }: ConfigEnv) => {
         },
       },
     },
-    plugins: [
-      Vue(),
-      EslintPlugin(),
-      createHtmlPlugin(),
-      TsconfigPaths(),
-      createSvgIconsPlugin({
-        iconDirs: [resolve(__dirname, 'src/assets/svgs')],
-        symbolId: 'icon-[dir]-[name]',
-      }),
-      AutoImport({
-        imports: ['vue', 'vue-router', 'vue-i18n'],
-        resolvers: [
-          ElementPlusResolver(),
-          IconsResolver({
-            prefix: 'Icon',
-          }),
-        ],
-        dirs: ['src/components'],
-        dts: 'src/types/auto-imports.d.ts',
-        eslintrc: {
-          enabled: true,
-          filepath: '.eslintrc-auto-import.json',
-          globalsPropValue: true,
-        },
-      }),
-      Components({
-        resolvers: [
-          ElementPlusResolver({
-            importStyle: 'sass',
-          }),
-        ],
-        include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.tsx$/, /\.jsx$/],
-        dirs: ['src/components'],
-        dts: 'src/types/components.d.ts',
-        types: [
-          {
-            from: 'vue-router',
-            names: ['RouterLink', 'RouterView'],
-          },
-        ],
-      }),
-      ViteCompression({
-        verbose: true,
-        disable: JSON.parse(
-          !loadEnv(mode, process.cwd()).VITE_G_ZIP as unknown as string
-        ),
-        threshold: 10240,
-        algorithm: 'gzip',
-        ext: '.gz',
-      }),
-      Unocss({
-        presets: [
-          presetUno(),
-          presetAttributify(),
-          presetIcons({
-            scale: 1.2,
-            warn: true,
-          }),
-        ],
-        transformers: [transformerDirectives(), transformerVariantGroup()],
-      }),
-    ],
+    server: {
+      host: ENV.VITE_SERVER_HOST,
+      open: ENV.VITE_SERVER_OPEN === 'true',
+      port: Number(ENV.VITE_SERVER_PORT),
+      https: ENV.VITE_SERVER_HTTPS === 'true',
+      proxy: serviceProxy(ENV),
+    },
+    preview: {
+      host: ENV.VITE_SERVER_HOST,
+      open: ENV.VITE_SERVER_OPEN === 'true',
+      port: Number(ENV.VITE_SERVER_PORT),
+      https: ENV.VITE_SERVER_HTTPS === 'true',
+      proxy: serviceProxy(ENV),
+    },
     build: {
       target: 'modules',
       minify: 'esbuild',
-      outDir: loadEnv(mode, process.cwd()).VITE_DIST_PATH as unknown as string,
-      chunkSizeWarningLimit: 1024 * 10,
+      outDir: ENV.VITE_DIST_PATH,
+      chunkSizeWarningLimit: Number(ENV.VITE_BUILD_SIZE_WARNING),
       rollupOptions: {
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
@@ -132,5 +65,6 @@ export default ({ mode }: ConfigEnv) => {
         },
       },
     },
+    plugins: usePluginOption(ENV),
   });
 };
