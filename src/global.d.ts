@@ -7,7 +7,7 @@ interface ViewComponents {
 
 type Callback = (data?: any) => void;
 
-type DefaultSettingsLayout =
+type SystemSettingsLayout =
   | 'top'
   | 'top-lean'
   | 'aside'
@@ -15,11 +15,11 @@ type DefaultSettingsLayout =
   | 'aside-lean'
   | 'aside-lean-dark';
 
-type DefaultSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
+type SystemSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
 
-type DefaultSettingsTabStyle = 'square' | 'round';
+type SystemSettingsTabStyle = 'square' | 'round';
 
-type DefaultSettingsMenuStyle = 'square' | 'round';
+type SystemSettingsMenuStyle = 'square' | 'round';
 
 interface IObject<T = any> {
   [key: string]: T;
@@ -29,12 +29,12 @@ interface IFunction<T = any> {
   (x?: any): T;
 }
 
-interface DefaultSettingsTypes {
-  Layout: DefaultSettingsLayout;
+interface SystemSettings {
+  Layout: SystemSettingsLayout;
   ThemeColor: string;
-  ColorScheme: DefaultSettingsColorScheme;
-  TabStyle: DefaultSettingsTabStyle;
-  MenuStyle: DefaultSettingsMenuStyle;
+  ColorScheme: SystemSettingsColorScheme;
+  TabStyle: SettingsTabStyle;
+  MenuStyle: SettingsMenuStyle;
   Toolbar: IObject<boolean>;
   Footer: boolean;
   Tab: boolean;
@@ -45,6 +45,8 @@ interface DefaultSettingsTypes {
   Language: string;
   FirstRoute: string;
   AdminFirstRoute: string;
+  NetworkTimeout: number;
+  KeepAlive: boolean;
 }
 
 declare module 'vue-router' {

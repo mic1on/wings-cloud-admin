@@ -1,11 +1,11 @@
 import Index from '@/pages/index.vue';
-import { DefaultSettings } from '@/settings';
+import { Settings } from '@/settings';
 
 export default [
   {
     path: '/',
     component: Index,
-    redirect: DefaultSettings.FirstRoute,
+    redirect: Settings.FirstRoute,
     meta: { layout: '' },
   },
   {

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { DefaultSettings } from '@/settings';
+import { Settings } from '@/settings';
 
 const { t } = useI18n();
 
 const router = useRouter();
 
 const goHome = () => {
-  router.replace({ path: DefaultSettings.AdminFirstRoute });
+  router.replace({ path: Settings.AdminFirstRoute });
 };
 </script>
 

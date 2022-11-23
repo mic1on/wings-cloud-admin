@@ -1,6 +1,6 @@
 import type { Axios, AxiosResponse } from 'axios';
 import type { RequestOptions, ResponseData } from './index.d';
-import type { IObject } from '../../global.d';
+import type { IObject } from '@/global.d';
 import axios from 'axios';
 import qs from 'qs';
 import { ElNotification } from 'element-plus';
@@ -10,8 +10,9 @@ import {
   apiCodeAdaptor,
   authCodeAdaptor,
 } from '../code-adaptor';
-import { RequestHeaderEnum, StorageEnum } from '../../enums';
-import { _t } from '../../plugins/vue-i18n';
+import { RequestHeaderEnum, StorageEnum } from '@/enums';
+import { Settings } from '@/settings';
+import { _t } from '@/plugins/vue-i18n';
 
 /**
  * @name request
@@ -31,7 +32,7 @@ export const request = <T>(
         baseURL: options.baseURL || import.meta.env.APP_REQUEST_URL,
         url: options.url,
         method: options.method,
-        timeout: options.timeout || import.meta.env.APP_REQUEST_TIMEOUT,
+        timeout: options.timeout || Settings.NetworkTimeout,
         headers: {
           'Content-Type': RequestHeaderEnum.CONTENT_TYPE_JSON,
           ...options.headers,

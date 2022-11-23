@@ -1,7 +1,7 @@
 <script lang="ts" setup name="layout-admin-tab">
 import type { IObject } from '@/global.d';
 import { useStore } from '@/hooks/use-store';
-import { DefaultSettings } from '@/settings';
+import { Settings } from '@/settings';
 import { arrayRecursion } from '@/utils/common';
 
 const { t } = useI18n();
@@ -76,7 +76,7 @@ onBeforeMount(() => {
   tab.homeTab = arrayRecursion(
     'path',
     routeStore.adminMenuRoutes,
-    DefaultSettings.AdminFirstRoute
+    Settings.AdminFirstRoute
   );
   const { isFind, path } = findTab(route.path);
   if (isFind) {

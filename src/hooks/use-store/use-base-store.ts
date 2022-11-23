@@ -1,8 +1,8 @@
-import type { IObject, DefaultSettingsTypes } from '@/global';
+import type { IObject, SystemSettings } from '@/global';
 import { defineStore } from 'pinia';
 import { SettingsValueEnum, StorageEnum } from '@/enums';
 import { getStorage, setStorage } from '@/utils/storage';
-import { DefaultSettings, PredefineColorSchemes } from '@/settings';
+import { Settings } from '@/settings';
 
 /**
  * @name useBaseStore
@@ -16,8 +16,8 @@ export const useBaseStore = defineStore('base', () => {
   const collapse = ref<boolean>(false);
 
   // 系统设置
-  const settings = ref<DefaultSettingsTypes>(
-    getStorage(StorageEnum.SETTINGS) || DefaultSettings
+  const settings = ref<SystemSettings>(
+    getStorage(StorageEnum.SETTINGS) || Settings
   );
 
   // 当前配色方案
@@ -28,7 +28,7 @@ export const useBaseStore = defineStore('base', () => {
 
   // 当前语言环境
   const language = ref<string>(
-    getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language
+    getStorage(StorageEnum.LANGUAGE) || Settings.Language
   );
 
   // 是否处于移动端
@@ -55,7 +55,7 @@ export const useBaseStore = defineStore('base', () => {
   };
 
   // 修改系统设置
-  const updateSettings = (data: DefaultSettingsTypes): void => {
+  const updateSettings = (data: SystemSettings): void => {
     settings.value = data;
     setStorage(StorageEnum.SETTINGS, data);
   };

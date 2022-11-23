@@ -1,5 +1,5 @@
 <script setup lang="ts" name="app">
-const keepAlive = import.meta.env.APP_KEEP_ALIVE;
+import { Settings } from '@/settings';
 </script>
 
 <template>
@@ -9,7 +9,7 @@ const keepAlive = import.meta.env.APP_KEEP_ALIVE;
         <div id="app">
           <transition name="app-page" mode="out-in" appear>
             <Suspense>
-              <keep-alive v-if="keepAlive">
+              <keep-alive v-if="Settings.KeepAlive">
                 <component :is="Component" :key="route.fullPath" />
               </keep-alive>
               <component :is="Component" v-else />

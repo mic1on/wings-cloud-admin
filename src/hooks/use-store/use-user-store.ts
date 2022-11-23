@@ -3,7 +3,7 @@ import type { ResponseData } from '../../utils/request/index.d';
 import type { LoginAccountData, SignupData } from '../../apis/user.d';
 import { defineStore } from 'pinia';
 import { ElNotification } from 'element-plus';
-import { DefaultSettings } from '../../settings';
+import { Settings } from '../../settings';
 import { useRouteStore } from './use-route-store';
 import { getStorage, setStorage } from '../../utils/storage';
 import { getLoginStorageType } from '../../utils/common';
@@ -118,7 +118,7 @@ export const useUserStore = defineStore('user', () => {
       type: 'success',
     });
     router.replace({
-      path: DefaultSettings.AdminFirstRoute,
+      path: Settings.AdminFirstRoute,
     });
   };
 

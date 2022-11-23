@@ -1,6 +1,6 @@
 <script lang="ts" setup name="app-provider">
 import { SettingsValueEnum } from '@/enums';
-import { DefaultSettings } from '@/settings';
+import { Settings } from '@/settings';
 import { setEpThemeColor } from '@/utils/theme';
 import { getMobileAreaCodes, getAndSaveDicts } from '@/hooks/use-common-data';
 import { useStore } from '@/hooks/use-store';
@@ -12,7 +12,7 @@ const { baseStore } = useStore();
 const { t, messages } = useI18n();
 
 const locale =
-  messages.value[baseStore.language][DefaultSettings.ElementPlus.language];
+  messages.value[baseStore.language][Settings.ElementPlus.language];
 
 // 监听默认配色方案变化
 watch(
@@ -57,10 +57,10 @@ watch(
   () => {
     if (baseStore.browserTitle) {
       document.title = `${baseStore.browserTitle} - ${
-        import.meta.env.APP_TITLE
+        import.meta.env.APP_TITLE || t('app.name')
       }`;
     } else {
-      document.title = import.meta.env.APP_TITLE;
+      document.title = import.meta.env.APP_TITLE || t('app.name');
     }
   },
   {

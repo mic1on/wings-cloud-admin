@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type {
-  DefaultSettingsLayout,
-  DefaultSettingsColorScheme,
+  SystemSettingsLayout,
+  SystemSettingsColorScheme,
 } from '@/global.d';
 import { useClipboard } from '@vueuse/core';
 import {
@@ -26,7 +26,7 @@ const { t } = useI18n();
 
 const { baseStore } = useStore();
 
-const changeLayout = (val: DefaultSettingsLayout) => {
+const changeLayout = (val: SystemSettingsLayout) => {
   if (
     baseStore.settings.Breadcrumb ===
       SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER &&
@@ -37,7 +37,7 @@ const changeLayout = (val: DefaultSettingsLayout) => {
   baseStore.settings.Layout = val;
 };
 
-const changeColorScheme = (val: DefaultSettingsColorScheme): void => {
+const changeColorScheme = (val: SystemSettingsColorScheme): void => {
   baseStore.settings.ColorScheme = val;
 };
 
@@ -87,7 +87,7 @@ const backSettings = () => {
             :mode="item.value"
             :name="item.label"
             :active="baseStore.settings.Layout === item.value"
-            @click="changeLayout(item.value as DefaultSettingsLayout)"
+            @click="changeLayout(item.value as SystemSettingsLayout)"
           ></setting-layout>
         </el-tooltip>
       </div>
@@ -107,7 +107,7 @@ const backSettings = () => {
             :mode="item.value"
             :name="item.label"
             :active="baseStore.settings.ColorScheme === item.value"
-            @click="changeColorScheme(item.value as DefaultSettingsColorScheme)"
+            @click="changeColorScheme(item.value as SystemSettingsColorScheme)"
           ></setting-color-scheme>
         </el-tooltip>
       </div>
@@ -254,6 +254,20 @@ const backSettings = () => {
           style="width: 260px"
           v-model="baseStore.settings.AdminFirstRoute"
         ></el-input>
+      </el-form-item>
+      <el-form-item :label="t('system.setting.requestTimeout')">
+        <el-input-number
+          :step="1"
+          :min="1000"
+          style="width: 132px"
+          v-model="baseStore.settings.NetworkTimeout"
+        ></el-input-number>
+        <span style="width: 100px; margin-left: 20px">
+          {{ t('system.setting.requestTimeoutUnit') }}
+        </span>
+      </el-form-item>
+      <el-form-item :label="t('system.setting.keepAlive')">
+        <el-switch v-model="baseStore.settings.KeepAlive" />
       </el-form-item>
     </el-form>
     <template #action>

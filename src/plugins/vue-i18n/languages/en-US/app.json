@@ -14,7 +14,7 @@
     "notifications": {
       "notifications": "Notifications",
       "readAll": "All Read",
-      "empty": "No notifications",
+      "empty": "No notification",
       "more": "More",
       "clear": "Empty"
     }

@@ -10,8 +10,6 @@ interface ImportMetaEnv {
   readonly APP_TITLE: string;
   readonly APP_REQUEST_URL: string;
   readonly APP_SOCKET_URL: string;
-  readonly APP_REQUEST_TIMEOUT: number;
-  readonly APP_KEEP_ALIVE: boolean;
 }
 
 interface ImportMeta {
