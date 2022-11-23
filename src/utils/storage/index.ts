@@ -1,6 +1,6 @@
 import type { AppStorageOptions } from './index.d';
-import { isNullOrUndefined } from '../common';
-import { StorageEnum } from '../../enums';
+import { isNullOrUndefined } from '@/utils/common';
+import { StorageEnum } from '@/constants/enums';
 
 /**
  * @name storageType

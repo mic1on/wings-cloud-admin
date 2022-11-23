@@ -2,14 +2,13 @@ import type { I18n, I18nOptions } from 'vue-i18n';
 import type { App } from 'vue';
 import type { I18nT } from './index.d';
 import { createI18n } from 'vue-i18n';
-import { pluginAddRegister } from '../../utils/auto';
-import { getStorage } from '../../utils/storage';
-import { StorageEnum } from '../../enums';
 import { messages, languages } from './messages';
-import { DefaultSettings } from '../../settings';
+import { Settings } from '@/constants/settings';
+import { getStorage } from '@/utils/storage';
+import { pluginAddRegister } from '@/utils/auto';
+import { StorageEnum } from '@/constants/enums';
 
-const language: any =
-  getStorage(StorageEnum.LANGUAGE) || DefaultSettings.Language;
+const language: any = getStorage(StorageEnum.LANGUAGE) || Settings.Language;
 document
   .getElementsByTagName('html')[0]
   .setAttribute('lang', language as string);
@@ -17,7 +16,7 @@ document
 const i18n: I18n = createI18n({
   legacy: false,
   locale: language,
-  fallbackLocale: DefaultSettings.Language,
+  fallbackLocale: Settings.Language,
   globalInjection: true,
   useScope: 'global',
   messages,

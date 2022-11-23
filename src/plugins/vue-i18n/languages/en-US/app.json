@@ -1,7 +1,7 @@
 {
   "name": "Wings Cloud Admin",
   "subName": "# The middle and background permission management system",
-  "description": "The middle and background permission management system based on Vuejs + Element Plus provides a general solution and multi-topic and multi-end adaptation for the international scene",
+  "description": "Middle and background permission management system, based on Vuejs + Element Plus construction, support internationalization, multi-theme multi-layout, responsive interface",
   "copyright": "Copyright © 2022-PRESENT Kaivan Wong",
   "loading": "The resource is loading. Please wait...",
   "building": "Building...",
@@ -14,7 +14,7 @@
     "notifications": {
       "notifications": "Notifications",
       "readAll": "All Read",
-      "empty": "No notifications",
+      "empty": "No notification",
       "more": "More",
       "clear": "Empty"
     }

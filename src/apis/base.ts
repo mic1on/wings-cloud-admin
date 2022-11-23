@@ -13,24 +13,6 @@ export const getMobileSmscode = <T>(
 };
 
 /**
- * @name getDictAll
- * @description 获取全部字典数据
- */
-export const getDictAll = <T>(): Promise<any | ResponseData<T> | undefined> => {
-  return GET('/base/dict/all');
-};
-
-/**
- * @name getDictPage
- * @description 分页获取字典数据
- */
-export const getDictPage = <T>(): Promise<
-  any | ResponseData<T> | undefined
-> => {
-  return GET('/base/dict/list');
-};
-
-/**
  * @name getMobileCodes
  * @description 获取手机区号列表
  */

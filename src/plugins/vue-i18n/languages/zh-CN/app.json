@@ -1,7 +1,7 @@
 {
   "name": "Wings Cloud Admin",
   "subName": "# 中后台权限管理系统",
-  "description": "基于 Vuejs + Element Plus 的中后台权限管理系统，面向国际化场景提供通用解决方案及多主题多端适配",
+  "description": "中后台权限管理系统，基于 Vuejs + Element Plus 构建，支持国际化、多主题多布局、响应式界面",
   "copyright": "Copyright © 2022-PRESENT Kaivan Wong",
   "loading": "资源加载中，请稍后...",
   "building": "建设中...",

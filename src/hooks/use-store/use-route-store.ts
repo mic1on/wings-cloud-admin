@@ -1,23 +1,29 @@
 import type { Routes } from '@/plugins/vue-router/index.d';
-import type { ViewComponents } from '@/global.d';
+import type { ViewComponents } from '@/types/global.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
+import { autoImportViewComponents } from '@/utils/auto';
 import {
   mergeRoleRoutes,
   mergeAdminMenuRoutes,
   routerInject,
 } from '@/utils/router';
-import { autoImportViewComponents } from '@/utils/auto';
-import { router, routes } from '@/plugins/vue-router';
-import { getRoleRoutes as _getRoleRoutes } from '@/apis/user';
 import { _t } from '@/plugins/vue-i18n';
+import { router, routes } from '@/plugins/vue-router';
+import { getRoleRoutes as _getRoleRoutes } from '@/apis/system/user';
 
 /**
  * @name useRouteStore
  * @description 路由状态钩子函数
+ * @return adminMenuRoutes
+ * @return roleRoutes
+ * @return setAdminMenuRoutes
+ * @return setRolesRoutes
+ * @return getRoleRoutes
  */
 export const useRouteStore = defineStore('route', () => {
   const roleRoutes = ref<Routes>([]);
+
   const adminMenuRoutes = ref<Routes>([]);
 
   const setRolesRoutes = (data: Routes): void => {

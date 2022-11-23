@@ -1,12 +1,12 @@
 import type { App, FunctionalComponent, Plugin } from 'vue';
 import type { Files } from './index.d';
-import type { Mocks } from '../../plugins/mock/index.d';
-import type { Stores } from '../../plugins/pinia/index.d';
-import type { Routes } from '../../plugins/vue-router/index.d';
-import type { Languages } from '../../plugins/vue-i18n/index.d';
-import type { ViewComponents, IObject } from '../../global.d';
-import { RouteEnum } from '../../enums';
-import { FILE_NAME } from '../reg-exp';
+import type { Mocks } from '@/plugins/mock/index.d';
+import type { Stores } from '@/plugins/pinia/index.d';
+import type { Routes } from '@/plugins/vue-router/index.d';
+import type { Languages } from '@/plugins/vue-i18n/index.d';
+import type { ViewComponents } from '@/types/global.d';
+import { RouteEnum } from '@/constants/enums';
+import { FILE_NAME } from '@/utils/reg-exp';
 
 /**
  * @name autoImportRoutes

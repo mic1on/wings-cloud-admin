@@ -1,0 +1,68 @@
+import type { Component } from 'vue';
+import { SettingsValueEnum } from '@/constants/enums';
+
+interface ViewComponents {
+  [Key: string]: Component;
+}
+
+type Callback = (data?: any) => void;
+
+type SystemSettingsLayout =
+  | 'top'
+  | 'top-lean'
+  | 'aside'
+  | 'aside-dark'
+  | 'aside-lean'
+  | 'aside-lean-dark';
+
+type SystemSettingsColorScheme = 'auto' | 'theme' | 'light' | 'dark' | '';
+
+type SystemSettingsTabStyle = 'square' | 'round';
+
+type SystemSettingsMenuStyle = 'square' | 'round';
+
+interface IObject<T = any> {
+  [key: string]: T;
+}
+
+interface IFunction<T = any> {
+  (x?: any): T;
+}
+
+interface SystemSettings {
+  Layout: SystemSettingsLayout;
+  ThemeColor: string;
+  ColorScheme: SystemSettingsColorScheme;
+  TabStyle: SettingsTabStyle;
+  MenuStyle: SettingsMenuStyle;
+  Toolbar: IObject<boolean>;
+  Footer: boolean;
+  Tab: boolean;
+  UniqueOpened: boolean;
+  Breadcrumb: string;
+  Copyright: string;
+  ElementPlus: IObject;
+  Language: string;
+  FirstRoute: string;
+  AdminFirstRoute: string;
+  NetworkTimeout: number;
+  KeepAlive: boolean;
+}
+
+declare module 'vue-router' {
+  interface RouteMeta {
+    component?: string | Component;
+    isI18n?: boolean;
+    i18nKey?: string;
+    layout?: string | null;
+    isMenu: boolean;
+    requiresAuth?: boolean;
+    iconType?: string;
+    icon?: string;
+    menuName?: string;
+    sort?: number | string;
+    externalPage?: boolean;
+    externalPageUrl?: string;
+    breadcrumb?: Array[IObject];
+  }
+}

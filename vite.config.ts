@@ -25,17 +25,12 @@ import {
  */
 export default ({ mode }: ConfigEnv) => {
   return defineConfig({
-    // 环境变量存放目录
     envDir: './',
-    // 环境变量前缀
     envPrefix: 'APP_',
-    // 非 VITE_ 环境变量映射，同时使用 process.env 获取所有系统环境变量
     define: {
       'process.env': loadEnv(mode, process.cwd(), ''),
     },
-    // 根目录
     base: loadEnv(mode, process.cwd()).VITE_BASE_URL as unknown as string,
-    // Vite 服务配置及 proxy 代理
     server: {
       host: '0.0.0.0',
       open: true,
@@ -43,7 +38,6 @@ export default ({ mode }: ConfigEnv) => {
       https: false,
       proxy: {},
     },
-    // 解析别名
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
@@ -51,7 +45,6 @@ export default ({ mode }: ConfigEnv) => {
       },
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     },
-    // 全局 css 变量配置
     css: {
       preprocessorOptions: {
         scss: {
@@ -59,22 +52,15 @@ export default ({ mode }: ConfigEnv) => {
         },
       },
     },
-    // 插件配置
     plugins: [
-      // 提供 vue3 单文件组件支持
       Vue(),
-      // Vite 运行提供 Eslint 支持
       EslintPlugin(),
-      // 提供了 index.html 访问环境变量的能力
       createHtmlPlugin(),
-      // ts.config 路径配置
       TsconfigPaths(),
-      // 使用自定义的 Svg 图标
       createSvgIconsPlugin({
         iconDirs: [resolve(__dirname, 'src/assets/svgs')],
         symbolId: 'icon-[dir]-[name]',
       }),
-      // 按需自动导入 Api 配置
       AutoImport({
         imports: ['vue', 'vue-router', 'vue-i18n'],
         resolvers: [
@@ -84,14 +70,13 @@ export default ({ mode }: ConfigEnv) => {
           }),
         ],
         dirs: ['src/components'],
-        dts: 'src/auto-imports.d.ts',
+        dts: 'src/types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,
           filepath: '.eslintrc-auto-import.json',
           globalsPropValue: true,
         },
       }),
-      // 按需自动引入组件配置
       Components({
         resolvers: [
           ElementPlusResolver({
@@ -100,7 +85,7 @@ export default ({ mode }: ConfigEnv) => {
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.tsx$/, /\.jsx$/],
         dirs: ['src/components'],
-        dts: 'src/components/index.d.ts',
+        dts: 'src/types/components.d.ts',
         types: [
           {
             from: 'vue-router',
@@ -108,7 +93,6 @@ export default ({ mode }: ConfigEnv) => {
           },
         ],
       }),
-      // G-zip 配置
       ViteCompression({
         verbose: true,
         disable: JSON.parse(
@@ -118,7 +102,6 @@ export default ({ mode }: ConfigEnv) => {
         algorithm: 'gzip',
         ext: '.gz',
       }),
-      // Unocss 配置
       Unocss({
         presets: [
           presetUno(),
@@ -131,29 +114,19 @@ export default ({ mode }: ConfigEnv) => {
         transformers: [transformerDirectives(), transformerVariantGroup()],
       }),
     ],
-    // Vite 打包配置
     build: {
       target: 'modules',
-      // 打包模式默认使用 ESbuild，其性能高于 Terser
       minify: 'esbuild',
-      // 打包输出目录
       outDir: loadEnv(mode, process.cwd()).VITE_DIST_PATH as unknown as string,
-      // 指定触发警告的代码体积大小(单位：kb)
       chunkSizeWarningLimit: 1024 * 10,
-      // 自定义 Rollup 配置
       rollupOptions: {
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
           assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
           manualChunks(id) {
-            // 解决 Elements Plus 样式引用问题
             if (id.includes('element-plus/theme-chalk/')) {
               return 'element-plus';
-            }
-            // 将 Pinia 的全局实例打包到 Vendor.js 中，以避免在与页面打包时重新引入资源
-            if (id.includes(resolve(__dirname, 'src/store/index.ts'))) {
-              return 'vendor';
             }
           },
         },

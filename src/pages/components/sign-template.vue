@@ -1,13 +1,13 @@
 <script lang="ts" setup name="sign-template">
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 
 const { t } = useI18n();
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 </script>
 <template>
   <div>
-    <div w-screen h-screen overflow-hidden v-if="baseStore.isMobile">
+    <div w-screen h-screen overflow-hidden v-if="systemStore.isMobile">
       <div w-full h-full box-border p-6 flex flex-wrap content-between>
         <div w-full flex items-center justify-between>
           <layout-toolbar-language></layout-toolbar-language>
@@ -38,7 +38,7 @@ const { baseStore } = useStore();
         style="background-color: var(--el-color-primary)"
       >
         <div>
-          <div mb-14 text-7 font-600 flex items-center>
+          <div mb-14 text-7 font-600 flex flex-wrap items-center>
             <img mr-4 w-9 h-9 src="@/assets/logo-white.svg" />
             <span>{{ t('app.name') }}</span>
           </div>

@@ -1,7 +1,7 @@
-import type { IObject, IFunction } from '../../global.d';
-import type { Reg } from '../reg-exp/index.d';
-import { getStorage } from '../storage';
-import { StorageEnum } from '../../enums';
+import type { IObject, IFunction } from '@/types/global.d';
+import type { Reg } from '@/utils/reg-exp/index.d';
+import { getStorage } from '@/utils/storage';
+import { StorageEnum } from '@/constants/enums';
 
 /**
  * @name isNullOrUndefined
@@ -114,4 +114,18 @@ export const getLoginStorageType = (): string => {
   return getStorage(StorageEnum.STAY_LOGIN, { type: 'local' }) === true
     ? 'local'
     : 'session';
+};
+
+/**
+ * @name mergeValueByKey
+ * @description 合并对象中同 key 的 value
+ * @return to
+ */
+export const mergeValueByKey = (to: IObject, source: IObject): any => {
+  for (const key in source) {
+    if (!Object.getOwnPropertyDescriptor(to, key)) {
+      to[key] = source[key];
+    }
+  }
+  return to;
 };

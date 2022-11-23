@@ -2,14 +2,14 @@
 import SignTemplate from './components/sign-template.vue';
 import SignupForm from './components/signup-form.vue';
 import TermsConditions from './components/terms-conditions.vue';
-import { useStore } from '@/hooks/use-store';
-import { RouteEnum } from '@/enums';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+import { RouteEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 
 const router = useRouter();
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const goSignin = (): void => {
   router.replace({ path: RouteEnum.ROUTE_SIGNIN });
@@ -50,7 +50,7 @@ const goSignin = (): void => {
       <div w-full>
         <terms-conditions :label="t('signup.btn')"></terms-conditions>
         <div
-          v-if="baseStore.isMobile"
+          v-if="systemStore.isMobile"
           text-center
           text-2
           style="color: var(--el-color-info-light-3)"

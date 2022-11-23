@@ -1,5 +1,5 @@
-import type { Callback, IObject } from '../../global.d';
-import type { I18nT } from '../../plugins/vue-i18n/index.d';
+import type { Callback, IObject } from '@/types/global.d';
+import type { I18nT } from '@/plugins/vue-i18n/index.d';
 
 /**
  * @name networkCodeAdaptor

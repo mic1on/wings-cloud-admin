@@ -869,53 +869,6 @@ export default {
   },
 
   /**
-   * @name getDictAll
-   * @description 获取全部字典数据
-   */
-  getDictAll: {
-    url: '/base/dict/all',
-    method: 'get',
-    data: [
-      {
-        key: 'notificationType',
-        values: [
-          {
-            label: '个人消息',
-            value: 0,
-          },
-          {
-            label: '系统消息',
-            value: 1,
-          },
-        ],
-      },
-      {
-        key: 'roleType',
-        values: [
-          {
-            label: '系统角色',
-            value: 0,
-          },
-          {
-            label: '自定义角色',
-            value: 1,
-          },
-        ],
-      },
-    ],
-  },
-
-  /**
-   * @name getDictPage
-   * @description 分页获取字典数据
-   */
-  getDictPage: {
-    url: '/base/dict/list',
-    method: 'get',
-    data: [],
-  },
-
-  /**
    * @name getServiceInfo
    * @description 获取服务协议内容
    */
