@@ -1,21 +1,21 @@
-import type { IObject } from '../../global.d';
-import type { ResponseData } from '../../utils/request/index.d';
-import type { LoginAccountData, SignupData } from '../../apis/user.d';
+import type { IObject } from '@/global.d';
+import type { ResponseData } from '@/utils/request/index.d';
+import type { LoginAccountData, SignupData } from '@/apis/user.d';
 import { defineStore } from 'pinia';
 import { ElNotification } from 'element-plus';
-import { Settings } from '../../settings';
+import { Settings } from '@/constants/settings';
 import { useRouteStore } from './use-route-store';
-import { getStorage, setStorage } from '../../utils/storage';
-import { getLoginStorageType } from '../../utils/common';
-import { StorageEnum, RouteEnum } from '../../enums';
-import { router } from '../../plugins/vue-router';
-import { _t } from '../../plugins/vue-i18n';
+import { getStorage, setStorage } from '@/utils/storage';
+import { getLoginStorageType } from '@/utils/common';
+import { StorageEnum, RouteEnum } from '@/constants/enums';
+import { router } from '@/plugins/vue-router';
+import { _t } from '@/plugins/vue-i18n';
 import {
   loginByAccount as _loginByAccount,
   getUserProfile as _getUserProfile,
   signup as _signup,
-} from '../../apis/user';
-import { getUserRoles as _getUserRoles } from '../../apis/user';
+} from '@/apis/user';
+import { getUserRoles as _getUserRoles } from '@/apis/user';
 
 /**
  * @name useUserStore

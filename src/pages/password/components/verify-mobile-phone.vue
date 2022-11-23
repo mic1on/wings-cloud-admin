@@ -2,7 +2,7 @@
 import type { FormRules, FormInstance } from 'element-plus';
 import type { PhoneForm } from '@/pages/index.d';
 import type { IObject } from '@/global.d';
-import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
+import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
 import { useCountDown } from '@/hooks/use-count-down';
 import { MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';

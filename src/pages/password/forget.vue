@@ -5,7 +5,7 @@ import SignTemplate from '../components/sign-template.vue';
 import VerifyMobilePhone from './components/verify-mobile-phone.vue';
 import ChangePassword from './components/change-password.vue';
 import { ElMessage } from 'element-plus';
-import { RouteEnum } from '@/enums';
+import { RouteEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 

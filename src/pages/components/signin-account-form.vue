@@ -5,7 +5,7 @@ import type { LoginAccountForm } from '..';
 import type { ResponseData } from '@/utils/request/index.d';
 import { useStore } from '@/hooks/use-store';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
-import { RouteEnum } from '@/enums';
+import { RouteEnum } from '@/constants/enums';
 import { validateUsername as _validateUsername } from '@/apis/user';
 
 const { userStore } = useStore();

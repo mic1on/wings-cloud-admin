@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-admin-breadcrumb">
 import { useStore } from '@/hooks/use-store';
-import { SettingsValueEnum } from '@/enums';
+import { SettingsValueEnum } from '@/constants/enums';
 
 const { baseStore } = useStore();
 

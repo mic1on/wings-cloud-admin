@@ -1,5 +1,5 @@
 import type { Component } from 'vue';
-import { SettingsValueEnum } from './enums';
+import { SettingsValueEnum } from '@/constants/enums';
 
 interface ViewComponents {
   [Key: string]: Component;

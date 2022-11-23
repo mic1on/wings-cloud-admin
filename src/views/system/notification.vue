@@ -1,5 +1,5 @@
 <script lang="ts" setup name="my-notifications">
-import { StorageEnum } from '@/enums';
+import { StorageEnum } from '@/constants/enums';
 import { useDateFormat } from '@vueuse/core';
 import { getStorage } from '@/utils/storage';
 import { useCrud } from '@/hooks/use-crud';

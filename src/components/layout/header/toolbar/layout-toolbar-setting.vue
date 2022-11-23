@@ -1,5 +1,5 @@
 <script lang="ts" setup name="layout-action-setting">
-import { RouteEnum } from '@/enums';
+import { RouteEnum } from '@/constants/enums';
 
 const props = defineProps({
   color: {

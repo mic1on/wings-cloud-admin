@@ -3,7 +3,7 @@ import SignTemplate from './components/sign-template.vue';
 import SignupForm from './components/signup-form.vue';
 import TermsConditions from './components/terms-conditions.vue';
 import { useStore } from '@/hooks/use-store';
-import { RouteEnum } from '@/enums';
+import { RouteEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 

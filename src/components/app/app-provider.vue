@@ -1,9 +1,9 @@
 <script lang="ts" setup name="app-provider">
-import { SettingsValueEnum } from '@/enums';
-import { Settings } from '@/settings';
+import { Settings } from '@/constants/settings';
+import { SettingsValueEnum } from '@/constants/enums';
 import { setEpThemeColor } from '@/utils/theme';
-import { getMobileAreaCodes, getAndSaveDicts } from '@/hooks/use-common-data';
 import { useStore } from '@/hooks/use-store';
+import { getMobileAreaCodes, getAndSaveDicts } from '@/hooks/use-common-data';
 
 const route = useRoute();
 

@@ -10,8 +10,8 @@ import {
   apiCodeAdaptor,
   authCodeAdaptor,
 } from '../code-adaptor';
-import { RequestHeaderEnum, StorageEnum } from '@/enums';
-import { Settings } from '@/settings';
+import { RequestHeaderEnum, StorageEnum } from '@/constants/enums';
+import { Settings } from '@/constants/settings';
 import { _t } from '@/plugins/vue-i18n';
 
 /**

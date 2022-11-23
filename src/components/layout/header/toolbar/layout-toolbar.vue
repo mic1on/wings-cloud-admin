@@ -1,5 +1,5 @@
 <script lang="ts" setup name="layout-toolbar">
-import { SettingsValueEnum } from '@/enums';
+import { SettingsValueEnum } from '@/constants/enums';
 import { useStore } from '@/hooks/use-store';
 
 const props = defineProps({

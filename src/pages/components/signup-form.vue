@@ -2,7 +2,7 @@
 import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '../index.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import { StorageEnum, PhoneCodeTypeEnum } from '@/enums';
+import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
 import { useStore } from '@/hooks/use-store';
 import { useCountDown } from '@/hooks/use-count-down';
 import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';

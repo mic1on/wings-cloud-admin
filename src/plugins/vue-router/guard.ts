@@ -3,13 +3,13 @@ import type {
   RouteLocationNormalized,
   NavigationGuardNext,
 } from 'vue-router';
-import type { Roles } from '../../hooks/use-store/index.d';
-import { RouteEnum, StorageEnum } from '../../enums';
-import { useBaseStore } from '../../hooks/use-store/use-base-store';
-import { useRouteStore } from '../../hooks/use-store/use-route-store';
-import { useUserStore } from '../../hooks/use-store/use-user-store';
-import { getStorage } from '../../utils/storage';
-import { getLoginStorageType } from '../../utils/common';
+import type { Roles } from '@/hooks/use-store/index.d';
+import { RouteEnum, StorageEnum } from '@/constants/enums';
+import { useBaseStore } from '@/hooks/use-store/use-base-store';
+import { useRouteStore } from '@/hooks/use-store/use-route-store';
+import { useUserStore } from '@/hooks/use-store/use-user-store';
+import { getStorage } from '@/utils/storage';
+import { getLoginStorageType } from '@/utils/common';
 
 import { useNProgress } from '@vueuse/integrations/useNProgress';
 import '@/assets/styles/nprogress.scss';

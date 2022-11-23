@@ -1,5 +1,5 @@
 <script lang="ts" setup name="layout-action-avatar">
-import { RouteEnum } from '@/enums';
+import { RouteEnum } from '@/constants/enums';
 import { useStore } from '@/hooks/use-store';
 import { UserFilled } from '@element-plus/icons-vue';
 

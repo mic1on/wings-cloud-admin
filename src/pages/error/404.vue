@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Settings } from '@/settings';
+import { Settings } from '@/constants/settings';
 
 const { t } = useI18n();
 

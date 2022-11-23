@@ -109,7 +109,7 @@
     "keepAlive": "Open Keep Alive",
     "updateSuccess": "The system Settings are modified successfully",
     "copy": "Copy",
-    "copySuccess": "Copy succeeded, please paste it into the src/settings.ts file!",
+    "copySuccess": "Copy succeeded, please paste it into the src/constant/settings/settings.replace.ts file!",
     "back": "Reset",
     "backSuccess": "System Settings have been restored to default Settings"
   },

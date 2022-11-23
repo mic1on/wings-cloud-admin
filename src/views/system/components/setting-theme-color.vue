@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useStore } from '@/hooks/use-store';
-import { PredefineThemeColors } from '@/settings';
+import { PredefineThemeColors } from '@/constants/settings';
 
 const { t } = useI18n();
 

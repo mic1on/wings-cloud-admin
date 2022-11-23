@@ -1,5 +1,5 @@
 import Index from '@/pages/index.vue';
-import { Settings } from '@/settings';
+import { Settings } from '@/constants/settings';
 
 export default [
   {

@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-admin-header">
 import { useStore } from '@/hooks/use-store';
-import { SettingsValueEnum } from '@/enums';
+import { SettingsValueEnum } from '@/constants/enums';
 
 const { baseStore } = useStore();
 </script>

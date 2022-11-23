@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-admin-menu-item">
 import type { RouteRecordRaw } from 'vue-router';
-import { IconTypeEnum } from '@/enums';
+import { IconTypeEnum } from '@/constants/enums';
 import { useStore } from '@/hooks/use-store';
 
 const props = defineProps({

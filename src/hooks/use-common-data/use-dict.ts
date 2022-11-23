@@ -1,5 +1,5 @@
 import type { IObject } from '@/global';
-import { StorageEnum } from '@/enums';
+import { StorageEnum } from '@/constants/enums';
 import { setStorage } from '@/utils/storage';
 import { getDictAll } from '@/apis/base';
 
@@ -9,7 +9,6 @@ import { getDictAll } from '@/apis/base';
  */
 
 export const useDict = () => {
-  // 获取并且保存字典数据
   const getAndSaveDicts = async () => {
     const { data } = await getDictAll();
     let dicts = {};

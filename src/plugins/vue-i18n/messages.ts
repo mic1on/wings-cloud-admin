@@ -1,9 +1,9 @@
 import type { Languages, Messages } from './index.d';
 import zhCN from 'element-plus/dist/locale/zh-cn.mjs';
 import enUS from 'element-plus/dist/locale/en.mjs';
-import { Settings } from '../../settings';
-import { LanguageEnum } from '../../enums';
-import { autoImportLanguages } from '../../utils/auto';
+import { Settings } from '@/constants/settings';
+import { LanguageEnum } from '@/constants/enums';
+import { autoImportLanguages } from '@/utils/auto';
 
 const languages: Languages = autoImportLanguages(
   import.meta.glob('./languages/**/*.json', {

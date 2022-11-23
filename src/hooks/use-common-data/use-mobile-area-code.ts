@@ -1,4 +1,4 @@
-import { StorageEnum } from '@/enums';
+import { StorageEnum } from '@/constants/enums';
 import { setStorage } from '@/utils/storage';
 import { getMobileCodes } from '@/apis/base';
 

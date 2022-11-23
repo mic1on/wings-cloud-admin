@@ -1,7 +1,7 @@
 <script lang="ts" setup name="layout-admin-logo">
-import { Settings } from '@/settings';
+import { Settings } from '@/constants/settings';
 import { useStore } from '@/hooks/use-store';
-import { SettingsValueEnum } from '@/enums';
+import { SettingsValueEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 

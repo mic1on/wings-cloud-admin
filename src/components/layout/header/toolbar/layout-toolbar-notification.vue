@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-action-notification">
 import { useStore } from '@/hooks/use-store';
-import { RouteEnum } from '@/enums';
+import { RouteEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 

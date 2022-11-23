@@ -1,8 +1,8 @@
 import type { IObject, SystemSettings } from '@/global';
 import { defineStore } from 'pinia';
-import { SettingsValueEnum, StorageEnum } from '@/enums';
+import { SettingsValueEnum, StorageEnum } from '@/constants/enums';
 import { getStorage, setStorage } from '@/utils/storage';
-import { Settings } from '@/settings';
+import { Settings } from '@/constants/settings';
 
 /**
  * @name useBaseStore

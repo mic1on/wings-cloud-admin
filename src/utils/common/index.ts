@@ -1,7 +1,7 @@
-import type { IObject, IFunction } from '../../global.d';
-import type { Reg } from '../reg-exp/index.d';
-import { getStorage } from '../storage';
-import { StorageEnum } from '../../enums';
+import type { IObject, IFunction } from '@/global.d';
+import type { Reg } from '@/utils/reg-exp/index.d';
+import { getStorage } from '@/utils/storage';
+import { StorageEnum } from '@/constants/enums';
 
 /**
  * @name isNullOrUndefined

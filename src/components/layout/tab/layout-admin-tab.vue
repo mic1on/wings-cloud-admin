@@ -1,7 +1,7 @@
 <script lang="ts" setup name="layout-admin-tab">
 import type { IObject } from '@/global.d';
 import { useStore } from '@/hooks/use-store';
-import { Settings } from '@/settings';
+import { Settings } from '@/constants/settings';
 import { arrayRecursion } from '@/utils/common';
 
 const { t } = useI18n();

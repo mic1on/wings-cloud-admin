@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { RouteEnum } from '@/enums';
+import { RouteEnum } from '@/constants/enums';
 import { useStore } from '@/hooks/use-store';
 import SignTemplate from './components/sign-template.vue';
 import SigninAccountForm from './components/signin-account-form.vue';

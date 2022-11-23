@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-admin-menu">
 import { useStore } from '@/hooks/use-store';
-import { SettingsValueEnum } from '@/enums';
+import { SettingsValueEnum } from '@/constants/enums';
 
 const route = useRoute();
 

@@ -5,7 +5,7 @@ import type {
 } from '@/global.d';
 import { useClipboard } from '@vueuse/core';
 import {
-  DefaultSettings,
+  SettingsDefault,
   PredefineColorSchemes,
   PredefineLayouts,
   PredefineToolbar,
@@ -13,8 +13,8 @@ import {
   PredefineMenuStyle,
   PredefineCopyrightPosition,
   PredefineBreadcrumbPosition,
-} from '@/settings';
-import { SettingsValueEnum } from '@/enums';
+} from '@/constants/settings';
+import { SettingsValueEnum } from '@/constants/enums';
 import { useStore } from '@/hooks/use-store';
 import { useLanguage } from '@/hooks/use-language';
 import { ElMessage } from 'element-plus';
@@ -66,7 +66,7 @@ const copySettings = () => {
 };
 
 const backSettings = () => {
-  baseStore.updateSettings(DefaultSettings);
+  baseStore.updateSettings(SettingsDefault);
   ElMessage.success(t('system.setting.backSuccess'));
 };
 </script>
