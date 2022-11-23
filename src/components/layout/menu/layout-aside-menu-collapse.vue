@@ -1,11 +1,11 @@
 <script lang="ts" setup name="layout-action-collapse">
 import { DArrowLeft, DArrowRight } from '@element-plus/icons-vue';
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const changeCollapse = (): void => {
-  baseStore.collapse = !baseStore.collapse;
+  systemStore.collapse = !systemStore.collapse;
 };
 </script>
 
@@ -18,13 +18,13 @@ const changeCollapse = (): void => {
     style="height: var(--wings-collapse-height)"
     @click="changeCollapse()"
     :class="[
-      baseStore.colorScheme,
-      baseStore.settings.Layout,
+      systemStore.colorScheme,
+      systemStore.settings.Layout,
       'layout-aside-menu-collapse',
     ]"
   >
     <el-button
-      v-if="baseStore.collapse"
+      v-if="systemStore.collapse"
       bg
       text
       circle

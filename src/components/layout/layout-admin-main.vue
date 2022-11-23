@@ -1,23 +1,23 @@
 <script lang="ts" setup name="layout-admin-main">
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const height = computed(() => {
   let _height = '100vh';
   if (
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN ||
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN ||
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK
   ) {
     _height =
       'calc(100vh - var(--wings-header-height) - var(--wings-tab-height))';
   } else {
     _height = 'calc(100vh - var(--wings-tab-height))';
   }
-  if (!baseStore.settings.Tab) {
+  if (!systemStore.settings.Tab) {
     _height = `calc(${_height} + var(--wings-tab-height))`;
   }
   return 'height: ' + _height;
@@ -45,7 +45,7 @@ const height = computed(() => {
     >
       <layout-admin-breadcrumb
         v-if="
-          baseStore.settings.Breadcrumb ===
+          systemStore.settings.Breadcrumb ===
           SettingsValueEnum.BREADCRUMB_VIEW_TOP
         "
       ></layout-admin-breadcrumb>
@@ -54,7 +54,7 @@ const height = computed(() => {
       </div>
       <layout-admin-copyright
         v-if="
-          baseStore.settings.Copyright ===
+          systemStore.settings.Copyright ===
           SettingsValueEnum.COPYRIGHT_VIEW_BOTTOM
         "
       >

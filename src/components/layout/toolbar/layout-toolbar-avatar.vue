@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-action-avatar">
 import { RouteEnum } from '@/constants/enums';
-import { useStore } from '@/hooks/use-store';
+import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { UserFilled } from '@element-plus/icons-vue';
 
 const props = defineProps({
@@ -14,7 +14,7 @@ const { t } = useI18n();
 
 const router = useRouter();
 
-const { userStore } = useStore();
+const userStore = useUserStore();
 
 const actionChange = (command: string): void => {
   if (command.indexOf('/') !== -1) {

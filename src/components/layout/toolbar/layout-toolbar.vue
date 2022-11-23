@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-toolbar">
 import { SettingsValueEnum } from '@/constants/enums';
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 
 const props = defineProps({
   fixed: {
@@ -9,7 +9,7 @@ const props = defineProps({
   },
 });
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const iconColor = () => {
   return props.fixed ? '#fff' : 'var(--wings-header-text-color)';
@@ -34,8 +34,8 @@ const changeToolbar = () => {
     style="width: var(--wings-header-toobar-width)"
     :class="[
       props.fixed ? 'fixed' : '',
-      baseStore.isMobile ? 'small' : 'normal',
-      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+      systemStore.isMobile ? 'small' : 'normal',
+      systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
         ? 'dark'
         : '',
     ]"
@@ -55,46 +55,46 @@ const changeToolbar = () => {
       flex
       items-center
       justify-end
-      :class="baseStore.isMobile ? 'mobile' : 'pc'"
+      :class="systemStore.isMobile ? 'mobile' : 'pc'"
       :style="collapse ? 'width:0' : 'width:auto'"
     >
       <layout-toolbar-color-scheme
         class="toolbar"
         :color="iconColor()"
-        v-if="baseStore.settings.Toolbar.Dark"
+        v-if="systemStore.settings.Toolbar.Dark"
       ></layout-toolbar-color-scheme>
       <layout-toolbar-language
         only-icon
         class="toolbar"
         :color="iconColor()"
-        v-if="baseStore.settings.Toolbar.Language"
+        v-if="systemStore.settings.Toolbar.Language"
       ></layout-toolbar-language>
       <layout-toolbar-refresh
         class="toolbar"
         :color="iconColor()"
-        v-if="baseStore.settings.Toolbar.Refresh"
+        v-if="systemStore.settings.Toolbar.Refresh"
       ></layout-toolbar-refresh>
       <layout-toolbar-notification
         class="toolbar"
         :color="iconColor()"
-        v-if="baseStore.settings.Toolbar.Notification"
+        v-if="systemStore.settings.Toolbar.Notification"
       ></layout-toolbar-notification>
       <layout-toolbar-fullscreen
         class="toolbar"
         :color="iconColor()"
-        v-if="baseStore.settings.Toolbar.Fullscreen && !baseStore.isMobile"
+        v-if="systemStore.settings.Toolbar.Fullscreen && !systemStore.isMobile"
       ></layout-toolbar-fullscreen>
       <layout-toolbar-setting
         class="toolbar"
         :color="iconColor()"
-        v-if="baseStore.settings.Toolbar.Setting"
+        v-if="systemStore.settings.Toolbar.Setting"
       ></layout-toolbar-setting>
     </div>
     <layout-toolbar-avatar
       @click="changeToolbar"
       :color="iconColor()"
-      :avatar-size="baseStore.isMobile ? 28 : 38"
-      v-if="baseStore.settings.Toolbar.Avatar"
+      :avatar-size="systemStore.isMobile ? 28 : 38"
+      v-if="systemStore.settings.Toolbar.Avatar"
     ></layout-toolbar-avatar>
   </div>
 </template>

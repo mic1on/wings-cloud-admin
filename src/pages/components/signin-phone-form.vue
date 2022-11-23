@@ -4,7 +4,7 @@ import type { LoginPhoneForm } from '../index.d';
 import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
 import { MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
-import { useCountDown } from '@/hooks/use-count-down';
+import { useCountDown } from '@/hooks/use-crud/use-count-down';
 
 const { t } = useI18n();
 

@@ -3,16 +3,14 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '../index.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
-import { useStore } from '@/hooks/use-store';
-import { useCountDown } from '@/hooks/use-count-down';
+import { useUserStore } from '@/hooks/use-store/use-user-store';
+import { useCountDown } from '@/hooks/use-crud/use-count-down';
 import { USERNAME, PASSWORD_NORMAL, MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
 
 const { t } = useI18n();
 
-const router = useRouter();
-
-const { userStore } = useStore();
+const userStore = useUserStore();
 
 const countDown = useCountDown();
 

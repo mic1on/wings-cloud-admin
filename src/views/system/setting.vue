@@ -15,8 +15,8 @@ import {
   PredefineBreadcrumbPosition,
 } from '@/constants/settings';
 import { SettingsValueEnum } from '@/constants/enums';
-import { useStore } from '@/hooks/use-store';
-import { useLanguage } from '@/hooks/use-language';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+import { useLanguage } from '@/hooks/use-language/use-language';
 import { ElMessage } from 'element-plus';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
@@ -24,40 +24,40 @@ import SettingLayout from './components/setting-layout.vue';
 
 const { t } = useI18n();
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const changeLayout = (val: SystemSettingsLayout) => {
   if (
-    baseStore.settings.Breadcrumb ===
+    systemStore.settings.Breadcrumb ===
       SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER &&
     val === SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
-    baseStore.settings.Breadcrumb = SettingsValueEnum.BREADCRUMB_VIEW_TOP;
+    systemStore.settings.Breadcrumb = SettingsValueEnum.BREADCRUMB_VIEW_TOP;
   }
-  baseStore.settings.Layout = val;
+  systemStore.settings.Layout = val;
 };
 
 const changeColorScheme = (val: SystemSettingsColorScheme): void => {
-  baseStore.settings.ColorScheme = val;
+  systemStore.settings.ColorScheme = val;
 };
 
 const changeThemeColor = (val: string): void => {
-  baseStore.settings.ThemeColor = val;
+  systemStore.settings.ThemeColor = val;
 };
 
 const toolbarChange = (key: string): void => {
-  baseStore.settings.Toolbar[key] = !baseStore.settings.Toolbar[key];
+  systemStore.settings.Toolbar[key] = !systemStore.settings.Toolbar[key];
 };
 
 const { languages } = useLanguage();
 
 const updateSettings = () => {
-  baseStore.updateSettings(baseStore.settings);
+  systemStore.updateSettings(systemStore.settings);
   ElMessage.success(t('system.setting.updateSuccess'));
 };
 
 const { copy } = useClipboard({
-  source: JSON.stringify(baseStore.settings),
+  source: JSON.stringify(systemStore.settings),
 });
 
 const copySettings = () => {
@@ -66,7 +66,7 @@ const copySettings = () => {
 };
 
 const backSettings = () => {
-  baseStore.updateSettings(SettingsDefault);
+  systemStore.updateSettings(SettingsDefault);
   ElMessage.success(t('system.setting.backSuccess'));
 };
 </script>
@@ -86,7 +86,7 @@ const backSettings = () => {
           <setting-layout
             :mode="item.value"
             :name="item.label"
-            :active="baseStore.settings.Layout === item.value"
+            :active="systemStore.settings.Layout === item.value"
             @click="changeLayout(item.value as SystemSettingsLayout)"
           ></setting-layout>
         </el-tooltip>
@@ -106,7 +106,7 @@ const backSettings = () => {
           <setting-color-scheme
             :mode="item.value"
             :name="item.label"
-            :active="baseStore.settings.ColorScheme === item.value"
+            :active="systemStore.settings.ColorScheme === item.value"
             @click="changeColorScheme(item.value as SystemSettingsColorScheme)"
           ></setting-color-scheme>
         </el-tooltip>
@@ -127,7 +127,7 @@ const backSettings = () => {
         :key="index"
         mr-6
         mb-2
-        :checked="baseStore.settings.Toolbar[item.value]"
+        :checked="systemStore.settings.Toolbar[item.value]"
         @change="toolbarChange(item.value)"
       >
         {{ t(item.label) }}
@@ -145,7 +145,7 @@ const backSettings = () => {
       <el-form-item :label="t('system.setting.componentSize')">
         <el-select
           style="width: 260px"
-          v-model="baseStore.settings.ElementPlus.size"
+          v-model="systemStore.settings.ElementPlus.size"
         >
           <el-option
             :label="t('system.setting.componentLarge')"
@@ -162,7 +162,10 @@ const backSettings = () => {
         </el-select>
       </el-form-item>
       <el-form-item :label="t('system.setting.menuStyle')">
-        <el-select style="width: 260px" v-model="baseStore.settings.MenuStyle">
+        <el-select
+          style="width: 260px"
+          v-model="systemStore.settings.MenuStyle"
+        >
           <el-option
             v-for="(item, index) in PredefineMenuStyle"
             :key="index"
@@ -172,13 +175,13 @@ const backSettings = () => {
         </el-select>
       </el-form-item>
       <el-form-item :label="t('system.setting.uniqueOpened')">
-        <el-switch v-model="baseStore.settings.UniqueOpened" />
+        <el-switch v-model="systemStore.settings.UniqueOpened" />
       </el-form-item>
       <el-form-item :label="t('system.setting.tab')">
-        <el-switch v-model="baseStore.settings.Tab" />
+        <el-switch v-model="systemStore.settings.Tab" />
       </el-form-item>
       <el-form-item :label="t('system.setting.tabStyle')">
-        <el-select style="width: 260px" v-model="baseStore.settings.TabStyle">
+        <el-select style="width: 260px" v-model="systemStore.settings.TabStyle">
           <el-option
             v-for="(item, index) in PredefineTabStyle"
             :key="index"
@@ -188,19 +191,22 @@ const backSettings = () => {
         </el-select>
       </el-form-item>
       <el-form-item :label="t('system.setting.breadcrumb')">
-        <el-select style="width: 260px" v-model="baseStore.settings.Breadcrumb">
+        <el-select
+          style="width: 260px"
+          v-model="systemStore.settings.Breadcrumb"
+        >
           <el-option
             v-for="(item, index) in PredefineBreadcrumbPosition"
             :key="index"
             :label="t(item.label)"
             :value="item.value"
             :disabled="
-              (baseStore.isMobile ||
-                baseStore.settings.Layout ===
+              (systemStore.isMobile ||
+                systemStore.settings.Layout ===
                   SettingsValueEnum.LAYOUT_TOP_LEAN ||
-                baseStore.settings.Layout ===
+                systemStore.settings.Layout ===
                   SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
-                baseStore.settings.Layout ===
+                systemStore.settings.Layout ===
                   SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK) &&
               item.value === SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
             "
@@ -208,7 +214,10 @@ const backSettings = () => {
         </el-select>
       </el-form-item>
       <el-form-item :label="t('system.setting.copyright')">
-        <el-select style="width: 260px" v-model="baseStore.settings.Copyright">
+        <el-select
+          style="width: 260px"
+          v-model="systemStore.settings.Copyright"
+        >
           <el-option
             v-for="(item, index) in PredefineCopyrightPosition"
             :key="index"
@@ -218,7 +227,7 @@ const backSettings = () => {
         </el-select>
       </el-form-item>
     </el-form>
-    <div :style="baseStore.isMobile ? 'width: 100%' : 'width: 420px'" mb-4>
+    <div :style="systemStore.isMobile ? 'width: 100%' : 'width: 420px'" mb-4>
       <el-alert
         show-icon
         :closable="false"
@@ -234,7 +243,7 @@ const backSettings = () => {
       m-b-6
     >
       <el-form-item :label="t('system.setting.language')">
-        <el-select style="width: 260px" v-model="baseStore.settings.Language">
+        <el-select style="width: 260px" v-model="systemStore.settings.Language">
           <el-option
             v-for="(value, key) in languages"
             :key="key"
@@ -246,13 +255,13 @@ const backSettings = () => {
       <el-form-item :label="t('system.setting.firstRoute')">
         <el-input
           style="width: 260px"
-          v-model="baseStore.settings.FirstRoute"
+          v-model="systemStore.settings.FirstRoute"
         ></el-input>
       </el-form-item>
       <el-form-item :label="t('system.setting.adminFirstRoute')">
         <el-input
           style="width: 260px"
-          v-model="baseStore.settings.AdminFirstRoute"
+          v-model="systemStore.settings.AdminFirstRoute"
         ></el-input>
       </el-form-item>
       <el-form-item :label="t('system.setting.requestTimeout')">
@@ -260,14 +269,14 @@ const backSettings = () => {
           :step="1"
           :min="1000"
           style="width: 132px"
-          v-model="baseStore.settings.NetworkTimeout"
+          v-model="systemStore.settings.NetworkTimeout"
         ></el-input-number>
         <span style="width: 100px; margin-left: 20px">
           {{ t('system.setting.requestTimeoutUnit') }}
         </span>
       </el-form-item>
       <el-form-item :label="t('system.setting.keepAlive')">
-        <el-switch v-model="baseStore.settings.KeepAlive" />
+        <el-switch v-model="systemStore.settings.KeepAlive" />
       </el-form-item>
     </el-form>
     <template #action>

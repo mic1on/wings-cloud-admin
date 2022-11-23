@@ -1,11 +1,15 @@
 import type { IObject } from '@/types/global.d';
-import type { Options, QueryOptions, Pagination } from './index.d';
+import type { Options, QueryOptions, Pagination } from './use-crud.d';
 import { mergeValueByKey } from '@/utils/common';
 
 /**
  * @name useCrud
  * @description 通用业务处理及增删改查钩子函数
- * @
+ * @return queryForm
+ * @return pageForm
+ * @return tableData
+ * @return query
+ * @return reset
  */
 export const useCrud = (options?: Options) => {
   const queryOptions: QueryOptions = mergeValueByKey(

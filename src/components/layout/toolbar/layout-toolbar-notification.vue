@@ -1,12 +1,12 @@
 <script lang="ts" setup name="layout-action-notification">
-import { useStore } from '@/hooks/use-store';
+import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { RouteEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 
 const router = useRouter();
 
-const { userStore } = useStore();
+const userStore = useUserStore();
 
 const props = defineProps({
   color: {

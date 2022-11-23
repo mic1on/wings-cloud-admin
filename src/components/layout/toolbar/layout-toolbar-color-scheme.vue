@@ -1,17 +1,19 @@
 <script lang="ts" setup name="layout-action-color-scheme">
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const changeColorScheme = () => {
-  if (baseStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO) {
-    baseStore.changeDarkOrLight(
-      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_LIGHT
+  if (
+    systemStore.settings.ColorScheme === SettingsValueEnum.COLOR_SCHEME_AUTO
+  ) {
+    systemStore.changeDarkOrLight(
+      systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_LIGHT
     );
   } else {
-    baseStore.settings.ColorScheme =
-      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+    systemStore.settings.ColorScheme =
+      systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
         ? SettingsValueEnum.COLOR_SCHEME_LIGHT
         : SettingsValueEnum.COLOR_SCHEME_DARK;
   }
@@ -34,7 +36,7 @@ const props = defineProps({
     inline-flex
   >
     <Moon
-      v-if="baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK"
+      v-if="systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK"
     />
     <Sunny v-else />
   </el-icon>

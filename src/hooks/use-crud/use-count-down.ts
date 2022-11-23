@@ -1,5 +1,5 @@
 import type { Callback } from '@/types/global.d';
-import type { Form } from './index.d';
+import type { Form } from './use-count-down.d';
 import { ElMessage } from 'element-plus';
 import { getMobileSmscode } from '@/apis/base';
 
@@ -14,7 +14,6 @@ import { getMobileSmscode } from '@/apis/base';
 export const useCountDown = () => {
   const { t } = useI18n();
 
-  // 倒计时表单
   const countDownForm = reactive<Form>({
     time: 60,
     getting: false,
@@ -22,7 +21,6 @@ export const useCountDown = () => {
     timer: undefined,
   });
 
-  // 获取验证码主函数
   const getCode = (
     data: string | number | null | undefined,
     callBack: Callback
@@ -36,7 +34,6 @@ export const useCountDown = () => {
     callBack();
   };
 
-  // 触发计时器
   const getCoding = (): void => {
     countDownForm.getting = true;
     countDownForm.send = true;
@@ -49,7 +46,6 @@ export const useCountDown = () => {
     }, 1000);
   };
 
-  // 获取验证码二次封装
   const getPhoneCode = (phone: number | string, type: number): void => {
     getCode(phone, async () => {
       const res = await getMobileSmscode({
@@ -63,7 +59,6 @@ export const useCountDown = () => {
     });
   };
 
-  // 重置倒计时
   const resetCountDown = (isInit: boolean): void => {
     clearInterval(countDownForm.timer);
     countDownForm.time = 60;

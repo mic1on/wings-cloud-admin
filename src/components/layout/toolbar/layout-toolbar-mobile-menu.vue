@@ -1,6 +1,6 @@
 <script lang="ts" setup name="layout-toolbar-mobile-menu">
 import { SettingsValueEnum } from '@/constants/enums';
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 
 const props = defineProps({
   fixed: {
@@ -9,10 +9,10 @@ const props = defineProps({
   },
 });
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const changeMobileMenu = () => {
-  baseStore.mobileMenu = !baseStore.mobileMenu;
+  systemStore.mobileMenu = !systemStore.mobileMenu;
 };
 </script>
 
@@ -23,7 +23,7 @@ const changeMobileMenu = () => {
     items-center
     :class="[
       props.fixed ? 'fixed' : '',
-      baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
+      systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
         ? 'dark'
         : '',
     ]"
@@ -31,7 +31,7 @@ const changeMobileMenu = () => {
     <svg-icon
       name="base-app"
       cursor-pointer
-      v-if="baseStore.isMobile"
+      v-if="systemStore.isMobile"
       @click="changeMobileMenu()"
       :size="props.fixed ? '1.4rem' : '1.6rem'"
       :color="

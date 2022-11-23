@@ -1,7 +1,7 @@
 <script lang="ts" setup name="my-notifications">
 import { StorageEnum } from '@/constants/enums';
 import { getStorage } from '@/utils/storage';
-import { useCrud } from '@/hooks/use-crud';
+import { useCrud } from '@/hooks/use-crud/use-crud';
 
 const { t } = useI18n();
 
@@ -23,7 +23,7 @@ queryForm.value = {
         <el-select
           clearable
           v-model="queryForm.roleType"
-          :placeholder="t('authority.role.roleType')"
+          :placeholder="t('system.role.roleType')"
         >
           <el-option
             v-for="(item, index) in roleTypeDict"
@@ -36,19 +36,19 @@ queryForm.value = {
       <el-form-item>
         <el-input
           v-model="queryForm.nickname"
-          :placeholder="t('authority.user.nickname')"
+          :placeholder="t('system.user.nickname')"
         />
       </el-form-item>
       <el-form-item>
         <el-input
           v-model="queryForm.username"
-          :placeholder="t('authority.user.username')"
+          :placeholder="t('system.user.username')"
         />
       </el-form-item>
       <el-form-item>
         <el-input
           v-model="queryForm.mobile"
-          :placeholder="t('authority.user.mobile')"
+          :placeholder="t('system.user.mobile')"
         />
       </el-form-item>
       <el-form-item>
@@ -64,27 +64,27 @@ queryForm.value = {
       <el-table-column type="index" width="50"></el-table-column>
       <el-table-column
         prop="type"
-        :label="t('authority.user.avatar')"
+        :label="t('system.user.avatar')"
       ></el-table-column>
       <el-table-column
         prop="type"
-        :label="t('authority.user.nickname')"
+        :label="t('system.user.nickname')"
       ></el-table-column>
       <el-table-column
         prop="type"
-        :label="t('authority.user.username')"
+        :label="t('system.user.username')"
       ></el-table-column>
       <el-table-column
         prop="name"
-        :label="t('authority.user.mobile')"
+        :label="t('system.user.mobile')"
       ></el-table-column>
       <el-table-column
         prop="remark"
-        :label="t('authority.role.roleName')"
+        :label="t('system.role.roleName')"
       ></el-table-column>
       <el-table-column
         prop="createTime"
-        :label="t('authority.role.createTime')"
+        :label="t('system.role.createTime')"
       ></el-table-column>
       <el-table-column :label="t('crud.btn.action')"> </el-table-column>
     </el-table>

@@ -1,4 +1,4 @@
-import { useBaseStore } from '../../hooks/use-store/use-base-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 
 /**
  * @name useLanguage
@@ -8,7 +8,7 @@ import { useBaseStore } from '../../hooks/use-store/use-base-store';
  * @return languages
  */
 export const useLanguage = () => {
-  const baseStore = useBaseStore();
+  const systemStore = useSystemStore();
 
   const { messages, locale } = useI18n();
 
@@ -20,7 +20,7 @@ export const useLanguage = () => {
     value: string | number | Record<string, any> | undefined
   ) => {
     locale.value = value as string;
-    baseStore.changeLanguage({
+    systemStore.changeLanguage({
       alias: value,
       name: messages.value[value as string].name,
     });

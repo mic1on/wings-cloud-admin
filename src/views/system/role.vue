@@ -1,7 +1,7 @@
 <script lang="ts" setup name="my-notifications">
 import { StorageEnum } from '@/constants/enums';
 import { getStorage } from '@/utils/storage';
-import { useCrud } from '@/hooks/use-crud';
+import { useCrud } from '@/hooks/use-crud/use-crud';
 
 const { t } = useI18n();
 
@@ -27,7 +27,7 @@ queryForm.value = {
         <el-select
           clearable
           v-model="queryForm.roleType"
-          :placeholder="t('authority.role.roleType')"
+          :placeholder="t('system.role.roleType')"
         >
           <el-option
             v-for="(item, index) in roleTypeDict"
@@ -40,7 +40,7 @@ queryForm.value = {
       <el-form-item>
         <el-input
           v-model="queryForm.roleName"
-          :placeholder="t('authority.role.roleName')"
+          :placeholder="t('system.role.roleName')"
         />
       </el-form-item>
     </crud-table-query>
@@ -48,19 +48,19 @@ queryForm.value = {
       <el-table-column type="index" width="50"></el-table-column>
       <el-table-column
         prop="type"
-        :label="t('authority.role.roleType')"
+        :label="t('system.role.roleType')"
       ></el-table-column>
       <el-table-column
         prop="name"
-        :label="t('authority.role.roleName')"
+        :label="t('system.role.roleName')"
       ></el-table-column>
       <el-table-column
         prop="remark"
-        :label="t('authority.role.remark')"
+        :label="t('system.role.remark')"
       ></el-table-column>
       <el-table-column
         prop="createTime"
-        :label="t('authority.role.createTime')"
+        :label="t('system.role.createTime')"
       ></el-table-column>
       <el-table-column :label="t('crud.btn.action')"></el-table-column>
     </el-table>

@@ -1,6 +1,7 @@
 <script lang="ts" setup name="layout-admin-tab">
 import type { IObject } from '@/types/global.d';
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { Settings } from '@/constants/settings';
 import { arrayRecursion } from '@/utils/common';
 
@@ -9,7 +10,8 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const { baseStore, routeStore } = useStore();
+const systemStore = useSystemStore();
+const routeStore = useRouteStore();
 
 const tab: any = reactive({
   tabList: [],
@@ -106,7 +108,7 @@ watch(
     items-center
     justify-between
     class="slot"
-    :class="baseStore.settings.TabStyle"
+    :class="systemStore.settings.TabStyle"
   >
     <el-tabs
       v-model="tab.nowTab"
@@ -115,7 +117,7 @@ watch(
       tab-position="top"
       @tab-click="tabClick"
       @tab-remove="tabRemove"
-      :style="baseStore.isMobile ? 'width: 76%' : 'width: 94%'"
+      :style="systemStore.isMobile ? 'width: 76%' : 'width: 94%'"
     >
       <el-tab-pane
         v-for="item in tab.tabList"

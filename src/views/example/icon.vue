@@ -2,11 +2,11 @@
 import { ElMessage } from 'element-plus';
 import { useClipboard } from '@vueuse/core';
 import { autoImportSvgs } from '@/utils/auto';
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 
 const { t } = useI18n();
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const svgs = [
   {

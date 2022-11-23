@@ -1,8 +1,8 @@
 <script lang="ts" setup name="layout-admin-breadcrumb">
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const route = useRoute();
 
@@ -15,12 +15,12 @@ const { t } = useI18n();
     items-center
     justify-start
     :style="
-      baseStore.settings.Breadcrumb == SettingsValueEnum.BREADCRUMB_VIEW_TOP
+      systemStore.settings.Breadcrumb == SettingsValueEnum.BREADCRUMB_VIEW_TOP
         ? 'padding-bottom: var(--wings-main-padding)'
         : ''
     "
     :class="
-      baseStore.settings.Breadcrumb ===
+      systemStore.settings.Breadcrumb ===
       SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
         ? 'p-l-6'
         : ''

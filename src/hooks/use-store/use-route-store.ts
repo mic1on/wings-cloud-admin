@@ -2,28 +2,30 @@ import type { Routes } from '@/plugins/vue-router/index.d';
 import type { ViewComponents } from '@/types/global.d';
 import { defineStore } from 'pinia';
 import { RouteRecordRaw, RouteRecordName } from 'vue-router';
+import { autoImportViewComponents } from '@/utils/auto';
 import {
   mergeRoleRoutes,
   mergeAdminMenuRoutes,
   routerInject,
 } from '@/utils/router';
-import { autoImportViewComponents } from '@/utils/auto';
+import { _t } from '@/plugins/vue-i18n';
 import { router, routes } from '@/plugins/vue-router';
 import { getRoleRoutes as _getRoleRoutes } from '@/apis/system/user';
-import { _t } from '@/plugins/vue-i18n';
 
 /**
  * @name useRouteStore
  * @description 路由状态钩子函数
+ * @return adminMenuRoutes
+ * @return roleRoutes
+ * @return setAdminMenuRoutes
+ * @return setRolesRoutes
+ * @return getRoleRoutes
  */
 export const useRouteStore = defineStore('route', () => {
-  // 权限路由
   const roleRoutes = ref<Routes>([]);
 
-  // 管理系统菜单路由
   const adminMenuRoutes = ref<Routes>([]);
 
-  // 设置权限路由
   const setRolesRoutes = (data: Routes): void => {
     roleRoutes.value = data.sort((a: any, b: any) => a.meta.sort - b.meta.sort);
     roleRoutes.value.forEach((route: RouteRecordRaw) => {
@@ -33,7 +35,6 @@ export const useRouteStore = defineStore('route', () => {
     });
   };
 
-  // 设置管理系统菜单路由
   const setAdminMenuRoutes = (data: Routes): void => {
     adminMenuRoutes.value = data.sort(
       (a: any, b: any) => a.meta.sort - b.meta.sort
@@ -45,7 +46,6 @@ export const useRouteStore = defineStore('route', () => {
     });
   };
 
-  // 获取权限路由（异步路由）
   const getRoleRoutes = async (): Promise<Routes> => {
     return new Promise(async (resolve) => {
       const { code, data } = await _getRoleRoutes();

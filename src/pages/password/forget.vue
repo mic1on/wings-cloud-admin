@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 import type { IObject } from '@/types/global.d';
-import { useStore } from '@/hooks/use-store';
-import SignTemplate from '../components/sign-template.vue';
-import VerifyMobilePhone from './components/verify-mobile-phone.vue';
-import ChangePassword from './components/change-password.vue';
 import { ElMessage } from 'element-plus';
 import { RouteEnum } from '@/constants/enums';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+import SignTemplate from '../components/sign-template.vue';
+import ChangePassword from './components/change-password.vue';
+import VerifyMobilePhone from './components/verify-mobile-phone.vue';
 
 const { t } = useI18n();
 
 const router = useRouter();
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const forgetType = ref<string>('verify');
 onBeforeMount(() => {
@@ -93,7 +93,7 @@ const goSignin = (): void => {
         </el-button>
       </div>
     </template>
-    <template #bottom-center v-if="baseStore.isMobile">
+    <template #bottom-center v-if="systemStore.isMobile">
       <div
         w-full
         text-center

@@ -1,16 +1,17 @@
-import type { IObject } from '@/global';
+import type { IObject } from '@/types/global.d';
 import { StorageEnum } from '@/constants/enums';
 import { setStorage } from '@/utils/storage';
-import { getDictAll } from '@/apis/system/dict';
+import { getDictAll as _getDictAll } from '@/apis/system/dict';
 
 /**
  * @name useDict
  * @description 字典钩子函数
+ * @return getDictAll
  */
 
 export const useDict = () => {
-  const getAndSaveDicts = async () => {
-    const { data } = await getDictAll();
+  const getDictAll = async () => {
+    const { data } = await _getDictAll();
     let dicts = {};
     data.forEach((item: IObject) => {
       dicts = { [item.key]: item.values, ...dicts };
@@ -20,6 +21,6 @@ export const useDict = () => {
   };
 
   return {
-    getAndSaveDicts,
+    getDictAll,
   };
 };

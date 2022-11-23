@@ -1,5 +1,5 @@
 <script lang="ts" setup name="layout-action-language">
-import { useLanguage } from '@/hooks/use-language';
+import { useLanguage } from '@/hooks/use-language/use-language';
 
 const props = defineProps({
   onlyIcon: {

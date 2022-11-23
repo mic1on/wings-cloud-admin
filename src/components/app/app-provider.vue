@@ -2,35 +2,38 @@
 import { Settings } from '@/constants/settings';
 import { SettingsValueEnum } from '@/constants/enums';
 import { setEpThemeColor } from '@/utils/theme';
-import { useStore } from '@/hooks/use-store';
-import { getMobileAreaCodes, getAndSaveDicts } from '@/hooks/use-common-data';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+import { useMobileCodes } from '@/hooks/use-crud/use-mobile-codes';
+import { useDict } from '@/hooks/use-crud/use-dict';
 
 const route = useRoute();
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
+
+const { getMobileCodes } = useMobileCodes();
+const { getDictAll } = useDict();
 
 const { t, messages } = useI18n();
 
 const locale =
-  messages.value[baseStore.language][Settings.ElementPlus.language];
+  messages.value[systemStore.language][Settings.ElementPlus.language];
 
-// 监听默认配色方案变化
 watch(
-  () => baseStore.settings.ColorScheme,
+  () => systemStore.settings.ColorScheme,
   (newVal, oldVal) => {
     if (newVal === SettingsValueEnum.COLOR_SCHEME_AUTO) {
-      baseStore.changeDarkOrLight(
+      systemStore.changeDarkOrLight(
         window.matchMedia('(prefers-color-scheme: dark)').matches
       );
       window
         .matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', (event) => {
-          baseStore.changeDarkOrLight(event.matches);
+          systemStore.changeDarkOrLight(event.matches);
         });
     } else {
-      document.documentElement.classList.remove(baseStore.colorScheme);
+      document.documentElement.classList.remove(systemStore.colorScheme);
       document.documentElement.classList.add(newVal);
-      baseStore.colorScheme = newVal;
+      systemStore.colorScheme = newVal;
     }
   },
   {
@@ -38,9 +41,8 @@ watch(
   }
 );
 
-// 监听默认主题颜色变化
 watch(
-  () => baseStore.settings.ThemeColor,
+  () => systemStore.settings.ThemeColor,
   (newVal, old) => {
     if (newVal && (newVal !== old || !old)) {
       setEpThemeColor(newVal as string);
@@ -51,12 +53,11 @@ watch(
   }
 );
 
-// 监听浏览器标题
 watch(
-  () => baseStore.browserTitle,
+  () => systemStore.browserTitle,
   () => {
-    if (baseStore.browserTitle) {
-      document.title = `${baseStore.browserTitle} - ${
+    if (systemStore.browserTitle) {
+      document.title = `${systemStore.browserTitle} - ${
         import.meta.env.APP_TITLE || t('app.name')
       }`;
     } else {
@@ -68,27 +69,25 @@ watch(
   }
 );
 
-// 初始化多端适配
 onBeforeMount(() => {
-  baseStore.changeMobile();
+  systemStore.changeMobile();
   window.onresize = () => {
-    baseStore.changeMobile();
+    systemStore.changeMobile();
   };
 });
 
-// 初始化数据
 onBeforeMount(() => {
-  getMobileAreaCodes();
-  getAndSaveDicts();
+  getMobileCodes();
+  getDictAll();
 });
 </script>
 
 <template>
   <el-config-provider
     :locale="locale"
-    :button="baseStore.settings.ElementPlus.button"
-    :message="baseStore.settings.ElementPlus.message"
-    :size="baseStore.settings.ElementPlus.size"
+    :button="systemStore.settings.ElementPlus.button"
+    :message="systemStore.settings.ElementPlus.message"
+    :size="systemStore.settings.ElementPlus.size"
   >
     <div
       class="global-loading"
@@ -103,7 +102,7 @@ onBeforeMount(() => {
       :element-loading-lock="true"
       :element-loading-text="t('app.loading')"
       element-loading-background="rgba(0, 0, 0, 0.8)"
-      v-if="baseStore.loading"
+      v-if="systemStore.loading"
     ></div>
     <template v-else>
       <layout-page

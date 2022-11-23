@@ -1,9 +1,9 @@
 <script lang="ts" setup name="my-notifications">
+import type { IObject } from '@/types/global.d';
 import { StorageEnum } from '@/constants/enums';
 import { useDateFormat } from '@vueuse/core';
 import { getStorage } from '@/utils/storage';
-import { useCrud } from '@/hooks/use-crud';
-import { IObject } from '@/global';
+import { useCrud } from '@/hooks/use-crud/use-crud';
 
 const { t } = useI18n();
 

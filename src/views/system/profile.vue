@@ -1,9 +1,9 @@
 <script lang="ts" setup name="personal-profile">
-import { useStore } from '@/hooks/use-store';
+import { useUserStore } from '@/hooks/use-store/use-user-store';
 
 const { t } = useI18n();
 
-const { userStore } = useStore();
+const userStore = useUserStore();
 </script>
 <template>
   <crud-card action>

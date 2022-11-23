@@ -1,10 +1,12 @@
 <script lang="ts" setup name="layout-admin-menu">
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { SettingsValueEnum } from '@/constants/enums';
 
 const route = useRoute();
 
-const { baseStore, routeStore } = useStore();
+const systemStore = useSystemStore();
+const routeStore = useRouteStore();
 
 const props = defineProps({
   mode: {
@@ -16,8 +18,8 @@ const props = defineProps({
 const height = computed(() => {
   let _height = '100vh';
   if (
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
     _height =
       'calc(100vh - var(--wings-header-height) - var(--wings-collapse-height))';
@@ -25,7 +27,7 @@ const height = computed(() => {
     _height =
       'calc(100vh - var(--wings-aside-logo-height) - var(--wings-collapse-height))';
   }
-  if (baseStore.isMobile) {
+  if (systemStore.isMobile) {
     _height = 'calc(100vh - var(--wings-aside-logo-height)';
   }
   return 'height:' + _height + ';';
@@ -45,9 +47,9 @@ const width = computed(() => {
   >
     <div
       :class="[
-        baseStore.settings.MenuStyle,
-        baseStore.colorScheme,
-        baseStore.settings.Layout,
+        systemStore.settings.MenuStyle,
+        systemStore.colorScheme,
+        systemStore.settings.Layout,
         'layout-admin-menu',
       ]"
       h-full
@@ -56,8 +58,8 @@ const width = computed(() => {
         router
         :mode="props.mode"
         collapse-transition
-        :collapse="props.mode == 'vertical' ? baseStore.collapse : false"
-        :unique-opened="baseStore.settings.UniqueOpened"
+        :collapse="props.mode == 'vertical' ? systemStore.collapse : false"
+        :unique-opened="systemStore.settings.UniqueOpened"
         :default-active="route.path"
         important="h-full border-none"
       >

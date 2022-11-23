@@ -1,13 +1,13 @@
 <script lang="ts" setup name="layout-admin-logo">
 import { Settings } from '@/constants/settings';
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 
 const router = useRouter();
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const goHomeRoute = () => {
   router.push({ path: Settings.AdminFirstRoute });
@@ -16,21 +16,21 @@ const goHomeRoute = () => {
 const width = computed(() => {
   let _width = 'var(--wings-header-logo-width)';
   if (
-    baseStore.collapse &&
-    baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
-    baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
+    systemStore.collapse &&
+    systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
+    systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
     _width = 'var(--wings-aside-width-fold)';
   } else {
     _width = 'var(--wings-aside-width)';
   }
   if (
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
     _width = 'var(--wings-header-logo-width)';
   }
-  if (baseStore.isMobile) {
+  if (systemStore.isMobile) {
     _width = 'var(--wings-aside-width)';
   }
   return 'width:' + _width + ';';
@@ -39,13 +39,13 @@ const width = computed(() => {
 const position = computed(() => {
   let _position = 'display:flex;align-items:center;';
   if (
-    baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
-    baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
+    systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
+    systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
     _position += 'justify-content:center;';
   } else if (
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-    baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
     _position += 'justify-content:flex-start;';
   }
@@ -65,14 +65,14 @@ const position = computed(() => {
     <div class="logo" flex items-center justify-center>
       <img
         v-if="
-          (baseStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_THEME &&
-            baseStore.settings.Layout !== SettingsValueEnum.LAYOUT_ASIDE &&
-            baseStore.settings.Layout !==
+          (systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_THEME &&
+            systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_ASIDE &&
+            systemStore.settings.Layout !==
               SettingsValueEnum.LAYOUT_ASIDE_LEAN) ||
-          (baseStore.colorScheme !== SettingsValueEnum.COLOR_SCHEME_THEME &&
-            (baseStore.settings.Layout ===
+          (systemStore.colorScheme !== SettingsValueEnum.COLOR_SCHEME_THEME &&
+            (systemStore.settings.Layout ===
               SettingsValueEnum.LAYOUT_ASIDE_DARK ||
-              baseStore.settings.Layout ===
+              systemStore.settings.Layout ===
                 SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK))
         "
         w-10
@@ -87,15 +87,15 @@ const position = computed(() => {
       font-600
       ml-4
       v-if="
-        !baseStore.collapse ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+        !systemStore.collapse ||
+        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
       "
       class="single-line-omitted name"
       :style="
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
-        baseStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
+        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
+        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
+        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
           ? 'color: var(--wings-menu-text-color)'
           : 'color: var(--wings-header-text-color)'
       "

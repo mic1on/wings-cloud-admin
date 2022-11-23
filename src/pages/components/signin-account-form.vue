@@ -3,16 +3,16 @@ import type { FormRules, FormInstance } from 'element-plus';
 import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '..';
 import type { ResponseData } from '@/utils/request/index.d';
-import { useStore } from '@/hooks/use-store';
+import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
 import { RouteEnum } from '@/constants/enums';
 import { validateUsername as _validateUsername } from '@/apis/system/user';
 
-const { userStore } = useStore();
-
 const { t } = useI18n();
 
 const router = useRouter();
+
+const userStore = useUserStore();
 
 const formRef = ref<FormInstance>();
 

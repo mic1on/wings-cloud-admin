@@ -3,9 +3,8 @@ import type {
   RouteLocationNormalized,
   NavigationGuardNext,
 } from 'vue-router';
-import type { Roles } from '@/hooks/use-store/index.d';
 import { RouteEnum, StorageEnum } from '@/constants/enums';
-import { useBaseStore } from '@/hooks/use-store/use-base-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { getStorage } from '@/utils/storage';
@@ -31,7 +30,7 @@ export const addRouterGuard = (router: Router): Router => {
     ) => {
       isLoading.value = true;
       // 获取权限数据
-      const userRoles: Roles = getStorage(StorageEnum.USER_ROLES, {
+      const userRoles: Array<string> = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
       });
       const requiresAuth: boolean = to.matched.some(
@@ -39,7 +38,7 @@ export const addRouterGuard = (router: Router): Router => {
       );
 
       // 初始化全局状态
-      const baseStore = useBaseStore();
+      const systemStore = useSystemStore();
       const routeStore = useRouteStore();
       const userStore = useUserStore();
 
@@ -66,11 +65,11 @@ export const addRouterGuard = (router: Router): Router => {
 
       // 页面刷新时初始化路由信息
       if (userStore.isLogin && routeStore.roleRoutes.length == 0) {
-        baseStore.loading = true;
+        systemStore.loading = true;
         await userStore.getUserProfile();
         await userStore.getUserRoles();
         await routeStore.getRoleRoutes();
-        baseStore.loading = false;
+        systemStore.loading = false;
         if (to.redirectedFrom) {
           next({ path: to.redirectedFrom.fullPath, replace: true });
         } else {
@@ -100,9 +99,9 @@ export const addRouterGuard = (router: Router): Router => {
       isLoading.value = false;
 
       // 设置浏览器标题
-      const baseStore = useBaseStore();
+      const systemStore = useSystemStore();
       if (to.meta.menuName) {
-        baseStore.browserTitle = to.meta.menuName;
+        systemStore.browserTitle = to.meta.menuName;
       }
     }
   );

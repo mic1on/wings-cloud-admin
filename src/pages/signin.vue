@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { RouteEnum } from '@/constants/enums';
-import { useStore } from '@/hooks/use-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import SignTemplate from './components/sign-template.vue';
 import SigninAccountForm from './components/signin-account-form.vue';
 import SigninPhoneForm from './components/signin-phone-form.vue';
 import TermsConditions from './components/terms-conditions.vue';
 
-const { baseStore } = useStore();
+const systemStore = useSystemStore();
 
 const { t } = useI18n();
 
@@ -103,7 +103,7 @@ const goSignup = (): void => {
       <div w-full>
         <terms-conditions :label="t('signin.btn')"></terms-conditions>
         <div
-          v-if="baseStore.isMobile"
+          v-if="systemStore.isMobile"
           text-center
           text-2
           style="color: var(--el-color-info-light-3)"
