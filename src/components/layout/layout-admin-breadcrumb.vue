@@ -19,12 +19,6 @@ const { t } = useI18n();
         ? 'padding-bottom: var(--wings-main-padding)'
         : ''
     "
-    :class="
-      systemStore.settings.Breadcrumb ===
-      SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
-        ? 'p-l-6'
-        : ''
-    "
   >
     <el-breadcrumb>
       <el-breadcrumb-item

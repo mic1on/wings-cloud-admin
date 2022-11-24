@@ -1,6 +1,6 @@
 import { StorageEnum } from '@/constants/enums';
 import { setStorage } from '@/utils/storage';
-import { getMobileCodes as _getMobileCodes } from '@/apis/base';
+import { getMobileCodes as _getMobileCodes } from '@/apis/common/mobile';
 
 /**
  * @name useMobileCodes

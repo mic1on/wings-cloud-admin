@@ -4,7 +4,7 @@ export default {
    * @description 获取手机号验证码
    */
   getMobileSmscode: {
-    url: '/base/mobile/smscode',
+    url: '/common/mobile/smscode',
     method: 'get',
     data: '',
   },
@@ -14,7 +14,7 @@ export default {
    * @description 获取手机区号列表
    */
   getMobileCodes: {
-    url: '/base/mobile/codes',
+    url: '/common/mobile/codes',
     method: 'get',
     data: [
       {
@@ -873,7 +873,7 @@ export default {
    * @description 获取服务协议内容
    */
   getServiceInfo: {
-    url: '/base/service/info',
+    url: '/common/service/info',
     method: 'get',
     data: { i18nKey: 'app.termsConditions' },
   },

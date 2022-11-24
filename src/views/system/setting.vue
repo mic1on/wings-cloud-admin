@@ -27,13 +27,6 @@ const { t } = useI18n();
 const systemStore = useSystemStore();
 
 const changeLayout = (val: SystemSettingsLayout) => {
-  if (
-    systemStore.settings.Breadcrumb ===
-      SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER &&
-    val === SettingsValueEnum.LAYOUT_TOP_LEAN
-  ) {
-    systemStore.settings.Breadcrumb = SettingsValueEnum.BREADCRUMB_VIEW_TOP;
-  }
   systemStore.settings.Layout = val;
 };
 
@@ -200,16 +193,6 @@ const backSettings = () => {
             :key="index"
             :label="t(item.label)"
             :value="item.value"
-            :disabled="
-              (systemStore.isMobile ||
-                systemStore.settings.Layout ===
-                  SettingsValueEnum.LAYOUT_TOP_LEAN ||
-                systemStore.settings.Layout ===
-                  SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
-                systemStore.settings.Layout ===
-                  SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK) &&
-              item.value === SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
-            "
           />
         </el-select>
       </el-form-item>

@@ -8,7 +8,6 @@ export default ({ command, mode }: ConfigEnv) => {
     'VITE_',
     'APP_',
   ]);
-  console.log(command, mode);
   return defineConfig({
     base: ENV.VITE_BASE_URL,
     envDir: './service/env/',

@@ -1,7 +1,7 @@
 import type { Callback } from '@/types/global.d';
 import type { Form } from './use-count-down.d';
 import { ElMessage } from 'element-plus';
-import { getMobileSmscode } from '@/apis/base';
+import { getMobileSmscode } from '@/apis/common/mobile';
 
 /**
  * @name useCountDown
