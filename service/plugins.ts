@@ -10,6 +10,7 @@ import ViteCompression from 'vite-plugin-compression';
 import TsconfigPaths from 'vite-tsconfig-paths';
 import EslintPlugin from 'vite-plugin-eslint';
 import Vue from '@vitejs/plugin-vue';
+import basicSsl from '@vitejs/plugin-basic-ssl';
 import Unocss from 'unocss/vite';
 import {
   presetAttributify,
@@ -87,5 +88,8 @@ export const usePluginOption = (
       transformers: [transformerDirectives(), transformerVariantGroup()],
     }),
   ];
+  if (ENV.VITE_SERVER_HTTPS === 'true') {
+    pluginOption.push(basicSsl());
+  }
   return pluginOption;
 };
