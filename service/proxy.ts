@@ -10,7 +10,11 @@ export const serviceProxy = (
 ): Record<string, string | ProxyOptions> => {
   let proxy: Record<string, string | ProxyOptions> = {};
   if (env.VITE_MODE === 'development') {
-    proxy = {};
+    proxy = {
+      '/admin': {
+        target: '/',
+      },
+    };
   } else if (env.VITE_MODE === 'staging') {
     proxy = {};
   } else if (env.VITE_MODE === 'production') {

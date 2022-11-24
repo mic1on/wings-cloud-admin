@@ -120,7 +120,6 @@ export enum SettingsValueEnum {
   MENU_STYLE_SQUARE = 'square',
   MENU_STYLE_ROUND = 'round',
   BREADCRUMB_VIEW_TOP = 'view-top',
-  BREADCRUMB_LAYOUT_HEADER = 'layout-header',
   BREADCRUMB_HIDDEN = 'hidden',
   COPYRIGHT_VIEW_BOTTOM = 'view-bottom',
   COPYRIGHT_HIDDEN = 'hidden',

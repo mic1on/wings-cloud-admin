@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { ResponseData } from '@/utils/request/index.d';
-import { getServiceInfo } from '@/apis/base';
+import { getServiceInfo } from '@/apis/common/service';
 
 const { t } = useI18n();
 

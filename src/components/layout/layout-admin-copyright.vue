@@ -1,5 +1,9 @@
 <script lang="ts" setup name="layout-admin-copyright">
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
 const { t } = useI18n();
+
+const systemStore = useSystemStore();
 </script>
 
 <template>
@@ -9,7 +13,10 @@ const { t } = useI18n();
     justify-center
     style="padding: var(--wings-main-padding) 0"
   >
-    <div text-4 style="color: var(--el-text-color-secondary)">
+    <div
+      :class="systemStore.isMobile ? 'text-2' : 'text-4'"
+      style="color: var(--el-text-color-secondary)"
+    >
       {{ t('app.copyright') }}
     </div>
   </div>

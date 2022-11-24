@@ -23,13 +23,6 @@ const systemStore = useSystemStore();
           systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
         "
       ></layout-admin-menu>
-      <layout-admin-breadcrumb
-        v-if="
-          !systemStore.isMobile &&
-          systemStore.settings.Breadcrumb ===
-            SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER
-        "
-      ></layout-admin-breadcrumb>
     </div>
     <layout-toolbar></layout-toolbar>
   </div>

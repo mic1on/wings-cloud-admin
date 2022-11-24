@@ -144,10 +144,6 @@ export const PredefineBreadcrumbPosition = [
     value: SettingsValueEnum.BREADCRUMB_VIEW_TOP,
   },
   {
-    label: 'system.setting.breadcrumbLayoutHeader',
-    value: SettingsValueEnum.BREADCRUMB_LAYOUT_HEADER,
-  },
-  {
     label: 'system.setting.breadcrumbHidden',
     value: SettingsValueEnum.BREADCRUMB_HIDDEN,
   },
