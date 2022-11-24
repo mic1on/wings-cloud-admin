@@ -23,8 +23,6 @@ const systemStore = useSystemStore();
       style="height: var(--wings-aside-logo-height)"
     ></layout-admin-logo>
     <layout-admin-menu></layout-admin-menu>
-    <layout-aside-menu-collapse
-      v-if="!systemStore.isMobile"
-    ></layout-aside-menu-collapse>
+    <layout-menu-collapse v-if="!systemStore.isMobile"></layout-menu-collapse>
   </div>
 </template>

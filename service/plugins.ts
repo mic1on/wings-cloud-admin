@@ -22,7 +22,7 @@ import {
 /**
  * @name usePluginOption
  * @desciptions 在 Vite 开发服务器中使用插件
- * @return pluginOption
+ * @return pluginOption 插件配置
  */
 export const usePluginOption = (
   ENV: Record<string, string>
@@ -33,7 +33,7 @@ export const usePluginOption = (
     createHtmlPlugin(),
     TsconfigPaths(),
     createSvgIconsPlugin({
-      iconDirs: [resolve(__dirname, 'src/assets/svgs')],
+      iconDirs: [resolve(process.cwd(), 'src/assets/svgs/')],
       symbolId: 'icon-[dir]-[name]',
     }),
     AutoImport({

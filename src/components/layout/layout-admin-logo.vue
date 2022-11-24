@@ -68,8 +68,14 @@ const position = computed(() => {
           (systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_THEME &&
             systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_ASIDE &&
             systemStore.settings.Layout !==
-              SettingsValueEnum.LAYOUT_ASIDE_LEAN) ||
+              SettingsValueEnum.LAYOUT_ASIDE_LEAN &&
+            !systemStore.isMobile) ||
           (systemStore.colorScheme !== SettingsValueEnum.COLOR_SCHEME_THEME &&
+            (systemStore.settings.Layout ===
+              SettingsValueEnum.LAYOUT_ASIDE_DARK ||
+              systemStore.settings.Layout ===
+                SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK)) ||
+          (systemStore.isMobile &&
             (systemStore.settings.Layout ===
               SettingsValueEnum.LAYOUT_ASIDE_DARK ||
               systemStore.settings.Layout ===
@@ -95,7 +101,8 @@ const position = computed(() => {
       :style="
         systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
         systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
-        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN
+        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+        systemStore.isMobile
           ? 'color: var(--wings-menu-text-color)'
           : 'color: var(--wings-header-text-color)'
       "

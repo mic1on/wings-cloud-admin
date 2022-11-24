@@ -1,12 +1,8 @@
-import { defineConfig, loadEnv, ConfigEnv } from 'vite';
 import { resolve } from 'path';
+import { defineConfig, loadEnv, ConfigEnv } from 'vite';
 import { serviceProxy } from './service/proxy';
 import { usePluginOption } from './service/plugins';
-/**
- * @name viteConfig
- * @description vite 开发及构建模式配置
- * @return defineConfig
- */
+
 export default ({ mode }: ConfigEnv) => {
   const ENV: Record<string, string> = loadEnv(mode, './service/env/', [
     'VITE_',
