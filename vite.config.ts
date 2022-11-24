@@ -3,11 +3,12 @@ import { defineConfig, loadEnv, ConfigEnv } from 'vite';
 import { serviceProxy } from './service/proxy';
 import { usePluginOption } from './service/plugins';
 
-export default ({ mode }: ConfigEnv) => {
+export default ({ command, mode }: ConfigEnv) => {
   const ENV: Record<string, string> = loadEnv(mode, './service/env/', [
     'VITE_',
     'APP_',
   ]);
+  console.log(command, mode);
   return defineConfig({
     base: ENV.VITE_BASE_URL,
     envDir: './service/env/',

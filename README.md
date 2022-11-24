@@ -97,7 +97,6 @@ npm run lint:eslint:fix # 基于 Eslint 的语法自动修复
     <td><img width="90" src="./.github/assets/vscode-plugin-volar.png"></td>
     <td><img width="90" src="./.github/assets/vscode-plugin-prettier.png"></td>
     <td><img width="90" src="./.github/assets/vscode-plugin-eslint.png"></td>
-    <td><img width="90" src="./.github/assets/vscode-plugin-dot-env.png"></td>
     <td><img width="90" src="./.github/assets/vscode-plugin-stylelint.png"></td>
     <td><img width="90" src="./.github/assets/vscode-plugin-editor-config.png"></td>
     <td><img width="90" src="./.github/assets/vscode-plugin-i18n-ally.png"></td>
