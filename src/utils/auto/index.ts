@@ -100,7 +100,7 @@ export const autoImportSvgs = (files: Files): Array<string> => {
   const svgs: Array<string> = [];
   Object.keys(files).forEach((key) => {
     svgs.push(
-      files[key]
+      key
         .replace('/src/assets/svgs/', '')
         .replace('/', '-')
         .replace(FILE_NAME, '$2')

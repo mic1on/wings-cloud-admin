@@ -1,23 +1,23 @@
 import { resolve } from 'path';
 import { defineConfig, loadEnv, ConfigEnv } from 'vite';
-import { serviceProxy } from './service/proxy';
-import { usePluginOption } from './service/plugins';
+import { serviceProxy } from './proxy';
+import { usePluginOption } from './plugins';
 
 export default ({ command, mode }: ConfigEnv) => {
-  const ENV: Record<string, string> = loadEnv(mode, './service/env/', [
+  const ENV: Record<string, string> = loadEnv(mode, './serve/env/', [
     'VITE_',
     'APP_',
   ]);
   return defineConfig({
     base: ENV.VITE_BASE_URL,
-    envDir: './service/env/',
+    envDir: './serve/env/',
     envPrefix: 'APP_',
     define: {
       'process.env': ENV,
     },
     resolve: {
       alias: {
-        '@': resolve(__dirname, 'src'),
+        '@': resolve(process.cwd(), 'src'),
         'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
       },
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
