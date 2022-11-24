@@ -18,7 +18,7 @@
     "build:dev": "vue-tsc --noEmit && vite build --mode development",
     "build:stag": "vue-tsc --noEmit && vite build --mode staging",
     "build:prod": "vue-tsc --noEmit && vite build --mode production",
-    "preview": "npm run preview:prod",
+    "preview": "npm run preview:stag",
     "preview:dev": "vue-tsc --noEmit && vite preview --mode development",
     "preview:stag": "vue-tsc --noEmit && vite preview --mode staging",
     "preview:prod": "vue-tsc --noEmit && vite preview --mode production",

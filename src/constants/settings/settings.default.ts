@@ -39,5 +39,5 @@ export const SettingsDefault: SystemSettings = {
   FirstRoute: RouteEnum.ROUTE_FIRST,
   AdminFirstRoute: RouteEnum.ROUTE_ADMIN_FIRST,
   NetworkTimeout: 30000,
-  KeepAlive: true,
+  KeepAlive: false,
 };

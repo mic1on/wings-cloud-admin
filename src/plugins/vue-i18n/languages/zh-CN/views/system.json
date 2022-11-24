@@ -118,8 +118,8 @@
     "defaultRole": "默认角色"
   },
   "notification": {
-    "menuName": "个人消息",
-    "menuDescription": "查看个人消息、通知列表",
+    "menuName": "我的消息",
+    "menuDescription": "查看我的消息、通知列表",
     "notificationContent": "消息内容",
     "notificationContentText": "消息内容",
     "notificationType": "消息类型",
