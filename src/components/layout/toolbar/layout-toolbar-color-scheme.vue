@@ -1,4 +1,4 @@
-<script lang="ts" setup name="layout-action-color-scheme">
+<script lang="ts" setup name="layout-toolbar-color-scheme">
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
 
@@ -22,7 +22,7 @@ const changeColorScheme = () => {
 const props = defineProps({
   color: {
     type: String,
-    default: 'var(--wings-header-text-color)',
+    default: 'var(--wings-cloud-header-text-color)',
   },
 });
 </script>

@@ -1,10 +1,10 @@
-<script lang="ts" setup name="layout-action-setting">
+<script lang="ts" setup name="layout-toolbar-setting">
 import { RouteEnum } from '@/constants/enums';
 
 const props = defineProps({
   color: {
     type: String,
-    default: 'var(--wings-header-text-color)',
+    default: 'var(--wings-cloud-header-text-color)',
   },
 });
 

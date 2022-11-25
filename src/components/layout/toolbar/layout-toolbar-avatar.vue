@@ -1,4 +1,4 @@
-<script lang="ts" setup name="layout-action-avatar">
+<script lang="ts" setup name="layout-toolbar-avatar">
 import { RouteEnum } from '@/constants/enums';
 import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { UserFilled } from '@element-plus/icons-vue';

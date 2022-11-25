@@ -22,20 +22,20 @@ const height = computed(() => {
     systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
     _height =
-      'calc(100vh - var(--wings-header-height) - var(--wings-collapse-height))';
+      'calc(100vh - var(--wings-cloud-header-height) - var(--wings-cloud-collapse-height))';
   } else {
     _height =
-      'calc(100vh - var(--wings-aside-logo-height) - var(--wings-collapse-height))';
+      'calc(100vh - var(--wings-cloud-aside-logo-height) - var(--wings-cloud-collapse-height))';
   }
   if (systemStore.isMobile) {
-    _height = 'calc(100vh - var(--wings-aside-logo-height)';
+    _height = 'calc(100vh - var(--wings-cloud-aside-logo-height)';
   }
   return 'height:' + _height + ';';
 });
 
 const width = computed(() => {
   let _width =
-    'calc(100vw - var(--wings-header-toobar-width) - var(--wings-header-logo-width))';
+    'calc(100vw - var(--wings-cloud-header-toobar-width) - var(--wings-cloud-header-logo-width))';
   return 'width:' + _width + ';height:100%;';
 });
 </script>
@@ -47,10 +47,10 @@ const width = computed(() => {
   >
     <div
       :class="[
-        systemStore.settings.MenuStyle,
-        systemStore.colorScheme,
-        systemStore.settings.Layout,
-        'layout-admin-menu',
+        'wings-cloud-' + systemStore.settings.MenuStyle,
+        'wings-cloud-' + systemStore.colorScheme,
+        'wings-cloud-' + systemStore.settings.Layout,
+        'wings-cloud-layout-admin-menu',
       ]"
       h-full
     >

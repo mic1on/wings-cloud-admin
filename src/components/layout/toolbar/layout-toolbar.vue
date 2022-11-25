@@ -12,7 +12,7 @@ const props = defineProps({
 const systemStore = useSystemStore();
 
 const iconColor = () => {
-  return props.fixed ? '#fff' : 'var(--wings-header-text-color)';
+  return props.fixed ? '#fff' : 'var(--wings-cloud-header-text-color)';
 };
 
 const collapse = ref<boolean>(true);
@@ -31,12 +31,12 @@ const changeToolbar = () => {
     justify-end
     p-x-6
     box-border
-    style="width: var(--wings-header-toobar-width)"
+    style="width: var(--wings-cloud-header-toobar-width)"
     :class="[
-      props.fixed ? 'fixed' : '',
-      systemStore.isMobile ? 'small' : 'normal',
+      props.fixed ? 'wings-cloud-fixed' : '',
+      systemStore.isMobile ? 'wings-cloud-small' : 'wings-cloud-normal',
       systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
-        ? 'dark'
+        ? 'wings-cloud-dark'
         : '',
     ]"
   >
@@ -55,37 +55,37 @@ const changeToolbar = () => {
       flex
       items-center
       justify-end
-      :class="systemStore.isMobile ? 'mobile' : 'pc'"
+      :class="systemStore.isMobile ? 'wings-cloud-mobile' : 'wings-cloud-pc'"
       :style="collapse ? 'width:0' : 'width:auto'"
     >
       <layout-toolbar-color-scheme
-        class="toolbar"
+        class="wings-cloud-toolbar"
         :color="iconColor()"
         v-if="systemStore.settings.Toolbar.Dark"
       ></layout-toolbar-color-scheme>
       <layout-toolbar-language
         only-icon
-        class="toolbar"
+        class="wings-cloud-toolbar"
         :color="iconColor()"
         v-if="systemStore.settings.Toolbar.Language"
       ></layout-toolbar-language>
       <layout-toolbar-refresh
-        class="toolbar"
+        class="wings-cloud-toolbar"
         :color="iconColor()"
         v-if="systemStore.settings.Toolbar.Refresh"
       ></layout-toolbar-refresh>
       <layout-toolbar-notification
-        class="toolbar"
+        class="wings-cloud-toolbar"
         :color="iconColor()"
         v-if="systemStore.settings.Toolbar.Notification"
       ></layout-toolbar-notification>
       <layout-toolbar-fullscreen
-        class="toolbar"
+        class="wings-cloud-toolbar"
         :color="iconColor()"
         v-if="systemStore.settings.Toolbar.Fullscreen && !systemStore.isMobile"
       ></layout-toolbar-fullscreen>
       <layout-toolbar-setting
-        class="toolbar"
+        class="wings-cloud-toolbar"
         :color="iconColor()"
         v-if="systemStore.settings.Toolbar.Setting"
       ></layout-toolbar-setting>
@@ -100,15 +100,15 @@ const changeToolbar = () => {
 </template>
 
 <style lang="scss" scoped>
-.mobile .toolbar {
+.wings-cloud-mobile .wings-cloud-toolbar {
   margin-right: 1.4rem;
 }
 
-.pc .toolbar {
+.wings-cloud-pc .wings-cloud-toolbar {
   margin-right: 2rem;
 }
 
-.fixed {
+.wings-cloud-fixed {
   position: fixed;
   top: 20%;
   right: 0;
@@ -118,22 +118,22 @@ const changeToolbar = () => {
   box-shadow: var(--el-box-shadow);
   transform: translateY(-50%);
 
-  &.dark {
+  &.wings-cloud-dark {
     background-color: var(--el-color-primary);
   }
 
-  &.normal {
+  &.wings-cloud-normal {
     height: 4rem;
     padding: 0.8rem;
   }
 
-  &.small {
+  &.wings-cloud-small {
     height: 2.8rem;
     padding: 0 0.8rem 0 0.4rem;
   }
 
-  .mobile,
-  .pc {
+  .wings-cloud-mobile,
+  .wings-cloud-pc {
     overflow: hidden;
   }
 }

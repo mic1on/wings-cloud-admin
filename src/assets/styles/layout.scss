@@ -1,9 +1,9 @@
-.layout-admin {
+.wings-cloud-layout-admin {
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 
-  &.aside-dark,
-  &.aside-lean-dark {
+  &.wings-cloud-aside-dark,
+  &.wings-cloud-aside-lean-dark {
     .el-aside {
       border-right: 1px solid #262a3c !important;
       transition: all var(--el-transition-duration)
@@ -16,12 +16,12 @@
   }
 }
 
-.layout-admin-aside {
+.wings-cloud-layout-admin-aside {
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 
-  &.aside-dark,
-  &.aside-lean-dark {
+  &.wings-cloud-aside-dark,
+  &.wings-cloud-aside-lean-dark {
     background-color: #262a3c;
     .layout-admin-logo .name {
       color: var(--el-color-white) !important;
@@ -29,7 +29,7 @@
   }
 }
 
-.layout-admin-menu {
+.wings-cloud-layout-admin-menu {
   .el-menu {
     width: 100% !important;
     transition: all var(--el-transition-duration)
@@ -43,7 +43,7 @@
   }
 
   .el-menu.el-menu--vertical {
-    background-color: var(--wings-menu-bg-color);
+    background-color: var(--wings-cloud-menu-bg-color);
   }
 
   .el-menu.el-menu--horizontal {
@@ -54,16 +54,16 @@
 
   .el-sub-menu {
     .el-menu {
-      color: var(--wings-menu-text-color);
-      background-color: var(--wings-menu-inline-bg-color);
+      color: var(--wings-cloud-menu-text-color);
+      background-color: var(--wings-cloud-menu-inline-bg-color);
     }
 
     .el-sub-menu__title {
-      color: var(--wings-menu-text-color) !important;
+      color: var(--wings-cloud-menu-text-color) !important;
 
       &:hover {
-        color: var(--wings-menu-text-color-hover) !important;
-        background-color: var(--wings-menu-bg-color-hover) !important;
+        color: var(--wings-cloud-menu-text-color-hover) !important;
+        background-color: var(--wings-cloud-menu-bg-color-hover) !important;
       }
     }
 
@@ -71,22 +71,22 @@
       color: var(--el-color-primary) !important;
 
       &:hover {
-        color: var(--wings-menu-text-color-hover) !important;
+        color: var(--wings-cloud-menu-text-color-hover) !important;
       }
     }
   }
 
   .el-menu-item {
-    color: var(--wings-menu-text-color) !important;
+    color: var(--wings-cloud-menu-text-color) !important;
 
     &:hover {
-      color: var(--wings-menu-text-color-hover) !important;
-      background-color: var(--wings-menu-bg-color-hover) !important;
+      color: var(--wings-cloud-menu-text-color-hover) !important;
+      background-color: var(--wings-cloud-menu-bg-color-hover) !important;
     }
 
     &.is-active {
-      color: var(--wings-menu-text-color-active) !important;
-      background-color: var(--wings-menu-bg-color-active) !important;
+      color: var(--wings-cloud-menu-text-color-active) !important;
+      background-color: var(--wings-cloud-menu-bg-color-active) !important;
     }
   }
 
@@ -96,16 +96,16 @@
 
   &.el-menu--popup-container {
     .el-menu-item {
-      color: var(--wings-menu-text-color) !important;
+      color: var(--wings-cloud-menu-text-color) !important;
 
       &:hover {
-        color: var(--wings-menu-text-color-hover) !important;
-        background-color: var(--wings-menu-bg-color-hover) !important;
+        color: var(--wings-cloud-menu-text-color-hover) !important;
+        background-color: var(--wings-cloud-menu-bg-color-hover) !important;
       }
 
       &.is-active {
-        color: var(--wings-menu-text-color-active) !important;
-        background-color: var(--wings-menu-bg-color-active) !important;
+        color: var(--wings-cloud-menu-text-color-active) !important;
+        background-color: var(--wings-cloud-menu-bg-color-active) !important;
       }
     }
 
@@ -116,7 +116,7 @@
     }
   }
 
-  &.square {
+  &.wings-cloud-square {
     .el-menu {
       padding: 0;
       border-radius: 0;
@@ -145,20 +145,20 @@
     }
   }
 
-  &.round {
+  &.wings-cloud-round {
     .el-menu {
       padding: 10px;
-      border-radius: var(--wings-menu-radius);
+      border-radius: var(--wings-cloud-menu-radius);
 
       .el-sub-menu__title {
-        margin-bottom: var(--wings-menu-gap);
-        border-radius: var(--wings-menu-radius);
+        margin-bottom: var(--wings-cloud-menu-gap);
+        border-radius: var(--wings-cloud-menu-radius);
       }
     }
 
     .el-menu-item {
-      margin-bottom: var(--wings-menu-gap);
-      border-radius: var(--wings-menu-radius);
+      margin-bottom: var(--wings-cloud-menu-gap);
+      border-radius: var(--wings-cloud-menu-radius);
 
       &:last-child {
         margin-bottom: 0;
@@ -166,7 +166,7 @@
     }
 
     .el-sub-menu {
-      margin-bottom: var(--wings-menu-gap);
+      margin-bottom: var(--wings-cloud-menu-gap);
 
       .el-menu.el-menu--inline {
         padding: 0;
@@ -178,29 +178,29 @@
     }
 
     &.el-popper {
-      border-radius: var(--wings-menu-radius);
+      border-radius: var(--wings-cloud-menu-radius);
     }
 
     .el-menu.el-menu--horizontal {
       .el-sub-menu {
-        margin-right: var(--wings-menu-gap);
+        margin-right: var(--wings-cloud-menu-gap);
         margin-bottom: 0;
       }
     }
   }
 
-  &.theme {
+  &.wings-cloud-theme {
     .el-menu.el-menu--horizontal {
-      background-color: var(--wings-header-bg-color);
+      background-color: var(--wings-cloud-header-bg-color);
 
       .el-sub-menu {
         .el-menu {
-          color: var(--wings-header-text-color);
-          background-color: var(--wings-menu-inline-bg-color);
+          color: var(--wings-cloud-header-text-color);
+          background-color: var(--wings-cloud-menu-inline-bg-color);
         }
 
         .el-sub-menu__title {
-          color: var(--wings-header-text-color) !important;
+          color: var(--wings-cloud-header-text-color) !important;
 
           &:hover {
             color: var(--el-text-color-primary) !important;
@@ -220,14 +220,14 @@
     }
   }
 
-  &.theme.round {
+  &.wings-cloud-theme.wings-cloud-round {
     .el-sub-menu {
-      border-radius: var(--wings-menu-radius);
+      border-radius: var(--wings-cloud-menu-radius);
     }
   }
 
-  &.aside-dark,
-  &.aside-lean-dark {
+  &.wings-cloud-aside-dark,
+  &.wings-cloud-aside-lean-dark {
     .el-menu.el-menu--vertical {
       background-color: #262a3c;
     }
@@ -242,7 +242,7 @@
         color: var(--el-color-white) !important;
 
         &:hover {
-          color: var(--wings-menu-text-color-hover) !important;
+          color: var(--wings-cloud-menu-text-color-hover) !important;
         }
       }
 
@@ -250,7 +250,7 @@
         color: var(--el-color-primary) !important;
 
         &:hover {
-          color: var(--wings-menu-text-color-hover) !important;
+          color: var(--wings-cloud-menu-text-color-hover) !important;
         }
       }
     }
@@ -259,28 +259,28 @@
       color: var(--el-color-white) !important;
 
       &:hover {
-        color: var(--wings-menu-text-color-hover) !important;
+        color: var(--wings-cloud-menu-text-color-hover) !important;
       }
 
       &.is-active {
-        color: var(--wings-menu-text-color-active) !important;
+        color: var(--wings-cloud-menu-text-color-active) !important;
       }
     }
 
     &.el-menu--popup-container {
       .el-sub-menu__title {
-        color: var(--wings-menu-text-color) !important;
+        color: var(--wings-cloud-menu-text-color) !important;
       }
 
       .el-menu-item {
-        color: var(--wings-menu-text-color) !important;
+        color: var(--wings-cloud-menu-text-color) !important;
 
         &:hover {
-          color: var(--wings-menu-text-color-hover) !important;
+          color: var(--wings-cloud-menu-text-color-hover) !important;
         }
 
         &.is-active {
-          color: var(--wings-menu-text-color-active) !important;
+          color: var(--wings-cloud-menu-text-color-active) !important;
         }
       }
 
@@ -292,25 +292,25 @@
     }
   }
 
-  &.dark {
+  &.wings-cloud-dark {
     .el-sub-menu {
       &.is-active > .el-sub-menu__title {
         color: var(--el-color-primary-light-3) !important;
 
         &:hover {
-          color: var(--wings-menu-text-color-hover) !important;
+          color: var(--wings-cloud-menu-text-color-hover) !important;
         }
       }
     }
   }
 }
 
-.layout-aside-menu-collapse {
+.wings-cloud-layout-aside-menu-collapse {
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 
-  &.theme.aside-dark,
-  &.theme.aside-lean-dark {
+  &.wings-cloud-theme.wings-cloud-aside-dark,
+  &.wings-cloud-theme.wings-cloud-aside-lean-dark {
     .el-button {
       transition: all var(--el-transition-duration)
         var(--el-transition-function-ease-in-out-bezier);

@@ -8,9 +8,9 @@ const systemStore = useSystemStore();
 <template>
   <div
     :class="[
-      systemStore.colorScheme,
-      systemStore.settings.Layout,
-      'layout-admin',
+      'wings-cloud-' + systemStore.colorScheme,
+      'wings-cloud-' + systemStore.settings.Layout,
+      'wings-cloud-layout-admin',
     ]"
   >
     <el-container>
@@ -18,7 +18,7 @@ const systemStore = useSystemStore();
         :style="
           systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
           systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
-            ? 'height: var(--wings-header-height); border-bottom: 1px solid'
+            ? 'height: var(--wings-cloud-header-height); border-bottom: 1px solid'
             : 'height: 0; border-bottom: none;'
         "
       >
@@ -35,8 +35,8 @@ const systemStore = useSystemStore();
             !systemStore.isMobile &&
             systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
               ? systemStore.collapse
-                ? 'width: var(--wings-aside-width-fold)'
-                : 'width: var(--wings-aside-width)'
+                ? 'width: var(--wings-cloud-aside-width-fold)'
+                : 'width: var(--wings-cloud-aside-width)'
               : 'width: 0',
             systemStore.isMobile ? 'border:none' : '',
           ]"
@@ -52,7 +52,7 @@ const systemStore = useSystemStore();
           :style="
             systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
             systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
-              ? 'height: calc(100vh - var(--wings-header-height));'
+              ? 'height: calc(100vh - var(--wings-cloud-header-height));'
               : 'height: calc(100vh);'
           "
         >
@@ -61,7 +61,7 @@ const systemStore = useSystemStore();
               systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
               systemStore.settings.Layout ===
                 SettingsValueEnum.LAYOUT_ASIDE_DARK
-                ? 'height: var(--wings-header-height); border-bottom: 1px solid'
+                ? 'height: var(--wings-cloud-header-height); border-bottom: 1px solid'
                 : 'height: 0; border-bottom: none'
             "
           >
@@ -100,7 +100,7 @@ const systemStore = useSystemStore();
       :show-close="false"
       direction="ltr"
       :with-header="false"
-      size="var(--wings-aside-width)"
+      size="var(--wings-cloud-aside-width)"
     >
       <layout-admin-aside></layout-admin-aside>
     </el-drawer>
@@ -119,8 +119,8 @@ const systemStore = useSystemStore();
   box-sizing: border-box;
   padding: 0 !important;
   overflow: hidden;
-  background-color: var(--wings-header-bg-color);
-  border-color: var(--wings-header-border-color) !important;
+  background-color: var(--wings-cloud-header-bg-color);
+  border-color: var(--wings-cloud-header-border-color) !important;
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }
@@ -128,7 +128,7 @@ const systemStore = useSystemStore();
 :deep(.el-container) {
   box-sizing: border-box;
   overflow: hidden;
-  background-color: var(--wings-menu-bg-color);
+  background-color: var(--wings-cloud-menu-bg-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }
@@ -136,7 +136,7 @@ const systemStore = useSystemStore();
 :deep(.el-aside) {
   box-sizing: border-box;
   overflow: hidden;
-  border-right: 1px solid var(--wings-aside-border-color);
+  border-right: 1px solid var(--wings-cloud-aside-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }
@@ -145,8 +145,12 @@ const systemStore = useSystemStore();
   box-sizing: border-box;
   padding: 0;
   overflow: hidden;
-  background: var(--wings-main-fill);
+  background: var(--wings-cloud-main-fill);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
+}
+
+:deep(.el-drawer) {
+  overflow-x: hidden;
 }
 </style>

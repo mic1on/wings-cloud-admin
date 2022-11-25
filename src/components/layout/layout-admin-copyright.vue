@@ -11,7 +11,7 @@ const systemStore = useSystemStore();
     flex
     items-center
     justify-center
-    style="padding: var(--wings-main-padding) 0"
+    style="padding: var(--wings-cloud-main-padding) 0"
   >
     <div
       :class="systemStore.isMobile ? 'text-2' : 'text-4'"

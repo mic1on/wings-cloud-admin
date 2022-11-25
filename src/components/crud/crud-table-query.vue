@@ -17,22 +17,26 @@ const props = defineProps({
 });
 </script>
 <template>
-  <el-form v-bind="$attrs">
-    <slot></slot>
-    <el-form-item v-if="!slots.action">
-      <el-button type="primary" @click="$attrs.onQuery">
-        {{ props.queryLabel || t('crud.btn.query') }}
-      </el-button>
-      <el-button @click="$attrs.onReset">
-        {{ props.resetLabel || t('crud.btn.reset') }}
-      </el-button>
-    </el-form-item>
-    <slot name="action"></slot>
-  </el-form>
+  <div class="crud-table-query">
+    <el-form v-bind="$attrs">
+      <slot></slot>
+      <el-form-item v-if="!slots.action">
+        <el-button type="primary" @click="$attrs.onQuery">
+          {{ props.queryLabel || t('crud.btn.query') }}
+        </el-button>
+        <el-button @click="$attrs.onReset">
+          {{ props.resetLabel || t('crud.btn.reset') }}
+        </el-button>
+      </el-form-item>
+      <slot name="action"></slot>
+    </el-form>
+  </div>
 </template>
-<style lang="scss" scoped>
-:deep(.el-form-item) {
-  width: 200px;
-  margin-right: 20px;
+<style lang="scss">
+.crud-table-query {
+  :deep(.el-form-item) {
+    width: 200px !important;
+    margin-right: 20px;
+  }
 }
 </style>

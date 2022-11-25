@@ -108,7 +108,7 @@ watch(
     items-center
     justify-between
     class="slot"
-    :class="systemStore.settings.TabStyle"
+    :class="'wings-cloud-' + systemStore.settings.TabStyle"
   >
     <el-tabs
       v-model="tab.nowTab"
@@ -156,10 +156,10 @@ watch(
 <style lang="scss" scoped>
 .slot {
   box-sizing: border-box;
-  height: var(--wings-tab-height);
-  padding: 0 var(--wings-main-padding);
-  background-color: var(--wings-tab-bg-color) !important;
-  border-bottom: 1px solid var(--wings-tab-border-color);
+  height: var(--wings-cloud-tab-height);
+  padding: 0 var(--wings-cloud-main-padding);
+  background-color: var(--wings-cloud-tab-bg-color) !important;
+  border-bottom: 1px solid var(--wings-cloud-tab-border-color);
   transition: all var(--el-transition-duration)
     var(--el-transition-function-ease-in-out-bezier);
 }
@@ -186,9 +186,9 @@ watch(
   border-bottom: 2px solid var(--el-color-primary) !important;
 }
 
-.slot.round {
+.slot.wings-cloud-round {
   height: auto;
-  background-color: var(--wings-main-fill) !important;
+  background-color: var(--wings-cloud-main-fill) !important;
   border-bottom: 1px solid rgba($color: #000, $alpha: 0%);
 
   :deep(.el-tabs__item) {

@@ -8,9 +8,9 @@ const systemStore = useSystemStore();
 <template>
   <div
     :class="[
-      systemStore.colorScheme,
-      systemStore.settings.Layout,
-      'layout-admin-aside',
+      'wings-cloud-' + systemStore.colorScheme,
+      'wings-cloud-' + systemStore.settings.Layout,
+      'wings-cloud-layout-admin-aside',
     ]"
   >
     <layout-admin-logo
@@ -20,7 +20,7 @@ const systemStore = useSystemStore();
           systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
           systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN)
       "
-      style="height: var(--wings-aside-logo-height)"
+      style="height: var(--wings-cloud-aside-logo-height)"
     ></layout-admin-logo>
     <layout-admin-menu></layout-admin-menu>
     <layout-menu-collapse v-if="!systemStore.isMobile"></layout-menu-collapse>
