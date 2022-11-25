@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
-import type { PhoneForm } from '@/pages/index.d';
+import type { PhoneForm } from '@/pages/sign.d';
 import type { IObject } from '@/types/global.d';
 import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
 import { useCountDown } from '@/hooks/use-crud/use-count-down';

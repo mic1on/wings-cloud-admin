@@ -1,4 +1,4 @@
-import type { LoginForm, PhoneForm } from '@/pages/index.d';
+import type { LoginForm, PhoneForm } from '@/pages/sign.d';
 
 export interface LoginAccountData extends LoginForm {
   username: string;

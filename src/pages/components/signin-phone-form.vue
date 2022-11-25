@@ -1,6 +1,6 @@
 <script lang="ts" setup name="signin-phone-form">
 import type { FormRules, FormInstance } from 'element-plus';
-import type { LoginPhoneForm } from '../index.d';
+import type { LoginPhoneForm } from '@/pages/sign.d';
 import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
 import { MOBILE_PHONE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
