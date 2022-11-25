@@ -1,5 +1,5 @@
+import type { PluginOption } from 'vite';
 import { resolve } from 'path';
-import { PluginOption } from 'vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
@@ -27,8 +27,8 @@ import {
  */
 export const usePluginOption = (
   ENV: Record<string, string>
-): PluginOption[] => {
-  const pluginOption: PluginOption[] = [
+): PluginOption[] | undefined => {
+  const pluginOption: PluginOption[] | undefined = [
     Vue(),
     EslintPlugin(),
     createHtmlPlugin(),
