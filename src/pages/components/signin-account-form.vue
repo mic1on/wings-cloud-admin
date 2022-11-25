@@ -1,7 +1,7 @@
 <script lang="ts" setup name="signin-account-form">
 import type { FormRules, FormInstance } from 'element-plus';
 import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
-import type { LoginAccountForm } from '..';
+import type { LoginAccountForm } from '@/pages/sign.d';
 import type { ResponseData } from '@/utils/request/index.d';
 import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';

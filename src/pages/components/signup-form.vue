@@ -1,6 +1,6 @@
 <script lang="ts" setup name="signup-form">
 import type { FormRules, FormInstance } from 'element-plus';
-import type { SignupAccountForm } from '../index.d';
+import type { SignupAccountForm } from '@/pages/sign.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
 import { useUserStore } from '@/hooks/use-store/use-user-store';
