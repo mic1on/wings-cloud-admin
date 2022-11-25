@@ -8,10 +8,10 @@ import { useRouter } from './plugins/vue-router';
 import { useI18n } from './plugins/vue-i18n';
 import { usePinia } from './plugins/pinia';
 import { useMock } from './plugins/mock';
+import 'virtual:svg-icons-register';
 
 import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/notification.scss';
-import 'virtual:svg-icons-register';
 
 import './assets/themes/index.scss';
 import './assets/styles/index.scss';
