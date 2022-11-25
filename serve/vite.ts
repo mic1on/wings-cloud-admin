@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig, loadEnv, ConfigEnv } from 'vite';
-import { serviceProxy } from './proxy';
+import { serverProxy, previewProxy } from './proxy';
 import { usePluginOption } from './plugins';
 
 export default ({ command, mode }: ConfigEnv) => {
@@ -34,14 +34,14 @@ export default ({ command, mode }: ConfigEnv) => {
       open: ENV.VITE_SERVER_OPEN === 'true',
       port: Number(ENV.VITE_SERVER_PORT),
       https: ENV.VITE_SERVER_HTTPS === 'true',
-      proxy: serviceProxy(ENV),
+      proxy: serverProxy(ENV),
     },
     preview: {
       host: ENV.VITE_SERVER_HOST,
       open: ENV.VITE_SERVER_OPEN === 'true',
       port: Number(ENV.VITE_SERVER_PORT),
       https: ENV.VITE_SERVER_HTTPS === 'true',
-      proxy: serviceProxy(ENV),
+      proxy: previewProxy(ENV),
     },
     build: {
       target: 'modules',

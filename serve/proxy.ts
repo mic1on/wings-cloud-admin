@@ -1,11 +1,11 @@
 import { ProxyOptions } from 'vite';
 
 /**
- * @name serviceProxy
- * @description 基于 Vite 的服务器代理配置
+ * @name serverProxy
+ * @description 基于 Vite 的服务代理配置
  * @return proxy 代理配置
  */
-export const serviceProxy = (
+export const serverProxy = (
   env: Record<string, string>
 ): Record<string, string | ProxyOptions> => {
   let proxy: Record<string, string | ProxyOptions> = {};
@@ -20,5 +20,17 @@ export const serviceProxy = (
   } else if (env.VITE_MODE === 'production') {
     proxy = {};
   }
+  return proxy;
+};
+
+/**
+ * @name previewProxy
+ * @description 基于 Vite 的服务代理配置
+ * @return proxy 代理配置
+ */
+export const previewProxy = (
+  env: Record<string, string>
+): Record<string, string | ProxyOptions> => {
+  let proxy: Record<string, string | ProxyOptions> = {};
   return proxy;
 };
