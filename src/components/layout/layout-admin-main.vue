@@ -13,12 +13,12 @@ const height = computed(() => {
     systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK
   ) {
     _height =
-      'calc(100vh - var(--wings-header-height) - var(--wings-tab-height))';
+      'calc(100vh - var(--wings-cloud-header-height) - var(--wings-cloud-tab-height))';
   } else {
-    _height = 'calc(100vh - var(--wings-tab-height))';
+    _height = 'calc(100vh - var(--wings-cloud-tab-height))';
   }
   if (!systemStore.settings.Tab) {
-    _height = `calc(${_height} + var(--wings-tab-height))`;
+    _height = `calc(${_height} + var(--wings-cloud-tab-height))`;
   }
   return 'height: ' + _height;
 });
@@ -37,8 +37,8 @@ const height = computed(() => {
       style="
         box-sizing: border-box;
         height: 100%;
-        padding: var(--wings-main-padding);
-        background: var(--wings-main-fill);
+        padding: var(--wings-cloud-main-padding);
+        background: var(--wings-cloud-main-fill);
         transition: all var(--el-transition-duration)
           var(--el-transition-function-ease-in-out-bezier);
       "
@@ -49,7 +49,7 @@ const height = computed(() => {
           SettingsValueEnum.BREADCRUMB_VIEW_TOP
         "
       ></layout-admin-breadcrumb>
-      <div style="padding-bottom: var(--wings-main-padding)">
+      <div style="padding-bottom: var(--wings-cloud-main-padding)">
         <slot name="main-router-view"></slot>
       </div>
       <layout-admin-copyright

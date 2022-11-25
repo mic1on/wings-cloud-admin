@@ -58,7 +58,7 @@ const symbolId = computed(
     <svg
       v-if="props.name"
       aria-hidden="true"
-      :class="`iconfont ${props.className}`"
+      :class="`wings-cloud-icon ${props.className}`"
       :style="`width:1em;height:1em;line-height:1em;color:${props.color};`"
     >
       <use :xlink:href="symbolId" />

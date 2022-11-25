@@ -15,12 +15,12 @@ const changeCollapse = (): void => {
     items-center
     justify-center
     cursor-pointer
-    style="height: var(--wings-collapse-height)"
+    style="height: var(--wings-cloud-collapse-height)"
     @click="changeCollapse()"
     :class="[
-      systemStore.colorScheme,
-      systemStore.settings.Layout,
-      'layout-aside-menu-collapse',
+      'wings-cloud-' + systemStore.colorScheme,
+      'wings-cloud-' + systemStore.settings.Layout,
+      'wings-cloud-layout-aside-menu-collapse',
     ]"
   >
     <el-button

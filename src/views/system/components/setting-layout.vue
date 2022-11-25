@@ -31,14 +31,14 @@ const props = defineProps({
           h-4
           style="
             box-sizing: border-box;
-            background-color: var(--wings-header-bg-color);
-            border: 1px solid var(--wings-header-border-color);
+            background-color: var(--wings-cloud-header-bg-color);
+            border: 1px solid var(--wings-cloud-header-border-color);
             border-radius: 4px 4px 0 0;
           "
           :style="
             systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color:var(--el-border-color)'
-              : 'border-color: var(--wings-header-border-color)'
+              : 'border-color: var(--wings-cloud-header-border-color)'
           "
         >
         </div>
@@ -48,7 +48,7 @@ const props = defineProps({
             w-6
             style="
               box-sizing: border-box;
-              background-color: var(--wings-menu-bg-color);
+              background-color: var(--wings-cloud-menu-bg-color);
               border: 1px solid var(--el-border-color);
               border-top: 0;
               border-radius: 0 0 0 4px;
@@ -60,7 +60,7 @@ const props = defineProps({
             w-14
             style="
               box-sizing: border-box;
-              background-color: var(--wings-main-fill);
+              background-color: var(--wings-cloud-main-fill);
               border: 1px solid var(--el-border-color);
               border-top: 0;
               border-left: 0;
@@ -79,14 +79,14 @@ const props = defineProps({
           h-4
           style="
             box-sizing: border-box;
-            background-color: var(--wings-header-bg-color);
+            background-color: var(--wings-cloud-header-bg-color);
             border: 1px solid;
             border-radius: 4px 4px 0 0;
           "
           :style="
             systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
               ? 'border-color:var(--el-border-color)'
-              : 'border-color: var(--wings-header-border-color)'
+              : 'border-color: var(--wings-cloud-header-border-color)'
           "
         >
         </div>
@@ -95,7 +95,7 @@ const props = defineProps({
           h-14
           style="
             box-sizing: border-box;
-            background-color: var(--wings-main-fill);
+            background-color: var(--wings-cloud-main-fill);
             border: 1px solid var(--el-border-color);
             border-top: 0;
             border-radius: 0 0 4px 4px;
@@ -113,7 +113,7 @@ const props = defineProps({
           w-6
           style="
             box-sizing: border-box;
-            background-color: var(--wings-menu-bg-color);
+            background-color: var(--wings-cloud-menu-bg-color);
             border: 1px solid var(--el-border-color);
             border-right: 0;
             border-radius: 4px 0 0 4px;
@@ -125,14 +125,14 @@ const props = defineProps({
             h-4
             style="
               box-sizing: border-box;
-              background-color: var(--wings-header-bg-color);
+              background-color: var(--wings-cloud-header-bg-color);
               border: 1px solid;
               border-radius: 0 4px 0 0;
             "
             :style="
               systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
                 ? 'border-color:var(--el-border-color)'
-                : 'border-color: var(--wings-header-border-color)'
+                : 'border-color: var(--wings-cloud-header-border-color)'
             "
           ></div>
           <div
@@ -140,7 +140,7 @@ const props = defineProps({
             w-full
             style="
               box-sizing: border-box;
-              background-color: var(--wings-main-fill);
+              background-color: var(--wings-cloud-main-fill);
               border: 1px solid var(--el-border-color);
               border-top: 0;
               border-radius: 0 0 4px;
@@ -176,14 +176,14 @@ const props = defineProps({
             h-4
             style="
               box-sizing: border-box;
-              background-color: var(--wings-header-bg-color);
+              background-color: var(--wings-cloud-header-bg-color);
               border: 1px solid;
               border-radius: 0 4px 0 0;
             "
             :style="
               systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
                 ? 'border-color:var(--el-border-color)'
-                : 'border-color: var(--wings-header-border-color)'
+                : 'border-color: var(--wings-cloud-header-border-color)'
             "
           ></div>
           <div
@@ -191,7 +191,7 @@ const props = defineProps({
             w-full
             style="
               box-sizing: border-box;
-              background-color: var(--wings-main-fill);
+              background-color: var(--wings-cloud-main-fill);
               border: 1px solid var(--el-border-color);
               border-top: 0;
               border-radius: 0 0 4px;
@@ -210,7 +210,7 @@ const props = defineProps({
           w-6
           style="
             box-sizing: border-box;
-            background-color: var(--wings-menu-bg-color);
+            background-color: var(--wings-cloud-menu-bg-color);
             border: 1px solid var(--el-border-color);
             border-radius: 4px 0 0 4px;
           "
@@ -220,7 +220,7 @@ const props = defineProps({
           w-12
           style="
             box-sizing: border-box;
-            background-color: var(--wings-main-fill);
+            background-color: var(--wings-cloud-main-fill);
             border: 1px solid var(--el-border-color);
             border-left: 0;
             border-radius: 0 4px 4px 0;
@@ -253,7 +253,7 @@ const props = defineProps({
           w-12
           style="
             box-sizing: border-box;
-            background-color: var(--wings-main-fill);
+            background-color: var(--wings-cloud-main-fill);
             border: 1px solid var(--el-border-color);
             border-left: 0;
             border-radius: 0 4px 4px 0;

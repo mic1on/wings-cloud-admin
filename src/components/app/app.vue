@@ -6,43 +6,42 @@ import { Settings } from '@/constants/settings';
   <app-provider>
     <template #app>
       <router-view v-slot="{ Component, route }">
-        <div id="app">
-          <transition name="app-page" mode="out-in" appear>
-            <Suspense>
-              <keep-alive v-if="Settings.KeepAlive">
-                <component :is="Component" :key="route.fullPath" />
-              </keep-alive>
-              <component :is="Component" v-else />
-              <template #fallback> Loading... </template>
-            </Suspense>
+        <Suspense>
+          <transition
+            v-if="Settings.KeepAlive"
+            name="wings-cloud-page"
+            mode="out-in"
+            appear
+          >
+            <keep-alive>
+              <component :is="Component" :key="route.fullPath" />
+            </keep-alive>
           </transition>
-        </div>
+          <transition v-else name="wings-cloud-page" mode="out-in" appear>
+            <component :is="Component" />
+          </transition>
+          <template #fallback> Loading... </template>
+        </Suspense>
       </router-view>
     </template>
   </app-provider>
 </template>
 
 <style lang="scss" scoped>
-#app {
-  position: relative;
-  transition: all var(--el-transition-duration)
-    var(--el-transition-function-ease-in-out-bezier);
-}
-
-.app-page-enter-active {
+.wings-cloud-page-enter-active {
   transition: 0.2s;
 }
 
-.app-page-leave-active {
+.wings-cloud-page-leave-active {
   transition: 0.15s;
 }
 
-.app-page-enter-from {
+.wings-cloud-page-enter-from {
   transform: translateX(-20px);
   opacity: 0;
 }
 
-.app-page-leave-to {
+.wings-cloud-page-leave-to {
   transform: translateX(20px);
   opacity: 0;
 }

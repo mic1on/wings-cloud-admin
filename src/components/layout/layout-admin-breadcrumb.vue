@@ -16,7 +16,7 @@ const { t } = useI18n();
     justify-start
     :style="
       systemStore.settings.Breadcrumb == SettingsValueEnum.BREADCRUMB_VIEW_TOP
-        ? 'padding-bottom: var(--wings-main-padding)'
+        ? 'padding-bottom: var(--wings-cloud-main-padding)'
         : ''
     "
   >

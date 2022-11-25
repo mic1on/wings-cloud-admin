@@ -73,7 +73,6 @@ declare module '@vue/runtime-core' {
     LayoutAdminTab: typeof import('./../components/layout/layout-admin-tab.vue')['default']
     LayoutMenuCollapse: typeof import('./../components/layout/menu/layout-menu-collapse.vue')['default']
     LayoutPage: typeof import('./../components/layout/layout-page.vue')['default']
-    LayoutSign: typeof import('./../components/layout/layout-sign.vue')['default']
     LayoutToolbar: typeof import('./../components/layout/toolbar/layout-toolbar.vue')['default']
     LayoutToolbarAvatar: typeof import('./../components/layout/toolbar/layout-toolbar-avatar.vue')['default']
     LayoutToolbarColorScheme: typeof import('./../components/layout/toolbar/layout-toolbar-color-scheme.vue')['default']

@@ -1,4 +1,4 @@
-<script lang="ts" setup name="layout-action-fullscreen">
+<script lang="ts" setup name="layout-toolbar-fullscreen">
 import { useFullscreen } from '@vueuse/core';
 
 const { isFullscreen, toggle } = useFullscreen();
@@ -6,7 +6,7 @@ const { isFullscreen, toggle } = useFullscreen();
 const props = defineProps({
   color: {
     type: String,
-    default: 'var(--wings-header-text-color)',
+    default: 'var(--wings-cloud-header-text-color)',
   },
 });
 </script>

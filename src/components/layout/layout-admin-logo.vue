@@ -14,24 +14,24 @@ const goHomeRoute = () => {
 };
 
 const width = computed(() => {
-  let _width = 'var(--wings-header-logo-width)';
+  let _width = 'var(--wings-cloud-header-logo-width)';
   if (
     systemStore.collapse &&
     systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP &&
     systemStore.settings.Layout !== SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
-    _width = 'var(--wings-aside-width-fold)';
+    _width = 'var(--wings-cloud-aside-width-fold)';
   } else {
-    _width = 'var(--wings-aside-width)';
+    _width = 'var(--wings-cloud-aside-width)';
   }
   if (
     systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
     systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
   ) {
-    _width = 'var(--wings-header-logo-width)';
+    _width = 'var(--wings-cloud-header-logo-width)';
   }
   if (systemStore.isMobile) {
-    _width = 'var(--wings-aside-width)';
+    _width = 'var(--wings-cloud-aside-width)';
   }
   return 'width:' + _width + ';';
 });
@@ -55,7 +55,7 @@ const position = computed(() => {
 
 <template>
   <div
-    class="layout-admin-logo"
+    class="wings-cloud-layout-admin-logo"
     cursor-pointer
     p-x-6
     box-border
@@ -103,8 +103,8 @@ const position = computed(() => {
         systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
         systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
         systemStore.isMobile
-          ? 'color: var(--wings-menu-text-color)'
-          : 'color: var(--wings-header-text-color)'
+          ? 'color: var(--wings-cloud-menu-text-color)'
+          : 'color: var(--wings-cloud-header-text-color)'
       "
     >
       {{ t('app.name') }}

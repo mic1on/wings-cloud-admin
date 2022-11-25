@@ -1,4 +1,4 @@
-<script lang="ts" setup name="layout-action-language">
+<script lang="ts" setup name="layout-toolbar-language">
 import { useLanguage } from '@/hooks/use-language/use-language';
 
 const props = defineProps({
@@ -8,7 +8,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'var(--wings-header-text-color)',
+    default: 'var(--wings-cloud-header-text-color)',
   },
 });
 

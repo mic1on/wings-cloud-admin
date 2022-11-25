@@ -22,9 +22,9 @@ const changeMobileMenu = () => {
     flex
     items-center
     :class="[
-      props.fixed ? 'fixed' : '',
+      props.fixed ? 'wings-cloud-fixed' : '',
       systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
-        ? 'dark'
+        ? 'wings-cloud-dark'
         : '',
     ]"
   >
@@ -35,14 +35,16 @@ const changeMobileMenu = () => {
       @click="changeMobileMenu()"
       :size="props.fixed ? '1.4rem' : '1.6rem'"
       :color="
-        props.fixed ? 'var(--el-color-white)' : 'var(--wings-header-text-color)'
+        props.fixed
+          ? 'var(--el-color-white)'
+          : 'var(--wings-cloud-header-text-color)'
       "
     ></svg-icon>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.fixed {
+.wings-cloud-fixed {
   position: fixed;
   bottom: 20%;
   left: 0;
@@ -52,7 +54,7 @@ const changeMobileMenu = () => {
   box-shadow: var(--el-box-shadow);
   transform: translateY(-50%);
 
-  &.dark {
+  &.wings-cloud-dark {
     background-color: var(--el-color-primary);
   }
 }

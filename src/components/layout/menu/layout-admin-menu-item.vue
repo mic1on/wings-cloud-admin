@@ -60,9 +60,9 @@ const systemStore = useSystemStore();
       </template>
     </el-menu-item>
     <el-sub-menu
-      :index="route.path"
-      :popper-class="`${systemStore.settings.MenuStyle} ${systemStore.colorScheme} ${systemStore.settings.Layout} layout-admin-menu`"
       v-else
+      :index="route.path"
+      :popper-class="`wings-cloud-${systemStore.settings.MenuStyle} wings-cloud-${systemStore.colorScheme} wings-cloud-${systemStore.settings.Layout} wings-cloud-layout-admin-menu`"
     >
       <template #title>
         <svg-icon

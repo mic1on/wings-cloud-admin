@@ -1,5 +1,6 @@
 import type { App } from 'vue';
 import { createApp } from 'vue';
+import 'virtual:svg-icons-register';
 import _App from './components/app/app.vue';
 
 import { useElementPlus, useElementPlusIcons } from './plugins/element-plus';
@@ -11,8 +12,6 @@ import { useMock } from './plugins/mock';
 
 import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/notification.scss';
-import 'virtual:svg-icons-register';
-
 import './assets/themes/index.scss';
 import './assets/styles/index.scss';
 import 'uno.css';

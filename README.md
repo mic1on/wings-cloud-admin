@@ -50,7 +50,7 @@
 
 ## 开始
 
-通过 Github 克隆代码
+通过 Github Clone 代码，或者 fork 该仓库后 Clone
 
 ```shell
 git clone https://github.com/wingscloud/wings-cloud-admin.git
@@ -65,13 +65,21 @@ npm install # 您也可以使用 yarn 或者 pnpm
 开发模式
 
 ```shell
-npm run serve # 搭配环境变量使用，如 npm run serve:stag
+npm run serve # 支持搭配环境变量使用，如 npm run serve:stag
 ```
 
 构建包
 
 ```shell
-npm run build # 搭配环境变量使用，如 npm run build:stag
+npm run build # 支持搭配环境变量使用，如 npm run build:stag
+```
+
+本地预览构建包
+
+```shell
+npm run build # 先进行本地构建
+
+npm run preview # 使用本地构建包运行 preview 命令，同样可搭配环境变量使用
 ```
 
 其他命令

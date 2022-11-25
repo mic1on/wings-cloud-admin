@@ -28,6 +28,7 @@ import {
 export const usePluginOption = (
   ENV: Record<string, string>
 ): PluginOption[] | undefined => {
+  console.log(process.cwd(), 111);
   const pluginOption: PluginOption[] | undefined = [
     Vue(),
     EslintPlugin(),

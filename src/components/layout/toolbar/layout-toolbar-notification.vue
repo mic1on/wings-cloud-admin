@@ -1,4 +1,4 @@
-<script lang="ts" setup name="layout-action-notification">
+<script lang="ts" setup name="layout-toolbar-notification">
 import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { RouteEnum } from '@/constants/enums';
 
@@ -11,7 +11,7 @@ const userStore = useUserStore();
 const props = defineProps({
   color: {
     type: String,
-    default: 'var(--wings-header-text-color)',
+    default: 'var(--wings-cloud-header-text-color)',
   },
 });
 
