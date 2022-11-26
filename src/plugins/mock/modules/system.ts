@@ -390,18 +390,21 @@ export default {
   /**
    * 获取个人消息列表
    */
-  getPersonalNotifications: {
-    url: '/system/user/notifications',
+  getPersonalNotification: {
+    url: '/system/user/notification',
     method: 'get',
-    data: [
-      {
-        type: 1,
-        content: '修改密码成功',
-        source: 1,
-        createTime: 1669084718194,
-        status: 1,
-      },
-    ],
+    data: {
+      list: [
+        {
+          type: 1,
+          content: '修改密码成功',
+          source: 1,
+          createTime: 1669084718194,
+          status: 1,
+        },
+      ],
+      total: 1,
+    },
   },
 
   /**

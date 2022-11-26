@@ -9,14 +9,11 @@ const { t } = useI18n();
 
 const notificationDict = getStorage(StorageEnum.DICT).notificationType;
 
-const { queryForm, tableData, query, reset } = useCrud();
+const { queryForm, tableData, query, reset } = useCrud({
+  queryUrl: '/system/user/notification',
+});
 
-queryForm.value = {
-  content: '',
-  type: '',
-};
-
-const read = (row: IObject) => {
+const read = (row: IObject): void => {
   console.log(row);
 };
 </script>

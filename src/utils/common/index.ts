@@ -63,7 +63,7 @@ export const arrayToObject = (
  */
 export const interceptJointData = (data: string): IObject => {
   let value: IObject = {};
-  if (data.indexOf('?') != -1) {
+  if (data && data.indexOf('?') != -1) {
     data = data.split('?')[1];
   }
   data.split('&').forEach((item: string) => {
@@ -118,12 +118,12 @@ export const getLoginStorageType = (): string => {
 
 /**
  * @name mergeValueByKey
- * @description 合并对象中同 key 的 value
+ * @description 合并对象中已存在 key 的 value
  * @return to
  */
-export const mergeValueByKey = (to: IObject, source: IObject): any => {
+export const mergeValueByKey = (to: IObject, source: IObject): IObject => {
   for (const key in source) {
-    if (!Object.getOwnPropertyDescriptor(to, key)) {
+    if (Object.getOwnPropertyDescriptor(to, key)?.value === '') {
       to[key] = source[key];
     }
   }

@@ -88,7 +88,7 @@ export const apiCodeAdaptor = (
       case 500:
         message = t('app.unkown.error', { message: data.msg });
         break;
-      case 10001:
+      case 50001:
         message = t('app.api.noParams');
         break;
     }
