@@ -55,8 +55,8 @@ export const useCrud = (options?: Options) => {
       Object.assign(queryForm.value, pageForm.value)
     );
     if (res.code === 0) {
-      // tableData.value = res.data.list;
-      // pageOptions.total = res.data.total;
+      tableData.value = res.data.list;
+      pageOptions.total = res.data.total;
     }
   };
 

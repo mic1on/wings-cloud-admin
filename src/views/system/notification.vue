@@ -50,7 +50,11 @@ const read = (row: IObject): void => {
       </el-form-item>
     </el-form>
     <el-table :data="tableData">
-      <el-table-column type="index" width="50"></el-table-column>
+      <el-table-column
+        type="index"
+        width="60"
+        :label="t('crud.table.no')"
+      ></el-table-column>
       <el-table-column
         prop="type"
         :label="t('system.notification.notificationType')"
@@ -65,7 +69,7 @@ const read = (row: IObject): void => {
       ></el-table-column>
       <el-table-column prop="createTime" :label="t('system.notification.time')">
         <template #default="scope">
-          {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss') }}
+          {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
         </template>
       </el-table-column>
       <el-table-column
