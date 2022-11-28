@@ -79,7 +79,8 @@ const position = computed(() => {
             (systemStore.settings.Layout ===
               SettingsValueEnum.LAYOUT_ASIDE_DARK ||
               systemStore.settings.Layout ===
-                SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK))
+                SettingsValueEnum.LAYOUT_ASIDE_LEAN_DARK)) ||
+          systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK
         "
         w-10
         h-10
@@ -99,9 +100,7 @@ const position = computed(() => {
       "
       class="single-line-omitted name"
       :style="
-        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE ||
-        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_DARK ||
-        systemStore.settings.Layout === SettingsValueEnum.LAYOUT_ASIDE_LEAN ||
+        systemStore.colorScheme === SettingsValueEnum.COLOR_SCHEME_DARK ||
         systemStore.isMobile
           ? 'color: var(--wings-cloud-menu-text-color)'
           : 'color: var(--wings-cloud-header-text-color)'

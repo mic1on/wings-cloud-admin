@@ -17,8 +17,8 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="crud-table-query">
-    <el-form v-bind="$attrs">
+  <div class="wings-cloud-crud-table-query">
+    <el-form v-bind="$attrs" inline>
       <slot></slot>
       <el-form-item v-if="!slots.action">
         <el-button type="primary" @click="$attrs.onQuery">
@@ -33,10 +33,15 @@ const props = defineProps({
   </div>
 </template>
 <style lang="scss">
-.crud-table-query {
-  :deep(.el-form-item) {
+.wings-cloud-crud-table-query {
+  .el-form-item {
     width: 200px !important;
-    margin-right: 20px;
+    margin-right: 20px !important;
+
+    &:last-child {
+      width: auto !important;
+      margin-right: 0 !important;
+    }
   }
 }
 </style>

@@ -15,36 +15,33 @@ const props = defineProps({
   },
 });
 
-const height = computed(() => {
-  let _height = '100vh';
-  if (
-    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
-    systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
-  ) {
-    _height =
-      'calc(100vh - var(--wings-cloud-header-height) - var(--wings-cloud-collapse-height))';
+const wrapStyle = computed(() => {
+  if (props.mode == 'vertical') {
+    let _height = '100vh';
+    if (
+      systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP ||
+      systemStore.settings.Layout === SettingsValueEnum.LAYOUT_TOP_LEAN
+    ) {
+      _height =
+        'calc(100vh - var(--wings-cloud-header-height) - var(--wings-cloud-collapse-height))';
+    } else {
+      _height =
+        'calc(100vh - var(--wings-cloud-aside-logo-height) - var(--wings-cloud-collapse-height))';
+    }
+    if (systemStore.isMobile) {
+      _height = 'calc(100vh - var(--wings-cloud-aside-logo-height)';
+    }
+    return 'height:' + _height + ';';
   } else {
-    _height =
-      'calc(100vh - var(--wings-cloud-aside-logo-height) - var(--wings-cloud-collapse-height))';
+    let _width =
+      'calc(100vw - var(--wings-cloud-header-toobar-width) - var(--wings-cloud-header-logo-width))';
+    return 'width:' + _width + ';height:100%;display:flex;align-items:center;';
   }
-  if (systemStore.isMobile) {
-    _height = 'calc(100vh - var(--wings-cloud-aside-logo-height)';
-  }
-  return 'height:' + _height + ';';
-});
-
-const width = computed(() => {
-  let _width =
-    'calc(100vw - var(--wings-cloud-header-toobar-width) - var(--wings-cloud-header-logo-width))';
-  return 'width:' + _width + ';height:100%;';
 });
 </script>
 
 <template>
-  <el-scrollbar
-    :wrap-style="props.mode == 'vertical' ? height : width"
-    view-style="height:100%;"
-  >
+  <el-scrollbar :wrap-style="wrapStyle">
     <div
       :class="[
         'wings-cloud-' + systemStore.settings.MenuStyle,

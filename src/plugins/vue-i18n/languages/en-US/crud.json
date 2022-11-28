@@ -28,6 +28,10 @@
     "formatIncorrect": "The {label} format is incorrect",
     "inconsistent": "The {label} entered twice is inconsistent"
   },
+  "table": {
+    "no": "No.",
+    "noData": "Empty"
+  },
   "upload": {
     "success": "Upload Complete",
     "error": {

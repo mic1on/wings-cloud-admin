@@ -28,6 +28,10 @@
     "formatIncorrect": "{label}格式不正确",
     "inconsistent": "两次输入的{label}不一致"
   },
+  "table": {
+    "no": "序号",
+    "noData": "暂无数据"
+  },
   "upload": {
     "success": "上传成功",
     "error": {

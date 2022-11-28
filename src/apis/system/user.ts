@@ -23,7 +23,7 @@ export const loginByAccount = <T>(
 export const signup = <T>(
   data: SignupData
 ): Promise<any | ResponseData<T> | undefined> => {
-  return POST('/system/user/signup');
+  return POST('/system/user/signup', data);
 };
 
 /**

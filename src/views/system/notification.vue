@@ -1,28 +1,19 @@
 <script lang="ts" setup name="my-notifications">
-import type { IObject } from '@/types/global.d';
-import { StorageEnum } from '@/constants/enums';
 import { useDateFormat } from '@vueuse/core';
-import { getStorage } from '@/utils/storage';
 import { useCrud } from '@/hooks/use-crud/use-crud';
+import { useDict } from '@/hooks/use-crud/use-dict';
 
 const { t } = useI18n();
 
-const notificationDict = getStorage(StorageEnum.DICT).notificationType;
+const { getDict, getDictData } = useDict();
 
-const { queryForm, tableData, query, reset } = useCrud();
-
-queryForm.value = {
-  content: '',
-  type: '',
-};
-
-const read = (row: IObject) => {
-  console.log(row);
-};
+const { queryForm, tableData, query, reset, loading } = useCrud({
+  queryUrl: '/system/user/notification',
+});
 </script>
 <template>
   <crud-card>
-    <el-form :inline="true" :model="queryForm">
+    <crud-table-query :model="queryForm" @query="query" @reset="reset">
       <el-form-item>
         <el-select
           clearable
@@ -30,7 +21,7 @@ const read = (row: IObject) => {
           :placeholder="t('system.notification.notificationType')"
         >
           <el-option
-            v-for="(item, index) in notificationDict"
+            v-for="(item, index) in getDictData('notificationType').value"
             :key="index"
             :label="item.label"
             :value="item.value"
@@ -43,45 +34,47 @@ const read = (row: IObject) => {
           :placeholder="t('system.notification.notificationContent')"
         />
       </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="query">
-          {{ t('crud.btn.query') }}
-        </el-button>
-        <el-button @click="reset">
-          {{ t('crud.btn.reset') }}
-        </el-button>
-      </el-form-item>
-    </el-form>
-    <el-table :data="tableData">
-      <el-table-column type="index" width="50"></el-table-column>
+    </crud-table-query>
+    <crud-table :data="tableData" v-loading="loading">
+      <el-table-column
+        type="index"
+        width="60"
+        :label="t('crud.table.no')"
+      ></el-table-column>
       <el-table-column
         prop="type"
         :label="t('system.notification.notificationType')"
-      ></el-table-column>
+      >
+        <template #default="scope">
+          {{ getDict('notificationType', scope.row.type) }}
+        </template>
+      </el-table-column>
       <el-table-column
         prop="content"
         :label="t('system.notification.notificationContent')"
       ></el-table-column>
-      <el-table-column
-        prop="source"
-        :label="t('system.notification.source')"
-      ></el-table-column>
-      <el-table-column prop="createTime" :label="t('system.notification.time')">
+      <el-table-column prop="source" :label="t('system.notification.source')">
         <template #default="scope">
-          {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss') }}
+          {{ getDict('notificationSource', scope.row.type) }}
         </template>
       </el-table-column>
-      <el-table-column
-        prop="status"
-        :label="t('system.notification.isRead')"
-      ></el-table-column>
+      <el-table-column prop="createTime" :label="t('system.notification.time')">
+        <template #default="scope">
+          {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
+        </template>
+      </el-table-column>
+      <el-table-column prop="status" :label="t('system.notification.isRead')">
+        <template #default="scope">
+          {{ getDict('notificationIsRead', scope.row.status) }}
+        </template>
+      </el-table-column>
       <el-table-column :label="t('crud.btn.action')">
         <template #default="scope">
-          <el-button type="primary" bg text @click="read(scope.row)">
+          <el-button type="primary" bg text v-if="scope.row.status === 0">
             {{ t('system.notification.read') }}
           </el-button>
         </template>
       </el-table-column>
-    </el-table>
+    </crud-table>
   </crud-card>
 </template>
