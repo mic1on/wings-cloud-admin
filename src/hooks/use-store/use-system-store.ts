@@ -48,12 +48,14 @@ export const useSystemStore = defineStore('system', () => {
       )
     ) {
       isMobile.value = true;
-      collapse.value = false;
     } else {
       isMobile.value = document.documentElement.clientWidth < 992;
     }
-    if (!isMobile.value && mobileMenu.value) {
-      mobileMenu.value = false;
+    if (!isMobile.value) {
+      collapse.value = false;
+      if (mobileMenu.value) {
+        mobileMenu.value = false;
+      }
     }
   };
 

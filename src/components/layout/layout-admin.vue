@@ -152,5 +152,6 @@ const systemStore = useSystemStore();
 
 :deep(.el-drawer) {
   overflow-x: hidden;
+  background-color: var(--wings-cloud-menu-bg-color);
 }
 </style>
