@@ -1,6 +1,7 @@
-import type { IObject } from '@/types/global.d';
+import type { ComputedRef } from 'vue';
+import type { IObject } from '@/types/global';
 import { StorageEnum } from '@/constants/enums';
-import { setStorage } from '@/utils/storage';
+import { getStorage, setStorage } from '@/utils/storage';
 import { getDictAll as _getDictAll } from '@/apis/system/dict';
 
 /**
@@ -20,7 +21,36 @@ export const useDict = () => {
     return data;
   };
 
+  const getDictData = (key: string): ComputedRef<any> => {
+    return computed(() => {
+      const data = getStorage(StorageEnum.DICT)[key];
+      return data ? data : [];
+    });
+  };
+
+  const getDict = (key: string, value: string, getKey?: string) => {
+    if (
+      key === undefined ||
+      key === null ||
+      value === undefined ||
+      value === null
+    )
+      return;
+    getKey = getKey || 'label';
+    const dictData = getDictData(key).value;
+    if (dictData && dictData.length > 0) {
+      const data = dictData.find((item: IObject) => item.value === value)[
+        getKey
+      ];
+      return data ? data : value;
+    } else {
+      return value;
+    }
+  };
+
   return {
     getDictAll,
+    getDictData,
+    getDict,
   };
 };

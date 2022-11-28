@@ -397,9 +397,16 @@ export default {
       list: [
         {
           type: 1,
-          content: '修改密码成功',
+          content: '修改密码成功！',
           source: 1,
           createTime: 1669084718194,
+          status: 0,
+        },
+        {
+          type: 1,
+          content: '初次登录，请修改密码！',
+          source: 0,
+          createTime: 1669082324627,
           status: 1,
         },
       ],
@@ -419,11 +426,37 @@ export default {
         key: 'notificationType',
         values: [
           {
-            label: '个人消息',
+            label: '消息',
             value: 0,
           },
           {
-            label: '系统消息',
+            label: '通知',
+            value: 1,
+          },
+        ],
+      },
+      {
+        key: 'notificationSource',
+        values: [
+          {
+            label: '用户',
+            value: 0,
+          },
+          {
+            label: '系统',
+            value: 1,
+          },
+        ],
+      },
+      {
+        key: 'notificationIsRead',
+        values: [
+          {
+            label: '未读',
+            value: 0,
+          },
+          {
+            label: '已读',
             value: 1,
           },
         ],

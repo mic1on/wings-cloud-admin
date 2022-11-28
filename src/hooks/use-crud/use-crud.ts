@@ -10,6 +10,7 @@ import { GET } from '@/utils/request';
  * @return queryForm 查询表单
  * @return pageForm 分页表单
  * @return tableData 表格数据
+ * @return loading 加载状态
  * @return query 查询方法
  * @return reset 重置查询方法
  */
@@ -37,6 +38,8 @@ export const useCrud = (options?: Options) => {
     options ? options : {}
   );
 
+  const loading = ref<boolean>(false);
+
   const queryForm = ref<IObject | any>({});
 
   const pageForm = ref<Pagination>(pageOptions);
@@ -46,17 +49,23 @@ export const useCrud = (options?: Options) => {
   const reset = () => {
     queryForm.value = {};
     pageForm.value = pageOptions;
+    query();
   };
 
   const query = async <T>(): Promise<any | ResponseData<T> | undefined> => {
     if (!queryOptions.queryUrl) return;
+    loading.value = true;
     const res = await GET(
       queryOptions.queryUrl,
       Object.assign(queryForm.value, pageForm.value)
     );
+    loading.value = false;
     if (res.code === 0) {
       tableData.value = res.data.list;
       pageOptions.total = res.data.total;
+    } else {
+      tableData.value = [];
+      pageOptions.total = 0;
     }
   };
 
@@ -92,6 +101,7 @@ export const useCrud = (options?: Options) => {
     queryForm,
     pageForm,
     tableData,
+    loading,
     query,
     reset,
   };

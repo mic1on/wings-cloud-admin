@@ -29,7 +29,8 @@
     "inconsistent": "The {label} entered twice is inconsistent"
   },
   "table": {
-    "no": "No."
+    "no": "No.",
+    "noData": "Empty"
   },
   "upload": {
     "success": "Upload Complete",

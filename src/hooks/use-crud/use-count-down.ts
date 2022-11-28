@@ -6,10 +6,10 @@ import { getMobileSmscode } from '@/apis/common/mobile';
 /**
  * @name useCountDown
  * @description 获取验证码倒计时钩子函数
- * @return countDownForm
- * @return getCode
- * @return getCoding
- * @return resetCountDown
+ * @return countDownForm 表单
+ * @return getCode 获取验证码方法
+ * @return getCoding 开始倒计时方法
+ * @return resetCountDown 重置倒计时方法
  */
 export const useCountDown = () => {
   const { t } = useI18n();

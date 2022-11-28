@@ -5,8 +5,52 @@ const { slots } = getCurrentInstance() as ComponentInternalInstance;
 
 const { t } = useI18n();
 
-const props = defineProps({});
+const props = defineProps({
+  data: {
+    type: Array,
+    default: () => {
+      return [];
+    },
+  },
+});
 </script>
 <template>
-  <div></div>
+  <div class="crud-table">
+    <el-table
+      v-bind="$attrs"
+      :data="props.data"
+      :empty-text="t('crud.table.noData')"
+      row-class-name="wings-cloud-crud-table-row"
+      cell-class-name="wings-cloud-crud-table-cell"
+      header-row-class-name="wings-cloud-crud-table-header-row"
+      header-cell-class-name="wings-cloud-crud-table-header-cell"
+    >
+      <slot></slot>
+    </el-table>
+  </div>
 </template>
+
+<style lang="scss">
+:root {
+  --wings-cloud-table-table-row-height: 3.2rem;
+}
+
+.el-table__body {
+}
+
+.wings-cloud-crud-table-row {
+  height: var(--wings-cloud-table-table-row-height);
+}
+
+.wings-cloud-crud-table-cell {
+}
+
+.wings-cloud-crud-table-header-row {
+  &:first-child {
+    height: var(--wings-cloud-table-table-row-height);
+  }
+}
+
+.wings-cloud-crud-table-header-cell {
+}
+</style>

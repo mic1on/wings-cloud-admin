@@ -23,7 +23,7 @@
   &.wings-cloud-aside-dark,
   &.wings-cloud-aside-lean-dark {
     background-color: #262a3c;
-    .layout-admin-logo .name {
+    .wings-cloud-layout-admin-logo .name {
       color: var(--el-color-white) !important;
     }
   }
@@ -50,6 +50,10 @@
     .el-sub-menu__title {
       border-bottom: none !important;
     }
+  }
+
+  &.el-menu--horizontal {
+    border-bottom: none;
   }
 
   .el-sub-menu {
@@ -88,10 +92,6 @@
       color: var(--wings-cloud-menu-text-color-active) !important;
       background-color: var(--wings-cloud-menu-bg-color-active) !important;
     }
-  }
-
-  &.el-menu--horizontal {
-    border-bottom: none;
   }
 
   &.el-menu--popup-container {
