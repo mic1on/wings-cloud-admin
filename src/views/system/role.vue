@@ -1,18 +1,12 @@
 <script lang="ts" setup name="my-notifications">
-import { StorageEnum } from '@/constants/enums';
-import { getStorage } from '@/utils/storage';
+import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
 
 const { t } = useI18n();
 
-const roleTypeDict = getStorage(StorageEnum.DICT).roleType;
-
-const { queryForm, tableData, query, reset } = useCrud();
-
-queryForm.value = {
-  roleName: '',
-  roleType: '',
-};
+const { queryForm, tableData, query, reset } = useCrud({
+  queryUrl: '/system/role/list',
+});
 </script>
 <template>
   <crud-card>
@@ -24,31 +18,17 @@ queryForm.value = {
       @reset="reset"
     >
       <el-form-item>
-        <el-select
-          clearable
-          v-model="queryForm.roleType"
-          :placeholder="t('system.role.roleType')"
-        >
-          <el-option
-            v-for="(item, index) in roleTypeDict"
-            :key="index"
-            :label="t(item.label)"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item>
         <el-input
           v-model="queryForm.roleName"
           :placeholder="t('system.role.roleName')"
         />
       </el-form-item>
     </crud-table-query>
-    <el-table :data="tableData">
-      <el-table-column type="index" width="50"></el-table-column>
+    <crud-table :data="tableData">
       <el-table-column
-        prop="type"
-        :label="t('system.role.roleType')"
+        type="index"
+        width="60"
+        :label="t('crud.table.no')"
       ></el-table-column>
       <el-table-column
         prop="name"
@@ -58,11 +38,18 @@ queryForm.value = {
         prop="remark"
         :label="t('system.role.remark')"
       ></el-table-column>
-      <el-table-column
-        prop="createTime"
-        :label="t('system.role.createTime')"
-      ></el-table-column>
-      <el-table-column :label="t('crud.btn.action')"></el-table-column>
-    </el-table>
+      <el-table-column prop="createTime" :label="t('system.role.createTime')">
+        <template #default="scope">
+          {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
+        </template>
+      </el-table-column>
+      <el-table-column :label="t('crud.btn.action')">
+        <template #default>
+          <el-button type="primary" bg text>
+            {{ t('crud.btn.edit') }}
+          </el-button>
+        </template>
+      </el-table-column>
+    </crud-table>
   </crud-card>
 </template>

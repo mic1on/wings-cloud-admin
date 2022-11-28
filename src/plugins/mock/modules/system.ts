@@ -379,8 +379,8 @@ export default {
       '/system/dict',
       '/system/param',
       '/system/file',
-      '/system/log/login-log',
-      '/system/log/action-log',
+      '/system/log/login',
+      '/system/log/action',
       '/development/options',
       '/development/code',
       '/development/form',
@@ -396,6 +396,7 @@ export default {
     data: {
       list: [
         {
+          id: 0,
           type: 1,
           content: '修改密码成功！',
           source: 1,
@@ -403,9 +404,37 @@ export default {
           status: 0,
         },
         {
+          id: 1,
           type: 1,
           content: '初次登录，请修改密码！',
           source: 0,
+          createTime: 1669082324627,
+          status: 1,
+        },
+      ],
+      total: 1,
+    },
+  },
+
+  /**
+   * 获取角色列表
+   */
+  getRoleList: {
+    url: '/system/role/list',
+    method: 'get',
+    data: {
+      list: [
+        {
+          id: 0,
+          name: '系统管理员',
+          remark: '',
+          createTime: 1669084718194,
+          status: 0,
+        },
+        {
+          id: 1,
+          name: '开发人员',
+          remark: '',
           createTime: 1669082324627,
           status: 1,
         },
@@ -457,19 +486,6 @@ export default {
           },
           {
             label: '已读',
-            value: 1,
-          },
-        ],
-      },
-      {
-        key: 'roleType',
-        values: [
-          {
-            label: '系统角色',
-            value: 0,
-          },
-          {
-            label: '自定义角色',
             value: 1,
           },
         ],
