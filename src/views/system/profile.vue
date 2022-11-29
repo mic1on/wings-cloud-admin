@@ -10,7 +10,7 @@ const userStore = useUserStore();
     <crud-page-form
       label-position="left"
       label-width="120px"
-      style="max-width: 400px"
+      style="max-width: 24rem"
     >
       <el-form-item :label="t('crud.account.avatar')">
         <avatar-upload v-model="userStore.userProfile.avatar"></avatar-upload>

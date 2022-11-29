@@ -95,7 +95,7 @@ export const PredefineColorSchemes = [
  */
 export const PredefineThemeColors = [
   '#b90b0b',
-  '#409EFF',
+  '#0d6efd',
   '#42b983',
   '#ea3a72',
   '#fe7300',

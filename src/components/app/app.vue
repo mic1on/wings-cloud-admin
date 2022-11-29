@@ -14,11 +14,15 @@ import { Settings } from '@/constants/settings';
             appear
           >
             <keep-alive>
-              <component :is="Component" :key="route.fullPath" />
+              <div id="wings-cloud-root-node">
+                <component :is="Component" :key="route.fullPath" />
+              </div>
             </keep-alive>
           </transition>
           <transition v-else name="wings-cloud-page" mode="out-in" appear>
-            <component :is="Component" />
+            <div id="wings-cloud-root-node">
+              <component :is="Component" />
+            </div>
           </transition>
           <template #fallback> Loading... </template>
         </Suspense>

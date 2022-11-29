@@ -8,13 +8,3 @@ import { GET } from '@/utils/request';
 export const getDictAll = <T>(): Promise<any | ResponseData<T> | undefined> => {
   return GET('/system/dict/all');
 };
-
-/**
- * @name getDictPage
- * @description 分页获取字典数据
- */
-export const getDictPage = <T>(): Promise<
-  any | ResponseData<T> | undefined
-> => {
-  return GET('/system/dict/list');
-};

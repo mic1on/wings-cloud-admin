@@ -383,8 +383,6 @@
   &.wings-cloud-theme.wings-cloud-aside-dark,
   &.wings-cloud-theme.wings-cloud-aside-lean-dark {
     .el-button {
-      transition: all var(--el-transition-duration)
-        var(--el-transition-function-ease-in-out-bezier);
       background-color: #7d7f8a !important;
       color: var(--el-color-white) !important;
     }
