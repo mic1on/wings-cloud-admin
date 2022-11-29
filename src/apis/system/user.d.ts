@@ -1,4 +1,5 @@
 import type { LoginForm, PhoneForm } from '@/pages/sign.d';
+import type { Pagination } from '@/hooks/use-crud/use-crud.d';
 
 export interface LoginAccountData extends LoginForm {
   username: string;

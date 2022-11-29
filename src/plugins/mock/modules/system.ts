@@ -426,7 +426,7 @@ export default {
       list: [
         {
           id: 0,
-          name: '系统管理员',
+          name: '管理员',
           remark: '',
           createTime: 1669084718194,
           status: 0,
@@ -437,6 +437,31 @@ export default {
           remark: '',
           createTime: 1669082324627,
           status: 1,
+        },
+      ],
+      total: 1,
+    },
+  },
+
+  /**
+   * 获取用户列表
+   */
+  getUserList: {
+    url: '/system/user/list',
+    method: 'get',
+    data: {
+      list: [
+        {
+          id: 0,
+          avatar: '',
+          nickname: '系统管理员',
+          username: 'sysadmin',
+          mobile: '',
+          remark: '',
+          roleId: 0,
+          roleName: '管理员',
+          createTime: 1669061218194,
+          status: 0,
         },
       ],
       total: 1,

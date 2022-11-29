@@ -47,7 +47,7 @@ export const validateUsername = <T>(
 };
 
 /**
- * @name validateUsername
+ * @name getRoleRoutes
  * @description 获取权限路由
  */
 export const getRoleRoutes = <T>(): Promise<
@@ -57,8 +57,8 @@ export const getRoleRoutes = <T>(): Promise<
 };
 
 /**
- * @name validateUsername
- * @description 校验用户名是否存在
+ * @name getUserRoles
+ * @description 获取用户权限
  */
 export const getUserRoles = <T>(): Promise<
   any | ResponseData<T> | undefined

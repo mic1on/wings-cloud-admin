@@ -37,11 +37,6 @@ const { queryForm, tableData, query, reset, loading } = useCrud({
     </crud-table-query>
     <crud-table :data="tableData" v-loading="loading">
       <el-table-column
-        type="index"
-        width="60"
-        :label="t('crud.table.no')"
-      ></el-table-column>
-      <el-table-column
         prop="type"
         :label="t('system.notification.notificationType')"
       >
