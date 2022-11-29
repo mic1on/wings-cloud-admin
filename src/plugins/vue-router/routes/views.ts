@@ -60,20 +60,6 @@ export default [
     },
     children: [
       {
-        path: '/example/table',
-        name: 'example.table',
-        component: () => import('@/views/example/table.vue'),
-        meta: {
-          layout: 'admin',
-          isMenu: true,
-          requiresAuth: false,
-          iconType: IconTypeEnum.ELEMENT_PLUS,
-          icon: 'DocumentCopy',
-          sort: 0,
-          i18nKey: 'example.table',
-        },
-      },
-      {
         path: '/example/icon',
         name: 'example.icon',
         component: () => import('@/views/example/icon.vue'),

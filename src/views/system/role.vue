@@ -4,7 +4,7 @@ import { useCrud } from '@/hooks/use-crud/use-crud';
 
 const { t } = useI18n();
 
-const { queryForm, tableData, query, reset, loading } = useCrud({
+const { queryForm, tableData, query, reset } = useCrud({
   queryUrl: '/system/role/list',
 });
 </script>
@@ -24,10 +24,10 @@ const { queryForm, tableData, query, reset, loading } = useCrud({
         />
       </el-form-item>
       <template #action>
-        <el-button>{{ t('crud.btn.add') }}</el-button>
+        <el-button type="primary">{{ t('crud.btn.add') }}</el-button>
       </template>
     </crud-table-query>
-    <crud-table :data="tableData" v-loading="loading">
+    <crud-table :data="tableData">
       <el-table-column
         prop="name"
         :label="t('system.role.roleName')"

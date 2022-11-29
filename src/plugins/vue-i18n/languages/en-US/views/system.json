@@ -3,7 +3,13 @@
   "menuDescription": "",
   "menu": {
     "menuName": "Menus",
-    "menuDescription": ""
+    "menuDescription": "",
+    "menu": "Menu Name",
+    "icon": "Menu Icon",
+    "type": "Menu Type",
+    "open": "Open Type",
+    "router": "Router",
+    "role": "Permission"
   },
   "role": {
     "menuName": "Roles",

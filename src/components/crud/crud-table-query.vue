@@ -6,6 +6,10 @@ const { slots } = getCurrentInstance() as ComponentInternalInstance;
 const { t } = useI18n();
 
 const props = defineProps({
+  query: {
+    type: Boolean,
+    default: true,
+  },
   queryLabel: {
     type: String,
     default: '',
@@ -20,14 +24,16 @@ const props = defineProps({
   <div class="wings-cloud-crud-table-query">
     <el-form v-bind="$attrs" inline>
       <slot></slot>
-      <el-form-item>
+      <el-form-item v-if="query">
         <el-button type="primary" @click="$attrs.onQuery">
           {{ props.queryLabel || t('crud.btn.query') }}
         </el-button>
         <el-button @click="$attrs.onReset">
           {{ props.resetLabel || t('crud.btn.reset') }}
         </el-button>
-        <el-divider direction="vertical" v-if="slots.action"></el-divider>
+      </el-form-item>
+      <br v-if="slots.action && slots.default" />
+      <el-form-item v-if="slots.action">
         <slot name="action"></slot>
       </el-form-item>
     </el-form>

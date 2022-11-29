@@ -4,7 +4,7 @@ import Mock from 'mockjs';
 import { autoImportMocks } from '../../utils/auto';
 
 Mock.setup({
-  timeout: '200-600',
+  timeout: '100-300',
 });
 
 const mocks: Mocks = autoImportMocks(

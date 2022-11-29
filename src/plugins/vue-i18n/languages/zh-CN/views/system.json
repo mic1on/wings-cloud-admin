@@ -3,7 +3,13 @@
   "menuDescription": "",
   "menu": {
     "menuName": "菜单管理",
-    "menuDescription": ""
+    "menuDescription": "",
+    "menu": "菜单名称",
+    "icon": "菜单图标",
+    "type": "菜单类型",
+    "open": "打开方式",
+    "router": "路由",
+    "role": "权限"
   },
   "role": {
     "menuName": "角色管理",

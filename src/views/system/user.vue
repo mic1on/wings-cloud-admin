@@ -11,7 +11,7 @@ const { queryForm, tableData, query, reset } = useCrud({
 <template>
   <crud-card>
     <crud-table-query>
-      <el-form-item :model="queryForm">
+      <el-form-item :model="queryForm" @query="query" @reset="reset">
         <el-input
           v-model="queryForm.roleName"
           :placeholder="t('system.role.roleName')"
@@ -36,7 +36,7 @@ const { queryForm, tableData, query, reset } = useCrud({
         />
       </el-form-item>
       <template #action>
-        <el-button>{{ t('crud.btn.add') }}</el-button>
+        <el-button type="primary">{{ t('crud.btn.add') }}</el-button>
       </template>
     </crud-table-query>
     <crud-table :data="tableData">
