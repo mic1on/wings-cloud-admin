@@ -2,6 +2,7 @@ import type { PluginOption } from 'vite';
 import { resolve } from 'path';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import IconsResolver from 'unplugin-icons/resolver';
+import DefineOptions from 'unplugin-vue-define-options/vite';
 import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
@@ -28,9 +29,9 @@ import {
 export const usePluginOption = (
   ENV: Record<string, string>
 ): PluginOption[] | undefined => {
-  console.log(process.cwd(), 111);
   const pluginOption: PluginOption[] | undefined = [
     Vue(),
+    DefineOptions(),
     EslintPlugin(),
     createHtmlPlugin(),
     TsconfigPaths(),

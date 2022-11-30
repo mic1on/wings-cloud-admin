@@ -4,7 +4,11 @@ import { IconTypeEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 
-const routemStore = useRouteStore();
+const routeStore = useRouteStore();
+
+const keepAliveChange = (e: boolean) => {
+  console.log(e);
+};
 </script>
 <template>
   <crud-card>
@@ -13,7 +17,7 @@ const routemStore = useRouteStore();
         <el-button type="primary">{{ t('crud.btn.add') }}</el-button>
       </template>
     </crud-table-query>
-    <crud-table :data="routemStore.menuRoutes" action-width="300">
+    <crud-table :data="routeStore.menuRoutes" action-width="300">
       <el-table-column :label="t('system.menu.menu')">
         <template #default="scope">
           {{ scope.row.meta.menuName }}
@@ -52,7 +56,10 @@ const routemStore = useRouteStore();
       </el-table-column>
       <el-table-column :label="t('system.menu.keepAlive')">
         <template #default="scope">
-          <el-switch v-model="scope.row.meta.keepAlive" />
+          <el-switch
+            v-model="scope.row.meta.keepAlive"
+            @change="keepAliveChange"
+          />
         </template>
       </el-table-column>
       <el-table-column :label="t('crud.table.sort')">

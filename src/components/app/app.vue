@@ -1,5 +1,7 @@
 <script setup lang="ts" name="app">
-import { Settings } from '@/constants/settings';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+const systemStore = useSystemStore();
 </script>
 
 <template>
@@ -7,22 +9,10 @@ import { Settings } from '@/constants/settings';
     <template #app>
       <router-view v-slot="{ Component, route }">
         <Suspense>
-          <transition
-            v-if="Settings.KeepAlive"
-            name="wings-cloud-page"
-            mode="out-in"
-            appear
-          >
-            <keep-alive>
-              <div id="wings-cloud-root-node">
-                <component :is="Component" :key="route.fullPath" />
-              </div>
+          <transition name="wings-cloud-page" mode="out-in" appear>
+            <keep-alive :include="systemStore.keepAliveNames">
+              <component :is="Component" :key="route.fullPath" />
             </keep-alive>
-          </transition>
-          <transition v-else name="wings-cloud-page" mode="out-in" appear>
-            <div id="wings-cloud-root-node">
-              <component :is="Component" />
-            </div>
           </transition>
           <template #fallback> Loading... </template>
         </Suspense>

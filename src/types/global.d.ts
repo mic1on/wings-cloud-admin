@@ -64,5 +64,6 @@ declare module 'vue-router' {
     externalPage?: boolean;
     externalPageUrl?: string;
     breadcrumb?: Array[IObject];
+    keepAlive?: boolean;
   }
 }

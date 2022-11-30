@@ -9,7 +9,6 @@ import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { getStorage } from '@/utils/storage';
 import { getLoginStorageType } from '@/utils/common';
-
 import { useNProgress } from '@vueuse/integrations/useNProgress';
 import '@/assets/styles/nprogress.scss';
 
@@ -18,10 +17,10 @@ const { isLoading } = useNProgress();
 /**
  * @name addRouterGuard
  * @description 注入路由拦截器
- * @returns
+ * @param router 路由实例
+ * @return router
  */
 export const addRouterGuard = (router: Router): Router => {
-  // 前置拦截
   router.beforeEach(
     async (
       to: RouteLocationNormalized,
@@ -29,7 +28,7 @@ export const addRouterGuard = (router: Router): Router => {
       next: NavigationGuardNext
     ) => {
       isLoading.value = true;
-      // 获取权限数据
+
       const userRoles: Array<string> = getStorage(StorageEnum.USER_ROLES, {
         type: getLoginStorageType(),
       });
@@ -37,12 +36,10 @@ export const addRouterGuard = (router: Router): Router => {
         (item: any) => item.meta.requiresAuth
       );
 
-      // 初始化全局状态
       const systemStore = useSystemStore();
       const routeStore = useRouteStore();
       const userStore = useUserStore();
 
-      // 未登录跳转登录页
       if (requiresAuth && !userStore.isLogin) {
         next({
           path: RouteEnum.ROUTE_SIGNIN,
@@ -50,7 +47,6 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
-      // 已经登录情况下跳禁止跳登录页
       if (
         userStore.isLogin &&
         (to.path === RouteEnum.ROUTE_SIGNIN ||
@@ -63,7 +59,6 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
-      // 页面刷新时初始化路由信息
       if (userStore.isLogin && routeStore.asyncRoutes.length == 0) {
         systemStore.loading = true;
         await userStore.getUserProfile();
@@ -78,7 +73,6 @@ export const addRouterGuard = (router: Router): Router => {
         return;
       }
 
-      // 鉴权处理
       if (userStore.isLogin && requiresAuth && !userRoles.includes(to.path)) {
         next({
           path: RouteEnum.ROUTE_NO_PERMISSION,
@@ -90,16 +84,29 @@ export const addRouterGuard = (router: Router): Router => {
     }
   );
 
-  // 解析拦截
   router.beforeResolve(async (to: RouteLocationNormalized) => {});
 
-  // 后置拦截
   router.afterEach(
     (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
       isLoading.value = false;
 
-      // 设置浏览器标题
       const systemStore = useSystemStore();
+
+      const toName = to.matched.at(-1)?.components?.default.name;
+      const fromName = from.matched.at(-1)?.components?.default.name;
+
+      if (to.meta.keepAlive && toName) {
+        systemStore.keepAliveAddName(toName);
+      }
+
+      if (
+        !from.meta.keepAlive &&
+        fromName &&
+        systemStore.keepAliveNames.includes(fromName)
+      ) {
+        systemStore.keepAliveRemoveName(fromName);
+      }
+
       if (to.meta.menuName) {
         systemStore.browserTitle = to.meta.menuName;
       }

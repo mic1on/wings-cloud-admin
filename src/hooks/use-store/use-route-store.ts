@@ -17,9 +17,12 @@ import { getRouteAsync } from '@/apis/system/user';
  * @description 路由状态钩子函数
  * @return menuRoutes 菜单路由
  * @return asyncRoutes 异步路由
+ * @return keepAliveNames 页面缓存
  * @return setMenuRoutes 设置菜单路由
  * @return setAsyncRoutes 设置异步路由
  * @return getAsyncRoutes 获取异步路由
+ * @return keepAliveAddName 添加 keep alive 视图组件名称
+ * @return keepAliveRemoveName 移除 keep alive 视图组件名称
  */
 export const useRouteStore = defineStore('route', () => {
   const asyncRoutes = ref<Routes>([]);
