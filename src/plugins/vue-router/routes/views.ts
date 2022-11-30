@@ -7,11 +7,8 @@ export default [
     component: () => import('@/views/system/profile.vue'),
     meta: {
       layout: 'admin',
-      isMenu: false,
-      requiresAuth: false,
       iconType: IconTypeEnum.ELEMENT_PLUS,
       icon: 'Postcard',
-      sort: 0,
       i18nKey: 'system.profile',
     },
   },
@@ -21,11 +18,8 @@ export default [
     component: () => import('@/views/system/notification.vue'),
     meta: {
       layout: 'admin',
-      isMenu: false,
-      requiresAuth: false,
       iconType: IconTypeEnum.ELEMENT_PLUS,
       icon: 'ChatDotSquare',
-      sort: 1,
       i18nKey: 'system.notification',
     },
   },
@@ -36,11 +30,8 @@ export default [
     component: () => import('@/views/system/setting.vue'),
     meta: {
       layout: 'admin',
-      isMenu: false,
-      requiresAuth: false,
       iconType: IconTypeEnum.ELEMENT_PLUS,
       icon: 'Setting',
-      sort: 6,
       isI18n: true,
       i18nKey: 'system.setting',
     },
@@ -51,7 +42,6 @@ export default [
     meta: {
       layout: 'admin',
       isMenu: true,
-      requiresAuth: false,
       iconType: IconTypeEnum.ELEMENT_PLUS,
       icon: 'Guide',
       sort: 2,
@@ -66,7 +56,6 @@ export default [
         meta: {
           layout: 'admin',
           isMenu: true,
-          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'MagicStick',
           sort: 1,
@@ -80,7 +69,6 @@ export default [
         meta: {
           layout: 'admin',
           isMenu: true,
-          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Document',
           sort: 2,
@@ -94,7 +82,6 @@ export default [
         meta: {
           layout: 'admin',
           isMenu: true,
-          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'DataLine',
           sort: 3,
@@ -108,7 +95,6 @@ export default [
         meta: {
           layout: 'admin',
           isMenu: true,
-          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'MapLocation',
           sort: 4,
@@ -122,7 +108,6 @@ export default [
         meta: {
           layout: 'admin',
           isMenu: true,
-          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'DocumentChecked',
           sort: 5,
@@ -136,7 +121,6 @@ export default [
         meta: {
           layout: 'admin',
           isMenu: true,
-          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'DocumentChecked',
           sort: 6,
@@ -150,7 +134,6 @@ export default [
         meta: {
           layout: 'admin',
           isMenu: true,
-          requiresAuth: false,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Warning',
           sort: 7,

@@ -1,74 +1,83 @@
 import type { Routes } from '@/plugins/vue-router/index.d';
 import type { I18nT } from '@/plugins/vue-i18n/index.d';
 import type { IObject, ViewComponents } from '@/types/global.d';
-import type { RouteRecordRaw } from 'vue-router';
+import type { Router, RouteRecordRaw, RouteRecordName } from 'vue-router';
 import { useCloned } from '@vueuse/core';
 
 /**
- * @name mergeAdminMenuRoutes
- * @description 合并管理系统菜单路由
- * @param staticRoutes
- * @param roleRoutes
- * @return _routes
+ * @name registerRouter
+ * @description 注册路由
+ * @param routes 路由
+ * @param router 路由实例
  */
-export const mergeAdminMenuRoutes = (
-  staticRoutes: Routes,
-  roleRoutes: Routes
-): Routes => {
-  const _routes: Routes = [];
-  staticRoutes.forEach((route: RouteRecordRaw) => {
-    if (route.meta && route.meta.isMenu === true) {
-      _routes.push(route);
+export const registerRouter = (routes: Routes, router: Router) => {
+  routes.forEach((route: RouteRecordRaw) => {
+    if (!router.hasRoute(route.name as RouteRecordName)) {
+      router.addRoute(route);
     }
   });
-  roleRoutes.forEach((route: RouteRecordRaw) => {
-    if (route.meta && route.meta.isMenu === true) {
-      _routes.push(route);
+};
+
+/**
+ * @name mergeMenuRoutes
+ * @description 合并管理系统菜单路由（含递归排序）
+ * @param staticRoutes 静态路由
+ * @param asyncRoutes 异步路由
+ * @return _routes 路由
+ */
+export const mergeMenuRoutes = (
+  staticRoutes: Routes,
+  asyncRoutes?: Routes
+): Routes => {
+  const _routes: Routes = [];
+  const _allRoutes: Routes = staticRoutes
+    .concat(asyncRoutes)
+    .sort((a: any, b: any) => a.meta?.sort - b.meta?.sort);
+  _allRoutes.forEach((item: RouteRecordRaw) => {
+    if (item && item.meta && item.meta.isMenu === true) {
+      item.children = mergeMenuRoutes(item.children || []);
+      _routes.push(item);
     }
   });
   return _routes;
 };
 
 /**
- * @name mergeRoleRoutes
- * @description 合并权限路由
- * @param staticRoutes
- * @param roleRoutes
- * @param t
- * @return _routes
+ * @name mergeAsyncRoutes
+ * @description 合并异步路由，注入异步视图组件
+ * @param asyncRoutes 异步路由
+ * @param t 国际化函数
+ * @return _routes 路由
  */
-export const mergeRoleRoutes = (
-  roleRoutes: Routes,
-  viewComponents: ViewComponents,
-  t: I18nT
+export const mergeAsyncRoutes = (
+  asyncRoutes: Routes,
+  viewComponents: ViewComponents
 ): Routes => {
   const _routes: Routes = [];
-  roleRoutes.forEach((item) => {
-    const _route = item;
+  asyncRoutes.forEach((item) => {
+    item.meta.async = true;
     if (item.component) {
       item.component = viewComponents[item.component as string];
     }
-    if (item.children && item.children.length > 0) {
-      _route.children = mergeRoleRoutes(item.children, viewComponents, t);
-    }
+    item.children = mergeAsyncRoutes(item.children || [], viewComponents);
     _routes.push(item);
   });
-  return routerInject(_routes, t);
+  return _routes;
 };
 
 /**
  * @name routerInject
- * @description 路由注入，合并路由国际化、面包屑
- * @param routes
- * @param t
- * @param breadcrumbList
- * @returns
+ * @description 路由注入，合并 国际化、面包屑 注入
+ * @param routes 路由
+ * @param t 国际化函数
+ * @param breadcrumbList 面包屑数组
+ * @return _routes 路由
  */
 export const routerInject = (
   routes: Routes,
   t: I18nT,
   breadcrumbList?: Array<IObject>
-) => {
+): Routes => {
   const _routes: Routes = [];
   routes.forEach((item) => {
     if (!item || !item.meta || item.meta.layout !== 'admin') return;
@@ -98,9 +107,9 @@ export const routerInject = (
 /**
  * @name routerInjectLanguages
  * @description 路由注册国际化多语言
- * @param routes
- * @param t
- * @returns
+ * @param routes 路由
+ * @param t 国际化函数
+ * @return _routes 路由
  */
 export const routerInjectLanguages = (routes: Routes, t: I18nT): Routes => {
   const _routes: Routes = [];
@@ -125,9 +134,9 @@ export const routerInjectLanguages = (routes: Routes, t: I18nT): Routes => {
 /**
  * @name routerInjectBreadcrumb
  * @description 路由注册面包屑参数
- * @param routes
- * @param breadcrumbList
- * @returns
+ * @param routes 路由
+ * @param breadcrumbList 面包屑数组
+ * @return _routes 路由
  */
 export const routerInjectBreadcrumb = (
   routes: Routes,

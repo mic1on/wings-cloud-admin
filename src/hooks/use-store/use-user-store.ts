@@ -116,7 +116,7 @@ export const useUserStore = defineStore('user', () => {
     await getUserProfile();
     await getUserRoles();
     const routeStore = useRouteStore();
-    await routeStore.getRoleRoutes();
+    await routeStore.getAsyncRoutes();
     ElNotification({
       title: _t('app.authentication.loginSuccess'),
       type: 'success',

@@ -1,70 +1,59 @@
 import type { Routes } from '@/plugins/vue-router/index.d';
 import type { ViewComponents } from '@/types/global.d';
 import { defineStore } from 'pinia';
-import { RouteRecordRaw, RouteRecordName } from 'vue-router';
-import { autoImportViewComponents } from '@/utils/auto';
 import {
-  mergeRoleRoutes,
-  mergeAdminMenuRoutes,
+  mergeAsyncRoutes,
+  mergeMenuRoutes,
   routerInject,
+  registerRouter,
 } from '@/utils/router';
-import { _t } from '@/plugins/vue-i18n';
+import { autoImportViewComponents } from '@/utils/auto';
 import { router, routes } from '@/plugins/vue-router';
-import { getRoleRoutes as _getRoleRoutes } from '@/apis/system/user';
+import { _t } from '@/plugins/vue-i18n';
+import { getRouteAsync } from '@/apis/system/user';
 
 /**
  * @name useRouteStore
  * @description 路由状态钩子函数
- * @return adminMenuRoutes
- * @return roleRoutes
- * @return setAdminMenuRoutes
- * @return setRolesRoutes
- * @return getRoleRoutes
+ * @return menuRoutes 菜单路由
+ * @return asyncRoutes 异步路由
+ * @return setMenuRoutes 设置菜单路由
+ * @return setAsyncRoutes 设置异步路由
+ * @return getAsyncRoutes 获取异步路由
  */
 export const useRouteStore = defineStore('route', () => {
-  const roleRoutes = ref<Routes>([]);
+  const asyncRoutes = ref<Routes>([]);
 
-  const adminMenuRoutes = ref<Routes>([]);
+  const menuRoutes = ref<Routes>([]);
 
-  const setRolesRoutes = (data: Routes): void => {
-    roleRoutes.value = data.sort((a: any, b: any) => a.meta.sort - b.meta.sort);
-    roleRoutes.value.forEach((route: RouteRecordRaw) => {
-      if (!router.hasRoute(route.name as RouteRecordName)) {
-        router.addRoute(route);
-      }
-    });
+  const setAsyncRoutes = (data: Routes): void => {
+    asyncRoutes.value = data;
+    registerRouter(data, router);
   };
 
-  const setAdminMenuRoutes = (data: Routes): void => {
-    adminMenuRoutes.value = data.sort(
-      (a: any, b: any) => a.meta.sort - b.meta.sort
-    );
-    adminMenuRoutes.value.forEach((route: RouteRecordRaw) => {
-      if (!router.hasRoute(route.name as RouteRecordName)) {
-        router.addRoute(route);
-      }
-    });
+  const setMenuRoutes = (data: Routes): void => {
+    menuRoutes.value = data;
+    registerRouter(data, router);
   };
 
-  const getRoleRoutes = async (): Promise<Routes> => {
+  const getAsyncRoutes = async (): Promise<Routes> => {
     return new Promise(async (resolve) => {
-      const { code, data } = await _getRoleRoutes();
+      const { code, data } = await getRouteAsync();
       if (code == 0) {
         const viewComponents: ViewComponents = autoImportViewComponents(
           import.meta.glob('/src/views/**/*.vue')
         );
-        const roleRoutes: Routes = await mergeRoleRoutes(
-          data,
-          viewComponents,
-          _t
+        const asyncRoutes: Routes = await mergeAsyncRoutes(
+          routerInject(data, _t),
+          viewComponents
         );
-        const adminMenuRoutes: Routes = await mergeAdminMenuRoutes(
+        setAsyncRoutes(asyncRoutes);
+        const menuRoutes: Routes = await mergeMenuRoutes(
           routerInject(routes, _t),
-          roleRoutes
+          asyncRoutes
         );
-        setAdminMenuRoutes(adminMenuRoutes);
-        setRolesRoutes(roleRoutes);
-        resolve(roleRoutes);
+        setMenuRoutes(menuRoutes);
+        resolve(asyncRoutes);
       } else {
         resolve([]);
       }
@@ -72,10 +61,10 @@ export const useRouteStore = defineStore('route', () => {
   };
 
   return {
-    adminMenuRoutes,
-    roleRoutes,
-    setAdminMenuRoutes,
-    setRolesRoutes,
-    getRoleRoutes,
+    menuRoutes,
+    asyncRoutes,
+    setMenuRoutes,
+    setAsyncRoutes,
+    getAsyncRoutes,
   };
 });

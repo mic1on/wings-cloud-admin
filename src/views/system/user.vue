@@ -56,10 +56,13 @@ const { queryForm, tableData, query, reset } = useCrud({
         prop="mobile"
         :label="t('system.user.mobile')"
       ></el-table-column>
-      <el-table-column
-        prop="roleName"
-        :label="t('system.role.roleName')"
-      ></el-table-column>
+      <el-table-column prop="roleName" :label="t('system.role.role')">
+        <template #default="scope">
+          <el-tag>
+            {{ scope.row.roleName }}
+          </el-tag>
+        </template>
+      </el-table-column>
       <el-table-column prop="createTime" :label="t('system.role.createTime')">
         <template #default="scope">
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}

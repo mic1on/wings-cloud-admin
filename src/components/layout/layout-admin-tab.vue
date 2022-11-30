@@ -77,7 +77,7 @@ const clickOperationMenu = (command: string | number | object): void => {
 onBeforeMount(() => {
   tab.homeTab = arrayRecursion(
     'path',
-    routeStore.adminMenuRoutes,
+    routeStore.menuRoutes,
     Settings.AdminFirstRoute
   );
   const { isFind, path } = findTab(route.path);

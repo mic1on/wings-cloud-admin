@@ -84,11 +84,11 @@ export default {
   },
 
   /**
-   * @name getRoleRoutes
-   * @description 获取权限路由
+   * @name getRouteAsync
+   * @description 获取异步路由
    */
-  getRoleRoutes: {
-    url: '/system/user/routes',
+  getRouteAsync: {
+    url: '/system/route/async',
     method: 'get',
     data: [
       {
@@ -100,7 +100,7 @@ export default {
           requiresAuth: true,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'House',
-          sort: 0,
+          sort: 1,
           i18nKey: 'home',
         },
         children: [
@@ -114,7 +114,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'Monitor',
-              sort: 0,
+              sort: 1,
               isI18n: true,
               i18nKey: 'home.workbench',
             },
@@ -129,7 +129,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'Odometer',
-              sort: 1,
+              sort: 2,
               isI18n: true,
               i18nKey: 'home.dashboard',
             },
@@ -145,7 +145,7 @@ export default {
           requiresAuth: true,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Operation',
-          sort: 4,
+          sort: 3,
           i18nKey: 'system',
         },
         children: [
@@ -174,7 +174,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'CollectionTag',
-              sort: 0,
+              sort: 1,
               isI18n: true,
               i18nKey: 'system.role',
             },
@@ -189,7 +189,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'User',
-              sort: 1,
+              sort: 2,
               isI18n: true,
               i18nKey: 'system.user',
             },
@@ -204,7 +204,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.APP,
               icon: 'base-tree',
-              sort: 2,
+              sort: 3,
               isI18n: true,
               i18nKey: 'system.department',
             },
@@ -219,7 +219,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'Reading',
-              sort: 3,
+              sort: 4,
               isI18n: true,
               i18nKey: 'system.dict',
             },
@@ -234,7 +234,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'Key',
-              sort: 4,
+              sort: 5,
               isI18n: true,
               i18nKey: 'system.param',
             },
@@ -249,7 +249,7 @@ export default {
               requiresAuth: true,
               iconType: IconTypeEnum.ELEMENT_PLUS,
               icon: 'FolderOpened',
-              sort: 5,
+              sort: 6,
               isI18n: true,
               i18nKey: 'system.file',
             },
@@ -307,7 +307,7 @@ export default {
           requiresAuth: true,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Coin',
-          sort: 5,
+          sort: 4,
           i18nKey: 'development',
         },
         children: [

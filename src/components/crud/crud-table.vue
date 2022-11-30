@@ -16,6 +16,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  actionWidth: {
+    type: String,
+    default: '120',
+  },
 });
 </script>
 <template>
@@ -36,8 +40,9 @@ const props = defineProps({
       ></el-table-column>
       <slot></slot>
       <el-table-column
-        :label="props.actionLabel || t('crud.btn.action')"
         v-if="slots.action"
+        :width="props.actionWidth"
+        :label="props.actionLabel || t('crud.btn.action')"
       >
         <div class="wings-cloud-crud-table-action">
           <slot name="action"> </slot>
