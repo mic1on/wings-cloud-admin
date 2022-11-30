@@ -119,7 +119,6 @@
     "adminFirstRoute": "System First Route",
     "requestTimeout": "Request Timeout",
     "requestTimeoutUnit": "DecDelay (ms)",
-    "keepAlive": "Open Keep Alive",
     "updateSuccess": "The system Settings are modified successfully",
     "copy": "Copy",
     "copySuccess": "Copy succeeded, please paste it into the src/constant/settings/settings.replace.ts file!",

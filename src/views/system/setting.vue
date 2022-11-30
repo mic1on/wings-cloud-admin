@@ -258,9 +258,6 @@ const backSettings = () => {
           {{ t('system.setting.requestTimeoutUnit') }}
         </span>
       </el-form-item>
-      <el-form-item :label="t('system.setting.keepAlive')">
-        <el-switch v-model="systemStore.settings.KeepAlive" />
-      </el-form-item>
     </el-form>
     <template #action>
       <el-button type="primary" @click="updateSettings">
