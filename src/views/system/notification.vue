@@ -7,7 +7,7 @@ const { t } = useI18n();
 
 const { getDict, getDictData } = useDict();
 
-const { queryForm, tableData, query, reset, loading } = useCrud({
+const { queryForm, tableData, query, reset } = useCrud({
   queryUrl: '/system/user/notification',
 });
 </script>
@@ -35,7 +35,7 @@ const { queryForm, tableData, query, reset, loading } = useCrud({
         />
       </el-form-item>
     </crud-table-query>
-    <crud-table :data="tableData" v-loading="loading">
+    <crud-table :data="tableData">
       <el-table-column
         prop="type"
         :label="t('system.notification.notificationType')"

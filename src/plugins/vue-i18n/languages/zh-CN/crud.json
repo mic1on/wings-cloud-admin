@@ -30,7 +30,8 @@
   },
   "table": {
     "no": "序号",
-    "noData": "暂无数据"
+    "noData": "暂无数据",
+    "sort": "排序"
   },
   "upload": {
     "success": "上传成功",

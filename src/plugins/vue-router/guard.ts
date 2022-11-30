@@ -64,11 +64,11 @@ export const addRouterGuard = (router: Router): Router => {
       }
 
       // 页面刷新时初始化路由信息
-      if (userStore.isLogin && routeStore.roleRoutes.length == 0) {
+      if (userStore.isLogin && routeStore.asyncRoutes.length == 0) {
         systemStore.loading = true;
         await userStore.getUserProfile();
         await userStore.getUserRoles();
-        await routeStore.getRoleRoutes();
+        await routeStore.getAsyncRoutes();
         systemStore.loading = false;
         if (to.redirectedFrom) {
           next({ path: to.redirectedFrom.fullPath, replace: true });

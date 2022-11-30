@@ -52,10 +52,10 @@ interface SystemSettings {
 declare module 'vue-router' {
   interface RouteMeta {
     component?: string | Component;
+    layout: string;
     isI18n?: boolean;
     i18nKey?: string;
-    layout?: string | null;
-    isMenu: boolean;
+    isMenu?: boolean;
     requiresAuth?: boolean;
     iconType?: string;
     icon?: string;

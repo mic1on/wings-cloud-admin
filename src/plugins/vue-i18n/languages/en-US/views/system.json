@@ -3,12 +3,25 @@
   "menuDescription": "",
   "menu": {
     "menuName": "Menus",
-    "menuDescription": ""
+    "menuDescription": "",
+    "menu": "Menu Name",
+    "icon": "Menu Icon",
+    "type": "Menu Type",
+    "open": "Open Type",
+    "router": "Router",
+    "subMenu": "Add Submenu",
+    "permission": "Permission",
+    "outside": "Outside",
+    "inside": "Inside",
+    "async": "Async Menu",
+    "static": "Static Menu",
+    "keepAlive": "Keep Alive"
   },
   "role": {
     "menuName": "Roles",
     "menuDescription": "",
     "roleType": "Role Types",
+    "role": "Role",
     "roleName": "Role Name",
     "remark": "Remark",
     "createTime": "Create Time",

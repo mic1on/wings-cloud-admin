@@ -30,7 +30,8 @@
   },
   "table": {
     "no": "No.",
-    "noData": "Empty"
+    "noData": "Empty",
+    "sort": "Sort"
   },
   "upload": {
     "success": "Upload Complete",

@@ -36,7 +36,7 @@ const systemStore = useSystemStore();
           show-el-width
           size="18px"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
-          :name="(route.meta.icon as string)"
+          :name="(route.meta?.icon as string)"
           color=""
           :custom-style="systemStore.collapse ? {} : { marginRight: '5px' }"
         ></svg-icon>
@@ -69,7 +69,7 @@ const systemStore = useSystemStore();
           show-el-width
           size="18px"
           v-if="route.meta?.icon && route.meta?.iconType == IconTypeEnum.APP"
-          :name="(route.meta.icon as string)"
+          :name="(route.meta?.icon as string)"
           color=""
           :custom-style="systemStore.collapse ? {} : { marginRight: '5px' }"
         ></svg-icon>

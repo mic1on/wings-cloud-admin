@@ -47,13 +47,13 @@ export const validateUsername = <T>(
 };
 
 /**
- * @name getRoleRoutes
+ * @name getRouteAsync
  * @description 获取权限路由
  */
-export const getRoleRoutes = <T>(): Promise<
+export const getRouteAsync = <T>(): Promise<
   any | ResponseData<T> | undefined
 > => {
-  return GET('/system/user/routes');
+  return GET('/system/route/async');
 };
 
 /**

@@ -61,7 +61,7 @@ const wrapStyle = computed(() => {
         important="h-full border-none"
       >
         <layout-admin-menu-item
-          :routes="routeStore.adminMenuRoutes"
+          :routes="routeStore.menuRoutes"
         ></layout-admin-menu-item>
       </el-menu>
     </div>
