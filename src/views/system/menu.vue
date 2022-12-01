@@ -17,7 +17,7 @@ const keepAliveChange = (e: boolean) => {
         <el-button type="primary">{{ t('crud.btn.add') }}</el-button>
       </template>
     </crud-table-query>
-    <crud-table :data="routeStore.menuRoutes" action-width="300">
+    <crud-table :data="routeStore.menuRoutes" action-width="300" row-key="path">
       <el-table-column :label="t('system.menu.menu')">
         <template #default="scope">
           {{ scope.row.meta.menuName }}

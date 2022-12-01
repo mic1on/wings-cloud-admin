@@ -33,11 +33,6 @@ const props = defineProps({
       header-row-class-name="wings-cloud-crud-table-header-row"
       header-cell-class-name="wings-cloud-crud-table-header-cell"
     >
-      <el-table-column
-        type="index"
-        width="60"
-        :label="t('crud.table.no')"
-      ></el-table-column>
       <slot></slot>
       <el-table-column
         v-if="slots.action"

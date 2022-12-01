@@ -24,16 +24,13 @@ const props = defineProps({
   <div class="wings-cloud-crud-table-query">
     <el-form v-bind="$attrs" inline>
       <slot></slot>
-      <el-form-item v-if="query">
-        <el-button type="primary" @click="$attrs.onQuery">
+      <el-form-item>
+        <el-button type="primary" @click="$attrs.onQuery" v-if="props.query">
           {{ props.queryLabel || t('crud.btn.query') }}
         </el-button>
-        <el-button @click="$attrs.onReset">
+        <el-button @click="$attrs.onReset" v-if="props.query">
           {{ props.resetLabel || t('crud.btn.reset') }}
         </el-button>
-      </el-form-item>
-      <br v-if="slots.action && slots.default" />
-      <el-form-item v-if="slots.action">
         <slot name="action"></slot>
       </el-form-item>
     </el-form>

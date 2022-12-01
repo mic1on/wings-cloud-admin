@@ -41,6 +41,11 @@ const { queryForm, tableData, query, reset } = useCrud({
     </crud-table-query>
     <crud-table :data="tableData">
       <el-table-column
+        type="index"
+        width="60"
+        :label="t('crud.table.no')"
+      ></el-table-column>
+      <el-table-column
         prop="avatar"
         :label="t('system.user.avatar')"
       ></el-table-column>
