@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "node", "unplugin-vue-define-options/macros-global"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]

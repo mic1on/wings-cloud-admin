@@ -22,8 +22,10 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "no-undef": "off",
     "no-useless-escape": "off",
     "@typescript-eslint/no-empty-function": "off",
-    "no-async-promise-executor": "off"
+    "no-async-promise-executor": "off",
+    "vue/component-definition-name-casing": ["error", "kebab-case"]
   }
 }

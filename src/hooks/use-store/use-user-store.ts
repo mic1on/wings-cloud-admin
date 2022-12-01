@@ -20,10 +20,10 @@ import { getUserRoles as _getUserRoles } from '@/apis/system/user';
 /**
  * @name useUserStore
  * @description 导出用户状态钩子
- * @returns stayLogin
- * @returns token
- * @returns userProfile
- * @returns userRoles
+ * @returns stayLogin 保持登录状态
+ * @returns token 唯一凭证
+ * @returns userProfile 用户信息
+ * @returns userRoles 用户角色
  * @returns isLogin
  * @returns setStayLogin
  * @returns setUserProfile

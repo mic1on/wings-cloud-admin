@@ -23,7 +23,6 @@
     "roleType": "角色类型",
     "role": "角色",
     "roleName": "角色名称",
-    "remark": "备注",
     "createTime": "创建时间",
     "list": {
       "admin": "管理员",
@@ -44,11 +43,17 @@
   },
   "dict": {
     "menuName": "字典管理",
-    "menuDescription": ""
+    "menuDescription": "",
+    "dictName": "字典名称",
+    "dictItem": "字典项",
+    "dictType": "字典类型"
   },
   "param": {
     "menuName": "参数管理",
-    "menuDescription": ""
+    "menuDescription": "",
+    "paramName": "参数名称",
+    "paramValue": "参数值",
+    "paramType": "参数类型"
   },
   "file": {
     "menuName": "文件管理",
@@ -57,14 +62,10 @@
   "log": {
     "menuName": "日志管理",
     "menuDescription": "",
-    "login": {
-      "menuName": "登录日志",
-      "menuDescription": ""
-    },
-    "action": {
-      "menuName": "操作日志",
-      "menuDescription": ""
-    }
+    "action": "操作",
+    "status": "状态",
+    "ip": "IP 地址",
+    "api": "日志详细信息"
   },
   "setting": {
     "menuName": "系统设置",
@@ -118,7 +119,6 @@
     "adminFirstRoute": "管理系统首页路由",
     "requestTimeout": "网络请求超时时间",
     "requestTimeoutUnit": "单位毫秒(ms)",
-    "keepAlive": "开启 Keep Alive",
     "updateSuccess": "系统设置修改成功",
     "copy": "复制",
     "copySuccess": "复制成功，请粘贴到 src/constant/settings/settings.replace.ts 文件中！",
@@ -127,8 +127,7 @@
   },
   "profile": {
     "menuName": "个人资料",
-    "menuDescription": "您可以在此页面修改个人资料",
-    "defaultRole": "默认角色"
+    "menuDescription": "您可以在此页面修改个人资料"
   },
   "notification": {
     "menuName": "我的消息",

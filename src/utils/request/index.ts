@@ -149,6 +149,9 @@ export const GET = <T>(
       'Content-Type': RequestHeaderEnum.CONTENT_TYPE_JSON,
       ...options?.headers,
     },
+    networkCodeAdaptor: true,
+    apiCodeAdaptor: true,
+    authCodeAdaptor: true,
     ...options,
   });
 };
@@ -174,6 +177,9 @@ export const POST = <T>(
       'Content-Type': RequestHeaderEnum.CONTENT_TYPE_BODY,
       ...options?.headers,
     },
+    networkCodeAdaptor: true,
+    apiCodeAdaptor: true,
+    authCodeAdaptor: true,
     ...options,
   });
 };
@@ -199,6 +205,9 @@ export const PUT = <T>(
       'Content-Type': RequestHeaderEnum.CONTENT_TYPE_BODY,
       ...options?.headers,
     },
+    networkCodeAdaptor: true,
+    apiCodeAdaptor: true,
+    authCodeAdaptor: true,
     ...options,
   });
 };
@@ -224,6 +233,9 @@ export const DELETE = <T>(
       'Content-Type': RequestHeaderEnum.CONTENT_TYPE_BODY,
       ...options?.headers,
     },
+    networkCodeAdaptor: true,
+    apiCodeAdaptor: true,
+    authCodeAdaptor: true,
     ...options,
   });
 };
@@ -249,6 +261,9 @@ export const UPLOAD = <T>(
       'Content-Type': RequestHeaderEnum.CONTENT_TYPE_FORMDATA,
       ...options?.headers,
     },
+    networkCodeAdaptor: true,
+    apiCodeAdaptor: true,
+    authCodeAdaptor: true,
     ...options,
   });
 };
@@ -264,7 +279,6 @@ export const UPLOAD = <T>(
 export const DOWNLOAD = <T>(
   url: string,
   params?: IObject,
-  filename?: string,
   options?: RequestOptions
 ): Promise<any | ResponseData<T> | undefined> => {
   return request({
@@ -276,6 +290,9 @@ export const DOWNLOAD = <T>(
       ...options?.headers,
     },
     responseType: 'blob',
+    networkCodeAdaptor: true,
+    apiCodeAdaptor: true,
+    authCodeAdaptor: true,
     ...options,
   });
 };

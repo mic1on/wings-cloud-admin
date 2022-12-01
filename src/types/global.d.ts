@@ -46,7 +46,6 @@ interface SystemSettings {
   FirstRoute: string;
   AdminFirstRoute: string;
   NetworkTimeout: number;
-  KeepAlive: boolean;
 }
 
 declare module 'vue-router' {
@@ -64,5 +63,6 @@ declare module 'vue-router' {
     externalPage?: boolean;
     externalPageUrl?: string;
     breadcrumb?: Array[IObject];
+    keepAlive?: boolean;
   }
 }

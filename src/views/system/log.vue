@@ -8,7 +8,7 @@ const { t } = useI18n();
 const { getDict, getDictData } = useDict();
 
 const { queryForm, tableData, query, reset } = useCrud({
-  queryUrl: '/system/dict/list',
+  queryUrl: '/system/log/list',
 });
 </script>
 <template>
@@ -16,18 +16,18 @@ const { queryForm, tableData, query, reset } = useCrud({
     <crud-table-query>
       <el-form-item :model="queryForm" @query="query" @reset="reset">
         <el-input
-          v-model="queryForm.name"
-          :placeholder="t('system.dict.dictName')"
+          v-model="queryForm.username"
+          :placeholder="t('system.user.username')"
         />
       </el-form-item>
       <el-form-item>
         <el-select
           clearable
           v-model="queryForm.type"
-          :placeholder="t('system.dict.dictType')"
+          :placeholder="t('system.log.status')"
         >
           <el-option
-            v-for="(item, index) in getDictData('dictType').value"
+            v-for="(item, index) in getDictData('logStatus').value"
             :key="index"
             :label="item.label"
             :value="item.value"
@@ -45,39 +45,33 @@ const { queryForm, tableData, query, reset } = useCrud({
         :label="t('crud.table.no')"
       ></el-table-column>
       <el-table-column
-        prop="name"
-        :label="t('system.dict.dictName')"
+        prop="avatar"
+        :label="t('system.user.username')"
         width="240"
       ></el-table-column>
       <el-table-column
-        prop="value"
-        :label="t('system.dict.dictType')"
+        prop="action"
+        :label="t('system.log.action')"
+        width="240"
+      ></el-table-column>
+      <el-table-column
+        prop="ip"
+        :label="t('system.log.ip')"
+        width="240"
+      ></el-table-column>
+      <el-table-column
+        prop="status"
+        :label="t('system.log.status')"
         width="240"
       >
         <template #default="scope">
-          {{ getDict('dictType', scope.row.type) }}
+          {{ getDict('logStatus', scope.row.status) }}
         </template>
       </el-table-column>
-      <el-table-column
-        prop="type"
-        :label="t('system.dict.dictItem')"
-        width="240"
-      >
-        <template #defaultDocument>
-          <el-button type="primary" link>
-            {{ t('system.dict.dictItem') }}
-          </el-button>
-        </template>
-      </el-table-column>
-      <el-table-column
-        prop="remark"
-        min-width="340"
-        :label="t('crud.table.remark')"
-      ></el-table-column>
       <el-table-column
         prop="createTime"
-        :label="t('system.role.createTime')"
-        width="240"
+        :label="t('crud.table.actionTime')"
+        min-width="240"
       >
         <template #default="scope">
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
@@ -85,10 +79,7 @@ const { queryForm, tableData, query, reset } = useCrud({
       </el-table-column>
       <el-table-column :label="t('crud.btn.action')" fixed="right" width="120">
         <el-button type="primary" link>
-          {{ t('crud.btn.edit') }}
-        </el-button>
-        <el-button type="primary" link>
-          {{ t('crud.btn.delete') }}
+          {{ t('system.log.api') }}
         </el-button>
       </el-table-column>
     </crud-table>

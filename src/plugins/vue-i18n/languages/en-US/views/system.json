@@ -1,8 +1,8 @@
 {
-  "menuName": "System",
+  "menuName": "System Management",
   "menuDescription": "",
   "menu": {
-    "menuName": "Menus",
+    "menuName": "Menu Management",
     "menuDescription": "",
     "menu": "Menu Name",
     "icon": "Menu Icon",
@@ -18,12 +18,11 @@
     "keepAlive": "Keep Alive"
   },
   "role": {
-    "menuName": "Roles",
+    "menuName": "Role Management",
     "menuDescription": "",
     "roleType": "Role Types",
     "role": "Role",
     "roleName": "Role Name",
-    "remark": "Remark",
     "createTime": "Create Time",
     "list": {
       "admin": "Administrator",
@@ -31,7 +30,7 @@
     }
   },
   "user": {
-    "menuName": "User List",
+    "menuName": "User Management",
     "menuDescription": "",
     "avatar": "Avatar",
     "nickname": "Nickname",
@@ -40,32 +39,34 @@
     "list": {}
   },
   "department": {
-    "menuName": "Department",
+    "menuName": "Dept Management",
     "menuDescription": ""
   },
   "dict": {
-    "menuName": "Dictionary",
-    "menuDescription": ""
+    "menuName": "Dict Management",
+    "menuDescription": "",
+    "dictName": "Dict Name",
+    "dictItem": "Dict Item",
+    "dictType": "Dict Type"
   },
   "param": {
-    "menuName": "Parameter",
-    "menuDescription": ""
+    "menuName": "Param Management",
+    "menuDescription": "",
+    "paramName": "Param Name",
+    "paramValue": "Param Value",
+    "paramType": "Param Type"
   },
   "file": {
-    "menuName": "File Manager",
+    "menuName": "File Management",
     "menuDescription": ""
   },
   "log": {
-    "menuName": "Logs",
+    "menuName": "Log Management",
     "menuDescription": "",
-    "login": {
-      "menuName": "Login Logs",
-      "menuDescription": ""
-    },
-    "action": {
-      "menuName": "Action Logs",
-      "menuDescription": ""
-    }
+    "action": "Action",
+    "status": "Status",
+    "ip": "IP Address",
+    "api": "Log Details"
   },
   "setting": {
     "menuName": "System Settings",
@@ -119,7 +120,6 @@
     "adminFirstRoute": "System First Route",
     "requestTimeout": "Request Timeout",
     "requestTimeoutUnit": "DecDelay (ms)",
-    "keepAlive": "Open Keep Alive",
     "updateSuccess": "The system Settings are modified successfully",
     "copy": "Copy",
     "copySuccess": "Copy succeeded, please paste it into the src/constant/settings/settings.replace.ts file!",
@@ -128,8 +128,7 @@
   },
   "profile": {
     "menuName": "Personal Profile",
-    "menuDescription": "You can update your personal information on this page",
-    "defaultRole": "Default Role"
+    "menuDescription": "You can update your personal information on this page"
   },
   "notification": {
     "menuName": "Notifications",

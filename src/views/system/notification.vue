@@ -37,8 +37,14 @@ const { queryForm, tableData, query, reset } = useCrud({
     </crud-table-query>
     <crud-table :data="tableData">
       <el-table-column
+        type="index"
+        width="60"
+        :label="t('crud.table.no')"
+      ></el-table-column>
+      <el-table-column
         prop="type"
         :label="t('system.notification.notificationType')"
+        width="140"
       >
         <template #default="scope">
           {{ getDict('notificationType', scope.row.type) }}
@@ -47,25 +53,38 @@ const { queryForm, tableData, query, reset } = useCrud({
       <el-table-column
         prop="content"
         :label="t('system.notification.notificationContent')"
+        min-width="340"
       ></el-table-column>
-      <el-table-column prop="source" :label="t('system.notification.source')">
+      <el-table-column
+        prop="source"
+        :label="t('system.notification.source')"
+        width="140"
+      >
         <template #default="scope">
           {{ getDict('notificationSource', scope.row.type) }}
         </template>
       </el-table-column>
-      <el-table-column prop="createTime" :label="t('system.notification.time')">
+      <el-table-column
+        prop="createTime"
+        :label="t('system.notification.time')"
+        width="240"
+      >
         <template #default="scope">
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
         </template>
       </el-table-column>
-      <el-table-column prop="status" :label="t('system.notification.isRead')">
+      <el-table-column
+        prop="status"
+        :label="t('system.notification.isRead')"
+        width="140"
+      >
         <template #default="scope">
           {{ getDict('notificationIsRead', scope.row.status) }}
         </template>
       </el-table-column>
-      <el-table-column :label="t('crud.btn.action')">
+      <el-table-column :label="t('crud.btn.action')" width="120">
         <template #default="scope">
-          <el-button type="primary" bg text v-if="scope.row.status === 0">
+          <el-button type="primary" link v-if="scope.row.status === 0">
             {{ t('system.notification.read') }}
           </el-button>
         </template>

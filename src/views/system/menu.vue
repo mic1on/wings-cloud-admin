@@ -1,25 +1,32 @@
 <script lang="ts" setup name="my-notifications">
 import { useRouteStore } from '@/hooks/use-store/use-route-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { IconTypeEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 
-const routemStore = useRouteStore();
+const routeStore = useRouteStore();
+
+const systemStore = useSystemStore();
+
+const keepAliveChange = (val: string | number | boolean) => {
+  console.log(val);
+};
 </script>
 <template>
   <crud-card>
-    <crud-table-query :query="false">
+    <crud-table-query :query="false" :reset="false">
       <template #action>
         <el-button type="primary">{{ t('crud.btn.add') }}</el-button>
       </template>
     </crud-table-query>
-    <crud-table :data="routemStore.menuRoutes" action-width="300">
-      <el-table-column :label="t('system.menu.menu')">
+    <crud-table :data="routeStore.menuRoutes" action-width="300" row-key="path">
+      <el-table-column :label="t('system.menu.menu')" width="240">
         <template #default="scope">
           {{ scope.row.meta.menuName }}
         </template>
       </el-table-column>
-      <el-table-column :label="t('system.menu.icon')">
+      <el-table-column :label="t('system.menu.icon')" width="140">
         <template #default="scope">
           <svg-icon
             v-if="scope.row.meta.iconType === IconTypeEnum.APP"
@@ -30,7 +37,7 @@ const routemStore = useRouteStore();
           </el-icon>
         </template>
       </el-table-column>
-      <el-table-column :label="t('system.menu.type')">
+      <el-table-column :label="t('system.menu.type')" width="140">
         <template #default="scope">
           <el-tag v-if="scope.row.meta.async">
             {{ t('system.menu.async') }}
@@ -40,7 +47,7 @@ const routemStore = useRouteStore();
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column :label="t('system.menu.open')">
+      <el-table-column :label="t('system.menu.open')" width="140">
         <template #default="scope">
           <el-tag v-if="scope.row.meta.externalPage">
             {{ t('system.menu.outside') }}
@@ -50,26 +57,34 @@ const routemStore = useRouteStore();
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column :label="t('system.menu.keepAlive')">
+      <el-table-column :label="t('system.menu.keepAlive')" width="140">
         <template #default="scope">
-          <el-switch v-model="scope.row.meta.keepAlive" />
+          <el-switch
+            v-model="scope.row.meta.keepAlive"
+            @change="keepAliveChange"
+          />
         </template>
       </el-table-column>
-      <el-table-column :label="t('crud.table.sort')">
+      <el-table-column :label="t('crud.table.sort')" width="140">
         <template #default="scope">
           {{ scope.row.meta.sort }}
         </template>
       </el-table-column>
-      <el-table-column :label="t('system.menu.router')">
+      <el-table-column :label="t('system.menu.router')" width="240">
         <template #default="scope">
           {{ scope.row.path }}
         </template>
       </el-table-column>
       <el-table-column
+        min-width="340"
         prop="remark"
-        :label="t('system.role.remark')"
+        :label="t('crud.table.remark')"
       ></el-table-column>
-      <template #action>
+      <el-table-column
+        :label="t('crud.btn.action')"
+        fixed="right"
+        :width="systemStore.isMobile ? '120' : '300'"
+      >
         <el-button type="primary" link>
           {{ t('system.menu.subMenu') }}
         </el-button>
@@ -82,7 +97,7 @@ const routemStore = useRouteStore();
         <el-button type="primary" link>
           {{ t('crud.btn.delete') }}
         </el-button>
-      </template>
+      </el-table-column>
     </crud-table>
   </crud-card>
 </template>

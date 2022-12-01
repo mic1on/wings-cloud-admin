@@ -1,7 +1,7 @@
 import type { ResponseData } from '@/utils/request/index.d';
 import type { IObject } from '@/types/global.d';
 import { interceptJointData } from '@/utils/common';
-import { AuthenticationEnum, IconTypeEnum } from '@/constants/enums';
+import { IconTypeEnum } from '@/constants/enums';
 
 export default {
   /**
@@ -19,12 +19,9 @@ export default {
   loginByAccount: {
     url: '/system/user/login',
     method: 'post',
-    data: AuthenticationEnum.VISITOR_TOKEN,
+    data: 'E7UJ0aubyQm32NWlJ0iNionQkv0Ltn2dVf10',
     response: <T>(data: IObject, res: ResponseData<T>) => {
-      if (
-        interceptJointData(data.body).password !==
-        AuthenticationEnum.VISITOR_PASSWORD
-      ) {
+      if (interceptJointData(data.body).password !== 'admin123') {
         return {
           ...res,
           code: 10039,
@@ -43,19 +40,12 @@ export default {
     url: '/system/user/profile',
     method: 'get',
     data: {
-      id: '',
-      username: AuthenticationEnum.VISITOR_USERNAME,
-      nickname: '演示用户',
+      id: '0',
+      username: 'Administrator',
+      nickname: '系统管理员',
       avatar: '',
-      sex: 1,
-      email: '',
-      phone: '',
-      roleList: [
-        { label: '系统管理员', id: 1 },
-        { label: '开发人员', id: 2 },
-      ],
-      defaultRole: 1,
-      currentRole: 1,
+      mobile: '18877776666',
+      roleId: '0',
     },
   },
 
@@ -68,10 +58,7 @@ export default {
     method: 'get',
     data: { validateResult: true },
     response: <T>(param: IObject, res: ResponseData<T>) => {
-      if (
-        interceptJointData(param.url).username !==
-        AuthenticationEnum.VISITOR_USERNAME
-      ) {
+      if (interceptJointData(param.url).username !== 'Administrator') {
         return {
           ...res,
           code: 10034,
@@ -257,6 +244,7 @@ export default {
           {
             path: '/system/log',
             name: 'system.log',
+            component: '/system/log',
             meta: {
               layout: 'admin',
               isMenu: true,
@@ -267,34 +255,6 @@ export default {
               isI18n: true,
               i18nKey: 'system.log',
             },
-            children: [
-              {
-                path: '/system/log/logi',
-                name: 'system.log.login',
-                component: '/system/log/login',
-                meta: {
-                  layout: 'admin',
-                  isMenu: true,
-                  requiresAuth: true,
-                  sort: 0,
-                  isI18n: true,
-                  i18nKey: 'system.log.login',
-                },
-              },
-              {
-                path: '/system/log/action',
-                name: 'system.log.action',
-                component: '/system/log/action',
-                meta: {
-                  layout: 'admin',
-                  isMenu: true,
-                  requiresAuth: true,
-                  sort: 1,
-                  isI18n: true,
-                  i18nKey: 'system.log.action',
-                },
-              },
-            ],
           },
         ],
       },
@@ -379,8 +339,7 @@ export default {
       '/system/dict',
       '/system/param',
       '/system/file',
-      '/system/log/login',
-      '/system/log/action',
+      '/system/log',
       '/development/options',
       '/development/code',
       '/development/form',
@@ -455,9 +414,8 @@ export default {
           id: 0,
           avatar: '',
           nickname: '系统管理员',
-          username: 'sysadmin',
-          mobile: '',
-          remark: '',
+          username: 'Administrator',
+          mobile: '18877776666',
           roleId: 0,
           roleName: '管理员',
           createTime: 1669061218194,
@@ -469,8 +427,7 @@ export default {
   },
 
   /**
-   * @name getDictAll
-   * @description 获取全部字典数据
+   * 获取全部字典数据
    */
   getDictAll: {
     url: '/system/dict/all',
@@ -515,16 +472,78 @@ export default {
           },
         ],
       },
+      {
+        key: 'logStatus',
+        values: [
+          {
+            label: '成功',
+            value: 0,
+          },
+          {
+            label: '失败',
+            value: 500,
+          },
+        ],
+      },
+      {
+        key: 'paramType',
+        values: [
+          {
+            label: '系统',
+            value: 0,
+          },
+          {
+            label: '业务',
+            value: 500,
+          },
+        ],
+      },
+      {
+        key: 'dictType',
+        values: [
+          {
+            label: '系统',
+            value: 0,
+          },
+          {
+            label: '业务',
+            value: 500,
+          },
+        ],
+      },
     ],
   },
 
   /**
-   * @name getDictPage
-   * @description 分页获取字典数据
+   * 分页获取字典数据
    */
   getDictPage: {
     url: '/system/dict/list',
     method: 'get',
     data: [],
+  },
+
+  /**
+   * 分页查询参数
+   */
+  getParamList: {
+    url: '/system/param/list',
+    method: 'get',
+    data: {
+      list: [],
+      total: 0,
+    },
+  },
+
+  /**
+   * 分页查询日志
+   */
+  getLogList: {
+    url: '/system/log/list',
+    method: 'get',
+    data: {
+      list: [],
+      total: 0,
+    },
   },
 };

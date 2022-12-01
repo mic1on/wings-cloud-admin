@@ -4,9 +4,9 @@ import type { I18nT } from '@/plugins/vue-i18n/index.d';
 /**
  * @name networkCodeAdaptor
  * @description 网络状态码适配器
- * @param code
- * @param t
- * @param callback
+ * @param code 状态码
+ * @param t 国际化翻译函数
+ * @param callback 回调函数
  * @return code
  */
 export const networkCodeAdaptor = (
@@ -69,9 +69,9 @@ export const networkCodeAdaptor = (
 /**
  * @name apiCodeAdaptor
  * @description 服务端接口状态码适配器
- * @param code
- * @param t
- * @param callback
+ * @param code 状态码
+ * @param t 国际化翻译函数
+ * @param callback 回调函数
  * @return code
  */
 export const apiCodeAdaptor = (
@@ -102,9 +102,9 @@ export const apiCodeAdaptor = (
 /**
  * @name authCodeAdaptor
  * @description 鉴权状态码适配器
- * @param data
- * @param t
- * @param callback
+ * @param code 状态码
+ * @param t 国际化翻译函数
+ * @param callback 回调函数
  * @return code
  */
 export const authCodeAdaptor = (

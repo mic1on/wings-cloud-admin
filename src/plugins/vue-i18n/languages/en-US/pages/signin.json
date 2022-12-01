@@ -8,7 +8,7 @@
   "wechat": "Wechat",
   "newUser": "New user?",
   "createUser": "Create an account",
-  "sysadmin": "The test account is sysadmin and password is abc123",
+  "administrator": "The test account is Administrator and password is admin123",
   "readAndAgree": "「 {label} 」means read and agree",
   "termsConditions": "Terms & Conditions"
 }

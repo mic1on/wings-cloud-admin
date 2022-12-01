@@ -56,7 +56,7 @@ const goSignup = (): void => {
         font-500
         style="color: var(--el-text-color-secondary); font-size: 14px"
       >
-        {{ t('signin.sysadmin') }}
+        {{ t('signin.administrator') }}
       </div>
     </template>
     <template #form>
