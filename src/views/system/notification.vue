@@ -82,7 +82,7 @@ const { queryForm, tableData, query, reset } = useCrud({
           {{ getDict('notificationIsRead', scope.row.status) }}
         </template>
       </el-table-column>
-      <el-table-column :label="t('crud.btn.action')" width="80">
+      <el-table-column :label="t('crud.btn.action')" width="120">
         <template #default="scope">
           <el-button type="primary" link v-if="scope.row.status === 0">
             {{ t('system.notification.read') }}

@@ -44,14 +44,14 @@ const { queryForm, tableData, query, reset } = useCrud({
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
         </template>
       </el-table-column>
-      <template #action>
+      <el-table-column :label="t('crud.btn.action')" fixed="right" width="120">
         <el-button type="primary" link>
           {{ t('crud.btn.edit') }}
         </el-button>
         <el-button type="primary" link>
           {{ t('crud.btn.delete') }}
         </el-button>
-      </template>
+      </el-table-column>
     </crud-table>
   </crud-card>
 </template>

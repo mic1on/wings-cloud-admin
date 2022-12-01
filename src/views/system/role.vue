@@ -52,7 +52,7 @@ const { queryForm, tableData, query, reset } = useCrud({
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
         </template>
       </el-table-column>
-      <el-table-column :label="t('crud.btn.action')" width="120">
+      <el-table-column :label="t('crud.btn.action')" fixed="right" width="120">
         <el-button type="primary" link>
           {{ t('crud.btn.edit') }}
         </el-button>

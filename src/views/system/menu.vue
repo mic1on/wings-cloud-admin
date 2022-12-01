@@ -1,10 +1,13 @@
 <script lang="ts" setup name="my-notifications">
 import { useRouteStore } from '@/hooks/use-store/use-route-store';
+import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { IconTypeEnum } from '@/constants/enums';
 
 const { t } = useI18n();
 
 const routeStore = useRouteStore();
+
+const systemStore = useSystemStore();
 
 const keepAliveChange = (val: string | number | boolean) => {
   console.log(val);
@@ -77,7 +80,11 @@ const keepAliveChange = (val: string | number | boolean) => {
         prop="remark"
         :label="t('crud.table.remark')"
       ></el-table-column>
-      <el-table-column :label="t('crud.btn.action')" fixed="right" width="280">
+      <el-table-column
+        :label="t('crud.btn.action')"
+        fixed="right"
+        :width="systemStore.isMobile ? '120' : '300'"
+      >
         <el-button type="primary" link>
           {{ t('system.menu.subMenu') }}
         </el-button>
