@@ -15,7 +15,7 @@ const keepAliveChange = (val: string | number | boolean) => {
 </script>
 <template>
   <crud-card>
-    <crud-table-query :query="false">
+    <crud-table-query :query="false" :reset="false">
       <template #action>
         <el-button type="primary">{{ t('crud.btn.add') }}</el-button>
       </template>

@@ -485,6 +485,32 @@ export default {
           },
         ],
       },
+      {
+        key: 'paramType',
+        values: [
+          {
+            label: '系统',
+            value: 0,
+          },
+          {
+            label: '业务',
+            value: 500,
+          },
+        ],
+      },
+      {
+        key: 'dictType',
+        values: [
+          {
+            label: '系统',
+            value: 0,
+          },
+          {
+            label: '业务',
+            value: 500,
+          },
+        ],
+      },
     ],
   },
 

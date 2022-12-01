@@ -10,6 +10,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  reset: {
+    type: Boolean,
+    default: true,
+  },
   queryLabel: {
     type: String,
     default: '',
@@ -28,7 +32,7 @@ const props = defineProps({
         <el-button @click="$attrs.onQuery" v-if="props.query">
           {{ props.queryLabel || t('crud.btn.query') }}
         </el-button>
-        <el-button @click="$attrs.onReset" v-if="props.query">
+        <el-button @click="$attrs.onReset" v-if="props.reset">
           {{ props.resetLabel || t('crud.btn.reset') }}
         </el-button>
         <slot name="action"></slot>

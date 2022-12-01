@@ -39,18 +39,22 @@
     "list": {}
   },
   "department": {
-    "menuName": "Department Management",
+    "menuName": "Dept Management",
     "menuDescription": ""
   },
   "dict": {
-    "menuName": "Dictionary Management",
-    "menuDescription": ""
+    "menuName": "Dict Management",
+    "menuDescription": "",
+    "dictName": "Dict Name",
+    "dictItem": "Dict Item",
+    "dictType": "Dict Type"
   },
   "param": {
-    "menuName": "Parameter Management",
+    "menuName": "Param Management",
     "menuDescription": "",
-    "paramName": "Parameter Name",
-    "paramValue": "Parameter Value"
+    "paramName": "Param Name",
+    "paramValue": "Param Value",
+    "paramType": "Param Type"
   },
   "file": {
     "menuName": "File Management",

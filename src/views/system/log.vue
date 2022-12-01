@@ -47,18 +47,32 @@ const { queryForm, tableData, query, reset } = useCrud({
       <el-table-column
         prop="avatar"
         :label="t('system.user.username')"
+        width="240"
       ></el-table-column>
       <el-table-column
         prop="action"
         :label="t('system.log.action')"
+        width="240"
       ></el-table-column>
-      <el-table-column prop="ip" :label="t('system.log.ip')"></el-table-column>
-      <el-table-column prop="status" :label="t('system.log.status')">
+      <el-table-column
+        prop="ip"
+        :label="t('system.log.ip')"
+        width="240"
+      ></el-table-column>
+      <el-table-column
+        prop="status"
+        :label="t('system.log.status')"
+        width="240"
+      >
         <template #default="scope">
           {{ getDict('logStatus', scope.row.status) }}
         </template>
       </el-table-column>
-      <el-table-column prop="createTime" :label="t('crud.table.actionTime')">
+      <el-table-column
+        prop="createTime"
+        :label="t('crud.table.actionTime')"
+        min-width="240"
+      >
         <template #default="scope">
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
         </template>

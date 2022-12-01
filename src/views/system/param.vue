@@ -1,8 +1,11 @@
 <script lang="ts" setup name="my-notifications">
 import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
+import { useDict } from '@/hooks/use-crud/use-dict';
 
 const { t } = useI18n();
+
+const { getDict, getDictData } = useDict();
 
 const { queryForm, tableData, query, reset } = useCrud({
   queryUrl: '/system/param/list',
@@ -13,9 +16,23 @@ const { queryForm, tableData, query, reset } = useCrud({
     <crud-table-query>
       <el-form-item :model="queryForm" @query="query" @reset="reset">
         <el-input
-          v-model="queryForm.paramName"
+          v-model="queryForm.name"
           :placeholder="t('system.param.paramName')"
         />
+      </el-form-item>
+      <el-form-item>
+        <el-select
+          clearable
+          v-model="queryForm.type"
+          :placeholder="t('system.param.paramType')"
+        >
+          <el-option
+            v-for="(item, index) in getDictData('paramType').value"
+            :key="index"
+            :label="item.label"
+            :value="item.value"
+          ></el-option>
+        </el-select>
       </el-form-item>
       <template #action>
         <el-button type="primary">{{ t('crud.btn.add') }}</el-button>
@@ -28,18 +45,34 @@ const { queryForm, tableData, query, reset } = useCrud({
         :label="t('crud.table.no')"
       ></el-table-column>
       <el-table-column
-        prop="avatar"
+        prop="name"
         :label="t('system.param.paramName')"
+        width="240"
       ></el-table-column>
       <el-table-column
-        prop="nickname"
+        prop="value"
         :label="t('system.param.paramValue')"
+        width="240"
       ></el-table-column>
       <el-table-column
-        prop="username"
+        prop="type"
+        :label="t('system.param.paramType')"
+        width="240"
+      >
+        <template #default="scope">
+          {{ getDict('paramType', scope.row.type) }}
+        </template>
+      </el-table-column>
+      <el-table-column
+        prop="remark"
+        min-width="340"
         :label="t('crud.table.remark')"
       ></el-table-column>
-      <el-table-column prop="createTime" :label="t('system.role.createTime')">
+      <el-table-column
+        prop="createTime"
+        :label="t('system.role.createTime')"
+        width="240"
+      >
         <template #default="scope">
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
         </template>

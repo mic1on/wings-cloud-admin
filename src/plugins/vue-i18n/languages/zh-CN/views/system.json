@@ -43,13 +43,17 @@
   },
   "dict": {
     "menuName": "字典管理",
-    "menuDescription": ""
+    "menuDescription": "",
+    "dictName": "字典名称",
+    "dictItem": "字典项",
+    "dictType": "字典类型"
   },
   "param": {
     "menuName": "参数管理",
     "menuDescription": "",
     "paramName": "参数名称",
-    "paramValue": "参数值"
+    "paramValue": "参数值",
+    "paramType": "参数类型"
   },
   "file": {
     "menuName": "文件管理",
