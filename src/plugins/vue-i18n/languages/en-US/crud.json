@@ -31,7 +31,11 @@
   "table": {
     "no": "No.",
     "noData": "Empty",
-    "sort": "Sort"
+    "sort": "Sort",
+    "remark": "Remark",
+    "createTime": "Create Time",
+    "updateTime": "Update Time",
+    "actionTime": "Action Time"
   },
   "upload": {
     "success": "Upload Complete",

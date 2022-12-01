@@ -25,7 +25,7 @@ const props = defineProps({
     <el-form v-bind="$attrs" inline>
       <slot></slot>
       <el-form-item>
-        <el-button type="primary" @click="$attrs.onQuery" v-if="props.query">
+        <el-button @click="$attrs.onQuery" v-if="props.query">
           {{ props.queryLabel || t('crud.btn.query') }}
         </el-button>
         <el-button @click="$attrs.onReset" v-if="props.query">

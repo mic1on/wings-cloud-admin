@@ -8,7 +8,7 @@
   "wechat": "微信登录",
   "newUser": "新用户？",
   "createUser": "申请一个新帐号",
-  "sysadmin": "测试账号：sysadmin，密码：abc123",
+  "administrator": "测试账号：Administrator，密码：admin123",
   "readAndAgree": "点击「{label}」表示已阅读并同意",
   "termsConditions": "服务条款"
 }

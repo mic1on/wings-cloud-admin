@@ -34,15 +34,6 @@ const props = defineProps({
       header-cell-class-name="wings-cloud-crud-table-header-cell"
     >
       <slot></slot>
-      <el-table-column
-        v-if="slots.action"
-        :width="props.actionWidth"
-        :label="props.actionLabel || t('crud.btn.action')"
-      >
-        <div class="wings-cloud-crud-table-action">
-          <slot name="action"> </slot>
-        </div>
-      </el-table-column>
     </el-table>
   </div>
 </template>
@@ -72,22 +63,5 @@ const props = defineProps({
 }
 
 .wings-cloud-crud-table-header-cell {
-}
-
-.wings-cloud-crud-table-action {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-
-  .el-button.is-text {
-    margin-right: 12px;
-    margin-left: 0;
-    padding: 0 !important;
-  }
-
-  .el-button:last-child {
-    margin-right: 0;
-  }
 }
 </style>

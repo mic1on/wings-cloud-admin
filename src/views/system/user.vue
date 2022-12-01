@@ -48,39 +48,51 @@ const { queryForm, tableData, query, reset } = useCrud({
       <el-table-column
         prop="avatar"
         :label="t('system.user.avatar')"
+        width="140"
       ></el-table-column>
       <el-table-column
         prop="nickname"
         :label="t('system.user.nickname')"
+        width="140"
       ></el-table-column>
       <el-table-column
         prop="username"
         :label="t('system.user.username')"
+        width="140"
       ></el-table-column>
       <el-table-column
         prop="mobile"
         :label="t('system.user.mobile')"
+        width="140"
       ></el-table-column>
-      <el-table-column prop="roleName" :label="t('system.role.role')">
+      <el-table-column
+        prop="roleName"
+        :label="t('system.role.role')"
+        width="140"
+      >
         <template #default="scope">
           <el-tag>
             {{ scope.row.roleName }}
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="createTime" :label="t('system.role.createTime')">
+      <el-table-column
+        prop="createTime"
+        :label="t('crud.table.createTime')"
+        min-width="240"
+      >
         <template #default="scope">
           {{ useDateFormat(scope.row.createTime, 'YYYY-MM-DD HH:mm:ss').value }}
         </template>
       </el-table-column>
-      <template #action>
+      <el-table-column :label="t('crud.btn.action')" width="120">
         <el-button type="primary" link>
           {{ t('crud.btn.edit') }}
         </el-button>
         <el-button type="primary" link>
           {{ t('crud.btn.delete') }}
         </el-button>
-      </template>
+      </el-table-column>
     </crud-table>
   </crud-card>
 </template>

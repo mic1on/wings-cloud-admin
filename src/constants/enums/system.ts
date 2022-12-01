@@ -27,16 +27,6 @@ export enum LanguageEnum {
 }
 
 /**
- * @name AuthenticationEnum
- * @description 鉴权枚举
- */
-export enum AuthenticationEnum {
-  VISITOR_USERNAME = 'sysadmin',
-  VISITOR_PASSWORD = 'abc123',
-  VISITOR_TOKEN = 'E7UJ0aubyQm32NWlJ0iNionQkv0Ltn2dVf10',
-}
-
-/**
  * @name IconTypeEnum
  * @description 管理系统菜单图标类型枚举
  */
