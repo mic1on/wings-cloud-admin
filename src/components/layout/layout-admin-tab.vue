@@ -1,9 +1,13 @@
-<script lang="ts" setup name="layout-admin-tab">
+<script lang="ts" setup>
 import type { IObject } from '@/types/global.d';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { Settings } from '@/constants/settings';
 import { arrayRecursion } from '@/utils/common';
+
+defineOptions({
+  name: 'LayoutAdminTab',
+});
 
 const { t } = useI18n();
 

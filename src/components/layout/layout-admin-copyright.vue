@@ -1,5 +1,9 @@
-<script lang="ts" setup name="layout-admin-copyright">
+<script lang="ts" setup>
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+defineOptions({
+  name: 'LayoutAdminCopyright',
+});
 
 const { t } = useI18n();
 

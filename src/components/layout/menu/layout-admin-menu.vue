@@ -1,7 +1,11 @@
-<script lang="ts" setup name="layout-admin-menu">
+<script lang="ts" setup>
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { SettingsValueEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'LayoutAdminMenu',
+});
 
 const route = useRoute();
 

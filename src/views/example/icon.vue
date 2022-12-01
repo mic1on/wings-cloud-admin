@@ -1,7 +1,11 @@
-<script lang="ts" setup name="icon">
+<script lang="ts" setup>
 import { ElMessage } from 'element-plus';
 import { useClipboard } from '@vueuse/core';
 import { autoImportSvgs } from '@/utils/auto';
+
+defineOptions({
+  name: 'ExampleIcon',
+});
 
 const { t } = useI18n();
 

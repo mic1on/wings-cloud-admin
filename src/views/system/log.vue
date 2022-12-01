@@ -3,6 +3,10 @@ import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
 import { useDict } from '@/hooks/use-crud/use-dict';
 
+defineOptions({
+  name: 'SystemLog',
+});
+
 const { t } = useI18n();
 
 const { getDict, getDictData } = useDict();

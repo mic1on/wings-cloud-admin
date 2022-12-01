@@ -1,4 +1,8 @@
-<script lang="ts" setup name="layout-admin-footer"></script>
+<script lang="ts" setup>
+defineOptions({
+  name: 'LayoutAdminFooter',
+});
+</script>
 <template>
   <div></div>
 </template>

@@ -1,5 +1,9 @@
-<script lang="ts" setup name="layout-toolbar-fullscreen">
+<script lang="ts" setup>
 import { useFullscreen } from '@vueuse/core';
+
+defineOptions({
+  name: 'LayoutToolbarFullscreen',
+});
 
 const { isFullscreen, toggle } = useFullscreen();
 

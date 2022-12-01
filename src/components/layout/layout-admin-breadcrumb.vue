@@ -1,6 +1,10 @@
-<script lang="ts" setup name="layout-admin-breadcrumb">
+<script lang="ts" setup>
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'LayoutAdminBreadcrumb',
+});
 
 const systemStore = useSystemStore();
 

@@ -1,7 +1,11 @@
-<script lang="ts" setup name="my-notifications">
+<script lang="ts" setup>
 import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { IconTypeEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'SystemMenu',
+});
 
 const { t } = useI18n();
 

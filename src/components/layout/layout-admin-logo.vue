@@ -1,7 +1,11 @@
-<script lang="ts" setup name="layout-admin-logo">
+<script lang="ts" setup>
 import { Settings } from '@/constants/settings';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'LayoutAdminLogo',
+});
 
 const { t } = useI18n();
 

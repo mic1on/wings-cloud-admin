@@ -1,6 +1,10 @@
-<script lang="ts" setup name="layout-toolbar-color-scheme">
+<script lang="ts" setup>
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'LayoutToolbarColorScheme',
+});
 
 const systemStore = useSystemStore();
 

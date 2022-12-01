@@ -1,4 +1,8 @@
-<script lang="ts" setup name="layout-toolbar-fresh">
+<script lang="ts" setup>
+defineOptions({
+  name: 'LayoutToolbarRefresh',
+});
+
 const props = defineProps({
   color: {
     type: String,

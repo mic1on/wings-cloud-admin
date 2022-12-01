@@ -1,6 +1,10 @@
-<script lang="ts" setup name="layout-toolbar-notification">
+<script lang="ts" setup>
 import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { RouteEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'LayoutToolbarNotification',
+});
 
 const { t } = useI18n();
 
