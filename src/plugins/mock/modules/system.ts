@@ -3,6 +3,93 @@ import type { IObject } from '@/types/global.d';
 import { interceptJointData } from '@/utils/common';
 import { IconTypeEnum } from '@/constants/enums';
 
+const dictData = [
+  {
+    key: 'notificationType',
+    type: 0,
+    values: [
+      {
+        label: '消息',
+        value: 0,
+      },
+      {
+        label: '通知',
+        value: 1,
+      },
+    ],
+  },
+  {
+    key: 'notificationSource',
+    type: 0,
+    values: [
+      {
+        label: '用户',
+        value: 0,
+      },
+      {
+        label: '系统',
+        value: 1,
+      },
+    ],
+  },
+  {
+    key: 'notificationIsRead',
+    type: 0,
+    values: [
+      {
+        label: '未读',
+        value: 0,
+      },
+      {
+        label: '已读',
+        value: 1,
+      },
+    ],
+  },
+  {
+    key: 'logStatus',
+    type: 0,
+    values: [
+      {
+        label: '成功',
+        value: 0,
+      },
+      {
+        label: '失败',
+        value: 500,
+      },
+    ],
+  },
+  {
+    key: 'paramType',
+    type: 0,
+    values: [
+      {
+        label: '系统',
+        value: 0,
+      },
+      {
+        label: '业务',
+        value: 500,
+      },
+    ],
+  },
+  {
+    key: 'dictionaryType',
+    type: 0,
+    values: [
+      {
+        label: '系统',
+        value: 0,
+      },
+      {
+        label: '业务',
+        value: 500,
+      },
+    ],
+  },
+];
+
 export default {
   /**
    * 注册
@@ -197,9 +284,9 @@ export default {
             },
           },
           {
-            path: '/system/dict',
-            name: 'system.dict',
-            component: '/system/dict',
+            path: '/system/dictionary',
+            name: 'system.dictionary',
+            component: '/system/dictionary',
             meta: {
               layout: 'admin',
               isMenu: true,
@@ -208,7 +295,7 @@ export default {
               icon: 'Reading',
               sort: 4,
               isI18n: true,
-              i18nKey: 'system.dict',
+              i18nKey: 'system.dictionary',
             },
           },
           {
@@ -334,9 +421,8 @@ export default {
       '/system/role',
       '/system/user',
       '/system/department',
-      '/system/post',
       '/system/menu',
-      '/system/dict',
+      '/system/dictionary',
       '/system/param',
       '/system/file',
       '/system/log',
@@ -371,7 +457,7 @@ export default {
           status: 1,
         },
       ],
-      total: 1,
+      total: 2,
     },
   },
 
@@ -398,7 +484,7 @@ export default {
           status: 1,
         },
       ],
-      total: 1,
+      total: 2,
     },
   },
 
@@ -429,98 +515,22 @@ export default {
   /**
    * 获取全部字典数据
    */
-  getDictAll: {
-    url: '/system/dict/all',
+  getDictionaryAll: {
+    url: '/system/dictionary/all',
     method: 'get',
-    data: [
-      {
-        key: 'notificationType',
-        values: [
-          {
-            label: '消息',
-            value: 0,
-          },
-          {
-            label: '通知',
-            value: 1,
-          },
-        ],
-      },
-      {
-        key: 'notificationSource',
-        values: [
-          {
-            label: '用户',
-            value: 0,
-          },
-          {
-            label: '系统',
-            value: 1,
-          },
-        ],
-      },
-      {
-        key: 'notificationIsRead',
-        values: [
-          {
-            label: '未读',
-            value: 0,
-          },
-          {
-            label: '已读',
-            value: 1,
-          },
-        ],
-      },
-      {
-        key: 'logStatus',
-        values: [
-          {
-            label: '成功',
-            value: 0,
-          },
-          {
-            label: '失败',
-            value: 500,
-          },
-        ],
-      },
-      {
-        key: 'paramType',
-        values: [
-          {
-            label: '系统',
-            value: 0,
-          },
-          {
-            label: '业务',
-            value: 500,
-          },
-        ],
-      },
-      {
-        key: 'dictType',
-        values: [
-          {
-            label: '系统',
-            value: 0,
-          },
-          {
-            label: '业务',
-            value: 500,
-          },
-        ],
-      },
-    ],
+    data: dictData,
   },
 
   /**
    * 分页获取字典数据
    */
-  getDictPage: {
-    url: '/system/dict/list',
+  getDictionaryPage: {
+    url: '/system/dictionary/list',
     method: 'get',
-    data: [],
+    data: {
+      list: dictData,
+      total: dictData.length,
+    },
   },
 
   /**
@@ -542,7 +552,53 @@ export default {
     url: '/system/log/list',
     method: 'get',
     data: {
-      list: [],
+      list: [
+        {
+          username: 'Administrator',
+          action: '修改密码',
+          ip: '0.0.0.0',
+          status: 0,
+          createTime: 1669084718194,
+        },
+        {
+          username: 'Administrator',
+          action: '登录',
+          ip: '0.0.0.0',
+          status: 0,
+          createTime: 1669061218194,
+        },
+      ],
+      total: 2,
+    },
+  },
+
+  /**
+   * 分页查询部门
+   */
+  getDepartmentList: {
+    url: '/system/department/list',
+    method: 'get',
+    data: {
+      list: [
+        {
+          id: 0,
+          name: '总公司',
+          parentName: '',
+          parentId: '',
+          sort: 1,
+          remark: '',
+          children: [
+            {
+              id: 1,
+              name: '分公司',
+              parentName: '总公司',
+              parentId: '0',
+              sort: 1,
+              remark: '',
+            },
+          ],
+        },
+      ],
       total: 0,
     },
   },

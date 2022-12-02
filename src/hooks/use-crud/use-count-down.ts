@@ -46,14 +46,14 @@ export const useCountDown = () => {
     }, 1000);
   };
 
-  const getPhoneCode = (phone: number | string, type: number): void => {
-    getCode(phone, async () => {
+  const getMobileCode = (mobile: number | string, type: number): void => {
+    getCode(mobile, async () => {
       const res = await getMobileSmscode({
-        phone,
+        mobile,
         type,
       });
       if (res.code === 0) {
-        ElMessage.success(t('crud.phone.success'));
+        ElMessage.success(t('crud.mobile.success'));
         getCoding();
       }
     });
@@ -71,7 +71,7 @@ export const useCountDown = () => {
     countDownForm,
     getCode,
     getCoding,
-    getPhoneCode,
+    getMobileCode,
     resetCountDown,
   };
 };

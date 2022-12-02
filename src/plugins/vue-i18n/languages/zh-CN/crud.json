@@ -44,9 +44,9 @@
       "size": "文件体积不能超过 {size}MB"
     }
   },
-  "phone": {
-    "phone": "手机号",
-    "phoneText": "手机号",
+  "mobile": {
+    "mobile": "手机号",
+    "mobileText": "手机号",
     "code": "验证码",
     "codeText": "验证码",
     "send": "发送验证码",

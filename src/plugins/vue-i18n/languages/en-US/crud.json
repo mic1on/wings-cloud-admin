@@ -44,9 +44,9 @@
       "size": "The size of the file cannot exceed {size}MB"
     }
   },
-  "phone": {
-    "phone": "Mobile Phone",
-    "phoneText": "mobile phone",
+  "mobile": {
+    "mobile": "Mobile Phone",
+    "mobileText": "mobile phone",
     "code": "Security code",
     "codeText": "security code",
     "send": "Send Security Code",

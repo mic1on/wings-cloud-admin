@@ -39,14 +39,17 @@
   },
   "department": {
     "menuName": "部门管理",
-    "menuDescription": ""
+    "menuDescription": "",
+    "departmentName": "部门名称",
+    "parentDepartmentName": "上级部门",
+    "subDepartment": "新增子部门"
   },
-  "dict": {
+  "dictionary": {
     "menuName": "字典管理",
     "menuDescription": "",
-    "dictName": "字典名称",
-    "dictItem": "字典项",
-    "dictType": "字典类型"
+    "dictionaryName": "字典名称",
+    "dictionaryItem": "字典项",
+    "dictionaryType": "字典类型"
   },
   "param": {
     "menuName": "参数管理",

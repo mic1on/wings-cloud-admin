@@ -1,18 +1,18 @@
 <script lang="ts" setup>
 import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
-import { useDict } from '@/hooks/use-crud/use-dict';
+import { useDictionary } from '@/hooks/use-crud/use-dictionary';
 
 defineOptions({
-  name: 'SystemDict',
+  name: 'SystemDictionary',
 });
 
 const { t } = useI18n();
 
-const { getDict, getDictData } = useDict();
+const { getDictionary, getDictionaryData } = useDictionary();
 
 const { queryForm, tableData, query, reset } = useCrud({
-  queryUrl: '/system/dict/list',
+  queryUrl: '/system/dictionary/list',
 });
 </script>
 <template>
@@ -21,17 +21,17 @@ const { queryForm, tableData, query, reset } = useCrud({
       <el-form-item :model="queryForm" @query="query" @reset="reset">
         <el-input
           v-model="queryForm.name"
-          :placeholder="t('system.dict.dictName')"
+          :placeholder="t('system.dictionary.dictionaryName')"
         />
       </el-form-item>
       <el-form-item>
         <el-select
           clearable
           v-model="queryForm.type"
-          :placeholder="t('system.dict.dictType')"
+          :placeholder="t('system.dictionary.dictionaryType')"
         >
           <el-option
-            v-for="(item, index) in getDictData('dictType').value"
+            v-for="(item, index) in getDictionaryData('dictionaryType').value"
             :key="index"
             :label="item.label"
             :value="item.value"
@@ -49,27 +49,28 @@ const { queryForm, tableData, query, reset } = useCrud({
         :label="t('crud.table.no')"
       ></el-table-column>
       <el-table-column
-        prop="name"
-        :label="t('system.dict.dictName')"
+        prop="key"
+        :label="t('system.dictionary.dictionaryName')"
         width="240"
       ></el-table-column>
       <el-table-column
         prop="value"
-        :label="t('system.dict.dictType')"
+        :label="t('system.dictionary.dictionaryType')"
         width="240"
       >
         <template #default="scope">
-          {{ getDict('dictType', scope.row.type) }}
+          <el-tag>
+            {{ getDictionary('dictionaryType', scope.row.type) }}
+          </el-tag>
         </template>
       </el-table-column>
       <el-table-column
-        prop="type"
-        :label="t('system.dict.dictItem')"
+        :label="t('system.dictionary.dictionaryItem')"
         width="240"
       >
-        <template #defaultDocument>
+        <template #default>
           <el-button type="primary" link>
-            {{ t('system.dict.dictItem') }}
+            {{ t('system.dictionary.dictionaryItem') }}
           </el-button>
         </template>
       </el-table-column>

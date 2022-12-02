@@ -1,5 +1,5 @@
 import type { ResponseData } from '@/utils/request/index.d';
-import type { PhoneCodeParams } from './mobile.d';
+import type { MobileCodeParams } from './mobile.d';
 import { GET } from '@/utils/request';
 
 /**
@@ -7,7 +7,7 @@ import { GET } from '@/utils/request';
  * @description 获取手机号验证码
  */
 export const getMobileSmscode = <T>(
-  params: PhoneCodeParams
+  params: MobileCodeParams
 ): Promise<any | ResponseData<T> | undefined> => {
   return GET('/common/mobile/smscode', params);
 };

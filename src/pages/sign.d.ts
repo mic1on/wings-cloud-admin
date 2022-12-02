@@ -3,9 +3,9 @@ export interface LoginForm {
   type: number;
 }
 
-export interface PhoneForm {
+export interface MobileForm {
   areaCode: string;
-  phone: string;
+  mobile: string;
   code: string;
 }
 
@@ -24,13 +24,13 @@ export interface LoginAccountForm extends LoginForm {
   password: string;
 }
 
-export interface LoginPhoneForm extends LoginForm, PhoneForm {}
+export interface LoginMobileForm extends LoginForm, MobileForm {}
 
 export interface LoginEmailForm extends LoginForm, EmailCodeForm {}
 
-export interface SignupAccountForm extends PhoneForm, PasswordForm {
+export interface SignupAccountForm extends MobileForm, PasswordForm {
   username: string;
   nickname: string;
 }
 
-export interface PasswordRetrieveForm extends PhoneForm, PasswordForm {}
+export interface PasswordRetrieveForm extends MobileForm, PasswordForm {}

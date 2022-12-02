@@ -3,9 +3,9 @@ import { useSystemStore } from '@/hooks/use-store/use-system-store';
 /**
  * @name useLanguage
  * @description 基于 vue-i18n 的国际化多语言钩子函数
- * @return currentLanguage
- * @return changeLanguage
- * @return languages
+ * @return currentLanguage 当前语言环境
+ * @return changeLanguage 切换语言环境
+ * @return languages 语言翻译文本
  */
 export const useLanguage = () => {
   const systemStore = useSystemStore();

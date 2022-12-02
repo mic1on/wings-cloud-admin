@@ -9,7 +9,7 @@
     "type": "Menu Type",
     "open": "Open Type",
     "router": "Router",
-    "subMenu": "Add Submenu",
+    "subMenu": "Add Sub Menu",
     "permission": "Permission",
     "outside": "Outside",
     "inside": "Inside",
@@ -39,15 +39,18 @@
     "list": {}
   },
   "department": {
-    "menuName": "Dept Management",
-    "menuDescription": ""
-  },
-  "dict": {
-    "menuName": "Dict Management",
+    "menuName": "Department Management",
     "menuDescription": "",
-    "dictName": "Dict Name",
-    "dictItem": "Dict Item",
-    "dictType": "Dict Type"
+    "departmentName": "Department Name",
+    "parentDepartmentName": "Superior department",
+    "subDepartment": "Add Sub Department"
+  },
+  "dictionary": {
+    "menuName": "Dictionary Management",
+    "menuDescription": "",
+    "dictionaryName": "Dictionary Name",
+    "dictionaryItem": "Dictionary Item",
+    "dictionaryType": "Dictionary Type"
   },
   "param": {
     "menuName": "Param Management",
