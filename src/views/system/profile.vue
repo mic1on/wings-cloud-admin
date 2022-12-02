@@ -1,5 +1,9 @@
-<script lang="ts" setup name="personal-profile">
+<script lang="ts" setup>
 import { useUserStore } from '@/hooks/use-store/use-user-store';
+
+defineOptions({
+  name: 'SystemProfile',
+});
 
 const { t } = useI18n();
 

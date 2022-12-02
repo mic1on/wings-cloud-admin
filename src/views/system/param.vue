@@ -1,11 +1,15 @@
-<script lang="ts" setup name="my-notifications">
+<script lang="ts" setup>
 import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
-import { useDict } from '@/hooks/use-crud/use-dict';
+import { useDictionary } from '@/hooks/use-crud/use-dictionary';
+
+defineOptions({
+  name: 'SystemParam',
+});
 
 const { t } = useI18n();
 
-const { getDict, getDictData } = useDict();
+const { getDictionary, getDictionaryData } = useDictionary();
 
 const { queryForm, tableData, query, reset } = useCrud({
   queryUrl: '/system/param/list',
@@ -27,7 +31,7 @@ const { queryForm, tableData, query, reset } = useCrud({
           :placeholder="t('system.param.paramType')"
         >
           <el-option
-            v-for="(item, index) in getDictData('paramType').value"
+            v-for="(item, index) in getDictionaryData('paramType').value"
             :key="index"
             :label="item.label"
             :value="item.value"
@@ -60,7 +64,9 @@ const { queryForm, tableData, query, reset } = useCrud({
         width="240"
       >
         <template #default="scope">
-          {{ getDict('paramType', scope.row.type) }}
+          <el-tag>
+            {{ getDictionary('paramType', scope.row.type) }}
+          </el-tag>
         </template>
       </el-table-column>
       <el-table-column

@@ -1,7 +1,11 @@
-<script lang="ts" setup name="layout-toolbar-avatar">
+<script lang="ts" setup>
 import { RouteEnum } from '@/constants/enums';
 import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { UserFilled } from '@element-plus/icons-vue';
+
+defineOptions({
+  name: 'LayoutToolbarAvatar',
+});
 
 const props = defineProps({
   avatarSize: {

@@ -1,6 +1,10 @@
-<script lang="ts" setup name="my-notifications">
+<script lang="ts" setup>
 import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
+
+defineOptions({
+  name: 'SystemUser',
+});
 
 const { t } = useI18n();
 

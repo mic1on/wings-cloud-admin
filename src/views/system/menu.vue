@@ -1,7 +1,11 @@
-<script lang="ts" setup name="my-notifications">
+<script lang="ts" setup>
 import { useRouteStore } from '@/hooks/use-store/use-route-store';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { IconTypeEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'SystemMenu',
+});
 
 const { t } = useI18n();
 
@@ -85,18 +89,24 @@ const keepAliveChange = (val: string | number | boolean) => {
         fixed="right"
         :width="systemStore.isMobile ? '120' : '300'"
       >
-        <el-button type="primary" link>
-          {{ t('system.menu.subMenu') }}
-        </el-button>
-        <el-button type="primary" link>
-          {{ t('system.menu.permission') }}
-        </el-button>
-        <el-button type="primary" link>
-          {{ t('crud.btn.edit') }}
-        </el-button>
-        <el-button type="primary" link>
-          {{ t('crud.btn.delete') }}
-        </el-button>
+        <template #default="scope">
+          <el-button type="primary" link>
+            {{ t('system.menu.subMenu') }}
+          </el-button>
+          <el-button type="primary" link>
+            {{ t('system.menu.permission') }}
+          </el-button>
+          <el-button type="primary" link>
+            {{ t('crud.btn.edit') }}
+          </el-button>
+          <el-button
+            type="primary"
+            link
+            v-if="!scope.row.children || scope.row.children.length === 0"
+          >
+            {{ t('crud.btn.delete') }}
+          </el-button>
+        </template>
       </el-table-column>
     </crud-table>
   </crud-card>

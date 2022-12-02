@@ -1,6 +1,10 @@
-<script lang="ts" setup name="layout-toolbar">
+<script lang="ts" setup>
 import { SettingsValueEnum } from '@/constants/enums';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+defineOptions({
+  name: 'LayoutToolbar',
+});
 
 const props = defineProps({
   fixed: {

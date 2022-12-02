@@ -1,5 +1,9 @@
-<script setup lang="ts" name="app">
+<script setup lang="ts">
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+defineOptions({
+  name: 'App',
+});
 
 const systemStore = useSystemStore();
 </script>

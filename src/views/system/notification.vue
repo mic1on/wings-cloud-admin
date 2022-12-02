@@ -1,11 +1,15 @@
-<script lang="ts" setup name="my-notifications">
+<script lang="ts" setup>
 import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
-import { useDict } from '@/hooks/use-crud/use-dict';
+import { useDictionary } from '@/hooks/use-crud/use-dictionary';
+
+defineOptions({
+  name: 'SystemNotification',
+});
 
 const { t } = useI18n();
 
-const { getDict, getDictData } = useDict();
+const { getDictionary, getDictionaryData } = useDictionary();
 
 const { queryForm, tableData, query, reset } = useCrud({
   queryUrl: '/system/user/notification',
@@ -21,7 +25,7 @@ const { queryForm, tableData, query, reset } = useCrud({
           :placeholder="t('system.notification.notificationType')"
         >
           <el-option
-            v-for="(item, index) in getDictData('notificationType').value"
+            v-for="(item, index) in getDictionaryData('notificationType').value"
             :key="index"
             :label="item.label"
             :value="item.value"
@@ -47,7 +51,7 @@ const { queryForm, tableData, query, reset } = useCrud({
         width="140"
       >
         <template #default="scope">
-          {{ getDict('notificationType', scope.row.type) }}
+          {{ getDictionary('notificationType', scope.row.type) }}
         </template>
       </el-table-column>
       <el-table-column
@@ -61,7 +65,7 @@ const { queryForm, tableData, query, reset } = useCrud({
         width="140"
       >
         <template #default="scope">
-          {{ getDict('notificationSource', scope.row.type) }}
+          {{ getDictionary('notificationSource', scope.row.type) }}
         </template>
       </el-table-column>
       <el-table-column
@@ -79,7 +83,7 @@ const { queryForm, tableData, query, reset } = useCrud({
         width="140"
       >
         <template #default="scope">
-          {{ getDict('notificationIsRead', scope.row.status) }}
+          {{ getDictionary('notificationIsRead', scope.row.status) }}
         </template>
       </el-table-column>
       <el-table-column :label="t('crud.btn.action')" width="120">

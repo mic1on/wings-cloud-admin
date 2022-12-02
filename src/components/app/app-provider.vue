@@ -1,17 +1,22 @@
-<script lang="ts" setup name="app-provider">
+<script lang="ts" setup>
 import { Settings } from '@/constants/settings';
 import { SettingsValueEnum } from '@/constants/enums';
 import { setEpThemeColor } from '@/utils/theme';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { useMobileCodes } from '@/hooks/use-crud/use-mobile-codes';
-import { useDict } from '@/hooks/use-crud/use-dict';
+import { useDictionary } from '@/hooks/use-crud/use-dictionary';
+
+defineOptions({
+  name: 'AppProvider',
+});
 
 const route = useRoute();
 
 const systemStore = useSystemStore();
 
 const { getMobileCodes } = useMobileCodes();
-const { getDictAll } = useDict();
+
+const { getDictionaryAll } = useDictionary();
 
 const { t, messages } = useI18n();
 
@@ -78,7 +83,7 @@ onBeforeMount(() => {
 
 onBeforeMount(() => {
   getMobileCodes();
-  getDictAll();
+  getDictionaryAll();
 });
 </script>
 

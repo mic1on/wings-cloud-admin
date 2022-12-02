@@ -24,18 +24,17 @@ import { getUserRoles as _getUserRoles } from '@/apis/system/user';
  * @returns token 唯一凭证
  * @returns userProfile 用户信息
  * @returns userRoles 用户角色
- * @returns isLogin
- * @returns setStayLogin
- * @returns setUserProfile
- * @returns getUserProfile
- * @returns getUserRoles
- * @returns loginApiHandle
- * @returns loginByAccount
- * @returns loginByPhone
- * @returns constloginByEmail
- * @returns signup
- * @returns switchRoles
- * @returns logout
+ * @returns isLogin 是否登录状态，用此字段判断是否登录
+ * @returns setStayLogin 设置保持登录
+ * @returns setUserProfile 设置用户信息
+ * @returns getUserProfile 获取用户信息
+ * @returns getUserRoles 获取用户权限
+ * @returns loginApiHandle 登录后回调，用于处理权限等
+ * @returns loginByAccount 账号密码登录
+ * @returns loginByMobile 手机号登录
+ * @returns signup 注册
+ * @returns switchRoles 切换角色
+ * @returns logout 退出登录
  */
 export const useUserStore = defineStore('user', () => {
   const stayLogin = ref<boolean>(
@@ -135,7 +134,7 @@ export const useUserStore = defineStore('user', () => {
     }
   };
 
-  const loginByPhone = (): void => {};
+  const loginByMobile = (): void => {};
 
   const constloginByEmail = (): void => {};
 
@@ -170,7 +169,7 @@ export const useUserStore = defineStore('user', () => {
     getUserRoles,
     loginApiHandle,
     loginByAccount,
-    loginByPhone,
+    loginByMobile,
     constloginByEmail,
     signup,
     switchRoles,

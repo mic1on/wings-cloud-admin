@@ -1,6 +1,10 @@
-<script lang="ts" setup name="crud-dialog">
+<script lang="ts" setup>
 import type { ComponentInternalInstance } from 'vue';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+defineOptions({
+  name: 'CrudDialog',
+});
 
 const { slots } = getCurrentInstance() as ComponentInternalInstance;
 

@@ -3,7 +3,7 @@ import { RouteEnum } from '@/constants/enums';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import SignTemplate from './components/sign-template.vue';
 import SigninAccountForm from './components/signin-account-form.vue';
-import SigninPhoneForm from './components/signin-phone-form.vue';
+import SigninMobileForm from './components/signin-mobile-form.vue';
 import TermsConditions from './components/terms-conditions.vue';
 
 const systemStore = useSystemStore();
@@ -63,7 +63,7 @@ const goSignup = (): void => {
       <signin-account-form
         v-if="loginType === 'account' || !loginType"
       ></signin-account-form>
-      <signin-phone-form v-if="loginType === 'phone'"></signin-phone-form>
+      <signin-mobile-form v-if="loginType === 'mobile'"></signin-mobile-form>
       <el-divider mt-10>
         <span text-2 style="color: var(--el-text-color-primary)">
           {{ t('signin.or') }}
@@ -81,15 +81,15 @@ const goSignup = (): void => {
         <el-button
           w="46%"
           size="large"
-          v-if="loginType !== 'phone'"
-          @click="changeLoginType('phone')"
+          v-if="loginType !== 'mobile'"
+          @click="changeLoginType('mobile')"
         >
-          <span font-600> {{ t('signin.phone') }}</span>
+          <span font-600> {{ t('signin.mobile') }}</span>
         </el-button>
         <el-button
           w="46%"
           size="large"
-          v-if="loginType === 'account' || loginType === 'phone'"
+          v-if="loginType === 'account' || loginType === 'mobile'"
         >
           <svg-icon show-el-width name="social-wechat" size="1rem"></svg-icon>
           <span font-600> {{ t('signin.wechat') }}</span>
@@ -98,7 +98,7 @@ const goSignup = (): void => {
     </template>
     <template
       #bottom-center
-      v-if="loginType === 'account' || loginType === 'phone'"
+      v-if="loginType === 'account' || loginType === 'mobile'"
     >
       <div w-full>
         <terms-conditions :label="t('signin.btn')"></terms-conditions>

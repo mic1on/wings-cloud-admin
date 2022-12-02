@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import Welcome from './components/welcome.vue';
 import Navigation from './components/navigation.vue';
+
+defineOptions({
+  name: 'HomeWorkbench',
+});
 </script>
 <template>
   <el-row :gutter="20">

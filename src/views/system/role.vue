@@ -2,6 +2,10 @@
 import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
 
+defineOptions({
+  name: 'SystemRole',
+});
+
 const { t } = useI18n();
 
 const { queryForm, tableData, query, reset } = useCrud({

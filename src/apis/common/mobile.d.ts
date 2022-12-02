@@ -1,4 +1,4 @@
-export interface PhoneCodeParams {
-  phone: string | number;
+export interface MobileCodeParams {
+  mobile: string | number;
   type: number;
 }

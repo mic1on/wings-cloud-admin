@@ -34,21 +34,21 @@ export const EMAIL: Reg =
   /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 /**
- * @name MOBILE_PHONE
+ * @name MOBILE
  * @description 电话号码，支持手机号码，3-4位区号，7-8位直播号码，1-4位分机号码
  */
-export const MOBILE_PHONE: Reg =
+export const MOBILE: Reg =
   /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/;
 
 /**
- * @name MOBILE_PHONE_CHINA
+ * @name MOBILE_CHINA
  * @description 手机号码（国内）
  */
 export const MOBILE_PHONE_CHINA: Reg =
   /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
 
 /**
- * @name MOBILE_PHONE_SIMPLE
+ * @name MOBILE_SIMPLE
  * @description 手机号码（简单）
  */
 export const MOBILE_PHONE_SIMPLE: Reg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/;

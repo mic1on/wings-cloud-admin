@@ -1,7 +1,11 @@
-<script lang="ts" setup name="layout-admin-menu-item">
+<script lang="ts" setup>
 import type { RouteRecordRaw } from 'vue-router';
 import { IconTypeEnum } from '@/constants/enums';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+defineOptions({
+  name: 'LayoutAdminMenuItem',
+});
 
 const props = defineProps({
   routes: {

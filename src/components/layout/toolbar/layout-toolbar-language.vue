@@ -1,5 +1,9 @@
-<script lang="ts" setup name="layout-toolbar-language">
+<script lang="ts" setup>
 import { useLanguage } from '@/hooks/use-language/use-language';
+
+defineOptions({
+  name: 'LayoutToolbarLanguage',
+});
 
 const props = defineProps({
   onlyIcon: {

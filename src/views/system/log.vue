@@ -1,11 +1,15 @@
 <script lang="ts" setup name="my-notifications">
 import { useDateFormat } from '@vueuse/core';
 import { useCrud } from '@/hooks/use-crud/use-crud';
-import { useDict } from '@/hooks/use-crud/use-dict';
+import { useDictionary } from '@/hooks/use-crud/use-dictionary';
+
+defineOptions({
+  name: 'SystemLog',
+});
 
 const { t } = useI18n();
 
-const { getDict, getDictData } = useDict();
+const { getDictionary, getDictionaryData } = useDictionary();
 
 const { queryForm, tableData, query, reset } = useCrud({
   queryUrl: '/system/log/list',
@@ -27,7 +31,7 @@ const { queryForm, tableData, query, reset } = useCrud({
           :placeholder="t('system.log.status')"
         >
           <el-option
-            v-for="(item, index) in getDictData('logStatus').value"
+            v-for="(item, index) in getDictionaryData('logStatus').value"
             :key="index"
             :label="item.label"
             :value="item.value"
@@ -45,7 +49,7 @@ const { queryForm, tableData, query, reset } = useCrud({
         :label="t('crud.table.no')"
       ></el-table-column>
       <el-table-column
-        prop="avatar"
+        prop="username"
         :label="t('system.user.username')"
         width="240"
       ></el-table-column>
@@ -65,7 +69,9 @@ const { queryForm, tableData, query, reset } = useCrud({
         width="240"
       >
         <template #default="scope">
-          {{ getDict('logStatus', scope.row.status) }}
+          <el-tag>
+            {{ getDictionary('logStatus', scope.row.status) }}
+          </el-tag>
         </template>
       </el-table-column>
       <el-table-column

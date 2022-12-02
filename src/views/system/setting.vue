@@ -14,13 +14,16 @@ import {
   PredefineCopyrightPosition,
   PredefineBreadcrumbPosition,
 } from '@/constants/settings';
-import { SettingsValueEnum } from '@/constants/enums';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { useLanguage } from '@/hooks/use-language/use-language';
 import { ElMessage } from 'element-plus';
 import SettingColorScheme from './components/setting-color-scheme.vue';
 import SettingThemeColor from './components/setting-theme-color.vue';
 import SettingLayout from './components/setting-layout.vue';
+
+defineOptions({
+  name: 'SystemSetting',
+});
 
 const { t } = useI18n();
 

@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineOptions({
+  name: 'HomeDashboard',
+});
+</script>
 <template>
   <div></div>
 </template>

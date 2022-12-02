@@ -48,10 +48,10 @@ export enum RequestHeaderEnum {
 }
 
 /**
- * @name PhoneCodeTypeEnum
+ * @name MobileCodeTypeEnum
  * @description 获取手机号验证码用途枚举
  */
-export enum PhoneCodeTypeEnum {
+export enum MobileCodeTypeEnum {
   LOGIN = 0,
   SIGNUP = 1,
   FORGET_PASSWORDS = 2,
@@ -68,7 +68,7 @@ export enum StorageEnum {
   STAY_LOGIN = 'stay-login',
   TOKEN = 'token',
   COLOR_SCHEME = 'color-scheme',
-  MOBILE_PHONE_AREA_CODE = 'mobile-area-code',
+  MOBILE_AREA_CODE = 'mobile-area-code',
   USER_INFO = 'user-info',
   USER_ROLES = 'user-roles',
   STATIC_ROUTES = 'static-routes',
@@ -87,7 +87,7 @@ export enum StorageEnum {
   TAB_STYLE = 'tab-stlye',
   MENU_STYLE = 'menu-style',
   SETTINGS = 'settings',
-  DICT = 'dict',
+  DICTIONARY = 'dictionary',
 }
 
 /**

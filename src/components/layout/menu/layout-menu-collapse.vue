@@ -1,6 +1,10 @@
-<script lang="ts" setup name="layout-action-collapse">
+<script lang="ts" setup>
 import { DArrowLeft, DArrowRight } from '@element-plus/icons-vue';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+defineOptions({
+  name: 'LayoutAdminCollapse',
+});
 
 const systemStore = useSystemStore();
 

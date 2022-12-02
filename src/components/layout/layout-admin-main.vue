@@ -1,6 +1,10 @@
-<script lang="ts" setup name="layout-admin-main">
+<script lang="ts" setup>
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { SettingsValueEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'LayoutAdminMain',
+});
 
 const systemStore = useSystemStore();
 

@@ -1,5 +1,9 @@
-<script lang="ts" setup name="layout-toolbar-setting">
+<script lang="ts" setup>
 import { RouteEnum } from '@/constants/enums';
+
+defineOptions({
+  name: 'LayoutToolbarSetting',
+});
 
 const props = defineProps({
   color: {

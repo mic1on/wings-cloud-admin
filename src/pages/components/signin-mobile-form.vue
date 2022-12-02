@@ -1,8 +1,8 @@
 <script lang="ts" setup name="signin-phone-form">
 import type { FormRules, FormInstance } from 'element-plus';
-import type { LoginPhoneForm } from '@/pages/sign.d';
+import type { LoginMobileForm } from '@/pages/sign.d';
 import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
-import { MOBILE_PHONE } from '@/utils/reg-exp';
+import { MOBILE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
 import { useCountDown } from '@/hooks/use-crud/use-count-down';
 
@@ -12,27 +12,27 @@ const countDown = useCountDown();
 
 const formRef = ref<FormInstance>();
 
-const form = ref<LoginPhoneForm>({
+const form = ref<LoginMobileForm>({
   areaCode: '+86',
-  phone: '',
+  mobile: '',
   code: '',
   remember: false,
   type: 1,
 });
 
 const formRules = reactive<FormRules>({
-  phone: [
+  mobile: [
     {
       required: true,
       message: t('crud.placeholder.enter', {
-        label: t('crud.phone.phoneText'),
+        label: t('crud.mobile.mobileText'),
       }),
       trigger: 'change',
     },
     {
-      pattern: MOBILE_PHONE,
+      pattern: MOBILE,
       message: t('crud.placeholder.formatIncorrect', {
-        label: t('crud.phone.phoneText'),
+        label: t('crud.mobile.mobileText'),
       }),
       trigger: 'blur',
     },
@@ -59,11 +59,11 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
 </script>
 <template>
   <el-form ref="formRef" :model="form" :rules="formRules" size="large">
-    <el-form-item prop="phone">
+    <el-form-item prop="mobile">
       <el-input
-        v-model.number="form.phone"
+        v-model.number="form.mobile"
         autocomplete="off"
-        :placeholder="t('crud.phone.phone')"
+        :placeholder="t('crud.mobile.mobile')"
       >
         <template #prepend>
           <el-select v-model="form.areaCode" important="w-24">
@@ -99,7 +99,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
             :disabled="countDown.countDownForm.getting"
             @click="
               countDown.getPhoneCode(
-                form.phone,
+                form.mobile,
                 PhoneCodeTypeEnum.FORGET_PASSWORDS
               )
             "

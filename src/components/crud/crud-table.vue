@@ -1,5 +1,9 @@
-<script lang="ts" setup name="crud-card">
+<script lang="ts" setup>
 import type { ComponentInternalInstance } from 'vue';
+
+defineOptions({
+  name: 'CrudTable',
+});
 
 const { slots } = getCurrentInstance() as ComponentInternalInstance;
 

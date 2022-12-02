@@ -3,6 +3,10 @@ import type { UploadProps } from 'element-plus';
 import { ElMessage } from 'element-plus';
 import { Plus } from '@element-plus/icons-vue';
 
+defineOptions({
+  name: 'AvatarUpload',
+});
+
 const { t } = useI18n();
 
 const props = defineProps({
