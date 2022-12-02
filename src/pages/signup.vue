@@ -5,6 +5,10 @@ import TermsConditions from './components/terms-conditions.vue';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 import { RouteEnum } from '@/constants/enums';
 
+defineOptions({
+  name: 'Signup',
+});
+
 const { t } = useI18n();
 
 const router = useRouter();

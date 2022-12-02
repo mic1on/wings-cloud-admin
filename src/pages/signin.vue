@@ -6,6 +6,10 @@ import SigninAccountForm from './components/signin-account-form.vue';
 import SigninMobileForm from './components/signin-mobile-form.vue';
 import TermsConditions from './components/terms-conditions.vue';
 
+defineOptions({
+  name: 'Signin',
+});
+
 const systemStore = useSystemStore();
 
 const { t } = useI18n();

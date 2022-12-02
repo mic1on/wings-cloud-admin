@@ -60,7 +60,8 @@
   },
   "file": {
     "menuName": "文件管理",
-    "menuDescription": ""
+    "menuDescription": "",
+    "fileUrl": "文件链接"
   },
   "log": {
     "menuName": "日志管理",

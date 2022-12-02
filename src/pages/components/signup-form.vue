@@ -1,4 +1,4 @@
-<script lang="ts" setup name="signup-form">
+<script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
 import type { SignupAccountForm } from '@/pages/sign.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
@@ -7,6 +7,10 @@ import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { useCountDown } from '@/hooks/use-crud/use-count-down';
 import { USERNAME, PASSWORD_NORMAL, MOBILE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
+
+defineOptions({
+  name: 'SigninForm',
+});
 
 const { t } = useI18n();
 

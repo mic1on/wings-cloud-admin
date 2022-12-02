@@ -1,2 +1,6 @@
-<script lang="ts" setup name="index"></script>
+<script lang="ts" setup>
+defineOptions({
+  name: 'Index',
+});
+</script>
 <template> <div></div></template>

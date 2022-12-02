@@ -90,6 +90,9 @@ export const addRouterGuard = (router: Router): Router => {
     (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
       isLoading.value = false;
 
+      // console.log(to);
+      // console.log(from);
+
       const systemStore = useSystemStore();
 
       const toName = to.matched.at(-1)?.components?.default.name;

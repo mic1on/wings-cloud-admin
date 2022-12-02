@@ -20,7 +20,8 @@
     "preview": "Preview",
     "next": "Next",
     "submit": "Submit",
-    "copy": "Copy"
+    "copy": "Copy",
+    "upload": "Upload"
   },
   "placeholder": {
     "enter": "Please enter the {label}",
@@ -35,7 +36,8 @@
     "remark": "Remark",
     "createTime": "Create Time",
     "updateTime": "Update Time",
-    "actionTime": "Action Time"
+    "actionTime": "Action Time",
+    "uploadTime": "Upload Time"
   },
   "upload": {
     "success": "Upload Complete",

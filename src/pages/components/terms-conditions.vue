@@ -2,6 +2,10 @@
 import type { ResponseData } from '@/utils/request/index.d';
 import { getServiceInfo } from '@/apis/common/service';
 
+defineOptions({
+  name: 'termsConditions',
+});
+
 const { t } = useI18n();
 
 const props = defineProps({

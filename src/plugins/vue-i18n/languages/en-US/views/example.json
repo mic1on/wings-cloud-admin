@@ -17,6 +17,12 @@
   "form": { "menuName": "Basic Form", "menuDescription": "" },
   "formStep": { "menuName": "Paging Form", "menuDescription": "" },
   "result": { "menuName": "Result Page", "menuDescription": "" },
-  "403": { "menuName": "403 Page", "menuDescription": "" },
-  "404": { "menuName": "404 Page", "menuDescription": "" }
+  "keepAlive": {
+    "menuName": "Page Cache",
+    "menuDescription": "The Keep Alive cache is enabled on this page",
+    "enable": "Open Keep Alive"
+  },
+  "pageOne": { "menuName": "Nested Navigation", "menuDescription": "" },
+  "pageTwo": { "menuName": "Nested Navigation", "menuDescription": "" },
+  "pageThree": { "menuName": "Nested Navigation", "menuDescription": "" }
 }

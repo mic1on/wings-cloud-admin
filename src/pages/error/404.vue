@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { Settings } from '@/constants/settings';
 
+defineOptions({
+  name: 'Error404',
+});
+
 const { t } = useI18n();
 
 const router = useRouter();

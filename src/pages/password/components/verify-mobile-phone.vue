@@ -1,11 +1,15 @@
 <script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
-import type { PhoneForm } from '@/pages/sign.d';
+import type { MobileForm } from '@/pages/sign.d';
 import type { IObject } from '@/types/global.d';
-import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
+import { StorageEnum, MobileCodeTypeEnum } from '@/constants/enums';
 import { useCountDown } from '@/hooks/use-crud/use-count-down';
-import { MOBILE_PHONE } from '@/utils/reg-exp';
+import { MOBILE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
+
+defineOptions({
+  name: 'VerifyMobilePhone',
+});
 
 const { t } = useI18n();
 
@@ -13,46 +17,46 @@ const countDown = useCountDown();
 
 const verifyFormRef = ref<FormInstance>();
 
-const verifyForm = ref<PhoneForm>({
+const verifyForm = ref<MobileForm>({
   areaCode: '+86',
-  phone: '',
+  mobile: '',
   code: '',
 });
 
 const verifyFormRules = reactive<FormRules>({
-  phone: [
+  mobile: [
     {
       required: false,
       message: t('crud.placeholder.enter', {
-        label: t('crud.phone.phoneText'),
+        label: t('crud.mobile.mobileText'),
       }),
       trigger: 'change',
     },
     {
-      pattern: MOBILE_PHONE,
+      pattern: MOBILE,
       message: t('crud.placeholder.formatIncorrect', {
-        label: t('crud.phone.phoneText'),
+        label: t('crud.mobile.mobileText'),
       }),
       trigger: 'blur',
     },
   ],
   code: [
     {
-      required: verifyForm.value.phone ? true : false,
-      message: t('crud.placeholder.enter', { label: t('crud.phone.code') }),
+      required: verifyForm.value.mobile ? true : false,
+      message: t('crud.placeholder.enter', { label: t('crud.mobile.code') }),
       trigger: 'change',
     },
     {
       len: 6,
       message: t('crud.placeholder.formatIncorrect', {
-        label: t('crud.phone.code'),
+        label: t('crud.mobile.code'),
       }),
       trigger: 'blur',
     },
   ],
 });
 
-const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
+const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_AREA_CODE);
 
 const emit = defineEmits(['verify']);
 
@@ -75,11 +79,11 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
     :rules="verifyFormRules"
     size="large"
   >
-    <el-form-item prop="phone">
+    <el-form-item prop="mobile">
       <el-input
-        v-model.number="verifyForm.phone"
+        v-model.number="verifyForm.mobile"
         autocomplete="off"
-        :placeholder="t('crud.phone.phone')"
+        :placeholder="t('crud.mobile.mobile')"
       >
         <template #prepend>
           <el-select v-model="verifyForm.areaCode" important="w-24">
@@ -97,11 +101,11 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
         </template>
       </el-input>
     </el-form-item>
-    <el-form-item prop="code" v-show="verifyForm.phone">
+    <el-form-item prop="code" v-show="verifyForm.mobile">
       <el-input
         v-model.number="verifyForm.code"
         autocomplete="off"
-        :placeholder="t('crud.phone.code')"
+        :placeholder="t('crud.mobile.code')"
       >
         <template #prefix>
           <el-icon><ChatDotSquare /></el-icon>
@@ -114,15 +118,15 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
             type="primary"
             :disabled="countDown.countDownForm.getting"
             @click="
-              countDown.getPhoneCode(
-                verifyForm.phone,
-                PhoneCodeTypeEnum.FORGET_PASSWORDS
+              countDown.getMobileCode(
+                verifyForm.mobile,
+                MobileCodeTypeEnum.FORGET_PASSWORDS
               )
             "
           >
             <span text-3 v-if="countDown.countDownForm.getting">
               {{
-                t('crud.phone.retrieve', {
+                t('crud.mobile.retrieve', {
                   time: countDown.countDownForm.time,
                 })
               }}
@@ -130,8 +134,8 @@ const verify = async (formEl: FormInstance | undefined): Promise<void> => {
             <span text-3 v-else>
               {{
                 countDown.countDownForm.send
-                  ? t('crud.phone.resend')
-                  : t('crud.phone.send')
+                  ? t('crud.mobile.resend')
+                  : t('crud.mobile.send')
               }}
             </span>
           </el-button>
