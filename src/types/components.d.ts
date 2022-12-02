@@ -60,7 +60,6 @@ declare module '@vue/runtime-core' {
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     ElUpload: typeof import('element-plus/es')['ElUpload']
-    FilesUpload: typeof import('./../components/upload/files-upload.vue')['default']
     LayoutAdmin: typeof import('./../components/layout/layout-admin.vue')['default']
     LayoutAdminAside: typeof import('./../components/layout/layout-admin-aside.vue')['default']
     LayoutAdminBreadcrumb: typeof import('./../components/layout/layout-admin-breadcrumb.vue')['default']
@@ -83,11 +82,9 @@ declare module '@vue/runtime-core' {
     LayoutToolbarNotification: typeof import('./../components/layout/toolbar/layout-toolbar-notification.vue')['default']
     LayoutToolbarRefresh: typeof import('./../components/layout/toolbar/layout-toolbar-refresh.vue')['default']
     LayoutToolbarSetting: typeof import('./../components/layout/toolbar/layout-toolbar-setting.vue')['default']
-    PicturesUpload: typeof import('./../components/upload/pictures-upload.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./../components/svg-icon/svg-icon.vue')['default']
-    VideoUpload: typeof import('./../components/upload/video-upload.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

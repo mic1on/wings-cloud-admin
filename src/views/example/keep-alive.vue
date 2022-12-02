@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { RouteRecordRaw } from 'vue-router';
+import { useCloned } from '@vueuse/core';
 import { routes } from '@/plugins/vue-router';
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
 
@@ -28,8 +29,11 @@ const changeKeepAlive = (val: string | number | boolean): void => {
   let _route = routes
     .find((item) => item.path == '/example')
     ?.children?.find((item) => item.path == route.path);
+  // TODO ,重新开启 keep alive，addRoute 设置的 keepAlive 字段没有生效，还是 false
   if (_route && _route.meta) {
     _route.meta.keepAlive = val as boolean;
+    const { cloned } = useCloned(_route.meta);
+    _route.meta = cloned.value;
   }
   router.addRoute(_route as RouteRecordRaw);
 };
