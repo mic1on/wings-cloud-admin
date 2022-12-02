@@ -7,6 +7,7 @@ const dictData = [
   {
     key: 'notificationType',
     type: 0,
+    remark: '消息类型',
     values: [
       {
         label: '消息',
@@ -21,6 +22,7 @@ const dictData = [
   {
     key: 'notificationSource',
     type: 0,
+    remark: '消息来源',
     values: [
       {
         label: '用户',
@@ -35,6 +37,7 @@ const dictData = [
   {
     key: 'notificationIsRead',
     type: 0,
+    remark: '消息是否已读',
     values: [
       {
         label: '未读',
@@ -49,6 +52,7 @@ const dictData = [
   {
     key: 'logStatus',
     type: 0,
+    remark: '日志操作状态',
     values: [
       {
         label: '成功',
@@ -63,6 +67,7 @@ const dictData = [
   {
     key: 'paramType',
     type: 0,
+    remark: '参数类型',
     values: [
       {
         label: '系统',
@@ -77,6 +82,7 @@ const dictData = [
   {
     key: 'dictionaryType',
     type: 0,
+    remark: '字典类型',
     values: [
       {
         label: '系统',
@@ -599,6 +605,18 @@ export default {
           ],
         },
       ],
+      total: 0,
+    },
+  },
+
+  /**
+   * 分页查询文件
+   */
+  getFileList: {
+    url: '/system/file/list',
+    method: 'get',
+    data: {
+      list: [],
       total: 0,
     },
   },

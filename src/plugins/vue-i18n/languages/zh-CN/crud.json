@@ -20,7 +20,8 @@
     "preview": "预览",
     "submit": "提交",
     "next": "下一步",
-    "copy": "复制"
+    "copy": "复制",
+    "upload": "上传"
   },
   "placeholder": {
     "enter": "请输入{label}",
@@ -35,7 +36,8 @@
     "remark": "备注",
     "createTime": "创建时间",
     "updateTime": "更新时间",
-    "actionTime": "操作时间"
+    "actionTime": "操作时间",
+    "uploadTime": "上传时间"
   },
   "upload": {
     "success": "上传成功",

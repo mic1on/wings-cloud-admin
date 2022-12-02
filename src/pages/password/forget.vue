@@ -7,6 +7,10 @@ import SignTemplate from '../components/sign-template.vue';
 import ChangePassword from './components/change-password.vue';
 import VerifyMobilePhone from './components/verify-mobile-phone.vue';
 
+defineOptions({
+  name: 'PasswordForget',
+});
+
 const { t } = useI18n();
 
 const router = useRouter();

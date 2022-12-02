@@ -1,5 +1,9 @@
-<script lang="ts" setup name="sign-template">
+<script lang="ts" setup>
 import { useSystemStore } from '@/hooks/use-store/use-system-store';
+
+defineOptions({
+  name: 'SignTemplate',
+});
 
 const { t } = useI18n();
 

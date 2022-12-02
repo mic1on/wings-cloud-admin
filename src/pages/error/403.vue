@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+defineOptions({
+  name: 'Error403',
+});
+
 const { t } = useI18n();
 
 const router = useRouter();

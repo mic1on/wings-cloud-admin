@@ -89,6 +89,8 @@ export const addRouterGuard = (router: Router): Router => {
   router.afterEach(
     (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
       isLoading.value = false;
+      console.log('to', to.meta);
+      console.log('from', from.meta);
 
       const systemStore = useSystemStore();
 

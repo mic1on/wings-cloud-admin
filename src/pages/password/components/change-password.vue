@@ -5,6 +5,10 @@ import type { IObject } from '@/types/global.d';
 import { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import { PASSWORD_NORMAL } from '@/utils/reg-exp';
 
+defineOptions({
+  name: 'ChangePassword',
+});
+
 const { t } = useI18n();
 
 const changeFormRef = ref<FormInstance>();

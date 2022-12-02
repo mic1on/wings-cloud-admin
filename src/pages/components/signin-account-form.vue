@@ -1,4 +1,4 @@
-<script lang="ts" setup name="signin-account-form">
+<script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
 import type { InternalRuleItem, SyncValidateResult } from 'async-validator';
 import type { LoginAccountForm } from '@/pages/sign.d';
@@ -7,6 +7,10 @@ import { useUserStore } from '@/hooks/use-store/use-user-store';
 import { USERNAME, PASSWORD_NORMAL } from '@/utils/reg-exp';
 import { RouteEnum } from '@/constants/enums';
 import { validateUsername as _validateUsername } from '@/apis/system/user';
+
+defineOptions({
+  name: 'SigninAccountForm',
+});
 
 const { t } = useI18n();
 

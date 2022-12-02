@@ -1,10 +1,14 @@
-<script lang="ts" setup name="signin-phone-form">
+<script lang="ts" setup>
 import type { FormRules, FormInstance } from 'element-plus';
 import type { LoginMobileForm } from '@/pages/sign.d';
-import { StorageEnum, PhoneCodeTypeEnum } from '@/constants/enums';
+import { StorageEnum, MobileCodeTypeEnum } from '@/constants/enums';
 import { MOBILE } from '@/utils/reg-exp';
 import { getStorage } from '@/utils/storage';
 import { useCountDown } from '@/hooks/use-crud/use-count-down';
+
+defineOptions({
+  name: 'SignMobileForm',
+});
 
 const { t } = useI18n();
 
@@ -40,7 +44,9 @@ const formRules = reactive<FormRules>({
   code: [
     {
       required: true,
-      message: t('crud.placeholder.enter', { label: t('crud.phone.codeText') }),
+      message: t('crud.placeholder.enter', {
+        label: t('crud.mobile.codeText'),
+      }),
       trigger: 'change',
     },
     {
@@ -48,14 +54,14 @@ const formRules = reactive<FormRules>({
       min: 6,
       max: 6,
       message: t('crud.placeholder.formatIncorrect', {
-        label: t('crud.phone.codeText'),
+        label: t('crud.mobile.codeText'),
       }),
       trigger: 'blur',
     },
   ],
 });
 
-const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
+const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_AREA_CODE);
 </script>
 <template>
   <el-form ref="formRef" :model="form" :rules="formRules" size="large">
@@ -85,7 +91,7 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
       <el-input
         v-model.number="form.code"
         autocomplete="off"
-        :placeholder="t('crud.phone.code')"
+        :placeholder="t('crud.mobile.code')"
       >
         <template #prefix>
           <el-icon><ChatDotSquare /></el-icon>
@@ -98,15 +104,15 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
             type="primary"
             :disabled="countDown.countDownForm.getting"
             @click="
-              countDown.getPhoneCode(
+              countDown.getMobileCode(
                 form.mobile,
-                PhoneCodeTypeEnum.FORGET_PASSWORDS
+                MobileCodeTypeEnum.FORGET_PASSWORDS
               )
             "
           >
             <span text-3 v-if="countDown.countDownForm.getting">
               {{
-                t('crud.phone.retrieve', {
+                t('crud.mobile.retrieve', {
                   time: countDown.countDownForm.time,
                 })
               }}
@@ -114,8 +120,8 @@ const mobileAreaCodeList = getStorage(StorageEnum.MOBILE_PHONE_AREA_CODE);
             <span text-3 v-else>
               {{
                 countDown.countDownForm.send
-                  ? t('crud.phone.resend')
-                  : t('crud.phone.send')
+                  ? t('crud.mobile.resend')
+                  : t('crud.mobile.send')
               }}
             </span>
           </el-button>

@@ -306,6 +306,9 @@
 
   &.wings-cloud-dark {
     --el-menu-bg-color: var(--wings-cloud-menu-bg-color);
+    &.wings-cloud-top-lean {
+      --el-menu-bg-color: var(--wings-cloud-header-bg-color);
+    }
     .el-menu.el-menu--vertical {
       background-color: var(--wings-cloud-menu-bg-color);
     }
@@ -369,10 +372,6 @@
         }
       }
     }
-  }
-
-  &.wings-cloud-top-lean {
-    --el-menu-bg-color: var(--wings-cloud-header-bg-color);
   }
 }
 
