@@ -27,7 +27,7 @@ export const useCountDown = () => {
   ): void => {
     if (!data) {
       ElMessage.error(
-        t('crud.placeholder.enter', { label: t('crud.phone.phone') })
+        t('crud.placeholder.enter', { label: t('crud.mobile.mobile') })
       );
       return;
     }

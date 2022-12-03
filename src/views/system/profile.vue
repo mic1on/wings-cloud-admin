@@ -32,10 +32,10 @@ const userStore = useUserStore();
           :placeholder="t('crud.account.username')"
         ></el-input>
       </el-form-item>
-      <el-form-item :label="t('crud.phone.phone')">
+      <el-form-item :label="t('crud.mobile.mobile')">
         <el-input
           v-model="userStore.userProfile.mobile"
-          :placeholder="t('crud.phone.phone')"
+          :placeholder="t('crud.mobile.mobile')"
         ></el-input>
       </el-form-item>
     </crud-page-form>
