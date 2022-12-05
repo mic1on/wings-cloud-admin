@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 defineOptions({
-  name: 'ExamplePageTwo',
+  name: 'ExampleFormPro',
 });
 </script>
 <template>
-  <crud-card></crud-card>
+  <crud-card> </crud-card>
 </template>

@@ -14,15 +14,44 @@
   "editor": { "menuName": "Rich Text Editor", "menuDescription": "" },
   "charts": { "menuName": "Chart Analysis", "menuDescription": "" },
   "map": { "menuName": "Map Interaction", "menuDescription": "" },
-  "form": { "menuName": "Basic Form", "menuDescription": "" },
-  "formStep": { "menuName": "Paging Form", "menuDescription": "" },
-  "result": { "menuName": "Result Page", "menuDescription": "" },
+  "form": {
+    "menuName": "Form",
+    "menuDescription": "",
+    "base": { "menuName": "Basic Form", "menuDescription": "" },
+    "step": { "menuName": "Paging Form", "menuDescription": "" },
+    "pro": { "menuName": "Advanced Form", "menuDescription": "" }
+  },
+  "result": {
+    "menuName": "Result Page",
+    "menuDescription": "",
+    "success": {
+      "menuName": "Success",
+      "menuDescription": ""
+    },
+    "warning": {
+      "menuName": "Warning",
+      "menuDescription": ""
+    },
+    "error": {
+      "menuName": "Error",
+      "menuDescription": ""
+    }
+  },
   "keepAlive": {
     "menuName": "Page Cache",
-    "menuDescription": "The Keep Alive cache is enabled on this page",
-    "enable": "Open Keep Alive"
+    "menuDescription": "",
+    "open": {
+      "menuName": "Enabling Caching",
+      "menuDescription": "The Keep Alive cache is enabled on this page"
+    },
+    "close": {
+      "menuName": "Turning off caching",
+      "menuDescription": "The Keep Alive cache is not enabled on this page"
+    }
   },
-  "pageOne": { "menuName": "Nested Navigation", "menuDescription": "" },
-  "pageTwo": { "menuName": "Nested Navigation", "menuDescription": "" },
-  "pageThree": { "menuName": "Nested Navigation", "menuDescription": "" }
+  "navigation": {
+    "one": { "menuName": "Nested Navigation", "menuDescription": "" },
+    "two": { "menuName": "Nested Navigation", "menuDescription": "" },
+    "three": { "menuName": "Nested Navigation", "menuDescription": "" }
+  }
 }

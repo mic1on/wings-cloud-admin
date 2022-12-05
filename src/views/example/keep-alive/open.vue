@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineOptions({
-  name: 'ExampleKeepAlive',
+  name: 'ExampleKeepAliveOpen',
 });
 
 const num = ref<number>(3);
