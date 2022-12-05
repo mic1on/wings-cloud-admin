@@ -26,15 +26,27 @@
     "menuDescription": "",
     "success": {
       "menuName": "Success",
-      "menuDescription": ""
+      "menuDescription": "",
+      "title": "Success Tip",
+      "subTitle": "The operation is successful. You can expand your content through the extra slot!"
     },
     "warning": {
       "menuName": "Warning",
-      "menuDescription": ""
+      "menuDescription": "",
+      "title": "Warning Tip",
+      "subTitle": "This is a warning type result prompt that you can use to manipulate warning prompts!"
     },
     "error": {
       "menuName": "Error",
-      "menuDescription": ""
+      "menuDescription": "",
+      "title": "Error Tip",
+      "subTitle": "Operation failure type prompt, often used for form submission failure scenarios!"
+    },
+    "info": {
+      "menuName": "Info",
+      "menuDescription": "",
+      "title": "Info Tip",
+      "subTitle": "This is a general message prompt. Subheadings can also be expanded through slots!"
     }
   },
   "keepAlive": {

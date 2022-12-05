@@ -193,6 +193,17 @@ export default [
               i18nKey: 'example.result.error',
             },
           },
+          {
+            path: '/example/result/info',
+            name: 'example.result.info',
+            component: () => import('@/views/example/result/info.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 4,
+              i18nKey: 'example.result.info',
+            },
+          },
         ],
       },
       {

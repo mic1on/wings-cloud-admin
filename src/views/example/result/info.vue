@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineOptions({
-  name: 'ExampleResultError',
+  name: 'ExampleResultInfo',
 });
 
 const { t } = useI18n();
@@ -8,9 +8,9 @@ const { t } = useI18n();
 <template>
   <crud-card>
     <el-result
-      icon="error"
-      :title="t('example.result.error.title')"
-      :sub-title="t('example.result.error.subTitle')"
+      icon="info"
+      :title="t('example.result.info.title')"
+      :sub-title="t('example.result.info.subTitle')"
     >
       <template #extra>
         <el-button type="primary">{{ t('crud.btn.confirm') }}</el-button>

@@ -26,15 +26,27 @@
     "menuDescription": "",
     "success": {
       "menuName": "成功",
-      "menuDescription": ""
+      "menuDescription": "",
+      "title": "成功提示",
+      "subTitle": "操作成功，您可以通过 extra 插槽进行内容扩展！"
     },
     "warning": {
       "menuName": "警告",
-      "menuDescription": ""
+      "menuDescription": "",
+      "title": "警告提示",
+      "subTitle": "这是一个警告类型的结果提示，您可以用于操作警告提示！"
     },
     "error": {
       "menuName": "错误",
-      "menuDescription": ""
+      "menuDescription": "",
+      "title": "错误提示",
+      "subTitle": "操作失败类型提示，常用于表单提交失败等场景！"
+    },
+    "info": {
+      "menuName": "信息",
+      "menuDescription": "",
+      "title": "信息提示",
+      "subTitle": "普通信息提示，副标题也可以通过插槽进行扩展！"
     }
   },
   "keepAlive": {
