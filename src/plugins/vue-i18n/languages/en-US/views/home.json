@@ -4,8 +4,12 @@
   "workbench": {
     "menuName": "Workbench",
     "menuDescription": "",
-    "welcome": "Welcome back!",
-    "shortcuts": "Shortcuts"
+    "welcome": "Welcome back, ",
+    "shortcuts": "Shortcuts",
+    "role": "Role: ",
+    "department": "Department:",
+    "active": "Recently Active",
+    "calendar": "To Do"
   },
   "dashboard": {
     "menuName": "Dashboard",

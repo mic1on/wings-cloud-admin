@@ -2,7 +2,7 @@
 const { t } = useI18n();
 </script>
 <template>
-  <crud-card :title="t('home.workbench.shortcuts')">
-    <el-empty />
+  <crud-card :title="t('home.workbench.calendar')">
+    <el-calendar />
   </crud-card>
 </template>
