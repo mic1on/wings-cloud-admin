@@ -10,6 +10,10 @@ const { slots } = getCurrentInstance() as ComponentInternalInstance;
 const { t } = useI18n();
 
 const props = defineProps({
+  header: {
+    type: Boolean,
+    default: true,
+  },
   title: {
     type: String,
     default: '',
@@ -46,9 +50,9 @@ const cancel = () => {
 </script>
 <template>
   <el-card shadow="never" important="border-none">
-    <template #header>
+    <template #header v-if="slots.header || props.header">
       <slot name="header"></slot>
-      <template v-if="!slots.header">
+      <div v-if="!slots.header && props.header">
         <div
           text-5
           style="color: var(--el-text-color-primary)"
@@ -64,12 +68,12 @@ const cancel = () => {
         >
           {{ props.subTitle || route.meta.menuDescription }}
         </div>
-      </template>
+      </div>
     </template>
     <div class="padding">
       <slot></slot>
     </div>
-    <template v-if="action">
+    <template v-if="props.action">
       <el-divider important="m-0"></el-divider>
       <div class="padding">
         <slot name="action"></slot>

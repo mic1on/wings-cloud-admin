@@ -14,15 +14,56 @@
   "editor": { "menuName": "富文本编辑器", "menuDescription": "" },
   "charts": { "menuName": "图表分析", "menuDescription": "" },
   "map": { "menuName": "地图交互", "menuDescription": "" },
-  "form": { "menuName": "基础表单", "menuDescription": "" },
-  "formStep": { "menuName": "分布表单", "menuDescription": "" },
-  "result": { "menuName": "结果页", "menuDescription": "" },
+  "form": {
+    "menuName": "表单",
+    "menuDescription": "",
+    "base": { "menuName": "基础表单", "menuDescription": "" },
+    "step": { "menuName": "分布表单", "menuDescription": "" },
+    "pro": { "menuName": "高级表单", "menuDescription": "" }
+  },
+  "result": {
+    "menuName": "结果页",
+    "menuDescription": "",
+    "success": {
+      "menuName": "成功",
+      "menuDescription": "",
+      "title": "成功提示",
+      "subTitle": "操作成功，您可以通过 extra 插槽进行内容扩展！"
+    },
+    "warning": {
+      "menuName": "警告",
+      "menuDescription": "",
+      "title": "警告提示",
+      "subTitle": "这是一个警告类型的结果提示，您可以用于操作警告提示！"
+    },
+    "error": {
+      "menuName": "错误",
+      "menuDescription": "",
+      "title": "错误提示",
+      "subTitle": "操作失败类型提示，常用于表单提交失败等场景！"
+    },
+    "info": {
+      "menuName": "信息",
+      "menuDescription": "",
+      "title": "信息提示",
+      "subTitle": "普通信息提示，副标题也可以通过插槽进行扩展！"
+    }
+  },
   "keepAlive": {
     "menuName": "页面缓存",
-    "menuDescription": "该页面开启了 Keep Alive 缓存",
-    "enable": "开启 Keep Alive"
+    "menuDescription": "",
+    "open": {
+      "menuName": "开启缓存",
+      "menuDescription": "该页面开启了 Keep Alive 缓存"
+    },
+    "close": {
+      "menuName": "关闭缓存",
+      "menuDescription": "该页面没有开启 Keep Alive 缓存"
+    }
   },
-  "pageOne": { "menuName": "多层导航", "menuDescription": "" },
-  "pageTwo": { "menuName": "多层导航", "menuDescription": "" },
-  "pageThree": { "menuName": "多层导航", "menuDescription": "" }
+  "navigation": {
+    "one": { "menuName": "多层导航", "menuDescription": "" },
+    "two": { "menuName": "多层导航", "menuDescription": "" },
+    "three": { "menuName": "多层导航", "menuDescription": "" }
+  }
 }

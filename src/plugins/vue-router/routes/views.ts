@@ -104,7 +104,6 @@ export default [
       {
         path: '/example/form',
         name: 'example.form',
-        component: () => import('@/views/example/form.vue'),
         meta: {
           layout: 'admin',
           isMenu: true,
@@ -113,24 +112,45 @@ export default [
           sort: 5,
           i18nKey: 'example.form',
         },
-      },
-      {
-        path: '/example/form-step',
-        name: 'example.formStep',
-        component: () => import('@/views/example/form-step.vue'),
-        meta: {
-          layout: 'admin',
-          isMenu: true,
-          iconType: IconTypeEnum.ELEMENT_PLUS,
-          icon: 'DocumentCopy',
-          sort: 6,
-          i18nKey: 'example.formStep',
-        },
+        children: [
+          {
+            path: '/example/form/base',
+            name: 'example.form.base',
+            component: () => import('@/views/example/form/base.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 1,
+              i18nKey: 'example.form.base',
+            },
+          },
+          {
+            path: '/example/form/step',
+            name: 'example.form.step',
+            component: () => import('@/views/example/form/step.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 2,
+              i18nKey: 'example.form.step',
+            },
+          },
+          {
+            path: '/example/form/pro',
+            name: 'example.form.pro',
+            component: () => import('@/views/example/form/pro.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 3,
+              i18nKey: 'example.form.pro',
+            },
+          },
+        ],
       },
       {
         path: '/example/result',
         name: 'example.result',
-        component: () => import('@/views/example/result.vue'),
         meta: {
           layout: 'admin',
           isMenu: true,
@@ -139,11 +159,56 @@ export default [
           sort: 7,
           i18nKey: 'example.result',
         },
+        children: [
+          {
+            path: '/example/result/success',
+            name: 'example.result.success',
+            component: () => import('@/views/example/result/success.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 1,
+              i18nKey: 'example.result.success',
+            },
+          },
+          {
+            path: '/example/result/warning',
+            name: 'example.result.warning',
+            component: () => import('@/views/example/result/warning.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 2,
+              i18nKey: 'example.result.warning',
+            },
+          },
+          {
+            path: '/example/result/error',
+            name: 'example.result.error',
+            component: () => import('@/views/example/result/error.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 3,
+              i18nKey: 'example.result.error',
+            },
+          },
+          {
+            path: '/example/result/info',
+            name: 'example.result.info',
+            component: () => import('@/views/example/result/info.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 4,
+              i18nKey: 'example.result.info',
+            },
+          },
+        ],
       },
       {
         path: '/example/keep-alive',
         name: 'example.keepAlive',
-        component: () => import('@/views/example/keep-alive.vue'),
         meta: {
           layout: 'admin',
           isMenu: true,
@@ -153,40 +218,64 @@ export default [
           i18nKey: 'example.keepAlive',
           keepAlive: true,
         },
+        children: [
+          {
+            path: '/example/keep-alive/open',
+            name: 'example.keepAlive.open',
+            component: () => import('@/views/example/keep-alive/open.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 1,
+              i18nKey: 'example.keepAlive.open',
+              keepAlive: true,
+            },
+          },
+          {
+            path: '/example/keep-alive/close',
+            name: 'example.keepAlive.close',
+            component: () => import('@/views/example/keep-alive/close.vue'),
+            meta: {
+              layout: 'admin',
+              isMenu: true,
+              sort: 2,
+              i18nKey: 'example.keepAlive.close',
+              keepAlive: false,
+            },
+          },
+        ],
       },
       {
-        path: '/example/page-1',
-        name: 'example.pageOne',
-        component: () => import('@/views/example/page-1.vue'),
+        path: '/example/navigation-one',
+        name: 'example.navigation.one',
         meta: {
           layout: 'admin',
           isMenu: true,
           iconType: IconTypeEnum.ELEMENT_PLUS,
           icon: 'Notification',
           sort: 9,
-          i18nKey: 'example.pageOne',
+          i18nKey: 'example.navigation.one',
         },
         children: [
           {
-            path: '/example/page-2',
-            name: 'example.pageTwo',
-            component: () => import('@/views/example/page-2.vue'),
+            path: '/example/navigation-two',
+            name: 'example.navigation.two',
             meta: {
               layout: 'admin',
               isMenu: true,
               sort: 1,
-              i18nKey: 'example.pageTwo',
+              i18nKey: 'example.navigation.two',
             },
             children: [
               {
-                path: '/example/page-3',
-                name: 'example.pageThree',
-                component: () => import('@/views/example/page-3.vue'),
+                path: '/example/navigation-three',
+                name: 'example.navigation.three',
+                component: () => import('@/views/example/navigation.vue'),
                 meta: {
                   layout: 'admin',
                   isMenu: true,
                   sort: 1,
-                  i18nKey: 'example.pageThree',
+                  i18nKey: 'example.navigation.three',
                 },
               },
             ],

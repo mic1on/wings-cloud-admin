@@ -139,6 +139,9 @@ export default {
       avatar: '',
       mobile: '18877776666',
       roleId: '0',
+      roleName: '管理员',
+      departmentId: '0',
+      departmentName: '总公司',
     },
   },
 

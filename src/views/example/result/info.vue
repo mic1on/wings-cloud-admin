@@ -1,0 +1,20 @@
+<script lang="ts" setup>
+defineOptions({
+  name: 'ExampleResultInfo',
+});
+
+const { t } = useI18n();
+</script>
+<template>
+  <crud-card>
+    <el-result
+      icon="info"
+      :title="t('example.result.info.title')"
+      :sub-title="t('example.result.info.subTitle')"
+    >
+      <template #extra>
+        <el-button type="primary">{{ t('crud.btn.confirm') }}</el-button>
+      </template>
+    </el-result>
+  </crud-card>
+</template>

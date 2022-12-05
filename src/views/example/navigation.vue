@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineOptions({
-  name: 'ExamplePageTwo',
+  name: 'ExampleNavigation',
 });
 </script>
 <template>
