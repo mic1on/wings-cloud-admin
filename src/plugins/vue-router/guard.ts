@@ -92,8 +92,9 @@ export const addRouterGuard = (router: Router): Router => {
 
       const systemStore = useSystemStore();
 
-      const toName = to.matched.at(-1)?.components?.default.name;
-      const fromName = from.matched.at(-1)?.components?.default.name;
+      const toName = to.matched[to.matched.length - 1].components?.default.name;
+      const fromName =
+        from.matched[to.matched.length - 1].components?.default.name;
 
       if (to.meta.keepAlive && toName) {
         systemStore.keepAliveAddName(toName);
