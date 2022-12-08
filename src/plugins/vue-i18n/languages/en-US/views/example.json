@@ -1,7 +1,10 @@
 {
   "menuName": "Examples",
   "menuDescription": "",
-  "table": { "menuName": "Function Table", "menuDescription": "" },
+  "table": {
+    "menuName": "Function Table",
+    "menuDescription": ""
+  },
   "icon": {
     "menuName": "Svg Icon",
     "menuDescription": "Click the icon to copy the icon, and you can customize the extension Svg-based icon in the src/assets/svgs/ directory",
@@ -11,15 +14,48 @@
     "social": "Social Icons",
     "copySuccess": "Copy Success"
   },
-  "editor": { "menuName": "Rich Text Editor", "menuDescription": "" },
-  "charts": { "menuName": "Chart Analysis", "menuDescription": "" },
-  "map": { "menuName": "Map Interaction", "menuDescription": "" },
+  "editor": {
+    "menuName": "Rich Text Editor",
+    "menuDescription": ""
+  },
+  "charts": {
+    "menuName": "Chart Analysis",
+    "menuDescription": ""
+  },
+  "map": {
+    "menuName": "Map Interaction",
+    "menuDescription": ""
+  },
   "form": {
     "menuName": "Form",
     "menuDescription": "",
-    "base": { "menuName": "Basic Form", "menuDescription": "" },
-    "step": { "menuName": "Paging Form", "menuDescription": "" },
-    "pro": { "menuName": "Advanced Form", "menuDescription": "" }
+    "base": {
+      "menuName": "Basic Form",
+      "menuDescription": "",
+      "activityName": "Activity name",
+      "activityZone": "Activity Zone",
+      "zoneOne": "Zone One",
+      "zoneTwo": "Zone Two",
+      "activityTime": "Activity Time",
+      "publish": "Publish",
+      "activityType": "Activity Type",
+      "typeOne": "Activity One",
+      "typeTwo": "Activity Two",
+      "typeThree": "Activity Three",
+      "activityTag": "Activity Tag",
+      "tagOne": "Tag One",
+      "tagTwo": "Tag Two",
+      "tagThree": "Tag Three",
+      "desc": "Remark"
+    },
+    "step": {
+      "menuName": "Paging Form",
+      "menuDescription": ""
+    },
+    "pro": {
+      "menuName": "Advanced Form",
+      "menuDescription": ""
+    }
   },
   "result": {
     "menuName": "Result Page",
@@ -62,8 +98,17 @@
     }
   },
   "navigation": {
-    "one": { "menuName": "Nested Navigation", "menuDescription": "" },
-    "two": { "menuName": "Nested Navigation", "menuDescription": "" },
-    "three": { "menuName": "Nested Navigation", "menuDescription": "" }
+    "one": {
+      "menuName": "Nested Navigation",
+      "menuDescription": ""
+    },
+    "two": {
+      "menuName": "Nested Navigation",
+      "menuDescription": ""
+    },
+    "three": {
+      "menuName": "Nested Navigation",
+      "menuDescription": ""
+    }
   }
 }

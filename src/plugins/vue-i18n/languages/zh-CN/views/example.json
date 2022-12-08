@@ -1,7 +1,10 @@
 {
   "menuName": "功能示例",
   "menuDescription": "",
-  "table": { "menuName": "功能表格", "menuDescription": "" },
+  "table": {
+    "menuName": "功能表格",
+    "menuDescription": ""
+  },
   "icon": {
     "menuName": "Svg 图标",
     "menuDescription": "点击图标即可复制图标，您可以在 src/assets/svgs/ 目录自定义扩展基于 Svg 的图标",
@@ -11,15 +14,48 @@
     "social": "社交图标",
     "copySuccess": "复制成功"
   },
-  "editor": { "menuName": "富文本编辑器", "menuDescription": "" },
-  "charts": { "menuName": "图表分析", "menuDescription": "" },
-  "map": { "menuName": "地图交互", "menuDescription": "" },
+  "editor": {
+    "menuName": "富文本编辑器",
+    "menuDescription": ""
+  },
+  "charts": {
+    "menuName": "图表分析",
+    "menuDescription": ""
+  },
+  "map": {
+    "menuName": "地图交互",
+    "menuDescription": ""
+  },
   "form": {
     "menuName": "表单",
     "menuDescription": "",
-    "base": { "menuName": "基础表单", "menuDescription": "" },
-    "step": { "menuName": "分布表单", "menuDescription": "" },
-    "pro": { "menuName": "高级表单", "menuDescription": "" }
+    "base": {
+      "menuName": "基础表单",
+      "menuDescription": "",
+      "activityName": "活动名称",
+      "activityZone": "活动区域",
+      "zoneOne": "区域一",
+      "zoneTwo": "区域二",
+      "activityTime": "活动时间",
+      "publish": "发布",
+      "activityType": "活动类型",
+      "typeOne": "活动一",
+      "typeTwo": "活动二",
+      "typeThree": "活动三",
+      "activityTag": "活动标签",
+      "tagOne": "标签一",
+      "tagTwo": "标签二",
+      "tagThree": "标签三",
+      "desc": "备注"
+    },
+    "step": {
+      "menuName": "分布表单",
+      "menuDescription": ""
+    },
+    "pro": {
+      "menuName": "高级表单",
+      "menuDescription": ""
+    }
   },
   "result": {
     "menuName": "结果页",
@@ -62,8 +98,17 @@
     }
   },
   "navigation": {
-    "one": { "menuName": "多层导航", "menuDescription": "" },
-    "two": { "menuName": "多层导航", "menuDescription": "" },
-    "three": { "menuName": "多层导航", "menuDescription": "" }
+    "one": {
+      "menuName": "多层导航",
+      "menuDescription": ""
+    },
+    "two": {
+      "menuName": "多层导航",
+      "menuDescription": ""
+    },
+    "three": {
+      "menuName": "多层导航",
+      "menuDescription": ""
+    }
   }
 }
