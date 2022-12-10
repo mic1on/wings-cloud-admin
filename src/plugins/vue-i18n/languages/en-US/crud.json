@@ -24,8 +24,14 @@
     "upload": "Upload"
   },
   "placeholder": {
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "startDate": "Start Date",
+    "endDate": "End Date",
     "enter": "Please enter the {label}",
     "enterAgain": "Please enter the {label} again",
+    "select": "Please select the {label}",
+    "selectAgain": "Please select the {label} again",
     "formatIncorrect": "The {label} format is incorrect",
     "inconsistent": "The {label} entered twice is inconsistent"
   },

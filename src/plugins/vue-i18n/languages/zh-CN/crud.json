@@ -24,8 +24,14 @@
     "upload": "上传"
   },
   "placeholder": {
+    "startTime": "开始时间",
+    "endTime": "结束时间",
+    "startDate": "开始日期",
+    "endDate": "结束日期",
     "enter": "请输入{label}",
     "enterAgain": "请再次输入{label}",
+    "select": "请选择{label}",
+    "selectAgain": "请再次选择{label}",
     "formatIncorrect": "{label}格式不正确",
     "inconsistent": "两次输入的{label}不一致"
   },
